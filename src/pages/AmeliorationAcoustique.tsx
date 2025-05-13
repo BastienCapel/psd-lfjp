@@ -81,7 +81,7 @@ const AmeliorationAcoustique = () => {
               <AspectRatio ratio={16/9} className="bg-muted/20">
                 <ChartContainer 
                   config={{ 
-                    cost: { theme: { light: '#6E59A5' } }
+                    cost: { theme: { light: '#6E59A5', dark: '#9b87f5' } }
                   }}
                   className="p-4"
                 >
@@ -111,7 +111,7 @@ const AmeliorationAcoustique = () => {
               <AspectRatio ratio={16/9} className="bg-muted/20">
                 <ChartContainer 
                   config={{ 
-                    impact: { theme: { light: '#6E59A5' } }
+                    impact: { theme: { light: '#6E59A5', dark: '#8A7AC2' } }
                   }}
                   className="p-4"
                 >
@@ -152,7 +152,7 @@ const AmeliorationAcoustique = () => {
             <AspectRatio ratio={21/9} className="bg-muted/20">
               <ChartContainer 
                 config={{ 
-                  amortissement: { theme: { light: '#6E59A5' } }
+                  amortissement: { theme: { light: '#6E59A5', dark: '#A499D1' } }
                 }}
                 className="p-4"
               >
