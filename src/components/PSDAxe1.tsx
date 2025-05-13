@@ -12,7 +12,7 @@ const PSDAxe1 = () => {
   const actions = [
     { text: 'Audit thermique des locaux, plan de climatisation, rénovation des sanitaires' },
     { text: 'Lancement d\'un projet de construction d\'une cantine scolaire' },
-    { text: 'Poursuite des travaux d\'amélioration de l\'acoustique' },
+    { text: 'Poursuite des travaux d\'amélioration de l\'acoustique', link: '/amelioration-acoustique' },
     { text: 'Programme d\'éducation à la santé' }
   ];
   
@@ -24,7 +24,7 @@ const PSDAxe1 = () => {
 
   return (
     <PSDAxeLayout 
-      title="AXE 1 – PARCOURS ÉDUCATIF DE SANTÉ"
+      title="AXE 1 – PARCOURS SANTÉ"
       subtitle="Un cadre de vie sain, sûr et bienveillant"
       objectifs={objectifs}
       actions={actions}
