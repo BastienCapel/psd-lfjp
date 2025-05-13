@@ -1,46 +1,35 @@
 
 import React from 'react';
+import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe1 = () => {
+  const objectifs = [
+    { text: 'Améliorer les conditions matérielles de santé et d\'hygiène' },
+    { text: 'Promouvoir une culture de la prévention et du bien-être physique, mental et social' },
+    { text: 'Renforcer les compétences psychosociales' }
+  ];
+  
+  const actions = [
+    { text: 'Audit thermique des locaux, plan de climatisation, rénovation des sanitaires' },
+    { text: 'Lancement d\'un projet de construction d\'une cantine scolaire' },
+    { text: 'Poursuite des travaux d\'amélioration de l\'acoustique' },
+    { text: 'Programme d\'éducation à la santé' }
+  ];
+  
+  const indicators = [
+    { text: 'Taux de satisfaction sanitaire (enquêtes)' },
+    { text: 'Taux de satisfaction concernant la restauration scolaire' },
+    { text: 'Nombre d\'actions de promotion santé menées par cycle' }
+  ];
+
   return (
-    <div>
-      <h3 className="text-xl font-playfair font-bold text-french-blue mb-4">
-        AXE 1 – PARCOURS ÉDUCATIF DE SANTÉ
-      </h3>
-      <p className="text-lg font-medium font-raleway text-gray-800 mb-4">
-        Un cadre de vie sain, sûr et bienveillant
-      </p>
-      
-      <div className="mt-6 space-y-4">
-        <div>
-          <h4 className="font-semibold text-gray-900 mb-2">Objectifs</h4>
-          <ul className="list-disc pl-5 space-y-1 text-gray-700 font-raleway">
-            <li>Améliorer les conditions matérielles de santé et d'hygiène</li>
-            <li>Promouvoir une culture de la prévention et du bien-être physique, mental et social</li>
-            <li>Renforcer les compétences psychosociales</li>
-          </ul>
-        </div>
-        
-        <div>
-          <h4 className="font-semibold text-gray-900 mb-2">Actions prioritaires</h4>
-          <ul className="list-disc pl-5 space-y-1 text-gray-700 font-raleway">
-            <li>Audit thermique des locaux, plan de climatisation, rénovation des sanitaires</li>
-            <li>Lancement d'un projet de construction d'une cantine scolaire</li>
-            <li>Poursuite des travaux d'amélioration de l'acoustique</li>
-            <li>Programme d'éducation à la santé</li>
-          </ul>
-        </div>
-        
-        <div>
-          <h4 className="font-semibold text-gray-900 mb-2">Indicateurs</h4>
-          <ul className="list-disc pl-5 space-y-1 text-gray-700 font-raleway">
-            <li>Taux de satisfaction sanitaire (enquêtes)</li>
-            <li>Taux de satisfaction concernant la restauration scolaire</li>
-            <li>Nombre d'actions de promotion santé menées par cycle</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <PSDAxeLayout 
+      title="AXE 1 – PARCOURS ÉDUCATIF DE SANTÉ"
+      subtitle="Un cadre de vie sain, sûr et bienveillant"
+      objectifs={objectifs}
+      actions={actions}
+      indicators={indicators}
+    />
   );
 };
 
