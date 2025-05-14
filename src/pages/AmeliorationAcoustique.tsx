@@ -28,9 +28,14 @@ const AmeliorationAcoustique = () => {
     { name: 'Amortissement 5 ans', value: 977 }
   ];
   
-  const budgetData = [
-    { name: 'Impact financier', value: 0.49, fill: '#6E59A5' },
-    { name: 'Autres dépenses', value: 99.51, fill: '#E5DEFF' }
+  const budget1AnData = [
+    { name: 'Impact financier', value: 2.44, fill: '#6E59A5' },
+    { name: 'Autres dépenses', value: 97.56, fill: '#E5DEFF' }
+  ];
+  
+  const budget5AnsData = [
+    { name: 'Impact financier', value: 0.49, fill: '#9b87f5' },
+    { name: 'Autres dépenses', value: 99.51, fill: '#F1F0FB' }
   ];
 
   return (
@@ -67,8 +72,8 @@ const AmeliorationAcoustique = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <Card>
             <CardHeader>
-              <CardTitle>Impact sur le budget</CardTitle>
-              <CardDescription>Pourcentage des recettes d'écolage (lissé sur 5 ans)</CardDescription>
+              <CardTitle>Impact sur le budget (1 an)</CardTitle>
+              <CardDescription>Pourcentage des recettes d'écolage sur 1 an</CardDescription>
             </CardHeader>
             <CardContent className="pt-0">
               <AspectRatio ratio={16/9} className="bg-muted/20">
@@ -80,7 +85,7 @@ const AmeliorationAcoustique = () => {
                 >
                   <PieChart>
                     <Pie
-                      data={budgetData}
+                      data={budget1AnData}
                       cx="50%"
                       cy="50%"
                       labelLine={false}
@@ -89,7 +94,48 @@ const AmeliorationAcoustique = () => {
                       dataKey="value"
                       label={({name, percent}) => `${name}: ${(percent * 100).toFixed(2)}%`}
                     >
-                      {budgetData.map((entry, index) => (
+                      {budget1AnData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.fill} />
+                      ))}
+                    </Pie>
+                    <Tooltip />
+                  </PieChart>
+                </ChartContainer>
+              </AspectRatio>
+              <div className="mt-4 text-sm">
+                <p>Effectifs prévisionnels 2025-2026: <strong>614 élèves</strong></p>
+                <p>Revenus d'écolages estimés: <strong>1 231 445 000 FCFA</strong></p>
+                <p>Coût total du projet: <strong>30 000 000 FCFA</strong></p>
+                <p>Impact financier (sur 1 an): <strong>2,44% des recettes</strong></p>
+              </div>
+            </CardContent>
+          </Card>
+          
+          <Card>
+            <CardHeader>
+              <CardTitle>Impact sur le budget (5 ans)</CardTitle>
+              <CardDescription>Pourcentage des recettes d'écolage (lissé sur 5 ans)</CardDescription>
+            </CardHeader>
+            <CardContent className="pt-0">
+              <AspectRatio ratio={16/9} className="bg-muted/20">
+                <ChartContainer 
+                  config={{ 
+                    impact: { theme: { light: '#9b87f5', dark: '#A499D1' } }
+                  }}
+                  className="p-4"
+                >
+                  <PieChart>
+                    <Pie
+                      data={budget5AnsData}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      outerRadius={80}
+                      fill="#8884d8"
+                      dataKey="value"
+                      label={({name, percent}) => `${name}: ${(percent * 100).toFixed(2)}%`}
+                    >
+                      {budget5AnsData.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={entry.fill} />
                       ))}
                     </Pie>
@@ -107,7 +153,7 @@ const AmeliorationAcoustique = () => {
             </CardContent>
           </Card>
           
-          <Card>
+          <Card className="md:col-span-2">
             <CardHeader>
               <CardTitle>Comparaison des options d'amortissement</CardTitle>
               <CardDescription>Impact financier mensuel par élève</CardDescription>
