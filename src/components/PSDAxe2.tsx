@@ -12,7 +12,7 @@ const PSDAxe2 = () => {
   
   const actions = [
     { text: 'Généralisation de l\'éducation aux médias et à l\'intelligence artificielle' },
-    { text: 'Elaboration d\'un plan : « un ordinateur par élève »' },
+    { text: 'Élaboration d\'un plan "Un PC par lycéen"', link: '/pc-par-lyceen' },
     { text: 'Création d\'un passeport du jeune citoyen' },
     { text: 'Actions solidaires et intergénérationnelles' }
   ];
