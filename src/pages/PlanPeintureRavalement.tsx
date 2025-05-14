@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -247,8 +246,8 @@ const PlanPeintureRavalement = () => {
                             <ChartTooltipContent
                               formatter={(value, name) => {
                                 if (name === "cout") 
-                                  return [`${parseInt(value).toLocaleString()} FCFA`, "Coût total"];
-                                return [`${value} m²`, "Surface"];
+                                  return [`${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA`, "Coût total"];
+                                return [`${value.toString()} m²`, "Surface"];
                               }}
                             />
                           }
@@ -434,8 +433,8 @@ const PlanPeintureRavalement = () => {
                             <ChartTooltipContent
                               formatter={(value, name) => {
                                 if (name === "cout") 
-                                  return [`${parseInt(value).toLocaleString()} FCFA`, "Coût total"];
-                                return [`${value} m²`, "Surface"];
+                                  return [`${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA`, "Coût total"];
+                                return [`${value.toString()} m²`, "Surface"];
                               }}
                             />
                           }
