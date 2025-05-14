@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PSDIntroduction from './PSDIntroduction';
 import PSDTabs from './PSDTabs';
@@ -6,9 +7,10 @@ const PSD = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-playfair font-bold text-french-blue mb-6 text-center">
-        </h2>
+            Bienvenue sur le site du plan stratégique de développement du Lycée Français Jacques Prévert de Saly
+          </h2>
           <p className="text-lg text-center font-raleway text-gray-700 mb-12">
-        </p>
+          </p>
 
           <PSDIntroduction />
           <PSDTabs />

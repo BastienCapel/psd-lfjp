@@ -13,7 +13,10 @@ const PSDAxe1 = () => {
     { text: 'Audit thermique des locaux, plan de climatisation, rénovation des sanitaires' },
     { text: 'Lancement d\'un projet de construction d\'une cantine scolaire' },
     { text: 'Poursuite des travaux d\'amélioration de l\'acoustique', link: '/amelioration-acoustique' },
-    { text: 'Programme d\'éducation à la santé' }
+    { text: 'Programme d\'éducation à la santé' },
+    { text: 'Renforcement du système de distribution d\'eau filtrée par des fontaines adaptées en nombre, en débit et en qualité' },
+    { text: 'Pratique soutenue de l\'EPS et pérennisation des sections sportives scolaires' },
+    { text: 'Projet structuré d\'activités physiques quotidiennes au primaire' }
   ];
   
   const indicators = [

@@ -14,7 +14,8 @@ const PSDAxe2 = () => {
     { text: 'Généralisation de l\'éducation aux médias et à l\'intelligence artificielle' },
     { text: 'Élaboration d\'un plan "Un PC par lycéen"', link: '/pc-par-lyceen' },
     { text: 'Création d\'un passeport du jeune citoyen' },
-    { text: 'Actions solidaires et intergénérationnelles' }
+    { text: 'Actions solidaires et intergénérationnelles' },
+    { text: 'Politique E3D avec maintien des 17 objectifs de développement durable, demande de labellisation niveau 3, et présence d\'éco-délégués' }
   ];
   
   const indicators = [
