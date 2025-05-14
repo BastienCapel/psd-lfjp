@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -229,33 +230,35 @@ const PlanPeintureRavalement = () => {
                     </table>
                   </div>
 
-                  <div className="h-80 mt-8">
+                  <div className="h-96 mt-8">
                     <ChartContainer
                       config={{
                         cout: { color: "#2563eb" },
                         surfaces: { color: "#10b981" }
                       }}
                     >
-                      <BarChart data={scenarioAData}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="year" />
-                        <YAxis yAxisId="left" orientation="left" />
-                        <YAxis yAxisId="right" orientation="right" />
-                        <ChartTooltip
-                          content={
-                            <ChartTooltipContent
-                              formatter={(value, name) => {
-                                if (name === "cout") 
-                                  return [`${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA`, "Coût total"];
-                                return [`${value.toString()} m²`, "Surface"];
-                              }}
-                            />
-                          }
-                        />
-                        <Legend />
-                        <Bar dataKey="cout" name="Coût total" yAxisId="left" fill="var(--color-cout)" />
-                        <Bar dataKey="surfaces" name="Surface peinte (m²)" yAxisId="right" fill="var(--color-surfaces)" />
-                      </BarChart>
+                      <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={scenarioAData}>
+                          <CartesianGrid strokeDasharray="3 3" />
+                          <XAxis dataKey="year" />
+                          <YAxis yAxisId="left" orientation="left" />
+                          <YAxis yAxisId="right" orientation="right" />
+                          <ChartTooltip
+                            content={
+                              <ChartTooltipContent
+                                formatter={(value, name) => {
+                                  if (name === "cout") 
+                                    return [`${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA`, "Coût total"];
+                                  return [`${value.toString()} m²`, "Surface"];
+                                }}
+                              />
+                            }
+                          />
+                          <Legend />
+                          <Bar dataKey="cout" name="Coût total" yAxisId="left" fill="var(--color-cout)" />
+                          <Bar dataKey="surfaces" name="Surface peinte (m²)" yAxisId="right" fill="var(--color-surfaces)" />
+                        </BarChart>
+                      </ResponsiveContainer>
                     </ChartContainer>
                   </div>
                 </div>
@@ -416,33 +419,35 @@ const PlanPeintureRavalement = () => {
                     </table>
                   </div>
 
-                  <div className="h-80 mt-8">
+                  <div className="h-96 mt-8">
                     <ChartContainer
                       config={{
                         cout: { color: "#2563eb" },
                         surfaces: { color: "#10b981" }
                       }}
                     >
-                      <BarChart data={scenarioBData}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="year" />
-                        <YAxis yAxisId="left" orientation="left" />
-                        <YAxis yAxisId="right" orientation="right" />
-                        <ChartTooltip
-                          content={
-                            <ChartTooltipContent
-                              formatter={(value, name) => {
-                                if (name === "cout") 
-                                  return [`${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA`, "Coût total"];
-                                return [`${value.toString()} m²`, "Surface"];
-                              }}
-                            />
-                          }
-                        />
-                        <Legend />
-                        <Bar dataKey="cout" name="Coût total" yAxisId="left" fill="var(--color-cout)" />
-                        <Bar dataKey="surfaces" name="Surface peinte (m²)" yAxisId="right" fill="var(--color-surfaces)" />
-                      </BarChart>
+                      <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={scenarioBData}>
+                          <CartesianGrid strokeDasharray="3 3" />
+                          <XAxis dataKey="year" />
+                          <YAxis yAxisId="left" orientation="left" />
+                          <YAxis yAxisId="right" orientation="right" />
+                          <ChartTooltip
+                            content={
+                              <ChartTooltipContent
+                                formatter={(value, name) => {
+                                  if (name === "cout") 
+                                    return [`${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA`, "Coût total"];
+                                  return [`${value.toString()} m²`, "Surface"];
+                                }}
+                              />
+                            }
+                          />
+                          <Legend />
+                          <Bar dataKey="cout" name="Coût total" yAxisId="left" fill="var(--color-cout)" />
+                          <Bar dataKey="surfaces" name="Surface peinte (m²)" yAxisId="right" fill="var(--color-surfaces)" />
+                        </BarChart>
+                      </ResponsiveContainer>
                     </ChartContainer>
                   </div>
                 </div>
@@ -476,8 +481,13 @@ const PlanPeintureRavalement = () => {
             </div>
 
             <div className="flex justify-center mt-10">
-              <a href="/documents/plan-peinture-ravalement.pdf" className="bg-french-blue text-white px-5 py-3 rounded-lg font-medium flex items-center hover:bg-blue-700 transition-colors">
-                Télécharger la note complète
+              <a 
+                href="https://docs.google.com/document/d/19e9WmdweCl0i7VrPrL2oX4QkM9KxgIgMgnSIKnd7Llg/edit?tab=t.0" 
+                className="bg-french-blue text-white px-5 py-3 rounded-lg font-medium flex items-center hover:bg-blue-700 transition-colors"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Accéder à la note complète
               </a>
             </div>
           </div>
