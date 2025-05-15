@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import VisionMissionsValeurs from "./pages/VisionMissionsValeurs";
-import Diagnostique from "./pages/Diagnostique";
+import Diagnostic from "./pages/Diagnostic";
 import PlanStrategique from "./pages/PlanStrategique";
 import AmeliorationAcoustique from "./pages/AmeliorationAcoustique";
 import PCParLyceen from "./pages/PCParLyceen";
@@ -24,7 +24,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/vision-missions-valeurs" element={<VisionMissionsValeurs />} />
-          <Route path="/diagnostique" element={<Diagnostique />} />
+          <Route path="/diagnostic" element={<Diagnostic />} />
           <Route path="/plan-strategique" element={<PlanStrategique />} />
           <Route path="/amelioration-acoustique" element={<AmeliorationAcoustique />} />
           <Route path="/pc-par-lyceen" element={<PCParLyceen />} />
