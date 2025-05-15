@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -372,14 +371,12 @@ const Diagnostic = () => {
                 </Card>
                 
                 <div className="flex justify-center">
-                  <a 
-                    href="https://docs.google.com/document/d/1Oc7-swPdjLYQz_Shnm1ZRiqOTVjH0Bbb98kgm7shNVo/edit?usp=sharing" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                  <Link 
+                    to="/elcs-analyse-complete"
                     className="bg-french-blue text-white px-5 py-3 rounded-lg font-medium flex items-center hover:bg-blue-700 transition-colors"
                   >
                     Accéder à l'analyse complète <ChevronRight className="ml-1 h-5 w-5" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </TabsContent>

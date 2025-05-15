@@ -26,6 +26,7 @@ const routes: RouteMap = {
   "/amelioration-acoustique": { name: "Amélioration Acoustique", parent: "/" },
   "/pc-par-lyceen": { name: "PC par Lycéen", parent: "/" },
   "/plan-peinture-ravalement": { name: "Plan Peinture et Ravalement", parent: "/" },
+  "/elcs-analyse-complete": { name: "Analyse Complète ELCS", parent: "/diagnostic" },
 };
 
 const BreadcrumbNav = () => {
@@ -40,6 +41,10 @@ const BreadcrumbNav = () => {
 
   if (!currentRoute) return null;
 
+  // Si la route a un parent, on l'affiche dans le breadcrumb
+  const parentPath = currentRoute.parent;
+  const parentRoute = parentPath ? routes[parentPath] : null;
+
   return (
     <div className="bg-gray-50 py-2 px-6 border-b animate-fade-in">
       <Breadcrumb className="max-w-screen-xl mx-auto">
@@ -52,6 +57,19 @@ const BreadcrumbNav = () => {
               </Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
+          
+          {parentRoute && parentPath !== "/" && (
+            <>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to={parentPath} className="text-french-blue hover:underline">
+                    {parentRoute.name}
+                  </Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+            </>
+          )}
           
           <BreadcrumbSeparator />
           

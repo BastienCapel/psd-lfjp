@@ -13,6 +13,7 @@ import PlanStrategique from "./pages/PlanStrategique";
 import AmeliorationAcoustique from "./pages/AmeliorationAcoustique";
 import PCParLyceen from "./pages/PCParLyceen";
 import PlanPeintureRavalement from "./pages/PlanPeintureRavalement";
+import ElcsAnalyseComplete from "./pages/ElcsAnalyseComplete";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 
@@ -48,6 +49,12 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <Diagnostic />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/elcs-analyse-complete" element={
+                  <>
+                    <ElcsAnalyseComplete />
                     <BackToTop />
                   </>
                 } />
