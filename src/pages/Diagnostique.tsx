@@ -1,19 +1,14 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
 const Diagnostique = () => {
-  return (
-    <div className="min-h-screen flex flex-col font-raleway">
+  return <div className="min-h-screen flex flex-col font-raleway">
       <Navbar showLogo={true} />
       
       <div className="bg-gradient-to-r from-french-blue to-blue-700 text-white py-24 md:py-32">
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6 opacity-0 animate-fade-in">
-            DIAGNOSTIQUE
-          </h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6 opacity-0 animate-fade-in">DIAGNOSTIC</h1>
           <p className="text-xl md:text-2xl font-raleway font-light max-w-3xl opacity-0 animate-fade-in-delay-1">
             Analyses et enquêtes pour le Lycée Français Jacques Prévert
           </p>
@@ -254,12 +249,7 @@ const Diagnostique = () => {
                 </div>
                 
                 <div className="flex justify-center mt-10">
-                  <a 
-                    href="https://docs.google.com/document/d/1Oc7-swPdjLYQz_Shnm1ZRiqOTVjH0Bbb98kgm7shNVo/edit?usp=sharing" 
-                    className="bg-french-blue text-white px-5 py-3 rounded-lg font-medium flex items-center hover:bg-blue-700 transition-colors"
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://docs.google.com/document/d/1Oc7-swPdjLYQz_Shnm1ZRiqOTVjH0Bbb98kgm7shNVo/edit?usp=sharing" className="bg-french-blue text-white px-5 py-3 rounded-lg font-medium flex items-center hover:bg-blue-700 transition-colors" target="_blank" rel="noopener noreferrer">
                     Accéder à la note complète
                   </a>
                 </div>
@@ -279,8 +269,6 @@ const Diagnostique = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Diagnostique;
