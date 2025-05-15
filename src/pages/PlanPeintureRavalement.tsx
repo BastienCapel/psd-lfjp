@@ -9,23 +9,26 @@ import {
   ChartTooltipContent
 } from "@/components/ui/chart";
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Home } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 const PlanPeintureRavalement = () => {
   // Données pour les graphiques
   const scenarioAData = [
-    { year: 'Année 1', cout: 7862250, surfaces: 1375 },
-    { year: 'Année 2', cout: 6745750, surfaces: 1085 },
-    { year: 'Année 3', cout: 7015250, surfaces: 1155 },
-    { year: 'Année 4', cout: 7015250, surfaces: 1155 },
-    { year: 'Année 5', cout: 7568000, surfaces: 1300 },
+    { year: 'Année 1', cout: 7862250, surfaces: 1375, percentage: 0.82 },
+    { year: 'Année 2', cout: 6745750, surfaces: 1085, percentage: 0.70 },
+    { year: 'Année 3', cout: 7015250, surfaces: 1155, percentage: 0.73 },
+    { year: 'Année 4', cout: 7015250, surfaces: 1155, percentage: 0.73 },
+    { year: 'Année 5', cout: 7568000, surfaces: 1300, percentage: 0.79 },
   ];
 
   const scenarioBData = [
-    { year: 'Année 1', cout: 5760150, surfaces: 829 },
-    { year: 'Année 2', cout: 5105650, surfaces: 659 },
-    { year: 'Année 3', cout: 5298150, surfaces: 709 },
-    { year: 'Année 4', cout: 5298150, surfaces: 709 },
-    { year: 'Année 5', cout: 5627600, surfaces: 796 },
+    { year: 'Année 1', cout: 5760150, surfaces: 829, percentage: 0.60 },
+    { year: 'Année 2', cout: 5105650, surfaces: 659, percentage: 0.53 },
+    { year: 'Année 3', cout: 5298150, surfaces: 709, percentage: 0.55 },
+    { year: 'Année 4', cout: 5298150, surfaces: 709, percentage: 0.55 },
+    { year: 'Année 5', cout: 5627600, surfaces: 796, percentage: 0.59 },
   ];
 
   return (
@@ -43,7 +46,20 @@ const PlanPeintureRavalement = () => {
         </div>
       </div>
 
-      <section className="py-16 md:py-24 bg-gray-50">
+      <div className="container mx-auto px-6 py-4 flex gap-2">
+        <Button variant="outline" asChild>
+          <Link to="/plan-strategique" className="flex items-center gap-2">
+            <ArrowLeft size={16} /> Retour
+          </Link>
+        </Button>
+        <Button variant="outline" asChild>
+          <Link to="/" className="flex items-center gap-2">
+            <Home size={16} /> Accueil
+          </Link>
+        </Button>
+      </div>
+
+      <section className="py-12 md:py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-lg shadow-md mb-8">
@@ -151,6 +167,7 @@ const PlanPeintureRavalement = () => {
                           <th className="border border-gray-300 px-4 py-2">Coût ravalement (FCFA)</th>
                           <th className="border border-gray-300 px-4 py-2">Coût total annuel (FCFA)</th>
                           <th className="border border-gray-300 px-4 py-2">Coût total avec 10% imprévus (FCFA)</th>
+                          <th className="border border-gray-300 px-4 py-2">% des écolages</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -165,6 +182,7 @@ const PlanPeintureRavalement = () => {
                           <td className="border border-gray-300 px-4 py-2">2 335 000</td>
                           <td className="border border-gray-300 px-4 py-2">7 147 500</td>
                           <td className="border border-gray-300 px-4 py-2">7 862 250</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,82 %</td>
                         </tr>
                         <tr>
                           <td className="border border-gray-300 px-4 py-2">Année 2</td>
@@ -177,6 +195,7 @@ const PlanPeintureRavalement = () => {
                           <td className="border border-gray-300 px-4 py-2">2 335 000</td>
                           <td className="border border-gray-300 px-4 py-2">6 132 500</td>
                           <td className="border border-gray-300 px-4 py-2">6 745 750</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,70 %</td>
                         </tr>
                         <tr>
                           <td className="border border-gray-300 px-4 py-2">Année 3</td>
@@ -189,6 +208,7 @@ const PlanPeintureRavalement = () => {
                           <td className="border border-gray-300 px-4 py-2">2 335 000</td>
                           <td className="border border-gray-300 px-4 py-2">6 377 500</td>
                           <td className="border border-gray-300 px-4 py-2">7 015 250</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,73 %</td>
                         </tr>
                         <tr>
                           <td className="border border-gray-300 px-4 py-2">Année 4</td>
@@ -201,6 +221,7 @@ const PlanPeintureRavalement = () => {
                           <td className="border border-gray-300 px-4 py-2">2 335 000</td>
                           <td className="border border-gray-300 px-4 py-2">6 377 500</td>
                           <td className="border border-gray-300 px-4 py-2">7 015 250</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,73 %</td>
                         </tr>
                         <tr>
                           <td className="border border-gray-300 px-4 py-2">Année 5</td>
@@ -213,6 +234,7 @@ const PlanPeintureRavalement = () => {
                           <td className="border border-gray-300 px-4 py-2">2 330 000</td>
                           <td className="border border-gray-300 px-4 py-2">6 880 000</td>
                           <td className="border border-gray-300 px-4 py-2">7 568 000</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,79 %</td>
                         </tr>
                         <tr className="bg-gray-100 font-bold">
                           <td className="border border-gray-300 px-4 py-2">TOTAL</td>
@@ -225,6 +247,7 @@ const PlanPeintureRavalement = () => {
                           <td className="border border-gray-300 px-4 py-2">11 670 000</td>
                           <td className="border border-gray-300 px-4 py-2">32 915 000</td>
                           <td className="border border-gray-300 px-4 py-2">36 206 500</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,75 % moy.</td>
                         </tr>
                       </tbody>
                     </table>
@@ -234,7 +257,8 @@ const PlanPeintureRavalement = () => {
                     <ChartContainer
                       config={{
                         cout: { color: "#2563eb" },
-                        surfaces: { color: "#10b981" }
+                        surfaces: { color: "#10b981" },
+                        percentage: { color: "#f59e0b" }
                       }}
                     >
                       <ResponsiveContainer width="100%" height="100%">
@@ -243,12 +267,15 @@ const PlanPeintureRavalement = () => {
                           <XAxis dataKey="year" />
                           <YAxis yAxisId="left" orientation="left" />
                           <YAxis yAxisId="right" orientation="right" />
+                          <YAxis yAxisId="percentage" orientation="right" tickFormatter={(value) => `${value}%`} domain={[0, 1]} tickCount={6} />
                           <ChartTooltip
                             content={
                               <ChartTooltipContent
                                 formatter={(value, name) => {
                                   if (name === "cout") 
                                     return [`${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA`, "Coût total"];
+                                  if (name === "percentage")
+                                    return [`${(value * 100).toFixed(2)}%`, "% des écolages"];
                                   return [`${value.toString()} m²`, "Surface"];
                                 }}
                               />
@@ -257,6 +284,7 @@ const PlanPeintureRavalement = () => {
                           <Legend />
                           <Bar dataKey="cout" name="Coût total" yAxisId="left" fill="var(--color-cout)" />
                           <Bar dataKey="surfaces" name="Surface peinte (m²)" yAxisId="right" fill="var(--color-surfaces)" />
+                          <Bar dataKey="percentage" name="% des écolages" yAxisId="percentage" fill="var(--color-percentage)" />
                         </BarChart>
                       </ResponsiveContainer>
                     </ChartContainer>
@@ -340,6 +368,7 @@ const PlanPeintureRavalement = () => {
                           <th className="border border-gray-300 px-4 py-2">Coût ravalement (FCFA)</th>
                           <th className="border border-gray-300 px-4 py-2">Coût total annuel (FCFA)</th>
                           <th className="border border-gray-300 px-4 py-2">Coût total avec 10% imprévus (FCFA)</th>
+                          <th className="border border-gray-300 px-4 py-2">% des écolages</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -354,6 +383,7 @@ const PlanPeintureRavalement = () => {
                           <td className="border border-gray-300 px-4 py-2">2 335 000</td>
                           <td className="border border-gray-300 px-4 py-2">5 236 500</td>
                           <td className="border border-gray-300 px-4 py-2">5 760 150</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,60 %</td>
                         </tr>
                         <tr>
                           <td className="border border-gray-300 px-4 py-2">Année 2</td>
@@ -366,6 +396,7 @@ const PlanPeintureRavalement = () => {
                           <td className="border border-gray-300 px-4 py-2">2 335 000</td>
                           <td className="border border-gray-300 px-4 py-2">4 641 500</td>
                           <td className="border border-gray-300 px-4 py-2">5 105 650</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,53 %</td>
                         </tr>
                         <tr>
                           <td className="border border-gray-300 px-4 py-2">Année 3</td>
@@ -378,6 +409,7 @@ const PlanPeintureRavalement = () => {
                           <td className="border border-gray-300 px-4 py-2">2 335 000</td>
                           <td className="border border-gray-300 px-4 py-2">4 816 500</td>
                           <td className="border border-gray-300 px-4 py-2">5 298 150</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,55 %</td>
                         </tr>
                         <tr>
                           <td className="border border-gray-300 px-4 py-2">Année 4</td>
@@ -390,6 +422,7 @@ const PlanPeintureRavalement = () => {
                           <td className="border border-gray-300 px-4 py-2">2 335 000</td>
                           <td className="border border-gray-300 px-4 py-2">4 816 500</td>
                           <td className="border border-gray-300 px-4 py-2">5 298 150</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,55 %</td>
                         </tr>
                         <tr>
                           <td className="border border-gray-300 px-4 py-2">Année 5</td>
@@ -402,6 +435,7 @@ const PlanPeintureRavalement = () => {
                           <td className="border border-gray-300 px-4 py-2">2 330 000</td>
                           <td className="border border-gray-300 px-4 py-2">5 116 000</td>
                           <td className="border border-gray-300 px-4 py-2">5 627 600</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,59 %</td>
                         </tr>
                         <tr className="bg-gray-100 font-bold">
                           <td className="border border-gray-300 px-4 py-2">TOTAL</td>
@@ -414,6 +448,7 @@ const PlanPeintureRavalement = () => {
                           <td className="border border-gray-300 px-4 py-2">11 670 000</td>
                           <td className="border border-gray-300 px-4 py-2">24 627 000</td>
                           <td className="border border-gray-300 px-4 py-2">27 089 700</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,56 % moy.</td>
                         </tr>
                       </tbody>
                     </table>
@@ -423,7 +458,8 @@ const PlanPeintureRavalement = () => {
                     <ChartContainer
                       config={{
                         cout: { color: "#2563eb" },
-                        surfaces: { color: "#10b981" }
+                        surfaces: { color: "#10b981" },
+                        percentage: { color: "#f59e0b" }
                       }}
                     >
                       <ResponsiveContainer width="100%" height="100%">
@@ -432,12 +468,15 @@ const PlanPeintureRavalement = () => {
                           <XAxis dataKey="year" />
                           <YAxis yAxisId="left" orientation="left" />
                           <YAxis yAxisId="right" orientation="right" />
+                          <YAxis yAxisId="percentage" orientation="right" tickFormatter={(value) => `${value}%`} domain={[0, 1]} tickCount={6} />
                           <ChartTooltip
                             content={
                               <ChartTooltipContent
                                 formatter={(value, name) => {
                                   if (name === "cout") 
                                     return [`${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA`, "Coût total"];
+                                  if (name === "percentage")
+                                    return [`${(value * 100).toFixed(2)}%`, "% des écolages"];
                                   return [`${value.toString()} m²`, "Surface"];
                                 }}
                               />
@@ -446,6 +485,7 @@ const PlanPeintureRavalement = () => {
                           <Legend />
                           <Bar dataKey="cout" name="Coût total" yAxisId="left" fill="var(--color-cout)" />
                           <Bar dataKey="surfaces" name="Surface peinte (m²)" yAxisId="right" fill="var(--color-surfaces)" />
+                          <Bar dataKey="percentage" name="% des écolages" yAxisId="percentage" fill="var(--color-percentage)" />
                         </BarChart>
                       </ResponsiveContainer>
                     </ChartContainer>

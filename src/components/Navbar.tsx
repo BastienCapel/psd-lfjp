@@ -22,6 +22,7 @@ const Navbar = ({ showLogo = false }: NavbarProps) => {
         <nav className="hidden md:flex space-x-8">
           <Link to="/" className="text-gray-700 hover:text-french-blue font-raleway">Accueil</Link>
           <Link to="/vision-missions-valeurs" className="text-gray-700 hover:text-french-blue font-raleway">Vision & Valeurs</Link>
+          <Link to="/diagnostique" className="text-gray-700 hover:text-french-blue font-raleway">Diagnostique</Link>
           <Link to="/plan-strategique" className="text-gray-700 hover:text-french-blue font-raleway">Plan Stratégique</Link>
         </nav>
       </div>
