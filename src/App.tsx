@@ -15,66 +15,69 @@ import PlanPeintureRavalement from "./pages/PlanPeintureRavalement";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 
-const queryClient = new QueryClient();
+const App = () => {
+  // Créer une nouvelle instance de QueryClient à chaque rendu du composant
+  const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <div className="flex flex-col min-h-screen">
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/vision-missions-valeurs" element={
-              <>
-                <BreadcrumbNav />
-                <VisionMissionsValeurs />
-                <BackToTop />
-              </>
-            } />
-            <Route path="/diagnostic" element={
-              <>
-                <BreadcrumbNav />
-                <Diagnostic />
-                <BackToTop />
-              </>
-            } />
-            <Route path="/plan-strategique" element={
-              <>
-                <BreadcrumbNav />
-                <PlanStrategique />
-                <BackToTop />
-              </>
-            } />
-            <Route path="/amelioration-acoustique" element={
-              <>
-                <BreadcrumbNav />
-                <AmeliorationAcoustique />
-                <BackToTop />
-              </>
-            } />
-            <Route path="/pc-par-lyceen" element={
-              <>
-                <BreadcrumbNav />
-                <PCParLyceen />
-                <BackToTop />
-              </>
-            } />
-            <Route path="/plan-peinture-ravalement" element={
-              <>
-                <BreadcrumbNav />
-                <PlanPeintureRavalement />
-                <BackToTop />
-              </>
-            } />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <div className="flex flex-col min-h-screen">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/vision-missions-valeurs" element={
+                <>
+                  <BreadcrumbNav />
+                  <VisionMissionsValeurs />
+                  <BackToTop />
+                </>
+              } />
+              <Route path="/diagnostic" element={
+                <>
+                  <BreadcrumbNav />
+                  <Diagnostic />
+                  <BackToTop />
+                </>
+              } />
+              <Route path="/plan-strategique" element={
+                <>
+                  <BreadcrumbNav />
+                  <PlanStrategique />
+                  <BackToTop />
+                </>
+              } />
+              <Route path="/amelioration-acoustique" element={
+                <>
+                  <BreadcrumbNav />
+                  <AmeliorationAcoustique />
+                  <BackToTop />
+                </>
+              } />
+              <Route path="/pc-par-lyceen" element={
+                <>
+                  <BreadcrumbNav />
+                  <PCParLyceen />
+                  <BackToTop />
+                </>
+              } />
+              <Route path="/plan-peinture-ravalement" element={
+                <>
+                  <BreadcrumbNav />
+                  <PlanPeintureRavalement />
+                  <BackToTop />
+                </>
+              } />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
