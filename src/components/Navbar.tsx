@@ -69,15 +69,15 @@ const Navbar = ({ showLogo = false }: NavbarProps) => {
             </NavigationMenuItem>
             
             <NavigationMenuItem>
-              <Link to="/diagnostique">
+              <Link to="/diagnostic">
                 <NavigationMenuLink 
                   className={cn(
                     navigationMenuTriggerStyle(),
                     "font-raleway transition-colors duration-200",
-                    isActive('/diagnostique') ? "bg-french-blue text-white" : "hover:bg-blue-50 hover:text-french-blue"
+                    isActive('/diagnostic') ? "bg-french-blue text-white" : "hover:bg-blue-50 hover:text-french-blue"
                   )}
                 >
-                  Diagnostique
+                  Diagnostic
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>

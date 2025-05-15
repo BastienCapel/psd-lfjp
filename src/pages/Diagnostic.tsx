@@ -9,7 +9,7 @@ import { AlertTriangle, ArrowUp, ArrowDown, ThumbsUp, ThumbsDown, BarChart4, Che
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
 
-const Diagnostique = () => {
+const Diagnostic = () => {
   const elcsData = {
     satisfaction: {
       title: "Satisfaction des Infrastructures",
@@ -65,7 +65,7 @@ const Diagnostique = () => {
       <div className="bg-gradient-to-r from-french-blue to-blue-700 text-white py-24 md:py-28">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4 opacity-0 animate-fade-in">
-            Diagnostique
+            Diagnostic
           </h1>
           <p className="text-xl md:text-2xl font-raleway font-light max-w-3xl opacity-0 animate-fade-in-delay-1">
             Analyse de la situation actuelle pour orienter le développement
@@ -78,10 +78,10 @@ const Diagnostique = () => {
           <Tabs defaultValue="elcs" className="w-full">
             <TabsList className="mb-8 w-full max-w-md mx-auto grid grid-cols-2">
               <TabsTrigger value="elcs" className="text-sm md:text-base font-medium">
-                Diagnostique ELCS
+                Diagnostic ELCS
               </TabsTrigger>
               <TabsTrigger value="psd" className="text-sm md:text-base font-medium">
-                Diagnostique PSD
+                Diagnostic PSD
               </TabsTrigger>
             </TabsList>
             
@@ -131,7 +131,7 @@ const Diagnostique = () => {
                           />
                           <div className="flex justify-between text-xs text-gray-500 mt-1">
                             <span>{item.label}</span>
-                            {item.average && <span>Moyenne: {item.average}%</span>}
+                            {item.average && <span>Moyenne : {item.average}%</span>}
                           </div>
                         </div>
                       ))}
@@ -142,7 +142,7 @@ const Diagnostique = () => {
                           <div key={`sat-s-${idx}`} className="flex items-start mb-2">
                             <AlertTriangle className="h-4 w-4 text-amber-500 mr-2 mt-0.5" />
                             <div>
-                              <span className="text-sm font-medium">{item.name}: </span>
+                              <span className="text-sm font-medium">{item.name} : </span>
                               <span className="text-sm">{item.value}% {item.label}</span>
                             </div>
                           </div>
@@ -178,7 +178,7 @@ const Diagnostique = () => {
                           />
                           <div className="flex justify-between text-xs text-gray-500 mt-1">
                             <span>{item.label}</span>
-                            {item.average && <span>Moyenne: {item.average}%</span>}
+                            {item.average && <span>Moyenne : {item.average}%</span>}
                           </div>
                         </div>
                       ))}
@@ -189,7 +189,7 @@ const Diagnostique = () => {
                           <div key={`rel-s-${idx}`} className="flex items-start mb-2">
                             <AlertTriangle className="h-4 w-4 text-amber-500 mr-2 mt-0.5" />
                             <div>
-                              <span className="text-sm font-medium">{item.name}: </span>
+                              <span className="text-sm font-medium">{item.name} : </span>
                               <span className="text-sm">{item.value} {item.label}</span>
                             </div>
                           </div>
@@ -237,7 +237,7 @@ const Diagnostique = () => {
                               />
                               <div className="flex justify-between text-xs text-gray-500 mt-1">
                                 <span>{item.label}</span>
-                                {item.average && <span>Moyenne: {item.average}%</span>}
+                                {item.average && <span>Moyenne : {item.average}%</span>}
                               </div>
                             </>
                           )}
@@ -250,7 +250,7 @@ const Diagnostique = () => {
                           <div key={`trav-s-${idx}`} className="flex items-start mb-2">
                             <AlertTriangle className="h-4 w-4 text-amber-500 mr-2 mt-0.5" />
                             <div>
-                              <span className="text-sm font-medium">{item.name}: </span>
+                              <span className="text-sm font-medium">{item.name} : </span>
                               <span className="text-sm">{item.value} {item.label}</span>
                             </div>
                           </div>
@@ -296,7 +296,7 @@ const Diagnostique = () => {
                               />
                               <div className="flex justify-between text-xs text-gray-500 mt-1">
                                 <span>{item.label}</span>
-                                {item.average && <span>Moyenne: {item.average}%</span>}
+                                {item.average && <span>Moyenne : {item.average}%</span>}
                               </div>
                             </>
                           )}
@@ -309,7 +309,7 @@ const Diagnostique = () => {
                           <div key={`sec-s-${idx}`} className="flex items-start mb-2">
                             <AlertTriangle className="h-4 w-4 text-amber-500 mr-2 mt-0.5" />
                             <div>
-                              <span className="text-sm font-medium">{item.name}: </span>
+                              <span className="text-sm font-medium">{item.name} : </span>
                               <span className="text-sm">{item.value}% {item.label}</span>
                             </div>
                           </div>
@@ -388,14 +388,14 @@ const Diagnostique = () => {
               <div className="max-w-5xl mx-auto">
                 <Card className="mb-8 border-french-blue/10 shadow-md">
                   <CardHeader>
-                    <CardTitle className="text-2xl text-french-blue">Diagnostique PSD</CardTitle>
+                    <CardTitle className="text-2xl text-french-blue">Diagnostic PSD</CardTitle>
                     <CardDescription>
                       Analyse basée sur les enquêtes questionnaires PSD
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-700">
-                      Contenu du diagnostique PSD à venir. Cette section sera complétée avec les données 
+                      Contenu du diagnostic PSD à venir. Cette section sera complétée avec les données 
                       issues des enquêtes questionnaires du Plan Stratégique de Développement.
                     </p>
                   </CardContent>
@@ -411,4 +411,4 @@ const Diagnostique = () => {
   );
 };
 
-export default Diagnostique;
+export default Diagnostic;
