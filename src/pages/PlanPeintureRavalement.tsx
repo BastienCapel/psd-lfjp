@@ -264,9 +264,9 @@ const PlanPeintureRavalement = () => {
                         <BarChart data={scenarioAData}>
                           <CartesianGrid strokeDasharray="3 3" />
                           <XAxis dataKey="year" />
-                          <YAxis yAxisId="left" orientation="left" />
-                          <YAxis yAxisId="right" orientation="right" />
-                          <YAxis yAxisId="percentage" orientation="right" tickFormatter={(value) => `${value}%`} domain={[0, 1]} tickCount={6} />
+                          <YAxis yAxisId="left" orientation="left" label={{ value: 'Coût (FCFA)', angle: -90, position: 'insideLeft' }} />
+                          <YAxis yAxisId="right" orientation="right" label={{ value: 'Surface (m²)', angle: 90, position: 'insideRight' }} />
+                          <YAxis yAxisId="percentage" orientation="right" tickFormatter={(value) => `${(value*100).toFixed(0)}%`} domain={[0, 1]} tickCount={6} />
                           <ChartTooltip
                             content={
                               <ChartTooltipContent
@@ -283,7 +283,7 @@ const PlanPeintureRavalement = () => {
                             }
                           />
                           <Legend />
-                          <Bar dataKey="cout" name="Coût total" yAxisId="left" fill="var(--color-cout)" />
+                          <Bar dataKey="cout" name="Coût total (FCFA)" yAxisId="left" fill="var(--color-cout)" />
                           <Bar dataKey="surfaces" name="Surface peinte (m²)" yAxisId="right" fill="var(--color-surfaces)" />
                           <Bar dataKey="percentage" name="% des écolages" yAxisId="percentage" fill="var(--color-percentage)" />
                         </BarChart>
@@ -467,9 +467,9 @@ const PlanPeintureRavalement = () => {
                         <BarChart data={scenarioBData}>
                           <CartesianGrid strokeDasharray="3 3" />
                           <XAxis dataKey="year" />
-                          <YAxis yAxisId="left" orientation="left" />
-                          <YAxis yAxisId="right" orientation="right" />
-                          <YAxis yAxisId="percentage" orientation="right" tickFormatter={(value) => `${value}%`} domain={[0, 1]} tickCount={6} />
+                          <YAxis yAxisId="left" orientation="left" label={{ value: 'Coût (FCFA)', angle: -90, position: 'insideLeft' }} />
+                          <YAxis yAxisId="right" orientation="right" label={{ value: 'Surface (m²)', angle: 90, position: 'insideRight' }} />
+                          <YAxis yAxisId="percentage" orientation="right" tickFormatter={(value) => `${(value*100).toFixed(0)}%`} domain={[0, 1]} tickCount={6} />
                           <ChartTooltip
                             content={
                               <ChartTooltipContent
@@ -486,7 +486,7 @@ const PlanPeintureRavalement = () => {
                             }
                           />
                           <Legend />
-                          <Bar dataKey="cout" name="Coût total" yAxisId="left" fill="var(--color-cout)" />
+                          <Bar dataKey="cout" name="Coût total (FCFA)" yAxisId="left" fill="var(--color-cout)" />
                           <Bar dataKey="surfaces" name="Surface peinte (m²)" yAxisId="right" fill="var(--color-surfaces)" />
                           <Bar dataKey="percentage" name="% des écolages" yAxisId="percentage" fill="var(--color-percentage)" />
                         </BarChart>
