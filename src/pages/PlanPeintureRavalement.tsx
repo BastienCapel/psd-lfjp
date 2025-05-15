@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -274,8 +273,10 @@ const PlanPeintureRavalement = () => {
                                 formatter={(value, name) => {
                                   if (name === "cout") 
                                     return [`${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA`, "Coût total"];
-                                  if (name === "percentage")
-                                    return [`${(value * 100).toFixed(2)}%`, "% des écolages"];
+                                  if (name === "percentage") {
+                                    const numValue = typeof value === 'number' ? value : parseFloat(value.toString());
+                                    return [`${(numValue * 100).toFixed(2)}%`, "% des écolages"];
+                                  }
                                   return [`${value.toString()} m²`, "Surface"];
                                 }}
                               />
@@ -475,8 +476,10 @@ const PlanPeintureRavalement = () => {
                                 formatter={(value, name) => {
                                   if (name === "cout") 
                                     return [`${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA`, "Coût total"];
-                                  if (name === "percentage")
-                                    return [`${(value * 100).toFixed(2)}%`, "% des écolages"];
+                                  if (name === "percentage") {
+                                    const numValue = typeof value === 'number' ? value : parseFloat(value.toString());
+                                    return [`${(numValue * 100).toFixed(2)}%`, "% des écolages"];
+                                  }
                                   return [`${value.toString()} m²`, "Surface"];
                                 }}
                               />
