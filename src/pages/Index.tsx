@@ -20,7 +20,7 @@ const Index = () => {
             Bienvenue sur le site du plan stratégique de développement du Lycée Français Jacques Prévert
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-1">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Vision, Missions et Valeurs</h3>
@@ -36,6 +36,20 @@ const Index = () => {
             </Card>
             
             <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-2">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Diagnostic</h3>
+                <p className="text-gray-600 mb-6">
+                  Analysez la situation actuelle de notre établissement à travers les données des enquêtes 
+                  et l'évaluation des besoins qui orientent notre développement.
+                </p>
+                <Link to="/diagnostic" className="inline-flex items-center text-french-blue font-medium hover:underline group">
+                  Analyser 
+                  <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-3">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Plan Stratégique de Développement</h3>
                 <p className="text-gray-600 mb-6">
