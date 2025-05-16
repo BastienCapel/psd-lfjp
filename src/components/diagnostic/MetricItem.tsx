@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Progress } from "@/components/ui/progress";
-import { ArrowUp, ArrowDown } from "lucide-react";
+import { ThumbsUp, ThumbsDown } from "lucide-react";
 
 interface MetricItemProps {
   name: string;
@@ -46,8 +46,8 @@ const MetricItem = ({
                 {value}% 
               </span>
               {trend === 'up' ? 
-                <ArrowUp className={`h-4 w-4 ${inverse ? 'text-red-600' : 'text-green-600'} ml-1`} /> : 
-                <ArrowDown className={`h-4 w-4 ${inverse ? 'text-green-600' : 'text-red-600'} ml-1`} />
+                <ThumbsUp className={`h-4 w-4 ${inverse ? 'text-red-600' : 'text-green-600'} ml-1`} /> : 
+                <ThumbsDown className={`h-4 w-4 ${inverse ? 'text-green-600' : 'text-red-600'} ml-1`} />
               }
             </>
           ) : (
