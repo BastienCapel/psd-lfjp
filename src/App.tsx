@@ -54,6 +54,7 @@ const App = () => {
                 } />
                 <Route path="/elcs-analyse-complete" element={
                   <>
+                    <BreadcrumbNav />
                     <ElcsAnalyseComplete />
                     <BackToTop />
                   </>
