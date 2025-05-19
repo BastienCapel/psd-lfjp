@@ -1,3 +1,4 @@
+
 import React from 'react';
 import DiagnosticCard from './DiagnosticCard';
 import MetricCard from './MetricCard';
@@ -80,14 +81,14 @@ const DiagnosticRestaurantContent = () => {
   const COLORS = ['#0055A4', '#EF4135', '#FFCD00', '#38b000', '#9381ff'];
 
   // Statistiques clés - Fixed trend property to be either "up" or "down", not just any string
-  const keyMetrics = [
+  const keyMetrics: { name: string; value: number | string; label: string; trend: "up" | "down" }[] = [
     { name: "Intérêt global pour la restauration scolaire", value: 92, label: "des parents intéressés", trend: "up" },
     { name: "Plats chauds", value: 81.3, label: "des parents souhaitent des plats chauds", trend: "up" },
     { name: "Budget moyen par plat", value: "1500-2000 FCFA", label: "pour 55% des parents", trend: "up" }
   ];
 
   // Points d'attention - Since these are alerts, using "down" as the trend value seems appropriate
-  const alertPoints = [
+  const alertPoints: { name: string; value: string; label: string; trend: "up" | "down" }[] = [
     { name: "Mercredi", value: "36.3%", label: "d'intérêt seulement (vs +80% autres jours)", trend: "down" },
     { name: "Options alimentaires spécifiques", value: "33.3%", label: "demandent l'option végétarienne", trend: "down" },
     { name: "Tarification", value: "58.8%", label: "acceptent 2000-3000 FCFA pour un menu complet", trend: "down" }
