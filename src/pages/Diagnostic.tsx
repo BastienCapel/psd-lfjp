@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import DiagnosticElcsContent from '../components/diagnostic/DiagnosticElcsContent';
 import DiagnosticPsdContent from '../components/diagnostic/DiagnosticPsdContent';
+import DiagnosticRestaurantContent from '../components/diagnostic/DiagnosticRestaurantContent';
 import { ElcsDataProvider } from '../components/diagnostic/ElcsDataContext';
 import BackToTop from '../components/BackToTop';
 
@@ -27,9 +28,12 @@ const Diagnostic = () => {
       <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <Tabs defaultValue="elcs" className="w-full">
-            <TabsList className="mb-8 w-full max-w-md mx-auto grid grid-cols-2">
+            <TabsList className="mb-8 w-full max-w-md mx-auto grid grid-cols-3">
               <TabsTrigger value="elcs" className="text-sm md:text-base font-medium">
                 Diagnostic ELCS
+              </TabsTrigger>
+              <TabsTrigger value="restaurant" className="text-sm md:text-base font-medium">
+                Restauration Scolaire
               </TabsTrigger>
               <TabsTrigger value="psd" className="text-sm md:text-base font-medium">
                 Diagnostic PSD
@@ -40,6 +44,10 @@ const Diagnostic = () => {
               <ElcsDataProvider>
                 <DiagnosticElcsContent />
               </ElcsDataProvider>
+            </TabsContent>
+            
+            <TabsContent value="restaurant">
+              <DiagnosticRestaurantContent />
             </TabsContent>
             
             <TabsContent value="psd">
