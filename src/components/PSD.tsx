@@ -14,23 +14,12 @@ const PSD = () => {
           
           <div className="text-center mb-12">
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Actions prioritaires</h3>
-            <p className="text-lg font-raleway text-gray-700 mb-2">
+            <Link 
+              to="/section-internationale-bfi"
+              className="text-lg font-raleway text-french-blue hover:text-blue-700 underline mb-2 block"
+            >
               Déploiement du plan « Section Internationale et BFI » (2026-2033)
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
-              <Link 
-                to="/section-internationale-bfi" 
-                className="inline-flex items-center text-french-blue hover:text-blue-700 underline font-medium"
-              >
-                → Découvrir le plan de déploiement Section Internationale et BFI
-              </Link>
-              <Link 
-                to="/plan-deploiement-detaille" 
-                className="inline-flex items-center text-french-blue hover:text-blue-700 underline font-medium"
-              >
-                → Accéder au plan d'action détaillé
-              </Link>
-            </div>
+            </Link>
             <div className="flex justify-center">
               <Link 
                 to="/deploiement-plan-section-internationale-bfi" 

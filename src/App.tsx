@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -14,7 +15,6 @@ import PCParLyceen from "./pages/PCParLyceen";
 import PlanPeintureRavalement from "./pages/PlanPeintureRavalement";
 import ElcsAnalyseComplete from "./pages/ElcsAnalyseComplete";
 import SectionInternationaleBFI from "./pages/SectionInternationaleBFI";
-import PlanDeploiementDetaille from "./pages/PlanDeploiementDetaille";
 import DeploiementPlanSectionInternationaleBFI from "./pages/DeploiementPlanSectionInternationaleBFI";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
@@ -72,13 +72,6 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <SectionInternationaleBFI />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/plan-deploiement-detaille" element={
-                  <>
-                    <BreadcrumbNav />
-                    <PlanDeploiementDetaille />
                     <BackToTop />
                   </>
                 } />

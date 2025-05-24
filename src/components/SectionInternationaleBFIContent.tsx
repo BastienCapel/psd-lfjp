@@ -1,10 +1,12 @@
-
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, Users, DollarSign, BookOpen, Target, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
+import { Calendar, Users, DollarSign, BookOpen, Target, TrendingUp, CheckCircle, ArrowRight, ArrowLeft, Home } from 'lucide-react';
 
 const SectionInternationaleBFIContent = () => {
+  const navigate = useNavigate();
+
   const keyIndicators = [
     {
       icon: Users,
@@ -116,6 +118,26 @@ const SectionInternationaleBFIContent = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           
+          {/* Boutons de navigation en haut */}
+          <div className="flex justify-between items-center mb-8">
+            <Button 
+              variant="outline" 
+              onClick={() => navigate('/plan-strategique')}
+              className="flex items-center"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Retour au plan stratégique
+            </Button>
+            <Button 
+              variant="outline" 
+              onClick={() => navigate('/')}
+              className="flex items-center"
+            >
+              <Home className="mr-2 h-4 w-4" />
+              Accueil
+            </Button>
+          </div>
+
           {/* Introduction */}
           <Card className="mb-8 border-french-blue/10 shadow-md">
             <CardHeader>
@@ -299,15 +321,16 @@ const SectionInternationaleBFIContent = () => {
             </CardContent>
           </Card>
 
-          {/* Bouton d'action */}
+          {/* Bouton d'action mis à jour */}
           <div className="text-center">
-            <Button 
-              className="bg-french-blue hover:bg-blue-700 text-white px-8 py-3 text-lg font-semibold"
-              onClick={() => window.open('#', '_blank')}
-            >
-              Accéder au plan d'action détaillé
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/deploiement-plan-section-internationale-bfi">
+              <Button 
+                className="bg-french-blue hover:bg-blue-700 text-white px-8 py-3 text-lg font-semibold"
+              >
+                Accéder au plan d'action détaillé
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
 
         </div>

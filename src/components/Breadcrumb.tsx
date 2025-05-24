@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
@@ -24,7 +23,6 @@ const routes: RouteMap = {
   "/diagnostic": { name: "Diagnostic", parent: "/" },
   "/plan-strategique": { name: "Plan Stratégique", parent: "/" },
   "/section-internationale-bfi": { name: "Section Internationale et BFI", parent: "/plan-strategique" },
-  "/plan-deploiement-detaille": { name: "Plan de Déploiement Détaillé", parent: "/section-internationale-bfi" },
   "/deploiement-plan-section-internationale-bfi": { name: "Déploiement du Plan Section Internationale et BFI", parent: "/plan-strategique" },
   "/amelioration-acoustique": { name: "Amélioration Acoustique", parent: "/" },
   "/pc-par-lyceen": { name: "PC par Lycéen", parent: "/" },
