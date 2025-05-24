@@ -23,6 +23,7 @@ const routes: RouteMap = {
   "/vision-missions-valeurs": { name: "Vision, Missions et Valeurs", parent: "/" },
   "/diagnostic": { name: "Diagnostic", parent: "/" },
   "/plan-strategique": { name: "Plan Stratégique", parent: "/" },
+  "/section-internationale-bfi": { name: "Section Internationale et BFI", parent: "/plan-strategique" },
   "/amelioration-acoustique": { name: "Amélioration Acoustique", parent: "/" },
   "/pc-par-lyceen": { name: "PC par Lycéen", parent: "/" },
   "/plan-peinture-ravalement": { name: "Plan Peinture et Ravalement", parent: "/" },

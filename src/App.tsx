@@ -66,6 +66,13 @@ const App = () => {
                     <BackToTop />
                   </>
                 } />
+                <Route path="/section-internationale-bfi" element={
+                  <>
+                    <BreadcrumbNav />
+                    <SectionInternationaleBFI />
+                    <BackToTop />
+                  </>
+                } />
                 <Route path="/amelioration-acoustique" element={
                   <>
                     <BreadcrumbNav />
