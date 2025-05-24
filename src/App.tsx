@@ -14,6 +14,7 @@ import AmeliorationAcoustique from "./pages/AmeliorationAcoustique";
 import PCParLyceen from "./pages/PCParLyceen";
 import PlanPeintureRavalement from "./pages/PlanPeintureRavalement";
 import ElcsAnalyseComplete from "./pages/ElcsAnalyseComplete";
+import SectionInternationaleBFI from "./pages/SectionInternationaleBFI";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 
