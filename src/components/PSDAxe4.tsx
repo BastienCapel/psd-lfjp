@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ExternalLink } from 'lucide-react';
 import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe4 = () => {
@@ -11,7 +13,10 @@ const PSDAxe4 = () => {
   ];
   
   const actions = [
-    { text: 'Déploiement du plan « Section Internationale et BFI » (2026-2033)' },
+    { 
+      text: 'Déploiement du plan « Section Internationale et BFI » (2026-2033)',
+      link: '/section-internationale-bfi'
+    },
     { text: 'Déploiement d\'outils de découverte des métiers' },
     { text: 'Modules d\'accompagnement à l\'autonomie' },
     { text: 'Séances d\'orientation coanimées' }
