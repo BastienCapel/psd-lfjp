@@ -1,4 +1,6 @@
+
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PSDIntroduction from './PSDIntroduction';
 import PSDTabs from './PSDTabs';
 const PSD = () => {
@@ -8,14 +10,27 @@ const PSD = () => {
           <h2 className="text-3xl font-playfair font-bold text-french-blue mb-6 text-center">
             Bienvenue sur le site du plan stratégique de développement du Lycée Français Jacques Prévert de Saly
           </h2>
-          <p className="text-lg text-center font-raleway text-gray-700 mb-12">
-            <a 
-              href="/section-internationale-bfi" 
-              className="inline-flex items-center text-french-blue hover:text-blue-700 underline font-medium ml-4"
-            >
-              → Découvrir le plan de déploiement Section Internationale et BFI
-            </a>
-          </p>
+          
+          <div className="text-center mb-12">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">Actions prioritaires</h3>
+            <p className="text-lg font-raleway text-gray-700 mb-2">
+              Déploiement du plan « Section Internationale et BFI » (2026-2033)
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link 
+                to="/section-internationale-bfi" 
+                className="inline-flex items-center text-french-blue hover:text-blue-700 underline font-medium"
+              >
+                → Découvrir le plan de déploiement Section Internationale et BFI
+              </Link>
+              <Link 
+                to="/plan-deploiement-detaille" 
+                className="inline-flex items-center text-french-blue hover:text-blue-700 underline font-medium"
+              >
+                → Accéder au plan d'action détaillé
+              </Link>
+            </div>
+          </div>
 
           <PSDIntroduction />
           <PSDTabs />
