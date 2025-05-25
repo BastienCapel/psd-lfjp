@@ -15,8 +15,8 @@ const DeploiementPlanSectionInternationaleBFI = () => {
       <Navbar showLogo={true} />
       <div className="bg-gradient-to-r from-french-blue to-blue-700 text-white py-24 md:py-32">
         <div className="container mx-auto px-6">
-          {/* Boutons de navigation en haut */}
-          <div className="flex justify-between items-center mb-8">
+          {/* Boutons de navigation en haut côte à côte */}
+          <div className="flex gap-4 mb-8">
             <Button 
               variant="outline" 
               onClick={() => navigate('/plan-strategique')}
