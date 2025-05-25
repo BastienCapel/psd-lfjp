@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -98,6 +97,7 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                     <li>La structure est prête, attente de l'autorisation officielle</li>
                     <li>Préparation des équipes et des outils pédagogiques</li>
                     <li>Communication auprès des familles</li>
+                    <li>Ouverture de la Section Internationale sur tout le primaire</li>
                   </ul>
                 </div>
                 
@@ -105,7 +105,7 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                   <h4 className="font-semibold text-french-blue mb-2">2027-2028 : Phase de lancement</h4>
                   <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                     <li>Ouverture de la Section Internationale en 6ème (20 élèves)</li>
-                    <li>Recrutement des enseignants spécialisés</li>
+                    <li>Fonctionnement à moyens constants</li>
                     <li>Mise en place des infrastructures nécessaires</li>
                     <li>Formation des équipes pédagogiques</li>
                   </ul>
@@ -115,7 +115,7 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                   <h4 className="font-semibold text-french-blue mb-2">2028-2029 : Extension au collège</h4>
                   <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                     <li>Ouverture de la 5ème Section Internationale (40 élèves total)</li>
-                    <li>Renforcement de l'équipe pédagogique</li>
+                    <li>Consolidation des moyens existants</li>
                     <li>Développement des partenariats internationaux</li>
                   </ul>
                 </div>
@@ -130,9 +130,10 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                 </div>
                 
                 <div className="bg-gray-100 p-4 rounded-lg">
-                  <h4 className="font-semibold text-french-blue mb-2">2030-2031 : Finalisation collège</h4>
+                  <h4 className="font-semibold text-french-blue mb-2">2030-2031 : Finalisation collège et premier recrutement</h4>
                   <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                     <li>Ouverture de la 3ème Section Internationale (80 élèves total)</li>
+                    <li>Premier recrutement d'enseignant (seuil de 24h/semaine atteint)</li>
                     <li>Premiers diplômes nationaux du brevet avec mention internationale</li>
                   </ul>
                 </div>
@@ -154,9 +155,10 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                 </div>
                 
                 <div className="bg-green-100 p-4 rounded-lg">
-                  <h4 className="font-semibold text-green-800 mb-2">2033-2034 : Maturité complète</h4>
+                  <h4 className="font-semibold text-green-800 mb-2">2033-2034 : Maturité complète et second recrutement</h4>
                   <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                     <li>Ouverture de la Terminale Section Internationale et BFI (140 élèves total)</li>
+                    <li>Second recrutement d'enseignant (seuil de 42h/semaine atteint)</li>
                     <li>Premiers baccalauréats avec OIB et BFI</li>
                     <li>Évaluation complète du dispositif</li>
                   </ul>
@@ -184,31 +186,49 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                   <TableRow>
                     <TableCell>2026</TableCell>
                     <TableCell>0</TableCell>
-                    <TableCell>Préparation administrative</TableCell>
+                    <TableCell>Ouverture SI sur tout le primaire</TableCell>
                     <TableCell>Demande DGESCO</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>2027-2028</TableCell>
-                    <TableCell>2 ETP</TableCell>
-                    <TableCell>Anglais natif + Histoire-Géo bilingue</TableCell>
+                    <TableCell>0</TableCell>
+                    <TableCell>Moyens constants</TableCell>
                     <TableCell>Formation SI/BFI</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>2028-2029</TableCell>
-                    <TableCell>1 ETP</TableCell>
-                    <TableCell>Anglais littérature</TableCell>
+                    <TableCell>0</TableCell>
+                    <TableCell>Moyens constants</TableCell>
                     <TableCell>Accompagnement pédagogique</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>2029-2030</TableCell>
-                    <TableCell>1 ETP</TableCell>
-                    <TableCell>Sciences en anglais</TableCell>
+                    <TableCell>0</TableCell>
+                    <TableCell>Moyens constants</TableCell>
                     <TableCell>Formation continue</TableCell>
                   </TableRow>
                   <TableRow>
+                    <TableCell>2030-2031</TableCell>
+                    <TableCell>1 ETP</TableCell>
+                    <TableCell>Anglais natif + Histoire-Géo bilingue</TableCell>
+                    <TableCell>Formation SI/BFI</TableCell>
+                  </TableRow>
+                  <TableRow>
                     <TableCell>2031-2032</TableCell>
-                    <TableCell>2 ETP</TableCell>
-                    <TableCell>Enseignants lycée spécialisés</TableCell>
+                    <TableCell>0</TableCell>
+                    <TableCell>Consolidation équipe</TableCell>
+                    <TableCell>Certification BFI</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>2032-2033</TableCell>
+                    <TableCell>0</TableCell>
+                    <TableCell>Équipe stabilisée</TableCell>
+                    <TableCell>Formation continue</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>2033-2034</TableCell>
+                    <TableCell>1 ETP</TableCell>
+                    <TableCell>Enseignant lycée spécialisé</TableCell>
                     <TableCell>Certification BFI</TableCell>
                   </TableRow>
                 </TableBody>

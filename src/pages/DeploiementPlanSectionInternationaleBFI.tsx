@@ -25,7 +25,7 @@ const DeploiementPlanSectionInternationaleBFI = () => {
       </div>
 
       <div className="container mx-auto px-6 py-4 flex gap-2">
-        <Button variant="outline" onClick={() => navigate('/plan-strategique')}>
+        <Button variant="outline" onClick={() => navigate('/section-internationale-bfi')}>
           <ArrowLeft className="mr-2 h-4 w-4" />
           Retour
         </Button>
