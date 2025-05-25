@@ -42,8 +42,10 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                 renforcer l'attractivité et l'excellence de l'établissement.
               </p>
               <div className="bg-blue-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-french-blue mb-2">Contexte stratégique</h4>
+                <h4 className="font-semibold text-french-blue mb-2">Contexte stratégique et point de départ</h4>
                 <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+                  <li><strong>2026 :</strong> Demande d'autorisation à la DGESCO pour la Section Internationale sur tout le primaire</li>
+                  <li>La structure est déjà prête, seule l'autorisation officielle est requise</li>
                   <li>Demande croissante pour un enseignement bilingue de qualité</li>
                   <li>Positionnement concurrentiel sur le marché éducatif sénégalais</li>
                   <li>Réponse aux attentes des familles internationales</li>
@@ -89,8 +91,18 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid gap-4">
+                <div className="bg-yellow-100 p-4 rounded-lg border-l-4 border-yellow-500">
+                  <h4 className="font-semibold text-yellow-800 mb-2">2026 : Phase de préparation</h4>
+                  <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+                    <li>Demande d'autorisation à la DGESCO pour la Section Internationale sur tout le primaire</li>
+                    <li>La structure est prête, attente de l'autorisation officielle</li>
+                    <li>Préparation des équipes et des outils pédagogiques</li>
+                    <li>Communication auprès des familles</li>
+                  </ul>
+                </div>
+                
                 <div className="bg-gray-100 p-4 rounded-lg">
-                  <h4 className="font-semibold text-french-blue mb-2">2026-2027 : Phase de lancement</h4>
+                  <h4 className="font-semibold text-french-blue mb-2">2027-2028 : Phase de lancement</h4>
                   <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                     <li>Ouverture de la Section Internationale en 6ème (20 élèves)</li>
                     <li>Recrutement des enseignants spécialisés</li>
@@ -100,7 +112,7 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                 </div>
                 
                 <div className="bg-gray-100 p-4 rounded-lg">
-                  <h4 className="font-semibold text-french-blue mb-2">2027-2028 : Extension au collège</h4>
+                  <h4 className="font-semibold text-french-blue mb-2">2028-2029 : Extension au collège</h4>
                   <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                     <li>Ouverture de la 5ème Section Internationale (40 élèves total)</li>
                     <li>Renforcement de l'équipe pédagogique</li>
@@ -109,7 +121,7 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                 </div>
                 
                 <div className="bg-gray-100 p-4 rounded-lg">
-                  <h4 className="font-semibold text-french-blue mb-2">2028-2029 : Consolidation collège</h4>
+                  <h4 className="font-semibold text-french-blue mb-2">2029-2030 : Consolidation collège</h4>
                   <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                     <li>Ouverture de la 4ème Section Internationale (60 élèves total)</li>
                     <li>Préparation de l'extension au lycée</li>
@@ -118,7 +130,7 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                 </div>
                 
                 <div className="bg-gray-100 p-4 rounded-lg">
-                  <h4 className="font-semibold text-french-blue mb-2">2029-2030 : Finalisation collège</h4>
+                  <h4 className="font-semibold text-french-blue mb-2">2030-2031 : Finalisation collège</h4>
                   <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                     <li>Ouverture de la 3ème Section Internationale (80 élèves total)</li>
                     <li>Premiers diplômes nationaux du brevet avec mention internationale</li>
@@ -126,7 +138,7 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                 </div>
                 
                 <div className="bg-green-100 p-4 rounded-lg">
-                  <h4 className="font-semibold text-green-800 mb-2">2030-2031 : Extension lycée</h4>
+                  <h4 className="font-semibold text-green-800 mb-2">2031-2032 : Extension lycée</h4>
                   <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                     <li>Ouverture de la 2nde Section Internationale et BFI (100 élèves total)</li>
                     <li>Mise en place du programme BFI</li>
@@ -134,7 +146,7 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                 </div>
                 
                 <div className="bg-green-100 p-4 rounded-lg">
-                  <h4 className="font-semibold text-green-800 mb-2">2031-2032 : Développement lycée</h4>
+                  <h4 className="font-semibold text-green-800 mb-2">2032-2033 : Développement lycée</h4>
                   <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                     <li>Ouverture de la 1ère Section Internationale et BFI (120 élèves total)</li>
                     <li>Préparation aux certifications internationales</li>
@@ -142,7 +154,7 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                 </div>
                 
                 <div className="bg-green-100 p-4 rounded-lg">
-                  <h4 className="font-semibold text-green-800 mb-2">2032-2033 : Maturité complète</h4>
+                  <h4 className="font-semibold text-green-800 mb-2">2033-2034 : Maturité complète</h4>
                   <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
                     <li>Ouverture de la Terminale Section Internationale et BFI (140 élèves total)</li>
                     <li>Premiers baccalauréats avec OIB et BFI</li>
@@ -170,25 +182,31 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                 </TableHeader>
                 <TableBody>
                   <TableRow>
-                    <TableCell>2026-2027</TableCell>
+                    <TableCell>2026</TableCell>
+                    <TableCell>0</TableCell>
+                    <TableCell>Préparation administrative</TableCell>
+                    <TableCell>Demande DGESCO</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>2027-2028</TableCell>
                     <TableCell>2 ETP</TableCell>
                     <TableCell>Anglais natif + Histoire-Géo bilingue</TableCell>
                     <TableCell>Formation SI/BFI</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell>2027-2028</TableCell>
+                    <TableCell>2028-2029</TableCell>
                     <TableCell>1 ETP</TableCell>
                     <TableCell>Anglais littérature</TableCell>
                     <TableCell>Accompagnement pédagogique</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell>2028-2029</TableCell>
+                    <TableCell>2029-2030</TableCell>
                     <TableCell>1 ETP</TableCell>
                     <TableCell>Sciences en anglais</TableCell>
                     <TableCell>Formation continue</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell>2030-2031</TableCell>
+                    <TableCell>2031-2032</TableCell>
                     <TableCell>2 ETP</TableCell>
                     <TableCell>Enseignants lycée spécialisés</TableCell>
                     <TableCell>Certification BFI</TableCell>
@@ -217,43 +235,49 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                   </TableHeader>
                   <TableBody>
                     <TableRow>
-                      <TableCell>2026-2027</TableCell>
+                      <TableCell>2026</TableCell>
+                      <TableCell>0 k€</TableCell>
+                      <TableCell>0 k€</TableCell>
+                      <TableCell>0 k€</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>2027-2028</TableCell>
                       <TableCell>45 k€</TableCell>
                       <TableCell>55 k€</TableCell>
                       <TableCell>65 k€</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell>2027-2028</TableCell>
+                      <TableCell>2028-2029</TableCell>
                       <TableCell>95 k€</TableCell>
                       <TableCell>115 k€</TableCell>
                       <TableCell>135 k€</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell>2028-2029</TableCell>
+                      <TableCell>2029-2030</TableCell>
                       <TableCell>145 k€</TableCell>
                       <TableCell>175 k€</TableCell>
                       <TableCell>205 k€</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell>2029-2030</TableCell>
+                      <TableCell>2030-2031</TableCell>
                       <TableCell>195 k€</TableCell>
                       <TableCell>235 k€</TableCell>
                       <TableCell>275 k€</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell>2030-2031</TableCell>
+                      <TableCell>2031-2032</TableCell>
                       <TableCell>245 k€</TableCell>
                       <TableCell>295 k€</TableCell>
                       <TableCell>345 k€</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell>2031-2032</TableCell>
+                      <TableCell>2032-2033</TableCell>
                       <TableCell>295 k€</TableCell>
                       <TableCell>355 k€</TableCell>
                       <TableCell>415 k€</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell>2032-2033</TableCell>
+                      <TableCell>2033-2034</TableCell>
                       <TableCell>345 k€</TableCell>
                       <TableCell>415 k€</TableCell>
                       <TableCell>485 k€</TableCell>
@@ -276,53 +300,60 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                   </TableHeader>
                   <TableBody>
                     <TableRow>
-                      <TableCell>2026-2027</TableCell>
-                      <TableCell>55 k€</TableCell>
-                      <TableCell>75 k€</TableCell>
-                      <TableCell className="text-red-600">-20 k€</TableCell>
-                      <TableCell className="text-red-600">-20 k€</TableCell>
+                      <TableCell>2026</TableCell>
+                      <TableCell>0 k€</TableCell>
+                      <TableCell>5 k€</TableCell>
+                      <TableCell className="text-red-600">-5 k€</TableCell>
+                      <TableCell className="text-red-600">-5 k€</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell>2027-2028</TableCell>
-                      <TableCell>115 k€</TableCell>
-                      <TableCell>95 k€</TableCell>
-                      <TableCell className="text-green-600">+20 k€</TableCell>
-                      <TableCell className="text-black">0 k€</TableCell>
+                      <TableCell>55 k€</TableCell>
+                      <TableCell>75 k€</TableCell>
+                      <TableCell className="text-red-600">-20 k€</TableCell>
+                      <TableCell className="text-red-600">-25 k€</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell>2028-2029</TableCell>
-                      <TableCell>175 k€</TableCell>
                       <TableCell>115 k€</TableCell>
-                      <TableCell className="text-green-600">+60 k€</TableCell>
-                      <TableCell className="text-green-600">+60 k€</TableCell>
+                      <TableCell>95 k€</TableCell>
+                      <TableCell className="text-green-600">+20 k€</TableCell>
+                      <TableCell className="text-red-600">-5 k€</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell>2029-2030</TableCell>
-                      <TableCell>235 k€</TableCell>
-                      <TableCell>135 k€</TableCell>
-                      <TableCell className="text-green-600">+100 k€</TableCell>
-                      <TableCell className="text-green-600">+160 k€</TableCell>
+                      <TableCell>175 k€</TableCell>
+                      <TableCell>115 k€</TableCell>
+                      <TableCell className="text-green-600">+60 k€</TableCell>
+                      <TableCell className="text-green-600">+55 k€</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell>2030-2031</TableCell>
-                      <TableCell>295 k€</TableCell>
-                      <TableCell>175 k€</TableCell>
-                      <TableCell className="text-green-600">+120 k€</TableCell>
-                      <TableCell className="text-green-600">+280 k€</TableCell>
+                      <TableCell>235 k€</TableCell>
+                      <TableCell>135 k€</TableCell>
+                      <TableCell className="text-green-600">+100 k€</TableCell>
+                      <TableCell className="text-green-600">+155 k€</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell>2031-2032</TableCell>
-                      <TableCell>355 k€</TableCell>
-                      <TableCell>195 k€</TableCell>
-                      <TableCell className="text-green-600">+160 k€</TableCell>
-                      <TableCell className="text-green-600">+440 k€</TableCell>
+                      <TableCell>295 k€</TableCell>
+                      <TableCell>175 k€</TableCell>
+                      <TableCell className="text-green-600">+120 k€</TableCell>
+                      <TableCell className="text-green-600">+275 k€</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell>2032-2033</TableCell>
+                      <TableCell>355 k€</TableCell>
+                      <TableCell>195 k€</TableCell>
+                      <TableCell className="text-green-600">+160 k€</TableCell>
+                      <TableCell className="text-green-600">+435 k€</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>2033-2034</TableCell>
                       <TableCell>415 k€</TableCell>
                       <TableCell>215 k€</TableCell>
                       <TableCell className="text-green-600">+200 k€</TableCell>
-                      <TableCell className="text-green-600">+640 k€</TableCell>
+                      <TableCell className="text-green-600">+635 k€</TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>
@@ -376,33 +407,39 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
                 </TableHeader>
                 <TableBody>
                   <TableRow>
+                    <TableCell>Demande d'autorisation DGESCO</TableCell>
+                    <TableCell>Direction</TableCell>
+                    <TableCell>2026</TableCell>
+                    <TableCell>Dossier déposé</TableCell>
+                  </TableRow>
+                  <TableRow>
                     <TableCell>Validation du projet par l'AEFE</TableCell>
                     <TableCell>Direction</TableCell>
-                    <TableCell>Mars 2026</TableCell>
+                    <TableCell>Mars 2027</TableCell>
                     <TableCell>Accord officiel</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>Recrutement enseignants</TableCell>
                     <TableCell>RH + Direction</TableCell>
-                    <TableCell>Juin 2026</TableCell>
+                    <TableCell>Juin 2027</TableCell>
                     <TableCell>Postes pourvus</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>Formation des équipes</TableCell>
                     <TableCell>Direction pédagogique</TableCell>
-                    <TableCell>Août 2026</TableCell>
+                    <TableCell>Août 2027</TableCell>
                     <TableCell>Certification obtenue</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>Aménagement des locaux</TableCell>
                     <TableCell>Direction administrative</TableCell>
-                    <TableCell>Août 2026</TableCell>
+                    <TableCell>Août 2027</TableCell>
                     <TableCell>Locaux opérationnels</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>Lancement communication</TableCell>
                     <TableCell>Direction + Communication</TableCell>
-                    <TableCell>Janvier 2026</TableCell>
+                    <TableCell>Janvier 2027</TableCell>
                     <TableCell>Campagne déployée</TableCell>
                   </TableRow>
                 </TableBody>
@@ -457,12 +494,13 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
               <p className="text-gray-700">
                 Le déploiement progressif de la Section Internationale Américaine et du BFI au Lycée Français 
                 Jacques Prévert de Saly représente un investissement stratégique majeur pour l'avenir de 
-                l'établissement. Ce plan détaillé sur 7 ans (2026-2033) permettra :
+                l'établissement. Ce plan détaillé sur 8 ans (2026-2034) permettra :
               </p>
               <div className="bg-blue-50 p-4 rounded-lg">
                 <ul className="list-disc list-inside space-y-2 text-gray-700">
-                  <li><strong>Une croissance maîtrisée</strong> : de 20 élèves en 2026 à 140 élèves en 2033</li>
-                  <li><strong>Un retour sur investissement positif</strong> dès la 3ème année</li>
+                  <li><strong>Une préparation méthodique</strong> : demande DGESCO en 2026, structure prête</li>
+                  <li><strong>Une croissance maîtrisée</strong> : de 20 élèves en 2027 à 140 élèves en 2034</li>
+                  <li><strong>Un retour sur investissement positif</strong> dès la 4ème année</li>
                   <li><strong>Un positionnement d'excellence</strong> sur le marché éducatif sénégalais</li>
                   <li><strong>Une ouverture internationale renforcée</strong> pour tous les élèves</li>
                 </ul>

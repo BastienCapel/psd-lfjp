@@ -39,7 +39,7 @@ const DeploiementPlanSectionInternationaleBFI = () => {
             DÉPLOIEMENT DU PLAN « SECTION INTERNATIONALE ET BFI »
           </h1>
           <p className="text-xl md:text-2xl font-raleway font-light max-w-3xl opacity-0 animate-fade-in-delay-1">
-            Plan détaillé de déploiement progressif (2026-2033)
+            Plan détaillé de déploiement progressif (2026-2034)
           </p>
         </div>
       </div>

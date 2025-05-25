@@ -17,8 +17,8 @@ const SectionInternationaleBFIContent = () => {
     {
       icon: Calendar,
       title: "Durée du déploiement",
-      value: "7 ans",
-      description: "De 2027 (6ème) à 2034 (BFI)"
+      value: "8 ans",
+      description: "De 2026 (demande DGESCO) à 2034 (BFI)"
     },
     {
       icon: DollarSign,
@@ -35,6 +35,13 @@ const SectionInternationaleBFIContent = () => {
   ];
 
   const deploymentPhases = [
+    {
+      year: "2026",
+      level: "Demande DGESCO",
+      students: "Primaire SI",
+      hours: "Autorisation",
+      revenue: "Préparation"
+    },
     {
       year: "2027-2028",
       level: "6ème SI",
@@ -153,6 +160,11 @@ const SectionInternationaleBFIContent = () => {
                 Ce projet s'inscrit dans une volonté d'enrichir l'offre pédagogique de l'établissement et de 
                 répondre aux attentes des familles en matière d'éducation internationale.
               </p>
+              <p className="text-gray-700 mb-4">
+                <strong>Point de départ :</strong> En 2026, l'établissement fera une demande d'autorisation 
+                à la DGESCO pour l'ouverture d'une Section Internationale sur tout le primaire. La structure 
+                est déjà prête, il ne manque que l'autorisation officielle.
+              </p>
               <p className="text-gray-700">
                 La Section Internationale Américaine représente un parcours d'excellence qui permet aux élèves 
                 de développer un bilinguisme approfondi et une compréhension interculturelle, tout en suivant 
@@ -202,7 +214,7 @@ const SectionInternationaleBFIContent = () => {
             <CardHeader>
               <CardTitle className="text-2xl text-french-blue">Calendrier de déploiement progressif</CardTitle>
               <CardDescription>
-                Montée en charge niveau par niveau de 2027 à 2034
+                De la demande DGESCO en 2026 à l'ouverture BFI en 2034
               </CardDescription>
             </CardHeader>
             <CardContent>
