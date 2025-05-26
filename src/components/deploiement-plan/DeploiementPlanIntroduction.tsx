@@ -10,22 +10,25 @@ const DeploiementPlanIntroduction = () => {
       </CardHeader>
       <CardContent className="space-y-4">
         <p className="text-gray-700">
-          Le Lycée Français Jacques Prévert de Saly s'engage dans une démarche ambitieuse de développement 
-          d'une Section Internationale Américaine et d'un programme de Baccalauréat Français International (BFI). 
-          Cette initiative s'inscrit dans le cadre du Plan Stratégique de Développement 2026-2030 et vise à 
-          renforcer l'attractivité et l'excellence de l'établissement.
+          Le lycée français Jacques Prévert de Saly s'engage dans un projet ambitieux d'ouverture 
+          d'une Section Internationale Américaine (SI) suivie du Baccalauréat Français 
+          International (BFI). Ce projet s'inscrit dans une volonté d'enrichir l'offre pédagogique de 
+          l'établissement et de répondre aux attentes des familles en matière d'éducation 
+          internationale.
         </p>
-        <div className="bg-blue-50 p-4 rounded-lg">
-          <h4 className="font-semibold text-french-blue mb-2">Contexte stratégique et point de départ</h4>
-          <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
-            <li><strong>2026 :</strong> Demande d'autorisation à la DGESCO pour la Section Internationale sur tout le primaire</li>
-            <li>La structure est déjà prête, seule l'autorisation officielle est requise</li>
-            <li>Demande croissante pour un enseignement bilingue de qualité</li>
-            <li>Positionnement concurrentiel sur le marché éducatif sénégalais</li>
-            <li>Réponse aux attentes des familles internationales</li>
-            <li>Valorisation du projet pédagogique de l'établissement</li>
-          </ul>
-        </div>
+        <p className="text-gray-700">
+          La Section Internationale Américaine représente un parcours d'excellence qui permet 
+          aux élèves de développer un bilinguisme approfondi et une compréhension 
+          interculturelle, tout en suivant le programme français. Elle se caractérise par un 
+          enseignement renforcé en langue anglaise, notamment à travers des cours de littérature 
+          américaine et d'histoire-géographie dispensés en anglais.
+        </p>
+        <p className="text-gray-700">
+          Le présent plan de déploiement vise à organiser la mise en place progressive de cette 
+          section, en tenant compte des contraintes pédagogiques, humaines et financières. Il 
+          s'appuie sur une analyse détaillée des besoins et des ressources, et propose des 
+          stratégies adaptées pour assurer la réussite du projet.
+        </p>
       </CardContent>
     </Card>
   );
