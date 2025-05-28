@@ -10,67 +10,42 @@ const DeploiementPlanConclusion = () => {
       </CardHeader>
       <CardContent className="space-y-4">
         <p className="text-gray-700">
-          Le plan de déploiement de la Section Internationale Américaine et du BFI au lycée 
-          français Jacques Prévert de Saly représente un projet ambitieux et structurant pour 
-          l'établissement. Il s'inscrit dans une démarche d'enrichissement de l'offre pédagogique 
-          et d'ouverture internationale, répondant aux attentes des familles et aux enjeux 
-          éducatifs contemporains.
+          Le plan de déploiement révisé de la Section Internationale Américaine et du BFI au lycée 
+          français Jacques Prévert de Saly adopte une approche ambitieuse et structurante, 
+          débutant par une immersion précoce et équitable au primaire.
         </p>
 
         <div className="bg-blue-50 p-4 rounded-lg">
           <p className="text-gray-700 mb-3">
-            L'approche progressive retenue, avec une ouverture niveau par niveau à partir de la 
-            6ème en 2027, permet de maîtriser les impacts organisationnels, humains et financiers 
-            du projet. Elle offre également la possibilité d'ajuster la stratégie au fur et à mesure du 
-            déploiement, en fonction des réalités rencontrées et des retours d'expérience.
+            L'ouverture de la SI pour tous les élèves du primaire dès 2026, sans surcoût, constitue un 
+            investissement pédagogique stratégique de 18M CFA annuels, visant à renforcer 
+            l'attractivité et la qualité de l'offre éducative de l'établissement.
           </p>
 
           <p className="text-gray-700 mb-3">
-            L'analyse des différents scénarios d'effectifs a mis en évidence l'importance d'atteindre 
-            un objectif de 20 élèves par niveau pour assurer la viabilité économique complète du 
-            dispositif et permettre des investissements qualitatifs. Ce scénario haut offre une 
-            perspective particulièrement favorable, avec un excédent financier tout au long du 
-            déploiement et la possibilité d'anticiper certains recrutements pour assurer une 
-            meilleure stabilité pédagogique.
-          </p>
-
-          <p className="text-gray-700">
-            Les options organisationnelles recommandées visent à tirer pleinement parti de cette 
-            situation favorable, en combinant anticipation des recrutements, maintien des frais 
-            d'inscription à 300 000 CFA, et investissements ciblés dans la qualité et le rayonnement 
-            du dispositif. Cette approche centrée sur l'excellence et la pérennité permettra de 
-            développer progressivement un véritable écosystème autour de la SI et du BFI.
+            L'extension progressive au secondaire, sous un format optionnel et payant, vise un 
+            équilibre financier propre, conditionné par la capacité à attirer et fidéliser environ 20 
+            élèves par niveau. L'anticipation des recrutements et la mise en place d'une 
+            coordination intégrée sont recommandées pour assurer la qualité et la cohérence du 
+            dispositif.
           </p>
         </div>
 
         <p className="text-gray-700">
-          La réussite de ce projet reposera sur plusieurs facteurs clés : - La capacité à attirer et 
-          fidéliser 20 élèves par niveau, grâce à une communication efficace et une offre 
-          pédagogique distinctive - La qualité et la stabilité de l'équipe pédagogique dédiée à la SI 
-          - L'implication et l'adhésion de l'ensemble de la communauté éducative - La mise en 
-          place d'une gouvernance efficace et participative - L'enrichissement progressif de l'offre 
-          pédagogique et des activités culturelles
+          La réussite de ce projet repose sur la capacité à :
         </p>
-
-        <p className="text-gray-700">
-          Le comité de pilotage jouera un rôle essentiel dans le suivi du déploiement et 
-          l'ajustement continu du dispositif. Les indicateurs de suivi proposés permettront 
-          d'évaluer régulièrement la pertinence des choix effectués et d'identifier les axes 
-          d'amélioration.
-        </p>
-
-        <p className="text-gray-700">
-          Au-delà des aspects organisationnels et financiers, ce projet porte une ambition 
-          pédagogique forte : offrir aux élèves un parcours d'excellence bilingue et biculturel, les 
-          préparant aux défis d'un monde globalisé. C'est dans cette perspective que s'inscrit 
-          l'aboutissement du projet avec l'ouverture du BFI en 2034, couronnement d'un cycle 
-          complet de formation internationale.
-        </p>
+        
+        <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
+          <li>Assumer l'investissement au primaire et en valoriser les bénéfices.</li>
+          <li>Atteindre les objectifs d'effectifs au secondaire.</li>
+          <li>Maintenir une haute qualité pédagogique et une forte cohérence entre les niveaux.</li>
+          <li>Piloter le dispositif de manière rigoureuse et adaptative.</li>
+        </ul>
 
         <p className="text-gray-700 font-medium">
-          Le présent plan de déploiement constitue une feuille de route structurée mais 
-          adaptative, qui devra vivre et évoluer au fil des années, en conservant toujours comme 
-          boussole la réussite des élèves et la qualité de l'enseignement dispensé.
+          Ce plan offre une feuille de route claire pour faire de la SI/BFI un véritable pôle 
+          d'excellence bilingue et biculturel, contribuant significativement au rayonnement et à 
+          l'attractivité du lycée français Jacques Prévert de Saly.
         </p>
       </CardContent>
     </Card>

@@ -9,103 +9,71 @@ const DeploiementPlanIndicateurs = () => {
         <CardTitle className="text-2xl text-french-blue">8. Indicateurs de suivi et gouvernance</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
-        <p className="text-gray-700">
-          Pour assurer le pilotage efficace du déploiement de la Section Internationale Américaine 
-          et du BFI, il est essentiel de mettre en place des indicateurs de suivi précis et une 
-          gouvernance adaptée.
-        </p>
-
         <div>
           <h4 className="font-semibold text-lg mb-3">Indicateurs de suivi</h4>
-          <p className="text-gray-700 mb-3">
-            Nous recommandons de suivre régulièrement les indicateurs suivants :
-          </p>
-
+          
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-blue-50 p-4 rounded-lg">
-              <h5 className="font-semibold text-blue-800 mb-2">Indicateurs quantitatifs :</h5>
+              <h5 className="font-semibold text-blue-800 mb-2">Primaire :</h5>
               <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
-                <li>Effectifs par niveau (réel vs cible de 20 élèves)</li>
-                <li>Taux de remplissage des classes SI</li>
-                <li>Volume horaire hebdomadaire par enseignant</li>
-                <li>Coût salarial supplémentaire lié à la SI</li>
-                <li>Revenus générés par les frais d'inscription SI</li>
-                <li>Bilan financier annuel de la SI (revenus - coûts)</li>
-                <li>Montant des investissements qualitatifs réalisés</li>
-                <li>Nombre de partenariats formalisés</li>
+                <li>Satisfaction familles/enseignants</li>
+                <li>Qualité EMILE</li>
+                <li>Niveau d'anglais des élèves</li>
               </ul>
             </div>
 
             <div className="bg-green-50 p-4 rounded-lg">
-              <h5 className="font-semibold text-green-800 mb-2">Indicateurs qualitatifs :</h5>
+              <h5 className="font-semibold text-green-800 mb-2">Secondaire :</h5>
               <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
-                <li>Satisfaction des élèves et des familles (enquête annuelle)</li>
-                <li>Satisfaction des enseignants impliqués dans la SI</li>
-                <li>Qualité des productions des élèves</li>
-                <li>Rayonnement de la SI dans l'environnement local</li>
-                <li>Impact sur l'attractivité globale de l'établissement</li>
+                <li>Effectifs SI par niveau (vs cible 20)</li>
+                <li>Taux de poursuite primaire → secondaire</li>
+                <li>Bilan financier SI secondaire</li>
+                <li>Résultats BFI</li>
               </ul>
             </div>
           </div>
 
-          <p className="text-gray-700 mt-3">
-            Ces indicateurs seront suivis par le comité de pilotage et analysés régulièrement pour 
-            identifier les points forts et les axes d'amélioration du dispositif.
-          </p>
+          <div className="bg-purple-50 p-4 rounded-lg mt-4">
+            <h5 className="font-semibold text-purple-800 mb-2">Général :</h5>
+            <ul className="list-disc list-inside space-y-1 text-sm text-gray-700">
+              <li>Attractivité globale établissement</li>
+              <li>Coût total investissement SI</li>
+            </ul>
+          </div>
         </div>
 
         <div>
-          <h4 className="font-semibold text-lg mb-3">Gouvernance du projet</h4>
-          <p className="text-gray-700 mb-3">
-            La gouvernance du projet reposera sur plusieurs instances complémentaires :
-          </p>
-
+          <h4 className="font-semibold text-lg mb-3">Gouvernance</h4>
+          
           <div className="space-y-4">
             <div className="bg-yellow-50 p-4 rounded-lg">
-              <h5 className="font-semibold text-yellow-800 mb-2">Le comité de pilotage SI/BFI :</h5>
-              <p className="text-sm text-gray-700 mb-2">
-                - Composition : direction, coordinateur SI, représentants des enseignants, représentants des parents
-              </p>
-              <p className="text-sm text-gray-700 mb-2">
-                - Rôle : suivi stratégique du déploiement, prise de décisions structurantes, évaluation globale du dispositif
-              </p>
+              <h5 className="font-semibold text-yellow-800 mb-2">Comité de pilotage SI/BFI (stratégique, trimestriel)</h5>
               <p className="text-sm text-gray-700">
-                - Fréquence : réunion trimestrielle (début d'année, mi-parcours, bilan annuel)
+                Suivi stratégique du déploiement, prise de décisions structurantes, évaluation globale du dispositif.
+              </p>
+            </div>
+
+            <div className="bg-blue-50 p-4 rounded-lg">
+              <h5 className="font-semibold text-blue-800 mb-2">Équipe pédagogique SI (coordination opérationnelle, mensuelle)</h5>
+              <p className="text-sm text-gray-700">
+                Coordination pédagogique, harmonisation des pratiques, élaboration des projets interdisciplinaires.
+              </p>
+            </div>
+
+            <div className="bg-green-50 p-4 rounded-lg">
+              <h5 className="font-semibold text-green-800 mb-2">Conseil SI/BFI (concertation, semestrielle)</h5>
+              <p className="text-sm text-gray-700">
+                Concertation sur le fonctionnement quotidien, remontée des besoins, proposition d'améliorations.
               </p>
             </div>
 
             <div className="bg-purple-50 p-4 rounded-lg">
-              <h5 className="font-semibold text-purple-800 mb-2">L'équipe pédagogique SI :</h5>
-              <p className="text-sm text-gray-700 mb-2">
-                - Composition : enseignants intervenant dans la SI, coordinateur SI
-              </p>
-              <p className="text-sm text-gray-700 mb-2">
-                - Rôle : coordination pédagogique, harmonisation des pratiques, élaboration des projets interdisciplinaires
-              </p>
+              <h5 className="font-semibold text-purple-800 mb-2">Coordination intégrée (pilotage quotidien, lien primaire/secondaire)</h5>
               <p className="text-sm text-gray-700">
-                - Fréquence : réunion mensuelle
-              </p>
-            </div>
-
-            <div className="bg-orange-50 p-4 rounded-lg">
-              <h5 className="font-semibold text-orange-800 mb-2">Le conseil SI/BFI :</h5>
-              <p className="text-sm text-gray-700 mb-2">
-                - Composition : direction, coordinateur SI, enseignants SI, délégués des élèves SI, représentants des parents d'élèves SI
-              </p>
-              <p className="text-sm text-gray-700 mb-2">
-                - Rôle : concertation sur le fonctionnement quotidien, remontée des besoins, proposition d'améliorations
-              </p>
-              <p className="text-sm text-gray-700">
-                - Fréquence : réunion semestrielle
+                Assurer la continuité pédagogique, la cohérence globale et une gestion simplifiée entre primaire et secondaire.
               </p>
             </div>
           </div>
-
-          <p className="text-gray-700 mt-3">
-            Cette organisation permettra d'assurer un pilotage à la fois stratégique et opérationnel 
-            du dispositif, en impliquant l'ensemble des parties prenantes dans une démarche 
-            d'amélioration continue.
-          </p>
         </div>
       </CardContent>
     </Card>

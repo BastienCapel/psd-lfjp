@@ -11,123 +11,188 @@ const DeploiementPlanCalendrier = () => {
       <CardContent className="space-y-6">
         <p className="text-gray-700">
           Le déploiement de la Section Internationale Américaine suivra un calendrier progressif, 
-          avec une ouverture niveau par niveau, en commençant par la classe de 6ème en 2027. 
-          Cette approche permet d'accompagner la cohorte initiale jusqu'à l'obtention du BFI, 
-          tout en maîtrisant l'impact sur l'organisation et les ressources de l'établissement.
+          commençant par le primaire puis s'étendant au secondaire, avec des modalités distinctes.
         </p>
 
         <div className="grid gap-4">
-          <div className="bg-yellow-100 p-4 rounded-lg border-l-4 border-yellow-500">
-            <h4 className="font-semibold text-yellow-800 mb-2">Année scolaire 2026-2027</h4>
-            <p className="text-sm text-gray-700 mb-2">
-              Cette année sera consacrée à la préparation de l'ouverture de la SI au secondaire. Les 
-              actions principales comprendront la formation de l'enseignante américaine déjà en 
-              poste, la finalisation des programmes pédagogiques spécifiques à la SI, et la 
-              communication auprès des familles pour préparer le recrutement des élèves. Aucune 
-              heure d'enseignement SI n'est prévue durant cette phase préparatoire.
-            </p>
+          <div className="bg-blue-100 p-4 rounded-lg border-l-4 border-blue-500">
+            <h4 className="font-semibold text-blue-800 mb-2">Année scolaire 2024-2025 : Diagnostic et préparation</h4>
+            <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
+              <li>Diagnostic de l'enseignement de l'anglais au primaire : Volume horaire minimal de 1h/classe, capacité d'enseignement de 27h/semaine.</li>
+              <li>Préparation du recrutement d'un enseignant supplémentaire pour le primaire.</li>
+            </ul>
+          </div>
+          
+          <div className="bg-blue-100 p-4 rounded-lg border-l-4 border-blue-500">
+            <h4 className="font-semibold text-blue-800 mb-2">Année scolaire 2025-2026 : Renforcement primaire</h4>
+            <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
+              <li>Recrutement d'une enseignante supplémentaire pour le primaire.</li>
+              <li>Augmentation de la capacité d'enseignement au primaire à 54h/semaine.</li>
+              <li>Préparation pédagogique (programmes SI/EMILE, formation) pour l'ouverture au primaire.</li>
+              <li>Communication aux familles sur l'ouverture de la SI primaire.</li>
+            </ul>
+          </div>
+          
+          <div className="bg-green-100 p-4 rounded-lg border-l-4 border-green-500">
+            <h4 className="font-semibold text-green-800 mb-2">Année scolaire 2026-2027 : Ouverture SI Primaire</h4>
+            <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
+              <li>Ouverture de la SI pour l'ensemble du primaire (CP-CM2).</li>
+              <li>Effectif : 230 élèves maximum.</li>
+              <li>Volume horaire : 4h/niveau (dont 2h d'EMILE).</li>
+              <li>Besoins RH primaire : 20h/semaine (couverts par les 2 enseignants).</li>
+              <li>Modalité financière : Aucun surcoût pour les familles.</li>
+              <li>Préparation de l'ouverture au secondaire.</li>
+            </ul>
           </div>
           
           <div className="bg-gray-100 p-4 rounded-lg">
-            <h4 className="font-semibold text-french-blue mb-2">Année scolaire 2027-2028</h4>
-            <p className="text-sm text-gray-700 mb-2">
-              L'ouverture effective de la SI débutera avec la classe de 6ème, accueillant entre 10 et 20 
-              élèves selon le scénario d'effectifs. Le volume horaire hebdomadaire spécifique à la SI 
-              sera de 6 heures, réparties entre la littérature américaine (4 heures) et l'histoire-
-              géographie en anglais (2 heures). Ces heures pourront être assurées par l'enseignante 
-              américaine déjà en poste, qui basculera partiellement sur la SI. Les revenus estimés pour 
-              cette première année se situeront entre 3 000 000 et 6 000 000 CFA, selon le nombre 
-              d'élèves effectivement recrutés.
-            </p>
+            <h4 className="font-semibold text-french-blue mb-2">Année scolaire 2027-2028 : Maintien Primaire & Ouverture 6ème SI</h4>
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
+              <div>
+                <p className="font-medium mb-1">Primaire :</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Poursuite de la SI pour tous, sans surcoût.</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-medium mb-1">Secondaire :</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Ouverture de la 6ème SI (optionnelle).</li>
+                  <li>Effectifs : 10-20 élèves.</li>
+                  <li>Frais spécifiques : 300 000 CFA/an.</li>
+                  <li>Besoins RH secondaire : 6h/semaine.</li>
+                  <li>Revenus secondaire : 3M à 6M CFA.</li>
+                </ul>
+              </div>
+            </div>
           </div>
           
           <div className="bg-gray-100 p-4 rounded-lg">
-            <h4 className="font-semibold text-french-blue mb-2">Année scolaire 2028-2029</h4>
-            <p className="text-sm text-gray-700 mb-2">
-              La SI s'étendra à la classe de 5ème, tout en maintenant la 6ème, pour un total de deux 
-              niveaux. Les effectifs cumulés atteindront entre 20 et 40 élèves selon le scénario. Le 
-              volume horaire hebdomadaire de la SI doublera pour atteindre 12 heures (8 heures de 
-              littérature américaine et 4 heures d'histoire-géographie). L'enseignante américaine 
-              pourra encore absorber ces heures si elle est dédiée majoritairement à la SI, avec une 
-              réorganisation des services pour les cours d'anglais classiques. Les revenus estimés se 
-              situeront entre 6 000 000 et 12 000 000 CFA.
-            </p>
+            <h4 className="font-semibold text-french-blue mb-2">Année scolaire 2028-2029 : Maintien Primaire & Extension 5ème SI</h4>
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
+              <div>
+                <p className="font-medium mb-1">Primaire :</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Poursuite de la SI pour tous, sans surcoût.</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-medium mb-1">Secondaire :</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Extension à la 5ème SI (optionnelle, payante).</li>
+                  <li>Effectifs cumulés : 20-40 élèves.</li>
+                  <li>Besoins RH secondaire : 12h/semaine.</li>
+                  <li>Revenus secondaire : 6M à 12M CFA.</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          
+
           <div className="bg-gray-100 p-4 rounded-lg">
-            <h4 className="font-semibold text-french-blue mb-2">Année scolaire 2029-2030</h4>
-            <p className="text-sm text-gray-700 mb-2">
-              La SI couvrira trois niveaux (6ème, 5ème et 4ème), avec des effectifs cumulés entre 30 et 
-              60 élèves selon le scénario. Le volume horaire hebdomadaire atteindra 18 heures, 
-              approchant la capacité maximale d'un enseignant à temps plein (20 heures). Cette 
-              année marquera un premier point d'attention en termes de ressources humaines, avec 
-              la nécessité d'envisager des heures supplémentaires ou un recrutement à temps partiel. 
-              Les revenus estimés se situeront entre 9 000 000 et 18 000 000 CFA.
-            </p>
+            <h4 className="font-semibold text-french-blue mb-2">Année scolaire 2029-2030 : Maintien Primaire & Extension 4ème SI</h4>
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
+              <div>
+                <p className="font-medium mb-1">Primaire :</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Poursuite de la SI pour tous, sans surcoût.</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-medium mb-1">Secondaire :</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Extension à la 4ème SI (optionnelle, payante).</li>
+                  <li>Effectifs cumulés : 30-60 élèves.</li>
+                  <li>Besoins RH secondaire : 18h/semaine.</li>
+                  <li>Revenus secondaire : 9M à 18M CFA.</li>
+                  <li>Anticipation du 1er recrutement secondaire.</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          
-          <div className="bg-green-100 p-4 rounded-lg">
-            <h4 className="font-semibold text-green-800 mb-2">Année scolaire 2030-2031</h4>
-            <p className="text-sm text-gray-700 mb-2">
-              La SI s'étendra à la classe de 3ème, couvrant ainsi l'ensemble du collège. Les effectifs 
-              cumulés atteindront entre 40 et 80 élèves selon le scénario, et le volume horaire 
-              hebdomadaire sera de 24 heures. Cette année constituera un premier seuil critique en 
-              termes de ressources humaines, nécessitant le recrutement d'un enseignant 
-              supplémentaire. Les revenus estimés se situeront entre 12 000 000 et 24 000 000 CFA, ce 
-              qui permettra de couvrir partiellement ou totalement (selon les effectifs) le coût de ce 
-              recrutement.
-            </p>
+
+          <div className="bg-green-100 p-4 rounded-lg border-l-4 border-green-500">
+            <h4 className="font-semibold text-green-800 mb-2">Année scolaire 2030-2031 : Maintien Primaire & Extension 3ème SI</h4>
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
+              <div>
+                <p className="font-medium mb-1">Primaire :</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Poursuite de la SI pour tous, sans surcoût.</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-medium mb-1">Secondaire :</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Extension à la 3ème SI (optionnelle, payante).</li>
+                  <li>Effectifs cumulés : 40-80 élèves.</li>
+                  <li>Besoins RH secondaire : 24h/semaine.</li>
+                  <li>Revenus secondaire : 12M à 24M CFA.</li>
+                  <li><strong>1er recrutement secondaire effectif.</strong></li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div className="bg-green-100 p-4 rounded-lg">
-            <h4 className="font-semibold text-green-800 mb-2">Année scolaire 2031-2032</h4>
+            <h4 className="font-semibold text-green-800 mb-2">Années scolaires 2031-2033 : Poursuite extension lycée</h4>
             <p className="text-sm text-gray-700 mb-2">
-              La SI s'étendra à la classe de 2nde, entamant ainsi son déploiement au lycée. Les 
-              effectifs cumulés atteindront entre 50 et 100 élèves selon le scénario, et le volume 
-              horaire hebdomadaire sera de 30 heures. Les revenus estimés se situeront entre 15 000 
-              000 et 30 000 000 CFA.
+              Maintien de la SI gratuite au primaire et extension progressive au lycée (2nde puis 1ère SI optionnelles).
             </p>
+            <ul className="text-sm text-gray-700 list-disc list-inside space-y-1">
+              <li>2031-2032 : Extension 2nde SI (50-100 élèves, 30h/semaine, 15M-30M CFA)</li>
+              <li>2032-2033 : Extension 1ère SI (60-120 élèves, 36h/semaine, 18M-36M CFA) + Anticipation 2ème recrutement + Préparation BFI</li>
+            </ul>
           </div>
 
-          <div className="bg-green-100 p-4 rounded-lg">
-            <h4 className="font-semibold text-green-800 mb-2">Année scolaire 2032-2033</h4>
-            <p className="text-sm text-gray-700 mb-2">
-              La SI couvrira six niveaux, de la 6ème à la 1ère. Les effectifs cumulés atteindront entre 60 
-              et 120 élèves selon le scénario, et le volume horaire hebdomadaire sera de 36 heures. 
-              Cette année marquera un deuxième point d'attention en termes de ressources 
-              humaines, avec la nécessité d'envisager un recrutement supplémentaire à temps partiel. 
-              Les revenus estimés se situeront entre 18 000 000 et 36 000 000 CFA. Cette année sera 
-              également consacrée à la préparation de l'ouverture du BFI.
-            </p>
+          <div className="bg-green-100 p-4 rounded-lg border-l-4 border-green-500">
+            <h4 className="font-semibold text-green-800 mb-2">Année scolaire 2033-2034 : Maintien Primaire & Extension Terminale SI</h4>
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
+              <div>
+                <p className="font-medium mb-1">Primaire :</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Poursuite de la SI pour tous, sans surcoût.</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-medium mb-1">Secondaire :</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Extension à la Terminale SI (optionnelle, payante).</li>
+                  <li>Effectifs cumulés : 70-140 élèves.</li>
+                  <li>Besoins RH secondaire : 42h/semaine.</li>
+                  <li>Revenus secondaire : 21M à 42M CFA.</li>
+                  <li><strong>2ème recrutement secondaire effectif.</strong></li>
+                </ul>
+              </div>
+            </div>
           </div>
 
-          <div className="bg-green-100 p-4 rounded-lg">
-            <h4 className="font-semibold text-green-800 mb-2">Année scolaire 2033-2034</h4>
-            <p className="text-sm text-gray-700 mb-2">
-              La SI couvrira l'ensemble des niveaux du secondaire, de la 6ème à la Terminale. Les 
-              effectifs cumulés atteindront entre 70 et 140 élèves selon le scénario, et le volume 
-              horaire hebdomadaire atteindra son maximum de 42 heures. Cette année constituera un 
-              second seuil critique en termes de ressources humaines, nécessitant un troisième 
-              recrutement. Les revenus estimés se situeront entre 21 000 000 et 42 000 000 CFA.
-            </p>
-          </div>
-
-          <div className="bg-green-100 p-4 rounded-lg">
-            <h4 className="font-semibold text-green-800 mb-2">Année scolaire 2034-2035</h4>
-            <p className="text-sm text-gray-700 mb-2">
-              Cette année marquera l'ouverture du BFI, avec la première promotion complète de la SI. 
-              Le dispositif atteindra son régime de croisière, avec un volume horaire stable de 42 
-              heures hebdomadaires et des effectifs entre 70 et 140 élèves selon le scénario. Les 
-              revenus estimés resteront entre 21 000 000 et 42 000 000 CFA.
-            </p>
+          <div className="bg-green-100 p-4 rounded-lg border-l-4 border-green-500">
+            <h4 className="font-semibold text-green-800 mb-2">Année scolaire 2034-2035 : Maintien Primaire & Ouverture BFI</h4>
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
+              <div>
+                <p className="font-medium mb-1">Primaire :</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Poursuite de la SI pour tous, sans surcoût.</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-medium mb-1">Secondaire :</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Ouverture du BFI (optionnel, payant).</li>
+                  <li>Effectifs cumulés : 70-140 élèves.</li>
+                  <li>Besoins RH secondaire : 42h/semaine.</li>
+                  <li>Revenus secondaire : 21M à 42M CFA.</li>
+                  <li><strong>Première session d'examens du BFI.</strong></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
         <p className="text-gray-700 mt-4">
           Ce calendrier de déploiement progressif permet d'étaler dans le temps les 
           investissements humains et financiers, tout en assurant une montée en charge maîtrisée 
-          du dispositif. Il offre également la possibilité d'ajuster la stratégie en fonction des 
-          réalités rencontrées, notamment en termes d'effectifs et de ressources disponibles.
+          du dispositif. Il distingue clairement l'investissement au primaire (gratuit) de l'équilibre 
+          recherché au secondaire (payant).
         </p>
       </CardContent>
     </Card>

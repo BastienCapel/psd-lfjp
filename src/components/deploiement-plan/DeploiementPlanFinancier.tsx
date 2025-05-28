@@ -7,244 +7,190 @@ const DeploiementPlanFinancier = () => {
   return (
     <Card className="border-french-blue/10 shadow-md">
       <CardHeader>
-        <CardTitle className="text-2xl text-french-blue">5. Analyse des impacts financiers avec scénarios d'effectifs</CardTitle>
+        <CardTitle className="text-2xl text-french-blue">5. Analyse des impacts financiers : distinction primaire / secondaire</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         <p className="text-gray-700">
-          L'ouverture de la Section Internationale Américaine aura également un impact 
-          significatif sur les finances de l'établissement, avec à la fois des revenus 
-          supplémentaires générés par les frais d'inscription spécifiques et des coûts additionnels 
-          liés principalement aux recrutements d'enseignants.
+          L'analyse financière doit impérativement distinguer l'investissement réalisé au primaire 
+          de l'équilibre recherché pour le dispositif optionnel au secondaire.
         </p>
 
         <div>
-          <h4 className="font-semibold text-lg mb-3">Revenus générés par la SI selon trois scénarios d'effectifs</h4>
-          <p className="text-gray-700 mb-3">
-            Les frais d'inscription en filière SI sont fixés à 300 000 CFA par élève et par an à partir de 
-            la 6ème. Pour évaluer précisément l'impact financier du projet, nous avons élaboré trois 
-            scénarios d'effectifs :
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-            <div className="bg-red-50 p-3 rounded-lg text-center">
-              <h5 className="font-semibold text-red-800">Scénario bas : 10 élèves par niveau</h5>
-            </div>
-            <div className="bg-yellow-50 p-3 rounded-lg text-center">
-              <h5 className="font-semibold text-yellow-800">Scénario moyen : 15 élèves par niveau</h5>
-            </div>
-            <div className="bg-green-50 p-3 rounded-lg text-center">
-              <h5 className="font-semibold text-green-800">Scénario haut : 20 élèves par niveau</h5>
-            </div>
-          </div>
-
-          <p className="text-gray-700 mb-3">
-            Le tableau suivant présente l'évolution des revenus générés selon ces trois scénarios :
-          </p>
-
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Année scolaire</TableHead>
-                <TableHead>Niveaux SI</TableHead>
-                <TableHead>Revenus (10 élèves)</TableHead>
-                <TableHead>Revenus (15 élèves)</TableHead>
-                <TableHead>Revenus (20 élèves)</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableCell>2027-2028</TableCell>
-                <TableCell>6ème</TableCell>
-                <TableCell>3 000 000 CFA</TableCell>
-                <TableCell>4 500 000 CFA</TableCell>
-                <TableCell>6 000 000 CFA</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>2028-2029</TableCell>
-                <TableCell>6ème-5ème</TableCell>
-                <TableCell>6 000 000 CFA</TableCell>
-                <TableCell>9 000 000 CFA</TableCell>
-                <TableCell>12 000 000 CFA</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>2029-2030</TableCell>
-                <TableCell>6ème-4ème</TableCell>
-                <TableCell>9 000 000 CFA</TableCell>
-                <TableCell>13 500 000 CFA</TableCell>
-                <TableCell>18 000 000 CFA</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>2030-2031</TableCell>
-                <TableCell>6ème-3ème</TableCell>
-                <TableCell>12 000 000 CFA</TableCell>
-                <TableCell>18 000 000 CFA</TableCell>
-                <TableCell>24 000 000 CFA</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>2031-2032</TableCell>
-                <TableCell>6ème-2nde</TableCell>
-                <TableCell>15 000 000 CFA</TableCell>
-                <TableCell>22 500 000 CFA</TableCell>
-                <TableCell>30 000 000 CFA</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>2032-2033</TableCell>
-                <TableCell>6ème-1ère</TableCell>
-                <TableCell>18 000 000 CFA</TableCell>
-                <TableCell>27 000 000 CFA</TableCell>
-                <TableCell>36 000 000 CFA</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>2033-2034</TableCell>
-                <TableCell>6ème-Term</TableCell>
-                <TableCell>21 000 000 CFA</TableCell>
-                <TableCell>31 500 000 CFA</TableCell>
-                <TableCell>42 000 000 CFA</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-
-          <p className="text-gray-700 mt-3">
-            Cette progression régulière des revenus permettra d'absorber progressivement les coûts 
-            supplémentaires générés par la SI, notamment en termes de ressources humaines.
-          </p>
-        </div>
-
-        <div>
-          <h4 className="font-semibold text-lg mb-3">Coûts supplémentaires liés aux recrutements</h4>
-          <p className="text-gray-700 mb-3">
-            Avec un salaire moyen de 18 000 000 CFA annuels par enseignant d'anglais, les coûts 
-            supplémentaires liés aux recrutements progressifs représenteront une charge 
-            significative pour l'établissement.
-          </p>
-          
-          <p className="text-gray-700 mb-3">
-            Les deux premières années (2027-2029), aucun recrutement n'étant nécessaire, les coûts 
-            supplémentaires seront nuls. À partir de la troisième année (2029-2030), des coûts 
-            commenceront à apparaître, d'abord modérés (équivalent à 0,5 ETP, soit environ 9 000 
-            000 CFA), puis plus conséquents avec les recrutements successifs.
-          </p>
-          
-          <p className="text-gray-700 mb-3">
-            En régime de croisière (2033-2034), avec l'équivalent de 2 ETP supplémentaires, les 
-            coûts additionnels atteindront 36 000 000 CFA par an.
-          </p>
-        </div>
-
-        <div>
-          <h4 className="font-semibold text-lg mb-3">Bilan financier prévisionnel selon les trois scénarios</h4>
-          <p className="text-gray-700 mb-3">
-            La comparaison des revenus générés par les frais d'inscription à la SI et des coûts 
-            supplémentaires liés aux recrutements révèle des situations contrastées selon le 
-            scénario d'effectifs retenu :
-          </p>
-
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Année scolaire</TableHead>
-                <TableHead>Bilan (10 élèves)</TableHead>
-                <TableHead>Bilan (15 élèves)</TableHead>
-                <TableHead>Bilan (20 élèves)</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableCell>2027-2028</TableCell>
-                <TableCell className="text-green-600">+3 000 000 CFA</TableCell>
-                <TableCell className="text-green-600">+4 500 000 CFA</TableCell>
-                <TableCell className="text-green-600">+6 000 000 CFA</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>2028-2029</TableCell>
-                <TableCell className="text-green-600">+6 000 000 CFA</TableCell>
-                <TableCell className="text-green-600">+9 000 000 CFA</TableCell>
-                <TableCell className="text-green-600">+12 000 000 CFA</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>2029-2030</TableCell>
-                <TableCell>0 CFA</TableCell>
-                <TableCell className="text-green-600">+4 500 000 CFA</TableCell>
-                <TableCell className="text-green-600">+9 000 000 CFA</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>2030-2031</TableCell>
-                <TableCell className="text-red-600">-6 000 000 CFA</TableCell>
-                <TableCell>0 CFA</TableCell>
-                <TableCell className="text-green-600">+6 000 000 CFA</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>2031-2032</TableCell>
-                <TableCell className="text-red-600">-3 000 000 CFA</TableCell>
-                <TableCell className="text-green-600">+4 500 000 CFA</TableCell>
-                <TableCell className="text-green-600">+12 000 000 CFA</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>2032-2033</TableCell>
-                <TableCell className="text-red-600">-9 000 000 CFA</TableCell>
-                <TableCell>0 CFA</TableCell>
-                <TableCell className="text-green-600">+9 000 000 CFA</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>2033-2034</TableCell>
-                <TableCell className="text-red-600">-15 000 000 CFA</TableCell>
-                <TableCell className="text-red-600">-4 500 000 CFA</TableCell>
-                <TableCell className="text-green-600">+6 000 000 CFA</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-
-          <div className="mt-4 space-y-3">
-            <div className="bg-red-50 p-4 rounded-lg">
-              <h5 className="font-semibold text-red-800 mb-2">1. Scénario bas (10 élèves par niveau)</h5>
-              <p className="text-sm text-red-700">
-                Ce scénario est excédentaire les deux premières années, à l'équilibre la troisième année, 
-                puis devient déficitaire de manière croissante. À plein régime, le déficit atteint 15 000 000 CFA par an, 
-                ce qui n'est pas soutenable à long terme sans ajustements.
-              </p>
-            </div>
-
-            <div className="bg-yellow-50 p-4 rounded-lg">
-              <h5 className="font-semibold text-yellow-800 mb-2">2. Scénario moyen (15 élèves par niveau)</h5>
-              <p className="text-sm text-yellow-700">
-                Ce scénario est excédentaire les premières années, oscille autour de l'équilibre en phase 
-                intermédiaire, puis devient légèrement déficitaire en régime de croisière (-4 500 000 CFA). 
-                Des ajustements mineurs seraient nécessaires pour assurer la pérennité.
-              </p>
-            </div>
-
-            <div className="bg-green-50 p-4 rounded-lg">
-              <h5 className="font-semibold text-green-800 mb-2">3. Scénario haut (20 élèves par niveau)</h5>
-              <p className="text-sm text-green-700">
-                Ce scénario est excédentaire tout au long du déploiement, avec un bilan positif variant de 
-                6 000 000 à 12 000 000 CFA selon les années. Il assure la viabilité économique complète du dispositif 
-                et permet même de dégager des marges pour des investissements qualitatifs.
-              </p>
+          <h4 className="font-semibold text-lg mb-3">Investissement pédagogique au primaire</h4>
+          <div className="bg-blue-50 p-4 rounded-lg mb-3">
+            <p className="text-blue-700 mb-3">
+              Le renforcement de l'enseignement de l'anglais et l'ouverture de la SI pour tous les 
+              élèves du primaire représentent un investissement pédagogique stratégique de 
+              l'établissement.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <p className="font-medium text-blue-800">Coût :</p>
+                <p className="text-blue-700">Le recrutement de l'enseignante supplémentaire pour le 
+                primaire représente un coût annuel récurrent de <strong>18 000 000 CFA</strong> à partir de 2025-2026.</p>
+              </div>
+              <div>
+                <p className="font-medium text-blue-800">Recettes associées :</p>
+                <p className="text-blue-700">Aucune. La SI au primaire est intégrée à l'offre standard sans 
+                surcoût pour les familles.</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div>
-          <h4 className="font-semibold text-lg mb-3">Analyse de l'équilibre financier et implications</h4>
-          <p className="text-gray-700 mb-3">
-            L'analyse des trois scénarios d'effectifs révèle que le seuil de viabilité économique se 
-            situe autour de 17-18 élèves par niveau. En dessous de ce seuil, des ajustements seraient 
-            nécessaires pour assurer l'équilibre financier à terme.
-          </p>
-          
-          <p className="text-gray-700 mb-3">
-            Le scénario haut (20 élèves par niveau) apparaît comme particulièrement favorable, car 
-            il permet non seulement d'assurer l'équilibre financier, mais aussi de dégager des 
-            marges pour investir dans la qualité du dispositif. Ce scénario offre également une plus 
-            grande souplesse dans la gestion des ressources humaines, avec la possibilité 
-            d'anticiper certains recrutements pour assurer une meilleure stabilité pédagogique.
-          </p>
-          
           <p className="text-gray-700">
-            Toutefois, ce scénario repose sur la capacité à attirer et fidéliser 20 élèves par niveau, ce 
-            qui nécessitera une stratégie de communication efficace et une offre pédagogique 
-            attractive. La qualité de l'enseignement et la valeur ajoutée perçue de la SI seront des 
-            facteurs déterminants pour atteindre et maintenir ce niveau d'effectifs.
+            Ce coût de 18M CFA doit être considéré comme un investissement dans la qualité de 
+            l'offre éducative du primaire, visant à renforcer l'attractivité de l'établissement et à 
+            préparer au mieux les élèves à la poursuite de leurs études, notamment en SI au 
+            secondaire.
+          </p>
+        </div>
+
+        <div>
+          <h4 className="font-semibold text-lg mb-3">Équilibre financier de la SI optionnelle au secondaire</h4>
+          <p className="text-gray-700 mb-3">
+            Le dispositif SI au secondaire, étant optionnel et payant (300 000 CFA/an), doit viser un 
+            équilibre financier propre, en comparant ses recettes aux coûts RH supplémentaires qu'il 
+            engendre au secondaire.
+          </p>
+
+          <div className="bg-amber-50 p-4 rounded-lg mb-4">
+            <h5 className="font-semibold text-amber-800 mb-2">Coûts RH spécifiques au secondaire :</h5>
+            <ul className="text-sm text-amber-700 space-y-1 list-disc list-inside">
+              <li>1er recrutement secondaire (2030-2031) : +18 000 000 CFA/an</li>
+              <li>2ème recrutement secondaire (2033-2034) : +18 000 000 CFA/an</li>
+              <li><strong>Coût total RH secondaire en régime de croisière : 36 000 000 CFA/an</strong></li>
+            </ul>
+          </div>
+
+          <div className="mb-4">
+            <h5 className="font-semibold text-lg mb-3">Revenus générés par la SI secondaire (selon scénarios d'effectifs) :</h5>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Année scolaire</TableHead>
+                  <TableHead>Revenus (10 élèves)</TableHead>
+                  <TableHead>Revenus (15 élèves)</TableHead>
+                  <TableHead>Revenus (20 élèves)</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell>2027-2028</TableCell>
+                  <TableCell>3 000 000 CFA</TableCell>
+                  <TableCell>4 500 000 CFA</TableCell>
+                  <TableCell>6 000 000 CFA</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>2028-2029</TableCell>
+                  <TableCell>6 000 000 CFA</TableCell>
+                  <TableCell>9 000 000 CFA</TableCell>
+                  <TableCell>12 000 000 CFA</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>2029-2030</TableCell>
+                  <TableCell>9 000 000 CFA</TableCell>
+                  <TableCell>13 500 000 CFA</TableCell>
+                  <TableCell>18 000 000 CFA</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>2030-2031</TableCell>
+                  <TableCell>12 000 000 CFA</TableCell>
+                  <TableCell>18 000 000 CFA</TableCell>
+                  <TableCell>24 000 000 CFA</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>2031-2032</TableCell>
+                  <TableCell>15 000 000 CFA</TableCell>
+                  <TableCell>22 500 000 CFA</TableCell>
+                  <TableCell>30 000 000 CFA</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>2032-2033</TableCell>
+                  <TableCell>18 000 000 CFA</TableCell>
+                  <TableCell>27 000 000 CFA</TableCell>
+                  <TableCell>36 000 000 CFA</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>2033-2034</TableCell>
+                  <TableCell>21 000 000 CFA</TableCell>
+                  <TableCell>31 500 000 CFA</TableCell>
+                  <TableCell>42 000 000 CFA</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
+
+          <div className="mb-4">
+            <h5 className="font-semibold text-lg mb-3">Bilan financier prévisionnel de la SI secondaire (Revenus secondaire - Coûts RH secondaire) :</h5>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Année scolaire</TableHead>
+                  <TableHead>Coûts RH secondaire</TableHead>
+                  <TableHead>Bilan (10 élèves)</TableHead>
+                  <TableHead>Bilan (15 élèves)</TableHead>
+                  <TableHead>Bilan (20 élèves)</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell>2027-2030</TableCell>
+                  <TableCell>0 CFA</TableCell>
+                  <TableCell className="text-green-600">+3M à +9M CFA</TableCell>
+                  <TableCell className="text-green-600">+4.5M à +13.5M CFA</TableCell>
+                  <TableCell className="text-green-600">+6M à +18M CFA</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>2030-2033</TableCell>
+                  <TableCell>18 000 000 CFA</TableCell>
+                  <TableCell className="text-red-600">-6M à 0 CFA</TableCell>
+                  <TableCell className="text-green-600">0 à +9M CFA</TableCell>
+                  <TableCell className="text-green-600">+6M à +18M CFA</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>2033-2034</TableCell>
+                  <TableCell>36 000 000 CFA</TableCell>
+                  <TableCell className="text-red-600">-15 000 000 CFA</TableCell>
+                  <TableCell className="text-red-600">-4 500 000 CFA</TableCell>
+                  <TableCell className="text-green-600">+6 000 000 CFA</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
+
+          <div className="space-y-3">
+            <p className="text-gray-700 mb-3">
+              <strong>Analyse de l'équilibre secondaire :</strong>
+            </p>
+            <ul className="text-gray-700 space-y-2 list-disc list-inside">
+              <li>Le dispositif SI secondaire est excédentaire dans les premières années, quel que soit le scénario.</li>
+              <li>Après le premier recrutement secondaire (2030), l'équilibre dépend des effectifs : déficitaire à 10 élèves, équilibré ou excédentaire à 15 et 20 élèves.</li>
+              <li>Après le second recrutement secondaire (2033), l'équilibre n'est atteint qu'avec 20 élèves par niveau (scénario haut), générant un excédent de 6M CFA. Les scénarios à 10 et 15 élèves sont déficitaires.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h4 className="font-semibold text-lg mb-3">Conclusion financière</h4>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-blue-50 p-4 rounded-lg">
+              <h5 className="font-semibold text-blue-800 mb-2">Investissement primaire</h5>
+              <p className="text-sm text-blue-700">
+                L'établissement réalise un investissement pédagogique annuel de <strong>18M CFA</strong> pour 
+                la SI au primaire.
+              </p>
+            </div>
+            <div className="bg-green-50 p-4 rounded-lg">
+              <h5 className="font-semibold text-green-800 mb-2">Viabilité secondaire</h5>
+              <p className="text-sm text-green-700">
+                Le dispositif SI optionnel au secondaire peut atteindre l'équilibre financier propre 
+                (voire générer un excédent) à condition d'atteindre et de maintenir des effectifs 
+                d'environ <strong>20 élèves par niveau</strong>.
+              </p>
+            </div>
+          </div>
+          <p className="text-gray-700 mt-3">
+            Il est crucial de viser cet objectif d'effectifs au secondaire pour assurer la viabilité 
+            du volet optionnel et payant.
           </p>
         </div>
       </CardContent>
