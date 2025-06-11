@@ -1,10 +1,7 @@
-
 import React from 'react';
 import DiagnosticCard from '../DiagnosticCard';
-
 const SyntheseActions = () => {
-  return (
-    <DiagnosticCard title="Synthèse et pistes d'action" className="bg-french-blue/5 border-french-blue/20">
+  return <DiagnosticCard title="Synthèse et pistes d'action" className="bg-french-blue/5 border-french-blue/20">
       <div className="space-y-6">
         <div>
           <h4 className="font-semibold text-french-blue mb-4">Trois urgences identifiées par les élèves :</h4>
@@ -58,17 +55,8 @@ const SyntheseActions = () => {
           </div>
         </div>
 
-        <div className="bg-french-blue/5 p-4 rounded-lg">
-          <h5 className="font-medium text-french-blue mb-2">Proposition de restitution :</h5>
-          <p className="text-sm text-gray-700">
-            Présenter ces résultats au conseil d'établissement sous forme d'infodashboard avec 
-            un plan d'action organisé autour de 3 axes. Communiquer clairement les constats et 
-            un calendrier d'améliorations pour consolider la confiance de la communauté éducative.
-          </p>
-        </div>
+        
       </div>
-    </DiagnosticCard>
-  );
+    </DiagnosticCard>;
 };
-
 export default SyntheseActions;
