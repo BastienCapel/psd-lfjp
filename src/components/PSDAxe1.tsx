@@ -27,7 +27,7 @@ const PSDAxe1 = () => {
 
   return (
     <PSDAxeLayout 
-      title="AXE 1 – PARCOURS SANTÉ"
+      title="AXE 1 – BIEN-ÊTRE ET EXPÉRIENCE DE LA COMMUNAUTÉ ÉDUCATIVE"
       subtitle="Un cadre de vie sain, sûr et bienveillant"
       objectifs={objectifs}
       actions={actions}

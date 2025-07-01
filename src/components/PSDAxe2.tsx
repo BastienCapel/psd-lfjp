@@ -26,7 +26,7 @@ const PSDAxe2 = () => {
 
   return (
     <PSDAxeLayout 
-      title="AXE 2 – PARCOURS CITOYEN"
+      title="AXE 2 – PLURILINGUISME, MULTICULTURALITÉ, OUVERTURE INTERNATIONALE ET LOCALE"
       subtitle="Éduquer à une citoyenneté responsable et engagée"
       objectifs={objectifs}
       actions={actions}

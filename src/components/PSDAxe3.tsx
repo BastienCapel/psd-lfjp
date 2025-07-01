@@ -23,7 +23,7 @@ const PSDAxe3 = () => {
 
   return (
     <PSDAxeLayout 
-      title="AXE 3 – PARCOURS D'ÉDUCATION ARTISTIQUE ET CULTURELLE"
+      title="AXE 3 – DIGITAL, NUMÉRIQUE, INNOVATION TECHNOLOGIQUE"
       subtitle="Cultiver la sensibilité, la créativité et l'ouverture"
       objectifs={objectifs}
       actions={actions}
