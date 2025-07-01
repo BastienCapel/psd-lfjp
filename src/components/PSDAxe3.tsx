@@ -10,6 +10,7 @@ const PSDAxe3 = () => {
   ];
   
   const actions = [
+    { text: 'Élaboration d\'un plan "Un PC par lycéen"', link: '/pc-par-lyceen' },
     { text: 'Déploiement des trois piliers du PEAC' },
     { text: 'Intégration d\'artistes sénégalais dans les projets' },
     { text: 'Ateliers pluridisciplinaires croisant arts, langues et sciences' }
