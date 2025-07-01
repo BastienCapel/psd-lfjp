@@ -13,10 +13,6 @@ const PSDAxe4 = () => {
   ];
   
   const actions = [
-    { 
-      text: 'Déploiement du plan « Section Internationale et BFI » (2026-2033)',
-      link: '/section-internationale-bfi'
-    },
     { text: 'Déploiement d\'outils de découverte des métiers' },
     { text: 'Modules d\'accompagnement à l\'autonomie' },
     { text: 'Séances d\'orientation coanimées' }
