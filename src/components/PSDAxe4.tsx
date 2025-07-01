@@ -31,7 +31,7 @@ const PSDAxe4 = () => {
 
   return (
     <PSDAxeLayout 
-      title="AXE 4 – FORGER LES RÉUSSITES"
+      title="AXE 4 – FAÇONNER LES RÉUSSITES"
       subtitle="Préparer les élèves aux enjeux de demain"
       objectifs={objectifs}
       actions={actions}
