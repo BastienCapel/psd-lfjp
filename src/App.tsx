@@ -13,6 +13,7 @@ import PlanStrategique from "./pages/PlanStrategique";
 import AmeliorationAcoustique from "./pages/AmeliorationAcoustique";
 import PCParLyceen from "./pages/PCParLyceen";
 import PlanPeintureRavalement from "./pages/PlanPeintureRavalement";
+import RenouvellementMaterielInformatique from "./pages/RenouvellementMaterielInformatique";
 import ElcsAnalyseComplete from "./pages/ElcsAnalyseComplete";
 import SectionInternationaleBFI from "./pages/SectionInternationaleBFI";
 import DeploiementPlanSectionInternationaleBFI from "./pages/DeploiementPlanSectionInternationaleBFI";
@@ -100,6 +101,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <PlanPeintureRavalement />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/renouvellement-materiel-informatique" element={
+                  <>
+                    <BreadcrumbNav />
+                    <RenouvellementMaterielInformatique />
                     <BackToTop />
                   </>
                 } />
