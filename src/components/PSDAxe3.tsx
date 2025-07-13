@@ -4,35 +4,35 @@ import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe3 = () => {
   const objectifs = [
-    { text: 'Garantir un accès équitable et progressif aux compétences numériques, de la maternelle à la terminale (parcours numérique structuré)' },
-    { text: 'Développer des compétences critiques, créatives et éthiques dans un monde numérique en évolution constante' },
-    { text: 'Permettre aux élèves de comprendre et maîtriser les outils numériques, y compris l\'intelligence artificielle, pour être acteurs et non consommateurs' },
-    { text: 'Promouvoir une culture numérique responsable et citoyenne : cybersécurité, droit à l\'image, identité numérique, gestion du temps d\'écran' },
-    { text: 'Renforcer la créativité numérique, l\'entrepreneuriat et les projets interconnectés avec le monde professionnel et les enjeux locaux' }
+    { text: 'Garantir un accès équitable et progressif aux <strong>compétences numériques</strong>, de la maternelle à la terminale (<em>parcours numérique structuré</em>)' },
+    { text: 'Développer des <strong>compétences critiques, créatives et éthiques</strong> dans un monde numérique en évolution constante' },
+    { text: 'Permettre aux élèves de <strong>comprendre et maîtriser les outils numériques</strong>, y compris l\'<strong>intelligence artificielle</strong>, pour être <strong>acteurs et non consommateurs</strong>' },
+    { text: 'Promouvoir une <strong>culture numérique responsable et citoyenne</strong> : <em>cybersécurité, droit à l\'image, identité numérique, gestion du temps d\'écran</em>' },
+    { text: 'Renforcer la <strong>créativité numérique</strong>, l\'<strong>entrepreneuriat</strong> et les <strong>projets interconnectés avec le monde professionnel</strong> et les <strong>enjeux locaux</strong>' }
   ];
   
   const actions = [
-    { text: 'Élaboration d\'un curriculum numérique spiralaire de la maternelle à la terminale intégrant le référentiel PIX (cycle 3 à terminale)' },
-    { text: 'Introduction progressive du code dès le cycle 2, avec consolidation au collège et projets concrets (robotique, applications, jeux éducatifs)' },
-    { text: 'Mise en place d\'un module IA au lycée : « comprendre pour maîtriser » (inspiré du guide IA de l\'Éducation nationale)' },
-    { text: 'Déploiement d\'une éducation au numérique citoyen (fake news, cyberharcèlement, comportements en ligne, empreinte numérique)' },
-    { text: 'Création d\'un laboratoire numérique avec des projets concrets annuels portés par les élèves (ex : site écoresponsable, app solidaire…)' },
-    { text: 'Intégration d\'intervenants extérieurs (volontaires internationaux, partenaires tech, artistes numériques…)' },
-    { text: 'Élaboration du plan "Un PC par lycéen"', link: '/pc-par-lyceen' },
+    { text: 'Élaboration d\'un <strong>curriculum numérique spiralaire</strong> de la maternelle à la terminale intégrant le <strong>référentiel PIX</strong> (<em>cycle 3 à terminale</em>)' },
+    { text: 'Introduction progressive du <strong>code</strong> dès le cycle 2, avec consolidation au collège et projets concrets (<em>robotique, applications, jeux éducatifs</em>)' },
+    { text: 'Mise en place d\'un <strong>module IA</strong> au lycée : « <em>comprendre pour maîtriser</em> » (<em>inspiré du guide IA de l\'Éducation nationale</em>)' },
+    { text: 'Déploiement d\'une <strong>éducation au numérique citoyen</strong> (<em>fake news, cyberharcèlement, comportements en ligne, empreinte numérique</em>)' },
+    { text: 'Création d\'un <strong>laboratoire numérique</strong> avec des <strong>projets concrets annuels</strong> portés par les élèves (<em>ex : site écoresponsable, app solidaire…</em>)' },
+    { text: 'Intégration d\'<strong>intervenants extérieurs</strong> (<em>volontaires internationaux, partenaires tech, artistes numériques…</em>)' },
+    { text: 'Élaboration du plan "<strong>Un PC par lycéen</strong>"', link: '/pc-par-lyceen' },
     { text: 'Amélioration de la connectivité sur l\'ensemble du site' },
     { text: 'Mise en place d\'un plan de renouvellement pluriannuel du matériel informatique' },
-    { text: 'Organisation de sorties pédagogiques et immersions dans des structures technologiques de référence au Sénégal (ou à distance)' },
-    { text: 'Développement d\'un fonds de soutien ou mécénat numérique pour l\'équipement et la formation' }
+    { text: 'Organisation de <strong>sorties pédagogiques</strong> et immersions dans des <strong>structures technologiques de référence au Sénégal</strong> (<em>ou à distance</em>)' },
+    { text: 'Développement d\'un <strong>fonds de soutien ou mécénat numérique</strong> pour l\'équipement et la formation' }
   ];
   
   const indicators = [
-    { text: 'Taux d\'élèves certifiés PIX par cycle (cycle 4, lycée)' },
-    { text: 'Nombre de projets numériques interdisciplinaires par an' },
-    { text: 'Taux d\'élèves ayant participé à un projet IA, coding ou cybersécurité' },
-    { text: 'Taux de lycéens équipés en matériel personnel (objectif 1 PC par lycéen)' },
-    { text: 'Taux de couverture WiFi / vitesse de connectivité par zone du lycée' },
-    { text: 'Taux de satisfaction numérique dans les enquêtes' },
-    { text: 'Nombre de partenariats/mécénats liés au numérique éducatif' }
+    { text: 'Taux d\'élèves <strong>certifiés PIX</strong> par cycle (<em>cycle 4, lycée</em>)' },
+    { text: 'Nombre de <strong>projets numériques interdisciplinaires</strong> par an' },
+    { text: 'Taux d\'élèves ayant participé à un projet <strong>IA, coding</strong> ou <strong>cybersécurité</strong>' },
+    { text: 'Taux de <strong>lycéens équipés en matériel personnel</strong> (<em>objectif 1 PC par lycéen</em>)' },
+    { text: 'Taux de <strong>couverture WiFi / vitesse de connectivité</strong> par zone du lycée' },
+    { text: 'Taux de <strong>satisfaction numérique</strong> dans les enquêtes' },
+    { text: 'Nombre de <strong>partenariats/mécénats</strong> liés au <strong>numérique éducatif</strong>' }
   ];
 
   return (
