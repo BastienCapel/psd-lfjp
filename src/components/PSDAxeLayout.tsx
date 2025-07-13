@@ -54,13 +54,15 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
           <h4 className="font-semibold text-gray-900 mb-2">Actions prioritaires</h4>
           <ul className="list-disc pl-5 space-y-1 text-gray-700 font-raleway">
             {actions.map((item, index) => (
-              <li key={index} className="flex items-center gap-1">
-                <span dangerouslySetInnerHTML={{ __html: item.text }}></span>
-                {item.link && (
-                  <Link to={item.link} className="inline-flex items-center text-french-blue hover:text-french-blue/80">
-                    <ExternalLink size={16} />
-                  </Link>
-                )}
+              <li key={index} className="list-item">
+                <div className="flex items-center gap-1">
+                  <span dangerouslySetInnerHTML={{ __html: item.text }}></span>
+                  {item.link && (
+                    <Link to={item.link} className="inline-flex items-center text-french-blue hover:text-french-blue/80">
+                      <ExternalLink size={16} />
+                    </Link>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
