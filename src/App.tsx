@@ -19,6 +19,7 @@ import SectionInternationaleBFI from "./pages/SectionInternationaleBFI";
 import DeploiementPlanSectionInternationaleBFI from "./pages/DeploiementPlanSectionInternationaleBFI";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Créer l'instance QueryClient en dehors du composant pour éviter les recréations
 const queryClient = new QueryClient({
@@ -38,6 +39,7 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <ScrollToTop />
             <div className="flex flex-col min-h-screen">
               <Routes>
                 <Route path="/" element={<Index />} />
