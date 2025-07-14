@@ -19,8 +19,8 @@ const PSDAxe3 = () => {
     { text: 'Création d\'un <strong>laboratoire numérique</strong> avec des <strong>projets concrets annuels</strong> portés par les élèves (<em>ex : site écoresponsable, app solidaire…</em>)' },
     { text: 'Intégration d\'<strong>intervenants extérieurs</strong> (<em>volontaires internationaux, partenaires tech, artistes numériques…</em>)' },
     { text: 'Élaboration du plan "<strong>Un PC par lycéen</strong>"', link: '/pc-par-lyceen' },
-    { text: 'Amélioration de la connectivité sur l\'ensemble du site' },
-    { text: 'Mise en place d\'un plan de renouvellement pluriannuel du matériel informatique', link: '/renouvellement-materiel-informatique' },
+    { text: '<strong>Amélioration de la connectivité</strong> sur l\'ensemble du site' },
+    { text: 'Mise en place d\'un <strong>plan de renouvellement</strong> pluriannuel du matériel informatique', link: '/renouvellement-materiel-informatique' },
     { text: 'Organisation de <strong>sorties pédagogiques</strong> et immersions dans des <strong>structures technologiques de référence au Sénégal</strong> (<em>ou à distance</em>)' },
     { text: 'Développement d\'un <strong>fonds de soutien ou mécénat numérique</strong> pour l\'équipement et la formation' }
   ];
