@@ -16,27 +16,12 @@ const PSDAxe4 = () => {
   ];
   
   const actions = [
-    { text: '<strong>Développement des compétences transversales (soft skills)</strong> :' },
-    { text: 'Modules sur l\'<strong>expression orale</strong>, l\'<strong>estime de soi</strong>, la <strong>gestion du stress</strong>, la <strong>pensée critique</strong>' },
-    { text: '<strong>Clubs théâtre, débat, journalisme, leadership</strong>' },
-    { text: 'Pratique de l\'<strong>éloquence au collège et au lycée</strong>' },
-    { text: '<strong>Valorisation de l\'erreur et de la persévérance</strong> :' },
-    { text: '<strong>Pédagogies explicites</strong> sur l\'erreur constructive' },
-    { text: '<strong>Interventions d\'anciens élèves</strong> autour de leurs parcours' },
-    { text: 'Programme « <strong>Cultiver l\'audace</strong> » valorisant les initiatives étudiantes' },
-    { text: '<strong>Parcours de la Réussite citoyenne</strong> :' },
-    { text: '<strong>Projets solidaires et participatifs</strong> (ex. budgets participatifs)' },
-    { text: 'Modules de formation à l\'<strong>engagement citoyen</strong>' },
-    { text: '<strong>Éducation financière et à la vie autonome</strong> :' },
-    { text: 'Ateliers sur la <strong>gestion budgétaire</strong> et la <strong>vie étudiante post-bac</strong>' },
-    { text: 'Interventions de <strong>professionnels et parents volontaires</strong>' },
-    { text: '<strong>Réseau d\'alumni et mentorat</strong> :' },
-    { text: 'Constitution d\'une <strong>base de données d\'anciens élèves</strong>' },
-    { text: '<strong>Mentorat lycéens / alumni</strong>' },
-    { text: 'Rubrique « <strong>Les Oiseaux de Passage</strong> » valorisée dans la communication interne' },
-    { text: '<strong>Soutien à l\'orientation</strong> :' },
-    { text: '<strong>Accompagnement personnalisé</strong> dans le cadre du Parcours Avenir' },
-    { text: '<strong>Stages, forums métiers, espace orientation</strong>' }
+    { text: '<strong>Développement des compétences transversales (soft skills)</strong> :<br/>• Modules sur l\'<strong>expression orale</strong>, l\'<strong>estime de soi</strong>, la <strong>gestion du stress</strong>, la <strong>pensée critique</strong><br/>• <strong>Clubs théâtre, débat, journalisme, leadership</strong><br/>• Pratique de l\'<strong>éloquence au collège et au lycée</strong>' },
+    { text: '<strong>Valorisation de l\'erreur et de la persévérance</strong> :<br/>• <strong>Pédagogies explicites</strong> sur l\'erreur constructive<br/>• <strong>Interventions d\'anciens élèves</strong> autour de leurs parcours<br/>• Programme « <strong>Cultiver l\'audace</strong> » valorisant les initiatives étudiantes' },
+    { text: '<strong>Parcours de la Réussite citoyenne</strong> :<br/>• <strong>Projets solidaires et participatifs</strong> (ex. budgets participatifs)<br/>• Modules de formation à l\'<strong>engagement citoyen</strong>' },
+    { text: '<strong>Éducation financière et à la vie autonome</strong> :<br/>• Ateliers sur la <strong>gestion budgétaire</strong> et la <strong>vie étudiante post-bac</strong><br/>• Interventions de <strong>professionnels et parents volontaires</strong>' },
+    { text: '<strong>Réseau d\'alumni et mentorat</strong> :<br/>• Constitution d\'une <strong>base de données d\'anciens élèves</strong><br/>• <strong>Mentorat lycéens / alumni</strong><br/>• Rubrique « <strong>Les Oiseaux de Passage</strong> » valorisée dans la communication interne' },
+    { text: '<strong>Soutien à l\'orientation</strong> :<br/>• <strong>Accompagnement personnalisé</strong> dans le cadre du Parcours Avenir<br/>• <strong>Stages, forums métiers, espace orientation</strong>' }
   ];
   
   const indicators = [
