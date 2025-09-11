@@ -233,37 +233,71 @@ const PlanPeintureRavalement = () => {
                 <div className="h-96 mt-8">
                   <ChartContainer
                     config={{
-                      cout: { color: "#2563eb" },
-                      surfaces: { color: "#10b981" },
-                      percentage: { color: "#f59e0b" }
+                      cout: { 
+                        label: "Coût total",
+                        color: "hsl(var(--chart-1))" 
+                      },
+                      surfaces: { 
+                        label: "Surface totale",
+                        color: "hsl(var(--chart-2))" 
+                      },
+                      percentage: { 
+                        label: "% des écolages",
+                        color: "hsl(var(--chart-3))" 
+                      }
                     }}
                   >
                     <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={scenarioData}>
+                      <BarChart data={scenarioData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="year" />
-                        <YAxis yAxisId="left" orientation="left" label={{ value: 'Coût (FCFA)', angle: -90, position: 'insideLeft' }} />
-                        <YAxis yAxisId="right" orientation="right" label={{ value: 'Surface (m²)', angle: 90, position: 'insideRight' }} />
-                        <YAxis yAxisId="percentage" orientation="right" tickFormatter={(value) => `${(value*100).toFixed(0)}%`} domain={[0, 1]} tickCount={6} />
-                        <ChartTooltip
-                          content={
-                            <ChartTooltipContent
-                              formatter={(value, name) => {
-                                if (name === "cout") 
-                                  return [`${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA`, "Coût total"];
-                                if (name === "percentage") {
-                                  const numValue = typeof value === 'number' ? value : parseFloat(value.toString());
-                                  return [`${(numValue * 100).toFixed(2)}%`, "% des écolages"];
-                                }
-                                return [`${value.toString()} m²`, "Surface"];
-                              }}
-                            />
-                          }
+                        <YAxis 
+                          yAxisId="left" 
+                          orientation="left" 
+                          label={{ value: 'Coût (FCFA)', angle: -90, position: 'insideLeft' }}
+                          tickFormatter={(value) => `${(value / 1000000).toFixed(1)}M`}
                         />
-                        <Legend />
-                        <Bar yAxisId="left" dataKey="cout" fill="#2563eb" name="Coût total" />
-                        <Bar yAxisId="right" dataKey="surfaces" fill="#10b981" name="Surface totale" />
-                        <Bar yAxisId="percentage" dataKey="percentage" fill="#f59e0b" name="% des écolages" />
+                        <YAxis 
+                          yAxisId="right" 
+                          orientation="right" 
+                          label={{ value: 'Surface (m²)', angle: 90, position: 'insideRight' }}
+                        />
+                        <Tooltip
+                          content={({ active, payload, label }) => {
+                            if (active && payload && payload.length) {
+                              return (
+                                <div className="bg-white p-3 border border-gray-300 rounded-lg shadow-lg">
+                                  <p className="font-semibold mb-2">{`${label}`}</p>
+                                  {payload.map((pld, index) => (
+                                    <div key={index} className="flex items-center gap-2">
+                                      <div 
+                                        className="w-3 h-3 rounded"
+                                        style={{ backgroundColor: pld.color }}
+                                      />
+                                      <span className="text-sm">
+                                        {pld.dataKey === 'cout' && `Coût total: ${pld.value?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA`}
+                                        {pld.dataKey === 'surfaces' && `Surface totale: ${pld.value} m²`}
+                                        {pld.dataKey === 'percentage' && `% des écolages: ${((pld.value as number) * 100).toFixed(2)}%`}
+                                      </span>
+                                    </div>
+                                  ))}
+                                </div>
+                              );
+                            }
+                            return null;
+                          }}
+                        />
+                        <Legend 
+                          formatter={(value) => {
+                            if (value === 'cout') return 'Coût total (FCFA)';
+                            if (value === 'surfaces') return 'Surface totale (m²)';
+                            if (value === 'percentage') return '% des écolages';
+                            return value;
+                          }}
+                        />
+                        <Bar yAxisId="left" dataKey="cout" fill="hsl(var(--chart-1))" name="cout" />
+                        <Bar yAxisId="right" dataKey="surfaces" fill="hsl(var(--chart-2))" name="surfaces" />
+                        <Bar yAxisId="left" dataKey="percentage" fill="hsl(var(--chart-3))" name="percentage" />
                       </BarChart>
                     </ResponsiveContainer>
                   </ChartContainer>
