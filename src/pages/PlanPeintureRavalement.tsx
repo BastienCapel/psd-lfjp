@@ -230,87 +230,6 @@ const PlanPeintureRavalement = () => {
                   </table>
                 </div>
 
-                <div className="h-96 mt-8">
-                  <ChartContainer
-                    config={{
-                      cout: { 
-                        label: "Coût total",
-                        color: "hsl(var(--chart-1))" 
-                      },
-                      surfaces: { 
-                        label: "Surface totale",
-                        color: "hsl(var(--chart-2))" 
-                      },
-                      percentage: { 
-                        label: "% des écolages",
-                        color: "hsl(var(--chart-3))" 
-                      }
-                    }}
-                  >
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={scenarioData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="year" />
-                        <YAxis 
-                          yAxisId="left" 
-                          orientation="left" 
-                          label={{ value: 'Coût (FCFA)', angle: -90, position: 'insideLeft' }}
-                          tickFormatter={(value) => `${(value / 1000000).toFixed(1)}M`}
-                        />
-                        <YAxis 
-                          yAxisId="right" 
-                          orientation="right" 
-                          label={{ value: 'Surface (m²)', angle: 90, position: 'insideRight' }}
-                        />
-                        <Tooltip
-                          content={({ active, payload, label }) => {
-                            if (active && payload && payload.length) {
-                              return (
-                                <div className="bg-white p-3 border border-gray-300 rounded-lg shadow-lg">
-                                  <p className="font-semibold mb-2">{`${label}`}</p>
-                                  {payload.map((pld, index) => (
-                                    <div key={index} className="flex items-center gap-2">
-                                      <div 
-                                        className="w-3 h-3 rounded"
-                                        style={{ backgroundColor: pld.color }}
-                                      />
-                                      <span className="text-sm">
-                                        {pld.dataKey === 'cout' && `Coût total: ${pld.value?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} FCFA`}
-                                        {pld.dataKey === 'surfaces' && `Surface totale: ${pld.value} m²`}
-                                        {pld.dataKey === 'percentage' && `% des écolages: ${((pld.value as number) * 100).toFixed(2)}%`}
-                                      </span>
-                                    </div>
-                                  ))}
-                                </div>
-                              );
-                            }
-                            return null;
-                          }}
-                        />
-                        <Legend 
-                          formatter={(value) => {
-                            if (value === 'cout') return 'Coût total (FCFA)';
-                            if (value === 'surfaces') return 'Surface totale (m²)';
-                            if (value === 'percentage') return '% des écolages';
-                            return value;
-                          }}
-                        />
-                        <Bar yAxisId="left" dataKey="cout" fill="hsl(var(--chart-1))" name="cout" />
-                        <Bar yAxisId="right" dataKey="surfaces" fill="hsl(var(--chart-2))" name="surfaces" />
-                        <Bar yAxisId="left" dataKey="percentage" fill="hsl(var(--chart-3))" name="percentage" />
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </ChartContainer>
-                </div>
-
-                <div className="mt-8 bg-blue-50 p-4 rounded-lg">
-                  <h5 className="font-bold mb-2 text-french-blue">Analyse Graphique :</h5>
-                  <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                    <li>Le coût annuel varie entre 5,1 M et 5,8 M FCFA, représentant 0,53% à 0,60% des écolages</li>
-                    <li>Les surfaces traitées varient entre 659 m² et 829 m² selon les années</li>
-                    <li>L'investissement reste maîtrisé, avec une moyenne de 0,56% des écolages sur 5 ans</li>
-                  </ul>
-                </div>
               </div>
 
               <div className="mb-6">
@@ -346,14 +265,6 @@ const PlanPeintureRavalement = () => {
                 </p>
               </div>
 
-              <div className="mt-6 text-center">
-                <p className="text-sm text-gray-600 mb-2">
-                  <strong>Pour accéder à la note détaillée complète :</strong>
-                </p>
-                <Button variant="outline" className="text-french-blue border-french-blue hover:bg-french-blue hover:text-white">
-                  Consulter le document technique complet
-                </Button>
-              </div>
             </div>
           </div>
         </div>
