@@ -14,11 +14,11 @@ import { Link } from 'react-router-dom';
 const PlanPeintureRavalement = () => {
   // Données pour les graphiques
   const scenarioData = [
-    { year: 'Année 1', cout: 5760150, surfaces: 829, percentage: 0.60 },
-    { year: 'Année 2', cout: 5105650, surfaces: 659, percentage: 0.53 },
-    { year: 'Année 3', cout: 5298150, surfaces: 709, percentage: 0.55 },
-    { year: 'Année 4', cout: 5298150, surfaces: 709, percentage: 0.55 },
-    { year: 'Année 5', cout: 5627600, surfaces: 796, percentage: 0.59 },
+    { year: 'Année 1', cout: 5336100, surfaces: 710, percentage: 0.43 },
+    { year: 'Année 2', cout: 4647500, surfaces: 540, percentage: 0.38 },
+    { year: 'Année 3', cout: 4840000, surfaces: 590, percentage: 0.39 },
+    { year: 'Année 4', cout: 4840000, surfaces: 590, percentage: 0.39 },
+    { year: 'Année 5', cout: 5627600, surfaces: 660, percentage: 0.46 },
   ];
 
   return (
@@ -57,9 +57,12 @@ const PlanPeintureRavalement = () => {
               <p className="text-gray-700 mb-4">
                 Afin de garantir un cadre de travail et d'apprentissage soigné, sécurisant, motivant et propice au bien-être de tous les usagers, un plan pluriannuel de rénovation a été établi pour la période 2025-2030. Ce plan vise à maintenir et valoriser le patrimoine immobilier de l'établissement. Il prend spécifiquement en compte la réalité climatique du Sénégal (air salin, chaleur, humidité) et les usages intensifs des locaux scolaires.
               </p>
-              <p className="text-gray-700">
-                Le plan prévoit une approche de traitement des murs uniquement, avec des faux plafonds acoustiques. Les estimations de surface se basent sur des relevés et calculs détaillés.
-              </p>
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+                  <h4 className="font-semibold text-yellow-800 mb-2">PEINTURE MURS UNIQUEMENT (AVEC POSE DE FAUX-PLAFONDS ACOUSTIQUES)</h4>
+                  <p className="text-yellow-700">
+                    Ce scénario part du principe que les plafonds des salles, bureaux et de la salle polyvalente seront équipés de faux-plafonds acoustiques. La pose de ces faux-plafonds constitue un lot de travaux et un budget distincts, non inclus dans la présente note. Par conséquent, ce scénario ne budgétise que la peinture des murs.
+                  </p>
+                </div>
             </div>
 
             <div className="border-2 border-french-blue/10 rounded-lg p-6 bg-white">
@@ -67,47 +70,37 @@ const PlanPeintureRavalement = () => {
               
               <div className="mb-6">
                 <h4 className="font-semibold text-lg mb-2">1. Périmètre Concerné et Détail des Surfaces</h4>
-                <h5 className="font-medium mb-1">A.1. Surfaces Intérieures à Peindre (Murs uniquement)</h5>
+                <h5 className="font-medium mb-1">B.1. Surfaces Intérieures à Peindre (Murs UNIQUEMENT)</h5>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700">
                   <li>
-                    <strong>Espaces Pédagogiques:</strong> 36 salles (classes, BCD, CDI)
+                    <strong>Espaces Pédagogiques:</strong> 36 salles
                     <ul className="list-disc pl-5 mt-1">
-                      <li>Surface Murs à peindre par salle type (60m² au sol): 87 m²</li>
-                      <li>Total peinture par salle type: 87 m²</li>
+                      <li>Surface Murs à peindre par salle type (60m² au sol): 70 m²</li>
                     </ul>
                   </li>
                   <li>
                     <strong>Espaces Administratifs:</strong> 8 bureaux
                     <ul className="list-disc pl-5 mt-1">
                       <li>Surface Murs à peindre par bureau type (20m² au sol): 50 m²</li>
-                      <li>Total peinture par bureau type: 50 m²</li>
                     </ul>
                   </li>
                   <li>
-                    <strong>Espace Commun:</strong> 1 salle polyvalente (120 m² au sol)
+                    <strong>Espace Commun:</strong> 1 salle polyvalente (100 m² au sol)
                     <ul className="list-disc pl-5 mt-1">
-                      <li>Surface Murs à peindre: estimée à 170 m²</li>
-                      <li>Total peinture salle polyvalente: 170 m²</li>
+                      <li>Surface Murs à peindre: estimée à 120 m²</li>
                     </ul>
                   </li>
                 </ul>
 
-                <h5 className="font-medium mt-4 mb-1">A.2. Surfaces Extérieures à Ravaler (Façades)</h5>
-                <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                  <li>Bâtiment Administratif: 564 m²</li>
-                  <li>Bâtiment Collège: 560 m²</li>
-                  <li>Bâtiment Laboratoires ("Lab"): 352 m²</li>
-                  <li>Bâtiment Primaire: 480 m²</li>
-                  <li>Bâtiment Lycée: 378 m²</li>
-                  <li><strong>Total Façades Extérieures estimées:</strong> 2 334 m²</li>
-                </ul>
+                <h5 className="font-medium mt-4 mb-1">B.2. Surfaces Extérieures à Ravaler (Façades)</h5>
+                <p className="text-gray-700 mb-2">Identique au Scénario A : Total 2 334 m²</p>
               </div>
 
               <div className="mb-6">
                 <h4 className="font-semibold text-lg mb-2">2. Spécifications Techniques et Types de Travaux Envisagés</h4>
                 <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                  <li><strong>Peinture Intérieure:</strong> Inclut la préparation des supports (lessivage, rebouchage, ponçage, sous-couche) et l'application de deux couches de peinture sur les murs. Les plafonds seront équipés de faux plafonds acoustiques.</li>
-                  <li><strong>Ravalement de Façade:</strong> Inclut la préparation des supports (nettoyage, traitements, réparations, primaire) et l'application d'un revêtement de façade adapté.</li>
+                  <li><strong>Peinture Intérieure:</strong> Inclut la préparation des supports (lessivage, rebouchage, ponçage, sous-couche) et l'application de deux couches de peinture sur les murs uniquement. Les plafonds ne sont pas peints.</li>
+                  <li><strong>Ravalement de Façade:</strong> Identique au Scénario A.</li>
                 </ul>
               </div>
 
@@ -125,11 +118,16 @@ const PlanPeintureRavalement = () => {
                   <li>Coût unitaire peinture intérieure (murs uniquement): 3 500 FCFA/m²</li>
                   <li>Coût unitaire ravalement de façade: 5 000 FCFA/m²</li>
                   <li>Provision pour Imprévus et Ajustements: Marge de 10% ajoutée au budget annuel.</li>
+                  <li>Recette Annuelle Écolages (Référence): 1 231 445 000 FCFA</li>
                 </ul>
               </div>
 
               <div className="mb-6">
-                <h4 className="font-semibold text-lg mb-2">5. Synthèse Budgétaire Annuelle Prévisionnelle</h4>
+                <h4 className="font-semibold text-lg mb-2">5. Synthèse Budgétaire Annuelle Prévisionnelle (Peinture Murs UNIQUEMENT)</h4>
+                <p className="text-gray-600 mb-4">
+                  <strong>Calcul des surfaces peintes annuelles (Murs Uniquement) :</strong><br/>
+                  Salle type : 70 m² | Bureau type : 50 m² | Salle Polyvalente : 120 m²
+                </p>
                 <div className="overflow-x-auto">
                   <table className="min-w-full border-collapse border border-gray-300 mb-4">
                     <thead>
@@ -153,78 +151,78 @@ const PlanPeintureRavalement = () => {
                         <td className="border border-gray-300 px-4 py-2">7</td>
                         <td className="border border-gray-300 px-4 py-2">1</td>
                         <td className="border border-gray-300 px-4 py-2">1</td>
-                        <td className="border border-gray-300 px-4 py-2">829</td>
-                        <td className="border border-gray-300 px-4 py-2">2 901 500</td>
+                        <td className="border border-gray-300 px-4 py-2">710</td>
+                        <td className="border border-gray-300 px-4 py-2">2 516 000</td>
                         <td className="border border-gray-300 px-4 py-2">467</td>
                         <td className="border border-gray-300 px-4 py-2">2 335 000</td>
-                        <td className="border border-gray-300 px-4 py-2">5 236 500</td>
-                        <td className="border border-gray-300 px-4 py-2">5 760 150</td>
-                        <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,60 %</td>
+                        <td className="border border-gray-300 px-4 py-2">4 851 000</td>
+                        <td className="border border-gray-300 px-4 py-2">5 336 100</td>
+                        <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,43 %</td>
                       </tr>
                       <tr>
                         <td className="border border-gray-300 px-4 py-2">Année 2</td>
                         <td className="border border-gray-300 px-4 py-2">7</td>
                         <td className="border border-gray-300 px-4 py-2">1</td>
                         <td className="border border-gray-300 px-4 py-2">0</td>
-                        <td className="border border-gray-300 px-4 py-2">659</td>
-                        <td className="border border-gray-300 px-4 py-2">2 306 500</td>
+                        <td className="border border-gray-300 px-4 py-2">540</td>
+                        <td className="border border-gray-300 px-4 py-2">1 890 000</td>
                         <td className="border border-gray-300 px-4 py-2">467</td>
                         <td className="border border-gray-300 px-4 py-2">2 335 000</td>
-                        <td className="border border-gray-300 px-4 py-2">4 641 500</td>
-                        <td className="border border-gray-300 px-4 py-2">5 105 650</td>
-                        <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,53 %</td>
+                        <td className="border border-gray-300 px-4 py-2">4 225 000</td>
+                        <td className="border border-gray-300 px-4 py-2">4 647 500</td>
+                        <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,38 %</td>
                       </tr>
                       <tr>
                         <td className="border border-gray-300 px-4 py-2">Année 3</td>
                         <td className="border border-gray-300 px-4 py-2">7</td>
                         <td className="border border-gray-300 px-4 py-2">2</td>
                         <td className="border border-gray-300 px-4 py-2">0</td>
-                        <td className="border border-gray-300 px-4 py-2">709</td>
-                        <td className="border border-gray-300 px-4 py-2">2 481 500</td>
+                        <td className="border border-gray-300 px-4 py-2">590</td>
+                        <td className="border border-gray-300 px-4 py-2">2 065 000</td>
                         <td className="border border-gray-300 px-4 py-2">467</td>
                         <td className="border border-gray-300 px-4 py-2">2 335 000</td>
-                        <td className="border border-gray-300 px-4 py-2">4 816 500</td>
-                        <td className="border border-gray-300 px-4 py-2">5 298 150</td>
-                        <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,55 %</td>
+                        <td className="border border-gray-300 px-4 py-2">4 400 000</td>
+                        <td className="border border-gray-300 px-4 py-2">4 840 000</td>
+                        <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,39 %</td>
                       </tr>
                       <tr>
                         <td className="border border-gray-300 px-4 py-2">Année 4</td>
                         <td className="border border-gray-300 px-4 py-2">7</td>
                         <td className="border border-gray-300 px-4 py-2">2</td>
                         <td className="border border-gray-300 px-4 py-2">0</td>
-                        <td className="border border-gray-300 px-4 py-2">709</td>
-                        <td className="border border-gray-300 px-4 py-2">2 481 500</td>
+                        <td className="border border-gray-300 px-4 py-2">590</td>
+                        <td className="border border-gray-300 px-4 py-2">2 065 000</td>
                         <td className="border border-gray-300 px-4 py-2">467</td>
                         <td className="border border-gray-300 px-4 py-2">2 335 000</td>
-                        <td className="border border-gray-300 px-4 py-2">4 816 500</td>
-                        <td className="border border-gray-300 px-4 py-2">5 298 150</td>
-                        <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,55 %</td>
+                        <td className="border border-gray-300 px-4 py-2">4 400 000</td>
+                        <td className="border border-gray-300 px-4 py-2">4 840 000</td>
+                        <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,39 %</td>
                       </tr>
                       <tr>
                         <td className="border border-gray-300 px-4 py-2">Année 5</td>
                         <td className="border border-gray-300 px-4 py-2">8</td>
                         <td className="border border-gray-300 px-4 py-2">2</td>
                         <td className="border border-gray-300 px-4 py-2">0</td>
-                        <td className="border border-gray-300 px-4 py-2">796</td>
+                        <td className="border border-gray-300 px-4 py-2">660</td>
                         <td className="border border-gray-300 px-4 py-2">2 786 000</td>
                         <td className="border border-gray-300 px-4 py-2">466</td>
                         <td className="border border-gray-300 px-4 py-2">2 330 000</td>
                         <td className="border border-gray-300 px-4 py-2">5 116 000</td>
                         <td className="border border-gray-300 px-4 py-2">5 627 600</td>
-                        <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,59 %</td>
+                        <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,46 %</td>
                       </tr>
                       <tr className="bg-gray-100 font-bold">
                         <td className="border border-gray-300 px-4 py-2">TOTAL</td>
                         <td className="border border-gray-300 px-4 py-2">36</td>
                         <td className="border border-gray-300 px-4 py-2">8</td>
                         <td className="border border-gray-300 px-4 py-2">1</td>
-                        <td className="border border-gray-300 px-4 py-2">3702</td>
-                        <td className="border border-gray-300 px-4 py-2">12 957 000</td>
+                        <td className="border border-gray-300 px-4 py-2">3090</td>
+                        <td className="border border-gray-300 px-4 py-2">11 322 000</td>
                         <td className="border border-gray-300 px-4 py-2">2334</td>
                         <td className="border border-gray-300 px-4 py-2">11 670 000</td>
-                        <td className="border border-gray-300 px-4 py-2">24 627 000</td>
-                        <td className="border border-gray-300 px-4 py-2">27 089 700</td>
-                        <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">0,56 % moy.</td>
+                        <td className="border border-gray-300 px-4 py-2">22 992 000</td>
+                        <td className="border border-gray-300 px-4 py-2">25 291 200</td>
+                        <td className="border border-gray-300 px-4 py-2 font-medium text-french-blue">2,05 %</td>
                       </tr>
                     </tbody>
                   </table>
@@ -257,11 +255,20 @@ const PlanPeintureRavalement = () => {
 
               <div className="bg-gradient-to-r from-french-blue/10 to-blue-100 p-6 rounded-lg">
                 <h4 className="font-semibold text-lg mb-3 text-french-blue">Conclusion</h4>
+                <p className="text-gray-700 mb-4">
+                  Ce plan de renouvellement sur six ans permet :
+                </p>
+                <ul className="list-disc pl-5 space-y-1 text-gray-700 mb-4">
+                  <li>De maintenir un parc homogène et performant</li>
+                  <li>De lisser les dépenses d'investissement sur la durée</li>
+                  <li>De répondre aux contraintes climatiques locales en anticipant l'usure accélérée du matériel</li>
+                  <li>D'assurer la continuité des apprentissages dans des conditions de projection optimales</li>
+                </ul>
                 <p className="text-gray-700 mb-2">
-                  Ce plan pluriannuel de peinture et ravalement représente un investissement stratégique de <strong>27,1 millions de FCFA sur 5 ans</strong>, soit une moyenne de <strong>0,56% des écolages annuels</strong>.
+                  Ce plan pluriannuel de peinture et ravalement représente un investissement stratégique de <strong>25,3 millions de FCFA sur 5 ans</strong>, soit un impact relatif de <strong>2,05% des recettes totales</strong>.
                 </p>
                 <p className="text-gray-700">
-                  L'approche "murs uniquement" avec faux plafonds acoustiques offre un excellent rapport qualité-prix, garantissant un environnement éducatif soigné et fonctionnel pour l'ensemble de la communauté scolaire.
+                  À l'issue de ce cycle, il conviendra probablement de relancer un plan similaire afin de remplacer progressivement les éléments traités lors de la première année. Cela permettra de maintenir une logique de roulement permanent, garantissant la pérennité et la performance du patrimoine immobilier.
                 </p>
               </div>
 
