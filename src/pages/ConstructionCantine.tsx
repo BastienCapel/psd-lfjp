@@ -320,32 +320,7 @@ const ConstructionCantine = () => {
           </CardContent>
         </Card>
 
-        {/* Annexes */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>11. Annexes</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="list-disc ml-6 space-y-1">
-              <li>Plan de masse du Lycée</li>
-              <li>Maquette d'implantation</li>
-              <li>Modèle de contrat-type pour le partenaire sélectionné</li>
-            </ul>
-          </CardContent>
-        </Card>
 
-        {/* Call to Action */}
-        <div className="text-center bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-lg">
-          <h2 className="text-2xl font-bold text-green-800 mb-4">
-            Partenaires intéressés ?
-          </h2>
-          <p className="text-lg text-green-700 mb-6">
-            Préparez votre proposition complète en suivant ce guide et contactez l'APE du LFJP pour plus d'informations.
-          </p>
-          <Badge variant="outline" className="text-green-700 border-green-700">
-            Document guide pour partenaires potentiels
-          </Badge>
-        </div>
       </div>
 
       <Footer />
