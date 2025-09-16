@@ -23,7 +23,7 @@ const PSDAxe1 = () => {
     { text: 'Poursuite du <strong>plan de prévention du harcèlement</strong> et de la violence, avec <strong>médiateurs élèves</strong>, pratiques restauratives, programme <strong>pHARe</strong>' },
     { text: 'Renforcement de <strong>dispositifs d\'expression et de participation</strong> : conseils de vie lycéenne et collégienne renforcés, <strong>budgets participatifs</strong> d\'embellissement, boîtes à idées, comités mixtes' },
     { text: 'Accompagnement à la <strong>parentalité et coéducation</strong> : temps de rencontre informels, ateliers pour mieux suivre la scolarité' },
-    { text: 'Lancement progressif d\'un <strong>service de restauration scolaire</strong>, avec audit qualitatif, étude d\'impact économique, consultation des usagers, et mise en œuvre en 2026-2027' },
+    { text: 'Lancement progressif d\'un <strong>service de restauration scolaire</strong>, avec audit qualitatif, étude d\'impact économique, consultation des usagers, et mise en œuvre en 2026-2027', link: '/construction-cantine' },
     { text: 'Structuration d\'une <strong>politique E3D consolidée</strong>, incluant :<br/>• des <strong>référents E3D</strong> par cycle et des <strong>éco-délégués actifs</strong><br/>• un <strong>comité de pilotage E3D</strong> ouvert à tous les acteurs (élèves, parents, personnels, partenaires locaux)<br/>• des <strong>projets pédagogiques interdisciplinaires</strong> intégrant les <strong>ODD</strong> (Objectifs de Développement Durable)<br/>• la formalisation d\'un <strong>plan d\'action annuel E3D</strong> aligné avec le référentiel <strong>EFE3D</strong>' }
   ];
   
