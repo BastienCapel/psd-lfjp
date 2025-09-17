@@ -15,6 +15,7 @@ import PCParLyceen from "./pages/PCParLyceen";
 import PlanPeintureRavalement from "./pages/PlanPeintureRavalement";
 import RenouvellementMaterielInformatique from "./pages/RenouvellementMaterielInformatique";
 import ConstructionCantine from "./pages/ConstructionCantine";
+import ProtocolePHARE from "./pages/ProtocolePHARE";
 import ElcsAnalyseComplete from "./pages/ElcsAnalyseComplete";
 import SectionInternationaleBFI from "./pages/SectionInternationaleBFI";
 import DeploiementPlanSectionInternationaleBFI from "./pages/DeploiementPlanSectionInternationaleBFI";
@@ -118,6 +119,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ConstructionCantine />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/protocole-phare" element={
+                  <>
+                    <BreadcrumbNav />
+                    <ProtocolePHARE />
                     <BackToTop />
                   </>
                 } />
