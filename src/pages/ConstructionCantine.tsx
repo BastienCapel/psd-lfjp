@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Separator } from '../components/ui/separator';
+import { Button } from '../components/ui/button';
 import { 
   Building2, 
   Users, 
@@ -14,10 +16,14 @@ import {
   CheckCircle,
   AlertCircle,
   Target,
-  Wrench
+  Wrench,
+  ArrowLeft,
+  Home
 } from 'lucide-react';
 
 const ConstructionCantine = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen flex flex-col font-raleway">
       <Navbar showLogo={true} />
@@ -37,6 +43,17 @@ const ConstructionCantine = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="container mx-auto px-6 py-4 flex gap-2">
+        <Button variant="outline" onClick={() => navigate('/plan-strategique')}>
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Retour
+        </Button>
+        <Button variant="outline" onClick={() => navigate('/')}>
+          <Home className="mr-2 h-4 w-4" />
+          Accueil
+        </Button>
       </div>
 
       {/* Content */}
