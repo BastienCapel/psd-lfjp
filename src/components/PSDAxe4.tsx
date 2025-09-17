@@ -6,7 +6,7 @@ import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe4 = () => {
   const objectifs = [
-    { text: 'Maintenir le <strong>niveau d\'excellence</strong> et les poursuivre la montée en puissance de la <strong>réussite aux examens</strong>' },
+    { text: 'Maintenir le <strong>niveau d\'excellence</strong> et poursuivre la montée en puissance de la <strong>réussite aux examens</strong>' },
     { text: 'Développer les <strong>compétences psychosociales et humaines</strong> des élèves (<strong>soft skills</strong>) : prise de parole, coopération, gestion de l\'échec, résilience, esprit critique, engagement citoyen' },
     { text: 'Encourager l\'<strong>autonomie</strong>, la <strong>persévérance</strong> et la capacité à s\'orienter de manière éclairée' },
     { text: 'Valoriser toutes les formes de <strong>réussite</strong> : scolaire, artistique, humaine, citoyenne, collective' },
