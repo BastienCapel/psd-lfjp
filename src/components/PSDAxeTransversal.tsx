@@ -17,7 +17,7 @@ const PSDAxeTransversal = () => {
     { text: 'Développement de supports de communication' },
     { text: 'Organisation d\'espaces d\'échange pour renforcer le sentiment d\'appartenance' },
     { text: 'Plan Pluriannuel de Roulement de Peinture et de Ravalement des Façades (2025-2030)', link: '/plan-peinture-ravalement' },
-    { text: 'Plan de maintenance stratégique' }
+    { text: 'Plan de maintenance stratégique', link: '/plan-maintenance-strategique' }
   ];
   
   const indicators = [
