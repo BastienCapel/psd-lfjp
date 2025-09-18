@@ -19,7 +19,7 @@ const PSDAxe1 = () => {
     { text: '<strong>Plan Pluriannuel de Roulement de Peinture et de Ravalement des Façades</strong> (2025-2030)', link: '/plan-peinture-ravalement' },
     { text: 'Poursuite des travaux d\'<strong>amélioration de l\'acoustique</strong>', link: '/amelioration-acoustique' },
     { text: 'Déploiement d\'un <strong>parcours santé-bien-être</strong> : hygiène, alimentation, activité physique, santé mentale, gestion des émotions' },
-    { text: 'Mise en place d\'une <strong>cellule de détection et d\'orientation</strong> des <strong>troubles d\'apprentissage</strong> (type GPDS)' },
+    
     { text: 'Poursuite du <strong>plan de prévention du harcèlement</strong> et de la violence, avec <strong>médiateurs élèves</strong>, pratiques restauratives, programme <strong>pHARe</strong>', link: '/protocole-phare' },
     { text: 'Renforcement de <strong>dispositifs d\'expression et de participation</strong> : conseils de vie lycéenne et collégienne renforcés, <strong>budgets participatifs</strong> d\'embellissement, boîtes à idées, comités mixtes' },
     { text: 'Accompagnement à la <strong>parentalité et coéducation</strong> : temps de rencontre informels, ateliers pour mieux suivre la scolarité' },
