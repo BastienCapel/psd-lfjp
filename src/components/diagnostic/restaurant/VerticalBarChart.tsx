@@ -28,10 +28,17 @@ const VerticalBarChart: React.FC<VerticalBarChartProps> = ({ title, data }) => {
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
           data={data}
-          margin={{ top: 5, right: 20, left: 0, bottom: 5 }}
+          margin={{ top: 5, right: 20, left: 0, bottom: 80 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <XAxis 
+            dataKey="name" 
+            angle={-45}
+            textAnchor="end"
+            height={80}
+            interval={0}
+            tick={{ fontSize: 12 }}
+          />
           <YAxis />
           <Tooltip content={({ active, payload }) => {
             if (active && payload && payload.length) {
