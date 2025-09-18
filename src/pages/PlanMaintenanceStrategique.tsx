@@ -78,35 +78,169 @@ const PlanMaintenanceStrategique = () => {
                   </CardHeader>
                   <CardContent className="space-y-6">
                     <div>
-                      <h3 className="text-xl font-semibold text-french-blue mb-3">Objectifs</h3>
-                      <ul className="list-disc list-inside space-y-2 text-gray-700">
-                        <li>Maintenir l'état esthétique et structurel des façades</li>
-                        <li>Préserver la valeur patrimoniale de l'établissement</li>
-                        <li>Améliorer l'image de marque du lycée</li>
-                        <li>Assurer la protection des structures contre les intempéries</li>
-                      </ul>
+                      <h3 className="text-xl font-semibold text-french-blue mb-3">Introduction</h3>
+                      <p className="text-gray-700 mb-4">
+                        Afin de garantir un cadre de travail et d'apprentissage soigné, sécurisant, motivant et propice au bien-être de tous les usagers, un plan pluriannuel de rénovation a été établi pour la période 2025-2030. Ce plan vise à maintenir et valoriser le patrimoine immobilier de l'établissement. Il prend spécifiquement en compte la réalité climatique du Sénégal (air salin, chaleur, humidité) et les usages intensifs des locaux scolaires.
+                      </p>
+                      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <h4 className="font-semibold text-yellow-800 mb-2">PEINTURE MURS UNIQUEMENT (AVEC POSE DE FAUX-PLAFONDS ACOUSTIQUES)</h4>
+                        <p className="text-yellow-700">
+                          Ce scénario part du principe que les plafonds des salles, bureaux et de la salle polyvalente seront équipés de faux-plafonds acoustiques. La pose de ces faux-plafonds constitue un lot de travaux et un budget distincts, non inclus dans la présente note. Par conséquent, ce scénario ne budgétise que la peinture des murs.
+                        </p>
+                      </div>
                     </div>
                     
                     <div>
-                      <h3 className="text-xl font-semibold text-french-blue mb-3">Planning prévisionnel</h3>
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-semibold mb-2">2025-2026</h4>
-                          <p className="text-sm text-gray-600">Bâtiment principal - Façade Est et Sud</p>
+                      <h3 className="text-xl font-semibold text-french-blue mb-3">Périmètre Concerné et Détail des Surfaces</h3>
+                      
+                      <div className="mb-4">
+                        <h4 className="font-medium mb-2">Surfaces Intérieures à Peindre (Murs UNIQUEMENT)</h4>
+                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                          <li>
+                            <strong>Espaces Pédagogiques:</strong> 36 salles
+                            <ul className="list-disc list-inside ml-4 mt-1">
+                              <li>Surface Murs à peindre par salle type (60m² au sol): 70 m²</li>
+                            </ul>
+                          </li>
+                          <li>
+                            <strong>Espaces Administratifs:</strong> 8 bureaux
+                            <ul className="list-disc list-inside ml-4 mt-1">
+                              <li>Surface Murs à peindre par bureau type (20m² au sol): 50 m²</li>
+                            </ul>
+                          </li>
+                          <li>
+                            <strong>Espace Commun:</strong> 1 salle polyvalente (100 m² au sol)
+                            <ul className="list-disc list-inside ml-4 mt-1">
+                              <li>Surface Murs à peindre: estimée à 120 m²</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 className="font-medium mb-2">Surfaces Extérieures à Ravaler (Façades)</h4>
+                        <p className="text-gray-700">Total : 2 334 m²</p>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-xl font-semibold text-french-blue mb-3">Spécifications Techniques</h3>
+                      <ul className="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Peinture Intérieure:</strong> Inclut la préparation des supports (lessivage, rebouchage, ponçage, sous-couche) et l'application de deux couches de peinture sur les murs uniquement. Les plafonds ne sont pas peints.</li>
+                        <li><strong>Ravalement de Façade:</strong> Traitement complet des façades extérieures adaptées au climat local.</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="text-xl font-semibold text-french-blue mb-3">Cadence et Critères de Priorisation</h3>
+                      <ul className="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Peinture Intérieure (Murs uniquement):</strong> Roulement intégral sur 5 ans.</li>
+                        <li><strong>Ravalement de Façade:</strong> Fractionné en 5 zones/bâtiments, environ 467 m² traités chaque année.</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="text-xl font-semibold text-french-blue mb-3">Hypothèses Budgétaires</h3>
+                      <ul className="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Coût unitaire peinture intérieure (murs uniquement): 3 500 FCFA/m²</li>
+                        <li>Coût unitaire ravalement de façade: 5 000 FCFA/m²</li>
+                        <li>Provision pour Imprévus et Ajustements: Marge de 10% ajoutée au budget annuel.</li>
+                        <li>Recette Annuelle Écolages (Référence): 1 231 445 000 FCFA</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="text-xl font-semibold text-french-blue mb-3">Synthèse Budgétaire sur 5 ans</h3>
+                      <div className="overflow-x-auto">
+                        <table className="min-w-full border-collapse border border-gray-300 text-sm">
+                          <thead>
+                            <tr className="bg-gray-100">
+                              <th className="border border-gray-300 px-2 py-2">Année</th>
+                              <th className="border border-gray-300 px-2 py-2">Surface peinte (m²)</th>
+                              <th className="border border-gray-300 px-2 py-2">Surface ravalée (m²)</th>
+                              <th className="border border-gray-300 px-2 py-2">Coût total avec 10% imprévus (FCFA)</th>
+                              <th className="border border-gray-300 px-2 py-2">% des écolages</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td className="border border-gray-300 px-2 py-2">Année 1</td>
+                              <td className="border border-gray-300 px-2 py-2">710</td>
+                              <td className="border border-gray-300 px-2 py-2">467</td>
+                              <td className="border border-gray-300 px-2 py-2">5 336 100</td>
+                              <td className="border border-gray-300 px-2 py-2 font-medium text-french-blue">0,43 %</td>
+                            </tr>
+                            <tr>
+                              <td className="border border-gray-300 px-2 py-2">Année 2</td>
+                              <td className="border border-gray-300 px-2 py-2">540</td>
+                              <td className="border border-gray-300 px-2 py-2">467</td>
+                              <td className="border border-gray-300 px-2 py-2">4 647 500</td>
+                              <td className="border border-gray-300 px-2 py-2 font-medium text-french-blue">0,38 %</td>
+                            </tr>
+                            <tr>
+                              <td className="border border-gray-300 px-2 py-2">Année 3</td>
+                              <td className="border border-gray-300 px-2 py-2">590</td>
+                              <td className="border border-gray-300 px-2 py-2">467</td>
+                              <td className="border border-gray-300 px-2 py-2">4 840 000</td>
+                              <td className="border border-gray-300 px-2 py-2 font-medium text-french-blue">0,39 %</td>
+                            </tr>
+                            <tr>
+                              <td className="border border-gray-300 px-2 py-2">Année 4</td>
+                              <td className="border border-gray-300 px-2 py-2">590</td>
+                              <td className="border border-gray-300 px-2 py-2">467</td>
+                              <td className="border border-gray-300 px-2 py-2">4 840 000</td>
+                              <td className="border border-gray-300 px-2 py-2 font-medium text-french-blue">0,39 %</td>
+                            </tr>
+                            <tr>
+                              <td className="border border-gray-300 px-2 py-2">Année 5</td>
+                              <td className="border border-gray-300 px-2 py-2">660</td>
+                              <td className="border border-gray-300 px-2 py-2">466</td>
+                              <td className="border border-gray-300 px-2 py-2">5 627 600</td>
+                              <td className="border border-gray-300 px-2 py-2 font-medium text-french-blue">0,46 %</td>
+                            </tr>
+                            <tr className="bg-gray-100 font-bold">
+                              <td className="border border-gray-300 px-2 py-2">TOTAL</td>
+                              <td className="border border-gray-300 px-2 py-2">3 090</td>
+                              <td className="border border-gray-300 px-2 py-2">2 334</td>
+                              <td className="border border-gray-300 px-2 py-2">25 291 200</td>
+                              <td className="border border-gray-300 px-2 py-2 font-medium text-french-blue">2,05 %</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-xl font-semibold text-french-blue mb-3">Planification et Contrôle Qualité</h3>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div>
+                          <h4 className="font-medium mb-2">Planification Annuelle</h4>
+                          <ul className="list-disc list-inside space-y-1 text-gray-700">
+                            <li>Interventions programmées pendant les congés scolaires (avril, juillet-août, décembre)</li>
+                            <li>Coordination avec les autres travaux d'entretien et maintenance</li>
+                            <li>Planning détaillé communiqué en début d'année scolaire</li>
+                          </ul>
                         </div>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-semibold mb-2">2026-2027</h4>
-                          <p className="text-sm text-gray-600">Bâtiment principal - Façade Ouest et Nord</p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-semibold mb-2">2027-2028</h4>
-                          <p className="text-sm text-gray-600">Bâtiments annexes et espaces communs</p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-semibold mb-2">2028-2030</h4>
-                          <p className="text-sm text-gray-600">Rénovation intérieure et espaces spécialisés</p>
+                        <div>
+                          <h4 className="font-medium mb-2">Contrôle Qualité</h4>
+                          <ul className="list-disc list-inside space-y-1 text-gray-700">
+                            <li>Sélection rigoureuse des prestataires (minimum 3 devis)</li>
+                            <li>Cahier des charges précis avec spécifications techniques</li>
+                            <li>Contrôle qualité systématique en fin de travaux</li>
+                            <li>Garantie décennale exigée pour les travaux de façade</li>
+                          </ul>
                         </div>
                       </div>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-french-blue/10 to-blue-100 p-6 rounded-lg">
+                      <h4 className="font-semibold text-lg mb-3 text-french-blue">Conclusion</h4>
+                      <p className="text-gray-700 mb-4">
+                        Ce plan pluriannuel de peinture et ravalement représente un investissement stratégique de <strong>25,3 millions de FCFA sur 5 ans</strong>, soit un impact relatif de <strong>2,05% des recettes totales</strong>.
+                      </p>
+                      <p className="text-gray-700">
+                        À l'issue de ce cycle, il conviendra probablement de relancer un plan similaire afin de maintenir une logique de roulement permanent, garantissant la pérennité et la performance du patrimoine immobilier.
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
