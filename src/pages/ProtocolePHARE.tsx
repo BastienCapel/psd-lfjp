@@ -514,9 +514,19 @@ const ProtocolePHARE = () => {
             <CardContent>
               <div className="bg-blue-50 p-6 rounded-lg">
                 <p className="text-lg font-semibold mb-4">Pour signaler une situation de harcèlement :</p>
-                <div className="flex items-center gap-3">
-                  <Mail className="h-5 w-5 text-blue-600" />
-                  <span className="text-lg">cpe@lfjpsaly.org</span>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Mail className="h-5 w-5 text-blue-600" />
+                    <span className="text-lg">cpe@lfjpsaly.org</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Mail className="h-5 w-5 text-blue-600" />
+                    <span className="text-lg">directriceprimaire@lfjpsaly.org</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Mail className="h-5 w-5 text-blue-600" />
+                    <span className="text-lg">proviseur@lfjpsaly.org</span>
+                  </div>
                 </div>
                 <p className="text-sm text-gray-600 mt-4">
                   N'hésitez pas à nous contacter. Chaque signalement est pris au sérieux et traité avec confidentialité.
