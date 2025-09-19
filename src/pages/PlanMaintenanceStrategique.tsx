@@ -238,9 +238,17 @@ const PlanMaintenanceStrategique = () => {
                       <p className="text-gray-700 mb-4">
                         Ce plan pluriannuel de peinture et ravalement représente un investissement stratégique de <strong>25,3 millions de FCFA sur 5 ans</strong>, soit un impact relatif de <strong>2,05% des recettes totales</strong>.
                       </p>
-                      <p className="text-gray-700">
+                      <p className="text-gray-700 mb-4">
                         À l'issue de ce cycle, il conviendra probablement de relancer un plan similaire afin de maintenir une logique de roulement permanent, garantissant la pérennité et la performance du patrimoine immobilier.
                       </p>
+                      <div className="text-center">
+                        <a 
+                          href="/plan-peinture-ravalement" 
+                          className="inline-flex items-center px-6 py-3 bg-french-blue text-white rounded-lg hover:bg-french-blue/90 transition-colors font-medium"
+                        >
+                          Consulter le plan détaillé
+                        </a>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
