@@ -38,7 +38,7 @@ const PlanPeintureRavalement = () => {
 
       <div className="container mx-auto px-6 py-4 flex gap-2">
         <Button variant="outline" asChild>
-          <Link to="/plan-strategique" className="flex items-center gap-2">
+          <Link to="/plan-maintenance-strategique" className="flex items-center gap-2">
             <ArrowLeft size={16} /> Retour
           </Link>
         </Button>
