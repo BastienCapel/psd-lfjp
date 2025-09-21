@@ -7,7 +7,6 @@ import DiagnosticElcsContent from '../components/diagnostic/DiagnosticElcsConten
 import DiagnosticPsdContent from '../components/diagnostic/DiagnosticPsdContent';
 import DiagnosticRestaurantContent from '../components/diagnostic/DiagnosticRestaurantContent';
 import { ElcsDataProvider } from '../components/diagnostic/ElcsDataContext';
-import BackToTop from '../components/BackToTop';
 
 const Diagnostic = () => {
   return (
@@ -67,7 +66,6 @@ const Diagnostic = () => {
       </section>
 
       <Footer />
-      <BackToTop />
     </div>
   );
 };
