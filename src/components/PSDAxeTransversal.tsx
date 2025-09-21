@@ -41,7 +41,7 @@ const PSDAxeTransversal = () => {
     <section className="space-y-10">
       <header className="space-y-3">
         <h3 className="text-xl font-playfair font-bold text-french-blue md:text-2xl">
-          AXE TRANSVERSAL – PILOTAGE, GOUVERNANCE ET VIABILITÉ
+          AXE TRANSVERSAL – PLAN DE MAINTENANCE STRATEGIQUE
         </h3>
         <p className="text-lg font-medium font-raleway text-gray-800">
           Concentration des efforts sur le Plan de maintenance stratégique 2025-2030 pour sécuriser la trajectoire du PSD.
@@ -57,7 +57,6 @@ const PSDAxeTransversal = () => {
                 <LayoutDashboard className="h-7 w-7" aria-hidden="true" />
               </span>
               <div>
-                <p className="text-sm uppercase tracking-widest text-white/70">Volet unique</p>
                 <h4 className="text-2xl font-playfair font-semibold">Plan de maintenance stratégique</h4>
               </div>
             </div>
