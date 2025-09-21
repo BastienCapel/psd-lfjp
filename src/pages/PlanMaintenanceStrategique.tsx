@@ -339,13 +339,31 @@ const PlanMaintenanceStrategique = () => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-10">
+                    <div>
+                      <p className="text-gray-700">
+                        Les salles actuelles présentent des résonances importantes. Elles rendent les cours plus fatigants
+                        pour les élèves et leurs enseignants et réduisent l'intelligibilité de la parole. Ce plan vise à
+                        améliorer nettement le confort d'écoute et la concentration.
+                      </p>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h2 className="text-2xl font-playfair font-bold text-french-blue">Pourquoi agir maintenant</h2>
+                      <ul className="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Limiter la fatigue vocale des enseignants au quotidien.</li>
+                        <li>Renforcer l'attention et la compréhension des élèves.</li>
+                        <li>Préserver un climat de classe serein, propice aux apprentissages.</li>
+                      </ul>
+                    </div>
+
                     <div className="space-y-4">
                       <h3 className="text-xl font-semibold text-french-blue">Diagnostic et objectifs</h3>
                       <p className="text-gray-700">
-                        Un audit détaillé a révélé que 25 salles pédagogiques, l'amphithéâtre et plusieurs espaces communs
-                        souffrent d'un temps de réverbération trop élevé, nuisant à la compréhension orale et à la
-                        concentration. L'objectif est de ramener le niveau sonore moyen à &lt; 45 dB en installant des
-                        plafonds acoustiques performants, tout en améliorant la qualité architecturale des espaces.
+                        Un audit détaillé a révélé que 25 salles pédagogiques, la salle polyvalente et plusieurs espaces
+                        communs souffrent d'un temps de réverbération trop élevé, nuisant à la compréhension orale et à la
+                        concentration. L'objectif est de ramener le niveau de réverbération à un standard confortable pour la
+                        parole en classe, avec une baisse nette des résonances et une meilleure intelligibilité, tout en
+                        améliorant la qualité architecturale des espaces.
                       </p>
                       <div className="grid md:grid-cols-3 gap-4">
                         <div className="bg-french-blue/10 border border-french-blue/20 p-4 rounded-lg">
@@ -359,10 +377,31 @@ const PlanMaintenanceStrategique = () => {
                           <p className="text-sm text-gray-600">1 200 000 FCFA par salle, matériaux et pose inclus</p>
                         </div>
                         <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
-                          <p className="text-sm uppercase tracking-wide text-purple-700 font-semibold mb-1">Impact</p>
-                          <p className="text-2xl font-bold text-purple-700">-6 dB</p>
-                          <p className="text-sm text-gray-600">Gain acoustique attendu sur le temps de réverbération</p>
+                          <p className="text-sm uppercase tracking-wide text-purple-700 font-semibold mb-1">Impact attendu</p>
+                          <p className="text-2xl font-bold text-purple-700">Confort renforcé</p>
+                          <p className="text-sm text-gray-600">Baisse nette des résonances et meilleure intelligibilité</p>
                         </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-french-blue">Avant / Après (exemples)</h3>
+                      <div className="grid gap-4 md:grid-cols-3">
+                        {[{ salle: 'Salle 101', resume: 'Traitement des plafonds avec dalles absorbantes suspendues.' }, { salle: 'Salle 205', resume: 'Réduction des échos grâce aux baffles acoustiques suspendus.' }, { salle: 'Salle polyvalente', resume: 'Pose complète de plafonds absorbants et capotage des climatiseurs.' }].map((item) => (
+                          <div key={item.salle} className="border border-gray-200 rounded-lg p-4 bg-white shadow-sm">
+                            <p className="text-sm uppercase tracking-wide text-gray-500 mb-2">{item.salle}</p>
+                            <div className="grid grid-cols-2 gap-3 text-sm text-gray-700">
+                              <div>
+                                <p className="font-semibold text-red-600">Avant</p>
+                                <p>Résonances marquées, fatigue et écoute difficile.</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-emerald-600">Après</p>
+                                <p>{item.resume}</p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
 
@@ -409,25 +448,16 @@ const PlanMaintenanceStrategique = () => {
                         minimiser l'impact financier sur les familles et d'assurer une montée en gamme progressive des salles
                         d'apprentissage.
                       </p>
-                      <div className="grid md:grid-cols-5 gap-4">
-                        {[1, 2, 3, 4, 5].map((annee) => (
-                          <div key={annee} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
-                            <p className="text-xs uppercase tracking-wide text-gray-500">Année {annee}</p>
-                            <p className="text-lg font-semibold text-french-blue">5 salles rénovées</p>
-                            <p className="text-sm text-gray-600">Suivi acoustique post-travaux &amp; ajustements</p>
-                          </div>
-                        ))}
+                      <p className="text-sm text-gray-600">
+                        Priorité aux salles des 1er et 2e étages et à la salle polyvalente.
+                      </p>
+                      <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm space-y-3">
+                        <p className="text-xs uppercase tracking-wide text-gray-500">Phasage 2026-2030</p>
+                        <p className="text-lg font-semibold text-french-blue">5 salles rénovées par an</p>
+                        <p className="text-sm text-gray-600">
+                          Interventions programmées chaque année sur les salles prioritaires, avec ajustement après suivi acoustique post-travaux.
+                        </p>
                       </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-semibold text-french-blue">Solutions techniques complémentaires</h3>
-                      <ul className="list-disc list-inside space-y-2 text-gray-700">
-                        <li><strong>Plafonds suspendus absorbants :</strong> dalles haute densité avec coefficient αw ≥ 0,80.</li>
-                        <li><strong>Panneaux muraux décoratifs :</strong> bandes verticales micro-perforées pour limiter les réflexions latérales.</li>
-                        <li><strong>Traitement des sources sonores :</strong> capotage des climatiseurs et optimisation du mobilier pour éviter les résonances.</li>
-                        <li><strong>Suivi de performance :</strong> mesures annuelles du temps de réverbération et enquêtes de satisfaction des usagers.</li>
-                      </ul>
                     </div>
 
                   </CardContent>
