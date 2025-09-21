@@ -372,14 +372,12 @@ const PlanMaintenanceStrategique = () => {
                       <p className="text-sm text-gray-600">
                         Priorité aux salles des 1er et 2e étages et à la salle polyvalente.
                       </p>
-                      <div className="grid md:grid-cols-5 gap-4">
-                        {[1, 2, 3, 4, 5].map((annee) => (
-                          <div key={annee} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
-                            <p className="text-xs uppercase tracking-wide text-gray-500">Année {annee}</p>
-                            <p className="text-lg font-semibold text-french-blue">5 salles rénovées</p>
-                            <p className="text-sm text-gray-600">Suivi acoustique post-travaux &amp; ajustements</p>
-                          </div>
-                        ))}
+                      <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm text-center">
+                        <p className="text-sm uppercase tracking-wide text-gray-500">Plan d'étalement 2026-2030</p>
+                        <p className="text-lg font-semibold text-french-blue">
+                          Réalisation de 5 classes par an durant 5 ans
+                        </p>
+                        <p className="text-sm text-gray-600">Suivi acoustique post-travaux &amp; ajustements</p>
                       </div>
                     </div>
 
@@ -439,63 +437,6 @@ const PlanMaintenanceStrategique = () => {
                           </tbody>
                         </table>
                       </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-semibold text-french-blue">Solutions techniques complémentaires</h3>
-                      <ul className="list-disc list-inside space-y-2 text-gray-700">
-                        <li><strong>Plafonds suspendus absorbants :</strong> dalles haute densité avec coefficient αw ≥ 0,80.</li>
-                        <li><strong>Panneaux muraux décoratifs :</strong> bandes verticales micro-perforées pour limiter les réflexions latérales.</li>
-                        <li><strong>Traitement des sources sonores :</strong> capotage des climatiseurs et patins sous le mobilier bruyant.</li>
-                        <li><strong>Suivi de performance :</strong> mesures annuelles du temps de réverbération, enquêtes de satisfaction et restitution en langage simple.</li>
-                      </ul>
-                    </div>
-
-                    <div className="space-y-4">
-                      <h2 className="text-2xl font-playfair font-bold text-french-blue">Spécifications matériaux</h2>
-                      <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg text-gray-700 space-y-2">
-                        <p>• Coefficient d'absorption global αw ≥ 0,80 pour l'ensemble des dalles installées.</p>
-                        <p>• Réaction au feu conforme aux normes en vigueur pour les établissements recevant du public.</p>
-                        <p>• Entretien simple : aspiration mensuelle et remplacement unitaire possible.</p>
-                        <p>• Garantie fournisseur minimale de 5 ans sur les matériaux et la pose.</p>
-                        <p>• Approvisionnement auprès de distributeurs disposant d'un stock local ou régional.</p>
-                      </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-semibold text-french-blue">Impacts pour les familles</h3>
-                      <div className="bg-emerald-50 border border-emerald-200 p-6 rounded-lg text-gray-700">
-                        La progression budgétaire retenue maintient un effort par élève maîtrisé, avec des mensualités
-                        équilibrées selon le scénario de financement choisi (amortissement sur 1 an ou 5 ans).
-                      </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <h2 className="text-2xl font-playfair font-bold text-french-blue">FAQ</h2>
-                      <div className="space-y-3 text-gray-700">
-                        <div>
-                          <p className="font-semibold text-french-blue">Combien de temps dure l'intervention dans une salle&nbsp;?</p>
-                          <p>Chaque salle est traitée en moins d'une semaine, en ciblant les périodes de faible occupation.</p>
-                        </div>
-                        <div>
-                          <p className="font-semibold text-french-blue">Le chantier sera-t-il bruyant&nbsp;?</p>
-                          <p>Les travaux sont planifiés hors temps de classe autant que possible et les phases sonores sont concentrées sur des créneaux courts.</p>
-                        </div>
-                        <div>
-                          <p className="font-semibold text-french-blue">Comment entretenir les nouvelles dalles&nbsp;?</p>
-                          <p>Un dépoussiérage régulier et un contrôle visuel annuel suffisent, avec remplacement à l'unité en cas de tache.</p>
-                        </div>
-                        <div>
-                          <p className="font-semibold text-french-blue">Quel impact pour les familles&nbsp;?</p>
-                          <p>Le plan d'étalement retenu garantit une contribution maîtrisée, en cohérence avec l'effort budgétaire présenté dans les scénarios.</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex justify-center">
-                      <Button size="lg" className="bg-french-blue hover:bg-french-blue/90 text-white px-6 py-3">
-                        Valider le plan d'étalement 2026-2030
-                      </Button>
                     </div>
 
                   </CardContent>
