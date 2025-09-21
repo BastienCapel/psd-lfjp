@@ -28,6 +28,7 @@ const routes: RouteMap = {
   "/construction-cantine": { name: "Construction de la Cantine", parent: "/plan-strategique" },
   "/protocole-phare": { name: "Protocole PHARE", parent: "/plan-strategique" },
   "/plan-maintenance-strategique": { name: "Plan de Maintenance Stratégique", parent: "/plan-strategique" },
+  "/mediation-entre-pairs": { name: "Médiation entre pairs", parent: "/plan-strategique" },
   "/elcs-analyse-complete": { name: "Analyse Complète ELCS", parent: "/diagnostic" },
 };
 
