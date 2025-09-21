@@ -110,7 +110,7 @@ const PSDAxeTransversal = () => {
           <div className="mt-6 rounded-2xl border border-dashed border-french-blue/40 bg-french-blue/5 p-5 text-sm text-slate-700">
             <p className="font-semibold text-french-blue">Pilotage et évaluation continue</p>
             <p className="mt-2">
-              Des points d\'avancement réguliers sont partagés avec le conseil d\'établissement afin de mesurer l\'impact des travaux et d\'ajuster la trajectoire si nécessaire.
+              Des points d'avancement réguliers sont partagés avec l'assemblée générale afin de mesurer l'impact des travaux et d'ajuster la trajectoire si nécessaire.
             </p>
           </div>
         </article>
