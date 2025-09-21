@@ -5,7 +5,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Home } from "lucide-react";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import RenouvellementInformatiqueTabs from '../components/RenouvellementInformatiqueTabs';
 
 const PlanMaintenanceStrategique = () => {
   const navigate = useNavigate();
@@ -264,8 +265,29 @@ const PlanMaintenanceStrategique = () => {
 
               <TabsContent value="informatique">
                 <Card>
-                  <CardContent>
-                    <p className="text-center text-lg capitalize">page en construction</p>
+                  <CardHeader>
+                    <CardTitle className="text-2xl font-playfair text-french-blue">
+                      Renouvellement du Matériel Informatique
+                    </CardTitle>
+                    <CardDescription className="text-lg">
+                      Synthèse des plans de remplacement des postes informatiques et des vidéoprojecteurs.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-8">
+                    <p className="text-gray-700">
+                      Cet onglet reprend les deux volets du plan : le renouvellement prioritaire des PC pédagogiques
+                      et administratifs ainsi que la stratégie de remplacement échelonné des vidéoprojecteurs. Les
+                      tableaux de priorisation, budgets et recommandations facilitent la planification sur plusieurs
+                      années.
+                    </p>
+                    <RenouvellementInformatiqueTabs />
+                    <div className="flex justify-end">
+                      <Button variant="outline" asChild className="gap-2">
+                        <Link to="/renouvellement-materiel-informatique">
+                          Consulter la fiche complète
+                        </Link>
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               </TabsContent>
