@@ -322,57 +322,112 @@ const PlanMaintenanceStrategique = () => {
                       Optimisation du confort sonore des espaces d'apprentissage
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-semibold text-french-blue mb-3">Diagnostic acoustique</h3>
-                      <p className="text-gray-700 mb-4">
-                        Un audit acoustique complet a identifié les zones prioritaires nécessitant 
-                        une intervention pour améliorer le confort sonore et les conditions d'apprentissage.
+                  <CardContent className="space-y-10">
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-french-blue">Diagnostic et objectifs</h3>
+                      <p className="text-gray-700">
+                        Un audit détaillé a révélé que 25 salles pédagogiques, l'amphithéâtre et plusieurs espaces communs
+                        souffrent d'un temps de réverbération trop élevé, nuisant à la compréhension orale et à la
+                        concentration. L'objectif est de ramener le niveau sonore moyen à &lt; 45 dB en installant des
+                        plafonds acoustiques performants, tout en améliorant la qualité architecturale des espaces.
                       </p>
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <div className="bg-red-50 border border-red-200 p-4 rounded-lg">
-                          <h4 className="font-semibold text-red-800 mb-2">Zones critiques</h4>
-                          <ul className="list-disc list-inside text-sm text-red-700 space-y-1">
-                            <li>Amphithéâtre principal</li>
-                            <li>Salles de classe étage 2</li>
-                            <li>Cantine et espaces de restauration</li>
-                          </ul>
+                      <div className="grid md:grid-cols-3 gap-4">
+                        <div className="bg-french-blue/10 border border-french-blue/20 p-4 rounded-lg">
+                          <p className="text-sm uppercase tracking-wide text-french-blue font-semibold mb-1">Périmètre</p>
+                          <p className="text-2xl font-bold text-french-blue">25 salles</p>
+                          <p className="text-sm text-gray-600">Interventions prioritaires sur les salles de classe du 1er et 2e étage</p>
                         </div>
-                        <div className="bg-orange-50 border border-orange-200 p-4 rounded-lg">
-                          <h4 className="font-semibold text-orange-800 mb-2">Zones à améliorer</h4>
-                          <ul className="list-disc list-inside text-sm text-orange-700 space-y-1">
-                            <li>Salles de classe étage 1</li>
-                            <li>Laboratoires de sciences</li>
-                            <li>Bibliothèque et CDI</li>
-                          </ul>
+                        <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-lg">
+                          <p className="text-sm uppercase tracking-wide text-emerald-700 font-semibold mb-1">Coût total</p>
+                          <p className="text-2xl font-bold text-emerald-700">30 M FCFA</p>
+                          <p className="text-sm text-gray-600">1 200 000 FCFA par salle, matériaux et pose inclus</p>
+                        </div>
+                        <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
+                          <p className="text-sm uppercase tracking-wide text-purple-700 font-semibold mb-1">Impact</p>
+                          <p className="text-2xl font-bold text-purple-700">-6 dB</p>
+                          <p className="text-sm text-gray-600">Gain acoustique attendu sur le temps de réverbération</p>
                         </div>
                       </div>
                     </div>
-                    
-                    <div>
-                      <h3 className="text-xl font-semibold text-french-blue mb-3">Solutions techniques</h3>
-                      <div className="space-y-4">
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-french-blue rounded-full mt-2 flex-shrink-0"></div>
-                          <div>
-                            <h4 className="font-semibold">Plafonds suspendus absorbants</h4>
-                            <p className="text-gray-600 text-sm">Installation de dalles acoustiques haute performance</p>
+
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-french-blue">Analyse budgétaire</h3>
+                      <p className="text-gray-700">
+                        Sur la base des effectifs prévisionnels 2025-2026 (614 élèves) et des recettes d'écolage estimées à
+                        <strong> 1&nbsp;231&nbsp;445&nbsp;000 FCFA</strong>, l'investissement représente une charge maîtrisée
+                        pour l'établissement. Deux scénarios d'amortissement sont proposés pour garantir la soutenabilité du
+                        projet.
+                      </p>
+                      <div className="overflow-x-auto">
+                        <table className="min-w-full border border-gray-200 text-sm">
+                          <thead className="bg-gray-50">
+                            <tr>
+                              <th className="px-4 py-2 border border-gray-200 text-left">Scénario</th>
+                              <th className="px-4 py-2 border border-gray-200 text-left">Coût annuel</th>
+                              <th className="px-4 py-2 border border-gray-200 text-left">Impact sur les recettes</th>
+                              <th className="px-4 py-2 border border-gray-200 text-left">Effort par élève/mois</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td className="px-4 py-3 border border-gray-200 font-medium">Amortissement 1 an</td>
+                              <td className="px-4 py-3 border border-gray-200">30&nbsp;000&nbsp;000 FCFA</td>
+                              <td className="px-4 py-3 border border-gray-200">2,44&nbsp;% des recettes annuelles</td>
+                              <td className="px-4 py-3 border border-gray-200">4&nbsp;887 FCFA</td>
+                            </tr>
+                            <tr className="bg-gray-50">
+                              <td className="px-4 py-3 border border-gray-200 font-medium">Amortissement 5 ans</td>
+                              <td className="px-4 py-3 border border-gray-200">6&nbsp;000&nbsp;000 FCFA</td>
+                              <td className="px-4 py-3 border border-gray-200">0,49&nbsp;% des recettes annuelles</td>
+                              <td className="px-4 py-3 border border-gray-200">977 FCFA</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-french-blue">Plan d'étalement recommandé</h3>
+                      <p className="text-gray-700">
+                        La stratégie privilégiée consiste à répartir l'investissement sur la durée du plan 2026-2030 afin de
+                        minimiser l'impact financier sur les familles et d'assurer une montée en gamme progressive des salles
+                        d'apprentissage.
+                      </p>
+                      <div className="grid md:grid-cols-5 gap-4">
+                        {[1, 2, 3, 4, 5].map((annee) => (
+                          <div key={annee} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                            <p className="text-xs uppercase tracking-wide text-gray-500">Année {annee}</p>
+                            <p className="text-lg font-semibold text-french-blue">5 salles rénovées</p>
+                            <p className="text-sm text-gray-600">Suivi acoustique post-travaux &amp; ajustements</p>
                           </div>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-french-blue rounded-full mt-2 flex-shrink-0"></div>
-                          <div>
-                            <h4 className="font-semibold">Panneaux muraux décoratifs</h4>
-                            <p className="text-gray-600 text-sm">Éléments acoustiques intégrés au design</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-french-blue rounded-full mt-2 flex-shrink-0"></div>
-                          <div>
-                            <h4 className="font-semibold">Traitement des sources sonores</h4>
-                            <p className="text-gray-600 text-sm">Isolation des équipements techniques bruyants</p>
-                          </div>
-                        </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-french-blue">Solutions techniques complémentaires</h3>
+                      <ul className="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong>Plafonds suspendus absorbants :</strong> dalles haute densité avec coefficient αw ≥ 0,80.</li>
+                        <li><strong>Panneaux muraux décoratifs :</strong> bandes verticales micro-perforées pour limiter les réflexions latérales.</li>
+                        <li><strong>Traitement des sources sonores :</strong> capotage des climatiseurs et optimisation du mobilier pour éviter les résonances.</li>
+                        <li><strong>Suivi de performance :</strong> mesures annuelles du temps de réverbération et enquêtes de satisfaction des usagers.</li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-french-blue/10 border border-french-blue/30 p-6 rounded-lg">
+                      <h4 className="font-semibold text-lg text-french-blue mb-3">Recommandation stratégique</h4>
+                      <p className="text-gray-700 mb-4">
+                        Adopter un étalement sur 5 ans garantit un confort acoustique durable tout en maintenant la pression
+                        budgétaire sous la barre de 1&nbsp;% des recettes annuelles. Cette approche favorise une amélioration
+                        continue du cadre d'apprentissage et facilite l'adhésion des familles au projet.
+                      </p>
+                      <div className="text-center">
+                        <a
+                          href="/amelioration-acoustique"
+                          className="inline-flex items-center px-6 py-3 bg-french-blue text-white rounded-lg hover:bg-french-blue/90 transition-colors font-medium"
+                        >
+                          Consulter l'étude budgétaire détaillée
+                        </a>
                       </div>
                     </div>
                   </CardContent>
