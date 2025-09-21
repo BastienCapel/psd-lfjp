@@ -16,10 +16,7 @@ const PSDAxe1 = () => {
   
   const actions = [
     { text: '<strong>Plan de modernisation du cadre bâti</strong> : <strong>audit thermique</strong>, <strong>plan de climatisation progressive</strong> (priorité aux salles les plus exposées), rénovation des toilettes et vestiaires, végétalisation et création d\'espaces ombragés ("<strong>cours oasis</strong>")' },
-    { text: '<strong>Plan Pluriannuel de Roulement de Peinture et de Ravalement des Façades</strong> (2025-2030)', link: '/plan-peinture-ravalement' },
-    { text: 'Poursuite des travaux d\'<strong>amélioration de l\'acoustique</strong>', link: '/amelioration-acoustique' },
     { text: 'Déploiement d\'un <strong>parcours santé-bien-être</strong> : hygiène, alimentation, activité physique, santé mentale, gestion des émotions' },
-    
     { text: 'Poursuite du <strong>plan de prévention du harcèlement</strong> et de la violence, avec <strong>médiateurs élèves</strong>, pratiques restauratives, programme <strong>pHARe</strong>', link: '/protocole-phare' },
     { text: 'Renforcement de <strong>dispositifs d\'expression et de participation</strong> : conseils de vie lycéenne et collégienne renforcés, <strong>budgets participatifs</strong> d\'embellissement, boîtes à idées, comités mixtes' },
     { text: 'Accompagnement à la <strong>parentalité et coéducation</strong> : temps de rencontre informels, ateliers pour mieux suivre la scolarité' },
