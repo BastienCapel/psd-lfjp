@@ -11,7 +11,6 @@ import VisionMissionsValeurs from "./pages/VisionMissionsValeurs";
 import Diagnostic from "./pages/Diagnostic";
 import PlanStrategique from "./pages/PlanStrategique";
 import PCParLyceen from "./pages/PCParLyceen";
-import RenouvellementMaterielInformatique from "./pages/RenouvellementMaterielInformatique";
 import ConstructionCantine from "./pages/ConstructionCantine";
 import ProtocolePHARE from "./pages/ProtocolePHARE";
 import ElcsAnalyseComplete from "./pages/ElcsAnalyseComplete";
@@ -93,13 +92,6 @@ const App = () => {
                     <BackToTop />
                   </>
                 } />
-                <Route path="/renouvellement-materiel-informatique" element={
-                  <>
-                    <BreadcrumbNav />
-                    <RenouvellementMaterielInformatique />
-                    <BackToTop />
-                  </>
-                 } />
                 <Route path="/construction-cantine" element={
                   <>
                     <BreadcrumbNav />
