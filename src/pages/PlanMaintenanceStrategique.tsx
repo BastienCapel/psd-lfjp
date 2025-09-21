@@ -460,6 +460,134 @@ const PlanMaintenanceStrategique = () => {
                       </div>
                     </div>
 
+                    <div className="space-y-4">
+                      <h2 className="text-2xl font-playfair font-bold text-french-blue">Priorités d'intervention</h2>
+                      <p className="text-gray-700">
+                        Un phasage par salle permet de cibler d'abord les espaces où les résonances et le bruit ambiant
+                        perturbent le plus l'écoute. Les salles polyvalentes et les classes en étages sont programmées en
+                        priorité pour limiter la propagation sonore vers les autres niveaux.
+                      </p>
+                      <div className="overflow-x-auto">
+                        <table className="min-w-full border border-gray-200 text-sm">
+                          <thead className="bg-gray-50">
+                            <tr>
+                              <th className="px-4 py-2 border border-gray-200 text-left">Salle</th>
+                              <th className="px-4 py-2 border border-gray-200 text-left">Étage</th>
+                              <th className="px-4 py-2 border border-gray-200 text-left">Problème constaté</th>
+                              <th className="px-4 py-2 border border-gray-200 text-left">Solution prévue</th>
+                              <th className="px-4 py-2 border border-gray-200 text-left">Année</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td className="px-4 py-3 border border-gray-200 font-medium">Salle 101</td>
+                              <td className="px-4 py-3 border border-gray-200">1er</td>
+                              <td className="px-4 py-3 border border-gray-200">Résonances gênantes lors des cours de langues</td>
+                              <td className="px-4 py-3 border border-gray-200">Dalles absorbantes et panneaux muraux</td>
+                              <td className="px-4 py-3 border border-gray-200">2026</td>
+                            </tr>
+                            <tr className="bg-gray-50">
+                              <td className="px-4 py-3 border border-gray-200 font-medium">Salle 205</td>
+                              <td className="px-4 py-3 border border-gray-200">2e</td>
+                              <td className="px-4 py-3 border border-gray-200">Échos latéraux pendant les travaux pratiques</td>
+                              <td className="px-4 py-3 border border-gray-200">Baffles suspendus et patins sous mobilier</td>
+                              <td className="px-4 py-3 border border-gray-200">2027</td>
+                            </tr>
+                            <tr>
+                              <td className="px-4 py-3 border border-gray-200 font-medium">Salle polyvalente</td>
+                              <td className="px-4 py-3 border border-gray-200">Rez-de-chaussée</td>
+                              <td className="px-4 py-3 border border-gray-200">Propagation sonore lors des événements collectifs</td>
+                              <td className="px-4 py-3 border border-gray-200">Plafond suspendu intégral et capotage des climatiseurs</td>
+                              <td className="px-4 py-3 border border-gray-200">2027</td>
+                            </tr>
+                            <tr className="bg-gray-50">
+                              <td className="px-4 py-3 border border-gray-200 font-medium">Salle 308</td>
+                              <td className="px-4 py-3 border border-gray-200">3e</td>
+                              <td className="px-4 py-3 border border-gray-200">Bruit structurel transmis aux salles adjacentes</td>
+                              <td className="px-4 py-3 border border-gray-200">Dalles absorbantes et joints antivibratiles</td>
+                              <td className="px-4 py-3 border border-gray-200">2028</td>
+                            </tr>
+                            <tr>
+                              <td className="px-4 py-3 border border-gray-200 font-medium">Salle 112</td>
+                              <td className="px-4 py-3 border border-gray-200">1er</td>
+                              <td className="px-4 py-3 border border-gray-200">Mobilier bruyant et climatisation intrusive</td>
+                              <td className="px-4 py-3 border border-gray-200">Patins sous mobilier et capotage acoustique</td>
+                              <td className="px-4 py-3 border border-gray-200">2029</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-french-blue">Solutions techniques complémentaires</h3>
+                      <ul className="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Plafonds suspendus absorbants: dalles haute densité avec coefficient αw ≥ 0,80.</li>
+                        <li>Panneaux muraux décoratifs: bandes verticales micro-perforées pour limiter les réflexions latérales.</li>
+                        <li>Traitement des sources sonores: capotage des climatiseurs, patins sous mobilier.</li>
+                        <li>
+                          Suivi de performance: mesures annuelles du temps de réverbération et enquêtes de satisfaction auprès des
+                          usagers.
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h2 className="text-2xl font-playfair font-bold text-french-blue">Spécifications matériaux</h2>
+                      <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                        <ul className="list-disc list-inside space-y-2 text-gray-700">
+                          <li>Coefficient d'absorption αw ≥ 0,80 garanti sur les dalles et panneaux installés.</li>
+                          <li>Réaction au feu conforme aux normes ERP et certification fournie par les fabricants.</li>
+                          <li>Entretien simple: dépoussiérage trimestriel et remplacement unitaire en cas de tache.</li>
+                          <li>Garantie fabricant et poseur de 5 ans sur les performances acoustiques.</li>
+                          <li>Approvisionnement auprès de distributeurs disponibles localement pour limiter les délais.</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h2 className="text-2xl font-playfair font-bold text-french-blue">Impacts pour les familles</h2>
+                      <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 shadow-sm text-gray-700">
+                        <p>
+                          Le scénario d'étalement sur cinq ans maintient l'effort moyen en dessous de 1&nbsp;000 FCFA par élève et
+                          par mois, en cohérence avec le budget présenté ci-dessus. Chaque tranche annuelle peut être ajustée en
+                          fonction des recettes constatées, tout en garantissant une progression régulière du confort sonore pour
+                          toutes les classes.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h2 className="text-2xl font-playfair font-bold text-french-blue">FAQ</h2>
+                      <div className="space-y-3 text-gray-700">
+                        <div className="border border-gray-200 rounded-lg p-4">
+                          <p className="font-semibold text-french-blue">Combien de temps dure le traitement d'une salle&nbsp;?</p>
+                          <p>Chaque intervention est planifiée sur une semaine, incluant préparation, pose et remise en état.</p>
+                        </div>
+                        <div className="border border-gray-200 rounded-lg p-4">
+                          <p className="font-semibold text-french-blue">Le chantier génère-t-il du bruit pendant les cours&nbsp;?</p>
+                          <p>Les travaux sont réalisés pendant les vacances ou les week-ends prolongés pour éviter toute gêne.</p>
+                        </div>
+                        <div className="border border-gray-200 rounded-lg p-4">
+                          <p className="font-semibold text-french-blue">Comment entretenir les nouvelles dalles acoustiques&nbsp;?</p>
+                          <p>Un dépoussiérage léger et un nettoyage ponctuel suffisent, sans produits agressifs.</p>
+                        </div>
+                        <div className="border border-gray-200 rounded-lg p-4">
+                          <p className="font-semibold text-french-blue">Quel impact financier pour les familles&nbsp;?</p>
+                          <p>Le plan d'étalement limite l'effort supplémentaire grâce au scénario budgétaire choisi.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="pt-4">
+                      <button
+                        type="button"
+                        className="w-full md:w-auto bg-french-blue hover:bg-french-blue/90 text-white font-semibold px-6 py-3 rounded-lg shadow"
+                      >
+                        Valider le plan d'étalement 2026-2030
+                      </button>
+                    </div>
+
                   </CardContent>
                 </Card>
               </TabsContent>
