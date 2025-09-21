@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Home } from "lucide-react";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import RenouvellementInformatiqueTabs from '../components/RenouvellementInformatiqueTabs';
 import { cn } from '@/lib/utils';
 
@@ -337,13 +337,6 @@ const PlanMaintenanceStrategique = () => {
                       années.
                     </p>
                     <RenouvellementInformatiqueTabs />
-                    <div className="flex justify-end">
-                      <Button variant="outline" asChild className="gap-2">
-                        <Link to="/renouvellement-materiel-informatique">
-                          Consulter la fiche complète
-                        </Link>
-                      </Button>
-                    </div>
                   </CardContent>
                 </Card>
               </TabsContent>

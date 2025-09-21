@@ -20,7 +20,7 @@ const PSDAxe3 = () => {
     { text: 'Intégration d\'<strong>intervenants extérieurs</strong> (<em>volontaires internationaux, partenaires tech, artistes numériques…</em>)' },
     { text: 'Élaboration du plan "<strong>Un PC par lycéen</strong>"', link: '/pc-par-lyceen' },
     { text: '<strong>Amélioration de la connectivité</strong> sur l\'ensemble du site' },
-    { text: 'Mise en place d\'un <strong>plan de renouvellement</strong> pluriannuel du matériel informatique', link: '/renouvellement-materiel-informatique' },
+    { text: 'Mise en place d\'un <strong>plan de renouvellement</strong> pluriannuel du matériel informatique' },
     { text: 'Organisation de <strong>sorties pédagogiques</strong> et immersions dans des <strong>structures technologiques de référence au Sénégal</strong> (<em>ou à distance</em>)' },
     { text: 'Développement d\'un <strong>fonds de soutien ou mécénat numérique</strong> pour l\'équipement et la formation' }
   ];
