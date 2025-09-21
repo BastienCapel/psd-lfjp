@@ -24,7 +24,10 @@ const routes: RouteMap = {
   "/plan-strategique": { name: "Plan Stratégique", parent: "/" },
   "/section-internationale-bfi": { name: "Section Internationale et BFI", parent: "/plan-strategique" },
   "/deploiement-plan-section-internationale-bfi": { name: "Déploiement du Plan Section Internationale et BFI", parent: "/plan-strategique" },
-  "/pc-par-lyceen": { name: "PC par Lycéen", parent: "/" },
+  "/pc-par-lyceen": { name: "PC par Lycéen", parent: "/plan-strategique" },
+  "/construction-cantine": { name: "Construction de la Cantine", parent: "/plan-strategique" },
+  "/protocole-phare": { name: "Protocole PHARE", parent: "/plan-strategique" },
+  "/plan-maintenance-strategique": { name: "Plan de Maintenance Stratégique", parent: "/plan-strategique" },
   "/elcs-analyse-complete": { name: "Analyse Complète ELCS", parent: "/diagnostic" },
 };
 
