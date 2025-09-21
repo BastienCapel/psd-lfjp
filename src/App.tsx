@@ -10,9 +10,7 @@ import NotFound from "./pages/NotFound";
 import VisionMissionsValeurs from "./pages/VisionMissionsValeurs";
 import Diagnostic from "./pages/Diagnostic";
 import PlanStrategique from "./pages/PlanStrategique";
-import AmeliorationAcoustique from "./pages/AmeliorationAcoustique";
 import PCParLyceen from "./pages/PCParLyceen";
-import PlanPeintureRavalement from "./pages/PlanPeintureRavalement";
 import RenouvellementMaterielInformatique from "./pages/RenouvellementMaterielInformatique";
 import ConstructionCantine from "./pages/ConstructionCantine";
 import ProtocolePHARE from "./pages/ProtocolePHARE";
@@ -88,24 +86,10 @@ const App = () => {
                     <BackToTop />
                   </>
                 } />
-                <Route path="/amelioration-acoustique" element={
-                  <>
-                    <BreadcrumbNav />
-                    <AmeliorationAcoustique />
-                    <BackToTop />
-                  </>
-                } />
                 <Route path="/pc-par-lyceen" element={
                   <>
                     <BreadcrumbNav />
                     <PCParLyceen />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/plan-peinture-ravalement" element={
-                  <>
-                    <BreadcrumbNav />
-                    <PlanPeintureRavalement />
                     <BackToTop />
                   </>
                 } />
