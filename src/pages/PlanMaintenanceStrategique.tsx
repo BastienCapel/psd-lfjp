@@ -3,12 +3,17 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Home } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
 const PlanMaintenanceStrategique = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen flex flex-col font-raleway">
       <Navbar showLogo={true} />
-      
+
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-french-blue to-blue-700 text-white py-24 md:py-32">
         <div className="container mx-auto px-6">
@@ -19,6 +24,17 @@ const PlanMaintenanceStrategique = () => {
             Préservation et amélioration du patrimoine immobilier et technologique
           </p>
         </div>
+      </div>
+
+      <div className="container mx-auto px-6 py-4 flex gap-2">
+        <Button variant="outline" onClick={() => navigate(-1)} className="flex items-center gap-2">
+          <ArrowLeft size={16} />
+          Retour
+        </Button>
+        <Button variant="outline" onClick={() => navigate('/')} className="flex items-center gap-2">
+          <Home size={16} />
+          Accueil
+        </Button>
       </div>
 
       {/* Content Section */}
