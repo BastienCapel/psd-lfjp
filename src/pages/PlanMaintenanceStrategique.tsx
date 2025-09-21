@@ -339,13 +339,31 @@ const PlanMaintenanceStrategique = () => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-10">
+                    <div>
+                      <p className="text-gray-700">
+                        Les salles actuelles présentent des résonances importantes. Elles rendent les cours plus fatigants
+                        pour les élèves et leurs enseignants et réduisent l'intelligibilité de la parole. Ce plan vise à
+                        améliorer nettement le confort d'écoute et la concentration.
+                      </p>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h2 className="text-2xl font-playfair font-bold text-french-blue">Pourquoi agir maintenant</h2>
+                      <ul className="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Limiter la fatigue vocale des enseignants au quotidien.</li>
+                        <li>Renforcer l'attention et la compréhension des élèves.</li>
+                        <li>Préserver un climat de classe serein, propice aux apprentissages.</li>
+                      </ul>
+                    </div>
+
                     <div className="space-y-4">
                       <h3 className="text-xl font-semibold text-french-blue">Diagnostic et objectifs</h3>
                       <p className="text-gray-700">
-                        Un audit détaillé a révélé que 25 salles pédagogiques, l'amphithéâtre et plusieurs espaces communs
-                        souffrent d'un temps de réverbération trop élevé, nuisant à la compréhension orale et à la
-                        concentration. L'objectif est de ramener le niveau sonore moyen à &lt; 45 dB en installant des
-                        plafonds acoustiques performants, tout en améliorant la qualité architecturale des espaces.
+                        Un audit détaillé a révélé que 25 salles pédagogiques, la salle polyvalente et plusieurs espaces
+                        communs souffrent d'un temps de réverbération trop élevé, nuisant à la compréhension orale et à la
+                        concentration. L'objectif est de ramener le niveau de réverbération à un standard confortable pour la
+                        parole en classe, avec une baisse nette des résonances et une meilleure intelligibilité, tout en
+                        améliorant la qualité architecturale des espaces.
                       </p>
                       <div className="grid md:grid-cols-3 gap-4">
                         <div className="bg-french-blue/10 border border-french-blue/20 p-4 rounded-lg">
@@ -359,10 +377,31 @@ const PlanMaintenanceStrategique = () => {
                           <p className="text-sm text-gray-600">1 200 000 FCFA par salle, matériaux et pose inclus</p>
                         </div>
                         <div className="bg-purple-50 border border-purple-200 p-4 rounded-lg">
-                          <p className="text-sm uppercase tracking-wide text-purple-700 font-semibold mb-1">Impact</p>
-                          <p className="text-2xl font-bold text-purple-700">-6 dB</p>
-                          <p className="text-sm text-gray-600">Gain acoustique attendu sur le temps de réverbération</p>
+                          <p className="text-sm uppercase tracking-wide text-purple-700 font-semibold mb-1">Impact attendu</p>
+                          <p className="text-2xl font-bold text-purple-700">Confort renforcé</p>
+                          <p className="text-sm text-gray-600">Baisse nette des résonances et meilleure intelligibilité</p>
                         </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-french-blue">Avant / Après (exemples)</h3>
+                      <div className="grid gap-4 md:grid-cols-3">
+                        {[{ salle: 'Salle 101', resume: 'Traitement des plafonds et panneaux muraux décoratifs.' }, { salle: 'Salle 205', resume: 'Réduction des échos latéraux grâce aux panneaux micro-perforés.' }, { salle: 'Salle polyvalente', resume: 'Pose complète de plafonds absorbants et capotage des climatiseurs.' }].map((item) => (
+                          <div key={item.salle} className="border border-gray-200 rounded-lg p-4 bg-white shadow-sm">
+                            <p className="text-sm uppercase tracking-wide text-gray-500 mb-2">{item.salle}</p>
+                            <div className="grid grid-cols-2 gap-3 text-sm text-gray-700">
+                              <div>
+                                <p className="font-semibold text-red-600">Avant</p>
+                                <p>Résonances marquées, fatigue et écoute difficile.</p>
+                              </div>
+                              <div>
+                                <p className="font-semibold text-emerald-600">Après</p>
+                                <p>{item.resume}</p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
 
@@ -409,6 +448,9 @@ const PlanMaintenanceStrategique = () => {
                         minimiser l'impact financier sur les familles et d'assurer une montée en gamme progressive des salles
                         d'apprentissage.
                       </p>
+                      <p className="text-sm text-gray-600">
+                        Priorité aux salles des 1er et 2e étages et à la salle polyvalente.
+                      </p>
                       <div className="grid md:grid-cols-5 gap-4">
                         {[1, 2, 3, 4, 5].map((annee) => (
                           <div key={annee} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
@@ -421,13 +463,114 @@ const PlanMaintenanceStrategique = () => {
                     </div>
 
                     <div className="space-y-4">
+                      <h2 className="text-2xl font-playfair font-bold text-french-blue">Priorités d'intervention</h2>
+                      <div className="overflow-x-auto">
+                        <table className="min-w-full border border-gray-200 text-sm">
+                          <thead className="bg-gray-50">
+                            <tr>
+                              <th className="px-4 py-2 border border-gray-200 text-left">Salle</th>
+                              <th className="px-4 py-2 border border-gray-200 text-left">Étage</th>
+                              <th className="px-4 py-2 border border-gray-200 text-left">Problème constaté</th>
+                              <th className="px-4 py-2 border border-gray-200 text-left">Solution prévue</th>
+                              <th className="px-4 py-2 border border-gray-200 text-left">Année</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td className="px-4 py-3 border border-gray-200">Salle 101</td>
+                              <td className="px-4 py-3 border border-gray-200">1er étage</td>
+                              <td className="px-4 py-3 border border-gray-200">Résonances fortes sur les parois dures</td>
+                              <td className="px-4 py-3 border border-gray-200">Plafond suspendu absorbant et panneaux latéraux</td>
+                              <td className="px-4 py-3 border border-gray-200">2026</td>
+                            </tr>
+                            <tr className="bg-gray-50">
+                              <td className="px-4 py-3 border border-gray-200">Salle 205</td>
+                              <td className="px-4 py-3 border border-gray-200">2e étage</td>
+                              <td className="px-4 py-3 border border-gray-200">Échos persistants lors des travaux de groupe</td>
+                              <td className="px-4 py-3 border border-gray-200">Panneaux muraux micro-perforés et patins sous mobilier</td>
+                              <td className="px-4 py-3 border border-gray-200">2027</td>
+                            </tr>
+                            <tr>
+                              <td className="px-4 py-3 border border-gray-200">Salle polyvalente</td>
+                              <td className="px-4 py-3 border border-gray-200">Rez-de-chaussée</td>
+                              <td className="px-4 py-3 border border-gray-200">Propagation du bruit et difficulté de compréhension</td>
+                              <td className="px-4 py-3 border border-gray-200">Capotage des climatiseurs et plafond absorbant intégral</td>
+                              <td className="px-4 py-3 border border-gray-200">2028</td>
+                            </tr>
+                            <tr className="bg-gray-50">
+                              <td className="px-4 py-3 border border-gray-200">Laboratoire sciences</td>
+                              <td className="px-4 py-3 border border-gray-200">Rez-de-chaussée</td>
+                              <td className="px-4 py-3 border border-gray-200">Vibrations des équipements</td>
+                              <td className="px-4 py-3 border border-gray-200">Patins anti-vibrations et dalles renforcées</td>
+                              <td className="px-4 py-3 border border-gray-200">2029</td>
+                            </tr>
+                            <tr>
+                              <td className="px-4 py-3 border border-gray-200">CDI</td>
+                              <td className="px-4 py-3 border border-gray-200">1er étage</td>
+                              <td className="px-4 py-3 border border-gray-200">Bruits de fond perturbants</td>
+                              <td className="px-4 py-3 border border-gray-200">Traitement mixte plafonds/panneaux et suivi annuel</td>
+                              <td className="px-4 py-3 border border-gray-200">2030</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
                       <h3 className="text-xl font-semibold text-french-blue">Solutions techniques complémentaires</h3>
                       <ul className="list-disc list-inside space-y-2 text-gray-700">
                         <li><strong>Plafonds suspendus absorbants :</strong> dalles haute densité avec coefficient αw ≥ 0,80.</li>
                         <li><strong>Panneaux muraux décoratifs :</strong> bandes verticales micro-perforées pour limiter les réflexions latérales.</li>
-                        <li><strong>Traitement des sources sonores :</strong> capotage des climatiseurs et optimisation du mobilier pour éviter les résonances.</li>
-                        <li><strong>Suivi de performance :</strong> mesures annuelles du temps de réverbération et enquêtes de satisfaction des usagers.</li>
+                        <li><strong>Traitement des sources sonores :</strong> capotage des climatiseurs et patins sous le mobilier bruyant.</li>
+                        <li><strong>Suivi de performance :</strong> mesures annuelles du temps de réverbération, enquêtes de satisfaction et restitution en langage simple.</li>
                       </ul>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h2 className="text-2xl font-playfair font-bold text-french-blue">Spécifications matériaux</h2>
+                      <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg text-gray-700 space-y-2">
+                        <p>• Coefficient d'absorption global αw ≥ 0,80 pour l'ensemble des dalles installées.</p>
+                        <p>• Réaction au feu conforme aux normes en vigueur pour les établissements recevant du public.</p>
+                        <p>• Entretien simple : aspiration mensuelle et remplacement unitaire possible.</p>
+                        <p>• Garantie fournisseur minimale de 5 ans sur les matériaux et la pose.</p>
+                        <p>• Approvisionnement auprès de distributeurs disposant d'un stock local ou régional.</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-french-blue">Impacts pour les familles</h3>
+                      <div className="bg-emerald-50 border border-emerald-200 p-6 rounded-lg text-gray-700">
+                        La progression budgétaire retenue maintient un effort par élève maîtrisé, avec des mensualités
+                        équilibrées selon le scénario de financement choisi (amortissement sur 1 an ou 5 ans).
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h2 className="text-2xl font-playfair font-bold text-french-blue">FAQ</h2>
+                      <div className="space-y-3 text-gray-700">
+                        <div>
+                          <p className="font-semibold text-french-blue">Combien de temps dure l'intervention dans une salle&nbsp;?</p>
+                          <p>Chaque salle est traitée en moins d'une semaine, en ciblant les périodes de faible occupation.</p>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-french-blue">Le chantier sera-t-il bruyant&nbsp;?</p>
+                          <p>Les travaux sont planifiés hors temps de classe autant que possible et les phases sonores sont concentrées sur des créneaux courts.</p>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-french-blue">Comment entretenir les nouvelles dalles&nbsp;?</p>
+                          <p>Un dépoussiérage régulier et un contrôle visuel annuel suffisent, avec remplacement à l'unité en cas de tache.</p>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-french-blue">Quel impact pour les familles&nbsp;?</p>
+                          <p>Le plan d'étalement retenu garantit une contribution maîtrisée, en cohérence avec l'effort budgétaire présenté dans les scénarios.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex justify-center">
+                      <Button size="lg" className="bg-french-blue hover:bg-french-blue/90 text-white px-6 py-3">
+                        Valider le plan d'étalement 2026-2030
+                      </Button>
                     </div>
 
                   </CardContent>
