@@ -98,7 +98,10 @@ const PSDAxe2 = () => {
     },
     {
       text:
-        '<strong>Vie scolaire et climat interculturel</strong> :<br/>• Favoriser la <strong>médiation et la prévention</strong> des incompréhensions interculturelles.<br/>• Intégrer les <strong>langues et cultures des familles</strong> dans la vie de l\'établissement (journées thématiques, interventions de parents). <span class="cta-inline"><a href="/mediation-entre-pairs">→ Découvrir la médiation entre pairs</a></span>',
+        '<strong>Vie scolaire et climat interculturel</strong> :<br/>• Favoriser la <strong>médiation et la prévention</strong> des incompréhensions interculturelles.<br/>• Intégrer les <strong>langues et cultures des familles</strong> dans la vie de l\'établissement (journées thématiques, interventions de parents).',
+      link: '/mediation-entre-pairs',
+      linkAriaLabel: 'Découvrir la médiation entre pairs',
+      linkIcon: Handshake,
     },
     {
       text:
