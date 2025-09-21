@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink } from 'lucide-react';
+import { ShieldCheck, Utensils } from 'lucide-react';
 
 interface ObjectifItem {
   text: string;
@@ -53,18 +53,43 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
         <div>
           <h4 className="font-semibold text-gray-900 mb-2">Actions prioritaires</h4>
           <ul className="list-disc pl-5 space-y-1 text-gray-700 font-raleway">
-            {actions.map((item, index) => (
-              <li key={index} className="list-item">
-                <div className="flex items-center gap-1">
-                  <span dangerouslySetInnerHTML={{ __html: item.text }}></span>
-                  {item.link && (
-                    <Link to={item.link} className="inline-flex items-center text-french-blue hover:text-french-blue/80">
-                      <ExternalLink size={16} />
-                    </Link>
-                  )}
-                </div>
-              </li>
-            ))}
+            {actions.map((item, index) => {
+              const hasLink = Boolean(item.link);
+              const textContent = item.text.toLowerCase();
+              const iconType = textContent.includes('harcèlement')
+                ? 'harcelement'
+                : textContent.includes('restauration')
+                ? 'restauration'
+                : null;
+              const IconComponent = iconType === 'harcelement' ? ShieldCheck : iconType === 'restauration' ? Utensils : null;
+              const ariaLabelSuffix = iconType === 'harcelement'
+                ? 'Prévention du harcèlement'
+                : iconType === 'restauration'
+                ? 'Restauration scolaire'
+                : '';
+
+              if (!hasLink || !IconComponent || !item.link) {
+                return (
+                  <li key={index} className="list-item">
+                    <span dangerouslySetInnerHTML={{ __html: item.text }}></span>
+                  </li>
+                );
+              }
+
+              return (
+                <li key={index} className="action-item">
+                  <span className="action-text" dangerouslySetInnerHTML={{ __html: item.text }}></span>
+                  <Link
+                    to={item.link}
+                    className="btn-link"
+                    aria-label={`En savoir plus – ${ariaLabelSuffix}`}
+                  >
+                    <IconComponent className="icon" size={18} aria-hidden="true" />
+                    <span>En savoir plus</span>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
         
