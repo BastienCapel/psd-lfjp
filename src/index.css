@@ -187,3 +187,54 @@
 .animate-pulse-slow {
   animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+.action-item {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 0.75rem;
+  margin: 0.5rem 0;
+}
+
+.action-text {
+  display: block;
+}
+
+.btn-link {
+  border: 1px solid #d0d5dd;
+  padding: 0.625rem 0.9rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  color: #1d4ed8;
+  font-weight: 600;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.btn-link:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  text-decoration: underline;
+}
+
+.btn-link:focus-visible {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+.icon {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+  .action-item {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-link {
+    justify-self: start;
+  }
+}
