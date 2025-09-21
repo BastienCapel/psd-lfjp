@@ -37,8 +37,10 @@ const Navbar = ({ showLogo = false }: NavbarProps) => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const mobileMenuId = 'mobile-menu';
+
   return (
-    <header 
+    <header
       className={cn(
         "bg-white border-b border-gray-200 py-4 px-6 sticky top-0 z-50 transition-all duration-300",
         isScrolled ? "shadow-md py-2" : ""
@@ -48,17 +50,20 @@ const Navbar = ({ showLogo = false }: NavbarProps) => {
         <Logo showLogo={showLogo} />
         
         {/* Menu hamburger pour mobile */}
-        <button 
+        <button
           className="md:hidden p-2 rounded-md text-french-blue hover:bg-blue-50"
           onClick={toggleMobileMenu}
           aria-label="Menu Navigation"
+          aria-expanded={mobileMenuOpen}
+          aria-controls={mobileMenuId}
         >
           <Menu size={24} />
         </button>
-        
+
         {/* Menu mobile */}
-        <MobileMenu 
-          mobileMenuOpen={mobileMenuOpen} 
+        <MobileMenu
+          id={mobileMenuId}
+          mobileMenuOpen={mobileMenuOpen}
           setMobileMenuOpen={setMobileMenuOpen}
           isActive={isActive}
         />
