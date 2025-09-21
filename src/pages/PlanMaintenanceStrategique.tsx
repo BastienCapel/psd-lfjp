@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -7,9 +7,45 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Home } from "lucide-react";
 import { Link, useNavigate } from 'react-router-dom';
 import RenouvellementInformatiqueTabs from '../components/RenouvellementInformatiqueTabs';
+import { cn } from '@/lib/utils';
 
 const PlanMaintenanceStrategique = () => {
   const navigate = useNavigate();
+  const tabsListRef = useRef<HTMLDivElement | null>(null);
+  const [isAtStart, setIsAtStart] = useState(true);
+  const [isAtEnd, setIsAtEnd] = useState(true);
+
+  useEffect(() => {
+    const list = tabsListRef.current;
+    if (!list) return;
+
+    const updateEdges = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = list;
+      setIsAtStart(scrollLeft <= 1);
+      setIsAtEnd(scrollWidth - clientWidth - scrollLeft <= 1);
+    };
+
+    updateEdges();
+    list.addEventListener('scroll', updateEdges, { passive: true });
+    window.addEventListener('resize', updateEdges);
+
+    return () => {
+      list.removeEventListener('scroll', updateEdges);
+      window.removeEventListener('resize', updateEdges);
+    };
+  }, []);
+
+  const tabTriggerClasses = cn(
+    "group relative flex min-w-[clamp(180px,55vw,280px)] flex-shrink-0 items-center justify-center gap-2",
+    "rounded-xl border border-[#e5ecf5] bg-white px-4 py-3 font-medium text-[#1f3b5b]",
+    "text-[clamp(14px,1.6vw,18px)] whitespace-nowrap overflow-hidden text-ellipsis transition-all duration-200 ease-out",
+    "hover:scale-[1.06] hover:shadow-[0_6px_18px_rgba(0,0,0,0.08)] focus-visible:scale-[1.06]",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#005BAC] focus-visible:ring-offset-2 focus-visible:ring-offset-white focus-visible:shadow-[0_6px_18px_rgba(0,0,0,0.08)]",
+    "data-[state=active]:border-[#cfe2ff] data-[state=active]:text-[#005BAC]",
+    "lg:min-w-0 lg:flex-1 lg:px-6 lg:py-4 lg:text-[clamp(14px,1vw,18px)]",
+    "max-[600px]:min-w-[clamp(200px,68vw,260px)] max-[600px]:px-[clamp(16px,5vw,24px)] max-[600px]:py-[clamp(12px,4.5vw,18px)] max-[600px]:text-[clamp(14px,4vw,18px)] max-[600px]:min-h-[44px]",
+    "snap-start"
+  );
 
   return (
     <div className="min-h-screen flex flex-col font-raleway">
@@ -70,15 +106,35 @@ const PlanMaintenanceStrategique = () => {
 
           {/* Tabs Section */}
           <div className="max-w-6xl mx-auto">
-            <Tabs defaultValue="peintures" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-8">
-                <TabsTrigger value="peintures" className="text-sm md:text-base">
+            <Tabs defaultValue="peintures" className="w-full" aria-label="Sections du plan de maintenance stratégique">
+              <TabsList
+                ref={tabsListRef}
+                className={cn(
+                  "relative mb-8 flex h-auto w-full flex-nowrap items-center gap-3 rounded-2xl bg-[#f3f7fb] p-2",
+                  "overflow-x-auto overflow-y-hidden scroll-px-4 scroll-smooth snap-x snap-mandatory",
+                  "before:pointer-events-none before:absolute before:top-0 before:left-0 before:h-full before:w-6 before:rounded-2xl before:bg-gradient-to-r before:from-[#f3f7fb] before:to-transparent before:transition-opacity",
+                  "after:pointer-events-none after:absolute after:top-0 after:right-0 after:h-full after:w-6 after:rounded-2xl after:bg-gradient-to-l after:from-[#f3f7fb] after:to-transparent after:transition-opacity",
+                  isAtStart ? "before:opacity-0" : "before:opacity-100",
+                  isAtEnd ? "after:opacity-0" : "after:opacity-100",
+                  "lg:overflow-visible lg:scroll-px-0 lg:snap-none lg:before:hidden lg:after:hidden lg:gap-4"
+                )}
+              >
+                <TabsTrigger
+                  value="peintures"
+                  className={tabTriggerClasses}
+                >
                   Peintures & Ravalement
                 </TabsTrigger>
-                <TabsTrigger value="informatique" className="text-sm md:text-base">
+                <TabsTrigger
+                  value="informatique"
+                  className={tabTriggerClasses}
+                >
                   Renouvellement Informatique
                 </TabsTrigger>
-                <TabsTrigger value="acoustique" className="text-sm md:text-base">
+                <TabsTrigger
+                  value="acoustique"
+                  className={tabTriggerClasses}
+                >
                   Plafonds Acoustiques
                 </TabsTrigger>
               </TabsList>
