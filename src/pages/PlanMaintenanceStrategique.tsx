@@ -430,22 +430,6 @@ const PlanMaintenanceStrategique = () => {
                       </ul>
                     </div>
 
-                    <div className="bg-french-blue/10 border border-french-blue/30 p-6 rounded-lg">
-                      <h4 className="font-semibold text-lg text-french-blue mb-3">Recommandation stratégique</h4>
-                      <p className="text-gray-700 mb-4">
-                        Adopter un étalement sur 5 ans garantit un confort acoustique durable tout en maintenant la pression
-                        budgétaire sous la barre de 1&nbsp;% des recettes annuelles. Cette approche favorise une amélioration
-                        continue du cadre d'apprentissage et facilite l'adhésion des familles au projet.
-                      </p>
-                      <div className="text-center">
-                        <a
-                          href="/amelioration-acoustique"
-                          className="inline-flex items-center px-6 py-3 bg-french-blue text-white rounded-lg hover:bg-french-blue/90 transition-colors font-medium"
-                        >
-                          Consulter l'étude budgétaire détaillée
-                        </a>
-                      </div>
-                    </div>
                   </CardContent>
                 </Card>
               </TabsContent>
