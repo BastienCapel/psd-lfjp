@@ -454,14 +454,15 @@ const PlanMaintenanceStrategique = () => {
 
                     <div className="space-y-4">
                       <h2 className="text-2xl font-playfair font-bold text-french-blue">Priorités d'intervention</h2>
+                      <p className="text-gray-700">
+                        Le plan ne projette que l'installation de doubles plafonds acoustiques dans les espaces suivants.
+                      </p>
                       <div className="overflow-x-auto">
                         <table className="min-w-full border border-gray-200 text-sm">
                           <thead className="bg-gray-50">
                             <tr>
                               <th className="px-4 py-2 border border-gray-200 text-left">Salle</th>
                               <th className="px-4 py-2 border border-gray-200 text-left">Étage</th>
-                              <th className="px-4 py-2 border border-gray-200 text-left">Problème constaté</th>
-                              <th className="px-4 py-2 border border-gray-200 text-left">Solution prévue</th>
                               <th className="px-4 py-2 border border-gray-200 text-left">Année</th>
                             </tr>
                           </thead>
@@ -471,12 +472,6 @@ const PlanMaintenanceStrategique = () => {
                                 Priorité 1 – Côté « collège »
                               </td>
                               <td className="px-4 py-3 border border-gray-200">1er et 2e étages</td>
-                              <td className="px-4 py-3 border border-gray-200">
-                                Réverbération élevée dans les salles à forte occupation, gênant la compréhension des cours.
-                              </td>
-                              <td className="px-4 py-3 border border-gray-200">
-                                Plafonds suspendus absorbants, panneaux muraux latéraux et patins anti-bruit sous le mobilier.
-                              </td>
                               <td className="px-4 py-3 border border-gray-200">2026-2027</td>
                             </tr>
                             <tr className="bg-gray-50">
@@ -484,12 +479,6 @@ const PlanMaintenanceStrategique = () => {
                                 Priorité 2 – Côté « lycée »
                               </td>
                               <td className="px-4 py-3 border border-gray-200">Rez-de-chaussée et niveaux supérieurs</td>
-                              <td className="px-4 py-3 border border-gray-200">
-                                Nuisances sonores lors des travaux de groupe et manque de confort acoustique pour les examens.
-                              </td>
-                              <td className="px-4 py-3 border border-gray-200">
-                                Panneaux micro-perforés pleine hauteur, traitement des ouvertures et capotage des équipements.
-                              </td>
                               <td className="px-4 py-3 border border-gray-200">2028</td>
                             </tr>
                             <tr>
@@ -497,12 +486,6 @@ const PlanMaintenanceStrategique = () => {
                                 Priorité 3 – Sciences & primaire
                               </td>
                               <td className="px-4 py-3 border border-gray-200">Laboratoires & salles RDC</td>
-                              <td className="px-4 py-3 border border-gray-200">
-                                Vibrations des équipements scientifiques et brouhaha dans les espaces des plus jeunes.
-                              </td>
-                              <td className="px-4 py-3 border border-gray-200">
-                                Patins anti-vibrations, dalles renforcées et plafonds acoustiques mixtes adaptés aux usages.
-                              </td>
                               <td className="px-4 py-3 border border-gray-200">2029-2030</td>
                             </tr>
                           </tbody>
