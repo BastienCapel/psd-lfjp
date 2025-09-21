@@ -60,23 +60,15 @@ const PSDAxe2 = () => {
   const objectifs = [
     {
       text:
-        'Développer un environnement scolaire où la <strong>diversité des langues, cultures et nationalités</strong> présentes au LFJP devient un <strong>atout éducatif et citoyen</strong>.',
+        '<strong>Plurilinguisme et diversité</strong> : Faire de la <strong>diversité linguistique et culturelle</strong> un levier d\'apprentissage et de citoyenneté.',
     },
     {
       text:
-        'Renforcer la <strong>maîtrise des langues vivantes étrangères</strong> et du <strong>français langue de scolarisation</strong>, conformément aux orientations de l\'Éducation nationale et de l\'AEFE.',
+        '<strong>Citoyenneté et ouverture</strong> : Former des élèves <strong>ouverts, tolérants et responsables</strong> dans un <strong>monde multipolaire</strong>.',
     },
     {
       text:
-        'Former des élèves capables de comprendre et d\'évoluer dans un <strong>monde multipolaire</strong>, ouverts à la <strong>pluralité des cultures, religions et visions du monde</strong>.',
-    },
-    {
-      text:
-        'Prévenir les <strong>chocs culturels</strong> en dotant les élèves de repères sociologiques et psychologiques favorisant la <strong>tolérance, le dialogue et l\'intercompréhension</strong>.',
-    },
-    {
-      text:
-        'Consolider les <strong>parcours éducatifs</strong> (Parcours citoyen, Parcours Avenir, PEAC) par des <strong>expériences interculturelles et internationales</strong>.',
+        '<strong>Parcours et expériences</strong> : Enrichir les <strong>parcours éducatifs</strong> par des projets et coopérations <strong>interculturels et internationaux</strong>.',
     },
   ];
 
