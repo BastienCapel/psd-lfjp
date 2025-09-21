@@ -19,13 +19,13 @@ const PSDAxe1 = () => {
   ];
   
   const actions = [
-    { text: '<strong>Plan de modernisation du cadre bâti</strong> : <strong>audit thermique</strong>, <strong>plan de climatisation progressive</strong> (priorité aux salles les plus exposées), rénovation des toilettes et vestiaires, végétalisation et création d\'espaces ombragés ("<strong>cours oasis</strong>")' },
-    { text: 'Déploiement d\'un <strong>parcours santé-bien-être</strong> : hygiène, alimentation, activité physique, santé mentale, gestion des émotions' },
-    { text: 'Poursuite du <strong>plan de prévention du harcèlement</strong> et de la violence, avec <strong>médiateurs élèves</strong>, pratiques restauratives, programme <strong>pHARe</strong>', link: '/protocole-phare' },
-    { text: 'Renforcement de <strong>dispositifs d\'expression et de participation</strong> : conseils de vie lycéenne et collégienne renforcés, <strong>budgets participatifs</strong> d\'embellissement, boîtes à idées, comités mixtes' },
-    { text: 'Accompagnement à la <strong>parentalité et coéducation</strong> : temps de rencontre informels, ateliers pour mieux suivre la scolarité' },
-    { text: 'Lancement progressif d\'un <strong>service de restauration scolaire</strong>, avec audit qualitatif, étude d\'impact économique, consultation des usagers, et mise en œuvre en 2026-2027', link: '/construction-cantine' },
-    { text: 'Structuration d\'une <strong>politique E3D consolidée</strong>, incluant :<br/>• des <strong>référents E3D</strong> par cycle et des <strong>éco-délégués actifs</strong><br/>• un <strong>comité de pilotage E3D</strong> ouvert à tous les acteurs (élèves, parents, personnels, partenaires locaux)<br/>• des <strong>projets pédagogiques interdisciplinaires</strong> intégrant les <strong>ODD</strong> (Objectifs de Développement Durable)<br/>• la formalisation d\'un <strong>plan d\'action annuel E3D</strong> aligné avec le référentiel <strong>EFE3D</strong>' }
+    { text: '<strong>Rafraîchissement durable des salles</strong> : <strong>plan de climatisation progressive</strong> et solutions écologiques (ombrages, végétalisation, rénovation)' },
+    { text: '<strong>Parcours santé-bien-être</strong> : hygiène, alimentation, activité physique et <strong>équilibre mental</strong>' },
+    { text: '<strong>Prévention du harcèlement</strong> : <strong>médiateurs élèves</strong>, pratiques restauratives, programme <strong>pHARe</strong>', link: '/protocole-phare' },
+    { text: '<strong>Expression et participation</strong> : conseils de vie, <strong>budgets participatifs</strong>, comités mixtes' },
+    { text: '<strong>Parentalité et coéducation</strong> : rencontres et ateliers pour mieux suivre la scolarité' },
+    { text: '<strong>Restauration scolaire</strong> : audit, consultation des usagers, mise en œuvre 2026-2027', link: '/construction-cantine' },
+    { text: 'Politique <strong>E³D</strong> consolidée : <strong>référents</strong> et <strong>éco-délégués</strong>, comité de pilotage, projets interdisciplinaires, plan d\'action annuel aligné <strong>EFE³D</strong>' }
   ];
   
   const indicators = [
