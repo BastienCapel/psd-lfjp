@@ -265,10 +265,10 @@ const PlanPeintureRavalement = () => {
                   <li>D'assurer la continuité des apprentissages dans des conditions de projection optimales</li>
                 </ul>
                 <p className="text-gray-700 mb-2">
-                  Ce plan pluriannuel de peinture et ravalement représente un investissement stratégique de <strong>25,3 millions de FCFA sur 5 ans</strong>, soit un impact relatif de <strong>2,05% des recettes totales</strong>.
+                  Ce plan pluriannuel de peinture et ravalement représente un investissement total de 25,3 millions de FCFA sur 5 ans, soit en moyenne 5,1 millions de FCFA par an, correspondant à environ 0,41 % des recettes d’écolage annuelles.
                 </p>
                 <p className="text-gray-700">
-                  À l'issue de ce cycle, il conviendra probablement de relancer un plan similaire afin de remplacer progressivement les éléments traités lors de la première année. Cela permettra de maintenir une logique de roulement permanent, garantissant la pérennité et la performance du patrimoine immobilier.
+                  À l’issue de ce cycle, il conviendra probablement de relancer un plan similaire afin de maintenir une logique de roulement permanent, garantissant la pérennité et la performance du patrimoine immobilier.
                 </p>
               </div>
 
