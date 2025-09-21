@@ -264,58 +264,8 @@ const PlanMaintenanceStrategique = () => {
 
               <TabsContent value="informatique">
                 <Card>
-                  <CardHeader>
-                    <CardTitle className="text-2xl font-playfair text-french-blue">
-                      Renouvellement du Matériel Informatique
-                    </CardTitle>
-                    <CardDescription className="text-lg">
-                      Modernisation des équipements pédagogiques numériques
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-semibold text-french-blue mb-3">Stratégie de renouvellement</h3>
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <div>
-                          <h4 className="font-semibold mb-3">Ordinateurs (PC)</h4>
-                          <ul className="list-disc list-inside space-y-2 text-gray-700">
-                            <li>Cycle de renouvellement : 4-5 ans</li>
-                            <li>Priorité aux salles informatiques</li>
-                            <li>Déploiement progressif par étage</li>
-                            <li>Configuration adaptée aux besoins pédagogiques</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold mb-3">Vidéoprojecteurs</h4>
-                          <ul className="list-disc list-inside space-y-2 text-gray-700">
-                            <li>Cycle de renouvellement : 6-7 ans</li>
-                            <li>Remplacement par technologie LED</li>
-                            <li>Installation de supports fixes</li>
-                            <li>Système de gestion centralisée</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-xl font-semibold text-french-blue mb-3">Budget et planification</h3>
-                      <div className="bg-gray-50 p-6 rounded-lg">
-                        <div className="grid md:grid-cols-3 gap-4 text-center">
-                          <div>
-                            <div className="text-2xl font-bold text-french-blue">30%</div>
-                            <div className="text-sm text-gray-600">du parc renouvelé chaque année</div>
-                          </div>
-                          <div>
-                            <div className="text-2xl font-bold text-french-blue">€150K</div>
-                            <div className="text-sm text-gray-600">budget annuel moyen</div>
-                          </div>
-                          <div>
-                            <div className="text-2xl font-bold text-french-blue">100%</div>
-                            <div className="text-sm text-gray-600">du parc modernisé d'ici 2030</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <CardContent>
+                    <p className="text-center text-lg capitalize">page en construction</p>
                   </CardContent>
                 </Card>
               </TabsContent>
