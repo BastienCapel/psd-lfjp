@@ -4,14 +4,18 @@ import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe1 = () => {
   const objectifs = [
-    { text: 'Garantir un <strong>environnement scolaire sain, sûr et agréable</strong> pour tous (locaux, climatisation, sanitaires, espaces extérieurs)' },
-    { text: 'Développer une <strong>culture du bien-être</strong> physique, mental, social et environnemental au sein de la communauté éducative' },
-    { text: 'Détecter et accompagner les <strong>besoins particuliers</strong> des élèves (<strong>troubles d\'apprentissage</strong>, besoins éducatifs spécifiques…)' },
-    { text: 'Favoriser les <strong>relations de confiance</strong> et la <strong>coopération</strong> entre élèves, familles et personnels' },
-    { text: '<strong>Responsabiliser les élèves</strong> dans la vie de l\'établissement (<strong>écocitoyenneté</strong>, co-gestion, entraide)' },
-    { text: 'Améliorer la <strong>qualité des services</strong> (restauration, transport, hygiène), en réponse aux attentes des familles' },
-    { text: 'Consolider le <strong>climat scolaire</strong> en rendant visibles les règles, les valeurs et les actions éducatives' },
-    { text: 'Pérenniser l\'engagement du LFJP en matière de <strong>développement durable</strong> en renforçant la dynamique <strong>E3D</strong>.' }
+    {
+      text:
+        '<strong>Bien-être et accompagnement des élèves</strong> : Garantir un <strong>environnement scolaire sain, climatisé et agréable</strong>, développer une <strong>culture du bien-être physique, mental, social et environnemental</strong> et répondre aux <strong>besoins particuliers des élèves</strong>.'
+    },
+    {
+      text:
+        '<strong>Climat scolaire et coopération éducative</strong> : Renforcer la <strong>confiance et la coopération</strong> entre élèves, familles et personnels, <strong>responsabiliser les élèves</strong> dans la vie de l\'établissement et consolider un <strong>climat scolaire</strong> fondé sur des règles et des valeurs partagées.'
+    },
+    {
+      text:
+        '<strong>Qualité et durabilité des services</strong> : Améliorer la <strong>qualité des services</strong> (restauration, transport, hygiène) et pérenniser l\'engagement du LFJP en matière de <strong>développement durable</strong> dans la dynamique <strong>E³D</strong>.'
+    }
   ];
   
   const actions = [
