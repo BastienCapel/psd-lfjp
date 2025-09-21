@@ -398,39 +398,43 @@ const PlanMaintenanceStrategique = () => {
                           </thead>
                           <tbody>
                             <tr>
-                              <td className="px-4 py-3 border border-gray-200">Salle 101</td>
-                              <td className="px-4 py-3 border border-gray-200">1er étage</td>
-                              <td className="px-4 py-3 border border-gray-200">Résonances fortes sur les parois dures</td>
-                              <td className="px-4 py-3 border border-gray-200">Plafond suspendu absorbant et panneaux latéraux</td>
-                              <td className="px-4 py-3 border border-gray-200">2026</td>
+                              <td className="px-4 py-3 border border-gray-200 font-semibold text-french-blue">
+                                Priorité 1 – Côté « collège »
+                              </td>
+                              <td className="px-4 py-3 border border-gray-200">1er et 2e étages</td>
+                              <td className="px-4 py-3 border border-gray-200">
+                                Réverbération élevée dans les salles à forte occupation, gênant la compréhension des cours.
+                              </td>
+                              <td className="px-4 py-3 border border-gray-200">
+                                Plafonds suspendus absorbants, panneaux muraux latéraux et patins anti-bruit sous le mobilier.
+                              </td>
+                              <td className="px-4 py-3 border border-gray-200">2026-2027</td>
                             </tr>
                             <tr className="bg-gray-50">
-                              <td className="px-4 py-3 border border-gray-200">Salle 205</td>
-                              <td className="px-4 py-3 border border-gray-200">2e étage</td>
-                              <td className="px-4 py-3 border border-gray-200">Échos persistants lors des travaux de groupe</td>
-                              <td className="px-4 py-3 border border-gray-200">Panneaux muraux micro-perforés et patins sous mobilier</td>
-                              <td className="px-4 py-3 border border-gray-200">2027</td>
-                            </tr>
-                            <tr>
-                              <td className="px-4 py-3 border border-gray-200">Salle polyvalente</td>
-                              <td className="px-4 py-3 border border-gray-200">Rez-de-chaussée</td>
-                              <td className="px-4 py-3 border border-gray-200">Propagation du bruit et difficulté de compréhension</td>
-                              <td className="px-4 py-3 border border-gray-200">Capotage des climatiseurs et plafond absorbant intégral</td>
+                              <td className="px-4 py-3 border border-gray-200 font-semibold text-french-blue">
+                                Priorité 2 – Côté « lycée »
+                              </td>
+                              <td className="px-4 py-3 border border-gray-200">Rez-de-chaussée et niveaux supérieurs</td>
+                              <td className="px-4 py-3 border border-gray-200">
+                                Nuisances sonores lors des travaux de groupe et manque de confort acoustique pour les examens.
+                              </td>
+                              <td className="px-4 py-3 border border-gray-200">
+                                Panneaux micro-perforés pleine hauteur, traitement des ouvertures et capotage des équipements.
+                              </td>
                               <td className="px-4 py-3 border border-gray-200">2028</td>
                             </tr>
-                            <tr className="bg-gray-50">
-                              <td className="px-4 py-3 border border-gray-200">Laboratoire sciences</td>
-                              <td className="px-4 py-3 border border-gray-200">Rez-de-chaussée</td>
-                              <td className="px-4 py-3 border border-gray-200">Vibrations des équipements</td>
-                              <td className="px-4 py-3 border border-gray-200">Patins anti-vibrations et dalles renforcées</td>
-                              <td className="px-4 py-3 border border-gray-200">2029</td>
-                            </tr>
                             <tr>
-                              <td className="px-4 py-3 border border-gray-200">CDI</td>
-                              <td className="px-4 py-3 border border-gray-200">1er étage</td>
-                              <td className="px-4 py-3 border border-gray-200">Bruits de fond perturbants</td>
-                              <td className="px-4 py-3 border border-gray-200">Traitement mixte plafonds/panneaux et suivi annuel</td>
-                              <td className="px-4 py-3 border border-gray-200">2030</td>
+                              <td className="px-4 py-3 border border-gray-200 font-semibold text-french-blue">
+                                Priorité 3 – Sciences & primaire
+                              </td>
+                              <td className="px-4 py-3 border border-gray-200">Laboratoires & salles RDC</td>
+                              <td className="px-4 py-3 border border-gray-200">
+                                Vibrations des équipements scientifiques et brouhaha dans les espaces des plus jeunes.
+                              </td>
+                              <td className="px-4 py-3 border border-gray-200">
+                                Patins anti-vibrations, dalles renforcées et plafonds acoustiques mixtes adaptés aux usages.
+                              </td>
+                              <td className="px-4 py-3 border border-gray-200">2029-2030</td>
                             </tr>
                           </tbody>
                         </table>
