@@ -1,7 +1,5 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ExternalLink } from 'lucide-react';
 import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe4 = () => {
