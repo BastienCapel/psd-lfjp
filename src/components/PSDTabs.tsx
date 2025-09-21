@@ -14,38 +14,38 @@ const PSDTabs = () => {
       <TabsList className="grid grid-cols-5 mb-8">
         <TabsTrigger
           value="axe1"
-          className="flex flex-col items-center py-3 transition-transform duration-200 hover:animate-tab-pulse data-[state=active]:text-french-blue"
+          className="group flex flex-col items-center py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
-          <Target size={24} className="mb-1" />
-          <span className="text-xs">Axe 1</span>
+          <Target className="mb-1 h-6 w-6 md:h-8 md:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
+          <span className="block text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Axe 1</span>
         </TabsTrigger>
         <TabsTrigger
           value="axe2"
-          className="flex flex-col items-center py-3 transition-transform duration-200 hover:animate-tab-pulse data-[state=active]:text-french-blue"
+          className="group flex flex-col items-center py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
-          <Users size={24} className="mb-1" />
-          <span className="text-xs">Axe 2</span>
+          <Users className="mb-1 h-6 w-6 md:h-8 md:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
+          <span className="block text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Axe 2</span>
         </TabsTrigger>
         <TabsTrigger
           value="axe3"
-          className="flex flex-col items-center py-3 transition-transform duration-200 hover:animate-tab-pulse data-[state=active]:text-french-blue"
+          className="group flex flex-col items-center py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
-          <Sparkles size={24} className="mb-1" />
-          <span className="text-xs">Axe 3</span>
+          <Sparkles className="mb-1 h-6 w-6 md:h-8 md:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
+          <span className="block text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Axe 3</span>
         </TabsTrigger>
         <TabsTrigger
           value="axe4"
-          className="flex flex-col items-center py-3 transition-transform duration-200 hover:animate-tab-pulse data-[state=active]:text-french-blue"
+          className="group flex flex-col items-center py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
-          <GraduationCap size={24} className="mb-1" />
-          <span className="text-xs">Axe 4</span>
+          <GraduationCap className="mb-1 h-6 w-6 md:h-8 md:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
+          <span className="block text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Axe 4</span>
         </TabsTrigger>
         <TabsTrigger
           value="axe5"
-          className="flex flex-col items-center py-3 transition-transform duration-200 hover:animate-tab-pulse data-[state=active]:text-french-blue"
+          className="group flex flex-col items-center py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
-          <LayoutDashboard size={24} className="mb-1" />
-          <span className="text-xs">Transversal</span>
+          <LayoutDashboard className="mb-1 h-6 w-6 md:h-8 md:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
+          <span className="block text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Transversal</span>
         </TabsTrigger>
       </TabsList>
       
