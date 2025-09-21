@@ -17,6 +17,7 @@ import ElcsAnalyseComplete from "./pages/ElcsAnalyseComplete";
 import SectionInternationaleBFI from "./pages/SectionInternationaleBFI";
 import DeploiementPlanSectionInternationaleBFI from "./pages/DeploiementPlanSectionInternationaleBFI";
 import PlanMaintenanceStrategique from "./pages/PlanMaintenanceStrategique";
+import MediationEntrePairs from "./pages/MediationEntrePairs";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -110,6 +111,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <PlanMaintenanceStrategique />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/mediation-entre-pairs" element={
+                  <>
+                    <BreadcrumbNav />
+                    <MediationEntrePairs />
                     <BackToTop />
                   </>
                 } />
