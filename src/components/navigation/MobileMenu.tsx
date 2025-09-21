@@ -4,17 +4,22 @@ import { cn } from '@/lib/utils';
 import MobileNavItem from './MobileNavItem';
 
 interface MobileMenuProps {
+  id?: string;
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (open: boolean) => void;
   isActive: (path: string) => boolean;
 }
 
-const MobileMenu = ({ mobileMenuOpen, setMobileMenuOpen, isActive }: MobileMenuProps) => {
+const MobileMenu = ({ id, mobileMenuOpen, setMobileMenuOpen, isActive }: MobileMenuProps) => {
   return (
-    <div className={cn(
-      "fixed inset-y-0 right-0 transform w-64 bg-white shadow-xl z-50 transition-transform duration-300 ease-in-out md:hidden",
-      mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-    )}>
+    <div
+      id={id}
+      aria-hidden={!mobileMenuOpen}
+      className={cn(
+        "fixed inset-y-0 right-0 transform w-64 bg-white shadow-xl z-50 transition-transform duration-300 ease-in-out md:hidden",
+        mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+      )}
+    >
       <div className="flex flex-col h-full pt-16 px-4">
         <button 
           className="absolute top-4 right-4 p-2 rounded-full text-french-blue hover:bg-blue-50"
