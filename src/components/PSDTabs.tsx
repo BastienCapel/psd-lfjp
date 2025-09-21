@@ -12,24 +12,39 @@ const PSDTabs = () => {
   return (
     <Tabs defaultValue="axe1" className="w-full">
       <TabsList className="grid grid-cols-5 mb-8">
-        <TabsTrigger value="axe1" className="flex flex-col items-center py-3 data-[state=active]:text-french-blue">
-          <Target size={20} className="mb-1" />
+        <TabsTrigger
+          value="axe1"
+          className="flex flex-col items-center py-3 transition-transform duration-200 hover:animate-tab-pulse data-[state=active]:text-french-blue"
+        >
+          <Target size={24} className="mb-1" />
           <span className="text-xs">Axe 1</span>
         </TabsTrigger>
-        <TabsTrigger value="axe2" className="flex flex-col items-center py-3 data-[state=active]:text-french-blue">
-          <Users size={20} className="mb-1" />
+        <TabsTrigger
+          value="axe2"
+          className="flex flex-col items-center py-3 transition-transform duration-200 hover:animate-tab-pulse data-[state=active]:text-french-blue"
+        >
+          <Users size={24} className="mb-1" />
           <span className="text-xs">Axe 2</span>
         </TabsTrigger>
-        <TabsTrigger value="axe3" className="flex flex-col items-center py-3 data-[state=active]:text-french-blue">
-          <Sparkles size={20} className="mb-1" />
+        <TabsTrigger
+          value="axe3"
+          className="flex flex-col items-center py-3 transition-transform duration-200 hover:animate-tab-pulse data-[state=active]:text-french-blue"
+        >
+          <Sparkles size={24} className="mb-1" />
           <span className="text-xs">Axe 3</span>
         </TabsTrigger>
-        <TabsTrigger value="axe4" className="flex flex-col items-center py-3 data-[state=active]:text-french-blue">
-          <GraduationCap size={20} className="mb-1" />
+        <TabsTrigger
+          value="axe4"
+          className="flex flex-col items-center py-3 transition-transform duration-200 hover:animate-tab-pulse data-[state=active]:text-french-blue"
+        >
+          <GraduationCap size={24} className="mb-1" />
           <span className="text-xs">Axe 4</span>
         </TabsTrigger>
-        <TabsTrigger value="axe5" className="flex flex-col items-center py-3 data-[state=active]:text-french-blue">
-          <LayoutDashboard size={20} className="mb-1" />
+        <TabsTrigger
+          value="axe5"
+          className="flex flex-col items-center py-3 transition-transform duration-200 hover:animate-tab-pulse data-[state=active]:text-french-blue"
+        >
+          <LayoutDashboard size={24} className="mb-1" />
           <span className="text-xs">Transversal</span>
         </TabsTrigger>
       </TabsList>
