@@ -9,7 +9,6 @@ const PSDAxe1 = () => {
       id: 'details-objectifs',
       title: 'Objectifs',
       icon: Target,
-      ariaLabel: 'Voir le détail des objectifs',
       items: [
         { icon: '🌱', label: 'Bien-être & accompagnement' },
         { icon: '🤝', label: 'Climat & coopération' },
@@ -20,7 +19,6 @@ const PSDAxe1 = () => {
       id: 'details-actions',
       title: 'Actions prioritaires',
       icon: ListChecks,
-      ariaLabel: 'Voir le détail des actions prioritaires',
       items: [
         { icon: '❄️', label: 'Rafraîchissement durable' },
         { icon: '🛡️', label: 'Prévention du harcèlement' },
@@ -32,7 +30,6 @@ const PSDAxe1 = () => {
       id: 'details-indicateurs',
       title: 'Indicateurs',
       icon: BarChart3,
-      ariaLabel: 'Voir le détail des indicateurs',
       items: [
         { icon: '📈', label: '+15 pts satisfaction' },
         { icon: '🌡️', label: '≥ 80% salles confort' },
@@ -112,27 +109,6 @@ const PSDAxe1 = () => {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6">
-                <a
-                  href={`#${card.id}`}
-                  className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-800 transition hover:bg-slate-50 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue"
-                  aria-label={card.ariaLabel}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    className="h-4 w-4"
-                    aria-hidden="true"
-                  >
-                    <path d="M14 3h7v7" strokeWidth="1.5" />
-                    <path d="M21 3 10 14" strokeWidth="1.5" />
-                    <rect x="3" y="7" width="10" height="14" rx="2" ry="2" strokeWidth="1.5" />
-                  </svg>
-                  <span>Voir le détail</span>
-                </a>
-              </div>
             </article>
           );
         })}
