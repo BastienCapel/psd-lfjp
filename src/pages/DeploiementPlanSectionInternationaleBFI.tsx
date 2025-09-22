@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -19,7 +18,7 @@ const DeploiementPlanSectionInternationaleBFI = () => {
             DÉPLOIEMENT DU PLAN « SECTION INTERNATIONALE ET BFI »
           </h1>
           <p className="text-xl md:text-2xl font-raleway font-light max-w-3xl opacity-0 animate-fade-in-delay-1">
-            Plan détaillé de déploiement progressif (2026-2034)
+            Feuille de route 2026-2029 vers une Section Internationale Américaine intégrale et le BFI.
           </p>
         </div>
       </div>
