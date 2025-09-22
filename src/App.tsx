@@ -15,7 +15,6 @@ import ConstructionCantine from "./pages/ConstructionCantine";
 import ProtocolePHARE from "./pages/ProtocolePHARE";
 import ElcsAnalyseComplete from "./pages/ElcsAnalyseComplete";
 import SectionInternationaleBFI from "./pages/SectionInternationaleBFI";
-import DeploiementPlanSectionInternationaleBFI from "./pages/DeploiementPlanSectionInternationaleBFI";
 import PlanMaintenanceStrategique from "./pages/PlanMaintenanceStrategique";
 import MediationEntrePairs from "./pages/MediationEntrePairs";
 import PolitiqueE3D from "./pages/PolitiqueE3D";
@@ -77,13 +76,6 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <SectionInternationaleBFI />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/deploiement-plan-section-internationale-bfi" element={
-                  <>
-                    <BreadcrumbNav />
-                    <DeploiementPlanSectionInternationaleBFI />
                     <BackToTop />
                   </>
                 } />

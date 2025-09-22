@@ -23,7 +23,6 @@ const routes: RouteMap = {
   "/diagnostic": { name: "Diagnostic", parent: "/" },
   "/plan-strategique": { name: "Plan Stratégique", parent: "/" },
   "/section-internationale-bfi": { name: "Section Internationale et BFI", parent: "/plan-strategique" },
-  "/deploiement-plan-section-internationale-bfi": { name: "Déploiement du Plan Section Internationale et BFI", parent: "/plan-strategique" },
   "/pc-par-lyceen": { name: "PC par Lycéen", parent: "/plan-strategique" },
   "/construction-cantine": { name: "Construction de la Cantine", parent: "/plan-strategique" },
   "/protocole-phare": { name: "Protocole PHARE", parent: "/plan-strategique" },
