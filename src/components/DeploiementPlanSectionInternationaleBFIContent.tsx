@@ -1,14 +1,10 @@
-
 import React from 'react';
 import DeploiementPlanSommaire from './deploiement-plan/DeploiementPlanSommaire';
 import DeploiementPlanIntroduction from './deploiement-plan/DeploiementPlanIntroduction';
-import DeploiementPlanObjectifs from './deploiement-plan/DeploiementPlanObjectifs';
 import DeploiementPlanCalendrier from './deploiement-plan/DeploiementPlanCalendrier';
-import DeploiementPlanRH from './deploiement-plan/DeploiementPlanRH';
-import DeploiementPlanFinancier from './deploiement-plan/DeploiementPlanFinancier';
 import DeploiementPlanOrganisation from './deploiement-plan/DeploiementPlanOrganisation';
-import DeploiementPlanAction from './deploiement-plan/DeploiementPlanAction';
-import DeploiementPlanIndicateurs from './deploiement-plan/DeploiementPlanIndicateurs';
+import DeploiementPlanFinancier from './deploiement-plan/DeploiementPlanFinancier';
+import DeploiementPlanRH from './deploiement-plan/DeploiementPlanRH';
 import DeploiementPlanConclusion from './deploiement-plan/DeploiementPlanConclusion';
 
 const DeploiementPlanSectionInternationaleBFIContent = () => {
@@ -18,13 +14,10 @@ const DeploiementPlanSectionInternationaleBFIContent = () => {
         <div className="max-w-6xl mx-auto space-y-12">
           <DeploiementPlanSommaire />
           <DeploiementPlanIntroduction />
-          <DeploiementPlanObjectifs />
           <DeploiementPlanCalendrier />
-          <DeploiementPlanRH />
-          <DeploiementPlanFinancier />
           <DeploiementPlanOrganisation />
-          <DeploiementPlanAction />
-          <DeploiementPlanIndicateurs />
+          <DeploiementPlanFinancier />
+          <DeploiementPlanRH />
           <DeploiementPlanConclusion />
         </div>
       </div>
