@@ -75,7 +75,7 @@ const PSDAxe2 = () => {
   const actions = [
     {
       text:
-        '<strong>Sections et certifications internationales</strong> :<br/>• <strong>Déploiement du plan « Section Internationale et BFI »</strong> (2026-2033)<br/>• Recrutement et formation d\'<strong>enseignants locuteurs natifs</strong> ou hautement qualifiés (niveau <strong>C2 CECRL</strong>) pour les disciplines non linguistiques et littéraires.',
+        '• <strong>Déploiement du plan « Section Internationale et BFI »</strong> (2026-2028).',
       link: '/section-internationale-bfi',
       linkAriaLabel: 'En savoir plus – Section internationale et BFI',
       linkIcon: Globe2,
