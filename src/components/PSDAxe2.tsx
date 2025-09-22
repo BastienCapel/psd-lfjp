@@ -98,6 +98,9 @@ const PSDAxe2 = () => {
     {
       text:
         '<strong>Politique E3D</strong> avec maintien des <strong>17 objectifs de développement durable</strong>, demande de <strong>labellisation niveau 3</strong>, et présence d\'<strong>éco-délégués</strong>.',
+      link: '/politique-e3d',
+      linkAriaLabel: 'En savoir plus – Politique E3D',
+      linkIcon: Sprout,
     },
   ];
 
