@@ -213,24 +213,6 @@ const SectionInternationaleBFI: React.FC = () => {
       commentaire: '= 4,7 ETP',
       accent: false,
     },
-    {
-      poste: 'Capacité 2026',
-      volume: `${DATA.etp.capacite2026} h / semaine`,
-      commentaire: 'Action RH prioritaire',
-      accent: true,
-    },
-    {
-      poste: 'Capacité 2027',
-      volume: `${DATA.etp.capacite2027} h / semaine`,
-      commentaire: 'Déficit marginal absorbé',
-      accent: false,
-    },
-    {
-      poste: 'Capacité 2028',
-      volume: `${DATA.etp.capacite2028} h / semaine`,
-      commentaire: 'Capacité cible',
-      accent: false,
-    },
   ];
 
   const cards = [
