@@ -234,7 +234,7 @@ const SectionInternationaleBFI: React.FC = () => {
     {
       title: 'Collège (6e–3e)',
       description:
-        'Langue & Littérature américaines et Histoire-Géographie en anglais (EMILE) avec préparation au Diplôme National du Brevet international (DNBi).',
+        'Langue & Littérature américaines et Histoire-Géographie en anglais (DNL) avec préparation au Diplôme National du Brevet international (DNBi).',
     },
     {
       title: 'Lycée (1re–Terminale, BFI)',
