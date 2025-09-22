@@ -1,343 +1,328 @@
-
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, Users, DollarSign, BookOpen, Target, TrendingUp, CheckCircle, ArrowRight, GraduationCap, Clock } from 'lucide-react';
+import {
+  ArrowRight,
+  BookOpen,
+  Calendar,
+  CheckCircle,
+  DollarSign,
+  GraduationCap,
+  Layers,
+  Target,
+  TrendingUp,
+  Users
+} from 'lucide-react';
+
+const keyIndicators = [
+  {
+    icon: Target,
+    title: "Vision 2029",
+    value: "Établissement 100% SIA",
+    description: "Première diplomation BFI prévue en 2029"
+  },
+  {
+    icon: Users,
+    title: "Effectifs cibles",
+    value: "15 élèves/groupe",
+    description: "De la 6e à la Terminale, soit 105 élèves"
+  },
+  {
+    icon: DollarSign,
+    title: "Supplément secondaire",
+    value: "300 000 FCFA/an",
+    description: "Financement du dispositif renforcé"
+  },
+  {
+    icon: BookOpen,
+    title: "Horaire primaire",
+    value: "3 à 4h/sem",
+    description: "Anglais & EMILE pour tous les élèves"
+  }
+];
+
+const deploymentTimeline = [
+  {
+    year: "2026",
+    focus: "Généralisation primaire",
+    details: "Tous les élèves du CP au CM2 en SIA, ouverture 6e-5e et Première BFI",
+    hr: "Consolidation des équipes primaires"
+  },
+  {
+    year: "2027",
+    focus: "Extension collège & lycée",
+    details: "Ouverture 4e et Terminale BFI",
+    hr: "Recrutement d'un enseignant secondaire supplémentaire"
+  },
+  {
+    year: "2028",
+    focus: "Achèvement du collège",
+    details: "Ouverture 3e et Seconde SIA",
+    hr: "Anticipation d'un second recrutement secondaire"
+  },
+  {
+    year: "2029",
+    focus: "Couverture intégrale",
+    details: "Établissement entièrement en SIA et première promotion BFI",
+    hr: "Stabilisation de l'équipe (4,7 ETP)"
+  }
+];
+
+const pedagogicalTracks = [
+  {
+    level: "Primaire",
+    icon: GraduationCap,
+    highlight: "Immersion bilingue pour tous",
+    description: "3 à 4 heures hebdomadaires d'anglais et d'EMILE intégrées sans surcoût",
+    bullets: [
+      "Progressivité des apprentissages linguistiques",
+      "Inclusion de l'ensemble des élèves",
+      "Adossement aux standards AEFE"
+    ]
+  },
+  {
+    level: "Collège",
+    icon: Layers,
+    highlight: "Parcours structuré",
+    description: "7 heures spécifiques : anglais LV1, langue & littérature, DNL Histoire-Géographie",
+    bullets: [
+      "Constitution de groupes de 15 élèves",
+      "Renforcement des compétences académiques",
+      "Préparation aux exigences du BFI"
+    ]
+  },
+  {
+    level: "Lycée",
+    icon: BookOpen,
+    highlight: "Préparation BFI",
+    description: "ACL, CDM et DNL alignés sur les standards internationaux",
+    bullets: [
+      "Accompagnement personnalisé",
+      "Ouverture culturelle et partenariats",
+      "Diplomation BFI à partir de 2029"
+    ]
+  }
+];
+
+const financialScenarios = [
+  {
+    name: "Scénario 1",
+    cost: "26 970 752 FCFA/an",
+    description: "1 recrutement + HSA, équilibre quasi atteint avec le supplément de 300 000 FCFA"
+  },
+  {
+    name: "Scénario 2",
+    cost: "39 731 633 FCFA/an",
+    description: "2 recrutements et moins de HSA, besoin d'un complément de financement"
+  },
+  {
+    name: "Scénario 3",
+    cost: "36 893 653 FCFA/an",
+    description: "2 recrutements et très peu de HSA, compromis qualité/finances"
+  }
+];
+
+const resourcePlan = [
+  {
+    year: "2026",
+    need: "60h couvertes par 3 enseignants",
+    detail: "Organisation actuelle avant extension"
+  },
+  {
+    year: "2027",
+    need: "94h hebdomadaires",
+    detail: "Recrutement d'un 4e enseignant pour la 4e et la Terminale"
+  },
+  {
+    year: "2028",
+    need: "Anticipation du 5e enseignant",
+    detail: "Ouverture de la Seconde SIA et de la 3e"
+  }
+];
+
+const conclusionPoints = [
+  "Un parcours bilingue complet, inclusif et attractif du CP à la Terminale",
+  "Un modèle financier clair basé sur un supplément de 300 000 FCFA au secondaire",
+  "Un équilibre à arbitrer entre sobriété budgétaire et confort organisationnel",
+  "Un calendrier de recrutements anticipé pour sécuriser la qualité pédagogique"
+];
 
 const SectionInternationaleBFIContent = () => {
-  const navigate = useNavigate();
-
-  const keyIndicators = [
-    {
-      icon: GraduationCap,
-      title: "Primaire SI",
-      value: "2026",
-      description: "Ouverture pour tous, sans surcoût"
-    },
-    {
-      icon: Users,
-      title: "Secondaire SI",
-      value: "20 élèves/niveau",
-      description: "Objectif pour viabilité financière"
-    },
-    {
-      icon: Calendar,
-      title: "Durée totale",
-      value: "10 ans",
-      description: "De 2026 (primaire) à 2035 (BFI)"
-    },
-    {
-      icon: DollarSign,
-      title: "Frais secondaire",
-      value: "300 000 CFA",
-      description: "Par élève et par an (secondaire uniquement)"
-    }
-  ];
-
-  const deploymentPhases = [
-    {
-      year: "2025-2026",
-      level: "Recrutement primaire",
-      students: "Préparation",
-      hours: "+1 ETP primaire",
-      revenue: "Investissement"
-    },
-    {
-      year: "2026-2027",
-      level: "SI Primaire (CP-CM2)",
-      students: "230 élèves max",
-      hours: "4h/niveau (2h EMILE)",
-      revenue: "GRATUIT"
-    },
-    {
-      year: "2027-2028",
-      level: "SI Primaire + 6ème SI",
-      students: "230 + 10-20 élèves",
-      hours: "20h + 6h/semaine",
-      revenue: "0 + 3-6M CFA"
-    },
-    {
-      year: "2030-2031",
-      level: "SI Primaire + 6ème-3ème SI",
-      students: "230 + 40-80 élèves",
-      hours: "20h + 24h/semaine",
-      revenue: "0 + 12-24M CFA"
-    },
-    {
-      year: "2033-2034",
-      level: "SI Primaire + 6ème-Term SI",
-      students: "230 + 70-140 élèves",
-      hours: "20h + 42h/semaine",
-      revenue: "0 + 21-42M CFA"
-    },
-    {
-      year: "2034-2035",
-      level: "SI Primaire + BFI ouvert",
-      students: "230 + 70-140 élèves",
-      hours: "20h + 42h/semaine",
-      revenue: "0 + 21-42M CFA"
-    }
-  ];
-
-  const objectives = [
-    "Immersion précoce et équitable au primaire dès 2026",
-    "Extension progressive et optionnelle au secondaire",
-    "Distinction claire primaire gratuit / secondaire payant",
-    "Viabilité financière du dispositif optionnel au secondaire"
-  ];
-
-  const criticalThresholds = [
-    {
-      year: "2025-2026",
-      action: "Recrutement enseignant primaire",
-      reason: "Investissement pédagogique de 18M CFA/an",
-      type: "investment"
-    },
-    {
-      year: "2030-2031",
-      action: "Premier recrutement secondaire",
-      reason: "24h/semaine SI secondaire nécessitent un ETP supplémentaire",
-      type: "critical"
-    },
-    {
-      year: "2033-2034",
-      action: "Second recrutement secondaire",
-      reason: "42h/semaine SI secondaire nécessitent un troisième ETP",
-      type: "critical"
-    }
-  ];
-
   return (
     <section className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          
-          {/* Introduction */}
-          <Card className="mb-8 border-french-blue/10 shadow-md">
+        <div className="max-w-6xl mx-auto space-y-8">
+          <Card className="border-french-blue/10 shadow-md">
             <CardHeader>
-              <CardTitle className="text-2xl text-french-blue">Introduction et contexte</CardTitle>
+              <CardTitle className="text-2xl text-french-blue">Vision et objectifs</CardTitle>
               <CardDescription>
-                Un projet ambitieux d'immersion précoce et d'ouverture internationale
+                Transformation progressive du LFJP en établissement intégralement Section Internationale Américaine menant au BFI en 2029.
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-4">
-                Le lycée français Jacques Prévert de Saly s'engage dans un projet ambitieux d'ouverture 
-                d'une Section Internationale Américaine (SI) suivie du Baccalauréat Français International (BFI). 
-                Ce projet, révisé pour mettre l'accent sur une <strong>immersion précoce</strong>, s'inscrit dans une 
-                volonté d'enrichir l'offre pédagogique de l'établissement et de répondre aux attentes des familles 
-                en matière d'éducation internationale, <strong>en commençant par le niveau primaire</strong>.
+            <CardContent className="text-gray-700 space-y-4">
+              <p>
+                Le plan 2026-2029 engage l'établissement sur une trajectoire ambitieuse : généraliser la Section Internationale Américaine du primaire au lycée, garantir un parcours bilingue structuré et préparer la première promotion du Baccalauréat Français International en 2029.
               </p>
-              <div className="bg-blue-50 p-4 rounded-lg mb-4">
-                <h4 className="font-semibold text-blue-800 mb-2">Approche en deux volets :</h4>
-                <div className="grid md:grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <h5 className="font-medium text-blue-700">Primaire (dès 2026)</h5>
-                    <p className="text-blue-600">4h d'anglais/semaine (dont 2h EMILE) pour TOUS les élèves, SANS SURCOÛT</p>
-                  </div>
-                  <div>
-                    <h5 className="font-medium text-blue-700">Secondaire (dès 2027)</h5>
-                    <p className="text-blue-600">SI optionnelle avec littérature américaine et histoire-géographie en anglais, 300 000 CFA/an</p>
-                  </div>
-                </div>
-              </div>
-              <p className="text-gray-700">
-                Cette approche permet une immersion précoce équitable au primaire, préparant une poursuite 
-                d'excellence optionnelle au secondaire, avec des modalités de financement distinctes.
+              <p>
+                Ce projet s'appuie sur l'homologation AEFE, un environnement international riche et des partenariats solides pour offrir aux élèves un cadre d'apprentissage exigeant et inclusif.
               </p>
             </CardContent>
           </Card>
 
-          {/* Indicateurs clés */}
-          <Card className="mb-8 border-french-blue/10 shadow-md">
+          <Card className="border-french-blue/10 shadow-md">
             <CardHeader>
-              <CardTitle className="text-2xl text-french-blue">Indicateurs clés du projet</CardTitle>
+              <CardTitle className="text-2xl text-french-blue">Indicateurs clés</CardTitle>
+              <CardDescription>Repères structurants pour piloter le déploiement 2026-2029.</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {keyIndicators.map((indicator, index) => (
-                  <div key={index} className="text-center p-4 bg-white rounded-lg border border-gray-100">
-                    <indicator.icon className="w-8 h-8 text-french-blue mx-auto mb-3" />
-                    <h3 className="font-semibold text-french-blue mb-1">{indicator.title}</h3>
-                    <p className="text-2xl font-bold text-gray-800 mb-1">{indicator.value}</p>
-                    <p className="text-sm text-gray-600">{indicator.description}</p>
+                  <div key={index} className="p-6 border border-french-blue/10 rounded-lg bg-white shadow-sm">
+                    <indicator.icon className="w-6 h-6 text-french-blue mb-4" />
+                    <p className="text-sm uppercase tracking-wide text-slate-500">{indicator.title}</p>
+                    <p className="text-2xl font-semibold text-french-blue mt-1">{indicator.value}</p>
+                    <p className="text-sm text-gray-600 mt-2">{indicator.description}</p>
                   </div>
                 ))}
               </div>
             </CardContent>
           </Card>
 
-          {/* Objectifs du plan */}
-          <Card className="mb-8 border-french-blue/10 shadow-md">
+          <Card className="border-french-blue/10 shadow-md">
             <CardHeader>
-              <CardTitle className="text-2xl text-french-blue">Objectifs du plan de déploiement</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {objectives.map((objective, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <Target className="w-5 h-5 text-french-blue mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">{objective}</span>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Calendrier de déploiement */}
-          <Card className="mb-8 border-french-blue/10 shadow-md">
-            <CardHeader>
-              <CardTitle className="text-2xl text-french-blue">Calendrier de déploiement progressif</CardTitle>
-              <CardDescription>
-                De l'ouverture primaire en 2026 à l'ouverture BFI en 2034
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {deploymentPhases.map((phase, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-french-blue text-white rounded-full flex items-center justify-center font-semibold">
-                        {index + 1}
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-800">{phase.year}</h4>
-                        <p className="text-sm text-gray-600">{phase.level}</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-semibold text-french-blue">{phase.students}</p>
-                      <p className="text-sm text-gray-600">{phase.hours}</p>
-                      <p className={`text-sm ${phase.revenue === 'GRATUIT' || phase.revenue === 'Investissement' ? 'text-blue-600' : 'text-green-600'}`}>
-                        {phase.revenue}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Seuils critiques RH */}
-          <Card className="mb-8 border-french-blue/10 shadow-md">
-            <CardHeader>
-              <CardTitle className="text-2xl text-french-blue">Étapes clés - Ressources Humaines</CardTitle>
-              <CardDescription>
-                Investissements et recrutements nécessaires
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {criticalThresholds.map((threshold, index) => (
-                  <div key={index} className={`p-4 border rounded-lg ${
-                    threshold.type === 'investment' ? 'bg-blue-50 border-blue-200' : 'bg-amber-50 border-amber-200'
-                  }`}>
-                    <div className="flex items-start space-x-3">
-                      {threshold.type === 'investment' ? 
-                        <Clock className={`w-5 h-5 mt-0.5 ${threshold.type === 'investment' ? 'text-blue-600' : 'text-amber-600'}`} /> :
-                        <TrendingUp className={`w-5 h-5 mt-0.5 ${threshold.type === 'investment' ? 'text-blue-600' : 'text-amber-600'}`} />
-                      }
-                      <div>
-                        <h4 className={`font-semibold ${threshold.type === 'investment' ? 'text-blue-800' : 'text-amber-800'}`}>
-                          {threshold.year}
-                        </h4>
-                        <p className={`font-medium ${threshold.type === 'investment' ? 'text-blue-700' : 'text-amber-700'}`}>
-                          {threshold.action}
-                        </p>
-                        <p className={`text-sm mt-1 ${threshold.type === 'investment' ? 'text-blue-600' : 'text-amber-600'}`}>
-                          {threshold.reason}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Équilibre financier */}
-          <Card className="mb-8 border-french-blue/10 shadow-md">
-            <CardHeader>
-              <CardTitle className="text-2xl text-french-blue">Équilibre financier</CardTitle>
-              <CardDescription>
-                Distinction entre investissement primaire et viabilité secondaire
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                  <div className="flex items-start space-x-3">
-                    <GraduationCap className="w-6 h-6 text-blue-600 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold text-blue-800 mb-2">Investissement primaire</h4>
-                      <p className="text-blue-700 mb-3">
-                        <strong>18M CFA/an</strong> d'investissement pédagogique pour la SI gratuite au primaire.
-                      </p>
-                      <p className="text-sm text-blue-600">
-                        Financement par le budget global de l'établissement, sans recettes associées.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-6 h-6 text-green-600 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold text-green-800 mb-2">Viabilité secondaire</h4>
-                      <p className="text-green-700 mb-3">
-                        Équilibre financier atteint avec <strong>20 élèves/niveau</strong> au secondaire.
-                      </p>
-                      <p className="text-sm text-green-600">
-                        Excédent de 6M CFA en régime de croisière avec ce scénario.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Gouvernance et suivi */}
-          <Card className="mb-8 border-french-blue/10 shadow-md">
-            <CardHeader>
-              <CardTitle className="text-2xl text-french-blue">Gouvernance et indicateurs de suivi</CardTitle>
+              <CardTitle className="text-2xl text-french-blue">Déploiement progressif</CardTitle>
+              <CardDescription>Feuille de route annuelle jusqu'à la première diplomation BFI.</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold text-french-blue mb-3">Instances de gouvernance</h4>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• Comité de pilotage SI/BFI (stratégique, trimestriel)</li>
-                    <li>• Équipe pédagogique SI (coordination, mensuelle)</li>
-                    <li>• Conseil SI/BFI (concertation, semestrielle)</li>
-                    <li>• Coordination intégrée (pilotage quotidien)</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-french-blue mb-3">Indicateurs de suivi</h4>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• Satisfaction familles/enseignants (primaire)</li>
-                    <li>• Effectifs SI par niveau vs cible 20 (secondaire)</li>
-                    <li>• Bilan financier SI secondaire</li>
-                    <li>• Taux de poursuite primaire → secondaire</li>
-                  </ul>
-                </div>
+                {deploymentTimeline.map((step, index) => (
+                  <div key={index} className="p-6 border rounded-lg bg-white border-french-blue/10 shadow-sm">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-french-blue/10 text-french-blue text-sm font-semibold">
+                        <Calendar className="w-4 h-4 mr-2" />
+                        {step.year}
+                      </span>
+                      <span className="text-sm text-gray-500">{step.focus}</span>
+                    </div>
+                    <p className="text-gray-700 text-sm leading-relaxed">{step.details}</p>
+                    <p className="text-sm text-french-blue mt-3 font-medium">{step.hr}</p>
+                  </div>
+                ))}
               </div>
             </CardContent>
           </Card>
 
-          {/* Bouton d'action */}
-          <div className="text-center">
+          <Card className="border-french-blue/10 shadow-md">
+            <CardHeader>
+              <CardTitle className="text-2xl text-french-blue">Organisation pédagogique</CardTitle>
+              <CardDescription>Un continuum d'apprentissage bilingue du CP à la Terminale.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {pedagogicalTracks.map((track, index) => (
+                  <div key={index} className="p-6 border rounded-lg bg-white border-french-blue/10 shadow-sm">
+                    <track.icon className="w-6 h-6 text-french-blue mb-3" />
+                    <h3 className="text-lg font-semibold text-french-blue">{track.level}</h3>
+                    <p className="text-sm text-slate-500 mb-2">{track.highlight}</p>
+                    <p className="text-sm text-gray-700 mb-4">{track.description}</p>
+                    <ul className="space-y-2 text-sm text-gray-600">
+                      {track.bullets.map((item, bulletIndex) => (
+                        <li key={bulletIndex} className="flex items-start">
+                          <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 mr-2" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-french-blue/10 shadow-md">
+            <CardHeader>
+              <CardTitle className="text-2xl text-french-blue">Modèle financier</CardTitle>
+              <CardDescription>Suppositions de revenus et scénarios de coûts au secondaire.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6 text-gray-700">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="p-6 border rounded-lg bg-blue-50 border-blue-200">
+                  <h3 className="text-lg font-semibold text-blue-800 mb-2">Recettes prévisionnelles</h3>
+                  <p className="text-sm text-blue-700 mb-2">
+                    105 élèves concernés (15 élèves × 7 niveaux) avec un supplément de <strong>300 000 FCFA/an</strong> par élève.
+                  </p>
+                  <p className="text-sm text-blue-700 font-semibold">Recettes annuelles attendues : 31 500 000 FCFA.</p>
+                </div>
+                <div className="p-6 border rounded-lg bg-emerald-50 border-emerald-200">
+                  <h3 className="text-lg font-semibold text-emerald-800 mb-2">Gratuité au primaire</h3>
+                  <p className="text-sm text-emerald-700">
+                    L'intégration de tous les élèves en SIA au primaire se fait sans surcoût pour les familles grâce à un financement interne.
+                  </p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {financialScenarios.map((scenario, index) => (
+                  <div key={index} className="p-6 border rounded-lg bg-white border-french-blue/10 shadow-sm">
+                    <p className="text-sm uppercase tracking-wide text-slate-500">{scenario.name}</p>
+                    <p className="text-xl font-semibold text-french-blue mt-1">{scenario.cost}</p>
+                    <p className="text-sm text-gray-600 mt-2 leading-relaxed">{scenario.description}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-gray-600">
+                Selon le scénario retenu, le coût par élève varie entre <strong>257 000</strong> et <strong>379 000 FCFA</strong>. Le supplément facturé de 300 000 FCFA assure l'équilibre du scénario 1 et contribue au financement des scénarios 2 et 3 via des compléments (subventions, APE, ajustements budgétaires).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-french-blue/10 shadow-md">
+            <CardHeader>
+              <CardTitle className="text-2xl text-french-blue">Ressources humaines</CardTitle>
+              <CardDescription>Anticiper les recrutements pour soutenir l'offre pédagogique.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {resourcePlan.map((resource, index) => (
+                  <div key={index} className="p-6 border rounded-lg bg-white border-french-blue/10 shadow-sm">
+                    <TrendingUp className="w-6 h-6 text-french-blue mb-3" />
+                    <p className="text-sm uppercase tracking-wide text-slate-500">{resource.year}</p>
+                    <p className="text-lg font-semibold text-french-blue mt-1">{resource.need}</p>
+                    <p className="text-sm text-gray-600 mt-2">{resource.detail}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-gray-600 mt-6">
+                L'objectif est d'atteindre 94 heures hebdomadaires d'enseignement, soit 4,7 ETP, pour couvrir l'ensemble des besoins au secondaire dès 2028.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-french-blue/10 shadow-md">
+            <CardHeader>
+              <CardTitle className="text-2xl text-french-blue">Conclusion stratégique</CardTitle>
+              <CardDescription>Points de vigilance et leviers de réussite.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3 text-gray-700">
+                {conclusionPoints.map((point, index) => (
+                  <li key={index} className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 mr-3" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          <div className="text-center pt-4">
             <Link to="/deploiement-plan-section-internationale-bfi">
               <Button className="bg-french-blue hover:bg-blue-700 text-white px-8 py-3 text-lg font-semibold">
-                Accéder au plan d'action détaillé
+                Découvrir le plan de déploiement
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
           </div>
-
         </div>
       </div>
     </section>
