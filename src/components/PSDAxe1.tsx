@@ -152,8 +152,8 @@ const PSDAxe1 = () => {
               }
 
               return (
-                <li key={index} className="flex flex-wrap items-center gap-2">
-                  <span dangerouslySetInnerHTML={{ __html: item.text }}></span>
+                <li key={index} className="space-y-2">
+                  <span className="block" dangerouslySetInnerHTML={{ __html: item.text }}></span>
                   <Link
                     to={item.link}
                     className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue"
