@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section Internationale Américaine (SIA) &amp; BFI – LFJP</title>
+    <meta
+      name="description"
+      content="Présentation de la Section Internationale Américaine (SIA) et du BFI du LFJP : nature du projet, calendrier, besoins horaires et simulateur financier."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --color-titles: #0f172a;
+        --color-text: #334155;
+        --color-bg: #e2e8f0;
+        --color-accent: #c2410c;
+        --color-white: #ffffff;
+        --shadow-md: 0 12px 32px rgba(15, 23, 42, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: var(--color-text);
+        background-color: var(--color-white);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--color-titles);
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: clamp(2.4rem, 5vw, 3.4rem);
+        line-height: 1.1;
+      }
+
+      h2 {
+        font-size: clamp(1.8rem, 3vw, 2.2rem);
+      }
+
+      h3 {
+        font-size: clamp(1.3rem, 2.3vw, 1.6rem);
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:focus,
+      button:focus,
+      summary:focus {
+        outline: 3px solid var(--color-accent);
+        outline-offset: 4px;
+      }
+
+      header {
+        background: radial-gradient(circle at top right, rgba(194, 65, 12, 0.18), transparent 60%),
+          linear-gradient(135deg, #ffffff, #f8fafc);
+        padding: clamp(3rem, 5vw, 5rem) 1.5rem;
+      }
+
+      .container {
+        width: min(1120px, 92vw);
+        margin: 0 auto;
+      }
+
+      .hero {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        max-width: 44rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .btn-anchor {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.875rem 1.6rem;
+        border-radius: 999px;
+        background-color: var(--color-accent);
+        color: var(--color-white);
+        font-weight: 600;
+        border: none;
+        text-decoration: none;
+        min-width: 180px;
+        min-height: 44px;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+        box-shadow: 0 6px 20px rgba(194, 65, 12, 0.25);
+      }
+
+      .btn-anchor:hover,
+      .btn-anchor:focus-visible {
+        transform: scale(1.05);
+      }
+
+      section {
+        padding: clamp(3rem, 5vw, 4.5rem) 1.5rem;
+      }
+
+      section:nth-of-type(even) {
+        background-color: var(--color-bg);
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+      }
+
+      .card {
+        background-color: var(--color-white);
+        border-radius: 18px;
+        padding: 1.75rem;
+        box-shadow: var(--shadow-md);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 18px 38px rgba(15, 23, 42, 0.18);
+      }
+
+      .card svg {
+        width: 42px;
+        height: 42px;
+        fill: var(--color-accent);
+      }
+
+      .timeline-wrapper {
+        margin-top: 2rem;
+      }
+
+      .timeline-line {
+        position: relative;
+        margin: 2rem 0 3rem;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+      }
+
+      .timeline-line::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(15, 23, 42, 0.2), rgba(194, 65, 12, 0.5));
+      }
+
+      .timeline-item {
+        position: relative;
+        list-style: none;
+      }
+
+      .timeline-item details {
+        background-color: transparent;
+      }
+
+      .timeline-item summary {
+        list-style: none;
+        cursor: pointer;
+        border: none;
+        background: none;
+        padding: 1.5rem 0 0.75rem;
+        text-align: center;
+        font-weight: 700;
+        color: var(--color-titles);
+        min-height: 120px;
+        min-width: 120px;
+      }
+
+      .timeline-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .timeline-dot {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--color-accent);
+        margin: 0 auto 0.5rem;
+        border: 4px solid var(--color-white);
+        box-shadow: 0 0 0 4px rgba(194, 65, 12, 0.25);
+        transition: transform 180ms ease;
+      }
+
+      details[open] .timeline-dot {
+        transform: scale(1.15);
+      }
+
+      .timeline-panel {
+        margin-top: 0.5rem;
+        background-color: var(--color-white);
+        border-radius: 16px;
+        padding: 1rem 1.25rem;
+        box-shadow: var(--shadow-md);
+        display: grid;
+        gap: 0.5rem;
+        overflow: hidden;
+      }
+
+      .timeline-panel li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .timeline-panel svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        fill: var(--color-accent);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 2rem;
+        background-color: var(--color-white);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+      }
+
+      caption {
+        caption-side: top;
+        font-weight: 700;
+        padding: 1.5rem 1.5rem 0.5rem;
+        text-align: left;
+        color: var(--color-titles);
+      }
+
+      th,
+      td {
+        padding: 1rem 1.25rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      }
+
+      th {
+        background-color: rgba(226, 232, 240, 0.6);
+      }
+
+      .highlight {
+        background: rgba(194, 65, 12, 0.12);
+        font-weight: 600;
+      }
+
+      .finance-grid {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .finance-card {
+        background-color: var(--color-white);
+        border-radius: 18px;
+        padding: 1.75rem;
+        box-shadow: var(--shadow-md);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .finance-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 18px 38px rgba(15, 23, 42, 0.18);
+      }
+
+      .finance-card strong {
+        display: block;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .simulator {
+        margin-top: 2.5rem;
+        background-color: var(--color-white);
+        padding: 2rem;
+        border-radius: 18px;
+        box-shadow: var(--shadow-md);
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .sim-row {
+        display: grid;
+        gap: 0.75rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        align-items: end;
+      }
+
+      .sim-field label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      input[type="range"] {
+        width: 100%;
+      }
+
+      input[type="number"] {
+        width: 100%;
+        padding: 0.6rem 0.75rem;
+        border-radius: 12px;
+        border: 1px solid rgba(15, 23, 42, 0.2);
+        font-size: 1rem;
+      }
+
+      .sim-results {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.4rem 1rem;
+        border-radius: 999px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        min-height: 36px;
+        min-width: 120px;
+      }
+
+      .badge.deficit {
+        background-color: rgba(220, 38, 38, 0.12);
+        color: #991b1b;
+      }
+
+      .badge.excedent {
+        background-color: rgba(22, 163, 74, 0.12);
+        color: #065f46;
+      }
+
+      details.faq-item {
+        background-color: var(--color-white);
+        padding: 1.5rem;
+        border-radius: 16px;
+        box-shadow: var(--shadow-md);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      details.faq-item:hover {
+        transform: scale(1.02);
+        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.15);
+      }
+
+      details.faq-item summary {
+        cursor: pointer;
+        font-weight: 700;
+        color: var(--color-titles);
+      }
+
+      footer {
+        background-color: #0f172a;
+        color: var(--color-white);
+        padding: 2.5rem 1.5rem;
+      }
+
+      footer a {
+        color: #fcd34d;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .back-to-top {
+        position: fixed;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        background-color: var(--color-accent);
+        color: var(--color-white);
+        border: none;
+        border-radius: 999px;
+        padding: 0.75rem 1.25rem;
+        font-weight: 600;
+        box-shadow: 0 10px 30px rgba(194, 65, 12, 0.35);
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 180ms ease, transform 180ms ease;
+        min-height: 44px;
+        min-width: 44px;
+      }
+
+      .back-to-top:hover {
+        transform: scale(1.05);
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      @media (max-width: 720px) {
+        .hero-actions {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .timeline-line {
+          grid-template-columns: 1fr;
+        }
+
+        .timeline-line::before {
+          display: none;
+        }
+
+        .timeline-item summary {
+          background-color: rgba(226, 232, 240, 0.5);
+          border-radius: 14px;
+        }
+
+        .timeline-dot {
+          margin-bottom: 0.25rem;
+        }
+
+        .sim-row {
+          grid-template-columns: 1fr;
+        }
+
+        footer {
+          text-align: center;
+        }
+
+        .footer-content {
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body id="top">
+    <header>
+      <div class="container">
+        <div class="hero">
+          <span style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-accent); font-weight: 700">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="24" height="24">
+              <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3zm0 2.236L6 8v7.764l6 3.375 6-3.375V8l-6-2.764z" />
+            </svg>
+            Section internationale LFJP
+          </span>
+          <h1>Section Internationale Américaine (SIA) &amp; BFI – LFJP</h1>
+          <p>
+            Un parcours bilingue d'excellence, ouvert dès le primaire et culminant avec le Baccalauréat Français International.
+            Une dynamique progressive pour faire éclore la première cohorte diplômée en 2029.
+          </p>
+          <p class="hero-subtitle">Parcours bilingue du CP à la Terminale • Première cohorte BFI en 2029</p>
+          <nav aria-label="Sections principales" class="hero-actions">
+            <a class="btn-anchor" href="#nature">Nature du projet</a>
+            <a class="btn-anchor" href="#calendrier">Calendrier &amp; ETP</a>
+            <a class="btn-anchor" href="#couts">Coûts &amp; équilibre</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="nature">
+        <div class="container">
+          <h2>Nature du projet pédagogique</h2>
+          <p>
+            La Section Internationale Américaine articule continuité linguistique, projets immersifs et certifications adaptées pour
+            sécuriser le parcours bilingue du CP à la Terminale.
+          </p>
+          <div class="cards-grid" role="list">
+            <article class="card" role="listitem">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h16a1 1 0 011 1v12a1 1 0 01-1.447.894L12 15.118l-7.553 3.776A1 1 0 013 18V6a1 1 0 011-1zm1 2.382v9.237l6.553-3.277a1 1 0 01.894 0L19 16.619V7.382L12 11.118 5 7.382z" />
+              </svg>
+              <h3>Primaire (CP–CM2)</h3>
+              <p>
+                Tous les élèves intégrés en SIA sans surcoût. Projets immersifs en arts, sciences et EPS, correspondances et certifications
+                adaptées.
+              </p>
+            </article>
+            <article class="card" role="listitem">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 4h16v2H4V4zm1 4h14a1 1 0 011 1v9a1 1 0 01-1 1H5a1 1 0 01-1-1V9a1 1 0 011-1zm1 2v7h12v-7H6zm3 9h6v2H9v-2z" />
+              </svg>
+              <h3>Collège (6e–3e)</h3>
+              <p>
+                Langue &amp; Littérature américaines et Histoire-Géographie en anglais (EMILE) avec préparation au Diplôme National du Brevet
+                international (DNBi).
+              </p>
+            </article>
+            <article class="card" role="listitem">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2a1 1 0 01.894.553l2.211 4.421 4.882.709a1 1 0 01.554 1.705l-3.53 3.44.833 4.855a1 1 0 01-1.45 1.054L12 16.897l-4.394 2.315a1 1 0 01-1.45-1.054l.833-4.855-3.53-3.44a1 1 0 01.554-1.705l4.882-.709L11.106 2.553A1 1 0 0112 2z" />
+              </svg>
+              <h3>Lycée (1re–Terminale, BFI)</h3>
+              <p>
+                American Civilization &amp; Literature (4h), Contemporary World Studies (2h) et DNL Histoire-Géographie (2h) pour un parcours
+                bilingue certifié.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="calendrier">
+        <div class="container">
+          <h2>Calendrier de déploiement &amp; besoins horaires</h2>
+          <p>
+            Une montée en charge progressive de 2026 à 2029 garantit l'équilibre des ressources humaines et la réussite du premier
+            diplôme BFI.
+          </p>
+          <div class="timeline-wrapper" aria-live="polite">
+            <ol class="timeline-line" id="timeline"></ol>
+          </div>
+
+          <div class="table-wrapper">
+            <table aria-describedby="calendrier-description">
+              <caption id="calendrier-description">Heures &amp; ETP de référence</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Poste</th>
+                  <th scope="col">Volume</th>
+                  <th scope="col">Commentaires</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Anglais hors SI</th>
+                  <td><span data-bind="anglaisHorsSI"></span> h / semaine</td>
+                  <td>Tronc commun existant</td>
+                </tr>
+                <tr>
+                  <th scope="row">SI &amp; BFI (2026)</th>
+                  <td><span data-bind="si2026"></span> h / semaine</td>
+                  <td class="highlight">Renfort RH : +1 ETP</td>
+                </tr>
+                <tr>
+                  <th scope="row">SI &amp; BFI (2027)</th>
+                  <td><span data-bind="si2027"></span> h / semaine</td>
+                  <td>Capacité maintenue</td>
+                </tr>
+                <tr>
+                  <th scope="row">SI &amp; BFI (2028)</th>
+                  <td><span data-bind="si2028"></span> h / semaine</td>
+                  <td class="highlight">Renfort RH : +1 ETP</td>
+                </tr>
+                <tr>
+                  <th scope="row">Besoin global 2028</th>
+                  <td><span data-bind="besoin2028"></span> h / semaine</td>
+                  <td>= 4,7 ETP</td>
+                </tr>
+                <tr>
+                  <th scope="row">Capacité 2026</th>
+                  <td><span data-bind="capacite2026"></span> h / semaine</td>
+                  <td class="highlight">Action RH prioritaire</td>
+                </tr>
+                <tr>
+                  <th scope="row">Capacité 2027</th>
+                  <td><span data-bind="capacite2027"></span> h / semaine</td>
+                  <td>Déficit marginal absorbé</td>
+                </tr>
+                <tr>
+                  <th scope="row">Capacité 2028</th>
+                  <td><span data-bind="capacite2028"></span> h / semaine</td>
+                  <td>Capacité cible</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="couts">
+        <div class="container">
+          <h2>Coûts &amp; équilibre financier</h2>
+          <p>
+            Les hypothèses ci-dessous intègrent un coût enseignant prudent et un surcoût secondaire par élève. Ajustez le mini-simulateur
+            pour projeter différentes capacités.
+          </p>
+          <div class="finance-grid">
+            <article class="finance-card" aria-label="Coût enseignant annuel">
+              <strong>20 000 000 FCFA</strong>
+              <p>Coût estimatif d'un enseignant (hypothèse haute).</p>
+            </article>
+            <article class="finance-card" aria-label="Surcoût par élève">
+              <strong>300 000 FCFA</strong>
+              <p>Surcoût secondaire par élève et par an.</p>
+            </article>
+            <article class="finance-card" aria-label="Besoin en postes">
+              <strong>40 000 000 FCFA</strong>
+              <p>Investissement annuel pour 2 postes dédiés SIA/BFI.</p>
+            </article>
+            <article class="finance-card" aria-label="Point mort">
+              <strong>134 élèves</strong>
+              <p>Point mort financier, soit environ 19 élèves par niveau.</p>
+            </article>
+          </div>
+
+          <div class="simulator" aria-labelledby="simulateur-title">
+            <div>
+              <h3 id="simulateur-title">Mini-simulateur</h3>
+              <p>Testez vos hypothèses d'effectifs et visualisez l'impact sur la soutenabilité financière du projet.</p>
+            </div>
+            <div class="sim-row">
+              <div class="sim-field">
+                <label for="eleves-slider">Élèves par niveau</label>
+                <input type="range" id="eleves-slider" name="eleves" min="10" max="28" value="20" step="1" aria-describedby="eleves-value" />
+                <div id="eleves-value" aria-live="polite"><strong><span id="eleves-count">20</span> élèves</strong> sur 7 niveaux.</div>
+              </div>
+              <div class="sim-field">
+                <label for="eleves-number">Saisie directe (optionnelle)</label>
+                <input type="number" id="eleves-number" min="10" max="28" value="20" aria-label="Nombre d'élèves par niveau" />
+              </div>
+              <div class="sim-field">
+                <label for="surcout">Surcoût / élève (FCFA)</label>
+                <input type="number" id="surcout" min="0" step="5000" value="300000" />
+              </div>
+              <div class="sim-field">
+                <label for="cout-etp">Coût total ETP (FCFA)</label>
+                <input type="number" id="cout-etp" min="0" step="500000" value="40000000" />
+              </div>
+            </div>
+            <div class="sim-results" aria-live="polite">
+              <div>
+                <strong>Recettes estimées :</strong>
+                <span id="recettes">42 000 000 FCFA</span>
+              </div>
+              <div>
+                <strong>Solde :</strong>
+                <span id="solde">2 000 000 FCFA</span>
+              </div>
+              <span id="badge-solde" class="badge excedent" role="status">Excédent</span>
+            </div>
+            <div class="scenario-notes">
+              <ul>
+                <li>Scénario 15 élèves / niveau (105 élèves) → 31,5 M FCFA de recettes → solde -8,5 M FCFA.</li>
+                <li>Scénario 20 élèves / niveau (140 élèves) → 42 M FCFA de recettes → solde +2 M FCFA.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="container">
+          <h2>FAQ</h2>
+          <div class="cards-grid" role="list">
+            <details class="faq-item" role="listitem">
+              <summary>Quels enseignements ?</summary>
+              <p>
+                Primaire immersif, collège avec Langue &amp; Littérature américaines et Histoire-Géographie en anglais, lycée avec ACL, CDM
+                et DNL Histoire-Géographie.
+              </p>
+            </details>
+            <details class="faq-item" role="listitem">
+              <summary>Quelle sélection ?</summary>
+              <p>
+                Au primaire, tous les élèves sont intégrés. Au secondaire, une procédure SIA permet d'évaluer la motivation et les
+                compétences linguistiques.
+              </p>
+            </details>
+            <details class="faq-item" role="listitem">
+              <summary>Quel diplôme ?</summary>
+              <p>
+                La section américaine du Baccalauréat Français International (BFI) en Terminale, gage de reconnaissance internationale.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer aria-label="Pied de page">
+      <div class="container footer-content">
+        <nav aria-label="Liens internes">
+          <a href="#nature">Nature du projet</a> ·
+          <a href="#calendrier">Calendrier</a> ·
+          <a href="#couts">Coûts</a> ·
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div>
+          <strong>Contact :</strong>
+          <a href="mailto:secretariat@lfjpsaly.org">secretariat@lfjpsaly.org</a>
+        </div>
+        <div>Route de l’aérodrome, Saly</div>
+      </div>
+    </footer>
+
+    <button type="button" class="back-to-top" id="backToTop" aria-label="Retour en haut">Retour en haut</button>
+
+    <script>
+      // Données centralisées pour faciliter les mises à jour
+      const DATA = {
+        heures: { anglaisHorsSI: 52, si2026: 18, si2027: 30, si2028: 42, besoin2028: 94 },
+        etp: { capacite2026: 80, capacite2027: 80, capacite2028: 100, coutETP: 40000000 },
+        finance: { surcoutEleve: 300000, pointMortEleves: 134 },
+        calendrier: [
+          { annee: 2026, events: ["Primaire + 6e,5e,1re", "18 h SI/BFI", "+1 ETP", "Capacité 80 h", "Marge 10 h"] },
+          { annee: 2027, events: ["+ 4e, Tle", "30 h SI/BFI", "Capacité 80 h", "Déficit absorbé"] },
+          { annee: 2028, events: ["+ 3e, 2nde", "42 h SI/BFI", "+1 ETP", "Capacité 100 h", "Marge 6 h"] },
+          { annee: 2029, events: ["1re cohorte BFI"] },
+        ],
+      };
+
+      /**
+       * Formate un nombre en FCFA avec des séparateurs d'espaces insécables.
+       * @param {number} value
+       * @returns {string}
+       */
+      const formatFCFA = (value) =>
+        new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 0 }).format(Math.round(value)) + " FCFA";
+
+      // Injection des données dans le tableau
+      document.querySelectorAll("[data-bind]").forEach((span) => {
+        const key = span.dataset.bind;
+        const [category, item] = Object.entries(DATA).find(([group]) =>
+          Object.prototype.hasOwnProperty.call(DATA[group], key)
+        ) || [null, null];
+        if (category && item) {
+          span.textContent = DATA[category][key];
+        }
+      });
+
+      // Construction de la frise chronologique
+      const timelineContainer = document.getElementById("timeline");
+      const iconItem =
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 11-7.07 2.93A10 10 0 0112 2zm0 2a8 8 0 106.32 3.09L12 13l-3.35-3.35a1 1 0 011.41-1.41L12 10.83l4.62-4.62A7.97 7.97 0 0012 4z"/></svg>';
+
+      DATA.calendrier.forEach(({ annee, events }, index) => {
+        const itemWrapper = document.createElement("li");
+        itemWrapper.className = "timeline-item";
+
+        const details = document.createElement("details");
+        if (index === 0) details.open = true;
+
+        const summary = document.createElement("summary");
+        summary.innerHTML = `<div class="timeline-dot" aria-hidden="true"></div>${annee}`;
+        summary.setAttribute("aria-expanded", details.open ? "true" : "false");
+        details.appendChild(summary);
+
+        const panel = document.createElement("div");
+        panel.className = "timeline-panel";
+        const list = document.createElement("ul");
+        events.forEach((event) => {
+          const item = document.createElement("li");
+          item.innerHTML = `${iconItem}<span>${event}</span>`;
+          list.appendChild(item);
+        });
+        panel.appendChild(list);
+        details.appendChild(panel);
+
+        itemWrapper.appendChild(details);
+        timelineContainer.appendChild(itemWrapper);
+
+        details.addEventListener("toggle", () => {
+          summary.setAttribute("aria-expanded", details.open ? "true" : "false");
+        });
+      });
+
+      // Gestion du simulateur
+      const slider = document.getElementById("eleves-slider");
+      const numberInput = document.getElementById("eleves-number");
+      const surcoutInput = document.getElementById("surcout");
+      const coutETPInput = document.getElementById("cout-etp");
+      const elevesCount = document.getElementById("eleves-count");
+      const recettesSpan = document.getElementById("recettes");
+      const soldeSpan = document.getElementById("solde");
+      const badgeSolde = document.getElementById("badge-solde");
+
+      const niveaux = 7;
+
+      const updateSimulation = () => {
+        const eleves = Math.min(Math.max(parseInt(slider.value, 10) || DATA.finance.pointMortEleves / niveaux, 10), 28);
+        slider.value = eleves;
+        numberInput.value = eleves;
+        elevesCount.textContent = eleves;
+
+        const surcout = Math.max(parseInt(surcoutInput.value, 10) || DATA.finance.surcoutEleve, 0);
+        surcoutInput.value = surcout;
+        const coutETP = Math.max(parseInt(coutETPInput.value, 10) || DATA.etp.coutETP, 0);
+        coutETPInput.value = coutETP;
+
+        const recettes = eleves * niveaux * surcout;
+        const solde = recettes - coutETP;
+
+        recettesSpan.textContent = formatFCFA(recettes);
+        soldeSpan.textContent = formatFCFA(solde);
+
+        badgeSolde.textContent = solde >= 0 ? "Excédent" : "Déficit";
+        badgeSolde.className = `badge ${solde >= 0 ? "excedent" : "deficit"}`;
+      };
+
+      slider.addEventListener("input", () => {
+        numberInput.value = slider.value;
+        updateSimulation();
+      });
+
+      numberInput.addEventListener("input", () => {
+        const value = Math.min(Math.max(parseInt(numberInput.value, 10) || parseInt(slider.value, 10), 10), 28);
+        slider.value = value;
+        updateSimulation();
+      });
+
+      [surcoutInput, coutETPInput].forEach((input) => input.addEventListener("input", updateSimulation));
+
+      updateSimulation();
+
+      // Bouton retour en haut
+      const backToTop = document.getElementById("backToTop");
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      const toggleBackToTop = () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
+        }
+      };
+
+      window.addEventListener("scroll", toggleBackToTop, { passive: true });
+      toggleBackToTop();
+    </script>
+  </body>
+</html>
