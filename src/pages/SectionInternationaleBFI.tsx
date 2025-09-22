@@ -26,20 +26,28 @@ const DATA = {
   },
   calendrier: [
     {
-      annee: 2026,
+      id: '2026',
+      annee: '2026',
+      shortLabel: '26',
       events: ['Primaire + 6e,5e,1re', '18 h SI/BFI', '+1 ETP', 'Capacité 80 h', 'Marge 10 h'],
     },
     {
-      annee: 2027,
+      id: '2027',
+      annee: '2027',
+      shortLabel: '27',
       events: ['+ 4e, Tle', '30 h SI/BFI', 'Capacité 80 h', 'Déficit absorbé'],
     },
     {
-      annee: 2028,
+      id: '2028-monte-en-charge',
+      annee: '2028',
+      shortLabel: '28',
       events: ['+ 3e, 2nde', '42 h SI/BFI', '+1 ETP', 'Capacité 100 h', 'Marge 6 h'],
     },
     {
-      annee: 2029,
-      events: ['1re cohorte BFI'],
+      id: '2028-premiere-cohorte',
+      annee: 'Juin 2028',
+      shortLabel: '28',
+      events: ['1re cohorte BFI diplômée'],
     },
   ],
   niveaux: 7,
@@ -304,10 +312,10 @@ const SectionInternationaleBFI: React.FC = () => {
             </h1>
             <p className="max-w-3xl text-lg leading-relaxed text-[#334155] md:text-xl">
               Un parcours bilingue d&apos;excellence, ouvert dès le primaire et culminant avec le Baccalauréat Français
-              International. Une dynamique progressive pour faire éclore la première cohorte diplômée en 2029.
+              International. Une dynamique progressive pour faire éclore la première cohorte diplômée en 2028.
             </p>
             <p className="text-base font-semibold uppercase tracking-wide text-[#0F172A]">
-              Parcours bilingue du CP à la Terminale • Première cohorte BFI en 2029
+              Parcours bilingue du CP à la Terminale • Première cohorte BFI en 2028
             </p>
             <nav aria-label="Sections principales" className="flex flex-wrap gap-3">
               <a
@@ -367,7 +375,7 @@ const SectionInternationaleBFI: React.FC = () => {
                 Calendrier de déploiement &amp; besoins horaires
               </h2>
               <p className="mt-4 text-base leading-relaxed md:text-lg">
-                Une montée en charge progressive de 2026 à 2029 garantit l&apos;équilibre des ressources humaines et la réussite du premier diplôme BFI.
+                Une montée en charge progressive de 2026 à 2028 garantit l&apos;équilibre des ressources humaines et la réussite du premier diplôme BFI.
               </p>
             </div>
             <div className="relative" aria-live="polite">
@@ -376,10 +384,11 @@ const SectionInternationaleBFI: React.FC = () => {
               >
                 {DATA.calendrier.map((step, index) => {
                   const isOpen = timelineState[index];
-                  const panelId = `timeline-panel-${step.annee}`;
-                  const buttonId = `timeline-trigger-${step.annee}`;
+                  const panelId = `timeline-panel-${step.id}`;
+                  const buttonId = `timeline-trigger-${step.id}`;
+                  const badgeLabel = step.shortLabel ?? step.annee.toString().slice(-2);
                   return (
-                    <li key={step.annee} className="relative flex flex-col items-center text-center">
+                    <li key={step.id} className="relative flex flex-col items-center text-center">
                       <button
                         id={buttonId}
                         type="button"
@@ -394,7 +403,7 @@ const SectionInternationaleBFI: React.FC = () => {
                             isOpen ? 'scale-110' : ''
                           }`}
                         >
-                          {step.annee.toString().slice(-2)}
+                          {badgeLabel}
                         </span>
                         <span className="text-lg font-semibold">{step.annee}</span>
                       </button>
