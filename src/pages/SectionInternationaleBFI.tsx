@@ -247,7 +247,7 @@ const SectionInternationaleBFI: React.FC = () => {
     {
       question: 'Quel diplôme ?',
       answer:
-        'La section américaine du Baccalauréat Français International (BFI) en Terminale, gage de reconnaissance internationale.',
+        'Le Diplôme National du Brevet international (DNBi) en 3e et la section américaine du Baccalauréat Français International (BFI) en Terminale, gages de reconnaissance internationale.',
     },
   ];
 
