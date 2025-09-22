@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BarChart3, ListChecks, Target, ShieldCheck, Utensils } from 'lucide-react';
+import { BarChart3, ListChecks, Target, ShieldCheck, Utensils, Leaf } from 'lucide-react';
 
 const PSDAxe1 = () => {
   const summaryCards = [
@@ -60,7 +60,10 @@ const PSDAxe1 = () => {
     { text: '<strong>Expression et participation</strong> : conseils de vie, <strong>budgets participatifs</strong>, comités mixtes' },
     { text: '<strong>Parentalité et coéducation</strong> : rencontres et ateliers pour mieux suivre la scolarité' },
     { text: '<strong>Restauration scolaire</strong> : audit, consultation des usagers, mise en œuvre 2026-2027', link: '/construction-cantine' },
-    { text: 'Politique <strong>E³D</strong> consolidée : <strong>référents</strong> et <strong>éco-délégués</strong>, comité de pilotage, projets interdisciplinaires, plan d\'action annuel aligné <strong>EFE³D</strong>' }
+    {
+      text: 'Politique <strong>E³D</strong> consolidée : <strong>référents</strong> et <strong>éco-délégués</strong>, comité de pilotage, projets interdisciplinaires, plan d\'action annuel aligné <strong>EFE³D</strong>',
+      link: '/politique-e3d'
+    }
   ];
   
   const indicators = [
@@ -137,12 +140,23 @@ const PSDAxe1 = () => {
                 ? 'harcelement'
                 : textContent.includes('restauration')
                 ? 'restauration'
+                : textContent.includes('e³d')
+                ? 'e3d'
                 : null;
-              const IconComponent = iconType === 'harcelement' ? ShieldCheck : iconType === 'restauration' ? Utensils : null;
+              const IconComponent =
+                iconType === 'harcelement'
+                  ? ShieldCheck
+                  : iconType === 'restauration'
+                  ? Utensils
+                  : iconType === 'e3d'
+                  ? Leaf
+                  : null;
               const ariaLabelSuffix = iconType === 'harcelement'
                 ? 'Prévention du harcèlement'
                 : iconType === 'restauration'
                 ? 'Restauration scolaire'
+                : iconType === 'e3d'
+                ? 'Politique E3D'
                 : '';
 
               if (!hasLink || !IconComponent || !item.link) {
