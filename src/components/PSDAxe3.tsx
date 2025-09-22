@@ -4,11 +4,9 @@ import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe3 = () => {
   const objectifs = [
-    { text: 'Garantir un accès équitable et progressif aux <strong>compétences numériques</strong>, de l\'élémentaire à la terminale (<em>parcours numérique structuré</em>)' },
-    { text: 'Développer des <strong>compétences critiques, créatives et éthiques</strong> dans un monde numérique en évolution constante' },
-    { text: 'Permettre aux élèves de <strong>comprendre et maîtriser les outils numériques</strong>, y compris l\'<strong>intelligence artificielle</strong>, pour être <strong>acteurs et non consommateurs</strong>' },
-    { text: 'Promouvoir une <strong>culture numérique responsable et citoyenne</strong> : <em>cybersécurité, droit à l\'image, identité numérique, gestion du temps d\'écran</em>' },
-    { text: 'Renforcer la <strong>créativité numérique</strong>, l\'<strong>entrepreneuriat</strong> et les <strong>projets interconnectés avec le monde professionnel</strong> et les <strong>enjeux locaux</strong>' }
+    { text: "Structurer un parcours numérique continu et équitable, de l’élémentaire à la terminale." },
+    { text: "Développer l’esprit critique, la créativité et la responsabilité citoyenne dans l’usage du numérique et de l’intelligence artificielle." },
+    { text: "Favoriser l’innovation, l’entrepreneuriat et les projets numériques connectés au monde professionnel et aux enjeux locaux." }
   ];
   
   const actions = [
