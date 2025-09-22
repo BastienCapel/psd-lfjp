@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -19,11 +18,11 @@ const SectionInternationaleBFI = () => {
             DÉPLOIEMENT DU PLAN « SECTION INTERNATIONALE ET BFI »
           </h1>
           <p className="text-xl md:text-2xl font-raleway font-light max-w-3xl opacity-0 animate-fade-in-delay-1">
-            Lycée Français Jacques Prévert (2026-2034)
+            Lycée Français Jacques Prévert · Feuille de route 2026-2029
           </p>
         </div>
       </div>
-      
+
       <div className="container mx-auto px-6 py-4 flex gap-2">
         <Button variant="outline" onClick={() => navigate('/plan-strategique')}>
           <ArrowLeft className="mr-2 h-4 w-4" />
@@ -34,7 +33,7 @@ const SectionInternationaleBFI = () => {
           Accueil
         </Button>
       </div>
-      
+
       <SectionInternationaleBFIContent />
       <Footer />
     </div>
