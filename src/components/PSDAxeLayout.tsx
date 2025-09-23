@@ -104,7 +104,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
                 <span className="rounded-full bg-french-blue/10 p-2 text-french-blue">
                   <ListChecks className="h-6 w-6" aria-hidden="true" />
                 </span>
-                <h4 className="text-lg font-semibold text-slate-900">Actions phares</h4>
+                <h4 className="text-lg font-semibold text-slate-900">Rubriques phares</h4>
               </div>
               <ul className="grid gap-2">
                 {summary.actions.map((item) => {
@@ -203,7 +203,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
           id={sectionId ? `${sectionId}-actions` : undefined}
           className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
         >
-          <h4 className="mb-3 text-lg font-semibold text-slate-900">Actions prioritaires détaillées</h4>
+          <h4 className="mb-3 text-lg font-semibold text-slate-900">Rubriques détaillées</h4>
           <ul className="list-disc space-y-3 pl-5 text-gray-700 font-raleway">
             {actions.map((item, index) => {
               if (!item.link) {
