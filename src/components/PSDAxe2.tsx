@@ -75,7 +75,7 @@ const PSDAxe2 = () => {
   const actions = [
     {
       text:
-        '• <strong>Déploiement du plan « Section Internationale et BFI »</strong> (2026-2028).',
+        '<strong>Déploiement du plan « Section Internationale et BFI »</strong> (2026-2028).',
       link: '/section-internationale-bfi',
       linkAriaLabel: 'En savoir plus – Section internationale et BFI',
       linkIcon: Globe2,

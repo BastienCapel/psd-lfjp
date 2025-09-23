@@ -216,16 +216,18 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
               const ariaLabel = item.linkAriaLabel ?? 'En savoir plus';
 
               return (
-                <li key={index} className="flex flex-wrap items-center gap-2">
-                  <span dangerouslySetInnerHTML={{ __html: item.text }}></span>
-                  <Link
-                    to={item.link}
-                    className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue"
-                    aria-label={ariaLabel}
-                  >
-                    <LinkIcon className="h-4 w-4" aria-hidden="true" />
-                    <span>En savoir plus</span>
-                  </Link>
+                <li key={index}>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span dangerouslySetInnerHTML={{ __html: item.text }}></span>
+                    <Link
+                      to={item.link}
+                      className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue"
+                      aria-label={ariaLabel}
+                    >
+                      <LinkIcon className="h-4 w-4" aria-hidden="true" />
+                      <span>En savoir plus</span>
+                    </Link>
+                  </div>
                 </li>
               );
             })}
