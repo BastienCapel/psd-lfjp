@@ -104,7 +104,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
                 <span className="rounded-full bg-french-blue/10 p-2 text-french-blue">
                   <ListChecks className="h-6 w-6" aria-hidden="true" />
                 </span>
-                <h4 className="text-lg font-semibold text-slate-900">Rubriques phares</h4>
+                <h4 className="text-lg font-semibold text-slate-900">Rubriques</h4>
               </div>
               <ul className="grid gap-2">
                 {summary.actions.map((item) => {
