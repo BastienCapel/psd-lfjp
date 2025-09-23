@@ -17,7 +17,7 @@ const PSDAxe1 = () => {
     },
     {
       id: 'details-actions',
-      title: 'Actions prioritaires',
+      title: 'Rubriques',
       icon: ListChecks,
       items: [
         { icon: '❄️', label: 'Rafraîchissement durable' },
@@ -131,7 +131,7 @@ const PSDAxe1 = () => {
         </div>
 
         <div id="details-actions" className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h4 className="mb-3 text-lg font-semibold text-slate-900">Actions prioritaires détaillées</h4>
+          <h4 className="mb-3 text-lg font-semibold text-slate-900">Rubriques détaillées</h4>
           <ul className="list-disc space-y-3 pl-5 text-gray-700 font-raleway">
             {actions.map((item, index) => {
               const hasLink = Boolean(item.link);
