@@ -4,18 +4,18 @@ import type { LucideIcon } from 'lucide-react';
 import { ArrowRight, BarChart3, ListChecks, Target } from 'lucide-react';
 
 interface ObjectifItem {
-  text: string;
+  content: React.ReactNode;
 }
 
 interface ActionItem {
-  text: string;
+  content: React.ReactNode;
   link?: string;
   linkAriaLabel?: string;
   linkIcon?: LucideIcon;
 }
 
 interface IndicatorItem {
-  text: string;
+  content: React.ReactNode;
 }
 
 interface SummaryObjectiveItem {
@@ -194,7 +194,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
           <h4 className="mb-3 text-lg font-semibold text-slate-900">Objectifs détaillés</h4>
           <ul className="list-disc space-y-2 pl-5 text-gray-700 font-raleway">
             {objectifs.map((item, index) => (
-              <li key={index} dangerouslySetInnerHTML={{ __html: item.text }}></li>
+              <li key={index}>{item.content}</li>
             ))}
           </ul>
         </div>
@@ -207,9 +207,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
           <ul className="list-disc space-y-3 pl-5 text-gray-700 font-raleway">
             {actions.map((item, index) => {
               if (!item.link) {
-                return (
-                  <li key={index} dangerouslySetInnerHTML={{ __html: item.text }}></li>
-                );
+                return <li key={index}>{item.content}</li>;
               }
 
               const LinkIcon = item.linkIcon ?? ArrowRight;
@@ -218,7 +216,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
               return (
                 <li key={index}>
                   <div className="flex flex-wrap items-center gap-2">
-                    <span dangerouslySetInnerHTML={{ __html: item.text }}></span>
+                    <span className="text-gray-700">{item.content}</span>
                     <Link
                       to={item.link}
                       className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue"
@@ -241,7 +239,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
           <h4 className="mb-3 text-lg font-semibold text-slate-900">Indicateurs détaillés</h4>
           <ul className="list-disc space-y-2 pl-5 text-gray-700 font-raleway">
             {indicators.map((item, index) => (
-              <li key={index} dangerouslySetInnerHTML={{ __html: item.text }}></li>
+              <li key={index}>{item.content}</li>
             ))}
           </ul>
         </div>

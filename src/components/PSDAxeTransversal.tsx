@@ -7,33 +7,42 @@ const PSDAxeTransversal = () => {
   const focusAreas = [
     {
       title: 'Préservation du patrimoine bâti',
-      description:
-        'Programme pluriannuel de rénovation des façades et espaces intérieurs pour garantir des lieux d\'apprentissage durables.'
+      description: (
+        <>Programme pluriannuel de rénovation des façades et espaces intérieurs pour garantir des lieux d'apprentissage durables.</>
+      )
     },
     {
       title: 'Modernisation des équipements numériques',
-      description:
-        'Renouvellement planifié du parc informatique et des infrastructures réseau pour soutenir les usages pédagogiques.'
+      description: (
+        <>Renouvellement planifié du parc informatique et des infrastructures réseau pour soutenir les usages pédagogiques.</>
+      )
     },
     {
       title: 'Confort acoustique et bien-être',
-      description:
-        'Installation progressive de solutions acoustiques afin d\'offrir un environnement serein et propice aux apprentissages.'
+      description: (
+        <>Installation progressive de solutions acoustiques afin d'offrir un environnement serein et propice aux apprentissages.</>
+      )
     }
   ];
 
   const roadmap = [
     {
       period: '2025',
-      detail: 'Lancement opérationnel du plan et programmation budgétaire des premiers travaux structurants.'
+      detail: (
+        <>Lancement opérationnel du plan et programmation budgétaire des premiers travaux structurants.</>
+      )
     },
     {
       period: '2026-2028',
-      detail: 'Déploiement coordonné des trois volets (bâti, numérique, acoustique) avec suivi trimestriel.'
+      detail: (
+        <>Déploiement coordonné des trois volets (bâti, numérique, acoustique) avec suivi trimestriel.</>
+      )
     },
     {
       period: '2029-2030',
-      detail: 'Évaluations d\'impact, ajustements et pérennisation des investissements réalisés.'
+      detail: (
+        <>Évaluations d'impact, ajustements et pérennisation des investissements réalisés.</>
+      )
     }
   ];
 
