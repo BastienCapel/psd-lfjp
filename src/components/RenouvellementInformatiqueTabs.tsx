@@ -1,8 +1,108 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
+import {
+  BarChart,
+  Bar,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  LabelList,
+} from 'recharts';
+
+const TOTAL_ECOLAGES = 1_266_470_000;
+const BUROTIC_UNIT_COST = 458_477;
+const ARC_UNIT_COST = 505_000;
+const MIN_PC = 10;
+const MAX_PC = 120;
+const MIN_YEARS = 1;
+const MAX_YEARS = 10;
+const MIN_SHARE = 0;
+const MAX_SHARE = 5;
+
+const scenarioChartData = [
+  { scenario: 'Scénario 0', burotic: 2.17, arc: 2.39 },
+  { scenario: 'Scénario 1', burotic: 0.22, arc: 0.2 },
+  { scenario: 'Scénario 2', burotic: 0.36, arc: 0.36 },
+  { scenario: 'Scénario 3', burotic: 0.54, arc: 0.6 },
+];
+
+const scenarioChartConfig = {
+  burotic: { label: 'Burotic', theme: { light: '#2563eb', dark: '#60a5fa' } },
+  arc: { label: 'ARC Informatique', theme: { light: '#f97316', dark: '#fb923c' } },
+};
+
+const percentFormatter = new Intl.NumberFormat('fr-FR', {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+
+const currencyFormatter = new Intl.NumberFormat('fr-FR');
+
+const formatFCFA = (value: number) => `${currencyFormatter.format(Math.round(value))} FCFA`;
+
+const formatPercent = (value: number) => `${percentFormatter.format(value)} %`;
+
+const chartTooltipFormatter: React.ComponentProps<typeof Tooltip>['formatter'] = (value, name) => [
+  `${percentFormatter.format(value as number)} %`,
+  scenarioChartConfig[name as 'burotic' | 'arc']?.label ?? String(name),
+];
 
 const tableCell = 'border border-slate-200 px-4 py-2 text-sm text-slate-700';
 
 const RenouvellementInformatiqueTabs: React.FC = () => {
+  const [nbPc, setNbPc] = useState(60);
+  const [annees, setAnnees] = useState(4);
+  const [partEcolage, setPartEcolage] = useState(0.5);
+
+  const simulation = useMemo(() => {
+    const totalBurotic = nbPc * BUROTIC_UNIT_COST;
+    const totalArc = nbPc * ARC_UNIT_COST;
+    const safeYears = Math.max(annees, 1);
+    const annualBurotic = totalBurotic / safeYears;
+    const annualArc = totalArc / safeYears;
+    const percentageBurotic = (annualBurotic / TOTAL_ECOLAGES) * 100;
+    const percentageArc = (annualArc / TOTAL_ECOLAGES) * 100;
+    const availableBudget = (partEcolage / 100) * TOTAL_ECOLAGES;
+    const machinesPerYear = Math.max(1, Math.ceil(nbPc / safeYears));
+
+    return {
+      totals: {
+        burotic: totalBurotic,
+        arc: totalArc,
+      },
+      annual: {
+        burotic: annualBurotic,
+        arc: annualArc,
+      },
+      percentages: {
+        burotic: percentageBurotic,
+        arc: percentageArc,
+      },
+      availableBudget,
+      machinesPerYear,
+      coverage: {
+        burotic: availableBudget - annualBurotic,
+        arc: availableBudget - annualArc,
+      },
+    };
+  }, [annees, nbPc, partEcolage]);
+
+  const handlePcChange = (value: number) => {
+    const clampedValue = Math.min(Math.max(value, MIN_PC), MAX_PC);
+    setNbPc(clampedValue);
+  };
+
+  const handleYearsChange = (value: number) => {
+    const clampedValue = Math.min(Math.max(value, MIN_YEARS), MAX_YEARS);
+    setAnnees(clampedValue);
+  };
+
+  const handleShareChange = (value: number) => {
+    const clampedValue = Math.min(Math.max(value, MIN_SHARE), MAX_SHARE);
+    setPartEcolage(clampedValue);
+  };
+
   return (
     <div className="space-y-12 px-4 pb-12 pt-6 text-slate-900">
       <header className="space-y-4 rounded-lg bg-french-blue/5 p-6">
@@ -210,6 +310,232 @@ const RenouvellementInformatiqueTabs: React.FC = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      <section className="space-y-6">
+        <h2 className="text-2xl font-semibold text-french-blue">Comparaison graphique</h2>
+        <p className="text-base leading-relaxed text-slate-700">
+          Visualisation des parts d&apos;écolages nécessaires pour chacun des scénarios étudiés avec les
+          devis Burotic et ARC Informatique. Le graphique horizontal permet de comparer immédiatement les
+          ordres de grandeur entre les fournisseurs et d&apos;identifier les scénarios les plus soutenables.
+        </p>
+        <div className="rounded-lg bg-white p-4 shadow-sm md:p-6">
+          <ChartContainer config={scenarioChartConfig} className="h-[420px] w-full">
+            <BarChart data={scenarioChartData} layout="vertical" barCategoryGap={18}>
+              <CartesianGrid strokeDasharray="4 4" vertical={false} />
+              <XAxis
+                type="number"
+                domain={[0, 3]}
+                tickFormatter={(value) => formatPercent(value as number)}
+                tickLine={false}
+                axisLine={false}
+              />
+              <YAxis type="category" dataKey="scenario" width={180} tickLine={false} axisLine={false} />
+              <ChartTooltip
+                cursor={{ fill: 'hsl(var(--muted))', opacity: 0.25 }}
+                content={
+                  <ChartTooltipContent
+                    className="min-w-[220px]"
+                    formatter={chartTooltipFormatter}
+                    labelFormatter={(label) => `Part d'écolage – ${label}`}
+                  />
+                }
+              />
+              <Bar dataKey="burotic" fill="var(--color-burotic)" radius={4} name="burotic">
+                <LabelList
+                  dataKey="burotic"
+                  position="right"
+                  className="text-xs font-semibold text-slate-700"
+                  formatter={(value: number) => formatPercent(value)}
+                />
+              </Bar>
+              <Bar dataKey="arc" fill="var(--color-arc)" radius={4} name="arc">
+                <LabelList
+                  dataKey="arc"
+                  position="right"
+                  className="text-xs font-semibold text-slate-700"
+                  formatter={(value: number) => formatPercent(value)}
+                />
+              </Bar>
+            </BarChart>
+          </ChartContainer>
+        </div>
+        <p className="text-sm leading-relaxed text-slate-600">
+          Les scénarios 1 à 3 restent inférieurs à 1&nbsp;% des écolages annuels. Le scénario 0, qui vise un
+          renouvellement complet en une année, requiert en revanche plus de 2&nbsp;% du budget annuel
+          d&apos;écolage.
+        </p>
+      </section>
+
+      <section className="space-y-6">
+        <div>
+          <h2 className="text-2xl font-semibold text-french-blue">Mini-simulateur</h2>
+          <p className="mt-2 text-base leading-relaxed text-slate-700">
+            Ajustez rapidement les paramètres clés (volume de machines, durée et part d&apos;écolage
+            mobilisable) pour projeter les besoins budgétaires annuels et vérifier si l&apos;enveloppe cible
+            couvre les coûts des devis Burotic et ARC.
+          </p>
+        </div>
+        <div className="rounded-lg bg-white p-6 shadow-sm md:p-8">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <label className="flex flex-col gap-2 text-sm font-medium text-slate-900" htmlFor="pc-slider">
+              Nombre total de PC à renouveler
+              <input
+                id="pc-slider"
+                type="range"
+                min={MIN_PC}
+                max={MAX_PC}
+                step={1}
+                value={nbPc}
+                onChange={(event) => handlePcChange(Number(event.target.value))}
+                aria-describedby="pc-slider-value"
+                className="h-3 w-full cursor-pointer rounded-full bg-slate-200 accent-french-blue"
+              />
+              <div id="pc-slider-value" className="text-sm text-slate-600" aria-live="polite">
+                <strong className="text-base text-slate-900">{nbPc} PC</strong> à renouveler.
+              </div>
+            </label>
+            <label className="flex flex-col gap-2 text-sm font-medium text-slate-900" htmlFor="pc-input">
+              Saisie directe (PC)
+              <input
+                id="pc-input"
+                type="number"
+                min={MIN_PC}
+                max={MAX_PC}
+                value={nbPc}
+                onChange={(event) => handlePcChange(Number(event.target.value))}
+                className="min-h-[44px] rounded-lg border border-slate-200 px-3 py-2 text-base text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue"
+              />
+            </label>
+            <label className="flex flex-col gap-2 text-sm font-medium text-slate-900" htmlFor="years-slider">
+              Durée de renouvellement (années)
+              <input
+                id="years-slider"
+                type="range"
+                min={MIN_YEARS}
+                max={MAX_YEARS}
+                step={1}
+                value={annees}
+                onChange={(event) => handleYearsChange(Number(event.target.value))}
+                aria-describedby="years-slider-value"
+                className="h-3 w-full cursor-pointer rounded-full bg-slate-200 accent-french-blue"
+              />
+              <div id="years-slider-value" className="text-sm text-slate-600" aria-live="polite">
+                <strong className="text-base text-slate-900">{annees} ans</strong> (≈ {simulation.machinesPerYear} PC/an).
+              </div>
+            </label>
+            <label className="flex flex-col gap-2 text-sm font-medium text-slate-900" htmlFor="years-input">
+              Saisie directe (années)
+              <input
+                id="years-input"
+                type="number"
+                min={MIN_YEARS}
+                max={MAX_YEARS}
+                value={annees}
+                onChange={(event) => handleYearsChange(Number(event.target.value))}
+                className="min-h-[44px] rounded-lg border border-slate-200 px-3 py-2 text-base text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue"
+              />
+            </label>
+            <label className="flex flex-col gap-2 text-sm font-medium text-slate-900" htmlFor="share-slider">
+              Part d&apos;écolage mobilisable (%)
+              <input
+                id="share-slider"
+                type="range"
+                min={MIN_SHARE}
+                max={MAX_SHARE}
+                step={0.05}
+                value={partEcolage}
+                onChange={(event) => handleShareChange(Number(event.target.value))}
+                aria-describedby="share-slider-value"
+                className="h-3 w-full cursor-pointer rounded-full bg-slate-200 accent-french-blue"
+              />
+              <div id="share-slider-value" className="text-sm text-slate-600" aria-live="polite">
+                <strong className="text-base text-slate-900">{formatPercent(partEcolage)}</strong> des écolages,
+                soit {formatFCFA(simulation.availableBudget)} par an.
+              </div>
+            </label>
+            <label className="flex flex-col gap-2 text-sm font-medium text-slate-900" htmlFor="share-input">
+              Saisie directe (part d&apos;écolage)
+              <input
+                id="share-input"
+                type="number"
+                min={MIN_SHARE}
+                max={MAX_SHARE}
+                step={0.05}
+                value={partEcolage}
+                onChange={(event) => handleShareChange(Number(event.target.value))}
+                className="min-h-[44px] rounded-lg border border-slate-200 px-3 py-2 text-base text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue"
+              />
+            </label>
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2" aria-live="polite">
+            {[{
+              label: 'Offre Burotic',
+              total: simulation.totals.burotic,
+              annual: simulation.annual.burotic,
+              percentage: simulation.percentages.burotic,
+              coverage: simulation.coverage.burotic,
+            }, {
+              label: 'Offre ARC Informatique',
+              total: simulation.totals.arc,
+              annual: simulation.annual.arc,
+              percentage: simulation.percentages.arc,
+              coverage: simulation.coverage.arc,
+            }].map((item) => {
+              const isSurplus = item.coverage >= 0;
+              const coverageAmount = Math.abs(item.coverage);
+              return (
+                <article
+                  key={item.label}
+                  className="flex h-full flex-col gap-4 rounded-xl border border-slate-200 p-5 shadow-sm"
+                >
+                  <header className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold text-french-blue">{item.label}</h3>
+                    <span
+                      className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${
+                        isSurplus ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'
+                      }`}
+                    >
+                      {isSurplus ? 'Excédent' : 'Déficit'}
+                    </span>
+                  </header>
+                  <dl className="space-y-2 text-sm text-slate-700">
+                    <div className="flex items-center justify-between">
+                      <dt className="font-medium text-slate-900">Coût total sur la période</dt>
+                      <dd>{formatFCFA(item.total)}</dd>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <dt className="font-medium text-slate-900">Coût annuel</dt>
+                      <dd>{formatFCFA(item.annual)}</dd>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <dt className="font-medium text-slate-900">Part des écolages</dt>
+                      <dd>{formatPercent(item.percentage)}</dd>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <dt className="font-medium text-slate-900">Part cible mobilisée</dt>
+                      <dd>{formatFCFA(simulation.availableBudget)}</dd>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <dt className="font-medium text-slate-900">Écart</dt>
+                      <dd>
+                        {coverageAmount === 0
+                          ? 'Équilibre'
+                          : `${isSurplus ? '+' : '–'}${formatFCFA(coverageAmount)}`}
+                      </dd>
+                    </div>
+                  </dl>
+                  <p className="mt-auto text-xs leading-relaxed text-slate-500">
+                    {isSurplus
+                      ? 'La part d’écolage saisie couvre le coût annuel estimé.'
+                      : 'La part d’écolage saisie est insuffisante pour couvrir le coût annuel estimé.'}
+                  </p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
