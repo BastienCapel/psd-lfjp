@@ -40,41 +40,159 @@ const PSDAxe1 = () => {
 
   const objectifs = [
     {
-      text:
-        '<strong>Bien-être et accompagnement des élèves</strong> : Garantir un <strong>environnement scolaire sain, climatisé et agréable</strong>, développer une <strong>culture du bien-être physique, mental, social et environnemental</strong> et répondre aux <strong>besoins particuliers des élèves</strong>.'
+      content: (
+        <>
+          <strong>Bien-être et accompagnement des élèves</strong> : Garantir un{' '}
+          <strong>environnement scolaire sain, climatisé et agréable</strong>, développer une{' '}
+          <strong>culture du bien-être physique, mental, social et environnemental</strong> et répondre aux{' '}
+          <strong>besoins particuliers des élèves</strong>.
+        </>
+      )
     },
     {
-      text:
-        '<strong>Climat scolaire et coopération éducative</strong> : Renforcer la <strong>confiance et la coopération</strong> entre élèves, familles et personnels, <strong>responsabiliser les élèves</strong> dans la vie de l\'établissement et consolider un <strong>climat scolaire</strong> fondé sur des règles et des valeurs partagées.'
+      content: (
+        <>
+          <strong>Climat scolaire et coopération éducative</strong> : Renforcer la{' '}
+          <strong>confiance et la coopération</strong> entre élèves, familles et personnels,{' '}
+          <strong>responsabiliser les élèves</strong> dans la vie de l'établissement et consolider un{' '}
+          <strong>climat scolaire</strong> fondé sur des règles et des valeurs partagées.
+        </>
+      )
     },
     {
-      text:
-        '<strong>Qualité et durabilité des services</strong> : Améliorer la <strong>qualité des services</strong> (restauration, transport, hygiène) et pérenniser l\'engagement du LFJP en matière de <strong>développement durable</strong> dans la dynamique <strong>E³D</strong>.'
+      content: (
+        <>
+          <strong>Qualité et durabilité des services</strong> : Améliorer la{' '}
+          <strong>qualité des services</strong> (restauration, transport, hygiène) et pérenniser l'engagement du LFJP en matière
+          de <strong>développement durable</strong> dans la dynamique <strong>E³D</strong>.
+        </>
+      )
     }
   ];
 
   const actions = [
-    { text: '<strong>Rafraîchissement durable des salles</strong> : <strong>plan de climatisation progressive</strong> et solutions écologiques (ombrages, végétalisation, rénovation)' },
-    { text: '<strong>Parcours santé-bien-être</strong> : hygiène, alimentation, activité physique et <strong>équilibre mental</strong>' },
-    { text: '<strong>Prévention du harcèlement</strong> : <strong>médiateurs élèves</strong>, pratiques restauratives, programme <strong>pHARe</strong>', link: '/protocole-phare' },
-    { text: '<strong>Expression et participation</strong> : conseils de vie, <strong>budgets participatifs</strong>, comités mixtes' },
-    { text: '<strong>Parentalité et coéducation</strong> : rencontres et ateliers pour mieux suivre la scolarité' },
-    { text: '<strong>Restauration scolaire</strong> : audit, consultation des usagers, mise en œuvre 2026-2027', link: '/construction-cantine' },
     {
-      text: 'Politique <strong>E³D</strong> consolidée : <strong>référents</strong> et <strong>éco-délégués</strong>, comité de pilotage, projets interdisciplinaires, plan d\'action annuel aligné <strong>EFE³D</strong>',
-      link: '/politique-e3d'
+      content: (
+        <>
+          <strong>Rafraîchissement durable des salles</strong> :{' '}
+          <strong>plan de climatisation progressive</strong> et solutions écologiques (ombrages, végétalisation, rénovation)
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>Parcours santé-bien-être</strong> : hygiène, alimentation, activité physique et{' '}
+          <strong>équilibre mental</strong>
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>Prévention du harcèlement</strong> : <strong>médiateurs élèves</strong>, pratiques restauratives, programme{' '}
+          <strong>pHARe</strong>
+        </>
+      ),
+      link: '/protocole-phare',
+      linkAriaLabel: 'En savoir plus – Prévention du harcèlement',
+      linkIcon: ShieldCheck
+    },
+    {
+      content: (
+        <>
+          <strong>Expression et participation</strong> : conseils de vie,{' '}
+          <strong>budgets participatifs</strong>, comités mixtes
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>Parentalité et coéducation</strong> : rencontres et ateliers pour mieux suivre la scolarité
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>Restauration scolaire</strong> : audit, consultation des usagers, mise en œuvre 2026-2027
+        </>
+      ),
+      link: '/construction-cantine',
+      linkAriaLabel: 'En savoir plus – Restauration scolaire',
+      linkIcon: Utensils
+    },
+    {
+      content: (
+        <>
+          Politique <strong>E³D</strong> consolidée : <strong>référents</strong> et <strong>éco-délégués</strong>, comité de
+          pilotage, projets interdisciplinaires, plan d'action annuel aligné <strong>EFE³D</strong>
+        </>
+      ),
+      link: '/politique-e3d',
+      linkAriaLabel: 'En savoir plus – Politique E3D',
+      linkIcon: Leaf
     }
   ];
   
   const indicators = [
-    { text: '<strong>Taux d\'élèves</strong> se déclarant « <strong>bien au LFJP</strong> » (objectif : <strong>+15 pts</strong> au lycée)' },
-    { text: '<strong>Taux de satisfaction</strong> sur la climatisation, les sanitaires, la cantine (élèves et parents)' },
-    { text: '<strong>Nombre de familles accompagnées</strong> dans le cadre de dispositifs de soutien à la parentalité' },
-    { text: '<strong>Taux d\'élèves</strong> bénéficiant d\'un <strong>aménagement</strong> ou d\'un <strong>accompagnement pédagogique</strong>' },
-    { text: '<strong>Avancement du plan de restauration scolaire</strong> (étapes validées)' },
-    { text: '<strong>Taux de satisfaction global</strong> sur le <strong>climat scolaire</strong> (par enquête ELCS)' },
-    { text: '<strong>Nombre de projets E3D</strong> portés par cycle' },
-    { text: 'Maintien du <strong>label EFE3D niveau 3</strong> à chaque renouvellement triennal' }
+    {
+      content: (
+        <>
+          <strong>Taux d'élèves</strong> se déclarant « <strong>bien au LFJP</strong> » (objectif :{' '}
+          <strong>+15 pts</strong> au lycée)
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>Taux de satisfaction</strong> sur la climatisation, les sanitaires, la cantine (élèves et parents)
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>Nombre de familles accompagnées</strong> dans le cadre de dispositifs de soutien à la parentalité
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>Taux d'élèves</strong> bénéficiant d'un <strong>aménagement</strong> ou d'un{' '}
+          <strong>accompagnement pédagogique</strong>
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>Avancement du plan de restauration scolaire</strong> (étapes validées)
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>Taux de satisfaction global</strong> sur le <strong>climat scolaire</strong> (par enquête ELCS)
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>Nombre de projets E3D</strong> portés par cycle
+        </>
+      )
+    },
+    {
+      content: (
+        <>Maintien du <strong>label EFE3D niveau 3</strong> à chaque renouvellement triennal</>
+      )
+    }
   ];
 
   return (
@@ -125,7 +243,7 @@ const PSDAxe1 = () => {
           <h4 className="mb-3 text-lg font-semibold text-slate-900">Objectifs détaillés</h4>
           <ul className="list-disc space-y-2 pl-5 text-gray-700 font-raleway">
             {objectifs.map((item, index) => (
-              <li key={index} dangerouslySetInnerHTML={{ __html: item.text }}></li>
+              <li key={index}>{item.content}</li>
             ))}
           </ul>
         </div>
@@ -134,44 +252,19 @@ const PSDAxe1 = () => {
           <h4 className="mb-3 text-lg font-semibold text-slate-900">Rubriques détaillées</h4>
           <ul className="list-disc space-y-3 pl-5 text-gray-700 font-raleway">
             {actions.map((item, index) => {
-              const hasLink = Boolean(item.link);
-              const textContent = item.text.toLowerCase();
-              const iconType = textContent.includes('harcèlement')
-                ? 'harcelement'
-                : textContent.includes('restauration')
-                ? 'restauration'
-                : textContent.includes('e³d')
-                ? 'e3d'
-                : null;
-              const IconComponent =
-                iconType === 'harcelement'
-                  ? ShieldCheck
-                  : iconType === 'restauration'
-                  ? Utensils
-                  : iconType === 'e3d'
-                  ? Leaf
-                  : null;
-              const ariaLabelSuffix = iconType === 'harcelement'
-                ? 'Prévention du harcèlement'
-                : iconType === 'restauration'
-                ? 'Restauration scolaire'
-                : iconType === 'e3d'
-                ? 'Politique E3D'
-                : '';
-
-              if (!hasLink || !IconComponent || !item.link) {
-                return (
-                  <li key={index} dangerouslySetInnerHTML={{ __html: item.text }}></li>
-                );
+              if (!item.link) {
+                return <li key={index}>{item.content}</li>;
               }
+
+              const IconComponent = item.linkIcon ?? ShieldCheck;
 
               return (
                 <li key={index} className="space-y-2">
-                  <span className="block" dangerouslySetInnerHTML={{ __html: item.text }}></span>
+                  <span className="block text-gray-700">{item.content}</span>
                   <Link
                     to={item.link}
                     className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue"
-                    aria-label={`En savoir plus – ${ariaLabelSuffix}`}
+                    aria-label={item.linkAriaLabel ?? 'En savoir plus'}
                   >
                     <IconComponent className="h-4 w-4" aria-hidden="true" />
                     <span>En savoir plus</span>
@@ -189,7 +282,7 @@ const PSDAxe1 = () => {
           <h4 className="mb-3 text-lg font-semibold text-slate-900">Indicateurs détaillés</h4>
           <ul className="list-disc space-y-2 pl-5 text-gray-700 font-raleway">
             {indicators.map((item, index) => (
-              <li key={index} dangerouslySetInnerHTML={{ __html: item.text }}></li>
+              <li key={index}>{item.content}</li>
             ))}
           </ul>
         </div>

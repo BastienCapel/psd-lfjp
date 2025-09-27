@@ -4,35 +4,158 @@ import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe4 = () => {
   const objectifs = [
-    { text: 'Maintenir le <strong>niveau d\'excellence</strong> et poursuivre la montée en puissance de la <strong>réussite aux examens</strong>' },
-    { text: 'Développer les <strong>compétences psychosociales et humaines</strong> des élèves (<strong>soft skills</strong>) : prise de parole, coopération, gestion de l\'échec, résilience, esprit critique, engagement citoyen' },
-    { text: 'Encourager l\'<strong>autonomie</strong>, la <strong>persévérance</strong> et la capacité à s\'orienter de manière éclairée' },
-    { text: 'Valoriser toutes les formes de <strong>réussite</strong> : scolaire, artistique, humaine, citoyenne, collective' },
-    { text: 'Faire du <strong>LFJP une école de la confiance et du rebond</strong> : apprendre à apprendre, à s\'adapter, à se relever' },
-    { text: 'Renforcer les liens avec les <strong>anciens élèves (alumni)</strong> et créer une <strong>communauté intergénérationnelle</strong> inspirante' },
-    { text: 'Impliquer pleinement les <strong>familles</strong> dans les parcours de réussite des élèves' }
+    {
+      content: (
+        <>Maintenir le <strong>niveau d'excellence</strong> et poursuivre la montée en puissance de la{' '}
+        <strong>réussite aux examens</strong></>
+      )
+    },
+    {
+      content: (
+        <>
+          Développer les <strong>compétences psychosociales et humaines</strong> des élèves (<strong>soft skills</strong>) :
+          prise de parole, coopération, gestion de l'échec, résilience, esprit critique, engagement citoyen
+        </>
+      )
+    },
+    {
+      content: (
+        <>Encourager l'<strong>autonomie</strong>, la <strong>persévérance</strong> et la capacité à s'orienter de manière éclairée</>
+      )
+    },
+    {
+      content: (
+        <>Valoriser toutes les formes de <strong>réussite</strong> : scolaire, artistique, humaine, citoyenne, collective</>
+      )
+    },
+    {
+      content: (
+        <>Faire du <strong>LFJP une école de la confiance et du rebond</strong> : apprendre à apprendre, à s'adapter, à se relever</>
+      )
+    },
+    {
+      content: (
+        <>
+          Renforcer les liens avec les <strong>anciens élèves (alumni)</strong> et créer une{' '}
+          <strong>communauté intergénérationnelle</strong> inspirante
+        </>
+      )
+    },
+    {
+      content: (
+        <>Impliquer pleinement les <strong>familles</strong> dans les parcours de réussite des élèves</>
+      )
+    }
   ];
   
   const actions = [
     {
-      text: '<strong>Curriculum vertical « Soft Skills & Éloquence »</strong> : parcours PS → Terminale structurant prise de parole, estime de soi, techniques oratoires et leadership.',
+      content: (
+        <>
+          <strong>Curriculum vertical « Soft Skills & Éloquence »</strong> : parcours PS → Terminale structurant prise de
+          parole, estime de soi, techniques oratoires et leadership.
+        </>
+      ),
       link: '/curriculum-soft-skills',
       linkAriaLabel: 'Découvrir le curriculum Soft Skills & Éloquence',
     },
-    { text: '<strong>Valorisation de l\'erreur et de la persévérance</strong> :<br/>• <strong>Pédagogies explicites</strong> sur l\'erreur constructive<br/>• <strong>Interventions d\'anciens élèves</strong> autour de leurs parcours<br/>• Programme « <strong>Cultiver l\'audace</strong> » valorisant les initiatives étudiantes' },
-    { text: '<strong>Parcours de la Réussite citoyenne</strong> :<br/>• <strong>Projets solidaires et participatifs</strong> (ex. budgets participatifs)<br/>• Modules de formation à l\'<strong>engagement citoyen</strong>' },
-    { text: '<strong>Éducation financière et à la vie autonome</strong> :<br/>• Ateliers sur la <strong>gestion budgétaire</strong> et la <strong>vie étudiante post-bac</strong><br/>• Interventions de <strong>professionnels et parents volontaires</strong>' },
-    { text: '<strong>Réseau d\'alumni et mentorat</strong> :<br/>• Constitution d\'une <strong>base de données d\'anciens élèves</strong><br/>• <strong>Mentorat lycéens / alumni</strong><br/>• Rubrique « <strong>Les Oiseaux de Passage</strong> » valorisée dans la communication interne' },
-    { text: '<strong>Soutien à l\'orientation</strong> :<br/>• <strong>Accompagnement personnalisé</strong> dans le cadre du Parcours Avenir<br/>• <strong>Stages, forums métiers, espace orientation</strong>' }
+    {
+      content: (
+        <>
+          <strong>Valorisation de l'erreur et de la persévérance</strong> :
+          <br />• <strong>Pédagogies explicites</strong> sur l'erreur constructive
+          <br />• <strong>Interventions d'anciens élèves</strong> autour de leurs parcours
+          <br />• Programme « <strong>Cultiver l'audace</strong> » valorisant les initiatives étudiantes
+        </>
+      ),
+    },
+    {
+      content: (
+        <>
+          <strong>Parcours de la Réussite citoyenne</strong> :
+          <br />• <strong>Projets solidaires et participatifs</strong> (ex. budgets participatifs)
+          <br />• Modules de formation à l'<strong>engagement citoyen</strong>
+        </>
+      ),
+    },
+    {
+      content: (
+        <>
+          <strong>Éducation financière et à la vie autonome</strong> :
+          <br />• Ateliers sur la <strong>gestion budgétaire</strong> et la{' '}
+          <strong>vie étudiante post-bac</strong>
+          <br />• Interventions de <strong>professionnels et parents volontaires</strong>
+        </>
+      ),
+    },
+    {
+      content: (
+        <>
+          <strong>Réseau d'alumni et mentorat</strong> :
+          <br />• Constitution d'une <strong>base de données d'anciens élèves</strong>
+          <br />• <strong>Mentorat lycéens / alumni</strong>
+          <br />• Rubrique « <strong>Les Oiseaux de Passage</strong> » valorisée dans la communication interne
+        </>
+      ),
+    },
+    {
+      content: (
+        <>
+          <strong>Soutien à l'orientation</strong> :
+          <br />• <strong>Accompagnement personnalisé</strong> dans le cadre du Parcours Avenir
+          <br />• <strong>Stages, forums métiers, espace orientation</strong>
+        </>
+      ),
+    },
   ];
   
   const indicators = [
-    { text: '<strong>% des élèves participant</strong> à un <strong>club citoyen, débat, théâtre, journal</strong> (≥ <strong>80 % collège/lycée</strong>)' },
-    { text: '<strong>% d\'élèves déclarant</strong> « <strong>savoir rebondir après un échec</strong> » (via enquête climat) (<strong>+15 pts</strong> par rapport à 2024)' },
-    { text: '<strong>% d\'élèves impliqués</strong> dans un <strong>projet citoyen ou solidaire</strong> (<strong>100 % cycle 4 et lycée</strong>)' },
-    { text: '<strong>% d\'élèves accompagnés individuellement</strong> en terminale (<strong>100 %</strong>)' },
-    { text: '<strong>Nombre d\'alumni mobilisés</strong> par an (≥ <strong>30 dès 2027</strong>)' },
-    { text: '<strong>Taux de satisfaction</strong> sur l\'accompagnement à la réussite (enquêtes) (≥ <strong>90 %</strong>)' }
+    {
+      content: (
+        <>
+          <strong>% des élèves participant</strong> à un <strong>club citoyen, débat, théâtre, journal</strong> (≥{' '}
+          <strong>80 % collège/lycée</strong>)
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>% d'élèves déclarant</strong> « <strong>savoir rebondir après un échec</strong> » (via enquête climat) ({' '}
+          <strong>+15 pts</strong> par rapport à 2024)
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>% d'élèves impliqués</strong> dans un <strong>projet citoyen ou solidaire</strong> ({' '}
+          <strong>100 % cycle 4 et lycée</strong>)
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>% d'élèves accompagnés individuellement</strong> en terminale (<strong>100 %</strong>)
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>Nombre d'alumni mobilisés</strong> par an (≥ <strong>30 dès 2027</strong>)
+        </>
+      )
+    },
+    {
+      content: (
+        <>
+          <strong>Taux de satisfaction</strong> sur l'accompagnement à la réussite (enquêtes) (≥{' '}
+          <strong>90 %</strong>)
+        </>
+      )
+    }
   ];
 
   return (
