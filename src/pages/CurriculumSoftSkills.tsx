@@ -22,6 +22,15 @@ interface OverviewRow {
   dispositifs: string;
 }
 
+interface TimelineStage {
+  cycle: string;
+  title: string;
+  subtitle: string;
+  pillLabel: string;
+  pillWidth: number;
+  icon: ({ x, y }: { x: number; y: number }) => React.ReactNode;
+}
+
 const CurriculumSoftSkills = () => {
   const cycles: CycleData[] = useMemo(
     () => [
@@ -137,8 +146,93 @@ const CurriculumSoftSkills = () => {
     []
   );
 
+  const timelineStages: TimelineStage[] = useMemo(
+    () => [
+      {
+        cycle: 'PS–GS',
+        title: 'Entrer en communication',
+        subtitle: 'oser parler • écouter • décrire',
+        pillLabel: 'Rituels',
+        pillWidth: 76,
+        icon: ({ x, y }) => (
+          <path
+            className="icon"
+            d={`M${x - 15} ${y - 10} q0 -18 18 -18 h10 q18 0 18 18 v4 q0 18 -18 18 h-6 l-8 8 v-8 q-14 0 -14 -18z`}
+          />
+        )
+      },
+      {
+        cycle: 'CP–CE2',
+        title: 'Structurer l’expression',
+        subtitle: 'lecture à voix haute • avis simple',
+        pillLabel: 'Radio',
+        pillWidth: 76,
+        icon: ({ x, y }) => (
+          <>
+            <path
+              className="icon"
+              d={`M${x - 14} ${y - 12} h20 a10 10 0 0 1 10 10 v18 h-20 a10 10 0 0 0 -10 10 v-38 z`}
+            />
+            <path
+              className="icon"
+              d={`M${x - 14} ${y - 12} h-8 a10 10 0 0 0 -10 10 v28`}
+            />
+          </>
+        )
+      },
+      {
+        cycle: 'CM1–6e',
+        title: 'Confiance et argumentation',
+        subtitle: 'exposé • posture • questionner',
+        pillLabel: 'Exposés',
+        pillWidth: 76,
+        icon: ({ x, y }) => (
+          <>
+            <path
+              className="icon"
+              d={`M${x - 8} ${y - 8} v-8 a8 8 0 0 1 16 0 v8 a8 8 0 0 1 -16 0 z`}
+            />
+            <path className="icon" d={`M${x} ${y + 8} v12`} />
+            <path className="icon" d={`M${x - 12} ${y + 20} h24`} />
+          </>
+        )
+      },
+      {
+        cycle: '5e–3e',
+        title: 'Argumenter et convaincre',
+        subtitle: 'débat • registre • gestion du stress',
+        pillLabel: 'Club débat • AAEH',
+        pillWidth: 108,
+        icon: ({ x, y }) => (
+          <path
+            className="icon"
+            d={`M${x - 14} ${y - 8} h22 a8 8 0 0 1 0 16 h-10 l-6 6 v-6 h-6 a8 8 0 0 1 0 -16 z`}
+          />
+        )
+      },
+      {
+        cycle: 'Lycée',
+        title: 'Maîtriser l’art oratoire',
+        subtitle: 'discours nuancé • Q/R jury • esprit critique',
+        pillLabel: 'Oral bac • Badges',
+        pillWidth: 100,
+        icon: ({ x, y }) => (
+          <>
+            <path className="icon" d={`M${x - 10} ${y - 10} h20 v10 h-20 z`} />
+            <path className="icon" d={`M${x} ${y} v20`} />
+            <path className="icon" d={`M${x - 8} ${y + 20} h16`} />
+          </>
+        )
+      }
+    ],
+    []
+  );
+
   const [activeTab, setActiveTab] = useState<string>(cycles[0]?.id ?? 'cycle1');
   const timelineRef = useRef<SVGPathElement | null>(null);
+  const [lineLength, setLineLength] = useState(0);
+  const [hoveredStage, setHoveredStage] = useState<number | null>(null);
+  const [progressRatio, setProgressRatio] = useState(1);
 
   useEffect(() => {
     const line = timelineRef.current;
@@ -148,6 +242,7 @@ const CurriculumSoftSkills = () => {
     }
 
     const length = line.getTotalLength();
+    setLineLength(length);
     line.style.strokeDasharray = `${length}`;
     line.style.strokeDashoffset = `${length}`;
 
@@ -160,6 +255,25 @@ const CurriculumSoftSkills = () => {
       cancelAnimationFrame(animationFrame);
     };
   }, []);
+
+  const handleStageEnter = (index: number) => {
+    setHoveredStage(index);
+    setProgressRatio((index + 1) / timelineStages.length);
+  };
+
+  const handleStageLeave = () => {
+    setHoveredStage(null);
+    setProgressRatio(1);
+  };
+
+  const TIMELINE_BASE_X = 160;
+  const TIMELINE_SPACING = 200;
+  const TIMELINE_CY = 180;
+  const TIMELINE_TAG_Y = 95;
+  const TIMELINE_TITLE_Y = 215;
+  const TIMELINE_SUBTITLE_Y = 235;
+  const TIMELINE_PILL_Y = 250;
+  const TIMELINE_PILL_TEXT_Y = 265;
 
   return (
     <div className="min-h-screen flex flex-col font-raleway">
@@ -308,6 +422,7 @@ const CurriculumSoftSkills = () => {
             role="img"
             aria-labelledby="frise-title"
             preserveAspectRatio="xMidYMid meet"
+            className="w-full h-auto text-french-blue"
           >
             <style>{`
               .f-line{stroke:currentColor;stroke-opacity:.25;stroke-width:10;fill:none}
@@ -316,8 +431,9 @@ const CurriculumSoftSkills = () => {
               .f-cap{font:600 14px/1.35 system-ui,Segoe UI,Roboto,Arial}
               .f-dev{font:400 13px/1.35 system-ui,Segoe UI,Roboto,Arial;opacity:.85}
               .f-pill{fill:#1d4ed8}
-              .f-pill text{fill:#fff;font:600 12px/1 system-ui,Segoe UI,Roboto,Arial}
+              .f-pill-text{font:600 12px/1 system-ui,Segoe UI,Roboto,Arial}
               .icon{fill:none;stroke:currentColor;stroke-width:2}
+              .f-line-progress{stroke-opacity:.65}
               @media (max-width:900px){
                 svg{height:auto}
                 .f-cap{font-size:13px}
@@ -326,51 +442,102 @@ const CurriculumSoftSkills = () => {
             `}</style>
 
             <path className="f-line" d="M80,180 H1120" ref={timelineRef} />
+            {lineLength > 0 && (
+              <path
+                className="f-line f-line-progress"
+                d="M80,180 H1120"
+                style={{
+                  strokeDasharray: `${lineLength * progressRatio} ${lineLength}`,
+                  strokeDashoffset: 0,
+                  transition: 'stroke-dasharray 400ms ease'
+                }}
+              />
+            )}
 
-            <circle className="f-node" cx="160" cy="180" r="22" />
-            <text className="f-tag" x="160" y="95" textAnchor="middle">PS–GS</text>
-            <path className="icon" d="M145 170 q0 -18 18 -18 h10 q18 0 18 18 v4 q0 18 -18 18 h-6 l-8 8 v-8 q-14 0 -14 -18z" />
-            <text className="f-cap" x="160" y="215" textAnchor="middle">Entrer en communication</text>
-            <text className="f-dev" x="160" y="235" textAnchor="middle">oser parler • écouter • décrire</text>
-            <rect x="122" y="250" rx="10" ry="10" width="76" height="22" className="f-pill" />
-            <text x="160" y="265" textAnchor="middle" fill="#fff">Rituels</text>
+            {timelineStages.map((stage, index) => {
+              const x = TIMELINE_BASE_X + index * TIMELINE_SPACING;
+              const isActive = hoveredStage === index;
+              const circleRadius = isActive ? 26 : 22;
+              const pillX = x - stage.pillWidth / 2;
 
-            <circle className="f-node" cx="360" cy="180" r="22" />
-            <text className="f-tag" x="360" y="95" textAnchor="middle">CP–CE2</text>
-            <path className="icon" d="M346 168 h20 a10 10 0 0 1 10 10 v18 h-20 a10 10 0 0 0 -10 10 v-38 z" />
-            <path className="icon" d="M346 168 h-8 a10 10 0 0 0 -10 10 v28" />
-            <text className="f-cap" x="360" y="215" textAnchor="middle">Structurer l’expression</text>
-            <text className="f-dev" x="360" y="235" textAnchor="middle">lecture à voix haute • avis simple</text>
-            <rect x="322" y="250" rx="10" ry="10" width="76" height="22" className="f-pill" />
-            <text x="360" y="265" textAnchor="middle" fill="#fff">Radio</text>
-
-            <circle className="f-node" cx="560" cy="180" r="22" />
-            <text className="f-tag" x="560" y="95" textAnchor="middle">CM1–6e</text>
-            <path className="icon" d="M552 172 v-8 a8 8 0 0 1 16 0 v8 a8 8 0 0 1 -16 0 z" />
-            <path className="icon" d="M560 188 v12" />
-            <path className="icon" d="M548 200 h24" />
-            <text className="f-cap" x="560" y="215" textAnchor="middle">Confiance et argumentation</text>
-            <text className="f-dev" x="560" y="235" textAnchor="middle">exposé • posture • questionner</text>
-            <rect x="522" y="250" rx="10" ry="10" width="76" height="22" className="f-pill" />
-            <text x="560" y="265" textAnchor="middle" fill="#fff">Exposés</text>
-
-            <circle className="f-node" cx="760" cy="180" r="22" />
-            <text className="f-tag" x="760" y="95" textAnchor="middle">5e–3e</text>
-            <path className="icon" d="M746 172 h22 a8 8 0 0 1 0 16 h-10 l-6 6 v-6 h-6 a8 8 0 0 1 0 -16 z" />
-            <text className="f-cap" x="760" y="215" textAnchor="middle">Argumenter et convaincre</text>
-            <text className="f-dev" x="760" y="235" textAnchor="middle">débat • registre • gestion du stress</text>
-            <rect x="706" y="250" rx="10" ry="10" width="108" height="22" className="f-pill" />
-            <text x="760" y="265" textAnchor="middle" fill="#fff">Club débat • AAEH</text>
-
-            <circle className="f-node" cx="960" cy="180" r="22" />
-            <text className="f-tag" x="960" y="95" textAnchor="middle">Lycée</text>
-            <path className="icon" d="M950 170 h20 v10 h-20 z" />
-            <path className="icon" d="M960 180 v20" />
-            <path className="icon" d="M952 200 h16" />
-            <text className="f-cap" x="960" y="215" textAnchor="middle">Maîtriser l’art oratoire</text>
-            <text className="f-dev" x="960" y="235" textAnchor="middle">discours nuancé • Q/R jury • esprit critique</text>
-            <rect x="910" y="250" rx="10" ry="10" width="100" height="22" className="f-pill" />
-            <text x="960" y="265" textAnchor="middle" fill="#fff">Oral bac • Badges</text>
+              return (
+                <g
+                  key={stage.cycle}
+                  tabIndex={0}
+                  onMouseEnter={() => handleStageEnter(index)}
+                  onFocus={() => handleStageEnter(index)}
+                  onMouseLeave={handleStageLeave}
+                  onBlur={handleStageLeave}
+                  className="transition-transform duration-300 ease-out cursor-pointer"
+                  style={{
+                    color: isActive ? '#1d4ed8' : '#1f2937',
+                    transform: isActive ? 'translateY(-6px)' : 'translateY(0)'
+                  }}
+                >
+                  <circle
+                    className="f-node"
+                    cx={x}
+                    cy={TIMELINE_CY}
+                    r={circleRadius}
+                    style={{
+                      fill: isActive ? '#eff6ff' : '#fff',
+                      strokeWidth: isActive ? 4 : 3,
+                      transition: 'all 300ms ease'
+                    }}
+                  />
+                  <text
+                    className="f-tag"
+                    x={x}
+                    y={TIMELINE_TAG_Y}
+                    textAnchor="middle"
+                    fill={isActive ? '#1d4ed8' : '#0f172a'}
+                  >
+                    {stage.cycle}
+                  </text>
+                  {stage.icon({ x, y: TIMELINE_CY })}
+                  <text
+                    className="f-cap"
+                    x={x}
+                    y={TIMELINE_TITLE_Y}
+                    textAnchor="middle"
+                    fill={isActive ? '#1d4ed8' : '#1e293b'}
+                  >
+                    {stage.title}
+                  </text>
+                  <text
+                    className="f-dev"
+                    x={x}
+                    y={TIMELINE_SUBTITLE_Y}
+                    textAnchor="middle"
+                    fill={isActive ? '#1d4ed8' : '#334155'}
+                  >
+                    {stage.subtitle}
+                  </text>
+                  <rect
+                    x={pillX}
+                    y={TIMELINE_PILL_Y}
+                    rx={10}
+                    ry={10}
+                    width={stage.pillWidth}
+                    height={22}
+                    className="f-pill"
+                    style={{
+                      fill: isActive ? '#1d4ed8' : '#1e40af',
+                      transition: 'fill 300ms ease'
+                    }}
+                  />
+                  <text
+                    x={x}
+                    y={TIMELINE_PILL_TEXT_Y}
+                    textAnchor="middle"
+                    fill="#fff"
+                    className="f-pill-text"
+                  >
+                    {stage.pillLabel}
+                  </text>
+                </g>
+              );
+            })}
           </svg>
         </section>
       </main>
