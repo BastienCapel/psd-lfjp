@@ -61,13 +61,6 @@ const MobileMenu = ({ id, mobileMenuOpen, setMobileMenuOpen, isActive }: MobileM
           Plan Stratégique
         </MobileNavItem>
 
-        <MobileNavItem
-          to="/curriculum-soft-skills"
-          isActive={isActive('/curriculum-soft-skills')}
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          Soft Skills & Éloquence
-        </MobileNavItem>
       </div>
     </div>
   );
