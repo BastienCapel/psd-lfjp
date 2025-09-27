@@ -22,6 +22,50 @@ interface OverviewRow {
   dispositifs: string;
 }
 
+type TimelineShape = 'circle' | 'rounded' | 'diamond' | 'hexagon';
+
+interface TimelinePattern {
+  id: string;
+  size: number;
+  background: string;
+  color: string;
+  strokeWidth: number;
+}
+
+interface TimelineIconPath {
+  d: (cx: number, cy: number) => string;
+  stroke?: string;
+  fill?: string;
+  strokeWidth?: number;
+}
+
+interface TimelineStage {
+  id: string;
+  label: string;
+  x: number;
+  title: string;
+  summary: string;
+  highlight: {
+    label: string;
+    width: number;
+    fill: string;
+    textColor: string;
+  };
+  node: {
+    shape: TimelineShape;
+    size: number;
+    stroke: string;
+    fill: string;
+    strokeWidth?: number;
+    pattern?: TimelinePattern;
+  };
+  icon: {
+    ariaLabel: string;
+    paths: TimelineIconPath[];
+  };
+  ariaLabel: string;
+}
+
 const CurriculumSoftSkills = () => {
   const cycles: CycleData[] = useMemo(
     () => [
@@ -133,6 +177,192 @@ const CurriculumSoftSkills = () => {
       { cycle: 'CM1–6e', competences: 'Structurer un discours', dispositifs: 'Exposés, débats réglés, journal scolaire' },
       { cycle: '5e–3e', competences: 'Argumenter, gérer stress', dispositifs: 'Club débat, concours, gestion stress, AAEH' },
       { cycle: 'Lycée', competences: 'Convaincre, esprit critique', dispositifs: 'Oral bac, concours, leadership, badges' }
+    ],
+    []
+  );
+
+  const timelineStages: TimelineStage[] = useMemo(
+    () => [
+      {
+        id: 'timeline-psgs',
+        label: 'PS–GS',
+        x: 160,
+        title: 'Entrer en communication',
+        summary: 'oser parler • écouter • décrire',
+        highlight: {
+          label: 'Rituels',
+          width: 92,
+          fill: '#1d4ed8',
+          textColor: '#ffffff'
+        },
+        node: {
+          shape: 'circle',
+          size: 24,
+          stroke: '#1d4ed8',
+          fill: '#DBEAFE',
+          strokeWidth: 4
+        },
+        icon: {
+          ariaLabel: 'Bulles de dialogue illustrant les premiers échanges oraux',
+          paths: [
+            {
+              d: (cx, cy) =>
+                `M${cx - 15} ${cy - 10} q0 -18 18 -18 h10 q18 0 18 18 v4 q0 18 -18 18 h-6 l-8 8 v-8 q-14 0 -14 -18z`,
+              strokeWidth: 2.2
+            }
+          ]
+        },
+        ariaLabel: 'Cycle PS–GS : entrer en communication, mots-clés oser parler, écouter, décrire. Dispositif phare : rituels.'
+      },
+      {
+        id: 'timeline-cpce2',
+        label: 'CP–CE2',
+        x: 360,
+        title: 'Structurer l’expression',
+        summary: 'lecture à voix haute • avis simple',
+        highlight: {
+          label: 'Radio',
+          width: 96,
+          fill: '#0f766e',
+          textColor: '#ffffff'
+        },
+        node: {
+          shape: 'rounded',
+          size: 24,
+          stroke: '#0f766e',
+          fill: '#CCFBF1',
+          strokeWidth: 4
+        },
+        icon: {
+          ariaLabel: 'Livre ouvert représentant la structuration du langage',
+          paths: [
+            {
+              d: (cx, cy) =>
+                `M${cx - 14} ${cy - 12} h20 a10 10 0 0 1 10 10 v18 h-20 a10 10 0 0 0 -10 10 v-38 z`,
+              strokeWidth: 2
+            },
+            {
+              d: (cx, cy) => `M${cx - 14} ${cy - 12} h-8 a10 10 0 0 0 -10 10 v28`,
+              strokeWidth: 2
+            }
+          ]
+        },
+        ariaLabel: 'Cycle CP–CE2 : structurer l’expression, mots-clés lecture à voix haute, avis simple. Dispositif phare : radio.'
+      },
+      {
+        id: 'timeline-cm16e',
+        label: 'CM1–6e',
+        x: 560,
+        title: 'Confiance et argumentation',
+        summary: 'exposé structuré • posture • questionner',
+        highlight: {
+          label: 'Exposés',
+          width: 110,
+          fill: '#7c3aed',
+          textColor: '#ffffff'
+        },
+        node: {
+          shape: 'diamond',
+          size: 26,
+          stroke: '#7c3aed',
+          fill: '#F3E8FF',
+          strokeWidth: 4
+        },
+        icon: {
+          ariaLabel: 'Microphone stylisé pour symboliser la prise de parole',
+          paths: [
+            {
+              d: (cx, cy) => `M${cx - 8} ${cy - 8} v-8 a8 8 0 0 1 16 0 v8 a8 8 0 0 1 -16 0 z`,
+              strokeWidth: 2
+            },
+            {
+              d: (cx, cy) => `M${cx} ${cy + 8} v12`,
+              strokeWidth: 2
+            },
+            {
+              d: (cx, cy) => `M${cx - 12} ${cy + 20} h24`,
+              strokeWidth: 2
+            }
+          ]
+        },
+        ariaLabel: 'Cycle CM1–6e : confiance et argumentation, mots-clés exposé structuré, posture, questionner. Dispositif phare : exposés.'
+      },
+      {
+        id: 'timeline-5e3e',
+        label: '5e–3e',
+        x: 760,
+        title: 'Argumenter et convaincre',
+        summary: 'débat • registre • gestion du stress',
+        highlight: {
+          label: 'Club débat • AAEH',
+          width: 154,
+          fill: '#ea580c',
+          textColor: '#111827'
+        },
+        node: {
+          shape: 'hexagon',
+          size: 26,
+          stroke: '#ea580c',
+          fill: '#FFEFE7',
+          strokeWidth: 4,
+          pattern: {
+            id: 'pattern-debat',
+            size: 10,
+            background: '#FFEFE7',
+            color: '#fb923c',
+            strokeWidth: 1.2
+          }
+        },
+        icon: {
+          ariaLabel: 'Bulles imbriquées rappelant un débat',
+          paths: [
+            {
+              d: (cx, cy) =>
+                `M${cx - 14} ${cy - 8} h22 a8 8 0 0 1 0 16 h-10 l-6 6 v-6 h-6 a8 8 0 0 1 0 -16 z`,
+              strokeWidth: 2
+            }
+          ]
+        },
+        ariaLabel: 'Cycle 5e–3e : argumenter et convaincre, mots-clés débat, registre, gestion du stress. Dispositif phare : club débat et AAEH.'
+      },
+      {
+        id: 'timeline-lycee',
+        label: 'Lycée',
+        x: 960,
+        title: 'Maîtriser l’art oratoire',
+        summary: 'discours nuancé • Q/R jury • esprit critique',
+        highlight: {
+          label: 'Oral bac • Badges',
+          width: 168,
+          fill: '#0f172a',
+          textColor: '#ffffff'
+        },
+        node: {
+          shape: 'rounded',
+          size: 26,
+          stroke: '#0f172a',
+          fill: '#E2E8F0',
+          strokeWidth: 4
+        },
+        icon: {
+          ariaLabel: 'Pupitre et micro symbolisant la maîtrise oratoire',
+          paths: [
+            {
+              d: (cx, cy) => `M${cx - 10} ${cy - 10} h20 v10 h-20 z`,
+              strokeWidth: 2
+            },
+            {
+              d: (cx, cy) => `M${cx} ${cy} v20`,
+              strokeWidth: 2
+            },
+            {
+              d: (cx, cy) => `M${cx - 8} ${cy + 20} h16`,
+              strokeWidth: 2
+            }
+          ]
+        },
+        ariaLabel: 'Cycle Lycée : maîtriser l’art oratoire, mots-clés discours nuancé, questions-réponses jury, esprit critique. Dispositif phare : oral du bac et badges.'
+      }
     ],
     []
   );
@@ -310,67 +540,203 @@ const CurriculumSoftSkills = () => {
             preserveAspectRatio="xMidYMid meet"
           >
             <style>{`
-              .f-line{stroke:currentColor;stroke-opacity:.25;stroke-width:10;fill:none}
-              .f-node{fill:#fff;stroke:currentColor;stroke-width:3}
-              .f-tag{font:700 16px/1.2 system-ui,Segoe UI,Roboto,Arial}
-              .f-cap{font:600 14px/1.35 system-ui,Segoe UI,Roboto,Arial}
-              .f-dev{font:400 13px/1.35 system-ui,Segoe UI,Roboto,Arial;opacity:.85}
-              .f-pill{fill:#1d4ed8}
-              .f-pill text{fill:#fff;font:600 12px/1 system-ui,Segoe UI,Roboto,Arial}
-              .icon{fill:none;stroke:currentColor;stroke-width:2}
+              .timeline-line{stroke:#0f172a;stroke-opacity:.18;stroke-width:10;stroke-linecap:round;fill:none}
+              .timeline-label{font:700 16px/1.2 'Inter',system-ui,Segoe UI,Roboto,Arial;color:#0f172a}
+              .timeline-title{font:600 14px/1.35 'Inter',system-ui,Segoe UI,Roboto,Arial;color:#1e293b}
+              .timeline-summary{font:400 13px/1.35 'Inter',system-ui,Segoe UI,Roboto,Arial;color:#334155}
+              .timeline-pill{font:600 12px/1 'Inter',system-ui,Segoe UI,Roboto,Arial}
               @media (max-width:900px){
                 svg{height:auto}
-                .f-cap{font-size:13px}
-                .f-dev{font-size:12px}
+                .timeline-title{font-size:13px}
+                .timeline-summary{font-size:12px}
               }
             `}</style>
 
-            <path className="f-line" d="M80,180 H1120" ref={timelineRef} />
+            <defs>
+              {timelineStages
+                .filter((stage) => stage.node.pattern)
+                .map((stage) => (
+                  <pattern
+                    key={stage.node.pattern?.id}
+                    id={stage.node.pattern?.id}
+                    patternUnits="userSpaceOnUse"
+                    width={stage.node.pattern?.size}
+                    height={stage.node.pattern?.size}
+                  >
+                    <rect
+                      width={stage.node.pattern?.size}
+                      height={stage.node.pattern?.size}
+                      fill={stage.node.pattern?.background}
+                    />
+                    <path
+                      d={`M0 ${stage.node.pattern?.size} L ${stage.node.pattern?.size} 0`}
+                      stroke={stage.node.pattern?.color}
+                      strokeWidth={stage.node.pattern?.strokeWidth}
+                    />
+                    <path
+                      d={`M-${stage.node.pattern?.size / 2} ${stage.node.pattern?.size} L ${stage.node.pattern?.size / 2} 0`}
+                      stroke={stage.node.pattern?.color}
+                      strokeWidth={stage.node.pattern?.strokeWidth}
+                    />
+                    <path
+                      d={`M${stage.node.pattern?.size / 2} ${stage.node.pattern?.size} L ${stage.node.pattern?.size * 1.5} 0`}
+                      stroke={stage.node.pattern?.color}
+                      strokeWidth={stage.node.pattern?.strokeWidth}
+                    />
+                  </pattern>
+                ))}
+            </defs>
 
-            <circle className="f-node" cx="160" cy="180" r="22" />
-            <text className="f-tag" x="160" y="95" textAnchor="middle">PS–GS</text>
-            <path className="icon" d="M145 170 q0 -18 18 -18 h10 q18 0 18 18 v4 q0 18 -18 18 h-6 l-8 8 v-8 q-14 0 -14 -18z" />
-            <text className="f-cap" x="160" y="215" textAnchor="middle">Entrer en communication</text>
-            <text className="f-dev" x="160" y="235" textAnchor="middle">oser parler • écouter • décrire</text>
-            <rect x="122" y="250" rx="10" ry="10" width="76" height="22" className="f-pill" />
-            <text x="160" y="265" textAnchor="middle" fill="#fff">Rituels</text>
+            <path className="timeline-line" d="M80,180 H1120" ref={timelineRef} />
 
-            <circle className="f-node" cx="360" cy="180" r="22" />
-            <text className="f-tag" x="360" y="95" textAnchor="middle">CP–CE2</text>
-            <path className="icon" d="M346 168 h20 a10 10 0 0 1 10 10 v18 h-20 a10 10 0 0 0 -10 10 v-38 z" />
-            <path className="icon" d="M346 168 h-8 a10 10 0 0 0 -10 10 v28" />
-            <text className="f-cap" x="360" y="215" textAnchor="middle">Structurer l’expression</text>
-            <text className="f-dev" x="360" y="235" textAnchor="middle">lecture à voix haute • avis simple</text>
-            <rect x="322" y="250" rx="10" ry="10" width="76" height="22" className="f-pill" />
-            <text x="360" y="265" textAnchor="middle" fill="#fff">Radio</text>
+            {timelineStages.map((stage) => {
+              const nodeFill = stage.node.pattern ? `url(#${stage.node.pattern.id})` : stage.node.fill;
+              const nodeStrokeWidth = stage.node.strokeWidth ?? 3;
+              const highlightX = stage.x - stage.highlight.width / 2;
+              const cx = stage.x;
+              const cy = 180;
 
-            <circle className="f-node" cx="560" cy="180" r="22" />
-            <text className="f-tag" x="560" y="95" textAnchor="middle">CM1–6e</text>
-            <path className="icon" d="M552 172 v-8 a8 8 0 0 1 16 0 v8 a8 8 0 0 1 -16 0 z" />
-            <path className="icon" d="M560 188 v12" />
-            <path className="icon" d="M548 200 h24" />
-            <text className="f-cap" x="560" y="215" textAnchor="middle">Confiance et argumentation</text>
-            <text className="f-dev" x="560" y="235" textAnchor="middle">exposé • posture • questionner</text>
-            <rect x="522" y="250" rx="10" ry="10" width="76" height="22" className="f-pill" />
-            <text x="560" y="265" textAnchor="middle" fill="#fff">Exposés</text>
+              const renderNode = () => {
+                switch (stage.node.shape) {
+                  case 'rounded':
+                    return (
+                      <rect
+                        x={cx - stage.node.size}
+                        y={cy - stage.node.size}
+                        width={stage.node.size * 2}
+                        height={stage.node.size * 2}
+                        rx={stage.node.size * 0.55}
+                        ry={stage.node.size * 0.55}
+                        fill={nodeFill}
+                        stroke={stage.node.stroke}
+                        strokeWidth={nodeStrokeWidth}
+                      />
+                    );
+                  case 'diamond': {
+                    const size = stage.node.size;
+                    const points = [
+                      [cx, cy - size],
+                      [cx + size, cy],
+                      [cx, cy + size],
+                      [cx - size, cy]
+                    ]
+                      .map((point) => point.join(','))
+                      .join(' ');
+                    return (
+                      <polygon
+                        points={points}
+                        fill={nodeFill}
+                        stroke={stage.node.stroke}
+                        strokeWidth={nodeStrokeWidth}
+                      />
+                    );
+                  }
+                  case 'hexagon': {
+                    const size = stage.node.size;
+                    const horizontal = size * Math.sin(Math.PI / 3);
+                    const points = [
+                      [cx, cy - size],
+                      [cx + horizontal, cy - size / 2],
+                      [cx + horizontal, cy + size / 2],
+                      [cx, cy + size],
+                      [cx - horizontal, cy + size / 2],
+                      [cx - horizontal, cy - size / 2]
+                    ]
+                      .map((point) => point.join(','))
+                      .join(' ');
+                    return (
+                      <polygon
+                        points={points}
+                        fill={nodeFill}
+                        stroke={stage.node.stroke}
+                        strokeWidth={nodeStrokeWidth}
+                      />
+                    );
+                  }
+                  default:
+                    return (
+                      <circle
+                        cx={cx}
+                        cy={cy}
+                        r={stage.node.size}
+                        fill={nodeFill}
+                        stroke={stage.node.stroke}
+                        strokeWidth={nodeStrokeWidth}
+                      />
+                    );
+                }
+              };
 
-            <circle className="f-node" cx="760" cy="180" r="22" />
-            <text className="f-tag" x="760" y="95" textAnchor="middle">5e–3e</text>
-            <path className="icon" d="M746 172 h22 a8 8 0 0 1 0 16 h-10 l-6 6 v-6 h-6 a8 8 0 0 1 0 -16 z" />
-            <text className="f-cap" x="760" y="215" textAnchor="middle">Argumenter et convaincre</text>
-            <text className="f-dev" x="760" y="235" textAnchor="middle">débat • registre • gestion du stress</text>
-            <rect x="706" y="250" rx="10" ry="10" width="108" height="22" className="f-pill" />
-            <text x="760" y="265" textAnchor="middle" fill="#fff">Club débat • AAEH</text>
-
-            <circle className="f-node" cx="960" cy="180" r="22" />
-            <text className="f-tag" x="960" y="95" textAnchor="middle">Lycée</text>
-            <path className="icon" d="M950 170 h20 v10 h-20 z" />
-            <path className="icon" d="M960 180 v20" />
-            <path className="icon" d="M952 200 h16" />
-            <text className="f-cap" x="960" y="215" textAnchor="middle">Maîtriser l’art oratoire</text>
-            <text className="f-dev" x="960" y="235" textAnchor="middle">discours nuancé • Q/R jury • esprit critique</text>
-            <rect x="910" y="250" rx="10" ry="10" width="100" height="22" className="f-pill" />
-            <text x="960" y="265" textAnchor="middle" fill="#fff">Oral bac • Badges</text>
+              return (
+                <g
+                  key={stage.id}
+                  role="group"
+                  aria-label={stage.ariaLabel}
+                  aria-labelledby={`${stage.id}-label ${stage.id}-title`}
+                >
+                  <title id={`${stage.id}-title`}>{stage.title}</title>
+                  <desc>{`${stage.summary}. ${stage.icon.ariaLabel}. Dispositif phare : ${stage.highlight.label}.`}</desc>
+                  {renderNode()}
+                  <text
+                    id={`${stage.id}-label`}
+                    className="timeline-label"
+                    x={stage.x}
+                    y={95}
+                    textAnchor="middle"
+                    fill="#0f172a"
+                  >
+                    {stage.label}
+                  </text>
+                  {stage.icon.paths.map((iconPath, index) => (
+                    <path
+                      key={`${stage.id}-icon-${index}`}
+                      d={iconPath.d(cx, cy)}
+                      fill={iconPath.fill ?? 'none'}
+                      stroke={iconPath.stroke ?? stage.node.stroke}
+                      strokeWidth={iconPath.strokeWidth ?? 1.8}
+                      aria-hidden="true"
+                    />
+                  ))}
+                  <text
+                    className="timeline-title"
+                    x={stage.x}
+                    y={215}
+                    textAnchor="middle"
+                    fill="#1e293b"
+                  >
+                    {stage.title}
+                  </text>
+                  <text
+                    className="timeline-summary"
+                    x={stage.x}
+                    y={235}
+                    textAnchor="middle"
+                    fill="#334155"
+                  >
+                    {stage.summary}
+                  </text>
+                  <rect
+                    x={highlightX}
+                    y={250}
+                    width={stage.highlight.width}
+                    height={26}
+                    rx={12}
+                    ry={12}
+                    fill={stage.highlight.fill}
+                    aria-hidden="true"
+                  />
+                  <text
+                    className="timeline-pill"
+                    x={stage.x}
+                    y={267}
+                    textAnchor="middle"
+                    fill={stage.highlight.textColor}
+                  >
+                    {stage.highlight.label}
+                  </text>
+                </g>
+              );
+            })}
           </svg>
         </section>
       </main>
