@@ -320,25 +320,7 @@ const PlanMaintenanceStrategique = () => {
               </TabsContent>
 
               <TabsContent value="informatique">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-2xl font-playfair text-french-blue">
-                      Renouvellement du Matériel Informatique
-                    </CardTitle>
-                    <CardDescription className="text-lg">
-                      Synthèse des plans de remplacement des postes informatiques et des vidéoprojecteurs.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-8">
-                    <p className="text-gray-700">
-                      Cet onglet reprend les deux volets du plan : le renouvellement prioritaire des PC pédagogiques
-                      et administratifs ainsi que la stratégie de remplacement échelonné des vidéoprojecteurs. Les
-                      tableaux de priorisation, budgets et recommandations facilitent la planification sur plusieurs
-                      années.
-                    </p>
-                    <RenouvellementInformatiqueTabs />
-                  </CardContent>
-                </Card>
+                <p className="text-gray-700">Contenu en construction</p>
               </TabsContent>
 
               <TabsContent value="acoustique">
