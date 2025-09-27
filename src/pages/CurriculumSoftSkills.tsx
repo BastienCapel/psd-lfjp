@@ -1,9 +1,10 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Home } from 'lucide-react';
+import CurriculumTimeline, { TimelineStage } from '@/components/CurriculumTimeline';
 
 interface CycleData {
   id: string;
@@ -20,15 +21,6 @@ interface OverviewRow {
   cycle: string;
   competences: string;
   dispositifs: string;
-}
-
-interface TimelineStage {
-  cycle: string;
-  title: string;
-  subtitle: string;
-  pillLabel: string;
-  pillWidth: number;
-  icon: ({ x, y }: { x: number; y: number }) => React.ReactNode;
 }
 
 const CurriculumSoftSkills = () => {
@@ -149,131 +141,80 @@ const CurriculumSoftSkills = () => {
   const timelineStages: TimelineStage[] = useMemo(
     () => [
       {
+        id: 'cycle1',
         cycle: 'PS–GS',
         title: 'Entrer en communication',
         subtitle: 'oser parler • écouter • décrire',
         pillLabel: 'Rituels',
-        pillWidth: 76,
-        icon: ({ x, y }) => (
-          <path
-            className="timeline-icon"
-            d={`M${x - 15} ${y - 10} q0 -18 18 -18 h10 q18 0 18 18 v4 q0 18 -18 18 h-6 l-8 8 v-8 q-14 0 -14 -18z`}
-          />
-        )
+        dispositifs: cycles.find((cycle) => cycle.id === 'cycle1')?.dispositifs ?? []
       },
       {
+        id: 'cycle2',
         cycle: 'CP–CE2',
         title: 'Structurer l’expression',
         subtitle: 'lecture à voix haute • avis simple',
         pillLabel: 'Radio',
-        pillWidth: 76,
-        icon: ({ x, y }) => (
-          <>
-            <path
-              className="timeline-icon"
-              d={`M${x - 14} ${y - 12} h20 a10 10 0 0 1 10 10 v18 h-20 a10 10 0 0 0 -10 10 v-38 z`}
-            />
-            <path
-              className="timeline-icon"
-              d={`M${x - 14} ${y - 12} h-8 a10 10 0 0 0 -10 10 v28`}
-            />
-          </>
-        )
+        dispositifs: cycles.find((cycle) => cycle.id === 'cycle2')?.dispositifs ?? []
       },
       {
+        id: 'cycle3',
         cycle: 'CM1–6e',
         title: 'Confiance et argumentation',
         subtitle: 'exposé • posture • questionner',
         pillLabel: 'Exposés',
-        pillWidth: 76,
-        icon: ({ x, y }) => (
-          <>
-            <path
-              className="timeline-icon"
-              d={`M${x - 8} ${y - 8} v-8 a8 8 0 0 1 16 0 v8 a8 8 0 0 1 -16 0 z`}
-            />
-            <path className="timeline-icon" d={`M${x} ${y + 8} v12`} />
-            <path className="timeline-icon" d={`M${x - 12} ${y + 20} h24`} />
-          </>
-        )
+        dispositifs: cycles.find((cycle) => cycle.id === 'cycle3')?.dispositifs ?? []
       },
       {
+        id: 'cycle4',
         cycle: '5e–3e',
         title: 'Argumenter et convaincre',
         subtitle: 'débat • registre • gestion du stress',
         pillLabel: 'Club débat • AAEH',
-        pillWidth: 108,
-        icon: ({ x, y }) => (
-          <path
-            className="timeline-icon"
-            d={`M${x - 14} ${y - 8} h22 a8 8 0 0 1 0 16 h-10 l-6 6 v-6 h-6 a8 8 0 0 1 0 -16 z`}
-          />
-        )
+        dispositifs: cycles.find((cycle) => cycle.id === 'cycle4')?.dispositifs ?? []
       },
       {
+        id: 'lycee',
         cycle: 'Lycée',
         title: 'Maîtriser l’art oratoire',
         subtitle: 'discours nuancé • Q/R jury • esprit critique',
         pillLabel: 'Oral bac • Badges',
-        pillWidth: 100,
-        icon: ({ x, y }) => (
-          <>
-            <path className="timeline-icon" d={`M${x - 10} ${y - 10} h20 v10 h-20 z`} />
-            <path className="timeline-icon" d={`M${x} ${y} v20`} />
-            <path className="timeline-icon" d={`M${x - 8} ${y + 20} h16`} />
-          </>
-        )
+        dispositifs: cycles.find((cycle) => cycle.id === 'lycee')?.dispositifs ?? []
       }
     ],
-    []
+    [cycles]
   );
 
   const [activeTab, setActiveTab] = useState<string>(cycles[0]?.id ?? 'cycle1');
-  const timelineRef = useRef<SVGPathElement | null>(null);
-  const [lineLength, setLineLength] = useState(0);
-  const [hoveredStage, setHoveredStage] = useState<number | null>(null);
-  const [progressRatio, setProgressRatio] = useState(1);
+  const [activeTimelineStage, setActiveTimelineStage] = useState<string>(timelineStages[0]?.id ?? 'cycle1');
 
-  useEffect(() => {
-    const line = timelineRef.current;
+  const handleTimelineKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement>,
+    index: number
+  ) => {
+    const isNext = event.key === 'ArrowRight' || event.key === 'ArrowDown';
+    const isPrevious = event.key === 'ArrowLeft' || event.key === 'ArrowUp';
 
-    if (!line) {
+    if (!isNext && !isPrevious) {
       return;
     }
 
-    const length = line.getTotalLength();
-    setLineLength(length);
-    line.style.strokeDasharray = `${length}`;
-    line.style.strokeDashoffset = `${length}`;
+    event.preventDefault();
 
-    const animationFrame = requestAnimationFrame(() => {
-      line.style.transition = 'stroke-dashoffset 900ms ease';
-      line.style.strokeDashoffset = '0';
-    });
+    const nextIndex = isNext
+      ? Math.min(timelineStages.length - 1, index + 1)
+      : Math.max(0, index - 1);
 
-    return () => {
-      cancelAnimationFrame(animationFrame);
-    };
-  }, []);
+    const nextStage = timelineStages[nextIndex];
 
-  const handleStageEnter = (index: number) => {
-    setHoveredStage(index);
-    setProgressRatio((index + 1) / timelineStages.length);
+    if (nextStage) {
+      setActiveTimelineStage(nextStage.id);
+      const button = document.getElementById(`${nextStage.id}-trigger`);
+
+      if (button) {
+        (button as HTMLButtonElement).focus();
+      }
+    }
   };
-
-  const handleStageLeave = () => {
-    setHoveredStage(null);
-    setProgressRatio(1);
-  };
-
-  const TIMELINE_BASE_X = 160;
-  const TIMELINE_SPACING = 200;
-  const TIMELINE_CY = 180;
-  const TIMELINE_TAG_Y = 95;
-  const TIMELINE_TITLE_Y = 215;
-  const TIMELINE_SUBTITLE_Y = 235;
-  const TIMELINE_PILL_Y = 250;
-  const TIMELINE_PILL_TEXT_Y = 265;
 
   return (
     <div className="min-h-screen flex flex-col font-raleway">
@@ -416,132 +357,12 @@ const CurriculumSoftSkills = () => {
           <h2 id="frise-title" className="text-center text-2xl font-playfair font-bold mb-8">
             Frise du curriculum Soft Skills &amp; Éloquence (PS → Terminale)
           </h2>
-
-          <svg
-            viewBox="0 0 1200 360"
-            role="img"
-            aria-labelledby="frise-title"
-            preserveAspectRatio="xMidYMid meet"
-            className="w-full h-auto text-french-blue"
-          >
-            <style>{`
-              .timeline-line{stroke:currentColor;stroke-opacity:.25;stroke-width:10;fill:none}
-              .timeline-line-progress{stroke-opacity:.65}
-              .timeline-node{fill:#fff;stroke:currentColor;stroke-width:3}
-              .timeline-cycle{font:700 16px/1.2 system-ui,Segoe UI,Roboto,Arial}
-              .timeline-title{font:600 14px/1.35 system-ui,Segoe UI,Roboto,Arial}
-              .timeline-subtitle{font:400 14px/1.45 system-ui,Segoe UI,Roboto,Arial;color:#0f172a;letter-spacing:.01em}
-              @media (prefers-color-scheme:dark){
-                .timeline-subtitle{color:#e5e7eb}
-              }
-              .timeline-pill{fill:#1d4ed8}
-              .timeline-pill-text{font:600 12px/1 system-ui,Segoe UI,Roboto,Arial}
-              .timeline-icon{fill:none;stroke:currentColor;stroke-width:2}
-              @media (max-width:900px){
-                svg{height:auto}
-                .timeline-title{font-size:13px}
-                .timeline-subtitle{font-size:13px;line-height:1.5}
-              }
-            `}</style>
-
-            <path className="timeline-line" d="M80,180 H1120" ref={timelineRef} />
-            {lineLength > 0 && (
-              <path
-                className="timeline-line timeline-line-progress"
-                d="M80,180 H1120"
-                style={{
-                  strokeDasharray: `${lineLength * progressRatio} ${lineLength}`,
-                  strokeDashoffset: 0,
-                  transition: 'stroke-dasharray 400ms ease'
-                }}
-              />
-            )}
-
-            {timelineStages.map((stage, index) => {
-              const x = TIMELINE_BASE_X + index * TIMELINE_SPACING;
-              const isActive = hoveredStage === index;
-              const circleRadius = isActive ? 26 : 22;
-              const pillX = x - stage.pillWidth / 2;
-
-              return (
-                <g
-                  key={stage.cycle}
-                  tabIndex={0}
-                  onMouseEnter={() => handleStageEnter(index)}
-                  onFocus={() => handleStageEnter(index)}
-                  onMouseLeave={handleStageLeave}
-                  onBlur={handleStageLeave}
-                  className="transition-transform duration-300 ease-out cursor-pointer"
-                  style={{
-                    color: isActive ? '#1d4ed8' : '#1f2937',
-                    transform: isActive ? 'translateY(-6px)' : 'translateY(0)'
-                  }}
-                >
-                  <circle
-                    className="timeline-node"
-                    cx={x}
-                    cy={TIMELINE_CY}
-                    r={circleRadius}
-                    style={{
-                      fill: isActive ? '#eff6ff' : '#fff',
-                      strokeWidth: isActive ? 4 : 3,
-                      transition: 'all 300ms ease'
-                    }}
-                  />
-                  <text
-                    className="timeline-cycle"
-                    x={x}
-                    y={TIMELINE_TAG_Y}
-                    textAnchor="middle"
-                    fill={isActive ? '#1d4ed8' : '#0f172a'}
-                  >
-                    {stage.cycle}
-                  </text>
-                  {stage.icon({ x, y: TIMELINE_CY })}
-                  <text
-                    className="timeline-title"
-                    x={x}
-                    y={TIMELINE_TITLE_Y}
-                    textAnchor="middle"
-                    fill={isActive ? '#1d4ed8' : '#1e293b'}
-                  >
-                    {stage.title}
-                  </text>
-                  <text
-                    className="timeline-subtitle"
-                    x={x}
-                    y={TIMELINE_SUBTITLE_Y}
-                    textAnchor="middle"
-                    fill={isActive ? '#1d4ed8' : '#334155'}
-                  >
-                    {stage.subtitle}
-                  </text>
-                  <rect
-                    x={pillX}
-                    y={TIMELINE_PILL_Y}
-                    rx={10}
-                    ry={10}
-                    width={stage.pillWidth}
-                    height={22}
-                    className="timeline-pill"
-                    style={{
-                      fill: isActive ? '#1d4ed8' : '#1e40af',
-                      transition: 'fill 300ms ease'
-                    }}
-                  />
-                  <text
-                    x={x}
-                    y={TIMELINE_PILL_TEXT_Y}
-                    textAnchor="middle"
-                    fill="#fff"
-                    className="timeline-pill-text"
-                  >
-                    {stage.pillLabel}
-                  </text>
-                </g>
-              );
-            })}
-          </svg>
+          <CurriculumTimeline
+            stages={timelineStages}
+            activeStageId={activeTimelineStage}
+            onStageSelect={setActiveTimelineStage}
+            onStageKeyDown={handleTimelineKeyDown}
+          />
         </section>
       </main>
 
