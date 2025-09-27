@@ -11,41 +11,41 @@ import PSDAxeTransversal from './PSDAxeTransversal';
 const PSDTabs = () => {
   return (
     <Tabs defaultValue="axe1" className="w-full">
-      <TabsList className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 mb-8">
+      <TabsList className="flex flex-wrap justify-center gap-2 mb-8 h-auto w-full">
         <TabsTrigger
           value="axe1"
-          className="group flex flex-col items-center justify-center w-full px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
+          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/5 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
-          <Target className="mb-1 h-6 w-6 md:h-8 md:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
-          <span className="block text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Axe 1</span>
+          <Target className="mb-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
+          <span className="block text-xs sm:text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Axe 1</span>
         </TabsTrigger>
         <TabsTrigger
           value="axe2"
-          className="group flex flex-col items-center justify-center w-full px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
+          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/5 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
-          <Users className="mb-1 h-6 w-6 md:h-8 md:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
-          <span className="block text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Axe 2</span>
+          <Users className="mb-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
+          <span className="block text-xs sm:text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Axe 2</span>
         </TabsTrigger>
         <TabsTrigger
           value="axe3"
-          className="group flex flex-col items-center justify-center w-full px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
+          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/5 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
-          <Sparkles className="mb-1 h-6 w-6 md:h-8 md:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
-          <span className="block text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Axe 3</span>
+          <Sparkles className="mb-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
+          <span className="block text-xs sm:text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Axe 3</span>
         </TabsTrigger>
         <TabsTrigger
           value="axe4"
-          className="group flex flex-col items-center justify-center w-full px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
+          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/5 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
-          <GraduationCap className="mb-1 h-6 w-6 md:h-8 md:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
-          <span className="block text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Axe 4</span>
+          <GraduationCap className="mb-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
+          <span className="block text-xs sm:text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Axe 4</span>
         </TabsTrigger>
         <TabsTrigger
           value="axe5"
-          className="group flex flex-col items-center justify-center w-full px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
+          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/5 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
-          <LayoutDashboard className="mb-1 h-6 w-6 md:h-8 md:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
-          <span className="block text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Transversal</span>
+          <LayoutDashboard className="mb-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
+          <span className="block text-xs sm:text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Transversal</span>
         </TabsTrigger>
       </TabsList>
       
