@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Home } from 'lucide-react';
-import CurriculumTimeline, { TimelineStage } from '@/components/CurriculumTimeline';
 
 interface CycleData {
   id: string;
@@ -138,83 +137,7 @@ const CurriculumSoftSkills = () => {
     []
   );
 
-  const timelineStages: TimelineStage[] = useMemo(
-    () => [
-      {
-        id: 'cycle1',
-        cycle: 'PS–GS',
-        title: 'Entrer en communication',
-        subtitle: 'oser parler • écouter • décrire',
-        pillLabel: 'Rituels',
-        dispositifs: cycles.find((cycle) => cycle.id === 'cycle1')?.dispositifs ?? []
-      },
-      {
-        id: 'cycle2',
-        cycle: 'CP–CE2',
-        title: 'Structurer l’expression',
-        subtitle: 'lecture à voix haute • avis simple',
-        pillLabel: 'Radio',
-        dispositifs: cycles.find((cycle) => cycle.id === 'cycle2')?.dispositifs ?? []
-      },
-      {
-        id: 'cycle3',
-        cycle: 'CM1–6e',
-        title: 'Confiance et argumentation',
-        subtitle: 'exposé • posture • questionner',
-        pillLabel: 'Exposés',
-        dispositifs: cycles.find((cycle) => cycle.id === 'cycle3')?.dispositifs ?? []
-      },
-      {
-        id: 'cycle4',
-        cycle: '5e–3e',
-        title: 'Argumenter et convaincre',
-        subtitle: 'débat • registre • gestion du stress',
-        pillLabel: 'Club débat • AAEH',
-        dispositifs: cycles.find((cycle) => cycle.id === 'cycle4')?.dispositifs ?? []
-      },
-      {
-        id: 'lycee',
-        cycle: 'Lycée',
-        title: 'Maîtriser l’art oratoire',
-        subtitle: 'discours nuancé • Q/R jury • esprit critique',
-        pillLabel: 'Oral bac • Badges',
-        dispositifs: cycles.find((cycle) => cycle.id === 'lycee')?.dispositifs ?? []
-      }
-    ],
-    [cycles]
-  );
-
   const [activeTab, setActiveTab] = useState<string>(cycles[0]?.id ?? 'cycle1');
-  const [activeTimelineStage, setActiveTimelineStage] = useState<string>(timelineStages[0]?.id ?? 'cycle1');
-
-  const handleTimelineKeyDown = (
-    event: React.KeyboardEvent<HTMLButtonElement>,
-    index: number
-  ) => {
-    const isNext = event.key === 'ArrowRight' || event.key === 'ArrowDown';
-    const isPrevious = event.key === 'ArrowLeft' || event.key === 'ArrowUp';
-
-    if (!isNext && !isPrevious) {
-      return;
-    }
-
-    event.preventDefault();
-
-    const nextIndex = isNext
-      ? Math.min(timelineStages.length - 1, index + 1)
-      : Math.max(0, index - 1);
-
-    const nextStage = timelineStages[nextIndex];
-
-    if (nextStage) {
-      setActiveTimelineStage(nextStage.id);
-      const button = document.getElementById(`${nextStage.id}-trigger`);
-
-      if (button) {
-        (button as HTMLButtonElement).focus();
-      }
-    }
-  };
 
   return (
     <div className="min-h-screen flex flex-col font-raleway">
@@ -351,18 +274,6 @@ const CurriculumSoftSkills = () => {
               </table>
             </div>
           </div>
-        </section>
-
-        <section className="frise-softskills" aria-labelledby="frise-title">
-          <h2 id="frise-title" className="text-center text-2xl font-playfair font-bold mb-8">
-            Frise du curriculum Soft Skills &amp; Éloquence (PS → Terminale)
-          </h2>
-          <CurriculumTimeline
-            stages={timelineStages}
-            activeStageId={activeTimelineStage}
-            onStageSelect={setActiveTimelineStage}
-            onStageKeyDown={handleTimelineKeyDown}
-          />
         </section>
       </main>
 
