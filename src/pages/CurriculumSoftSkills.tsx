@@ -1,6 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft, Home } from 'lucide-react';
 
 interface CycleData {
   id: string;
@@ -171,6 +174,21 @@ const CurriculumSoftSkills = () => {
             responsables et éloquents.
           </p>
         </div>
+      </div>
+
+      <div className="container mx-auto px-6 py-6 flex flex-wrap gap-3">
+        <Button variant="outline" asChild>
+          <Link to="/plan-strategique">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Retour au plan stratégique
+          </Link>
+        </Button>
+        <Button variant="outline" asChild>
+          <Link to="/">
+            <Home className="mr-2 h-4 w-4" />
+            Accueil
+          </Link>
+        </Button>
       </div>
 
       <main className="flex-1 bg-gray-50">
