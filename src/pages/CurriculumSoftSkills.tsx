@@ -156,7 +156,7 @@ const CurriculumSoftSkills = () => {
         pillWidth: 76,
         icon: ({ x, y }) => (
           <path
-            className="icon"
+            className="timeline-icon"
             d={`M${x - 15} ${y - 10} q0 -18 18 -18 h10 q18 0 18 18 v4 q0 18 -18 18 h-6 l-8 8 v-8 q-14 0 -14 -18z`}
           />
         )
@@ -170,11 +170,11 @@ const CurriculumSoftSkills = () => {
         icon: ({ x, y }) => (
           <>
             <path
-              className="icon"
+              className="timeline-icon"
               d={`M${x - 14} ${y - 12} h20 a10 10 0 0 1 10 10 v18 h-20 a10 10 0 0 0 -10 10 v-38 z`}
             />
             <path
-              className="icon"
+              className="timeline-icon"
               d={`M${x - 14} ${y - 12} h-8 a10 10 0 0 0 -10 10 v28`}
             />
           </>
@@ -189,11 +189,11 @@ const CurriculumSoftSkills = () => {
         icon: ({ x, y }) => (
           <>
             <path
-              className="icon"
+              className="timeline-icon"
               d={`M${x - 8} ${y - 8} v-8 a8 8 0 0 1 16 0 v8 a8 8 0 0 1 -16 0 z`}
             />
-            <path className="icon" d={`M${x} ${y + 8} v12`} />
-            <path className="icon" d={`M${x - 12} ${y + 20} h24`} />
+            <path className="timeline-icon" d={`M${x} ${y + 8} v12`} />
+            <path className="timeline-icon" d={`M${x - 12} ${y + 20} h24`} />
           </>
         )
       },
@@ -205,7 +205,7 @@ const CurriculumSoftSkills = () => {
         pillWidth: 108,
         icon: ({ x, y }) => (
           <path
-            className="icon"
+            className="timeline-icon"
             d={`M${x - 14} ${y - 8} h22 a8 8 0 0 1 0 16 h-10 l-6 6 v-6 h-6 a8 8 0 0 1 0 -16 z`}
           />
         )
@@ -218,9 +218,9 @@ const CurriculumSoftSkills = () => {
         pillWidth: 100,
         icon: ({ x, y }) => (
           <>
-            <path className="icon" d={`M${x - 10} ${y - 10} h20 v10 h-20 z`} />
-            <path className="icon" d={`M${x} ${y} v20`} />
-            <path className="icon" d={`M${x - 8} ${y + 20} h16`} />
+            <path className="timeline-icon" d={`M${x - 10} ${y - 10} h20 v10 h-20 z`} />
+            <path className="timeline-icon" d={`M${x} ${y} v20`} />
+            <path className="timeline-icon" d={`M${x - 8} ${y + 20} h16`} />
           </>
         )
       }
@@ -425,29 +425,29 @@ const CurriculumSoftSkills = () => {
             className="w-full h-auto text-french-blue"
           >
             <style>{`
-              .f-line{stroke:currentColor;stroke-opacity:.25;stroke-width:10;fill:none}
-              .f-node{fill:#fff;stroke:currentColor;stroke-width:3}
-              .f-tag{font:700 16px/1.2 system-ui,Segoe UI,Roboto,Arial}
-              .f-cap{font:600 14px/1.35 system-ui,Segoe UI,Roboto,Arial}
-              .f-dev{font:400 14px/1.45 system-ui,Segoe UI,Roboto,Arial;color:#0f172a;letter-spacing:.01em}
+              .timeline-line{stroke:currentColor;stroke-opacity:.25;stroke-width:10;fill:none}
+              .timeline-line-progress{stroke-opacity:.65}
+              .timeline-node{fill:#fff;stroke:currentColor;stroke-width:3}
+              .timeline-cycle{font:700 16px/1.2 system-ui,Segoe UI,Roboto,Arial}
+              .timeline-title{font:600 14px/1.35 system-ui,Segoe UI,Roboto,Arial}
+              .timeline-subtitle{font:400 14px/1.45 system-ui,Segoe UI,Roboto,Arial;color:#0f172a;letter-spacing:.01em}
               @media (prefers-color-scheme:dark){
-                .f-dev{color:#e5e7eb}
+                .timeline-subtitle{color:#e5e7eb}
               }
-              .f-pill{fill:#1d4ed8}
-              .f-pill-text{font:600 12px/1 system-ui,Segoe UI,Roboto,Arial}
-              .icon{fill:none;stroke:currentColor;stroke-width:2}
-              .f-line-progress{stroke-opacity:.65}
+              .timeline-pill{fill:#1d4ed8}
+              .timeline-pill-text{font:600 12px/1 system-ui,Segoe UI,Roboto,Arial}
+              .timeline-icon{fill:none;stroke:currentColor;stroke-width:2}
               @media (max-width:900px){
                 svg{height:auto}
-                .f-cap{font-size:13px}
-                .f-dev{font-size:13px;line-height:1.5}
+                .timeline-title{font-size:13px}
+                .timeline-subtitle{font-size:13px;line-height:1.5}
               }
             `}</style>
 
-            <path className="f-line" d="M80,180 H1120" ref={timelineRef} />
+            <path className="timeline-line" d="M80,180 H1120" ref={timelineRef} />
             {lineLength > 0 && (
               <path
-                className="f-line f-line-progress"
+                className="timeline-line timeline-line-progress"
                 d="M80,180 H1120"
                 style={{
                   strokeDasharray: `${lineLength * progressRatio} ${lineLength}`,
@@ -478,7 +478,7 @@ const CurriculumSoftSkills = () => {
                   }}
                 >
                   <circle
-                    className="f-node"
+                    className="timeline-node"
                     cx={x}
                     cy={TIMELINE_CY}
                     r={circleRadius}
@@ -489,7 +489,7 @@ const CurriculumSoftSkills = () => {
                     }}
                   />
                   <text
-                    className="f-tag"
+                    className="timeline-cycle"
                     x={x}
                     y={TIMELINE_TAG_Y}
                     textAnchor="middle"
@@ -499,7 +499,7 @@ const CurriculumSoftSkills = () => {
                   </text>
                   {stage.icon({ x, y: TIMELINE_CY })}
                   <text
-                    className="f-cap"
+                    className="timeline-title"
                     x={x}
                     y={TIMELINE_TITLE_Y}
                     textAnchor="middle"
@@ -508,7 +508,7 @@ const CurriculumSoftSkills = () => {
                     {stage.title}
                   </text>
                   <text
-                    className="f-dev"
+                    className="timeline-subtitle"
                     x={x}
                     y={TIMELINE_SUBTITLE_Y}
                     textAnchor="middle"
@@ -523,7 +523,7 @@ const CurriculumSoftSkills = () => {
                     ry={10}
                     width={stage.pillWidth}
                     height={22}
-                    className="f-pill"
+                    className="timeline-pill"
                     style={{
                       fill: isActive ? '#1d4ed8' : '#1e40af',
                       transition: 'fill 300ms ease'
@@ -534,7 +534,7 @@ const CurriculumSoftSkills = () => {
                     y={TIMELINE_PILL_TEXT_Y}
                     textAnchor="middle"
                     fill="#fff"
-                    className="f-pill-text"
+                    className="timeline-pill-text"
                   >
                     {stage.pillLabel}
                   </text>
