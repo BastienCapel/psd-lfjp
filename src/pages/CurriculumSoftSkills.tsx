@@ -314,14 +314,17 @@ const CurriculumSoftSkills = () => {
               .f-node{fill:#fff;stroke:currentColor;stroke-width:3}
               .f-tag{font:700 16px/1.2 system-ui,Segoe UI,Roboto,Arial}
               .f-cap{font:600 14px/1.35 system-ui,Segoe UI,Roboto,Arial}
-              .f-dev{font:400 13px/1.35 system-ui,Segoe UI,Roboto,Arial;opacity:.85}
+              .f-dev{font:400 14px/1.45 system-ui,Segoe UI,Roboto,Arial;color:#0f172a;letter-spacing:.01em}
+              @media (prefers-color-scheme:dark){
+                .f-dev{color:#e5e7eb}
+              }
               .f-pill{fill:#1d4ed8}
               .f-pill text{fill:#fff;font:600 12px/1 system-ui,Segoe UI,Roboto,Arial}
               .icon{fill:none;stroke:currentColor;stroke-width:2}
               @media (max-width:900px){
                 svg{height:auto}
                 .f-cap{font-size:13px}
-                .f-dev{font-size:12px}
+                .f-dev{font-size:13px;line-height:1.5}
               }
             `}</style>
 
