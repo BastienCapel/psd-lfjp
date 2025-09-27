@@ -22,6 +22,7 @@ const routes: RouteMap = {
   "/vision-missions-valeurs": { name: "Vision, Missions et Valeurs", parent: "/" },
   "/diagnostic": { name: "Diagnostic", parent: "/" },
   "/plan-strategique": { name: "Plan Stratégique", parent: "/" },
+  "/curriculum-soft-skills": { name: "Curriculum Soft Skills & Éloquence", parent: "/plan-strategique" },
   "/section-internationale-bfi": { name: "Section Internationale et BFI", parent: "/plan-strategique" },
   "/pc-par-lyceen": { name: "PC par Lycéen", parent: "/plan-strategique" },
   "/construction-cantine": { name: "Construction de la Cantine", parent: "/plan-strategique" },

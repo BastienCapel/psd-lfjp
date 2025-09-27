@@ -14,7 +14,11 @@ const PSDAxe4 = () => {
   ];
   
   const actions = [
-    { text: '<strong>Développement des compétences transversales (soft skills)</strong> :<br/>• Modules sur l\'<strong>expression orale</strong>, l\'<strong>estime de soi</strong>, la <strong>gestion du stress</strong>, la <strong>pensée critique</strong><br/>• <strong>Clubs théâtre, débat, journalisme, leadership</strong><br/>• Pratique de l\'<strong>éloquence au collège et au lycée</strong>' },
+    {
+      text: '<strong>Curriculum vertical « Soft Skills & Éloquence »</strong> : parcours PS → Terminale structurant prise de parole, estime de soi, techniques oratoires et leadership.',
+      link: '/curriculum-soft-skills',
+      linkAriaLabel: 'Découvrir le curriculum Soft Skills & Éloquence',
+    },
     { text: '<strong>Valorisation de l\'erreur et de la persévérance</strong> :<br/>• <strong>Pédagogies explicites</strong> sur l\'erreur constructive<br/>• <strong>Interventions d\'anciens élèves</strong> autour de leurs parcours<br/>• Programme « <strong>Cultiver l\'audace</strong> » valorisant les initiatives étudiantes' },
     { text: '<strong>Parcours de la Réussite citoyenne</strong> :<br/>• <strong>Projets solidaires et participatifs</strong> (ex. budgets participatifs)<br/>• Modules de formation à l\'<strong>engagement citoyen</strong>' },
     { text: '<strong>Éducation financière et à la vie autonome</strong> :<br/>• Ateliers sur la <strong>gestion budgétaire</strong> et la <strong>vie étudiante post-bac</strong><br/>• Interventions de <strong>professionnels et parents volontaires</strong>' },

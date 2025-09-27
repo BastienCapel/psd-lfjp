@@ -53,12 +53,20 @@ const MobileMenu = ({ id, mobileMenuOpen, setMobileMenuOpen, isActive }: MobileM
           Diagnostic
         </MobileNavItem>
         
-        <MobileNavItem 
-          to="/plan-strategique" 
-          isActive={isActive('/plan-strategique')} 
+        <MobileNavItem
+          to="/plan-strategique"
+          isActive={isActive('/plan-strategique')}
           onClick={() => setMobileMenuOpen(false)}
         >
           Plan Stratégique
+        </MobileNavItem>
+
+        <MobileNavItem
+          to="/curriculum-soft-skills"
+          isActive={isActive('/curriculum-soft-skills')}
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          Soft Skills & Éloquence
         </MobileNavItem>
       </div>
     </div>

@@ -26,6 +26,10 @@ const DesktopMenu = ({ isActive }: DesktopMenuProps) => {
         <DesktopNavItem to="/plan-strategique" isActive={isActive('/plan-strategique')}>
           Plan Stratégique
         </DesktopNavItem>
+
+        <DesktopNavItem to="/curriculum-soft-skills" isActive={isActive('/curriculum-soft-skills')}>
+          Soft Skills & Éloquence
+        </DesktopNavItem>
       </NavigationMenuList>
     </NavigationMenu>
   );

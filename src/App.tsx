@@ -14,6 +14,7 @@ import PCParLyceen from "./pages/PCParLyceen";
 import ConstructionCantine from "./pages/ConstructionCantine";
 import ProtocolePHARE from "./pages/ProtocolePHARE";
 import ElcsAnalyseComplete from "./pages/ElcsAnalyseComplete";
+import CurriculumSoftSkills from "./pages/CurriculumSoftSkills";
 import SectionInternationaleBFI from "./pages/SectionInternationaleBFI";
 import PlanMaintenanceStrategique from "./pages/PlanMaintenanceStrategique";
 import MediationEntrePairs from "./pages/MediationEntrePairs";
@@ -70,6 +71,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <PlanStrategique />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/curriculum-soft-skills" element={
+                  <>
+                    <BreadcrumbNav />
+                    <CurriculumSoftSkills />
                     <BackToTop />
                   </>
                 } />
