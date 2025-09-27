@@ -47,7 +47,7 @@ const PCParLyceen = () => {
       </div>
       
       <div className="container mx-auto px-6 py-12">
-        <div className="flex space-x-4 mb-8">
+        <div className="flex flex-wrap gap-4 mb-8 items-center justify-center sm:justify-start">
           <Button variant="outline" asChild>
             <Link to="/plan-strategique">
               <ArrowLeft className="mr-2" />
