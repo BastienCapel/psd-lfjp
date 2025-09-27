@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  Breadcrumb, 
-  BreadcrumbList, 
-  BreadcrumbItem, 
-  BreadcrumbLink, 
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
   BreadcrumbSeparator,
   BreadcrumbPage
 } from "@/components/ui/breadcrumb";
+import routesData from "@/data/breadcrumbRoutes.json";
 import { Home } from 'lucide-react';
 
 interface RouteMap {
@@ -17,20 +18,7 @@ interface RouteMap {
   };
 }
 
-const routes: RouteMap = {
-  "/": { name: "Accueil" },
-  "/vision-missions-valeurs": { name: "Vision, Missions et Valeurs", parent: "/" },
-  "/diagnostic": { name: "Diagnostic", parent: "/" },
-  "/plan-strategique": { name: "Plan Stratégique", parent: "/" },
-  "/curriculum-soft-skills": { name: "Curriculum Soft Skills & Éloquence", parent: "/plan-strategique" },
-  "/section-internationale-bfi": { name: "Section Internationale et BFI", parent: "/plan-strategique" },
-  "/pc-par-lyceen": { name: "PC par Lycéen", parent: "/plan-strategique" },
-  "/construction-cantine": { name: "Construction de la Cantine", parent: "/plan-strategique" },
-  "/protocole-phare": { name: "Protocole PHARE", parent: "/plan-strategique" },
-  "/plan-maintenance-strategique": { name: "Plan de Maintenance Stratégique", parent: "/plan-strategique" },
-  "/mediation-entre-pairs": { name: "Médiation entre pairs", parent: "/plan-strategique" },
-  "/elcs-analyse-complete": { name: "Analyse Complète ELCS", parent: "/diagnostic" },
-};
+const routes: RouteMap = routesData;
 
 const BreadcrumbNav = () => {
   const location = useLocation();
