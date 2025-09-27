@@ -320,7 +320,7 @@ const PlanMaintenanceStrategique = () => {
               </TabsContent>
 
               <TabsContent value="informatique">
-                <p className="text-gray-700">Contenu en construction</p>
+                <RenouvellementInformatiqueTabs />
               </TabsContent>
 
               <TabsContent value="acoustique">
