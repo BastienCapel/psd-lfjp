@@ -18,6 +18,7 @@ import SectionInternationaleBFI from "./pages/SectionInternationaleBFI";
 import PlanMaintenanceStrategique from "./pages/PlanMaintenanceStrategique";
 import MediationEntrePairs from "./pages/MediationEntrePairs";
 import PolitiqueE3D from "./pages/PolitiqueE3D";
+import MecenatNumerique from "./pages/MecenatNumerique";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -83,6 +84,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <PCParLyceen />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/mecenat-numerique" element={
+                  <>
+                    <BreadcrumbNav />
+                    <MecenatNumerique />
                     <BackToTop />
                   </>
                 } />
