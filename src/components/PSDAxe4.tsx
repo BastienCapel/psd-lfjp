@@ -69,7 +69,7 @@ const PSDAxe4 = () => {
         </>
       ),
       link: '/valorisation-erreur-perseverance',
-      linkAriaLabel: "Découvrir la feuille de route Valorisation de l'erreur et persévérance",
+      linkAriaLabel: "Découvrir la feuille de route du programme Valorisation de l'erreur et de la persévérance",
     },
     {
       content: (
