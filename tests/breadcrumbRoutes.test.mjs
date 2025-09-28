@@ -18,6 +18,7 @@ const expectedRoutes = {
   '/pc-par-lyceen': { parent: '/plan-strategique' },
   '/plan-strategique/axe-4': { parent: '/plan-strategique' },
   '/plan-strategique/reussite-citoyenne': { parent: '/plan-strategique/axe-4' },
+  '/education-financiere-vie-autonome': { parent: '/plan-strategique/axe-4' },
   '/mecenat-numerique': { parent: '/plan-strategique' },
   '/construction-cantine': { parent: '/plan-strategique' },
   '/protocole-phare': { parent: '/plan-strategique' },

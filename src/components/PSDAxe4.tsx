@@ -74,14 +74,9 @@ const PSDAxe4 = () => {
       linkAriaLabel: 'Découvrir le parcours Réussite citoyenne',
     },
     {
-      content: (
-        <>
-          <strong>Éducation financière et à la vie autonome</strong> :
-          <br />• Ateliers sur la <strong>gestion budgétaire</strong> et la{' '}
-          <strong>vie étudiante post-bac</strong>
-          <br />• Interventions de <strong>professionnels et parents volontaires</strong>
-        </>
-      ),
+      content: <strong>Éducation financière et à la vie autonome</strong>,
+      link: '/education-financiere-vie-autonome',
+      linkAriaLabel: "En savoir plus sur l'éducation financière et la vie autonome",
     },
     {
       content: (
