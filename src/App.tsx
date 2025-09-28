@@ -20,6 +20,7 @@ import PlanMaintenanceStrategique from "./pages/PlanMaintenanceStrategique";
 import MediationEntrePairs from "./pages/MediationEntrePairs";
 import PolitiqueE3D from "./pages/PolitiqueE3D";
 import MecenatNumerique from "./pages/MecenatNumerique";
+import ValorisationErreur from "./pages/ValorisationErreur";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -120,6 +121,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <PlanMaintenanceStrategique />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/valorisation-erreur-perseverance" element={
+                  <>
+                    <BreadcrumbNav />
+                    <ValorisationErreur />
                     <BackToTop />
                   </>
                 } />
