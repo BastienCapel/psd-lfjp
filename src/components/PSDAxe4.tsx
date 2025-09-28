@@ -62,19 +62,20 @@ const PSDAxe4 = () => {
     {
       content: (
         <>
-          <strong>Valorisation de l'erreur et de la persévérance</strong> :
-          <br />• <strong>Pédagogies explicites</strong> sur l'erreur constructive
-          <br />• <strong>Interventions d'anciens élèves</strong> autour de leurs parcours
-          <br />• Programme « <strong>Cultiver l'audace</strong> » valorisant les initiatives étudiantes
+          <strong>Valorisation de l'erreur et de la persévérance</strong> :{' '}
+          <strong>Pédagogies explicites</strong> sur l'erreur constructive, <strong>interventions d'anciens élèves</strong> autour
+          de leurs parcours et programme « <strong>Cultiver l'audace</strong> » valorisant les initiatives étudiantes
         </>
       ),
+      link: '/valorisation-erreur-perseverance',
+      linkAriaLabel: "Découvrir le programme Valorisation de l'erreur et de la persévérance",
     },
     {
       content: (
         <>
-          <strong>Parcours de la Réussite citoyenne</strong> :
-          <br />• <strong>Projets solidaires et participatifs</strong> (ex. budgets participatifs)
-          <br />• Modules de formation à l'<strong>engagement citoyen</strong>
+          <strong>Parcours de la Réussite citoyenne</strong> :{' '}
+          <strong>projets solidaires et participatifs</strong> (ex. budgets participatifs) — modules de formation à
+          l'<strong>engagement citoyen</strong>
         </>
       ),
     },
