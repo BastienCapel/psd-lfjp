@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { ArrowLeft, Home } from 'lucide-react';
 
 const PAGE_TITLE = 'Parcours de la Réussite citoyenne | PSD LFJP';
 
@@ -94,6 +96,8 @@ const skills = [
 ];
 
 const ReussiteCitoyenne = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = PAGE_TITLE;
   }, []);
@@ -115,6 +119,17 @@ const ReussiteCitoyenne = () => {
             </p>
           </div>
         </section>
+
+        <div className="container mx-auto flex gap-2 px-6 py-4">
+          <Button variant="outline" onClick={() => navigate('/plan-strategique')}>
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Retour
+          </Button>
+          <Button variant="outline" onClick={() => navigate('/')}>
+            <Home className="mr-2 h-4 w-4" />
+            Accueil
+          </Button>
+        </div>
 
         <section className="bg-white py-12 md:py-16">
           <div className="container mx-auto px-6">
