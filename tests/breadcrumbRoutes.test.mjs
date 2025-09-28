@@ -9,6 +9,7 @@ const expectedRoutes = {
   '/curriculum-soft-skills': { parent: '/plan-strategique' },
   '/section-internationale-bfi': { parent: '/plan-strategique' },
   '/pc-par-lyceen': { parent: '/plan-strategique' },
+  '/plan-strategique/axe-4': { parent: '/plan-strategique' },
   '/mecenat-numerique': { parent: '/plan-strategique' },
   '/construction-cantine': { parent: '/plan-strategique' },
   '/protocole-phare': { parent: '/plan-strategique' },
@@ -36,4 +37,48 @@ test('les routes racines sont présentes', () => {
   assert.ok(routes['/'], 'La route racine "/" doit être définie.');
   assert.ok(routes['/plan-strategique'], 'La page plan stratégique doit être définie.');
   assert.ok(routes['/diagnostic'], 'La page diagnostic doit être définie.');
+});
+
+test('la page Axe 4 est définie dans le plan stratégique', () => {
+  const axe4 = routes['/plan-strategique/axe-4'];
+  assert.ok(axe4, 'La route "/plan-strategique/axe-4" doit être définie.');
+  assert.strictEqual(
+    axe4.parent,
+    '/plan-strategique',
+    'La page Axe 4 doit avoir pour parent "/plan-strategique".'
+  );
+});
+
+test('les routes peuvent chaîner plusieurs parents jusqu\'à la racine', () => {
+  const targetPath = '/curriculum-soft-skills';
+  let currentPath = targetPath;
+  const visited = new Set([currentPath]);
+  let reachedRoot = false;
+
+  while (true) {
+    const route = routes[currentPath];
+    assert.ok(route, `La route "${currentPath}" doit être définie.`);
+
+    const parent = route.parent;
+    if (!parent) break;
+
+    if (parent === '/') {
+      reachedRoot = true;
+      assert.ok(routes[parent], 'La route racine "/" doit être définie.');
+      break;
+    }
+
+    assert.ok(
+      !visited.has(parent),
+      `La hiérarchie des routes ne doit pas contenir de cycle (boucle détectée à "${parent}").`
+    );
+
+    visited.add(parent);
+    currentPath = parent;
+  }
+
+  assert.ok(
+    reachedRoot,
+    `La route "${targetPath}" doit pouvoir remonter jusqu'à la racine "/" en suivant ses parents.`
+  );
 });
