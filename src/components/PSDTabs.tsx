@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Target, Users, Sparkles, GraduationCap, LayoutDashboard } from 'lucide-react';
 import PSDAxe1 from './PSDAxe1';
@@ -7,10 +7,70 @@ import PSDAxe2 from './PSDAxe2';
 import PSDAxe3 from './PSDAxe3';
 import PSDAxe4 from './PSDAxe4';
 import PSDAxeTransversal from './PSDAxeTransversal';
+import { useLocation, useSearchParams } from 'react-router-dom';
+
+const AXE_VALUES = ['axe1', 'axe2', 'axe3', 'axe4', 'axe5'] as const;
+type AxeValue = (typeof AXE_VALUES)[number];
+
+const isValidAxe = (value: string | null | undefined): value is AxeValue =>
+  typeof value === 'string' && (AXE_VALUES as readonly string[]).includes(value);
 
 const PSDTabs = () => {
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
+
+  const forcedAxe = useMemo(() => {
+    const stateAxe = (location.state as { axe?: string } | null)?.axe;
+    const queryAxe = searchParams.get('axe');
+
+    if (isValidAxe(stateAxe)) {
+      return stateAxe;
+    }
+
+    if (isValidAxe(queryAxe)) {
+      return queryAxe;
+    }
+
+    return undefined;
+  }, [location.state, searchParams]);
+
+  const persistedAxe = useMemo(() => {
+    if (typeof window === 'undefined') {
+      return undefined;
+    }
+
+    const storedValue = window.sessionStorage.getItem('psd-active-axe');
+    return isValidAxe(storedValue) ? storedValue : undefined;
+  }, []);
+
+  const [activeAxe, setActiveAxe] = useState<AxeValue>(() => forcedAxe ?? persistedAxe ?? 'axe1');
+  const lastForcedAxe = useRef<AxeValue | undefined>(forcedAxe ?? undefined);
+
+  useEffect(() => {
+    if (forcedAxe) {
+      if (forcedAxe !== lastForcedAxe.current) {
+        lastForcedAxe.current = forcedAxe;
+        setActiveAxe(forcedAxe);
+      }
+    } else {
+      lastForcedAxe.current = undefined;
+    }
+  }, [forcedAxe]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.sessionStorage.setItem('psd-active-axe', activeAxe);
+    }
+  }, [activeAxe]);
+
+  const handleTabChange = (value: string) => {
+    if (isValidAxe(value)) {
+      setActiveAxe(value);
+    }
+  };
+
   return (
-    <Tabs defaultValue="axe1" className="w-full">
+    <Tabs value={activeAxe} onValueChange={handleTabChange} className="w-full">
       <TabsList className="flex flex-wrap justify-center gap-2 mb-8 h-auto w-full">
         <TabsTrigger
           value="axe1"

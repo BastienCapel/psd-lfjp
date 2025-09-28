@@ -156,7 +156,7 @@ const CurriculumSoftSkills = () => {
 
       <div className="container mx-auto px-6 py-6 flex flex-wrap gap-3">
         <Button variant="outline" asChild>
-          <Link to="/plan-strategique">
+          <Link to="/plan-strategique" state={{ axe: 'axe4' }}>
             <ArrowLeft className="mr-2 h-4 w-4" />
             Retour au plan stratégique
           </Link>
