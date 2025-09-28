@@ -131,6 +131,13 @@ const App = () => {
                     <BackToTop />
                   </>
                 } />
+                <Route path="/valorisation-erreur-perseverance" element={
+                  <>
+                    <BreadcrumbNav />
+                    <ValorisationErreur />
+                    <BackToTop />
+                  </>
+                } />
                 <Route path="/mediation-entre-pairs" element={
                   <>
                     <BreadcrumbNav />
