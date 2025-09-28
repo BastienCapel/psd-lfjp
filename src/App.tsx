@@ -22,6 +22,7 @@ import PolitiqueE3D from "./pages/PolitiqueE3D";
 import MecenatNumerique from "./pages/MecenatNumerique";
 import ValorisationErreur from "./pages/ValorisationErreur";
 import ReussiteCitoyenne from "./pages/plan-strategique/reussite-citoyenne";
+import EducationFinanciereVieAutonome from "./pages/EducationFinanciereVieAutonome";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -136,6 +137,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ValorisationErreur />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/education-financiere-vie-autonome" element={
+                  <>
+                    <BreadcrumbNav />
+                    <EducationFinanciereVieAutonome />
                     <BackToTop />
                   </>
                 } />

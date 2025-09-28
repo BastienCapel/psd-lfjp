@@ -32,6 +32,10 @@
     "name": "Réussite citoyenne",
     "parent": "/plan-strategique/axe-4"
   },
+  "/education-financiere-vie-autonome": {
+    "name": "Éducation financière et à la vie autonome",
+    "parent": "/plan-strategique/axe-4"
+  },
   "/mecenat-numerique": {
     "name": "Mécénat numérique",
     "parent": "/plan-strategique"
