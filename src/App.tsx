@@ -21,6 +21,7 @@ import MediationEntrePairs from "./pages/MediationEntrePairs";
 import PolitiqueE3D from "./pages/PolitiqueE3D";
 import MecenatNumerique from "./pages/MecenatNumerique";
 import ValorisationErreur from "./pages/ValorisationErreur";
+import ReussiteCitoyenne from "./pages/plan-strategique/reussite-citoyenne";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
