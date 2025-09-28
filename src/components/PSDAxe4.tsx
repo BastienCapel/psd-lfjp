@@ -71,13 +71,9 @@ const PSDAxe4 = () => {
       linkAriaLabel: "Découvrir le programme Valorisation de l'erreur et de la persévérance",
     },
     {
-      content: (
-        <>
-          <strong>Parcours de la Réussite citoyenne</strong> :{' '}
-          <strong>projets solidaires et participatifs</strong> (ex. budgets participatifs) — modules de formation à
-          l'<strong>engagement citoyen</strong>
-        </>
-      ),
+      content: <strong>Parcours de la Réussite citoyenne</strong>,
+      link: '/plan-strategique/reussite-citoyenne',
+      linkAriaLabel: 'Découvrir le parcours Réussite citoyenne',
     },
     {
       content: (
