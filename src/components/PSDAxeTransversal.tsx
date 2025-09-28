@@ -71,7 +71,7 @@ const PSDAxeTransversal = () => {
             </div>
 
             <p className="text-base md:text-lg font-raleway text-white/90">
-              Un dispositif global qui articule les investissements immobiliers, numériques et acoustiques afin d\'assurer la pérennité du lycée et la qualité d\'accueil de toute la communauté éducative.
+              Un dispositif global qui articule les investissements immobiliers, numériques et acoustiques afin d’assurer la pérennité du lycée et la qualité d’accueil de toute la communauté éducative.
             </p>
 
             <ul className="space-y-4">
@@ -104,7 +104,7 @@ const PSDAxeTransversal = () => {
         <article className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <h4 className="text-lg font-semibold text-slate-900">Feuille de route 2025-2030</h4>
           <p className="mt-2 text-sm text-slate-600">
-            Un pilotage rigoureux du plan garantit une mise en œuvre progressive, évaluée et partagée avec l\'ensemble des parties prenantes.
+            Un pilotage rigoureux du plan garantit une mise en œuvre progressive, évaluée et partagée avec l’ensemble des parties prenantes.
           </p>
 
           <ol className="mt-6 space-y-4">

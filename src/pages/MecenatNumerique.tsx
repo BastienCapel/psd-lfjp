@@ -25,9 +25,9 @@ const responsables = [
 ];
 
 const calendrier = [
-  '2026 : Création du fonds et élaboration de la charte d\'utilisation.',
+  '2026 : Création du fonds et élaboration de la charte d’utilisation.',
   '2026-2027 : Lancement des premiers appels à mécénat et partenariats locaux/internationaux.',
-  '2027-2028 : Premiers financements d\'équipements et modules de formation.',
+  '2027-2028 : Premiers financements d’équipements et modules de formation.',
   '2029-2030 : Extension et consolidation du fonds, bilan et pérennisation dans le budget LFJP.'
 ];
 
@@ -48,7 +48,7 @@ const actionsPrevues = [
 const parcoursEducatifs = [
   {
     title: 'Parcours Avenir',
-    description: 'Découverte des métiers du numérique et de l\'innovation.'
+    description: 'Découverte des métiers du numérique et de l’innovation.'
   },
   {
     title: 'Parcours Citoyen',
@@ -65,8 +65,8 @@ const parcoursEducatifs = [
 ];
 
 const indicateurs = [
-  '% d\'élèves équipés par niveau.',
-  'Nombre d\'enseignants et d\'élèves formés chaque année.',
+  '% d’élèves équipés par niveau.',
+  'Nombre d’enseignants et d’élèves formés chaque année.',
   'Montant annuel levé par mécénat et partenariats.',
   'Nombre de projets pédagogiques numériques financés.',
   'Taux de satisfaction enseignants/élèves (enquêtes annuelles).'
@@ -74,19 +74,19 @@ const indicateurs = [
 
 const perennisation = [
   'Inscription du fonds dans le budget prévisionnel du LFJP.',
-  'Développement d\'un réseau de mécènes durables.',
+  'Développement d’un réseau de mécènes durables.',
   'Valorisation annuelle auprès de la communauté éducative et des partenaires.'
 ];
 
 const ficheTable = [
   {
-    label: 'Intitulé de l\'action',
-    value: 'Développement d\'un fonds de soutien ou mécénat numérique pour l\'équipement et la formation'
+    label: 'Intitulé de l’action',
+    value: 'Développement d’un fonds de soutien ou mécénat numérique pour l’équipement et la formation'
   },
   {
     label: 'Objectif stratégique',
     value:
-      'Garantir l\'équité d\'accès aux outils numériques, soutenir l\'innovation pédagogique et renforcer les compétences numériques des élèves et personnels.'
+      'Garantir l’équité d’accès aux outils numériques, soutenir l’innovation pédagogique et renforcer les compétences numériques des élèves et personnels.'
   },
   {
     label: 'Responsables',
@@ -96,7 +96,7 @@ const ficheTable = [
   {
     label: 'Calendrier',
     value:
-      '2026 : création du fonds et charte d\'utilisation • 2026-2027 : lancement des appels à mécénat et partenariats • 2027-2028 : premiers financements (équipements, formations) • 2029-2030 : extension, consolidation et bilan.'
+      '2026 : création du fonds et charte d’utilisation • 2026-2027 : lancement des appels à mécénat et partenariats • 2027-2028 : premiers financements (équipements, formations) • 2029-2030 : extension, consolidation et bilan.'
   },
   {
     label: 'Moyens mobilisés',
@@ -111,12 +111,12 @@ const ficheTable = [
   {
     label: 'Articulation parcours éducatifs',
     value:
-      'Parcours Avenir : métiers du numérique et de l\'innovation • Parcours Citoyen : éducation aux médias, citoyenneté numérique • Parcours Santé : prévention des usages excessifs, équilibre numérique • PEAC : projets artistiques et créatifs numériques.'
+      'Parcours Avenir : métiers du numérique et de l’innovation • Parcours Citoyen : éducation aux médias, citoyenneté numérique • Parcours Santé : prévention des usages excessifs, équilibre numérique • PEAC : projets artistiques et créatifs numériques.'
   },
   {
     label: 'Indicateurs de suivi',
     value:
-      '% d\'élèves équipés • Nombre d\'enseignants et d\'élèves formés/an • Montant levé par mécénat et partenariats • Nombre de projets pédagogiques numériques financés • Taux de satisfaction enseignants/élèves (enquêtes annuelles).'
+      '% d’élèves équipés • Nombre d’enseignants et d’élèves formés/an • Montant levé par mécénat et partenariats • Nombre de projets pédagogiques numériques financés • Taux de satisfaction enseignants/élèves (enquêtes annuelles).'
   },
   {
     label: 'Perspectives de pérennisation',
@@ -136,7 +136,7 @@ const MecenatNumerique = () => {
             Mécénat numérique
           </h1>
           <p className="text-lg md:text-xl max-w-3xl font-light">
-            Un fonds dédié pour garantir l\'équité d\'accès aux outils numériques, soutenir l\'innovation
+            Un fonds dédié pour garantir l’équité d’accès aux outils numériques, soutenir l’innovation
             pédagogique et développer les compétences de toute la communauté éducative.
           </p>
         </div>
@@ -164,12 +164,12 @@ const MecenatNumerique = () => {
               <Lightbulb className="h-6 w-6 text-amber-500" aria-hidden="true" />
               <div>
                 <CardTitle>Objectif stratégique</CardTitle>
-                <CardDescription>Cap vers l\'innovation et l\'équité numérique</CardDescription>
+                <CardDescription>Cap vers l’innovation et l’équité numérique</CardDescription>
               </div>
             </CardHeader>
             <CardContent>
               <p className="leading-relaxed text-gray-700">
-                Garantir l\'équité d\'accès aux outils numériques, soutenir l\'innovation pédagogique et renforcer
+                Garantir l’équité d’accès aux outils numériques, soutenir l’innovation pédagogique et renforcer
                 les compétences numériques des élèves et des personnels, en mobilisant des financements
                 complémentaires aux écolages.
               </p>

@@ -9,7 +9,7 @@ const PAGE_TITLE = 'Éducation financière et à la vie autonome | PSD LFJP';
 
 const programmePiliers = [
   {
-    title: 'Mise en place d\'EDUCFI',
+    title: 'Mise en place d’EDUCFI',
     description:
       "Déploiement du référentiel Éducation Économique, Budgétaire et Financière (EDUCFI) en partenariat avec des acteurs locaux et l'Ambassade de France.",
     icon: GraduationCap,
@@ -38,7 +38,7 @@ const parcoursEtudiants = [
     ],
   },
   {
-    title: 'Pendant l\'installation',
+    title: 'Pendant l’installation',
     points: [
       'Ateliers en visioconférence sur l’ouverture d’un compte bancaire, les assurances obligatoires et la gestion des aides.',
       'Accompagnement à la compréhension des contrats de logement, bourses CROUS et mutuelles étudiantes.',
@@ -92,7 +92,7 @@ const EducationFinanciereVieAutonome = () => {
               Éducation financière et à la vie autonome
             </h1>
             <p className="mt-6 max-w-3xl text-base text-blue-50 md:text-lg">
-              Nous accompagnons nos lycéens dans la mise en place du programme EDUCFI et dans l\'appropriation des codes de la vie étudiante en France afin de sécuriser leur réussite post-bac.
+              Nous accompagnons nos lycéens dans la mise en place du programme EDUCFI et dans l’appropriation des codes de la vie étudiante en France afin de sécuriser leur réussite post-bac.
             </p>
           </div>
         </section>
@@ -138,7 +138,7 @@ const EducationFinanciereVieAutonome = () => {
                 Un parcours guidé pour les élèves poursuivant leurs études en France
               </h2>
               <p className="mt-4 text-base leading-relaxed text-slate-700">
-                De la classe de seconde à l\'entrée dans l\'enseignement supérieur, chaque étape consolide l\'autonomie et la maîtrise budgétaire des élèves.
+                De la classe de seconde à l’entrée dans l’enseignement supérieur, chaque étape consolide l’autonomie et la maîtrise budgétaire des élèves.
               </p>
 
               <div className="mt-10 grid gap-8 lg:grid-cols-3">
@@ -168,7 +168,7 @@ const EducationFinanciereVieAutonome = () => {
               <article className="rounded-2xl border border-slate-200 bg-slate-50 p-8">
                 <h2 className="text-2xl font-playfair font-bold text-french-blue">Des ressources concrètes pour agir</h2>
                 <p className="mt-4 text-base leading-relaxed text-slate-700">
-                  Chaque séance associe mise en situation, outils numériques et retours d\'expérience afin de permettre aux futurs étudiants de se projeter sereinement dans leur nouvelle vie.
+                  Chaque séance associe mise en situation, outils numériques et retours d’expérience afin de permettre aux futurs étudiants de se projeter sereinement dans leur nouvelle vie.
                 </p>
 
                 <ul className="mt-6 space-y-4 text-sm leading-relaxed text-slate-700 md:text-base">
@@ -183,21 +183,21 @@ const EducationFinanciereVieAutonome = () => {
 
               <aside className="flex flex-col justify-between gap-6 rounded-2xl border border-blue-100 bg-blue-50/60 p-8 text-blue-900">
                 <div>
-                  <h2 className="text-lg font-semibold text-french-blue">Réseau d\'accompagnement</h2>
+                  <h2 className="text-lg font-semibold text-french-blue">Réseau d’accompagnement</h2>
                   <p className="mt-3 text-sm leading-relaxed md:text-base">
-                    Le dispositif mobilise le service orientation, les associations de parents d\'élèves et un collectif d\'alumni bénévoles pour répondre aux questions pratiques et budgétaires.
+                    Le dispositif mobilise le service orientation, les associations de parents d’élèves et un collectif d’alumni bénévoles pour répondre aux questions pratiques et budgétaires.
                   </p>
                 </div>
                 <div className="rounded-xl bg-white/80 p-5 text-sm text-slate-800 shadow-sm">
                   <p className="font-semibold uppercase tracking-wide text-french-blue">Objectif</p>
                   <p className="mt-2">
-                    Garantir que 100 % des élèves quittant le lycée disposent d\'un plan budgétaire réaliste et des ressources nécessaires pour gagner en autonomie dès leur arrivée en France.
+                    Garantir que 100 % des élèves quittant le lycée disposent d’un plan budgétaire réaliste et des ressources nécessaires pour gagner en autonomie dès leur arrivée en France.
                   </p>
                 </div>
                 <div className="rounded-xl bg-white/80 p-5 text-sm text-slate-800 shadow-sm">
                   <p className="font-semibold uppercase tracking-wide text-french-blue">Acteurs mobilisés</p>
                   <p className="mt-2">
-                    Conseillers d\'orientation, parents volontaires, partenaires bancaires et représentants d\'organismes sociaux accompagnent la montée en compétence des élèves.
+                    Conseillers d’orientation, parents volontaires, partenaires bancaires et représentants d’organismes sociaux accompagnent la montée en compétence des élèves.
                   </p>
                 </div>
               </aside>
