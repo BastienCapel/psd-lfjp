@@ -62,9 +62,7 @@ const PSDAxe4 = () => {
     {
       content: (
         <>
-          <strong>Valorisation de l'erreur et de la persévérance</strong> :{' '}
-          <strong>Pédagogies explicites</strong> sur l'erreur constructive, <strong>interventions d'anciens élèves</strong> autour
-          de leurs parcours et programme « <strong>Cultiver l'audace</strong> » valorisant les initiatives étudiantes
+          <strong>Valorisation de l'erreur et de la persévérance</strong>
         </>
       ),
       link: '/valorisation-erreur-perseverance',
