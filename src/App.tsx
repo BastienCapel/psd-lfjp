@@ -20,6 +20,7 @@ import PlanMaintenanceStrategique from "./pages/PlanMaintenanceStrategique";
 import MediationEntrePairs from "./pages/MediationEntrePairs";
 import PolitiqueE3D from "./pages/PolitiqueE3D";
 import MecenatNumerique from "./pages/MecenatNumerique";
+import ReussiteCitoyenne from "./pages/plan-strategique/reussite-citoyenne";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -71,6 +72,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <PlanStrategique />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/plan-strategique/reussite-citoyenne" element={
+                  <>
+                    <BreadcrumbNav />
+                    <ReussiteCitoyenne />
                     <BackToTop />
                   </>
                 } />

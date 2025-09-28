@@ -61,6 +61,18 @@ const MobileMenu = ({ id, mobileMenuOpen, setMobileMenuOpen, isActive }: MobileM
           Plan Stratégique
         </MobileNavItem>
 
+        <div className="ml-2 mt-1 border-l border-blue-100 pl-3">
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Axe 4</p>
+          <MobileNavItem
+            to="/plan-strategique/reussite-citoyenne"
+            isActive={isActive('/plan-strategique/reussite-citoyenne')}
+            onClick={() => setMobileMenuOpen(false)}
+            className="mt-2 pl-4 text-sm"
+          >
+            Réussite citoyenne
+          </MobileNavItem>
+        </div>
+
       </div>
     </div>
   );
