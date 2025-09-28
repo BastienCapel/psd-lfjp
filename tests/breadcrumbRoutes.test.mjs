@@ -1,6 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import routes from '../src/data/breadcrumbRoutes.json' with { type: 'json' };
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, resolve } from 'node:path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const routesFile = resolve(__dirname, '../src/data/breadcrumbRoutes.json');
+const routes = JSON.parse(readFileSync(routesFile, 'utf-8'));
 
 const expectedRoutes = {
   '/vision-missions-valeurs': { parent: '/' },
@@ -15,6 +22,7 @@ const expectedRoutes = {
   '/plan-maintenance-strategique': { parent: '/plan-strategique' },
   '/mediation-entre-pairs': { parent: '/plan-strategique' },
   '/politique-e3d': { parent: '/plan-strategique' },
+  '/valorisation-erreur-perseverance': { parent: '/plan-strategique' },
   '/elcs-analyse-complete': { parent: '/diagnostic' }
 };
 

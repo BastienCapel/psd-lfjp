@@ -48,6 +48,10 @@
     "name": "Politique E3D",
     "parent": "/plan-strategique"
   },
+  "/valorisation-erreur-perseverance": {
+    "name": "Valorisation de l'erreur et persévérance",
+    "parent": "/plan-strategique"
+  },
   "/elcs-analyse-complete": {
     "name": "Analyse Complète ELCS",
     "parent": "/diagnostic"

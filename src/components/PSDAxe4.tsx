@@ -68,6 +68,8 @@ const PSDAxe4 = () => {
           <br />• Programme « <strong>Cultiver l'audace</strong> » valorisant les initiatives étudiantes
         </>
       ),
+      link: '/valorisation-erreur-perseverance',
+      linkAriaLabel: "Découvrir la feuille de route Valorisation de l'erreur et persévérance",
     },
     {
       content: (
