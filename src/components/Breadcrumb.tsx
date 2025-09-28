@@ -33,8 +33,22 @@ const BreadcrumbNav = () => {
   if (!currentRoute) return null;
 
   // Si la route a un parent, on l'affiche dans le breadcrumb
-  const parentPath = currentRoute.parent;
-  const parentRoute = parentPath ? routes[parentPath] : null;
+  const ancestors: { path: string; name: string }[] = [];
+  const visitedPaths = new Set<string>();
+  let parentPath = currentRoute.parent;
+
+  while (parentPath && !visitedPaths.has(parentPath)) {
+    visitedPaths.add(parentPath);
+    const parentRoute = routes[parentPath];
+
+    if (!parentRoute) break;
+
+    if (parentPath !== "/") {
+      ancestors.unshift({ path: parentPath, name: parentRoute.name });
+    }
+
+    parentPath = parentRoute.parent;
+  }
 
   return (
     <div className="bg-gray-50 py-2 px-6 border-b animate-fade-in">
@@ -49,18 +63,18 @@ const BreadcrumbNav = () => {
             </BreadcrumbLink>
           </BreadcrumbItem>
           
-          {parentRoute && parentPath !== "/" && (
-            <>
+          {ancestors.map(({ path, name }) => (
+            <React.Fragment key={path}>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to={parentPath} className="text-french-blue hover:underline">
-                    {parentRoute.name}
+                  <Link to={path} className="text-french-blue hover:underline">
+                    {name}
                   </Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
-            </>
-          )}
+            </React.Fragment>
+          ))}
           
           <BreadcrumbSeparator />
           

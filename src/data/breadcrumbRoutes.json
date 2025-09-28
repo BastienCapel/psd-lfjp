@@ -24,6 +24,10 @@
     "name": "PC par Lycéen",
     "parent": "/plan-strategique"
   },
+  "/plan-strategique/axe-4": {
+    "name": "Axe 4",
+    "parent": "/plan-strategique"
+  },
   "/mecenat-numerique": {
     "name": "Mécénat numérique",
     "parent": "/plan-strategique"
