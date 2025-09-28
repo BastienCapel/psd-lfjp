@@ -21,7 +21,7 @@ export const currentLunchData = [
   { name: 'À la maison ou chez un proche', value: 28, percentage: 35 },
   { name: 'Un repas préparé à la maison (lunch-box)', value: 35, percentage: 43.8 },
   { name: 'Un plat ou repas livré', value: 25, percentage: 31.3 },
-  { name: 'Un repas acheté à proximité de l\'établissement', value: 36, percentage: 45 },
+  { name: 'Un repas acheté à proximité de l’établissement', value: 36, percentage: 45 },
   { name: 'À la maison et un repas préparé', value: 1, percentage: 1.3 }
 ];
 
