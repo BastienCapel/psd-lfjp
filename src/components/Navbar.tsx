@@ -29,7 +29,11 @@ const Navbar = ({ showLogo = false }: NavbarProps) => {
   
   // Fonction pour déterminer si un lien est actif
   const isActive = (path: string) => {
-    return currentPath === path;
+    if (path === '/') {
+      return currentPath === path;
+    }
+
+    return currentPath === path || currentPath.startsWith(`${path}/`);
   };
 
   // Fonction pour ouvrir/fermer le menu mobile

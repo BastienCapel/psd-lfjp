@@ -28,6 +28,10 @@
     "name": "Axe 4",
     "parent": "/plan-strategique"
   },
+  "/plan-strategique/reussite-citoyenne": {
+    "name": "Réussite citoyenne",
+    "parent": "/plan-strategique/axe-4"
+  },
   "/mecenat-numerique": {
     "name": "Mécénat numérique",
     "parent": "/plan-strategique"

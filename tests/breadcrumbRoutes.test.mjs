@@ -1,6 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import routes from '../src/data/breadcrumbRoutes.json' with { type: 'json' };
+import { readFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const routesPath = resolve(__dirname, '../src/data/breadcrumbRoutes.json');
+const routes = JSON.parse(readFileSync(routesPath, 'utf-8'));
 
 const expectedRoutes = {
   '/vision-missions-valeurs': { parent: '/' },
@@ -10,6 +17,7 @@ const expectedRoutes = {
   '/section-internationale-bfi': { parent: '/plan-strategique' },
   '/pc-par-lyceen': { parent: '/plan-strategique' },
   '/plan-strategique/axe-4': { parent: '/plan-strategique' },
+  '/plan-strategique/reussite-citoyenne': { parent: '/plan-strategique/axe-4' },
   '/mecenat-numerique': { parent: '/plan-strategique' },
   '/construction-cantine': { parent: '/plan-strategique' },
   '/protocole-phare': { parent: '/plan-strategique' },

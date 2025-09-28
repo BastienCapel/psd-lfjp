@@ -8,15 +8,17 @@ interface MobileNavItemProps {
   isActive: boolean;
   onClick: () => void;
   children: React.ReactNode;
+  className?: string;
 }
 
-const MobileNavItem = ({ to, isActive, onClick, children }: MobileNavItemProps) => {
+const MobileNavItem = ({ to, isActive, onClick, children, className }: MobileNavItemProps) => {
   return (
-    <Link 
-      to={to} 
+    <Link
+      to={to}
       className={cn(
         "py-3 px-4 mb-1 rounded-md font-medium transition-colors",
-        isActive ? "bg-french-blue text-white" : "hover:bg-blue-50 text-french-blue"
+        isActive ? "bg-french-blue text-white" : "hover:bg-blue-50 text-french-blue",
+        className
       )}
       onClick={onClick}
     >

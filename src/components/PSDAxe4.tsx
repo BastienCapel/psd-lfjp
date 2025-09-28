@@ -52,8 +52,7 @@ const PSDAxe4 = () => {
     {
       content: (
         <>
-          <strong>Curriculum vertical « Soft Skills & Éloquence »</strong> : parcours PS → Terminale structurant prise de
-          parole, estime de soi, techniques oratoires et leadership.
+          <strong>Curriculum vertical « Soft Skills & Éloquence »</strong>
         </>
       ),
       link: '/curriculum-soft-skills',
