@@ -9,17 +9,17 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import VisionMissionsValeurs from "./pages/VisionMissionsValeurs";
 import Diagnostic from "./pages/Diagnostic";
-import PlanStrategique from "./pages/PlanStrategique";
-import PCParLyceen from "./pages/PCParLyceen";
-import ConstructionCantine from "./pages/ConstructionCantine";
-import ProtocolePHARE from "./pages/ProtocolePHARE";
 import ElcsAnalyseComplete from "./pages/ElcsAnalyseComplete";
+import PlanStrategique from "./pages/PlanStrategique";
 import CurriculumSoftSkills from "./pages/CurriculumSoftSkills";
 import SectionInternationaleBFI from "./pages/SectionInternationaleBFI";
+import PCParLyceen from "./pages/PCParLyceen";
+import MecenatNumerique from "./pages/MecenatNumerique";
+import ConstructionCantine from "./pages/ConstructionCantine";
+import ProtocolePHARE from "./pages/ProtocolePHARE";
 import PlanMaintenanceStrategique from "./pages/PlanMaintenanceStrategique";
 import MediationEntrePairs from "./pages/MediationEntrePairs";
 import PolitiqueE3D from "./pages/PolitiqueE3D";
-import MecenatNumerique from "./pages/MecenatNumerique";
 import ValorisationErreurPerseverance from "./pages/ValorisationErreurPerseverance";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
@@ -35,6 +35,23 @@ const queryClient = new QueryClient({
   },
 });
 
+const pageRoutes: Array<{ path: string; Component: React.ComponentType }> = [
+  { path: "/vision-missions-valeurs", Component: VisionMissionsValeurs },
+  { path: "/diagnostic", Component: Diagnostic },
+  { path: "/elcs-analyse-complete", Component: ElcsAnalyseComplete },
+  { path: "/plan-strategique", Component: PlanStrategique },
+  { path: "/curriculum-soft-skills", Component: CurriculumSoftSkills },
+  { path: "/section-internationale-bfi", Component: SectionInternationaleBFI },
+  { path: "/pc-par-lyceen", Component: PCParLyceen },
+  { path: "/mecenat-numerique", Component: MecenatNumerique },
+  { path: "/construction-cantine", Component: ConstructionCantine },
+  { path: "/protocole-phare", Component: ProtocolePHARE },
+  { path: "/plan-maintenance-strategique", Component: PlanMaintenanceStrategique },
+  { path: "/mediation-entre-pairs", Component: MediationEntrePairs },
+  { path: "/politique-e3d", Component: PolitiqueE3D },
+  { path: "/valorisation-erreur-perseverance", Component: ValorisationErreurPerseverance },
+];
+
 const App = () => {
   return (
     <React.StrictMode>
@@ -47,104 +64,19 @@ const App = () => {
             <div className="flex flex-col min-h-screen">
               <Routes>
                 <Route path="/" element={<Index />} />
-                <Route path="/vision-missions-valeurs" element={
-                  <>
-                    <BreadcrumbNav />
-                    <VisionMissionsValeurs />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/diagnostic" element={
-                  <>
-                    <BreadcrumbNav />
-                    <Diagnostic />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/elcs-analyse-complete" element={
-                  <>
-                    <BreadcrumbNav />
-                    <ElcsAnalyseComplete />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/plan-strategique" element={
-                  <>
-                    <BreadcrumbNav />
-                    <PlanStrategique />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/curriculum-soft-skills" element={
-                  <>
-                    <BreadcrumbNav />
-                    <CurriculumSoftSkills />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/section-internationale-bfi" element={
-                  <>
-                    <BreadcrumbNav />
-                    <SectionInternationaleBFI />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/pc-par-lyceen" element={
-                  <>
-                    <BreadcrumbNav />
-                    <PCParLyceen />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/mecenat-numerique" element={
-                  <>
-                    <BreadcrumbNav />
-                    <MecenatNumerique />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/construction-cantine" element={
-                  <>
-                    <BreadcrumbNav />
-                    <ConstructionCantine />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/protocole-phare" element={
-                  <>
-                    <BreadcrumbNav />
-                    <ProtocolePHARE />
-                    <BackToTop />
-                  </>
-                 } />
-                <Route path="/plan-maintenance-strategique" element={
-                  <>
-                    <BreadcrumbNav />
-                    <PlanMaintenanceStrategique />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/mediation-entre-pairs" element={
-                  <>
-                    <BreadcrumbNav />
-                    <MediationEntrePairs />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/politique-e3d" element={
-                  <>
-                    <BreadcrumbNav />
-                    <PolitiqueE3D />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/valorisation-erreur-perseverance" element={
-                  <>
-                    <BreadcrumbNav />
-                    <ValorisationErreurPerseverance />
-                    <BackToTop />
-                  </>
-                } />
+                {pageRoutes.map(({ path, Component }) => (
+                  <Route
+                    key={path}
+                    path={path}
+                    element={
+                      <>
+                        <BreadcrumbNav />
+                        <Component />
+                        <BackToTop />
+                      </>
+                    }
+                  />
+                ))}
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
