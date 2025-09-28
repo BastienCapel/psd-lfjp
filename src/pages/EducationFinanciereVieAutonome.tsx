@@ -32,7 +32,7 @@ const parcoursEtudiants = [
   {
     title: 'Avant le départ',
     points: [
-      'Séances EDUCFI intégrées au parcours avenir dès la seconde.',
+      'Séances EDUCFI intégrées au parcours avenir dès la quatrième.',
       'Rencontres avec des parents et professionnels installés en France pour partager expériences et conseils.',
       "Création d'un kit numérique avec modèles de budget, glossaire bancaire et check-lists administratives.",
     ],
