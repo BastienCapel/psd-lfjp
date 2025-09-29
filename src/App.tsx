@@ -23,6 +23,7 @@ import MecenatNumerique from "./pages/MecenatNumerique";
 import ValorisationErreur from "./pages/ValorisationErreur";
 import ReussiteCitoyenne from "./pages/plan-strategique/reussite-citoyenne";
 import EducationFinanciereVieAutonome from "./pages/EducationFinanciereVieAutonome";
+import ReseauAlumniMentorat from "./pages/ReseauAlumniMentorat";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -144,6 +145,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <EducationFinanciereVieAutonome />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/reseau-alumni-mentorat" element={
+                  <>
+                    <BreadcrumbNav />
+                    <ReseauAlumniMentorat />
                     <BackToTop />
                   </>
                 } />

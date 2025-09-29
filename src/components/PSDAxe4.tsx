@@ -81,12 +81,11 @@ const PSDAxe4 = () => {
     {
       content: (
         <>
-          <strong>Réseau d'alumni et mentorat</strong> :
-          <br />• Constitution d'une <strong>base de données d'anciens élèves</strong>
-          <br />• <strong>Mentorat lycéens / alumni</strong>
-          <br />• Rubrique « <strong>Les Oiseaux de Passage</strong> » valorisée dans la communication interne
+          <strong>Réseau d'alumni et mentorat</strong>
         </>
       ),
+      link: '/reseau-alumni-mentorat',
+      linkAriaLabel: "Découvrir le projet Réseau d'alumni et mentorat",
     },
     {
       content: (
