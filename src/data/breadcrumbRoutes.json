@@ -16,6 +16,10 @@
     "name": "Curriculum Soft Skills & Éloquence",
     "parent": "/plan-strategique"
   },
+  "/parcours-avenir": {
+    "name": "Parcours Avenir",
+    "parent": "/plan-strategique/axe-4"
+  },
   "/section-internationale-bfi": {
     "name": "Section Internationale et BFI",
     "parent": "/plan-strategique"

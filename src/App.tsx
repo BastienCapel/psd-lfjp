@@ -24,6 +24,7 @@ import ValorisationErreur from "./pages/ValorisationErreur";
 import ReussiteCitoyenne from "./pages/plan-strategique/reussite-citoyenne";
 import EducationFinanciereVieAutonome from "./pages/EducationFinanciereVieAutonome";
 import ReseauAlumniMentorat from "./pages/ReseauAlumniMentorat";
+import ParcoursAvenir from "./pages/ParcoursAvenir";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -89,6 +90,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <CurriculumSoftSkills />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/parcours-avenir" element={
+                  <>
+                    <BreadcrumbNav />
+                    <ParcoursAvenir />
                     <BackToTop />
                   </>
                 } />
