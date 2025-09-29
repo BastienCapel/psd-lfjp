@@ -109,11 +109,11 @@ const ReussiteCitoyenne = () => {
       <main>
         <section className="bg-gradient-to-br from-french-blue via-blue-700 to-blue-900 py-16 text-white md:py-24">
           <div className="container mx-auto px-6">
-            <p className="text-sm uppercase tracking-widest text-blue-100">Axe 4 · Réussites citoyennes</p>
+            <p className="text-sm uppercase tracking-widest text-white">Axe 4 · Réussites citoyennes</p>
             <h1 className="mt-4 text-3xl font-playfair font-bold leading-tight md:text-5xl">
               Parcours de la Réussite citoyenne
             </h1>
-            <p className="mt-6 max-w-3xl text-base text-blue-50 md:text-lg">
+            <p className="mt-6 max-w-3xl text-base text-white/80 md:text-lg">
               Le Parcours de la Réussite citoyenne structure, de la maternelle à la terminale, l’éducation à l’engagement,
               au débat et à la solidarité. Il s’aligne sur le cadre du parcours citoyen de l’Éducation nationale.
             </p>
