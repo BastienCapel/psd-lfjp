@@ -39,10 +39,12 @@ const moyensMobilises = [
 ];
 
 const actionsPrevues = [
-  'Renouvellement et extension du parc numérique (classes mobiles, tablettes, vidéoprojecteurs, logiciels).',
-  'Formations régulières pour enseignants et élèves (IA, usages responsables, cybersécurité, création numérique).',
-  'Dispositifs adaptés pour élèves à besoins particuliers.',
-  'Financement de projets innovants interdisciplinaires (laboratoire numérique, PEAC numérique, projets IA éducative).'
+  "Renouvellement et extension du parc numérique (classes mobiles, tablettes, vidéoprojecteurs, logiciels).",
+  "Formations régulières pour enseignants et élèves (IA, usages responsables, cybersécurité, création numérique).",
+  "Dispositifs adaptés pour élèves à besoins particuliers.",
+  "Appui budgétaire et portefeuille de projets 'prêts à financer' (salle de codage, fablab, studios numériques, etc.).",
+  "Organisation d'événements de lancement : un temps interne (café ou soirée) et un temps externe multimédia en lien avec les membres de l'APE.",
+  "Financement de projets innovants interdisciplinaires (laboratoire numérique, PEAC numérique, projets IA éducative)."
 ];
 
 const parcoursEducatifs = [
@@ -74,7 +76,7 @@ const indicateurs = [
 
 const perennisation = [
   'Inscription du fonds dans le budget prévisionnel du LFJP.',
-  'Développement d’un réseau de mécènes durables.',
+  'Gestion rigoureuse et fidélisation des mécènes au sein d’un réseau durable.',
   'Valorisation annuelle auprès de la communauté éducative et des partenaires.'
 ];
 
@@ -86,7 +88,7 @@ const ficheTable = [
   {
     label: 'Objectif stratégique',
     value:
-      'Garantir l’équité d’accès aux outils numériques, soutenir l’innovation pédagogique et renforcer les compétences numériques des élèves et personnels.'
+      'Garantir l’équité d’accès aux outils numériques, soutenir l’innovation pédagogique et renforcer les compétences numériques des élèves et personnels, dans le respect de la neutralité commerciale.'
   },
   {
     label: 'Responsables',
@@ -106,7 +108,7 @@ const ficheTable = [
   {
     label: 'Actions prévues',
     value:
-      'Renouvellement et extension du parc numérique (classes mobiles, tablettes, vidéoprojecteurs, logiciels) • Formations régulières enseignants/élèves (IA, cybersécurité, usage responsable, création numérique) • Dispositifs adaptés pour élèves à besoins particuliers • Projets innovants interdisciplinaires (laboratoire numérique, PEAC numérique, projets IA éducative).'
+      "Renouvellement et extension du parc numérique (classes mobiles, tablettes, vidéoprojecteurs, logiciels) • Formations régulières enseignants/élèves (IA, cybersécurité, usage responsable, création numérique) • Dispositifs adaptés pour élèves à besoins particuliers • Appui budgétaire et projets 'prêts à financer' (salle de codage, fablab, studios numériques...) • Événements de lancement internes et externes (café/soirée, rendez-vous multimédia avec l'APE) • Projets innovants interdisciplinaires (laboratoire numérique, PEAC numérique, projets IA éducative)."
   },
   {
     label: 'Articulation parcours éducatifs',
@@ -121,7 +123,7 @@ const ficheTable = [
   {
     label: 'Perspectives de pérennisation',
     value:
-      'Inscription du fonds dans le budget LFJP • Réseau durable de mécènes • Valorisation annuelle auprès de la communauté éducative et partenaires.'
+      'Inscription du fonds dans le budget LFJP • Gestion rigoureuse et fidélisation des mécènes au sein d’un réseau durable • Valorisation annuelle auprès de la communauté éducative et partenaires.'
   }
 ];
 
@@ -171,7 +173,7 @@ const MecenatNumerique = () => {
               <p className="leading-relaxed text-gray-700">
                 Garantir l’équité d’accès aux outils numériques, soutenir l’innovation pédagogique et renforcer
                 les compétences numériques des élèves et des personnels, en mobilisant des financements
-                complémentaires aux écolages.
+                complémentaires aux écolages et dans le respect de la neutralité commerciale.
               </p>
             </CardContent>
           </Card>
