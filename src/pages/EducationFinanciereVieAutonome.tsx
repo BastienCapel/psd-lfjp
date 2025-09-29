@@ -87,11 +87,11 @@ const EducationFinanciereVieAutonome = () => {
       <main className="flex-1">
         <section className="bg-gradient-to-br from-french-blue via-blue-700 to-blue-900 py-16 text-white md:py-24">
           <div className="container mx-auto px-6">
-            <p className="text-sm uppercase tracking-widest text-blue-100">Axe 4 · Réussites personnelles et citoyennes</p>
+            <p className="text-sm uppercase tracking-widest text-white">Axe 4 · Réussites personnelles et citoyennes</p>
             <h1 className="mt-4 text-3xl font-playfair font-bold leading-tight md:text-5xl">
               Éducation financière et à la vie autonome
             </h1>
-            <p className="mt-6 max-w-3xl text-base text-blue-50 md:text-lg">
+            <p className="mt-6 max-w-3xl text-base text-white/80 md:text-lg">
               Nous accompagnons nos lycéens dans la mise en place du programme EDUCFI et dans l’appropriation des codes de la vie étudiante en France afin de sécuriser leur réussite post-bac.
             </p>
           </div>

@@ -94,13 +94,13 @@ const ValorisationErreur = () => {
     <div className="min-h-screen flex flex-col font-raleway bg-slate-50">
       <Navbar showLogo={true} />
 
-      <div className="bg-gradient-to-br from-french-blue via-blue-700 to-indigo-700 text-white py-20 md:py-28">
+      <div className="bg-gradient-to-br from-french-blue via-blue-700 to-indigo-800 text-white py-20 md:py-28">
         <div className="container mx-auto px-6">
-          <p className="uppercase tracking-[0.35em] text-xs md:text-sm opacity-90">Plan stratégique 2026-2030 · Axe 4</p>
+          <p className="uppercase tracking-[0.35em] text-xs md:text-sm text-white/80">Plan stratégique 2026-2030 · Axe 4</p>
           <h1 className="mt-4 text-3xl md:text-5xl font-playfair font-bold max-w-4xl">
             Valorisation de l’erreur et de la persévérance
           </h1>
-          <p className="mt-4 max-w-3xl text-base md:text-lg text-blue-100">
+          <p className="mt-4 max-w-3xl text-base md:text-lg text-white/80">
             Doter chaque élève de la capacité d’analyser ses erreurs, d’oser de nouvelles initiatives et de cultiver la persévérance comme compétence clé pour ses études supérieures et sa vie citoyenne.
           </p>
         </div>

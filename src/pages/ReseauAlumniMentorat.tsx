@@ -21,15 +21,15 @@ const ReseauAlumniMentorat = () => {
       <Navbar showLogo={true} />
 
       <main className="flex-1">
-        <div className="bg-gradient-to-br from-french-blue via-blue-700 to-indigo-700 text-white py-16 md:py-24">
+        <div className="bg-gradient-to-br from-french-blue via-blue-700 to-indigo-800 text-white py-16 md:py-24">
           <div className="container mx-auto px-6 text-center md:text-left">
-            <p className="uppercase tracking-[0.35em] text-xs md:text-sm opacity-90">
+            <p className="uppercase tracking-[0.35em] text-xs md:text-sm text-white/80">
               Plan stratégique 2026-2030 · Axe 4
             </p>
             <h1 className="mt-4 text-3xl md:text-5xl font-playfair font-bold">
               Réseau d'alumni et mentorat
             </h1>
-            <p className="mt-4 max-w-2xl text-base md:text-lg text-blue-100">
+            <p className="mt-4 max-w-2xl text-base md:text-lg text-white/80">
               Le Lycée Français Jacques Prévert souhaite maintenir un lien fort avec
               ses anciens élèves, valoriser leurs parcours et offrir aux lycéens
               actuels un réseau d&apos;appui, d&apos;inspiration et de mentorat.
