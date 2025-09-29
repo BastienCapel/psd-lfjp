@@ -14,6 +14,7 @@ const expectedRoutes = {
   '/diagnostic': { parent: '/' },
   '/plan-strategique': { parent: '/' },
   '/curriculum-soft-skills': { parent: '/plan-strategique' },
+  '/parcours-avenir': { parent: '/plan-strategique/axe-4' },
   '/section-internationale-bfi': { parent: '/plan-strategique' },
   '/pc-par-lyceen': { parent: '/plan-strategique' },
   '/plan-strategique/axe-4': { parent: '/plan-strategique' },

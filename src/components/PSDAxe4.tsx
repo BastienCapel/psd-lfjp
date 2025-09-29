@@ -88,13 +88,9 @@ const PSDAxe4 = () => {
       linkAriaLabel: "Découvrir le projet Réseau d'alumni et mentorat",
     },
     {
-      content: (
-        <>
-          <strong>Soutien à l'orientation</strong> :
-          <br />• <strong>Accompagnement personnalisé</strong> dans le cadre du Parcours Avenir
-          <br />• <strong>Stages, forums métiers, espace orientation</strong>
-        </>
-      ),
+      content: <strong>Parcours Avenir</strong>,
+      link: '/parcours-avenir',
+      linkAriaLabel: 'Découvrir la page Parcours Avenir',
     },
   ];
   
