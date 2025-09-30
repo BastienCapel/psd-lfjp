@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import type { LucideIcon } from 'lucide-react';
-import { ArrowRight, BarChart3, ListChecks, Target } from 'lucide-react';
+import { BarChart3, GraduationCap, ListChecks, Target } from 'lucide-react';
 
 interface ObjectifItem {
   content: React.ReactNode;
@@ -204,22 +204,32 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
           className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
         >
           <h4 className="mb-3 text-lg font-semibold text-slate-900">Rubriques détaillées</h4>
-          <ul className="list-disc space-y-3 pl-5 text-gray-700 font-raleway">
+          <ul className="space-y-3 font-raleway">
             {actions.map((item, index) => {
               if (!item.link) {
-                return <li key={index}>{item.content}</li>;
+                return (
+                  <li key={index} className="text-gray-700">
+                    {item.content}
+                  </li>
+                );
               }
 
-              const LinkIcon = item.linkIcon ?? ArrowRight;
+              const LinkIcon = item.linkIcon ?? GraduationCap;
               const ariaLabel = item.linkAriaLabel ?? 'En savoir plus';
 
               return (
                 <li key={index}>
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-gray-700">{item.content}</span>
+                  <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
+                    <div className="flex min-w-0 flex-1 items-center gap-3">
+                      <span className="text-gray-700">{item.content}</span>
+                      <span
+                        aria-hidden="true"
+                        className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
+                      />
+                    </div>
                     <Link
                       to={item.link}
-                      className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue"
+                      className="ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center"
                       aria-label={ariaLabel}
                     >
                       <LinkIcon className="h-4 w-4" aria-hidden="true" />
