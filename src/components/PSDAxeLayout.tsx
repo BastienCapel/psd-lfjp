@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import type { LucideIcon } from 'lucide-react';
-import { BarChart3, GraduationCap, ListChecks, Target } from 'lucide-react';
+import { ArrowRight, BarChart3, GraduationCap, ListChecks, Target } from 'lucide-react';
 
 interface ObjectifItem {
   content: React.ReactNode;
