@@ -39,8 +39,13 @@ const PSDTabs = () => {
       return undefined;
     }
 
-    const storedValue = window.sessionStorage.getItem('psd-active-axe');
-    return isValidAxe(storedValue) ? storedValue : undefined;
+    try {
+      const storedValue = window.sessionStorage.getItem('psd-active-axe');
+      return isValidAxe(storedValue) ? storedValue : undefined;
+    } catch (error) {
+      console.warn('Impossible de lire la valeur persistée de l\'onglet PSD.', error);
+      return undefined;
+    }
   }, []);
 
   const [activeAxe, setActiveAxe] = useState<AxeValue>(() => forcedAxe ?? persistedAxe ?? 'axe1');
@@ -59,7 +64,11 @@ const PSDTabs = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      window.sessionStorage.setItem('psd-active-axe', activeAxe);
+      try {
+        window.sessionStorage.setItem('psd-active-axe', activeAxe);
+      } catch (error) {
+        console.warn('Impossible d\'enregistrer l\'onglet actif du PSD.', error);
+      }
     }
   }, [activeAxe]);
 
