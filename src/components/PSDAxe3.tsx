@@ -96,7 +96,7 @@ const PSDAxe3 = () => {
     {
       content: (
         <>
-          Développement d'un <strong>fonds de soutien ou mécénat numérique</strong> pour l'équipement et la formation
+          <strong>Fonds numérique</strong> pour l'équipement et la formation
         </>
       ),
       link: '/mecenat-numerique',
