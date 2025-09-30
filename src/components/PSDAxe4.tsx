@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Compass, Medal, PiggyBank, RefreshCcw, Sparkles, UsersRound } from 'lucide-react';
 import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe4 = () => {
@@ -57,6 +58,7 @@ const PSDAxe4 = () => {
       ),
       link: '/curriculum-soft-skills',
       linkAriaLabel: 'Découvrir le curriculum Soft Skills & Éloquence',
+      linkIcon: Sparkles,
     },
     {
       content: (
@@ -67,16 +69,19 @@ const PSDAxe4 = () => {
       link: '/valorisation-erreur-perseverance',
       linkAriaLabel:
         "Découvrir la feuille de route du programme Valorisation de l'erreur et de la persévérance",
+      linkIcon: RefreshCcw,
     },
     {
       content: <strong>Parcours de la Réussite citoyenne</strong>,
       link: '/plan-strategique/reussite-citoyenne',
       linkAriaLabel: 'Découvrir le parcours Réussite citoyenne',
+      linkIcon: Medal,
     },
     {
       content: <strong>Éducation financière et à la vie autonome</strong>,
       link: '/education-financiere-vie-autonome',
       linkAriaLabel: "En savoir plus sur l'éducation financière et la vie autonome",
+      linkIcon: PiggyBank,
     },
     {
       content: (
@@ -86,11 +91,13 @@ const PSDAxe4 = () => {
       ),
       link: '/reseau-alumni-mentorat',
       linkAriaLabel: "Découvrir le projet Réseau d'alumni et mentorat",
+      linkIcon: UsersRound,
     },
     {
       content: <strong>Parcours Avenir</strong>,
       link: '/parcours-avenir',
       linkAriaLabel: 'Découvrir la page Parcours Avenir',
+      linkIcon: Compass,
     },
   ];
   
