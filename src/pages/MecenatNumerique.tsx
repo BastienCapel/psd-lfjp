@@ -83,7 +83,7 @@ const perennisation = [
 const ficheTable = [
   {
     label: 'Intitulé de l’action',
-    value: 'Développement d’un fonds de soutien ou mécénat numérique pour l’équipement et la formation'
+    value: 'Fonds de mécénat numérique pour l’équipement et la formation'
   },
   {
     label: 'Objectif stratégique',
