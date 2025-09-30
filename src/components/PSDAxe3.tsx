@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { HandCoins, Laptop } from 'lucide-react';
 import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe3 = () => {
@@ -72,7 +73,9 @@ const PSDAxe3 = () => {
       content: (
         <>Élaboration du plan « <strong>Un PC par lycéen</strong> »</>
       ),
-      link: '/pc-par-lyceen'
+      link: '/pc-par-lyceen',
+      linkAriaLabel: 'En savoir plus – Un PC par lycéen',
+      linkIcon: Laptop
     },
     {
       content: <><strong>Amélioration de la connectivité</strong> sur l'ensemble du site</>
@@ -97,7 +100,8 @@ const PSDAxe3 = () => {
         </>
       ),
       link: '/mecenat-numerique',
-      linkAriaLabel: 'Consulter la fiche-action Mécénat numérique'
+      linkAriaLabel: 'Consulter la fiche-action Mécénat numérique',
+      linkIcon: HandCoins
     }
   ];
   
