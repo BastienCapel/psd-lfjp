@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import {
   BarChart,
@@ -104,496 +105,436 @@ const RenouvellementInformatiqueTabs: React.FC = () => {
   };
 
   return (
-    <div className="space-y-12 px-4 pb-12 pt-6 text-slate-900">
-      <header className="space-y-4 rounded-lg bg-french-blue/5 p-6">
-        <h1 className="text-3xl font-bold text-french-blue">
-          Plan de renouvellement du parc informatique (réécriture avec scénarios)
-        </h1>
-        <div className="space-y-3 text-base leading-relaxed">
-          <p>
-            Le parc informatique du Lycée Français Jacques Prévert constitue un outil essentiel pour
-            l&apos;enseignement, l&apos;administration et la vie scolaire. Un diagnostic mené en 2025 a mis en
-            évidence le vieillissement rapide d&apos;une partie importante des ordinateurs fixes. Leur
-            obsolescence engendre des lenteurs, des incompatibilités avec les logiciels récents et des
-            difficultés d&apos;usage dans certaines classes et espaces pédagogiques. Afin de garantir un
-            environnement numérique fiable et performant, il est nécessaire de planifier un
-            renouvellement progressif et maîtrisé du parc.
-          </p>
-          <p>
-            Le présent document propose différents scénarios de renouvellement, basés sur deux devis de
-            référence (Burotic et ARC Informatique), et adaptés à trois logiques budgétaires distinctes :
-            un budget annuel de 3 000 000 FCFA, un budget annuel de 5 000 000 FCFA, une projection
-            courte de quatre ans pour un renouvellement intégral, ainsi qu&apos;un scénario de renouvellement
-            complet en une seule année. Chaque scénario est comparé au budget annuel des écolages
-            (1&nbsp;266&nbsp;470&nbsp;000 FCFA), afin d&apos;éclairer la décision stratégique à prendre.
-          </p>
-        </div>
-      </header>
+    <Tabs defaultValue="pc" className="w-full" aria-label="Plan de renouvellement informatique">
+      <TabsList
+        aria-label="Catégories de renouvellement"
+        className="mb-6 flex w-full flex-wrap gap-2 rounded-lg bg-french-blue/5 p-2"
+      >
+        <TabsTrigger
+          value="pc"
+          aria-label="Renouvellement des ordinateurs"
+          className="flex-1 rounded-md text-sm font-semibold uppercase text-french-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue data-[state=active]:bg-white data-[state=active]:text-french-blue"
+        >
+          PC
+        </TabsTrigger>
+        <TabsTrigger
+          value="video-projecteurs"
+          aria-label="Renouvellement des vidéo-projecteurs"
+          className="flex-1 rounded-md text-sm font-semibold uppercase text-french-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue data-[state=active]:bg-white data-[state=active]:text-french-blue"
+        >
+          Vidéoprojecteurs
+        </TabsTrigger>
+      </TabsList>
 
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-french-blue">
-          Référentiels de coûts (devis du 22 mai 2025, hors onduleurs)
-        </h2>
-        <div className="overflow-x-auto">
-          <table className="w-full table-auto border-collapse rounded-lg border border-slate-200 bg-white shadow-sm">
-            <thead className="bg-french-blue/10">
-              <tr>
-                <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                  Offre
-                </th>
-                <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                  Montant
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className={tableCell}>Offre Burotic</td>
-                <td className={tableCell}>458 477 FCFA / PC</td>
-              </tr>
-              <tr>
-                <td className={tableCell}>Offre ARC Informatique</td>
-                <td className={tableCell}>505 000 FCFA / PC</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+      <TabsContent value="pc">
+        <div className="space-y-12 px-4 pb-12 pt-6 text-slate-900">
+          <header className="space-y-4 rounded-lg bg-french-blue/5 p-6">
+            <h1 className="text-3xl font-bold text-french-blue">
+              Plan de renouvellement du parc informatique (réécriture avec scénarios)
+            </h1>
+            <div className="space-y-3 text-base leading-relaxed">
+              <p>
+                Le parc informatique du Lycée Français Jacques Prévert constitue un outil essentiel pour
+                l&apos;enseignement, l&apos;administration et la vie scolaire. Un diagnostic mené en 2025 a mis en
+                évidence le vieillissement rapide d&apos;une partie importante des ordinateurs fixes. Leur
+                obsolescence engendre des lenteurs, des incompatibilités avec les logiciels récents et des
+                difficultés d&apos;usage dans certaines classes et espaces pédagogiques. Afin de garantir un
+                environnement numérique fiable et performant, il est nécessaire de planifier un
+                renouvellement progressif et maîtrisé du parc.
+              </p>
+              <p>
+                Le présent document propose différents scénarios de renouvellement, basés sur deux devis de
+                référence (Burotic et ARC Informatique), et adaptés à trois logiques budgétaires distinctes :
+                un budget annuel de 3 000 000 FCFA, un budget annuel de 5 000 000 FCFA, une projection
+                courte de quatre ans pour un renouvellement intégral, ainsi qu&apos;un scénario de renouvellement
+                complet en une seule année. Chaque scénario est comparé au budget annuel des écolages
+                (1&nbsp;266&nbsp;470&nbsp;000 FCFA), afin d&apos;éclairer la décision stratégique à prendre.
+              </p>
+            </div>
+          </header>
 
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-french-blue">Scénario 0 – Renouvellement complet en une seule année (60 PC)</h2>
-        <div className="space-y-2 text-base leading-relaxed text-slate-700">
-          <p>
-            <span className="font-semibold">Burotic :</span> 27 508 620 FCFA → ≈2,17 % des écolages.
-          </p>
-          <p>
-            <span className="font-semibold">ARC Informatique :</span> 30 300 000 FCFA → ≈2,39 % des écolages.
-          </p>
-        </div>
-      </section>
-
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-french-blue">Scénario 1 – Budget annuel de 3 000 000 FCFA</h2>
-        <div className="space-y-4 text-base leading-relaxed text-slate-700">
-          <ul className="list-disc space-y-1 pl-5">
-            <li>Burotic : 6 PC/an → 60 PC en 10 ans. Coût annuel : 2 750 862 FCFA (≈0,22 % écolages).</li>
-            <li>ARC Informatique : 5 PC/an → 60 PC en 12 ans. Coût annuel : 2 525 000 FCFA (≈0,20 % écolages).</li>
-          </ul>
-          <div className="overflow-x-auto">
-            <table className="w-full table-auto border-collapse rounded-lg border border-slate-200 bg-white shadow-sm">
-              <thead className="bg-french-blue/10">
-                <tr>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    Année
-                  </th>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    Burotic (6 PC)
-                  </th>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    % écolages
-                  </th>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    ARC (5 PC)
-                  </th>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    % écolages
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className={tableCell}>Tous les ans</td>
-                  <td className={tableCell}>2 750 862 FCFA</td>
-                  <td className={tableCell}>0,22 %</td>
-                  <td className={tableCell}>2 525 000 FCFA</td>
-                  <td className={tableCell}>0,20 %</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-french-blue">Scénario 2 – Budget annuel de 5 000 000 FCFA</h2>
-        <div className="space-y-4 text-base leading-relaxed text-slate-700">
-          <ul className="list-disc space-y-1 pl-5">
-            <li>Burotic : 10 PC/an → 60 PC en 6 ans. Coût annuel : 4 584 770 FCFA (≈0,36 % écolages).</li>
-            <li>
-              ARC Informatique : 9 PC/an pendant 6 ans puis 6 la 7e année → 60 PC en 7 ans. Coût annuel moyen :
-              4 545 000 FCFA (≈0,36 % écolages).
-            </li>
-          </ul>
-          <div className="overflow-x-auto">
-            <table className="w-full table-auto border-collapse rounded-lg border border-slate-200 bg-white shadow-sm">
-              <thead className="bg-french-blue/10">
-                <tr>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    Année
-                  </th>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    Burotic (10 PC)
-                  </th>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    % écolages
-                  </th>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    ARC (9 puis 6 PC)
-                  </th>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    % écolages
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className={tableCell}>Tous les ans</td>
-                  <td className={tableCell}>4 584 770 FCFA</td>
-                  <td className={tableCell}>0,36 %</td>
-                  <td className={tableCell}>4 545 000 FCFA (années 1-6)</td>
-                  <td className={tableCell}>0,36 %</td>
-                </tr>
-                <tr>
-                  <td className={tableCell}>Année 7</td>
-                  <td className={tableCell}>
-                    <span className="text-slate-400">—</span>
-                  </td>
-                  <td className={tableCell}>
-                    <span className="text-slate-400">—</span>
-                  </td>
-                  <td className={tableCell}>3 030 000 FCFA</td>
-                  <td className={tableCell}>0,24 %</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-french-blue">Scénario 3 – Horizon fixe 4 ans (renouvellement complet en 2026-2029)</h2>
-        <div className="space-y-4 text-base leading-relaxed text-slate-700">
-          <ul className="list-disc space-y-1 pl-5">
-            <li>Burotic : 15 PC/an → 60 PC en 4 ans. Budget annuel requis : 6 877 148 FCFA (≈0,54 % écolages).</li>
-            <li>ARC Informatique : 15 PC/an → 60 PC en 4 ans. Budget annuel requis : 7 575 000 FCFA (≈0,60 % écolages).</li>
-          </ul>
-          <div className="overflow-x-auto">
-            <table className="w-full table-auto border-collapse rounded-lg border border-slate-200 bg-white shadow-sm">
-              <thead className="bg-french-blue/10">
-                <tr>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    Année
-                  </th>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    Burotic (15 PC)
-                  </th>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    % écolages
-                  </th>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    ARC (15 PC)
-                  </th>
-                  <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
-                    % écolages
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {[2026, 2027, 2028, 2029].map((annee) => (
-                  <tr key={annee}>
-                    <td className={tableCell}>{annee}</td>
-                    <td className={tableCell}>6 877 148 FCFA</td>
-                    <td className={tableCell}>0,54 %</td>
-                    <td className={tableCell}>7 575 000 FCFA</td>
-                    <td className={tableCell}>0,60 %</td>
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold text-french-blue">
+              Référentiels de coûts (devis du 22 mai 2025, hors onduleurs)
+            </h2>
+            <div className="overflow-x-auto">
+              <table className="w-full table-auto border-collapse rounded-lg border border-slate-200 bg-white shadow-sm">
+                <thead className="bg-french-blue/10">
+                  <tr>
+                    <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
+                      Offre
+                    </th>
+                    <th className="border border-slate-200 px-4 py-2 text-left text-sm font-semibold uppercase tracking-wide text-slate-700">
+                      Montant
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className={tableCell}>Offre Burotic</td>
+                    <td className={tableCell}>458 477 FCFA / PC</td>
+                  </tr>
+                  <tr>
+                    <td className={tableCell}>Offre ARC Informatique</td>
+                    <td className={tableCell}>505 000 FCFA / PC</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
 
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-french-blue">Comparaison graphique</h2>
-        <p className="text-base leading-relaxed text-slate-700">
-          Visualisation des parts d&apos;écolages nécessaires pour chacun des scénarios étudiés avec les
-          devis Burotic et ARC Informatique. Le graphique horizontal permet de comparer immédiatement les
-          ordres de grandeur entre les fournisseurs et d&apos;identifier les scénarios les plus soutenables.
-        </p>
-        <div className="rounded-lg bg-white p-4 shadow-sm md:p-6">
-          <ChartContainer config={scenarioChartConfig} className="h-[420px] w-full">
-            <BarChart data={scenarioChartData} layout="vertical" barCategoryGap={18}>
-              <CartesianGrid strokeDasharray="4 4" vertical={false} />
-              <XAxis
+          <section className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-lg bg-white p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-french-blue">Hypothèses</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Sélectionnez le nombre de PC à renouveler, la durée du plan (en années) et la part du budget
+                des écolages à allouer annuellement.
+              </p>
+            </div>
+            <div className="rounded-lg bg-white p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-french-blue">Budget annuel de référence</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Les simulations comparent l&apos;effort financier à l&apos;enveloppe annuelle des écolages
+                (1&nbsp;266&nbsp;470&nbsp;000 FCFA) afin de valider la faisabilité budgétaire.
+              </p>
+            </div>
+            <div className="rounded-lg bg-white p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-french-blue">Objectif</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Proposer un plan de renouvellement progressif tenant compte des contraintes financières et
+                opérationnelles du lycée.
+              </p>
+            </div>
+          </section>
+
+          <section className="grid gap-6 md:grid-cols-3">
+            <label className="flex flex-col space-y-2 rounded-lg bg-white p-6 shadow-sm">
+              <span className="text-sm font-semibold text-french-blue">Nombre de PC à renouveler</span>
+              <input
                 type="number"
-                domain={[0, 3]}
-                tickFormatter={(value) => formatPercent(value as number)}
-                tickLine={false}
-                axisLine={false}
+                value={nbPc}
+                onChange={(event) => handlePcChange(Number(event.target.value))}
+                min={MIN_PC}
+                max={MAX_PC}
+                className="rounded-md border border-slate-300 px-3 py-2 text-sm focus-visible:border-french-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-french-blue/60"
               />
-              <YAxis type="category" dataKey="scenario" width={180} tickLine={false} axisLine={false} />
-              <ChartTooltip
-                cursor={{ fill: 'hsl(var(--muted))', opacity: 0.25 }}
-                content={
-                  <ChartTooltipContent
-                    className="min-w-[220px]"
+              <span className="text-xs text-slate-500">
+                {`Entre ${MIN_PC} et ${MAX_PC} PC`}
+              </span>
+            </label>
+
+            <label className="flex flex-col space-y-2 rounded-lg bg-white p-6 shadow-sm">
+              <span className="text-sm font-semibold text-french-blue">Durée du plan (années)</span>
+              <input
+                type="number"
+                value={annees}
+                onChange={(event) => handleYearsChange(Number(event.target.value))}
+                min={MIN_YEARS}
+                max={MAX_YEARS}
+                className="rounded-md border border-slate-300 px-3 py-2 text-sm focus-visible:border-french-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-french-blue/60"
+              />
+              <span className="text-xs text-slate-500">{`Entre ${MIN_YEARS} et ${MAX_YEARS} ans`}</span>
+            </label>
+
+            <label className="flex flex-col space-y-2 rounded-lg bg-white p-6 shadow-sm">
+              <span className="text-sm font-semibold text-french-blue">Part des écolages allouée (%)</span>
+              <input
+                type="number"
+                value={partEcolage}
+                onChange={(event) => handleShareChange(Number(event.target.value))}
+                min={MIN_SHARE}
+                max={MAX_SHARE}
+                step="0.1"
+                className="rounded-md border border-slate-300 px-3 py-2 text-sm focus-visible:border-french-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-french-blue/60"
+              />
+              <span className="text-xs text-slate-500">{`Entre ${MIN_SHARE} % et ${MAX_SHARE} %`}</span>
+            </label>
+          </section>
+
+          <section className="grid gap-6 lg:grid-cols-2">
+            <div className="rounded-lg bg-white p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-french-blue">Synthèse budgétaire</h3>
+              <dl className="mt-4 grid grid-cols-2 gap-4 text-sm text-slate-700">
+                <div>
+                  <dt className="font-semibold text-french-blue">Coût total (Burotic)</dt>
+                  <dd>{formatFCFA(simulation.totals.burotic)}</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-french-blue">Coût total (ARC)</dt>
+                  <dd>{formatFCFA(simulation.totals.arc)}</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-french-blue">Coût annuel (Burotic)</dt>
+                  <dd>{formatFCFA(simulation.annual.burotic)}</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-french-blue">Coût annuel (ARC)</dt>
+                  <dd>{formatFCFA(simulation.annual.arc)}</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-french-blue">Part écolages (Burotic)</dt>
+                  <dd>{formatPercent(simulation.percentages.burotic)}</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-french-blue">Part écolages (ARC)</dt>
+                  <dd>{formatPercent(simulation.percentages.arc)}</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-french-blue">Budget disponible</dt>
+                  <dd>{formatFCFA(simulation.availableBudget)}</dd>
+                </div>
+                <div>
+                  <dt className="font-semibold text-french-blue">Machines à déployer/an</dt>
+                  <dd>{simulation.machinesPerYear}</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div className="rounded-lg bg-white p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-french-blue">Capacité de couverture</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Différence entre le budget disponible (part d&apos;écolages sélectionnée) et le coût annuel.
+              </p>
+              <div className="mt-4 grid grid-cols-2 gap-4 text-sm text-slate-700">
+                <div className="rounded-md bg-french-blue/5 p-3">
+                  <p className="font-semibold text-french-blue">Burotic</p>
+                  <p>{formatFCFA(simulation.coverage.burotic)}</p>
+                </div>
+                <div className="rounded-md bg-french-blue/5 p-3">
+                  <p className="font-semibold text-french-blue">ARC Informatique</p>
+                  <p>{formatFCFA(simulation.coverage.arc)}</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="space-y-6">
+            <div className="rounded-lg bg-white p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-french-blue">Visualisation des scénarios</h3>
+              <p className="mt-2 text-sm text-slate-700">
+                Comparaison des quatre scénarios en pourcentage du budget annuel des écolages.
+              </p>
+              <ChartContainer className="mt-6 h-[320px]" config={scenarioChartConfig}>
+                <BarChart data={scenarioChartData}>
+                  <CartesianGrid vertical={false} strokeDasharray="3 3" />
+                  <XAxis dataKey="scenario" tickLine={false} axisLine={false} tickMargin={8} />
+                  <YAxis tickFormatter={percentFormatter.format} axisLine={false} tickLine={false} width={80} />
+                  <ChartTooltip
+                    cursor={{ fill: 'rgba(148, 163, 184, 0.2)' }}
+                    content={<ChartTooltipContent indicator="dot" />}
                     formatter={chartTooltipFormatter}
-                    labelFormatter={(label) => `Part d'écolage – ${label}`}
                   />
-                }
-              />
-              <Bar dataKey="burotic" fill="var(--color-burotic)" radius={4} name="burotic">
-                <LabelList
-                  dataKey="burotic"
-                  position="right"
-                  className="text-xs font-semibold text-slate-700"
-                  formatter={(value: number) => formatPercent(value)}
-                />
-              </Bar>
-              <Bar dataKey="arc" fill="var(--color-arc)" radius={4} name="arc">
-                <LabelList
-                  dataKey="arc"
-                  position="right"
-                  className="text-xs font-semibold text-slate-700"
-                  formatter={(value: number) => formatPercent(value)}
-                />
-              </Bar>
-            </BarChart>
-          </ChartContainer>
-        </div>
-        <p className="text-sm leading-relaxed text-slate-600">
-          Les scénarios 1 à 3 restent inférieurs à 1&nbsp;% des écolages annuels. Le scénario 0, qui vise un
-          renouvellement complet en une année, requiert en revanche plus de 2&nbsp;% du budget annuel
-          d&apos;écolage.
-        </p>
-      </section>
+                  <Bar dataKey="burotic" fill="var(--color-burotic)" radius={[8, 8, 0, 0]}>
+                    <LabelList
+                      dataKey="burotic"
+                      position="top"
+                      formatter={(value: number) => `${percentFormatter.format(value)} %`}
+                      className="fill-slate-700 text-xs"
+                    />
+                  </Bar>
+                  <Bar dataKey="arc" fill="var(--color-arc)" radius={[8, 8, 0, 0]}>
+                    <LabelList
+                      dataKey="arc"
+                      position="top"
+                      formatter={(value: number) => `${percentFormatter.format(value)} %`}
+                      className="fill-slate-700 text-xs"
+                    />
+                  </Bar>
+                </BarChart>
+              </ChartContainer>
+            </div>
 
-      <section className="space-y-6">
-        <div>
-          <h2 className="text-2xl font-semibold text-french-blue">Mini-simulateur</h2>
-          <p className="mt-2 text-base leading-relaxed text-slate-700">
-            Ajustez rapidement les paramètres clés (volume de machines, durée et part d&apos;écolage
-            mobilisable) pour projeter les besoins budgétaires annuels et vérifier si l&apos;enveloppe cible
-            couvre les coûts des devis Burotic et ARC.
-          </p>
+            <div className="rounded-lg bg-white p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-french-blue">Interprétation des scénarios</h3>
+              <ul className="mt-4 space-y-3 text-sm text-slate-700">
+                <li>
+                  <span className="font-semibold text-french-blue">Scénario 0 :</span> renouvellement complet en une seule
+                  année (investissement exceptionnel).
+                </li>
+                <li>
+                  <span className="font-semibold text-french-blue">Scénario 1 :</span> budget annuel de 3 000 000 FCFA alloué
+                  exclusivement au renouvellement.
+                </li>
+                <li>
+                  <span className="font-semibold text-french-blue">Scénario 2 :</span> budget annuel de 5 000 000 FCFA
+                  permettant une montée en charge plus rapide.
+                </li>
+                <li>
+                  <span className="font-semibold text-french-blue">Scénario 3 :</span> planification sur quatre ans pour un
+                  renouvellement intégral.
+                </li>
+              </ul>
+            </div>
+          </section>
         </div>
-        <div className="rounded-lg bg-white p-6 shadow-sm md:p-8">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <label className="flex flex-col gap-2 text-sm font-medium text-slate-900" htmlFor="pc-slider">
-              Nombre total de PC à renouveler
-              <input
-                id="pc-slider"
-                type="range"
-                min={MIN_PC}
-                max={MAX_PC}
-                step={1}
-                value={nbPc}
-                onChange={(event) => handlePcChange(Number(event.target.value))}
-                aria-describedby="pc-slider-value"
-                className="h-3 w-full cursor-pointer rounded-full bg-slate-200 accent-french-blue"
-              />
-              <div id="pc-slider-value" className="text-sm text-slate-600" aria-live="polite">
-                <strong className="text-base text-slate-900">{nbPc} PC</strong> à renouveler.
+      </TabsContent>
+
+      <TabsContent value="video-projecteurs">
+        <div className="space-y-12 px-4 pb-12 pt-6 text-slate-900">
+          <header className="space-y-4 rounded-lg bg-french-blue/5 p-6">
+            <h1 className="text-3xl font-bold text-french-blue">
+              Plan de renouvellement des vidéoprojecteurs (2026-2031)
+            </h1>
+            <div className="space-y-3 text-base leading-relaxed">
+              <p>
+                Les vidéoprojecteurs du Lycée Français Jacques Prévert sont fortement sollicités. Leur durée de vie,
+                comprise entre 6 et 8 ans, est affectée par la chaleur, l&apos;humidité et la poussière du climat sénégalais.
+              </p>
+              <p>
+                Un plan de remplacement progressif sur six ans garantit une qualité de projection homogène dans toutes les
+                classes tout en maîtrisant l&apos;effort budgétaire annuel.
+              </p>
+            </div>
+          </header>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold text-french-blue">Principes directeurs</h2>
+            <div className="rounded-lg bg-white p-6 shadow-sm text-sm text-slate-700">
+              <p>
+                Le plan retenu repose sur un parc cible de <strong>34 vidéoprojecteurs</strong> :
+              </p>
+              <ul className="mt-3 list-disc space-y-2 pl-5">
+                <li>
+                  <strong>32 Epson EB-W51</strong> (WXGA, 4 000 lumens) destinés aux salles de classe.
+                </li>
+                <li>
+                  <strong>2 Epson EB-FH06</strong> (Full HD, 3 500 lumens) pour les besoins spécifiques : bureau du proviseur
+                  et salle polyvalente.
+                </li>
+              </ul>
+              <p className="mt-3">
+                Cette répartition assure une homogénéisation du parc et une réponse adaptée aux usages les plus exigeants.
+              </p>
+            </div>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold text-french-blue">Calendrier de remplacement</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full table-auto border-collapse rounded-lg border border-slate-200 bg-white shadow-sm">
+                <caption className="caption-bottom px-4 py-2 text-sm text-slate-600">
+                  Répartition annuelle du renouvellement des vidéoprojecteurs (2026-2031)
+                </caption>
+                <thead className="bg-french-blue/10">
+                  <tr>
+                    <th className={tableCell}>Année</th>
+                    <th className={tableCell}>Epson EB-W51</th>
+                    <th className={tableCell}>Epson EB-FH06</th>
+                    <th className={tableCell}>Affectation spécifique</th>
+                    <th className={tableCell}>Montant estimé (FCFA)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className={tableCell}>2026</td>
+                    <td className={tableCell}>4</td>
+                    <td className={tableCell}>1</td>
+                    <td className={tableCell}>Bureau du proviseur</td>
+                    <td className={tableCell}>2 230 000</td>
+                  </tr>
+                  <tr>
+                    <td className={tableCell}>2027</td>
+                    <td className={tableCell}>6</td>
+                    <td className={tableCell}>0</td>
+                    <td className={tableCell}>-</td>
+                    <td className={tableCell}>2 520 000</td>
+                  </tr>
+                  <tr>
+                    <td className={tableCell}>2028</td>
+                    <td className={tableCell}>6</td>
+                    <td className={tableCell}>0</td>
+                    <td className={tableCell}>-</td>
+                    <td className={tableCell}>2 520 000</td>
+                  </tr>
+                  <tr>
+                    <td className={tableCell}>2029</td>
+                    <td className={tableCell}>6</td>
+                    <td className={tableCell}>0</td>
+                    <td className={tableCell}>-</td>
+                    <td className={tableCell}>2 520 000</td>
+                  </tr>
+                  <tr>
+                    <td className={tableCell}>2030</td>
+                    <td className={tableCell}>6</td>
+                    <td className={tableCell}>0</td>
+                    <td className={tableCell}>-</td>
+                    <td className={tableCell}>2 520 000</td>
+                  </tr>
+                  <tr>
+                    <td className={tableCell}>2031</td>
+                    <td className={tableCell}>4</td>
+                    <td className={tableCell}>1</td>
+                    <td className={tableCell}>Salle polyvalente</td>
+                    <td className={tableCell}>2 230 000</td>
+                  </tr>
+                  <tr className="bg-french-blue/5 font-semibold">
+                    <td className={tableCell}>Total</td>
+                    <td className={tableCell}>32</td>
+                    <td className={tableCell}>2</td>
+                    <td className={tableCell}>-</td>
+                    <td className={tableCell}>14 540 000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold text-french-blue">Gestion des anciens équipements</h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="rounded-lg bg-white p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-french-blue">Réserve stratégique</h3>
+                <p className="mt-2 text-sm text-slate-700">
+                  Conservation de quelques appareils fonctionnels pour assurer une continuité de service en cas de panne.
+                </p>
               </div>
-            </label>
-            <label className="flex flex-col gap-2 text-sm font-medium text-slate-900" htmlFor="pc-input">
-              Saisie directe (PC)
-              <input
-                id="pc-input"
-                type="number"
-                min={MIN_PC}
-                max={MAX_PC}
-                value={nbPc}
-                onChange={(event) => handlePcChange(Number(event.target.value))}
-                className="min-h-[44px] rounded-lg border border-slate-200 px-3 py-2 text-base text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue"
-              />
-            </label>
-            <label className="flex flex-col gap-2 text-sm font-medium text-slate-900" htmlFor="years-slider">
-              Durée de renouvellement (années)
-              <input
-                id="years-slider"
-                type="range"
-                min={MIN_YEARS}
-                max={MAX_YEARS}
-                step={1}
-                value={annees}
-                onChange={(event) => handleYearsChange(Number(event.target.value))}
-                aria-describedby="years-slider-value"
-                className="h-3 w-full cursor-pointer rounded-full bg-slate-200 accent-french-blue"
-              />
-              <div id="years-slider-value" className="text-sm text-slate-600" aria-live="polite">
-                <strong className="text-base text-slate-900">{annees} ans</strong> (≈ {simulation.machinesPerYear} PC/an).
+              <div className="rounded-lg bg-white p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-french-blue">Flotte mobile</h3>
+                <p className="mt-2 text-sm text-slate-700">
+                  Réaffectation en matériel mobile pour les conférences, événements et projections ponctuelles.
+                </p>
               </div>
-            </label>
-            <label className="flex flex-col gap-2 text-sm font-medium text-slate-900" htmlFor="years-input">
-              Saisie directe (années)
-              <input
-                id="years-input"
-                type="number"
-                min={MIN_YEARS}
-                max={MAX_YEARS}
-                value={annees}
-                onChange={(event) => handleYearsChange(Number(event.target.value))}
-                className="min-h-[44px] rounded-lg border border-slate-200 px-3 py-2 text-base text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue"
-              />
-            </label>
-            <label className="flex flex-col gap-2 text-sm font-medium text-slate-900" htmlFor="share-slider">
-              Part d&apos;écolage mobilisable (%)
-              <input
-                id="share-slider"
-                type="range"
-                min={MIN_SHARE}
-                max={MAX_SHARE}
-                step={0.05}
-                value={partEcolage}
-                onChange={(event) => handleShareChange(Number(event.target.value))}
-                aria-describedby="share-slider-value"
-                className="h-3 w-full cursor-pointer rounded-full bg-slate-200 accent-french-blue"
-              />
-              <div id="share-slider-value" className="text-sm text-slate-600" aria-live="polite">
-                <strong className="text-base text-slate-900">{formatPercent(partEcolage)}</strong> des écolages,
-                soit {formatFCFA(simulation.availableBudget)} par an.
+              <div className="rounded-lg bg-white p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-french-blue">Don ou recyclage</h3>
+                <p className="mt-2 text-sm text-slate-700">
+                  Les matériels en fin de vie seront orientés vers des filières de dons solidaires ou de recyclage responsable.
+                </p>
               </div>
-            </label>
-            <label className="flex flex-col gap-2 text-sm font-medium text-slate-900" htmlFor="share-input">
-              Saisie directe (part d&apos;écolage)
-              <input
-                id="share-input"
-                type="number"
-                min={MIN_SHARE}
-                max={MAX_SHARE}
-                step={0.05}
-                value={partEcolage}
-                onChange={(event) => handleShareChange(Number(event.target.value))}
-                className="min-h-[44px] rounded-lg border border-slate-200 px-3 py-2 text-base text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue"
-              />
-            </label>
-          </div>
+            </div>
+          </section>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2" aria-live="polite">
-            {[{
-              label: 'Offre Burotic',
-              total: simulation.totals.burotic,
-              annual: simulation.annual.burotic,
-              percentage: simulation.percentages.burotic,
-              coverage: simulation.coverage.burotic,
-            }, {
-              label: 'Offre ARC Informatique',
-              total: simulation.totals.arc,
-              annual: simulation.annual.arc,
-              percentage: simulation.percentages.arc,
-              coverage: simulation.coverage.arc,
-            }].map((item) => {
-              const isSurplus = item.coverage >= 0;
-              const coverageAmount = Math.abs(item.coverage);
-              return (
-                <article
-                  key={item.label}
-                  className="flex h-full flex-col gap-4 rounded-xl border border-slate-200 p-5 shadow-sm"
-                >
-                  <header className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-french-blue">{item.label}</h3>
-                    <span
-                      className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${
-                        isSurplus ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'
-                      }`}
-                    >
-                      {isSurplus ? 'Excédent' : 'Déficit'}
-                    </span>
-                  </header>
-                  <dl className="space-y-2 text-sm text-slate-700">
-                    <div className="flex items-center justify-between">
-                      <dt className="font-medium text-slate-900">Coût total sur la période</dt>
-                      <dd>{formatFCFA(item.total)}</dd>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <dt className="font-medium text-slate-900">Coût annuel</dt>
-                      <dd>{formatFCFA(item.annual)}</dd>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <dt className="font-medium text-slate-900">Part des écolages</dt>
-                      <dd>{formatPercent(item.percentage)}</dd>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <dt className="font-medium text-slate-900">Part cible mobilisée</dt>
-                      <dd>{formatFCFA(simulation.availableBudget)}</dd>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <dt className="font-medium text-slate-900">Écart</dt>
-                      <dd>
-                        {coverageAmount === 0
-                          ? 'Équilibre'
-                          : `${isSurplus ? '+' : '–'}${formatFCFA(coverageAmount)}`}
-                      </dd>
-                    </div>
-                  </dl>
-                  <p className="mt-auto text-xs leading-relaxed text-slate-500">
-                    {isSurplus
-                      ? 'La part d’écolage saisie couvre le coût annuel estimé.'
-                      : 'La part d’écolage saisie est insuffisante pour couvrir le coût annuel estimé.'}
-                  </p>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+          <section className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-lg bg-white p-6 text-center shadow-sm">
+              <p className="text-3xl font-bold text-french-blue">14 540 000</p>
+              <p className="mt-2 text-sm text-slate-600">FCFA sur six ans</p>
+            </div>
+            <div className="rounded-lg bg-white p-6 text-center shadow-sm">
+              <p className="text-3xl font-bold text-french-blue">≈ 2 423 000</p>
+              <p className="mt-2 text-sm text-slate-600">FCFA de moyenne annuelle</p>
+            </div>
+            <div className="rounded-lg bg-white p-6 text-center shadow-sm">
+              <p className="text-3xl font-bold text-french-blue">≈ 0,2 %</p>
+              <p className="mt-2 text-sm text-slate-600">des recettes annuelles d&apos;écolages</p>
+            </div>
+          </section>
 
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-french-blue">Synthèse comparative</h2>
-        <div className="space-y-3 text-base leading-relaxed text-slate-700">
-          <p>
-            • Scénario 0 (1 an) : effort unique équivalant à 2,2–2,4 % des écolages, permettant
-            d&apos;obtenir immédiatement un parc homogène.
-          </p>
-          <p>
-            • Scénario 1 (10–12 ans, 3 M) : effort budgétaire annuel très limité (≈0,2 %) mais
-            renouvellement très lent.
-          </p>
-          <p>
-            • Scénario 2 (6–7 ans, 5 M) : équilibre entre soutenabilité (≈0,36 % par an) et rythme de
-            modernisation.
-          </p>
-          <p>
-            • Scénario 3 (4 ans) : effort annuel plus conséquent (≈0,55–0,60 %) mais modernisation
-            rapide.
-          </p>
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold text-french-blue">Conclusion</h2>
+            <div className="rounded-lg bg-soft-purple p-6 text-sm text-slate-800">
+              <p>
+                En lissant les investissements sur six ans, le lycée maintient un parc homogène, réduit les ruptures de service
+                et anticipe l&apos;usure accélérée liée au climat. Ce programme instaure une dynamique de renouvellement continu et
+                prévisible, favorable aux apprentissages et aux usages pédagogiques quotidiens.
+              </p>
+              <p className="mt-3">
+                Au terme du cycle 2031, il sera pertinent de relancer une rotation similaire afin de prolonger la performance du
+                parc installé en 2026.
+              </p>
+            </div>
+          </section>
         </div>
-      </section>
-
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-french-blue">Conclusion</h2>
-        <p className="text-base leading-relaxed text-slate-700">
-          La décision doit concilier la rapidité de modernisation du parc et la soutenabilité
-          financière. Le scénario de renouvellement total en une année permet de disposer immédiatement
-          d&apos;outils homogènes et performants mais mobilise un budget significatif (≈2,3 % des écolages).
-          Les scénarios progressifs lissent l&apos;investissement dans le temps, réduisant l&apos;effort annuel
-          (0,2 % à 0,6 % des écolages) mais laissant coexister des générations de matériel. Le choix
-          dépendra des priorités pédagogiques et stratégiques du LFJP, entre modernisation immédiate ou
-          gestion échelonnée du renouvellement.
-        </p>
-        <div className="rounded-lg border border-dashed border-french-blue/40 bg-french-blue/5 p-6 text-sm leading-relaxed text-slate-700">
-          <h3 className="mb-2 text-base font-semibold text-french-blue">
-            Comparaison des scénarios de renouvellement du parc informatique (en % du budget annuel des écolages)
-          </h3>
-          <ul className="space-y-2">
-            <li>
-              <span className="font-semibold text-french-blue">Scénario 0 :</span> 2,17 % à 2,39 %
-            </li>
-            <li>
-              <span className="font-semibold text-french-blue">Scénario 1 :</span> 0,20 % à 0,22 %
-            </li>
-            <li>
-              <span className="font-semibold text-french-blue">Scénario 2 :</span> 0,24 % à 0,36 %
-            </li>
-            <li>
-              <span className="font-semibold text-french-blue">Scénario 3 :</span> 0,54 % à 0,60 %
-            </li>
-          </ul>
-        </div>
-      </section>
-    </div>
+      </TabsContent>
+    </Tabs>
   );
 };
 
