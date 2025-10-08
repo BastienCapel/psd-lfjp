@@ -1,42 +1,9 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BarChart3, GraduationCap, Hammer, Handshake, Leaf, ListChecks, ShieldCheck, Target, Utensils } from 'lucide-react';
+import { GraduationCap, Hammer, Handshake, Leaf, ShieldCheck, Utensils } from 'lucide-react';
 
 const PSDAxe1 = () => {
-  const summaryCards = [
-    {
-      id: 'details-objectifs',
-      title: 'Objectifs',
-      icon: Target,
-      items: [
-        { icon: '🌱', label: 'Bien-être & accompagnement' },
-        { icon: '🤝', label: 'Climat & coopération' },
-        { icon: '🍽️', label: 'Services durables' }
-      ]
-    },
-    {
-      id: 'details-actions',
-      title: 'Rubriques',
-      icon: ListChecks,
-      items: [
-        { icon: '🏫', label: 'Cadre de vie & infrastructures' },
-        { icon: '🩺', label: 'Cadre scolaire & santé' },
-        { icon: '🤝', label: 'Dialogue & implication' }
-      ]
-    },
-    {
-      id: 'details-indicateurs',
-      title: 'Indicateurs',
-      icon: BarChart3,
-      items: [
-        { icon: '📈', label: '+15 pts satisfaction' },
-        { icon: '🌡️', label: '≥ 80% salles confort' },
-        { icon: '🌿', label: 'Plan annuel E³D' }
-      ]
-    }
-  ];
-
   const objectifs = [
     {
       content: (
@@ -208,37 +175,6 @@ const PSDAxe1 = () => {
       <p className="text-lg font-medium font-raleway text-gray-800 mb-8">
         Renforcer un cadre scolaire propice à l'épanouissement, à l'inclusion et à la cohésion
       </p>
-
-      <section className="grid gap-6 md:grid-cols-3">
-        {summaryCards.map((card) => {
-          const Icon = card.icon;
-
-          return (
-            <article
-              key={card.id}
-              className="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-french-blue/10"
-            >
-              <div className="mb-4 flex items-center gap-3">
-                <span className="rounded-full bg-french-blue/10 p-2 text-french-blue">
-                  <Icon className="h-6 w-6" aria-hidden="true" />
-                </span>
-                <h4 className="text-lg font-semibold text-slate-900">{card.title}</h4>
-              </div>
-              <ul className="grid gap-2">
-                {card.items.map((item) => (
-                  <li
-                    key={item.label}
-                    className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-700"
-                  >
-                    <span aria-hidden="true">{item.icon}</span>
-                    <span>{item.label}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          );
-        })}
-      </section>
 
       <section className="mt-12 space-y-8">
         <div
