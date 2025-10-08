@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BarChart3, GraduationCap, Leaf, ListChecks, ShieldCheck, Target, Utensils } from 'lucide-react';
+import { BarChart3, GraduationCap, Hammer, Handshake, Leaf, ListChecks, ShieldCheck, Target, Utensils } from 'lucide-react';
 
 const PSDAxe1 = () => {
   const summaryCards = [
@@ -85,7 +85,8 @@ const PSDAxe1 = () => {
         {
           content: 'Maintenance stratégique',
           link: '/plan-maintenance-strategique',
-          linkAriaLabel: 'En savoir plus – Maintenance stratégique'
+          linkAriaLabel: 'En savoir plus – Maintenance stratégique',
+          linkIcon: Hammer
         },
         {
           content: 'Politique E³D',
@@ -116,7 +117,8 @@ const PSDAxe1 = () => {
         {
           content: 'Médiation entre pairs',
           link: '/mediation-entre-pairs',
-          linkAriaLabel: 'En savoir plus – Médiation entre pairs'
+          linkAriaLabel: 'En savoir plus – Médiation entre pairs',
+          linkIcon: Handshake
         },
         {
           content: 'Savoir rouler'
@@ -256,8 +258,8 @@ const PSDAxe1 = () => {
           <ul className="space-y-6 font-raleway">
             {actions.map((section, sectionIndex) => (
               <li key={sectionIndex} className="space-y-2">
-                <h5 className="text-base font-semibold text-slate-900">{section.title}</h5>
-                <ul className="space-y-2">
+                <h5 className="text-base font-semibold text-french-blue">{section.title}</h5>
+                <ul className="space-y-2 list-disc list-outside pl-6 marker:text-slate-400">
                   {section.items.map((item, itemIndex) => {
                     if (!item.link) {
                       return (
