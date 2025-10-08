@@ -204,7 +204,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
           className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
         >
           <h4 className="mb-3 text-lg font-semibold text-slate-900">Rubriques détaillées</h4>
-          <ul className="space-y-3 font-raleway">
+          <ul className="space-y-3 font-raleway list-disc list-outside pl-6 marker:text-slate-400">
             {actions.map((item, index) => {
               if (!item.link) {
                 return (
