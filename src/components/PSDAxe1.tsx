@@ -20,10 +20,9 @@ const PSDAxe1 = () => {
       title: 'Rubriques',
       icon: ListChecks,
       items: [
-        { icon: '❄️', label: 'Rafraîchissement durable' },
-        { icon: '🛡️', label: 'Prévention du harcèlement' },
-        { icon: '🗣️', label: 'Participation & expression' },
-        { icon: '🍽️', label: 'Restauration scolaire' }
+        { icon: '🏫', label: 'Cadre de vie & infrastructures' },
+        { icon: '🩺', label: 'Cadre scolaire & santé' },
+        { icon: '🤝', label: 'Dialogue & implication' }
       ]
     },
     {
@@ -72,67 +71,71 @@ const PSDAxe1 = () => {
 
   const actions = [
     {
-      content: (
-        <>
-          <strong>Rafraîchissement durable des salles</strong> :{' '}
-          <strong>plan de climatisation progressive</strong> et solutions écologiques (ombrages, végétalisation, rénovation)
-        </>
-      )
+      title: 'Cadre de vie & infrastructures',
+      items: [
+        {
+          content: 'Climatisation durable'
+        },
+        {
+          content: 'Restauration scolaire',
+          link: '/construction-cantine',
+          linkAriaLabel: 'En savoir plus – Restauration scolaire',
+          linkIcon: Utensils
+        },
+        {
+          content: 'Maintenance stratégique',
+          link: '/plan-maintenance-strategique',
+          linkAriaLabel: 'En savoir plus – Maintenance stratégique'
+        },
+        {
+          content: 'Politique E³D',
+          link: '/politique-e3d',
+          linkAriaLabel: 'En savoir plus – Politique E3D',
+          linkIcon: Leaf
+        },
+        {
+          content: 'Couverture terrain de sport'
+        },
+        {
+          content: 'Transport scolaire'
+        }
+      ]
     },
     {
-      content: (
-        <>
-          <strong>Parcours santé-bien-être</strong> : hygiène, alimentation, activité physique et{' '}
-          <strong>équilibre mental</strong>
-        </>
-      )
+      title: 'Cadre scolaire & santé',
+      items: [
+        {
+          content: 'Parcours Santé'
+        },
+        {
+          content: 'Prévention du harcèlement',
+          link: '/protocole-phare',
+          linkAriaLabel: 'En savoir plus – Prévention du harcèlement',
+          linkIcon: ShieldCheck
+        },
+        {
+          content: 'Médiation entre pairs',
+          link: '/mediation-entre-pairs',
+          linkAriaLabel: 'En savoir plus – Médiation entre pairs'
+        },
+        {
+          content: 'Savoir rouler'
+        },
+        {
+          content: 'Savoir nager'
+        }
+      ]
     },
     {
-      content: (
-        <>
-          <strong>Prévention du harcèlement</strong> : <strong>médiateurs élèves</strong>, pratiques restauratives, programme{' '}
-          <strong>pHARe</strong>
-        </>
-      ),
-      link: '/protocole-phare',
-      linkAriaLabel: 'En savoir plus – Prévention du harcèlement',
-      linkIcon: ShieldCheck
-    },
-    {
-      content: (
-        <>
-          <strong>Expression et participation</strong> : conseils de vie,{' '}
-          <strong>budgets participatifs</strong>, comités mixtes
-        </>
-      )
-    },
-    {
-      content: (
-        <>
-          <strong>Parentalité et coéducation</strong> : rencontres et ateliers pour mieux suivre la scolarité
-        </>
-      )
-    },
-    {
-      content: (
-        <>
-          <strong>Restauration scolaire</strong> : audit, consultation des usagers, mise en œuvre 2026-2027
-        </>
-      ),
-      link: '/construction-cantine',
-      linkAriaLabel: 'En savoir plus – Restauration scolaire',
-      linkIcon: Utensils
-    },
-    {
-      content: (
-        <>
-          Politique <strong>E³D</strong> consolidée : <strong>référents</strong> et <strong>éco-délégués</strong>, comité de
-          pilotage, projets interdisciplinaires, plan d'action annuel aligné <strong>EFE³D</strong>
-        </>
-      ),
-      link: '/politique-e3d',
-      linkAriaLabel: 'En savoir plus – Politique E3D',
-      linkIcon: Leaf
+      title: 'Dialogue & implication',
+      items: [
+        {
+          content: 'Parentalité & coéducation'
+        },
+        {
+          content: 'Expression & participation'
+        }
+      ]
     }
   ];
   
@@ -250,40 +253,47 @@ const PSDAxe1 = () => {
 
         <div id="details-actions" className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <h4 className="mb-3 text-lg font-semibold text-slate-900">Rubriques détaillées</h4>
-          <ul className="space-y-3 font-raleway">
-            {actions.map((item, index) => {
-              if (!item.link) {
-                return (
-                  <li key={index} className="text-gray-700">
-                    {item.content}
-                  </li>
-                );
-              }
+          <ul className="space-y-6 font-raleway">
+            {actions.map((section, sectionIndex) => (
+              <li key={sectionIndex} className="space-y-2">
+                <h5 className="text-base font-semibold text-slate-900">{section.title}</h5>
+                <ul className="space-y-2">
+                  {section.items.map((item, itemIndex) => {
+                    if (!item.link) {
+                      return (
+                        <li key={itemIndex} className="text-gray-700">
+                          {item.content}
+                        </li>
+                      );
+                    }
 
-              const IconComponent = item.linkIcon ?? GraduationCap;
+                    const IconComponent = item.linkIcon ?? GraduationCap;
 
-              return (
-                <li key={index}>
-                  <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
-                    <div className="flex min-w-0 flex-1 items-center gap-3">
-                      <span className="text-gray-700">{item.content}</span>
-                      <span
-                        aria-hidden="true"
-                        className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
-                      />
-                    </div>
-                    <Link
-                      to={item.link}
-                      className="ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center"
-                      aria-label={item.linkAriaLabel ?? 'En savoir plus'}
-                    >
-                      <IconComponent className="h-4 w-4" aria-hidden="true" />
-                      <span>En savoir plus</span>
-                    </Link>
-                  </div>
-                </li>
-              );
-            })}
+                    return (
+                      <li key={itemIndex}>
+                        <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
+                          <div className="flex min-w-0 flex-1 items-center gap-3">
+                            <span className="text-gray-700">{item.content}</span>
+                            <span
+                              aria-hidden="true"
+                              className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
+                            />
+                          </div>
+                          <Link
+                            to={item.link}
+                            className="ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center"
+                            aria-label={item.linkAriaLabel ?? 'En savoir plus'}
+                          >
+                            <IconComponent className="h-4 w-4" aria-hidden="true" />
+                            <span>En savoir plus</span>
+                          </Link>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </li>
+            ))}
           </ul>
         </div>
 
