@@ -1,7 +1,17 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BarChart3, GraduationCap, Leaf, ListChecks, ShieldCheck, Target, Utensils } from 'lucide-react';
+import {
+  BarChart3,
+  GraduationCap,
+  Leaf,
+  ListChecks,
+  ShieldCheck,
+  Target,
+  Users,
+  Utensils,
+  Wrench
+} from 'lucide-react';
 
 const PSDAxe1 = () => {
   const summaryCards = [
@@ -20,10 +30,9 @@ const PSDAxe1 = () => {
       title: 'Rubriques',
       icon: ListChecks,
       items: [
-        { icon: '❄️', label: 'Rafraîchissement durable' },
-        { icon: '🛡️', label: 'Prévention du harcèlement' },
-        { icon: '🗣️', label: 'Participation & expression' },
-        { icon: '🍽️', label: 'Restauration scolaire' }
+        { icon: '🏫', label: 'Cadre de vie & infrastructure' },
+        { icon: '🩺', label: 'Cadre scolaire & santé' },
+        { icon: '🤝', label: 'Dialogue & implication' }
       ]
     },
     {
@@ -70,69 +79,135 @@ const PSDAxe1 = () => {
     }
   ];
 
-  const actions = [
+  const rubriques = [
     {
-      content: (
-        <>
-          <strong>Rafraîchissement durable des salles</strong> :{' '}
-          <strong>plan de climatisation progressive</strong> et solutions écologiques (ombrages, végétalisation, rénovation)
-        </>
-      )
+      title: 'Cadre de vie & infrastructure',
+      items: [
+        {
+          content: (
+            <>
+              <strong>Climatisation durable</strong> : plan de rafraîchissement progressif et solutions écologiques (ombrages,
+              végétalisation, rénovation)
+            </>
+          )
+        },
+        {
+          content: (
+            <>
+              <strong>Restauration scolaire</strong> : audit, consultation des usagers, mise en œuvre 2026-2027
+            </>
+          ),
+          link: '/construction-cantine',
+          linkAriaLabel: 'En savoir plus – Restauration scolaire',
+          linkIcon: Utensils
+        },
+        {
+          content: (
+            <>
+              <strong>Maintenance stratégique</strong> : plan pluriannuel de maintenance, priorisation des investissements et
+              suivi des équipements critiques
+            </>
+          ),
+          link: 'https://psd-lfjp.netlify.app/plan-maintenance-strategique',
+          linkAriaLabel: 'En savoir plus – Plan de maintenance stratégique',
+          linkIcon: Wrench,
+          external: true
+        },
+        {
+          content: (
+            <>
+              Politique <strong>E³D</strong> consolidée : <strong>référents</strong> et <strong>éco-délégués</strong>, comité de
+              pilotage, projets interdisciplinaires, plan d'action annuel aligné <strong>EFE³D</strong>
+            </>
+          ),
+          link: '/politique-e3d',
+          linkAriaLabel: 'En savoir plus – Politique E3D',
+          linkIcon: Leaf
+        },
+        {
+          content: (
+            <>
+              <strong>Couverture terrain de sport</strong> : structure d’ombrage et confort thermique pour les pratiques
+              sportives
+            </>
+          )
+        },
+        {
+          content: (
+            <>
+              <strong>Transport scolaire</strong> : optimisation des circuits, sécurité des trajets et offre complémentaire de
+              mobilité
+            </>
+          )
+        }
+      ]
     },
     {
-      content: (
-        <>
-          <strong>Parcours santé-bien-être</strong> : hygiène, alimentation, activité physique et{' '}
-          <strong>équilibre mental</strong>
-        </>
-      )
+      title: 'Cadre scolaire & santé',
+      items: [
+        {
+          content: (
+            <>
+              <strong>Parcours Santé</strong> : hygiène, alimentation, activité physique et <strong>équilibre mental</strong>
+            </>
+          )
+        },
+        {
+          content: (
+            <>
+              <strong>Prévention du harcèlement</strong> : <strong>médiateurs élèves</strong>, pratiques restauratives, programme{' '}
+              <strong>pHARe</strong>
+            </>
+          ),
+          link: '/protocole-phare',
+          linkAriaLabel: 'En savoir plus – Prévention du harcèlement',
+          linkIcon: ShieldCheck
+        },
+        {
+          content: (
+            <>
+              <strong>Médiation entre pairs</strong> : formation d’élèves médiateurs et résolution collaborative des conflits
+            </>
+          ),
+          link: 'https://psd-lfjp.netlify.app/mediation-entre-pairs',
+          linkAriaLabel: 'En savoir plus – Médiation entre pairs',
+          linkIcon: Users,
+          external: true
+        },
+        {
+          content: (
+            <>
+              <strong>Savoir rouler</strong> : généralisation du dispositif mobilité vélo du cycle 3 au lycée
+            </>
+          )
+        },
+        {
+          content: (
+            <>
+              <strong>Savoir nager</strong> : parcours sécurisé pour l’aisance aquatique et la prévention des risques
+            </>
+          )
+        }
+      ]
     },
     {
-      content: (
-        <>
-          <strong>Prévention du harcèlement</strong> : <strong>médiateurs élèves</strong>, pratiques restauratives, programme{' '}
-          <strong>pHARe</strong>
-        </>
-      ),
-      link: '/protocole-phare',
-      linkAriaLabel: 'En savoir plus – Prévention du harcèlement',
-      linkIcon: ShieldCheck
-    },
-    {
-      content: (
-        <>
-          <strong>Expression et participation</strong> : conseils de vie,{' '}
-          <strong>budgets participatifs</strong>, comités mixtes
-        </>
-      )
-    },
-    {
-      content: (
-        <>
-          <strong>Parentalité et coéducation</strong> : rencontres et ateliers pour mieux suivre la scolarité
-        </>
-      )
-    },
-    {
-      content: (
-        <>
-          <strong>Restauration scolaire</strong> : audit, consultation des usagers, mise en œuvre 2026-2027
-        </>
-      ),
-      link: '/construction-cantine',
-      linkAriaLabel: 'En savoir plus – Restauration scolaire',
-      linkIcon: Utensils
-    },
-    {
-      content: (
-        <>
-          Politique <strong>E³D</strong> consolidée : <strong>référents</strong> et <strong>éco-délégués</strong>, comité de
-          pilotage, projets interdisciplinaires, plan d'action annuel aligné <strong>EFE³D</strong>
-        </>
-      ),
-      link: '/politique-e3d',
-      linkAriaLabel: 'En savoir plus – Politique E3D',
-      linkIcon: Leaf
+      title: 'Dialogue & implication',
+      items: [
+        {
+          content: (
+            <>
+              <strong>Parentalité & coéducation</strong> : rencontres et ateliers pour mieux suivre la scolarité
+            </>
+          )
+        },
+        {
+          content: (
+            <>
+              <strong>Expression & participation</strong> : conseils de vie, <strong>budgets participatifs</strong>, comités mixtes
+            </>
+          )
+        }
+      ]
     }
   ];
   
@@ -249,42 +324,75 @@ const PSDAxe1 = () => {
         </div>
 
         <div id="details-actions" className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h4 className="mb-3 text-lg font-semibold text-slate-900">Rubriques détaillées</h4>
-          <ul className="space-y-3 font-raleway">
-            {actions.map((item, index) => {
-              if (!item.link) {
-                return (
-                  <li key={index} className="text-gray-700">
-                    {item.content}
-                  </li>
-                );
-              }
+          <h4 className="mb-4 text-lg font-semibold text-slate-900">Rubriques détaillées</h4>
+          <div className="space-y-6 font-raleway">
+            {rubriques.map((rubrique) => (
+              <section key={rubrique.title} className="space-y-3">
+                <h5 className="text-base font-semibold text-french-blue">{rubrique.title}</h5>
+                <ul className="space-y-3">
+                  {rubrique.items.map((item, index) => {
+                    if (!item.link) {
+                      return (
+                        <li key={index} className="text-gray-700">
+                          {item.content}
+                        </li>
+                      );
+                    }
 
-              const IconComponent = item.linkIcon ?? GraduationCap;
+                    const IconComponent = item.linkIcon ?? GraduationCap;
 
-              return (
-                <li key={index}>
-                  <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
-                    <div className="flex min-w-0 flex-1 items-center gap-3">
-                      <span className="text-gray-700">{item.content}</span>
-                      <span
-                        aria-hidden="true"
-                        className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
-                      />
-                    </div>
-                    <Link
-                      to={item.link}
-                      className="ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center"
-                      aria-label={item.linkAriaLabel ?? 'En savoir plus'}
-                    >
-                      <IconComponent className="h-4 w-4" aria-hidden="true" />
-                      <span>En savoir plus</span>
-                    </Link>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+                    if (item.external) {
+                      return (
+                        <li key={index}>
+                          <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
+                            <div className="flex min-w-0 flex-1 items-center gap-3">
+                              <span className="text-gray-700">{item.content}</span>
+                              <span
+                                aria-hidden="true"
+                                className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
+                              />
+                            </div>
+                            <a
+                              href={item.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center"
+                              aria-label={item.linkAriaLabel ?? 'En savoir plus'}
+                            >
+                              <IconComponent className="h-4 w-4" aria-hidden="true" />
+                              <span>En savoir plus</span>
+                            </a>
+                          </div>
+                        </li>
+                      );
+                    }
+
+                    return (
+                      <li key={index}>
+                        <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
+                          <div className="flex min-w-0 flex-1 items-center gap-3">
+                            <span className="text-gray-700">{item.content}</span>
+                            <span
+                              aria-hidden="true"
+                              className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
+                            />
+                          </div>
+                          <Link
+                            to={item.link}
+                            className="ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center"
+                            aria-label={item.linkAriaLabel ?? 'En savoir plus'}
+                          >
+                            <IconComponent className="h-4 w-4" aria-hidden="true" />
+                            <span>En savoir plus</span>
+                          </Link>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
+            ))}
+          </div>
         </div>
 
         <div
