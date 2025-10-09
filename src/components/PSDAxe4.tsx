@@ -49,55 +49,88 @@ const PSDAxe4 = () => {
     }
   ];
   
-  const actions = [
+  const actionSections = [
     {
-      content: (
-        <>
-          <strong>Curriculum vertical « Soft Skills & Éloquence »</strong>
-        </>
-      ),
-      link: '/curriculum-soft-skills',
-      linkAriaLabel: 'Découvrir le curriculum Soft Skills & Éloquence',
-      linkIcon: Sparkles,
+      title: 'Personnaliser les parcours',
+      items: [
+        {
+          content: "Implication des familles",
+        },
+        {
+          content: <strong>Parcours Avenir</strong>,
+          link: '/parcours-avenir',
+          linkAriaLabel: 'Découvrir la page Parcours Avenir',
+          linkIcon: Compass,
+        },
+        {
+          content: "Forum des métiers, témoignages inspirants",
+        },
+        {
+          content: <strong>Parcours de la Réussite citoyenne</strong>,
+          link: '/plan-strategique/reussite-citoyenne',
+          linkAriaLabel: 'Découvrir le parcours Réussite citoyenne',
+          linkIcon: Medal,
+        },
+        {
+          content: <strong>Éducation financière et à la vie autonome</strong>,
+          link: '/education-financiere-vie-autonome',
+          linkAriaLabel: "En savoir plus sur l'éducation financière et la vie autonome",
+          linkIcon: PiggyBank,
+        },
+      ],
     },
     {
-      content: (
-        <>
-          <strong>Valorisation de l'erreur et de la persévérance</strong>
-        </>
-      ),
-      link: '/valorisation-erreur-perseverance',
-      linkAriaLabel:
-        "Découvrir la feuille de route du programme Valorisation de l'erreur et de la persévérance",
-      linkIcon: RefreshCcw,
+      title: 'Exigence académique et approche d\'évaluation pour valoriser tous les talents',
+      items: [
+        {
+          content: "Niveau d'excellence, réussite aux examens",
+        },
+        {
+          content: (
+            <>
+              <strong>Compétences psychosociales et humaines</strong> (soft skills)
+            </>
+          ),
+          link: '/curriculum-soft-skills',
+          linkAriaLabel: 'Découvrir le curriculum Soft Skills & Éloquence',
+          linkIcon: Sparkles,
+        },
+        {
+          content: "Autonomie, persévérance",
+        },
+        {
+          content: (
+            <>
+              <strong>Confiance et savoir rebondir</strong>
+            </>
+          ),
+          link: '/valorisation-erreur-perseverance',
+          linkAriaLabel:
+            "Découvrir la feuille de route du programme Valorisation de l'erreur et de la persévérance",
+          linkIcon: RefreshCcw,
+        },
+      ],
     },
     {
-      content: <strong>Parcours de la Réussite citoyenne</strong>,
-      link: '/plan-strategique/reussite-citoyenne',
-      linkAriaLabel: 'Découvrir le parcours Réussite citoyenne',
-      linkIcon: Medal,
-    },
-    {
-      content: <strong>Éducation financière et à la vie autonome</strong>,
-      link: '/education-financiere-vie-autonome',
-      linkAriaLabel: "En savoir plus sur l'éducation financière et la vie autonome",
-      linkIcon: PiggyBank,
-    },
-    {
-      content: (
-        <>
-          <strong>Réseau d'alumni et mentorat</strong>
-        </>
-      ),
-      link: '/reseau-alumni-mentorat',
-      linkAriaLabel: "Découvrir le projet Réseau d'alumni et mentorat",
-      linkIcon: UsersRound,
-    },
-    {
-      content: <strong>Parcours Avenir</strong>,
-      link: '/parcours-avenir',
-      linkAriaLabel: 'Découvrir la page Parcours Avenir',
-      linkIcon: Compass,
+      title: 'Ouverture sur les possibles et célébrations',
+      items: [
+        {
+          content: (
+            <>
+              <strong>Réseau des anciens élèves (alumni)</strong>
+            </>
+          ),
+          link: '/reseau-alumni-mentorat',
+          linkAriaLabel: "Découvrir le projet Réseau d'alumni et mentorat",
+          linkIcon: UsersRound,
+        },
+        {
+          content: "Toutes les formes de réussite",
+        },
+        {
+          content: "Célébration des réussites et des diplômes",
+        },
+      ],
     },
   ];
   
@@ -155,7 +188,7 @@ const PSDAxe4 = () => {
       title="AXE 4 – FAÇONNER LES RÉUSSITES"
       subtitle="Accompagner chaque élève dans son développement personnel, scolaire et citoyen, pour une réussite complète, durable et équilibrée"
       objectifs={objectifs}
-      actions={actions}
+      actionSections={actionSections}
       indicators={indicators}
     />
   );

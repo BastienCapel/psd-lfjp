@@ -18,6 +18,11 @@ interface IndicatorItem {
   content: React.ReactNode;
 }
 
+interface ActionSection {
+  title: string;
+  items: ActionItem[];
+}
+
 interface SummaryObjectiveItem {
   icon: string;
   label: string;
@@ -48,7 +53,8 @@ interface PSDAxeLayoutProps {
   subtitle: string;
   summary?: SummaryData;
   objectifs: ObjectifItem[];
-  actions: ActionItem[];
+  actions?: ActionItem[];
+  actionSections?: ActionSection[];
   indicators: IndicatorItem[];
 }
 
@@ -59,6 +65,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
   summary,
   objectifs,
   actions,
+  actionSections,
   indicators
 }) => {
   const sectionId = axeId ? `axe-${axeId}` : undefined;
@@ -199,48 +206,100 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
           </ul>
         </div>
 
-        <div
-          id={sectionId ? `${sectionId}-actions` : undefined}
-          className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
-        >
-          <h4 className="mb-3 text-lg font-semibold text-slate-900">Rubriques détaillées</h4>
-          <ul className="space-y-3 font-raleway list-disc list-outside pl-6 marker:text-slate-400">
-            {actions.map((item, index) => {
-              if (!item.link) {
+        {(actionSections?.length ?? 0) > 0 ? (
+          <div
+            id={sectionId ? `${sectionId}-actions` : undefined}
+            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+          >
+            <h4 className="mb-3 text-lg font-semibold text-slate-900">Rubriques détaillées</h4>
+            <ul className="space-y-6 font-raleway">
+              {actionSections!.map((section, sectionIndex) => (
+                <li key={sectionIndex} className="space-y-2">
+                  <h5 className="text-base font-semibold text-french-blue">{section.title}</h5>
+                  <ul className="space-y-2 list-disc list-outside pl-6 marker:text-slate-400">
+                    {section.items.map((item, itemIndex) => {
+                      if (!item.link) {
+                        return (
+                          <li key={itemIndex} className="text-gray-700">
+                            {item.content}
+                          </li>
+                        );
+                      }
+
+                      const LinkIcon = item.linkIcon ?? GraduationCap;
+                      const ariaLabel = item.linkAriaLabel ?? 'En savoir plus';
+
+                      return (
+                        <li key={itemIndex}>
+                          <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
+                            <div className="flex min-w-0 flex-1 items-center gap-3">
+                              <span className="text-gray-700">{item.content}</span>
+                              <span
+                                aria-hidden="true"
+                                className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
+                              />
+                            </div>
+                            <Link
+                              to={item.link}
+                              className="ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center"
+                              aria-label={ariaLabel}
+                            >
+                              <LinkIcon className="h-4 w-4" aria-hidden="true" />
+                              <span>En savoir plus</span>
+                            </Link>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (actions?.length ?? 0) > 0 ? (
+          <div
+            id={sectionId ? `${sectionId}-actions` : undefined}
+            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+          >
+            <h4 className="mb-3 text-lg font-semibold text-slate-900">Rubriques détaillées</h4>
+            <ul className="space-y-3 font-raleway list-disc list-outside pl-6 marker:text-slate-400">
+              {actions!.map((item, index) => {
+                if (!item.link) {
+                  return (
+                    <li key={index} className="text-gray-700">
+                      {item.content}
+                    </li>
+                  );
+                }
+
+                const LinkIcon = item.linkIcon ?? GraduationCap;
+                const ariaLabel = item.linkAriaLabel ?? 'En savoir plus';
+
                 return (
-                  <li key={index} className="text-gray-700">
-                    {item.content}
+                  <li key={index}>
+                    <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
+                      <div className="flex min-w-0 flex-1 items-center gap-3">
+                        <span className="text-gray-700">{item.content}</span>
+                        <span
+                          aria-hidden="true"
+                          className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
+                        />
+                      </div>
+                      <Link
+                        to={item.link}
+                        className="ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center"
+                        aria-label={ariaLabel}
+                      >
+                        <LinkIcon className="h-4 w-4" aria-hidden="true" />
+                        <span>En savoir plus</span>
+                      </Link>
+                    </div>
                   </li>
                 );
-              }
-
-              const LinkIcon = item.linkIcon ?? GraduationCap;
-              const ariaLabel = item.linkAriaLabel ?? 'En savoir plus';
-
-              return (
-                <li key={index}>
-                  <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
-                    <div className="flex min-w-0 flex-1 items-center gap-3">
-                      <span className="text-gray-700">{item.content}</span>
-                      <span
-                        aria-hidden="true"
-                        className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
-                      />
-                    </div>
-                    <Link
-                      to={item.link}
-                      className="ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center"
-                      aria-label={ariaLabel}
-                    >
-                      <LinkIcon className="h-4 w-4" aria-hidden="true" />
-                      <span>En savoir plus</span>
-                    </Link>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+              })}
+            </ul>
+          </div>
+        ) : null}
 
         <div
           id={sectionId ? `${sectionId}-indicateurs` : undefined}
