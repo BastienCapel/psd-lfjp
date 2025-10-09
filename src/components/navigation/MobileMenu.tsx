@@ -61,6 +61,14 @@ const MobileMenu = ({ id, mobileMenuOpen, setMobileMenuOpen, isActive }: MobileM
           Plan Stratégique
         </MobileNavItem>
 
+        <MobileNavItem
+          to="/parcours-avenir"
+          isActive={isActive('/parcours-avenir')}
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          Parcours Avenir
+        </MobileNavItem>
+
       </div>
     </div>
   );
