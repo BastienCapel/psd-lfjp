@@ -20,6 +20,22 @@
     "name": "Parcours Avenir",
     "parent": "/plan-strategique/axe-4"
   },
+  "/film-annuel/3e": {
+    "name": "Film annuel 3e",
+    "parent": "/parcours-avenir"
+  },
+  "/film-annuel/2nde": {
+    "name": "Film annuel 2nde",
+    "parent": "/parcours-avenir"
+  },
+  "/film-annuel/1ere": {
+    "name": "Film annuel 1ère",
+    "parent": "/parcours-avenir"
+  },
+  "/film-annuel/terminale": {
+    "name": "Film annuel Terminale",
+    "parent": "/parcours-avenir"
+  },
   "/section-internationale-bfi": {
     "name": "Section Internationale et BFI",
     "parent": "/plan-strategique"

@@ -26,6 +26,7 @@ import PlanStrategiqueAxe4 from "./pages/PlanStrategiqueAxe4";
 import EducationFinanciereVieAutonome from "./pages/EducationFinanciereVieAutonome";
 import ReseauAlumniMentorat from "./pages/ReseauAlumniMentorat";
 import ParcoursAvenir from "./pages/ParcoursAvenir";
+import FilmAnnuelLevel from "./pages/film-annuel/FilmAnnuelLevel";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -105,6 +106,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ParcoursAvenir />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/film-annuel/:niveau" element={
+                  <>
+                    <BreadcrumbNav />
+                    <FilmAnnuelLevel />
                     <BackToTop />
                   </>
                 } />
