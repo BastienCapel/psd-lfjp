@@ -1,62 +1,8 @@
 import React from 'react';
-import {
-  CalendarHeart,
-  Globe2,
-  Handshake,
-  Languages,
-  Plane,
-  Sprout,
-} from 'lucide-react';
+import { Globe2, Handshake, Sprout } from 'lucide-react';
 import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe2 = () => {
-  const summary = {
-    objectives: [
-      { icon: '🗣️', label: 'Plurilinguisme valorisé' },
-      { icon: '🌍', label: 'Ouverture internationale' },
-      { icon: '🤝', label: 'Dialogue interculturel' },
-    ],
-    actions: [
-      {
-        label: 'Plan Section internationale & BFI',
-        icon: Globe2,
-        iconClassName: 'text-emerald-600',
-        link: '/section-internationale-bfi',
-        linkAriaLabel: 'En savoir plus – Section internationale et BFI',
-      },
-      {
-        label: 'Voyages et jumelages',
-        icon: Plane,
-        iconClassName: 'text-sky-600',
-      },
-      {
-        label: 'Semaine des cultures',
-        icon: CalendarHeart,
-        iconClassName: 'text-amber-600',
-      },
-      {
-        label: 'Médiation interculturelle',
-        icon: Handshake,
-        iconClassName: 'text-rose-600',
-      },
-      {
-        label: 'Familles & langues du LFJP',
-        icon: Languages,
-        iconClassName: 'text-indigo-600',
-      },
-      {
-        label: 'Partenariats E³D',
-        icon: Sprout,
-        iconClassName: 'text-emerald-700',
-      },
-    ],
-    indicators: [
-      { label: 'Sections & certifications actives', value: 'SI & BFI 2026-2033' },
-      { label: 'Partenariats locaux et internationaux', value: '≥ 5 actifs' },
-      { label: 'Événements interculturels', value: 'Semaine annuelle' },
-    ],
-  };
-
   const objectifs = [
     {
       content: (
@@ -179,7 +125,6 @@ const PSDAxe2 = () => {
       axeId={2}
       title="AXE 2 – PLURILINGUISME, MULTICULTURALITÉ, OUVERTURE INTERNATIONALE ET LOCALE"
       subtitle="Cultiver la diversité linguistique et culturelle comme levier d'apprentissage et d'ouverture au monde"
-      summary={summary}
       objectifs={objectifs}
       actions={actions}
       indicators={indicators}
