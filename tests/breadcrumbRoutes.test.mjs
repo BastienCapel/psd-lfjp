@@ -13,6 +13,7 @@ const expectedRoutes = {
   '/vision-missions-valeurs': { parent: '/' },
   '/diagnostic': { parent: '/' },
   '/plan-strategique': { parent: '/' },
+  '/plan-maintenance-strategique': { parent: '/plan-strategique' },
   '/curriculum-soft-skills': { parent: '/plan-strategique' },
   '/parcours-avenir': { parent: '/plan-strategique/axe-4' },
   '/section-internationale-bfi': { parent: '/plan-strategique' },

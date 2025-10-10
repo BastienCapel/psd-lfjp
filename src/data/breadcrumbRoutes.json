@@ -12,6 +12,10 @@
     "name": "Plan Stratégique",
     "parent": "/"
   },
+  "/plan-maintenance-strategique": {
+    "name": "Plan de Maintenance Stratégique",
+    "parent": "/plan-strategique"
+  },
   "/curriculum-soft-skills": {
     "name": "Curriculum Soft Skills & Éloquence",
     "parent": "/plan-strategique"
