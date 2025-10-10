@@ -1,15 +1,14 @@
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Target, Users, Sparkles, GraduationCap, LayoutDashboard } from 'lucide-react';
+import { Target, Users, Sparkles, GraduationCap } from 'lucide-react';
 import PSDAxe1 from './PSDAxe1';
 import PSDAxe2 from './PSDAxe2';
 import PSDAxe3 from './PSDAxe3';
 import PSDAxe4 from './PSDAxe4';
-import PSDAxeTransversal from './PSDAxeTransversal';
 import { useLocation, useSearchParams } from 'react-router-dom';
 
-const AXE_VALUES = ['axe1', 'axe2', 'axe3', 'axe4', 'axe5'] as const;
+const AXE_VALUES = ['axe1', 'axe2', 'axe3', 'axe4'] as const;
 type AxeValue = (typeof AXE_VALUES)[number];
 
 const isValidAxe = (value: string | null | undefined): value is AxeValue =>
@@ -83,7 +82,7 @@ const PSDTabs = () => {
       <TabsList className="flex flex-wrap justify-center gap-2 mb-8 h-auto w-full">
         <TabsTrigger
           value="axe1"
-          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/5 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
+          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/4 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
           <Target className="mb-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
           <div className="mt-1 flex flex-col items-center gap-0.5 text-center">
@@ -93,7 +92,7 @@ const PSDTabs = () => {
         </TabsTrigger>
         <TabsTrigger
           value="axe2"
-          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/5 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
+          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/4 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
           <Users className="mb-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
           <div className="mt-1 flex flex-col items-center gap-0.5 text-center">
@@ -103,7 +102,7 @@ const PSDTabs = () => {
         </TabsTrigger>
         <TabsTrigger
           value="axe3"
-          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/5 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
+          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/4 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
           <Sparkles className="mb-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
           <div className="mt-1 flex flex-col items-center gap-0.5 text-center">
@@ -113,21 +112,12 @@ const PSDTabs = () => {
         </TabsTrigger>
         <TabsTrigger
           value="axe4"
-          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/5 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
+          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/4 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
           <GraduationCap className="mb-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
           <div className="mt-1 flex flex-col items-center gap-0.5 text-center">
             <span className="block text-xs sm:text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Axe 4</span>
             <span className="text-xs text-muted-foreground">Réussite</span>
-          </div>
-        </TabsTrigger>
-        <TabsTrigger
-          value="axe5"
-          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/5 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
-        >
-          <LayoutDashboard className="mb-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
-          <div className="mt-1 flex flex-col items-center gap-0.5 text-center">
-            <span className="block text-xs sm:text-sm md:text-lg transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]">Transversal</span>
           </div>
         </TabsTrigger>
       </TabsList>
@@ -146,10 +136,6 @@ const PSDTabs = () => {
       
       <TabsContent value="axe4" className="border-2 border-french-blue/10 rounded-lg p-6 bg-white">
         <PSDAxe4 />
-      </TabsContent>
-
-      <TabsContent value="axe5" className="border-2 border-french-blue/10 rounded-lg p-6 bg-white">
-        <PSDAxeTransversal />
       </TabsContent>
       
     </Tabs>
