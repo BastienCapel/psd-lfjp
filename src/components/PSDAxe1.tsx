@@ -44,19 +44,19 @@ const PSDAxe1 = () => {
           content: 'Climatisation durable'
         },
         {
-          content: 'Restauration scolaire',
+          content: <strong>Restauration scolaire</strong>,
           link: '/construction-cantine',
           linkAriaLabel: 'En savoir plus – Restauration scolaire',
           linkIcon: Utensils
         },
         {
-          content: 'Maintenance stratégique',
+          content: <strong>Maintenance stratégique</strong>,
           link: '/plan-maintenance-strategique',
           linkAriaLabel: 'En savoir plus – Maintenance stratégique',
           linkIcon: Hammer
         },
         {
-          content: 'Politique E³D',
+          content: <strong>Politique E³D</strong>,
           link: '/politique-e3d',
           linkAriaLabel: 'En savoir plus – Politique E3D',
           linkIcon: Leaf
@@ -76,13 +76,13 @@ const PSDAxe1 = () => {
           content: 'Parcours Santé'
         },
         {
-          content: 'Prévention du harcèlement',
+          content: <strong>Prévention du harcèlement</strong>,
           link: '/protocole-phare',
           linkAriaLabel: 'En savoir plus – Prévention du harcèlement',
           linkIcon: ShieldCheck
         },
         {
-          content: 'Médiation entre pairs',
+          content: <strong>Médiation entre pairs</strong>,
           link: '/mediation-entre-pairs',
           linkAriaLabel: 'En savoir plus – Médiation entre pairs',
           linkIcon: Handshake
