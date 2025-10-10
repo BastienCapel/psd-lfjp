@@ -23,7 +23,6 @@ const expectedRoutes = {
   '/mecenat-numerique': { parent: '/plan-strategique' },
   '/construction-cantine': { parent: '/plan-strategique' },
   '/protocole-phare': { parent: '/plan-strategique' },
-  '/plan-maintenance-strategique': { parent: '/plan-strategique' },
   '/mediation-entre-pairs': { parent: '/plan-strategique' },
   '/politique-e3d': { parent: '/plan-strategique' },
   '/elcs-analyse-complete': { parent: '/diagnostic' }

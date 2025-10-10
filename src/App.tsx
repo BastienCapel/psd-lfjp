@@ -16,7 +16,6 @@ import ProtocolePHARE from "./pages/ProtocolePHARE";
 import ElcsAnalyseComplete from "./pages/ElcsAnalyseComplete";
 import CurriculumSoftSkills from "./pages/CurriculumSoftSkills";
 import SectionInternationaleBFI from "./pages/SectionInternationaleBFI";
-import PlanMaintenanceStrategique from "./pages/PlanMaintenanceStrategique";
 import MediationEntrePairs from "./pages/MediationEntrePairs";
 import PolitiqueE3D from "./pages/PolitiqueE3D";
 import MecenatNumerique from "./pages/MecenatNumerique";
@@ -151,13 +150,6 @@ const App = () => {
                     <BackToTop />
                   </>
                  } />
-                <Route path="/plan-maintenance-strategique" element={
-                  <>
-                    <BreadcrumbNav />
-                    <PlanMaintenanceStrategique />
-                    <BackToTop />
-                  </>
-                } />
                 <Route path="/valorisation-erreur-perseverance" element={
                   <>
                     <BreadcrumbNav />
