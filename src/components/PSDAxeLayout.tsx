@@ -233,7 +233,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
                         <li key={itemIndex}>
                           <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
                             <div className="flex min-w-0 flex-1 items-center gap-3">
-                              <span className="text-gray-700">{item.content}</span>
+                              <span className="text-gray-700 font-semibold">{item.content}</span>
                               <span
                                 aria-hidden="true"
                                 className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
@@ -279,7 +279,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
                   <li key={index}>
                     <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
                       <div className="flex min-w-0 flex-1 items-center gap-3">
-                        <span className="text-gray-700">{item.content}</span>
+                        <span className="text-gray-700 font-semibold">{item.content}</span>
                         <span
                           aria-hidden="true"
                           className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
