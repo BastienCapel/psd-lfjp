@@ -79,10 +79,10 @@ const PSDTabs = () => {
 
   return (
     <Tabs value={activeAxe} onValueChange={handleTabChange} className="w-full">
-      <TabsList className="flex flex-wrap justify-center gap-2 mb-8 h-auto w-full">
+      <TabsList className="flex flex-wrap md:flex-nowrap justify-center gap-2 mb-8 h-auto w-full">
         <TabsTrigger
           value="axe1"
-          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/4 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
+          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/4 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
           <Target className="mb-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
           <div className="mt-1 flex flex-col items-center gap-0.5 text-center">
@@ -92,7 +92,7 @@ const PSDTabs = () => {
         </TabsTrigger>
         <TabsTrigger
           value="axe2"
-          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/4 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
+          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/4 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
           <Users className="mb-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
           <div className="mt-1 flex flex-col items-center gap-0.5 text-center">
@@ -102,7 +102,7 @@ const PSDTabs = () => {
         </TabsTrigger>
         <TabsTrigger
           value="axe3"
-          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/4 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
+          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/4 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
           <Sparkles className="mb-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
           <div className="mt-1 flex flex-col items-center gap-0.5 text-center">
@@ -112,7 +112,7 @@ const PSDTabs = () => {
         </TabsTrigger>
         <TabsTrigger
           value="axe4"
-          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 lg:basis-1/4 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
+          className="group flex flex-col items-center justify-center basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/4 px-3 py-3 text-center text-[#333333] transition duration-200 data-[state=active]:text-[#005BAC]"
         >
           <GraduationCap className="mb-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-8 lg:w-8 transition duration-200 group-hover:scale-[1.15] group-hover:text-[#005BAC]" />
           <div className="mt-1 flex flex-col items-center gap-0.5 text-center">
