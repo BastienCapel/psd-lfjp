@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import VisionMissionsValeurs from "./pages/VisionMissionsValeurs";
 import Diagnostic from "./pages/Diagnostic";
 import PlanStrategique from "./pages/PlanStrategique";
+import PlanMaintenanceStrategique from "./pages/PlanMaintenanceStrategique";
 import PCParLyceen from "./pages/PCParLyceen";
 import ConstructionCantine from "./pages/ConstructionCantine";
 import ProtocolePHARE from "./pages/ProtocolePHARE";
@@ -77,6 +78,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <PlanStrategique />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/plan-maintenance-strategique" element={
+                  <>
+                    <BreadcrumbNav />
+                    <PlanMaintenanceStrategique />
                     <BackToTop />
                   </>
                 } />

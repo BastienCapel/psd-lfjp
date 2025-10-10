@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Handshake, Leaf, ShieldCheck, Utensils } from 'lucide-react';
+import { GraduationCap, Hammer, Handshake, Leaf, ShieldCheck, Utensils } from 'lucide-react';
 
 const PSDAxe1 = () => {
   const objectifs = [
@@ -48,6 +48,12 @@ const PSDAxe1 = () => {
           link: '/construction-cantine',
           linkAriaLabel: 'En savoir plus – Restauration scolaire',
           linkIcon: Utensils
+        },
+        {
+          content: 'Maintenance stratégique',
+          link: '/plan-maintenance-strategique',
+          linkAriaLabel: 'En savoir plus – Maintenance stratégique',
+          linkIcon: Hammer
         },
         {
           content: 'Politique E³D',
