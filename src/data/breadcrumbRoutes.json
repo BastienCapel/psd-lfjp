@@ -68,10 +68,6 @@
     "name": "Protocole PHARE",
     "parent": "/plan-strategique"
   },
-  "/plan-maintenance-strategique": {
-    "name": "Plan de Maintenance Stratégique",
-    "parent": "/plan-strategique"
-  },
   "/mediation-entre-pairs": {
     "name": "Médiation entre pairs",
     "parent": "/plan-strategique"
