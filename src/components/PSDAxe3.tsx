@@ -31,7 +31,11 @@ const PSDAxe3 = () => {
           content: <>Plan de renouvellement pluriannuel du matériel informatique</>
         },
         {
-          content: <>Plan 1 PC par lycéen</>,
+          content: (
+            <>
+              <strong>Plan 1 PC par lycéen</strong>
+            </>
+          ),
           link: '/pc-par-lyceen',
           linkAriaLabel: 'En savoir plus – Un PC par lycéen',
           linkIcon: Laptop
@@ -71,7 +75,11 @@ const PSDAxe3 = () => {
           content: <>Laboratoire numérique</>
         },
         {
-          content: <>Mécénat numérique</>,
+          content: (
+            <>
+              <strong>Mécénat numérique</strong>
+            </>
+          ),
           link: '/mecenat-numerique',
           linkAriaLabel: 'Consulter la fiche-action Mécénat numérique',
           linkIcon: HandCoins
