@@ -20,88 +20,63 @@ const PSDAxe3 = () => {
     }
   ];
   
-  const actions = [
+  const actionSections = [
     {
-      content: (
-        <>
-          Élaboration d'un <strong>curriculum numérique spiralaire</strong> de l'élémentaire à la terminale intégrant le{' '}
-          <strong>référentiel PIX</strong> (<em>cycle 3 à terminale</em>)
-        </>
-      )
+      title: 'Infrastructures et équipements',
+      items: [
+        {
+          content: <>La classe numérique</>
+        },
+        {
+          content: <>Plan de renouvellement pluriannuel du matériel informatique</>
+        },
+        {
+          content: <>Plan 1 PC par lycéen</>,
+          link: '/pc-par-lyceen',
+          linkAriaLabel: 'En savoir plus – Un PC par lycéen',
+          linkIcon: Laptop
+        }
+      ]
     },
     {
-      content: (
-        <>
-          Introduction progressive du <strong>code</strong> dès le cycle 2, avec consolidation au collège et projets concrets{' '}
-          (<em>robotique, applications, jeux éducatifs</em>)
-        </>
-      )
+      title: 'Pédagogie et compétences',
+      items: [
+        {
+          content: <>Curriculum numérique spiralaire</>
+        },
+        {
+          content: <>Introduction au code</>
+        },
+        {
+          content: <>Module IA</>
+        },
+        {
+          content: <>Éducation au numérique citoyen</>
+        },
+        {
+          content: <>Sorties pédagogiques</>
+        }
+      ]
     },
     {
-      content: (
-        <>
-          Mise en place d'un <strong>module IA</strong> au lycée : « <em>comprendre pour maîtriser</em> » (<em>inspiré du guide
-          IA de l'Éducation nationale</em>)
-        </>
-      )
-    },
-    {
-      content: (
-        <>
-          Déploiement d'une <strong>éducation au numérique citoyen</strong> (<em>fake news, cyberharcèlement, comportements en
-          ligne, empreinte numérique</em>)
-        </>
-      )
-    },
-    {
-      content: (
-        <>
-          Création d'un <strong>laboratoire numérique</strong> avec des <strong>projets concrets annuels</strong> portés par les
-          élèves (<em>ex : site écoresponsable, app solidaire…</em>)
-        </>
-      )
-    },
-    {
-      content: (
-        <>
-          Intégration d'<strong>intervenants extérieurs</strong> (<em>volontaires internationaux, partenaires tech, artistes
-          numériques…</em>)
-        </>
-      )
-    },
-    {
-      content: (
-        <>Élaboration du plan « <strong>Un PC par lycéen</strong> »</>
-      ),
-      link: '/pc-par-lyceen',
-      linkAriaLabel: 'En savoir plus – Un PC par lycéen',
-      linkIcon: Laptop
-    },
-    {
-      content: <><strong>Amélioration de la connectivité</strong> sur l'ensemble du site</>
-    },
-    {
-      content: (
-        <>Mise en place d'un <strong>plan de renouvellement</strong> pluriannuel du matériel informatique</>
-      )
-    },
-    {
-      content: (
-        <>
-          Organisation de <strong>sorties pédagogiques</strong> et immersions dans des{' '}
-          <strong>structures technologiques de référence au Sénégal</strong> (<em>ou à distance</em>)
-        </>
-      )
-    },
-    {
-      content: (
-        <>
-          <strong>Fonds de mécénat numérique</strong> pour l'équipement et la formation
-        </>
-      ),
-      link: '/mecenat-numerique',
-      linkAriaLabel: 'Consulter la fiche-action Mécénat numérique',
-      linkIcon: HandCoins
+      title: 'Établissement digitalisé et partenariats',
+      items: [
+        {
+          content: <>Connectivité 2.0</>
+        },
+        {
+          content: <>Profil digital du LFJP</>
+        },
+        {
+          content: <>Laboratoire numérique</>
+        },
+        {
+          content: <>Mécénat numérique</>,
+          link: '/mecenat-numerique',
+          linkAriaLabel: 'Consulter la fiche-action Mécénat numérique',
+          linkIcon: HandCoins
+        }
+      ]
     }
   ];
   
@@ -144,7 +119,7 @@ const PSDAxe3 = () => {
       title="AXE 3 – DIGITAL, NUMÉRIQUE, INNOVATION TECHNOLOGIQUE"
       subtitle="Cultiver la sensibilité, la créativité, la citoyenneté et l'agilité numérique"
       objectifs={objectifs}
-      actions={actions}
+      actionSections={actionSections}
       indicators={indicators}
     />
   );
