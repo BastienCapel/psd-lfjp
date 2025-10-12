@@ -25,27 +25,13 @@ const PSDAxe3 = () => {
       title: 'Infrastructures et équipements',
       items: [
         {
-          content: (
-            <>
-              Déploiement de la <strong>classe numérique</strong> : équipements mobiles, écrans interactifs et solutions de{' '}
-              <strong>captation pédagogique</strong> pour chaque cycle
-            </>
-          )
+          content: <>La classe numérique</>
         },
         {
-          content: (
-            <>
-              Plan de <strong>renouvellement pluriannuel</strong> du matériel informatique (audit annuel, priorisation et budget
-              progressif)
-            </>
-          )
+          content: <>Plan de renouvellement pluriannuel du matériel informatique</>
         },
         {
-          content: (
-            <>
-              Plan « <strong>Un PC par lycéen</strong> »
-            </>
-          ),
+          content: <>Plan 1 PC par lycéen</>,
           link: '/pc-par-lyceen',
           linkAriaLabel: 'En savoir plus – Un PC par lycéen',
           linkIcon: Laptop
@@ -56,44 +42,19 @@ const PSDAxe3 = () => {
       title: 'Pédagogie et compétences',
       items: [
         {
-          content: (
-            <>
-              Élaboration d'un <strong>curriculum numérique spiralaire</strong> de l'élémentaire à la terminale intégrant le{' '}
-              <strong>référentiel PIX</strong> (<em>cycle 3 à terminale</em>)
-            </>
-          )
+          content: <>Curriculum numérique spiralaire</>
         },
         {
-          content: (
-            <>
-              Introduction progressive du <strong>code</strong> dès le cycle 2, avec consolidation au collège et projets
-              concrets (<em>robotique, applications, jeux éducatifs</em>)
-            </>
-          )
+          content: <>Introduction au code</>
         },
         {
-          content: (
-            <>
-              Mise en place d'un <strong>module IA</strong> au lycée : « <em>comprendre pour maîtriser</em> » (<em>inspiré du
-              guide IA de l'Éducation nationale</em>)
-            </>
-          )
+          content: <>Module IA</>
         },
         {
-          content: (
-            <>
-              Déploiement d'une <strong>éducation au numérique citoyen</strong> (<em>fake news, cyberharcèlement, comportements
-              en ligne, empreinte numérique</em>)
-            </>
-          )
+          content: <>Éducation au numérique citoyen</>
         },
         {
-          content: (
-            <>
-              Organisation de <strong>sorties pédagogiques</strong> et immersions dans des{' '}
-              <strong>structures technologiques de référence au Sénégal</strong> (<em>ou à distance</em>)
-            </>
-          )
+          content: <>Sorties pédagogiques</>
         }
       ]
     },
@@ -101,35 +62,16 @@ const PSDAxe3 = () => {
       title: 'Établissement digitalisé et partenariats',
       items: [
         {
-          content: (
-            <>
-              <strong>Connectivité 2.0</strong> : amélioration de la couverture WiFi, sécurisation des réseaux et maintenance
-              proactive
-            </>
-          )
+          content: <>Connectivité 2.0</>
         },
         {
-          content: (
-            <>
-              <strong>Profil digital du LFJP</strong> : charte d'usages, identité numérique et mobilisation d'<em>ambassadeurs</em>
-              et <strong>intervenants extérieurs</strong>
-            </>
-          )
+          content: <>Profil digital du LFJP</>
         },
         {
-          content: (
-            <>
-              Création d'un <strong>laboratoire numérique</strong> avec des <strong>projets concrets annuels</strong> portés par
-              les élèves (<em>ex : site écoresponsable, app solidaire…</em>)
-            </>
-          )
+          content: <>Laboratoire numérique</>
         },
         {
-          content: (
-            <>
-              <strong>Fonds de mécénat numérique</strong> pour l'équipement et la formation
-            </>
-          ),
+          content: <>Mécénat numérique</>,
           link: '/mecenat-numerique',
           linkAriaLabel: 'Consulter la fiche-action Mécénat numérique',
           linkIcon: HandCoins
