@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ArrowLeft, Home } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BackToTop from '../components/BackToTop';
+import { Button } from '../components/ui/button';
 
 const PAGE_TITLE = 'Section Internationale Américaine – Rentrée 2026 | PSD LFJP';
 
@@ -55,6 +58,8 @@ const axesStrategiques = [
 ];
 
 const SectionInternationaleBFI: React.FC = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = PAGE_TITLE;
   }, []);
@@ -75,6 +80,17 @@ const SectionInternationaleBFI: React.FC = () => {
             </p>
           </div>
         </section>
+
+        <div className="container mx-auto flex gap-2 px-6 py-4">
+          <Button variant="outline" onClick={() => navigate(-1)}>
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Retour
+          </Button>
+          <Button variant="outline" onClick={() => navigate('/')}>
+            <Home className="mr-2 h-4 w-4" />
+            Accueil
+          </Button>
+        </div>
 
         <section className="-mt-10 pb-8 md:pb-12">
           <div className="container mx-auto px-6">
