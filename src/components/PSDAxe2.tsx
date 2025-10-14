@@ -37,7 +37,11 @@ const PSDAxe2 = () => {
       title: 'Pédagogie des langues',
       items: [
         {
-          content: <span>SI primaire</span>,
+          content: (
+            <span>
+              <strong>SI primaire</strong>
+            </span>
+          ),
           link: 'https://psd-lfjp.netlify.app/section-internationale-bfi',
           linkAriaLabel: 'Découvrir la section internationale primaire',
           linkIcon: Globe2,
@@ -51,25 +55,23 @@ const PSDAxe2 = () => {
         {
           content: <span>Familles et langues du LFJP</span>,
         },
-        {
-          content: <span>…</span>,
-        },
       ],
     },
     {
       title: 'Éducation interculturelle',
       items: [
         {
-          content: <span>Médiation interculturelle</span>,
+          content: (
+            <span>
+              <strong>Médiation interculturelle</strong>
+            </span>
+          ),
           link: 'https://psd-lfjp.netlify.app/mediation-entre-pairs',
           linkAriaLabel: 'Découvrir la médiation interculturelle',
           linkIcon: Handshake,
         },
         {
           content: <span>Semaine des cultures</span>,
-        },
-        {
-          content: <span>…</span>,
         },
       ],
     },
@@ -82,12 +84,12 @@ const PSDAxe2 = () => {
         {
           content: (
             <span>
-              Jumelages, partages, projets collaboratifs… locaux et internationaux
+              Jumelages, partages, projets collaboratifs locaux et internationaux
             </span>
           ),
         },
         {
-          content: <span>Échanges scolaires ADN AEFE…</span>,
+          content: <span>Échanges scolaires ADN AEFE</span>,
         },
       ],
     },
