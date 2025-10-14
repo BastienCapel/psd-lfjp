@@ -37,7 +37,7 @@ const resourceLinks = [
   },
   {
     title: 'Ressources nationales',
-    href: 'https://www.education.gouv.fr/le-parcours-avenir-7484',
+    href: 'https://eduscol.education.fr/794/orientation',
     description: 'Le portail du ministère de l\'Éducation nationale pour comprendre les étapes du Parcours Avenir.',
   },
 ];
