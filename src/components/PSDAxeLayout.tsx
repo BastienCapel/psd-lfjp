@@ -50,7 +50,7 @@ interface SummaryData {
 interface PSDAxeLayoutProps {
   axeId?: number;
   title: string;
-  subtitle: string;
+  subtitle: React.ReactNode;
   summary?: SummaryData;
   objectifs: ObjectifItem[];
   actions?: ActionItem[];
@@ -76,9 +76,15 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
         <h3 className="text-xl font-playfair font-bold text-french-blue md:text-2xl">
           {title}
         </h3>
-        <p className="text-lg font-medium font-raleway text-gray-800">
-          {subtitle}
-        </p>
+        {typeof subtitle === 'string' ? (
+          <p className="text-lg font-medium font-raleway text-gray-800">
+            {subtitle}
+          </p>
+        ) : (
+          <div className="text-lg font-raleway text-gray-800 space-y-4 [&>p]:font-normal [&>p]:leading-relaxed [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:text-base [&>ul]:text-gray-700 [&>ul>li]:marker:text-french-blue">
+            {subtitle}
+          </div>
+        )}
       </header>
 
       {summary && (

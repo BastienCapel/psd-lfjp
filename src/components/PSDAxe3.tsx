@@ -123,9 +123,32 @@ const PSDAxe3 = () => {
   ];
 
   return (
-    <PSDAxeLayout 
+    <PSDAxeLayout
       title="AXE 3 – DIGITAL, NUMÉRIQUE, INNOVATION TECHNOLOGIQUE"
-      subtitle="Cultiver la sensibilité, la créativité, la citoyenneté et l'agilité numérique"
+      subtitle={
+        <>
+          <p>
+            Dans le cadre de la consultation menée sur l’axe 3 du projet ZAO (Communication, numérique et attractivité), 30
+            établissements de la Zone Afrique de l’Ouest ont répondu au formulaire d’enquête.
+          </p>
+          <p>
+            Parmi eux, 17 établissements appartiennent au bassin Sénégal–Gambie, soit 57 % de l’échantillon total.
+          </p>
+          <p>
+            Cette représentativité confère au bassin un poids significatif dans les résultats zonaux, tout en permettant une
+            lecture différenciée entre tendances globales de la ZAO et réalités spécifiques du bassin.
+          </p>
+          <p>
+            L’analyse comparative qui suit met ainsi en évidence les convergences et les écarts entre ces deux niveaux
+            territoriaux, à travers trois thématiques principales :
+          </p>
+          <ul>
+            <li>L’organisation des Journées Portes Ouvertes (JPO)</li>
+            <li>La structuration des réseaux d’alumni</li>
+            <li>La diffusion du livret d’accueil des personnels</li>
+          </ul>
+        </>
+      }
       objectifs={objectifs}
       actionSections={actionSections}
       indicators={indicators}
