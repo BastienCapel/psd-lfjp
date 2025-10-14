@@ -33,13 +33,13 @@ const timeline = [
 ];
 
 const pedagogie = [
-  'Apprentissage par projets mobilisant les arts, les sciences, le sport, l\'environnement, le numérique et le théâtre.',
-  'Méthode EMILE (enseignement d\'une matière intégrée à une langue étrangère) pour lier contenus disciplinaires et pratique de l\'anglais.',
-  'Évaluation continue des compétences linguistiques et interculturelles, favorisant l\'autonomie et la confiance des élèves.',
+  'Apprentissage par projets mobilisant les arts, les sciences, le sport, l’environnement, le numérique et le théâtre.',
+  'Méthode EMILE (enseignement d’une matière intégrée à une langue étrangère) pour lier contenus disciplinaires et pratique de l’anglais.',
+  'Évaluation continue des compétences linguistiques et interculturelles, favorisant l’autonomie et la confiance des élèves.',
 ];
 
 const partenariats = [
-  'Ambassade des États-Unis et services culturels pour l\'expertise pédagogique et l\'animation culturelle.',
+  'Ambassade des États-Unis et services culturels pour l’expertise pédagogique et l’animation culturelle.',
   'British Council et écoles internationales de Dakar pour le partage de ressources et la formation continue.',
   'NBA Academy, ONG locales et acteurs économiques de Saly pour des projets ancrés dans le territoire et ouverts sur le monde.',
 ];
@@ -76,7 +76,7 @@ const SectionInternationaleBFI: React.FC = () => {
               Ouverture de la Section Internationale Américaine
             </h1>
             <p className="mt-6 max-w-3xl text-base text-white/80 md:text-lg">
-              Le Lycée Français Jacques Prévert de Saly ouvre un parcours bilingue et interculturel accessible à tous les élèves du primaire, première étape d\'un continuum jusqu\'au Baccalauréat Français International – section américaine.
+              Le Lycée Français Jacques Prévert de Saly ouvre un parcours bilingue et interculturel accessible à tous les élèves du primaire, première étape d’un continuum jusqu’au Baccalauréat Français International – section américaine.
             </p>
           </div>
         </section>
@@ -105,13 +105,13 @@ const SectionInternationaleBFI: React.FC = () => {
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-wide text-blue-900">Accessibilité</p>
                   <p className="mt-2 text-base text-slate-700">
-                    La SIA est proposée sans surcoût pour les familles, dans une logique d\'inclusion et d\'égalité des chances.
+                    La SIA est proposée sans surcoût pour les familles, dans une logique d’inclusion et d’égalité des chances.
                   </p>
                 </div>
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-wide text-blue-900">Ambition</p>
                   <p className="mt-2 text-base text-slate-700">
-                    Construire un environnement bilingue d\'excellence au service du rayonnement de l\'enseignement français en Afrique de l\'Ouest.
+                    Construire un environnement bilingue d’excellence au service du rayonnement de l’enseignement français en Afrique de l’Ouest.
                   </p>
                 </div>
               </div>
@@ -126,7 +126,7 @@ const SectionInternationaleBFI: React.FC = () => {
                 Un parcours bilingue progressif et structuré
               </h2>
               <p className="mt-4 text-base text-slate-700">
-                La Section Internationale Américaine accompagne chaque élève dans le développement de compétences linguistiques, culturelles et académiques solides. Elle s\'inscrit dans un continuum qui sécurise les apprentissages de l\'école primaire au Baccalauréat Français International.
+                La Section Internationale Américaine accompagne chaque élève dans le développement de compétences linguistiques, culturelles et académiques solides. Elle s’inscrit dans un continuum qui sécurise les apprentissages de l’école primaire au Baccalauréat Français International.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
@@ -150,7 +150,7 @@ const SectionInternationaleBFI: React.FC = () => {
                   Une pédagogie immersive et inclusive
                 </h2>
                 <p className="mt-4 text-base text-slate-700">
-                  Les enseignements conjuguent maîtrise de la langue et ouverture culturelle. Les élèves bénéficient d\'intervenants anglophones expérimentés, d\'une différenciation adaptée à tous les profils et d\'outils numériques favorisant l\'engagement.
+                  Les enseignements conjuguent maîtrise de la langue et ouverture culturelle. Les élèves bénéficient d’intervenants anglophones expérimentés, d’une différenciation adaptée à tous les profils et d’outils numériques favorisant l’engagement.
                 </p>
                 <ul className="mt-6 space-y-3">
                   {pedagogie.map((item) => (
@@ -164,10 +164,10 @@ const SectionInternationaleBFI: React.FC = () => {
               <div className="rounded-3xl bg-blue-50 p-8 text-blue-900">
                 <h3 className="text-xl font-playfair font-bold">Un environnement international stimulant</h3>
                 <p className="mt-4 text-base text-blue-900/80">
-                  Saly accueille un écosystème dynamique d\'entreprises, d\'ONG et de familles anglophones. Cet environnement offre des opportunités d\'immersion, de stages d\'observation et de projets citoyens qui donnent du sens aux apprentissages.
+                  Saly accueille un écosystème dynamique d’entreprises, d’ONG et de familles anglophones. Cet environnement offre des opportunités d’immersion, de stages d’observation et de projets citoyens qui donnent du sens aux apprentissages.
                 </p>
                 <p className="mt-4 text-base text-blue-900/80">
-                  Le LFJP s\'appuie sur une équipe pédagogique déjà formée et sur des partenaires solides pour accompagner la montée en puissance du dispositif.
+                  Le LFJP s’appuie sur une équipe pédagogique déjà formée et sur des partenaires solides pour accompagner la montée en puissance du dispositif.
                 </p>
               </div>
             </div>
@@ -180,7 +180,7 @@ const SectionInternationaleBFI: React.FC = () => {
               <div className="rounded-3xl border border-blue-100 bg-white p-8 shadow-sm">
                 <h2 className="text-2xl font-playfair font-bold text-french-blue md:text-3xl">Des partenariats stratégiques</h2>
                 <p className="mt-4 text-base text-slate-700">
-                  Le réseau partenarial soutient les actions pédagogiques, l\'équipement des classes et l\'organisation de projets interculturels.
+                  Le réseau partenarial soutient les actions pédagogiques, l’équipement des classes et l’organisation de projets interculturels.
                 </p>
                 <ul className="mt-6 space-y-3">
                   {partenariats.map((item) => (
@@ -194,7 +194,7 @@ const SectionInternationaleBFI: React.FC = () => {
               <div className="rounded-3xl border border-blue-100 bg-white p-8 shadow-sm">
                 <h2 className="text-2xl font-playfair font-bold text-french-blue md:text-3xl">Un projet aligné sur le PSD 2026-2030</h2>
                 <p className="mt-4 text-base text-slate-700">
-                  L\'ouverture de la SIA concrétise les ambitions du Plan Stratégique de Développement et renforce le rôle du LFJP comme pôle éducatif de référence en Afrique de l\'Ouest.
+                  L’ouverture de la SIA concrétise les ambitions du Plan Stratégique de Développement et renforce le rôle du LFJP comme pôle éducatif de référence en Afrique de l’Ouest.
                 </p>
                 <div className="mt-6 space-y-4">
                   {axesStrategiques.map((axe) => (
@@ -217,16 +217,16 @@ const SectionInternationaleBFI: React.FC = () => {
                   Accompagner chaque élève et chaque famille
                 </h2>
                 <p className="mt-4 text-base text-slate-700">
-                  Le LFJP propose un parcours de suivi individualisé, des ateliers pour les familles et des rencontres régulières afin d\'assurer une communication transparente et de co-construire les étapes clés du projet bilingue.
+                  Le LFJP propose un parcours de suivi individualisé, des ateliers pour les familles et des rencontres régulières afin d’assurer une communication transparente et de co-construire les étapes clés du projet bilingue.
                 </p>
                 <p className="mt-4 text-base text-slate-700">
-                  Des évaluations diagnostiques, des dispositifs de remédiation et un accompagnement méthodologique permettent de répondre aux besoins spécifiques tout en maintenant un haut niveau d\'exigence.
+                  Des évaluations diagnostiques, des dispositifs de remédiation et un accompagnement méthodologique permettent de répondre aux besoins spécifiques tout en maintenant un haut niveau d’exigence.
                 </p>
               </div>
               <div className="rounded-3xl bg-gradient-to-br from-blue-700 to-blue-900 p-8 text-white">
                 <h3 className="text-xl font-playfair font-bold">Un projet collectif</h3>
                 <p className="mt-4 text-sm text-white/80 md:text-base">
-                  La Section Internationale Américaine fédère l\'ensemble de la communauté éducative : enseignants, personnels, élèves, familles et partenaires institutionnels. Elle participe pleinement au rayonnement de l\'enseignement français et à la diplomatie éducative dans la région.
+                  La Section Internationale Américaine fédère l’ensemble de la communauté éducative : enseignants, personnels, élèves, familles et partenaires institutionnels. Elle participe pleinement au rayonnement de l’enseignement français et à la diplomatie éducative dans la région.
                 </p>
               </div>
             </div>
