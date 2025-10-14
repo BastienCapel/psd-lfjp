@@ -42,7 +42,7 @@ const PSDAxe2 = () => {
               <strong>SI primaire</strong>
             </span>
           ),
-          link: 'https://psd-lfjp.netlify.app/section-internationale-bfi',
+          link: '/section-internationale-bfi',
           linkAriaLabel: 'Découvrir la section internationale primaire',
           linkIcon: Globe2,
         },
