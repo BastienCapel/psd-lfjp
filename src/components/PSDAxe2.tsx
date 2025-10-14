@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe2, Handshake, Sprout } from 'lucide-react';
+import { Globe2, Handshake } from 'lucide-react';
 import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe2 = () => {
@@ -32,63 +32,64 @@ const PSDAxe2 = () => {
     },
   ];
 
-  const actions = [
+  const actionSections = [
     {
-      content: (
-        <>
-          <strong>Déploiement du plan « Section Internationale et BFI »</strong> (2026-2028).
-        </>
-      ),
-      link: '/section-internationale-bfi',
-      linkAriaLabel: 'En savoir plus – Section internationale et BFI',
-      linkIcon: Globe2,
+      title: 'Pédagogie des langues',
+      items: [
+        {
+          content: <span>SI primaire</span>,
+          link: 'https://psd-lfjp.netlify.app/section-internationale-bfi',
+          linkAriaLabel: 'Découvrir la section internationale primaire',
+          linkIcon: Globe2,
+        },
+        {
+          content: <span>DNBi</span>,
+        },
+        {
+          content: <span>BFI</span>,
+        },
+        {
+          content: <span>Familles et langues du LFJP</span>,
+        },
+        {
+          content: <span>…</span>,
+        },
+      ],
     },
     {
-      content: (
-        <>
-          <strong>Ouverture internationale</strong> :
-          <br />• Développer les <strong>voyages scolaires thématiques</strong> (culturels, scientifiques, sportifs) en tant que
-          leviers pédagogiques d'ouverture au monde.
-          <br />• Explorer les <strong>jumelages avec d'autres lycées français</strong> de l'étranger et les partenariats{' '}
-          <strong>Erasmus+/AEFE</strong>.
-        </>
-      ),
+      title: 'Éducation interculturelle',
+      items: [
+        {
+          content: <span>Médiation interculturelle</span>,
+          link: 'https://psd-lfjp.netlify.app/mediation-entre-pairs',
+          linkAriaLabel: 'Découvrir la médiation interculturelle',
+          linkIcon: Handshake,
+        },
+        {
+          content: <span>Semaine des cultures</span>,
+        },
+        {
+          content: <span>…</span>,
+        },
+      ],
     },
     {
-      content: (
-        <>
-          <strong>Ouverture locale</strong> :
-          <br />• Renforcer les <strong>coopérations avec les écoles et établissements voisins</strong> (activités conjointes,
-          projets citoyens, actions artistiques et sportives).
-          <br />• Organiser une « <strong>Semaine des cultures</strong> » annuelle, durant laquelle les élèves présentent leurs
-          langues, traditions et patrimoines culturels.
-        </>
-      ),
-    },
-    {
-      content: (
-        <>
-          <strong>Vie scolaire et climat interculturel</strong> :
-          <br />• Favoriser la <strong>médiation et la prévention</strong> des incompréhensions interculturelles.
-          <br />• Intégrer les <strong>langues et cultures des familles</strong> dans la vie de l'établissement (journées
-          thématiques, interventions de parents).
-        </>
-      ),
-      link: '/mediation-entre-pairs',
-      linkAriaLabel: 'Découvrir la médiation entre pairs',
-      linkIcon: Handshake,
-    },
-    {
-      content: (
-        <>
-          <strong>Politique E3D</strong> avec maintien des{' '}
-          <strong>17 objectifs de développement durable</strong>, demande de <strong>labellisation niveau 3</strong>, et
-          présence d'<strong>éco-délégués</strong>.
-        </>
-      ),
-      link: '/politique-e3d',
-      linkAriaLabel: 'En savoir plus – Politique E3D',
-      linkIcon: Sprout,
+      title: 'Ouverture internationale et locale',
+      items: [
+        {
+          content: <span>Voyages scolaires internationaux et séjours locaux</span>,
+        },
+        {
+          content: (
+            <span>
+              Jumelages, partages, projets collaboratifs… locaux et internationaux
+            </span>
+          ),
+        },
+        {
+          content: <span>Échanges scolaires ADN AEFE…</span>,
+        },
+      ],
     },
   ];
 
@@ -126,7 +127,7 @@ const PSDAxe2 = () => {
       title="AXE 2 – PLURILINGUISME, MULTICULTURALITÉ, OUVERTURE INTERNATIONALE ET LOCALE"
       subtitle="Cultiver la diversité linguistique et culturelle comme levier d'apprentissage et d'ouverture au monde"
       objectifs={objectifs}
-      actions={actions}
+      actionSections={actionSections}
       indicators={indicators}
     />
   );

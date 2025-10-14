@@ -228,6 +228,15 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
 
                       const LinkIcon = item.linkIcon ?? GraduationCap;
                       const ariaLabel = item.linkAriaLabel ?? 'En savoir plus';
+                      const isExternal = item.link.startsWith('http');
+                      const linkClassName =
+                        'ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center';
+                      const linkContent = (
+                        <>
+                          <LinkIcon className="h-4 w-4" aria-hidden="true" />
+                          <span>En savoir plus</span>
+                        </>
+                      );
 
                       return (
                         <li key={itemIndex}>
@@ -239,14 +248,21 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
                                 className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
                               />
                             </div>
-                            <Link
-                              to={item.link}
-                              className="ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center"
-                              aria-label={ariaLabel}
-                            >
-                              <LinkIcon className="h-4 w-4" aria-hidden="true" />
-                              <span>En savoir plus</span>
-                            </Link>
+                            {isExternal ? (
+                              <a
+                                href={item.link}
+                                className={linkClassName}
+                                aria-label={ariaLabel}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                              >
+                                {linkContent}
+                              </a>
+                            ) : (
+                              <Link to={item.link} className={linkClassName} aria-label={ariaLabel}>
+                                {linkContent}
+                              </Link>
+                            )}
                           </div>
                         </li>
                       );
@@ -274,6 +290,15 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
 
                 const LinkIcon = item.linkIcon ?? GraduationCap;
                 const ariaLabel = item.linkAriaLabel ?? 'En savoir plus';
+                const isExternal = item.link.startsWith('http');
+                const linkClassName =
+                  'ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center';
+                const linkContent = (
+                  <>
+                    <LinkIcon className="h-4 w-4" aria-hidden="true" />
+                    <span>En savoir plus</span>
+                  </>
+                );
 
                 return (
                   <li key={index}>
@@ -285,14 +310,21 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
                           className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
                         />
                       </div>
-                      <Link
-                        to={item.link}
-                        className="ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center"
-                        aria-label={ariaLabel}
-                      >
-                        <LinkIcon className="h-4 w-4" aria-hidden="true" />
-                        <span>En savoir plus</span>
-                      </Link>
+                      {isExternal ? (
+                        <a
+                          href={item.link}
+                          className={linkClassName}
+                          aria-label={ariaLabel}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          {linkContent}
+                        </a>
+                      ) : (
+                        <Link to={item.link} className={linkClassName} aria-label={ariaLabel}>
+                          {linkContent}
+                        </Link>
+                      )}
                     </div>
                   </li>
                 );
