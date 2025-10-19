@@ -47,7 +47,14 @@ const PSDAxe2 = () => {
           linkIcon: Globe2,
         },
         {
-          content: <span>DNBi</span>,
+          content: (
+            <span>
+              <strong>DNBi – SIA collège</strong>
+            </span>
+          ),
+          link: '/dnbi',
+          linkAriaLabel: 'Découvrir l\'extension DNBi au collège',
+          linkIcon: Globe2,
         },
         {
           content: <span>BFI</span>,

@@ -48,6 +48,10 @@
     "name": "Section Internationale et BFI",
     "parent": "/plan-strategique"
   },
+  "/dnbi": {
+    "name": "DNBi – SIA collège",
+    "parent": "/plan-strategique"
+  },
   "/pc-par-lyceen": {
     "name": "PC par Lycéen",
     "parent": "/plan-strategique"
