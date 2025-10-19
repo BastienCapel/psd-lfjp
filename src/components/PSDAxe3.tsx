@@ -28,7 +28,11 @@ const PSDAxe3 = () => {
           content: <>La classe numérique</>
         },
         {
-          content: <>Plan de renouvellement pluriannuel du matériel informatique</>,
+          content: (
+            <>
+              <strong>Plan de renouvellement pluriannuel du matériel informatique</strong>
+            </>
+          ),
           link: '/plan-maintenance-strategique#informatique',
           linkAriaLabel: 'Découvrir le plan de renouvellement du matériel informatique',
           linkIcon: Laptop
