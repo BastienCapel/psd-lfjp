@@ -32,6 +32,7 @@ import FilmAnnuelLevel from "./pages/film-annuel/FilmAnnuelLevel";
 import ParcoursEducationArtistiqueCulturelle from "./pages/ParcoursEducationArtistiqueCulturelle";
 import CouvertureTerrainSport from "./pages/CouvertureTerrainSport";
 import TransportScolaire from "./pages/TransportScolaire";
+import ClasseNumerique from "./pages/ClasseNumerique";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -153,6 +154,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <DNBi />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/classe-numerique" element={
+                  <>
+                    <BreadcrumbNav />
+                    <ClasseNumerique />
                     <BackToTop />
                   </>
                 } />

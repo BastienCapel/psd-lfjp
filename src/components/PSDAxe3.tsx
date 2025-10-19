@@ -25,7 +25,10 @@ const PSDAxe3 = () => {
       title: 'Infrastructures et équipements',
       items: [
         {
-          content: <>La classe numérique</>
+          content: <>La classe numérique</>,
+          link: '/classe-numerique',
+          linkAriaLabel: 'Consulter la fiche classe numérique mobile',
+          linkIcon: Laptop
         },
         {
           content: <>Plan de renouvellement pluriannuel du matériel informatique</>,
