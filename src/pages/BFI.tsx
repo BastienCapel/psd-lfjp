@@ -16,12 +16,12 @@ const organisationPedagogique = [
   {
     title: 'Niveaux concernés',
     description:
-      'Ouverture simultanée de la Seconde SIA et de la Première BFI à la rentrée 2028-2029. La Terminale BFI suivra en 2029-2030 pour compléter le parcours.',
+      'Ouverture simultanée de la Seconde SIA et des classes de Première et Terminale BFI à la rentrée 2028-2029 pour couvrir tout le lycée.',
   },
   {
     title: 'Volume horaire SIA/BFI',
     description:
-      '6 heures hebdomadaires dédiées par niveau (langue, littérature, DNL et modules spécifiques BFI), soit 18 heures pour le lycée à régime complet.',
+      '6 heures hebdomadaires dédiées par niveau (langue, littérature, DNL et modules spécifiques BFI), soit 18 heures dès l’ouverture intégrale du lycée.',
   },
   {
     title: 'Enseignements mobilisés',
@@ -44,7 +44,7 @@ const besoinsEnseignement = [
   {
     element: 'SIA/BFI lycée',
     volume: '18 h',
-    commentaire: 'Nouveau bloc horaire couvrant la Seconde SIA et la Première BFI.',
+    commentaire: 'Nouveau bloc horaire couvrant la Seconde SIA ainsi que les classes de Première et Terminale BFI.',
   },
   {
     element: 'Total besoin',
@@ -65,7 +65,7 @@ const besoinsEnseignement = [
 
 const utilisationMarge = [
   'Maintien des 4 h de soutien pour le collège, garantissant l’accompagnement linguistique des élèves.',
-  'Création de 2 h de soutien en Seconde et Première pour consolider la méthodologie et le niveau de langue.',
+  'Création de 2 h de soutien en Seconde, Première et Terminale pour consolider la méthodologie et le niveau de langue.',
 ];
 
 const equilibreFinancier = [
@@ -80,21 +80,21 @@ const equilibreFinancier = [
     interpretation: 'Contribution familiale dédiée au parcours international.',
   },
   {
-    parametre: 'Équilibre 2028-2029 (6 niveaux 6e→1re)',
+    parametre: 'Équilibre 2028-2029 (7 niveaux 6e→Tle)',
     valeur: '≈ 23 élèves/groupe',
-    interpretation: 'Seuil de rentabilité après ouverture de la Première BFI.',
+    interpretation: 'Seuil de rentabilité avec l’ouverture intégrale du lycée BFI.',
   },
   {
-    parametre: 'Équilibre à régime complet (7 niveaux 6e→Tle)',
+    parametre: 'Projection stabilisée (7 niveaux 6e→Tle)',
     valeur: '≈ 20 élèves/groupe',
-    interpretation: 'Stabilité financière durable avec la Terminale BFI.',
+    interpretation: 'Stabilité financière durable pour l’ensemble du secondaire.',
   },
 ];
 
 const synthese = [
   {
     annee: '2028-2029',
-    niveaux: '2nde + 1re BFI',
+    niveaux: '2nde à Tle BFI',
     heures: '18 h',
     etp: '5',
     recrutement: '+1 ETP',
@@ -106,7 +106,7 @@ const synthese = [
     niveaux: '6e à Tle',
     heures: '42 h',
     etp: '5',
-    recrutement: '2 postes créés (2027-2029)',
+    recrutement: '2 postes créés (2027-2028)',
     marge: '6 h de soutien total',
     cout: '≈ 40 M FCFA',
   },
@@ -127,7 +127,7 @@ const BFI: React.FC = () => {
   const [students, setStudents] = useState<Record<GradeKey, number>>({
     seconde: 24,
     premiere: 23,
-    terminale: 0,
+    terminale: 22,
   });
   const [tuitionSurcharge, setTuitionSurcharge] = useState(300_000);
   const [teacherCost, setTeacherCost] = useState(20_000_000);
@@ -191,8 +191,7 @@ const BFI: React.FC = () => {
             </h1>
             <p className="mt-6 max-w-3xl text-base text-white/80 md:text-lg">
               À la rentrée 2028-2029, le Lycée Français Jacques Prévert finalise le continuum bilingue en ouvrant simultanément
-              la Seconde SIA et la Première du Baccalauréat Français International. La Terminale BFI complètera le parcours en
-              2029-2030.
+              la Seconde SIA et l’ensemble du cycle Baccalauréat Français International jusqu’en Terminale.
             </p>
           </div>
         </section>
@@ -253,7 +252,8 @@ const BFI: React.FC = () => {
                   pédagogique sur l’ensemble des niveaux.
                 </p>
                 <p className="mt-4 text-base text-blue-900/80">
-                  La Terminale BFI ouvrira en 2029-2030, consolidant la préparation aux études supérieures internationales.
+                  La Terminale BFI est intégrée dès 2028-2029, assurant une préparation continue aux études supérieures
+                  internationales.
                 </p>
               </div>
             </div>
@@ -356,7 +356,7 @@ const BFI: React.FC = () => {
               <h2 className="text-2xl font-playfair font-bold text-french-blue md:text-3xl">4. Équilibre financier</h2>
               <p className="mt-4 text-base text-slate-700">
                 Les indicateurs ci-dessous mettent en évidence le seuil de rentabilité lié au double recrutement engagé entre
-                2027 et 2029.
+                2027 et 2028.
               </p>
             </div>
             <div className="overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-sm">
@@ -562,8 +562,8 @@ const BFI: React.FC = () => {
               <p className="mt-4 text-base text-blue-900/80">
                 L’année 2028-2029 parachève le déploiement du parcours bilingue du LFJP. Le recrutement complémentaire garantit
                 les 18 heures hebdomadaires nécessaires, préserve les soutiens pédagogiques et sécurise l’équilibre financier grâce
-                à une moyenne cible de 20 à 23 élèves par groupe. La Terminale BFI assurera dès 2029-2030 la continuité totale
-                jusqu’au diplôme international.
+                à une moyenne cible de 20 à 23 élèves par groupe. La Terminale BFI est opérationnelle dès 2028-2029 pour assurer
+                la continuité totale jusqu’au diplôme international.
               </p>
             </div>
           </div>
