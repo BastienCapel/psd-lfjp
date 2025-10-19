@@ -17,6 +17,7 @@ import ProtocolePHARE from "./pages/ProtocolePHARE";
 import ElcsAnalyseComplete from "./pages/ElcsAnalyseComplete";
 import CurriculumSoftSkills from "./pages/CurriculumSoftSkills";
 import SectionInternationaleBFI from "./pages/SectionInternationaleBFI";
+import BFI from "./pages/BFI";
 import DNBi from "./pages/DNBi";
 import MediationEntrePairs from "./pages/MediationEntrePairs";
 import PolitiqueE3D from "./pages/PolitiqueE3D";
@@ -137,6 +138,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <SectionInternationaleBFI />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/bfi" element={
+                  <>
+                    <BreadcrumbNav />
+                    <BFI />
                     <BackToTop />
                   </>
                 } />
