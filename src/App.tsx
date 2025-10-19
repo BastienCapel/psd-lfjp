@@ -31,6 +31,7 @@ import ParcoursAvenir from "./pages/ParcoursAvenir";
 import FilmAnnuelLevel from "./pages/film-annuel/FilmAnnuelLevel";
 import ParcoursEducationArtistiqueCulturelle from "./pages/ParcoursEducationArtistiqueCulturelle";
 import CouvertureTerrainSport from "./pages/CouvertureTerrainSport";
+import TransportScolaire from "./pages/TransportScolaire";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -222,6 +223,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <CouvertureTerrainSport />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/transport-scolaire" element={
+                  <>
+                    <BreadcrumbNav />
+                    <TransportScolaire />
                     <BackToTop />
                   </>
                 } />

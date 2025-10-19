@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Building, GraduationCap, Hammer, Handshake, Leaf, ShieldCheck, Utensils } from 'lucide-react';
+import { Building, BusFront, GraduationCap, Hammer, Handshake, Leaf, ShieldCheck, Utensils } from 'lucide-react';
 
 const PSDAxe1 = () => {
   const objectifs = [
@@ -68,7 +68,10 @@ const PSDAxe1 = () => {
           linkIcon: Building
         },
         {
-          content: 'Transport scolaire'
+          content: <strong>Transport scolaire</strong>,
+          link: '/transport-scolaire',
+          linkAriaLabel: 'En savoir plus – Transport scolaire',
+          linkIcon: BusFront
         }
       ]
     },
