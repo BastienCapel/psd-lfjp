@@ -57,7 +57,14 @@ const PSDAxe2 = () => {
           linkIcon: Globe2,
         },
         {
-          content: <span>BFI</span>,
+          content: (
+            <span>
+              <strong>BFI – Lycée</strong>
+            </span>
+          ),
+          link: '/bfi',
+          linkAriaLabel: "Découvrir le déploiement du parcours BFI",
+          linkIcon: Globe2,
         },
         {
           content: <span>Familles et langues du LFJP</span>,
