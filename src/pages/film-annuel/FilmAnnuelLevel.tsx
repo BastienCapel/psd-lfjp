@@ -223,41 +223,43 @@ const FilmAnnuelLevel = () => {
               </TabsContent>
 
               <TabsContent value="table">
-                <div className="overflow-hidden rounded-3xl border border-blue-100 bg-white shadow-sm">
-                  <Table>
-                    <TableHeader>
-                      <TableRow className="bg-blue-50/80">
-                        <TableHead className="text-slate-600">Période</TableHead>
-                        <TableHead className="text-slate-600">Titre</TableHead>
-                        <TableHead className="text-slate-600">Description</TableHead>
-                        <TableHead className="text-slate-600">Acteurs</TableHead>
-                        <TableHead className="text-slate-600">Phase</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {filteredActions.length === 0 ? (
-                        <TableRow>
-                          <TableCell colSpan={5} className="py-10 text-center text-slate-500">
-                            Aucune action ne correspond à vos critères pour le moment.
-                          </TableCell>
+                <div className="rounded-3xl border border-blue-100 bg-white shadow-sm">
+                  <div className="overflow-x-auto">
+                    <Table className="min-w-[640px]">
+                      <TableHeader>
+                        <TableRow className="bg-blue-50/80">
+                          <TableHead className="text-slate-600">Période</TableHead>
+                          <TableHead className="text-slate-600">Titre</TableHead>
+                          <TableHead className="text-slate-600">Description</TableHead>
+                          <TableHead className="text-slate-600">Acteurs</TableHead>
+                          <TableHead className="text-slate-600">Phase</TableHead>
                         </TableRow>
-                      ) : (
-                        filteredActions.map((action: FilmAction, index: number) => (
-                          <TableRow key={`${action.title}-${index}`}>
-                            <TableCell className="font-semibold text-slate-700">{action.period}</TableCell>
-                            <TableCell className="font-semibold text-french-blue">{action.title}</TableCell>
-                            <TableCell className="text-sm text-slate-700">{action.description}</TableCell>
-                            <TableCell className="text-sm text-slate-600">{action.actors}</TableCell>
-                            <TableCell>
-                              <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${phaseColors[action.phase]}`}>
-                                {action.phase}
-                              </span>
+                      </TableHeader>
+                      <TableBody>
+                        {filteredActions.length === 0 ? (
+                          <TableRow>
+                            <TableCell colSpan={5} className="py-10 text-center text-slate-500">
+                              Aucune action ne correspond à vos critères pour le moment.
                             </TableCell>
                           </TableRow>
-                        ))
-                      )}
-                    </TableBody>
-                  </Table>
+                        ) : (
+                          filteredActions.map((action: FilmAction, index: number) => (
+                            <TableRow key={`${action.title}-${index}`}>
+                              <TableCell className="font-semibold text-slate-700">{action.period}</TableCell>
+                              <TableCell className="font-semibold text-french-blue">{action.title}</TableCell>
+                              <TableCell className="text-sm text-slate-700">{action.description}</TableCell>
+                              <TableCell className="text-sm text-slate-600">{action.actors}</TableCell>
+                              <TableCell>
+                                <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${phaseColors[action.phase]}`}>
+                                  {action.phase}
+                                </span>
+                              </TableCell>
+                            </TableRow>
+                          ))
+                        )}
+                      </TableBody>
+                    </Table>
+                  </div>
                 </div>
               </TabsContent>
             </Tabs>
