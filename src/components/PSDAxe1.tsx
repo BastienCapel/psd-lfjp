@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Hammer, Handshake, Leaf, ShieldCheck, Utensils } from 'lucide-react';
+import { Building, GraduationCap, Hammer, Handshake, Leaf, ShieldCheck, Utensils } from 'lucide-react';
 
 const PSDAxe1 = () => {
   const objectifs = [
@@ -62,7 +62,10 @@ const PSDAxe1 = () => {
           linkIcon: Leaf
         },
         {
-          content: 'Couverture terrain de sport'
+          content: <strong>Couverture terrain de sport</strong>,
+          link: '/couverture-terrain-sport',
+          linkAriaLabel: 'En savoir plus – Couverture terrain de sport',
+          linkIcon: Building
         },
         {
           content: 'Transport scolaire'

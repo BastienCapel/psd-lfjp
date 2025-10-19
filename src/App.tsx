@@ -28,6 +28,7 @@ import ReseauAlumniMentorat from "./pages/ReseauAlumniMentorat";
 import ParcoursAvenir from "./pages/ParcoursAvenir";
 import FilmAnnuelLevel from "./pages/film-annuel/FilmAnnuelLevel";
 import ParcoursEducationArtistiqueCulturelle from "./pages/ParcoursEducationArtistiqueCulturelle";
+import CouvertureTerrainSport from "./pages/CouvertureTerrainSport";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -198,6 +199,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <PolitiqueE3D />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/couverture-terrain-sport" element={
+                  <>
+                    <BreadcrumbNav />
+                    <CouvertureTerrainSport />
                     <BackToTop />
                   </>
                 } />
