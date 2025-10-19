@@ -31,7 +31,11 @@ const PSDAxe3 = () => {
           linkIcon: Laptop
         },
         {
-          content: <>Plan de renouvellement pluriannuel du matériel informatique</>,
+          content: (
+            <>
+              <strong>Plan de renouvellement pluriannuel du matériel informatique</strong>
+            </>
+          ),
           link: '/plan-maintenance-strategique#informatique',
           linkAriaLabel: 'Découvrir le plan de renouvellement du matériel informatique',
           linkIcon: Laptop
