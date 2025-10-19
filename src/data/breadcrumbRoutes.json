@@ -24,6 +24,10 @@
     "name": "Parcours Avenir",
     "parent": "/plan-strategique/axe-4"
   },
+  "/parcours-education-artistique-culturelle": {
+    "name": "Parcours d'Éducation Artistique et Culturelle",
+    "parent": "/plan-strategique"
+  },
   "/film-annuel/3e": {
     "name": "Film annuel 3e",
     "parent": "/parcours-avenir"
