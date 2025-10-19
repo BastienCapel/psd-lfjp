@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe2, Handshake } from 'lucide-react';
+import { Globe2, Handshake, Palette } from 'lucide-react';
 import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe2 = () => {
@@ -69,6 +69,16 @@ const PSDAxe2 = () => {
           link: 'https://psd-lfjp.netlify.app/mediation-entre-pairs',
           linkAriaLabel: 'Découvrir la médiation interculturelle',
           linkIcon: Handshake,
+        },
+        {
+          content: (
+            <span>
+              <strong>Parcours d'Éducation Artistique et Culturelle</strong>
+            </span>
+          ),
+          link: '/parcours-education-artistique-culturelle',
+          linkAriaLabel: 'Explorer le Parcours d\'Éducation Artistique et Culturelle',
+          linkIcon: Palette,
         },
         {
           content: <span>Semaine des cultures</span>,

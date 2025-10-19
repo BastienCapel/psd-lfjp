@@ -27,6 +27,7 @@ import EducationFinanciereVieAutonome from "./pages/EducationFinanciereVieAutono
 import ReseauAlumniMentorat from "./pages/ReseauAlumniMentorat";
 import ParcoursAvenir from "./pages/ParcoursAvenir";
 import FilmAnnuelLevel from "./pages/film-annuel/FilmAnnuelLevel";
+import ParcoursEducationArtistiqueCulturelle from "./pages/ParcoursEducationArtistiqueCulturelle";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -113,6 +114,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ParcoursAvenir />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/parcours-education-artistique-culturelle" element={
+                  <>
+                    <BreadcrumbNav />
+                    <ParcoursEducationArtistiqueCulturelle />
                     <BackToTop />
                   </>
                 } />
