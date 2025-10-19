@@ -5,15 +5,20 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Home } from "lucide-react";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import RenouvellementInformatiqueTabs from '../components/RenouvellementInformatiqueTabs';
 import { cn } from '@/lib/utils';
 
+const TAB_VALUES = ['peintures', 'informatique', 'acoustique'] as const;
+type TabValue = typeof TAB_VALUES[number];
+
 const PlanMaintenanceStrategique = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const tabsListRef = useRef<HTMLDivElement | null>(null);
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(true);
+  const [activeTab, setActiveTab] = useState<TabValue>('peintures');
 
   useEffect(() => {
     const list = tabsListRef.current;
@@ -34,6 +39,27 @@ const PlanMaintenanceStrategique = () => {
       window.removeEventListener('resize', updateEdges);
     };
   }, []);
+
+  useEffect(() => {
+    const hash = location.hash.replace('#', '') as TabValue | '';
+
+    if (hash && (TAB_VALUES as readonly string[]).includes(hash)) {
+      setActiveTab(hash as TabValue);
+      return;
+    }
+
+    if (!hash) {
+      setActiveTab('peintures');
+    }
+  }, [location.hash]);
+
+  const handleTabChange = (value: string) => {
+    if (!(TAB_VALUES as readonly string[]).includes(value)) return;
+
+    const nextValue = value as TabValue;
+    setActiveTab(nextValue);
+    navigate(`${location.pathname}#${nextValue}`, { replace: true });
+  };
 
   const tabTriggerClasses = cn(
     "group relative flex min-w-[clamp(180px,55vw,280px)] flex-shrink-0 items-center justify-center gap-2",
@@ -106,7 +132,12 @@ const PlanMaintenanceStrategique = () => {
 
           {/* Tabs Section */}
           <div className="max-w-6xl mx-auto">
-            <Tabs defaultValue="peintures" className="w-full" aria-label="Sections du plan de maintenance stratégique">
+            <Tabs
+              value={activeTab}
+              onValueChange={handleTabChange}
+              className="w-full"
+              aria-label="Sections du plan de maintenance stratégique"
+            >
               <TabsList
                 ref={tabsListRef}
                 className={cn(
