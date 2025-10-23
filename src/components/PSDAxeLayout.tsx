@@ -237,12 +237,27 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
                           <span>En savoir plus</span>
                         </>
                       );
+                      const textLinkClassName =
+                        'inline-flex items-center max-w-full text-left font-semibold text-slate-800 underline-offset-4 transition hover:text-french-blue hover:underline focus-visible:text-french-blue focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-french-blue focus-visible:ring-offset-2 rounded-md';
 
                       return (
                         <li key={itemIndex}>
                           <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
                             <div className="flex min-w-0 flex-1 items-center gap-3">
-                              <span className="text-gray-700">{item.content}</span>
+                              {isExternal ? (
+                                <a
+                                  href={item.link}
+                                  className={textLinkClassName}
+                                  target="_blank"
+                                  rel="noreferrer noopener"
+                                >
+                                  {item.content}
+                                </a>
+                              ) : (
+                                <Link to={item.link} className={textLinkClassName}>
+                                  {item.content}
+                                </Link>
+                              )}
                               <span
                                 aria-hidden="true"
                                 className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
@@ -299,12 +314,27 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
                     <span>En savoir plus</span>
                   </>
                 );
+                const textLinkClassName =
+                  'inline-flex items-center max-w-full text-left font-semibold text-slate-800 underline-offset-4 transition hover:text-french-blue hover:underline focus-visible:text-french-blue focus-visible:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-french-blue focus-visible:ring-offset-2 rounded-md';
 
                 return (
                   <li key={index}>
                     <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
                       <div className="flex min-w-0 flex-1 items-center gap-3">
-                        <span className="text-gray-700">{item.content}</span>
+                        {isExternal ? (
+                          <a
+                            href={item.link}
+                            className={textLinkClassName}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            {item.content}
+                          </a>
+                        ) : (
+                          <Link to={item.link} className={textLinkClassName}>
+                            {item.content}
+                          </Link>
+                        )}
                         <span
                           aria-hidden="true"
                           className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
