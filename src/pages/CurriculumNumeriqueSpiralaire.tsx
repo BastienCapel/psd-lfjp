@@ -125,7 +125,7 @@ const CurriculumNumeriqueSpiralaire: React.FC = () => {
       title: 'Projets & sorties',
       points: [
         'Concours, hackathons, ateliers robotiques',
-        'Visites d'acteurs du numérique au Sénégal',
+        "Visites d'acteurs du numérique au Sénégal",
       ],
     },
   ];
