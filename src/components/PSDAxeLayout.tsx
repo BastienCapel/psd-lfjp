@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import type { LucideIcon } from 'lucide-react';
-import { ArrowRight, BarChart3, GraduationCap, ListChecks, Target } from 'lucide-react';
+import { BarChart3, GraduationCap, Target } from 'lucide-react';
 
 interface ObjectifItem {
   content: React.ReactNode;
@@ -28,14 +28,6 @@ interface SummaryObjectiveItem {
   label: string;
 }
 
-interface SummaryActionItem {
-  label: string;
-  icon?: LucideIcon;
-  iconClassName?: string;
-  link?: string;
-  linkAriaLabel?: string;
-}
-
 interface SummaryIndicatorItem {
   label: string;
   value: string;
@@ -43,7 +35,6 @@ interface SummaryIndicatorItem {
 
 interface SummaryData {
   objectives?: SummaryObjectiveItem[];
-  actions?: SummaryActionItem[];
   indicators?: SummaryIndicatorItem[];
 }
 
@@ -101,66 +92,6 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
                     <span>{item.label}</span>
                   </li>
                 ))}
-              </ul>
-            </article>
-          ) : null}
-
-          {summary.actions?.length ? (
-            <article className="flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-french-blue/10">
-              <div className="mb-4 flex items-center gap-3">
-                <span className="rounded-full bg-french-blue/10 p-2 text-french-blue">
-                  <ListChecks className="h-6 w-6" aria-hidden="true" />
-                </span>
-                <h4 className="text-lg font-semibold text-slate-900">Rubriques</h4>
-              </div>
-              <ul className="grid gap-2">
-                {summary.actions.map((item) => {
-                  const IconComponent = item.icon;
-
-                  const content = (
-                    <span className="flex w-full items-center justify-between gap-3">
-                      <span className="flex items-center gap-2">
-                        {IconComponent ? (
-                          <span
-                            className={`flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 ${
-                              item.iconClassName ?? 'text-french-blue'
-                            }`}
-                            aria-hidden="true"
-                          >
-                            <IconComponent className="h-4 w-4" aria-hidden="true" />
-                          </span>
-                        ) : null}
-                        <span className="text-left text-sm font-medium text-slate-700">
-                          {item.label}
-                        </span>
-                      </span>
-                      {item.link ? (
-                        <ArrowRight className="h-4 w-4 text-french-blue" aria-hidden="true" />
-                      ) : null}
-                    </span>
-                  );
-
-                  return (
-                    <li
-                      key={item.label}
-                      className="rounded-xl bg-slate-100 text-sm font-medium text-slate-700"
-                    >
-                      {item.link ? (
-                        <Link
-                          to={item.link}
-                          className="inline-flex w-full items-center justify-between gap-3 rounded-xl px-3 py-2 transition hover:bg-slate-200 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue"
-                          aria-label={item.linkAriaLabel ?? `En savoir plus – ${item.label}`}
-                        >
-                          {content}
-                        </Link>
-                      ) : (
-                        <div className="inline-flex w-full items-center justify-between gap-3 px-3 py-2">
-                          {content}
-                        </div>
-                      )}
-                    </li>
-                  );
-                })}
               </ul>
             </article>
           ) : null}
