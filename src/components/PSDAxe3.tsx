@@ -60,7 +60,7 @@ const PSDAxe3 = () => {
       title: 'Pédagogie et compétences',
       items: [
         {
-          content: <strong>Curriculum numérique spiralaire</strong>,
+          content: <>Curriculum numérique spiralaire</>,
           link: '/curriculum-numerique-spiralaire',
           linkAriaLabel: 'En savoir plus – Curriculum numérique spiralaire',
           linkIcon: GraduationCap

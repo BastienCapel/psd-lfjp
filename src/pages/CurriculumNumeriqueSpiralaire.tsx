@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo, type ComponentType, type ReactNode, type SVGProps } from 'react';
 import { Link } from 'react-router-dom';
 import {
   GraduationCap,
@@ -12,7 +12,7 @@ import {
   Workflow,
   Link as LinkIcon,
   ArrowLeft,
-  Home,
+  Home
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -22,7 +22,7 @@ interface SectionProps {
   id: string;
   title: string;
   subtitle?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 function Section({ id, title, subtitle, children }: SectionProps) {
@@ -30,23 +30,23 @@ function Section({ id, title, subtitle, children }: SectionProps) {
     <section id={id} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
       <div className="opacity-0 animate-fade-in">
         <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">{title}</h2>
-        {subtitle && <p className="mt-2 text-sm sm:text-base text-gray-600">{subtitle}</p>}
+        {subtitle ? <p className="mt-2 text-sm sm:text-base text-gray-600">{subtitle}</p> : null}
       </div>
       <div className="mt-6 sm:mt-8">{children}</div>
     </section>
   );
 }
 
-const Card = ({ children }: { children: React.ReactNode }) => (
-  <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-5 sm:p-6">{children}</div>
-);
+function Card({ children }: { children: ReactNode }) {
+  return <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-5 sm:p-6">{children}</div>;
+}
 
-const Pill = ({ children }: { children: React.ReactNode }) => (
-  <span className="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700">{children}</span>
-);
+function Pill({ children }: { children: ReactNode }) {
+  return <span className="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700">{children}</span>;
+}
 
 type Domaine = {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
   title: string;
   desc: string;
   exemples: string[];
@@ -62,85 +62,79 @@ type Ressource = {
   href: string;
 };
 
-const CurriculumNumeriqueSpiralaire: React.FC = () => {
+const CurriculumNumeriqueSpiralaire = () => {
   const domaines = useMemo<Domaine[]>(
     () => [
       {
         icon: BookOpenCheck,
         title: 'Information et données',
         desc: "Rechercher, analyser et vérifier l'information ; exploiter et représenter des données.",
-        exemples: ['Recherche documentaire', 'Fact-checking', 'Datavis'],
+        exemples: ['Recherche documentaire', 'Fact-checking', 'Datavis']
       },
       {
         icon: Network,
         title: 'Communication et collaboration',
         desc: 'Interagir, coopérer et publier dans des environnements numériques.',
-        exemples: ['Projets partagés', 'ENT / Workspace', 'Échanges AEFE'],
+        exemples: ['Projets partagés', 'ENT / Workspace', 'Échanges AEFE']
       },
       {
         icon: Layers3,
         title: 'Création de contenus',
         desc: 'Produire des documents, médias et programmes.',
-        exemples: ['Podcasts', 'Vidéos / Web', 'Code'],
+        exemples: ['Podcasts', 'Vidéos / Web', 'Code']
       },
       {
         icon: ShieldCheck,
         title: 'Protection et sécurité',
         desc: 'Cybersécurité, identité et données personnelles, RGPD.',
-        exemples: ['Hygiène numérique', 'Paramétrages', 'Sensibilisation'],
+        exemples: ['Hygiène numérique', 'Paramétrages', 'Sensibilisation']
       },
       {
         icon: Cpu,
         title: 'Environnement numérique',
         desc: "Prendre en main outils, services et infrastructures de l’établissement.",
-        exemples: ['PC lycéen', 'Classe mobile', 'ENT'],
-      },
+        exemples: ['PC lycéen', 'Classe mobile', 'ENT']
+      }
     ],
     []
   );
 
-  const modules: Module[] = [
-    {
-      title: 'Introduction au code',
-      points: [
-        'Blocs (Cycle 3-4), puis Python au lycée',
-        'Projets interdisciplinaires (sciences, arts, langues)',
-      ],
-    },
-    {
-      title: 'Module IA',
-      points: [
-        'Fonctionnement, usages et limites',
-        'Éthique, données et biais, usages responsables',
-      ],
-    },
-    {
-      title: 'Numérique citoyen',
-      points: [
-        'Identité numérique et réseaux sociaux',
-        'Droits, devoirs et sobriété numérique',
-      ],
-    },
-    {
-      title: 'Projets & sorties',
-      points: [
-        'Concours, hackathons, ateliers robotiques',
-        "Visites d'acteurs du numérique au Sénégal",
-      ],
-    },
-  ];
+  const modules = useMemo<Module[]>(
+    () => [
+      {
+        title: 'Introduction au code',
+        points: ['Blocs (Cycle 3-4), puis Python au lycée', 'Projets interdisciplinaires (sciences, arts, langues)']
+      },
+      {
+        title: 'Module IA',
+        points: ['Fonctionnement, usages et limites', 'Éthique, données et biais, usages responsables']
+      },
+      {
+        title: 'Numérique citoyen',
+        points: ['Identité numérique et réseaux sociaux', 'Droits, devoirs et sobriété numérique']
+      },
+      {
+        title: 'Projets & sorties',
+        points: ['Concours, hackathons, ateliers robotiques', "Visites d'acteurs du numérique au Sénégal"]
+      }
+    ],
+    []
+  );
 
-  const ressources: Ressource[] = [
-    { label: 'CRCN – Eduscol', href: 'https://eduscol.education.fr/721/evaluer-developper-et-certifier-les-competences-numeriques' },
-    { label: 'PIX – Certification', href: 'https://pix.fr' },
-    { label: 'Édubase – Scénarios', href: 'https://edubase.eduscol.education.fr/' },
-    { label: 'AEFE – Stratégie e‑nov', href: 'https://www.aefe.fr/' },
-  ];
+  const ressources = useMemo<Ressource[]>(
+    () => [
+      { label: 'CRCN – Eduscol', href: 'https://eduscol.education.fr/721/evaluer-developper-et-certifier-les-competences-numeriques' },
+      { label: 'PIX – Certification', href: 'https://pix.fr' },
+      { label: 'Édubase – Scénarios', href: 'https://edubase.eduscol.education.fr/' },
+      { label: 'AEFE – Stratégie e‑nov', href: 'https://www.aefe.fr/' }
+    ],
+    []
+  );
 
   return (
-    <div className="min-h-screen flex flex-col font-raleway">
+    <div className="min-h-screen flex flex-col font-raleway bg-gradient-to-b from-gray-50 to-white">
       <Navbar showLogo={true} />
-      <main className="flex-1 bg-gradient-to-b from-gray-50 to-white">
+      <main className="flex-1">
         <header className="relative overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_40%_at_50%_-20%,rgba(59,130,246,0.15),transparent)]" />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
@@ -175,11 +169,7 @@ const CurriculumNumeriqueSpiralaire: React.FC = () => {
           </Button>
         </div>
 
-        <Section
-          id="domaines"
-          title="Les cinq domaines du curriculum"
-          subtitle="Adaptation locale du CRCN aux pratiques pédagogiques du LFJP."
-        >
+        <Section id="domaines" title="Les cinq domaines du curriculum" subtitle="Adaptation locale du CRCN aux pratiques pédagogiques du LFJP.">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {domaines.map((domaine, index) => {
               const Icon = domaine.icon;
@@ -340,13 +330,7 @@ const CurriculumNumeriqueSpiralaire: React.FC = () => {
         <Section id="ressources" title="Ressources utiles">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {ressources.map((ressource) => (
-              <a
-                key={ressource.href}
-                href={ressource.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group"
-              >
+              <a key={ressource.href} href={ressource.href} target="_blank" rel="noreferrer" className="group">
                 <Card>
                   <div className="flex items-center justify-between gap-3">
                     <span className="text-sm font-medium group-hover:underline">{ressource.label}</span>
