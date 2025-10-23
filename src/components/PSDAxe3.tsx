@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { HandCoins, Laptop } from 'lucide-react';
+import { GraduationCap, HandCoins, Laptop } from 'lucide-react';
 import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe3 = () => {
@@ -60,7 +60,10 @@ const PSDAxe3 = () => {
       title: 'Pédagogie et compétences',
       items: [
         {
-          content: <>Curriculum numérique spiralaire</>
+          content: <>Curriculum numérique spiralaire</>,
+          link: '/curriculum-numerique-spiralaire',
+          linkAriaLabel: 'En savoir plus – Curriculum numérique spiralaire',
+          linkIcon: GraduationCap
         },
         {
           content: <>Introduction au code</>

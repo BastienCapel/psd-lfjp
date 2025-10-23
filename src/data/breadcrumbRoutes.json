@@ -20,6 +20,10 @@
     "name": "Curriculum Soft Skills & Éloquence",
     "parent": "/plan-strategique"
   },
+  "/curriculum-numerique-spiralaire": {
+    "name": "Curriculum numérique spiralaire",
+    "parent": "/plan-strategique"
+  },
   "/parcours-avenir": {
     "name": "Parcours Avenir",
     "parent": "/plan-strategique/axe-4"

@@ -16,6 +16,7 @@ import ConstructionCantine from "./pages/ConstructionCantine";
 import ProtocolePHARE from "./pages/ProtocolePHARE";
 import ElcsAnalyseComplete from "./pages/ElcsAnalyseComplete";
 import CurriculumSoftSkills from "./pages/CurriculumSoftSkills";
+import CurriculumNumeriqueSpiralaire from "./pages/CurriculumNumeriqueSpiralaire";
 import SectionInternationaleBFI from "./pages/SectionInternationaleBFI";
 import BFI from "./pages/BFI";
 import DNBi from "./pages/DNBi";
@@ -112,6 +113,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <CurriculumSoftSkills />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/curriculum-numerique-spiralaire" element={
+                  <>
+                    <BreadcrumbNav />
+                    <CurriculumNumeriqueSpiralaire />
                     <BackToTop />
                   </>
                 } />
