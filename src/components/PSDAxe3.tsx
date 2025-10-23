@@ -4,6 +4,17 @@ import { GraduationCap, HandCoins, Laptop } from 'lucide-react';
 import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe3 = () => {
+  const summary = {
+    actions: [
+      {
+        label: 'Curriculum numérique spiralaire',
+        icon: GraduationCap,
+        link: '/curriculum-numerique-spiralaire',
+        linkAriaLabel: 'Consulter la page Curriculum numérique spiralaire'
+      }
+    ]
+  };
+
   const objectifs = [
     {
       content: <>Structurer un parcours numérique continu et équitable, de l’élémentaire à la terminale.</>
@@ -144,9 +155,10 @@ const PSDAxe3 = () => {
   ];
 
   return (
-    <PSDAxeLayout 
+    <PSDAxeLayout
       title="AXE 3 – DIGITAL, NUMÉRIQUE, INNOVATION TECHNOLOGIQUE"
       subtitle="Cultiver la sensibilité, la créativité, la citoyenneté et l'agilité numérique"
+      summary={summary}
       objectifs={objectifs}
       actionSections={actionSections}
       indicators={indicators}
