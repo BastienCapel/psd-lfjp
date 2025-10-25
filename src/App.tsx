@@ -31,6 +31,7 @@ import ReseauAlumniMentorat from "./pages/ReseauAlumniMentorat";
 import ParcoursAvenir from "./pages/ParcoursAvenir";
 import FilmAnnuelLevel from "./pages/film-annuel/FilmAnnuelLevel";
 import ParcoursEducationArtistiqueCulturelle from "./pages/ParcoursEducationArtistiqueCulturelle";
+import SemaineDesCultures from "./pages/SemaineDesCultures";
 import CouvertureTerrainSport from "./pages/CouvertureTerrainSport";
 import TransportScolaire from "./pages/TransportScolaire";
 import ClasseNumerique from "./pages/ClasseNumerique";
@@ -136,6 +137,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ParcoursEducationArtistiqueCulturelle />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/semaine-des-cultures" element={
+                  <>
+                    <BreadcrumbNav />
+                    <SemaineDesCultures />
                     <BackToTop />
                   </>
                 } />
