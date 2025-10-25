@@ -88,6 +88,10 @@
     "name": "Médiation entre pairs",
     "parent": "/plan-strategique"
   },
+  "/savoir-rouler": {
+    "name": "Savoir Rouler à Vélo",
+    "parent": "/plan-strategique"
+  },
   "/politique-e3d": {
     "name": "Politique E3D",
     "parent": "/plan-strategique"

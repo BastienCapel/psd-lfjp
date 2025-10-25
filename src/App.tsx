@@ -34,6 +34,7 @@ import ParcoursEducationArtistiqueCulturelle from "./pages/ParcoursEducationArti
 import CouvertureTerrainSport from "./pages/CouvertureTerrainSport";
 import TransportScolaire from "./pages/TransportScolaire";
 import ClasseNumerique from "./pages/ClasseNumerique";
+import SavoirRouler from "./pages/SavoirRouler";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -246,6 +247,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <TransportScolaire />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/savoir-rouler" element={
+                  <>
+                    <BreadcrumbNav />
+                    <SavoirRouler />
                     <BackToTop />
                   </>
                 } />
