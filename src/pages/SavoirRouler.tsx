@@ -127,7 +127,7 @@ const SavoirRouler = () => {
                     Former des citoyens responsables et mobiles
                   </h2>
                   <p className={textClasses}>
-                    Le programme <strong>Savoir Rouler à Vélo (SRAV)</strong> du <strong>Lycée Français Jacques Prévert</strong>
+                    Le programme <strong>Savoir Rouler à Vélo (SRAV)</strong> du <strong>Lycée Français Jacques Prévert</strong>{' '}
                     s’inscrit dans les <strong>axes 1 et 4 du Plan Stratégique de Développement 2026‑2030</strong> pour offrir aux élèves
                     une expérience éducative complète et sécurisée. En partenariat avec <strong>Téranga Bike Adventure Kids (Mazela SARL)</strong>,
                     il développe l’autonomie, la sécurité et le respect des autres usagers.
