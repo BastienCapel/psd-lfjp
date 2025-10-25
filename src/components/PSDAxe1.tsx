@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Building, BusFront, GraduationCap, Hammer, Handshake, Leaf, ShieldCheck, Utensils, Bike } from 'lucide-react';
+import { Building, BusFront, GraduationCap, Hammer, Handshake, Leaf, ShieldCheck, Utensils, Bike, LifeBuoy } from 'lucide-react';
 
 const PSDAxe1 = () => {
   const objectifs = [
@@ -100,7 +100,10 @@ const PSDAxe1 = () => {
           linkIcon: Bike
         },
         {
-          content: 'Savoir nager'
+          content: <strong>Savoir nager</strong>,
+          link: '/savoir-nager',
+          linkAriaLabel: 'En savoir plus – Savoir nager',
+          linkIcon: LifeBuoy
         }
       ]
     },
