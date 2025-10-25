@@ -13,14 +13,7 @@ import {
   CalendarRange,
   Layers,
   Landmark,
-  Milestone,
-  Globe2,
-  CalendarDays,
-  Handshake,
-  Users,
-  NotebookPen,
-  BarChart3,
-  Megaphone
+  Milestone
 } from 'lucide-react';
 
 const sectionWrapperClass =
@@ -28,101 +21,6 @@ const sectionWrapperClass =
 const levelCardClass =
   'relative rounded-2xl bg-white/90 ring-1 ring-slate-200/70 p-6 space-y-4 shadow-sm hover:shadow-md transition-all duration-200';
 const listItemClass = 'text-slate-700 leading-relaxed text-[clamp(0.95rem,1.45vw,1.05rem)]';
-
-const cultureWeekPlan = {
-  id: 'semaine-des-cultures',
-  title: 'Semaine des cultures du LFJP',
-  subtitle:
-    'Un temps fort pour renforcer l’identité culturelle du lycée et le rayonnement francophone en Petite Côte.',
-  finality: {
-    heading: 'Finalité',
-    description:
-      'Mobiliser toute la communauté éducative pour incarner la mission AEFE : former des citoyens du monde, cultivés, ouverts et créatifs.',
-    highlights: [
-      'Valoriser les parcours éducatifs (PEAC, citoyen, Avenir, santé) à travers des réalisations concrètes.',
-      'Faire rayonner les talents du LFJP auprès des familles, des partenaires locaux et du réseau AEFE.'
-    ]
-  },
-  annualTheme: {
-    heading: 'Thématique annuelle fédératrice',
-    description:
-      'Chaque édition s’organise autour d’un fil conducteur à la manière des JACES ou de la Semaine des lycées français du monde.',
-    proposals: ['Arts et durabilité', 'Langues, cultures et identités', 'Corps en mouvement', 'Jeunes citoyens, jeunes créateurs']
-  },
-  schedule: [
-    {
-      day: 'Lundi – Lancement',
-      focus: 'Rayonnement & francophonie',
-      activities: [
-        'Ouverture officielle avec hymne bilingue et présentation du thème annuel.',
-        'Exposition inaugurale des œuvres d’élèves et rencontre avec un artiste local ou un ancien élève.'
-      ]
-    },
-    {
-      day: 'Mardi – Arts du spectacle',
-      focus: 'Pratique & inclusion',
-      activities: [
-        'Ateliers théâtre, danse, musique, slam et scène ouverte « 1 min pour dire ».',
-        'Participation ciblée des élèves allophones ou à besoins particuliers pour favoriser l’inclusion.'
-      ]
-    },
-    {
-      day: 'Mercredi – Sciences et culture',
-      focus: 'Culture scientifique et technique',
-      activities: [
-        'Ateliers « Art et robotique », « Mathématiques et motifs », « Lumière et couleur » en lien avec le PEAC.',
-        'Mise en avant des projets croisant sciences, arts et numérique.'
-      ]
-    },
-    {
-      day: 'Jeudi – Citoyenneté et mémoire',
-      focus: 'Parcours citoyen',
-      activities: [
-        'Ciné-débat autour d’un film francophone ou africain et expositions thématiques (« Femmes de culture », « Art et droits humains »).',
-        'Temps d’échanges animés par les élèves du CVL et les ambassadeurs égalité.'
-      ]
-    },
-    {
-      day: 'Vendredi – Restitutions & partage',
-      focus: 'Communauté éducative',
-      activities: [
-        'Grande soirée culturelle avec spectacles, défilé de créations et remise des prix « Coup de cœur du LFJP ».',
-        'Invitations croisées avec les partenaires culturels et les familles.'
-      ]
-    }
-  ],
-  dispositifs: [
-    {
-      heading: 'Dispositifs AEFE à mobiliser',
-      description: 'Ancrer la Semaine des cultures dans les cadres existants pour faciliter les financements et la reconnaissance.',
-      items: [
-        'JACES – Journées des arts et de la culture à l’école comme cadre de référence.',
-        'Pass Culture, Label E3D et LabelFrancÉducation pour soutenir les projets et les médiations.',
-        'Partenariats avec l’Institut Français du Sénégal, l’Alliance Française, les musées et écoles francophones de la Petite Côte.',
-        'Synergies avec le réseau AEFE Afrique de l’Ouest : échanges vidéo, concours communs, invitations croisées.'
-      ]
-    }
-  ],
-  governance: {
-    heading: 'Organisation & suivi',
-    committee: [
-      'Comité culture LFJP réunissant coordonnateur EAC, professeurs d’arts, documentaliste, CPE, vie scolaire et élèves du CVL.',
-      'Rôle de chaque référent : pilotage logistique, programmation, médiation, communication.'
-    ],
-    portfolio: [
-      'Portfolio PEAC numérique : chaque élève consigne découvertes, productions et ressentis.',
-      'Capitalisation des traces pour alimenter le bilan culturel annuel et les dossiers de labellisation.'
-    ],
-    evaluation: [
-      'Indicateurs : nombre de participants, variété des domaines artistiques, implication des familles et partenaires.',
-      'Recueil de retours via formulaires et capsules vidéo produites par les élèves reporters.'
-    ],
-    communication: [
-      'Valorisation dans Le Petit Prévert, sur le site du lycée et les réseaux AEFE.',
-      'Création d’une médiathèque numérique pour partager photos, podcasts et interviews.'
-    ]
-  }
-};
 
 const promotions = [
   {
@@ -367,7 +265,6 @@ const parcoursArtistiqueInterdegre = {
 
 const tocItems = [
   { id: 'introduction', label: 'Panorama du PEAC' },
-  { id: cultureWeekPlan.id, label: cultureWeekPlan.title },
   ...promotions.map((promotion) => ({ id: promotion.id, label: promotion.title })),
   { id: parcoursArtistiqueInterdegre.id, label: parcoursArtistiqueInterdegre.title }
 ];
@@ -467,156 +364,6 @@ const ParcoursEducationArtistiqueCulturelle = () => {
                     <p className="text-slate-700 text-sm md:text-base leading-relaxed">
                       Les promotions sont présentées comme des « carnets de bord » qui permettent de suivre les projets au fil des niveaux, tout en valorisant les collaborations entre disciplines et partenaires culturels.
                     </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section id={cultureWeekPlan.id} className={sectionWrapperClass}>
-              <div className="relative space-y-8">
-                <div className="flex items-center gap-4">
-                  <Globe2 className="h-10 w-10 text-french-blue" aria-hidden="true" />
-                  <div>
-                    <h2 className="text-2xl font-playfair font-semibold text-slate-900">{cultureWeekPlan.title}</h2>
-                    <p className="text-slate-700 text-sm md:text-base leading-relaxed">{cultureWeekPlan.subtitle}</p>
-                  </div>
-                </div>
-
-                <div className="grid gap-6 md:grid-cols-2">
-                  <div className="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-inner">
-                    <h3 className="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                      <Users className="h-5 w-5 text-french-blue" aria-hidden="true" />
-                      {cultureWeekPlan.finality.heading}
-                    </h3>
-                    <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                      {cultureWeekPlan.finality.description}
-                    </p>
-                    <ul className="mt-4 space-y-2 pl-2">
-                      {cultureWeekPlan.finality.highlights.map((item) => (
-                        <li key={item} className={listItemClass}>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-inner">
-                    <h3 className="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                      <Sparkles className="h-5 w-5 text-french-blue" aria-hidden="true" />
-                      {cultureWeekPlan.annualTheme.heading}
-                    </h3>
-                    <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                      {cultureWeekPlan.annualTheme.description}
-                    </p>
-                    <div className="mt-4 grid gap-2 sm:grid-cols-2">
-                      {cultureWeekPlan.annualTheme.proposals.map((theme) => (
-                        <div
-                          key={theme}
-                          className="rounded-xl border border-french-blue/20 bg-french-blue/5 px-4 py-3 text-slate-800 text-sm md:text-base"
-                        >
-                          {theme}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-inner">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <CalendarDays className="h-5 w-5 text-french-blue" aria-hidden="true" />
-                    Rythme de la semaine
-                  </h3>
-                  <div className="mt-4 grid gap-4 md:grid-cols-2">
-                    {cultureWeekPlan.schedule.map((slot) => (
-                      <div key={slot.day} className="rounded-xl border border-slate-200 bg-white px-4 py-4 shadow-sm">
-                        <p className="text-sm font-semibold uppercase tracking-wide text-french-blue">{slot.day}</p>
-                        <p className="text-slate-600 text-sm md:text-base mb-3">{slot.focus}</p>
-                        <ul className="space-y-2 pl-2">
-                          {slot.activities.map((activity) => (
-                            <li key={activity} className={listItemClass}>
-                              {activity}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {cultureWeekPlan.dispositifs.map((block) => (
-                  <div key={block.heading} className="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-inner">
-                    <h3 className="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                      <Handshake className="h-5 w-5 text-french-blue" aria-hidden="true" />
-                      {block.heading}
-                    </h3>
-                    <p className="text-slate-700 text-sm md:text-base leading-relaxed">{block.description}</p>
-                    <ul className="mt-4 space-y-2 pl-2">
-                      {block.items.map((item) => (
-                        <li key={item} className={listItemClass}>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-
-                <div className="rounded-2xl border border-slate-200 bg-white/85 p-6 shadow-inner">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <Users className="h-5 w-5 text-french-blue" aria-hidden="true" />
-                    {cultureWeekPlan.governance.heading}
-                  </h3>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div className="rounded-xl border border-slate-200 bg-white px-4 py-4 shadow-sm">
-                      <h4 className="text-base font-semibold text-slate-900 mb-2 flex items-center gap-2">
-                        <Users className="h-4 w-4 text-french-blue" aria-hidden="true" />
-                        Comité culture LFJP
-                      </h4>
-                      <ul className="space-y-2 pl-2">
-                        {cultureWeekPlan.governance.committee.map((item) => (
-                          <li key={item} className={listItemClass}>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="rounded-xl border border-slate-200 bg-white px-4 py-4 shadow-sm">
-                      <h4 className="text-base font-semibold text-slate-900 mb-2 flex items-center gap-2">
-                        <NotebookPen className="h-4 w-4 text-french-blue" aria-hidden="true" />
-                        Portfolio PEAC numérique
-                      </h4>
-                      <ul className="space-y-2 pl-2">
-                        {cultureWeekPlan.governance.portfolio.map((item) => (
-                          <li key={item} className={listItemClass}>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="rounded-xl border border-slate-200 bg-white px-4 py-4 shadow-sm">
-                      <h4 className="text-base font-semibold text-slate-900 mb-2 flex items-center gap-2">
-                        <BarChart3 className="h-4 w-4 text-french-blue" aria-hidden="true" />
-                        Évaluation partagée
-                      </h4>
-                      <ul className="space-y-2 pl-2">
-                        {cultureWeekPlan.governance.evaluation.map((item) => (
-                          <li key={item} className={listItemClass}>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="rounded-xl border border-slate-200 bg-white px-4 py-4 shadow-sm">
-                      <h4 className="text-base font-semibold text-slate-900 mb-2 flex items-center gap-2">
-                        <Megaphone className="h-4 w-4 text-french-blue" aria-hidden="true" />
-                        Communication & valorisation
-                      </h4>
-                      <ul className="space-y-2 pl-2">
-                        {cultureWeekPlan.governance.communication.map((item) => (
-                          <li key={item} className={listItemClass}>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </div>

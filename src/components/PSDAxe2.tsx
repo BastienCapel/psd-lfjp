@@ -95,7 +95,14 @@ const PSDAxe2 = () => {
           linkIcon: Palette,
         },
         {
-          content: <span>Semaine des cultures</span>,
+          content: (
+            <span>
+              <strong>Semaine des cultures</strong>
+            </span>
+          ),
+          link: '/semaine-des-cultures',
+          linkAriaLabel: 'Découvrir la Semaine des cultures',
+          linkIcon: Palette,
         },
       ],
     },

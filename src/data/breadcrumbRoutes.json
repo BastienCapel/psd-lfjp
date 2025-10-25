@@ -32,6 +32,10 @@
     "name": "Parcours d'Éducation Artistique et Culturelle",
     "parent": "/plan-strategique"
   },
+  "/semaine-des-cultures": {
+    "name": "Semaine des cultures",
+    "parent": "/plan-strategique"
+  },
   "/film-annuel/3e": {
     "name": "Film annuel 3e",
     "parent": "/parcours-avenir"
