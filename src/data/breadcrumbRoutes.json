@@ -92,6 +92,10 @@
     "name": "Savoir Rouler à Vélo",
     "parent": "/plan-strategique"
   },
+  "/savoir-nager": {
+    "name": "Dispositif Savoir Nager",
+    "parent": "/plan-strategique"
+  },
   "/politique-e3d": {
     "name": "Politique E3D",
     "parent": "/plan-strategique"

@@ -35,6 +35,7 @@ import CouvertureTerrainSport from "./pages/CouvertureTerrainSport";
 import TransportScolaire from "./pages/TransportScolaire";
 import ClasseNumerique from "./pages/ClasseNumerique";
 import SavoirRouler from "./pages/SavoirRouler";
+import SavoirNager from "./pages/SavoirNager";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -254,6 +255,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <SavoirRouler />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/savoir-nager" element={
+                  <>
+                    <BreadcrumbNav />
+                    <SavoirNager />
                     <BackToTop />
                   </>
                 } />
