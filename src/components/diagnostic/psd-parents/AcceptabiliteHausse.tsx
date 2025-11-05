@@ -53,8 +53,9 @@ const AcceptabiliteHausse = () => {
         
         <div className="mt-4 p-4 bg-amber-50 rounded-lg">
           <p className="text-sm text-amber-800">
-            <strong>Constat :</strong> Les familles sont prêtes à investir dans le confort et la qualité, 
-            mais s'opposent à l'augmentation des effectifs.
+            <strong>Constat :</strong> Les familles sont prêtes à investir dans le confort et la qualité, et acceptent
+            plus volontiers une hausse des écolages quand elle finance la climatisation durable de l’établissement, mais
+            s'opposent à l'augmentation des effectifs.
           </p>
         </div>
       </div>

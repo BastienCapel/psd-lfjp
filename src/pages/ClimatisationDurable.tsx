@@ -232,6 +232,10 @@ const ClimatisationDurable = () => {
                         élevées.
                       </li>
                       <li>
+                        Les parents acceptent davantage l'idée d'une <strong>augmentation des écolages</strong> pour
+                        climatiser durablement l'établissement.
+                      </li>
+                      <li>
                         La climatisation durable est citée juste après la restauration scolaire (4,40/5), confirmant
                         l’attente d’un confort thermique rapide.
                       </li>
