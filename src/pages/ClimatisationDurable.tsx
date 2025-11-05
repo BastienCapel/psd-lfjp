@@ -294,7 +294,9 @@ const ClimatisationDurable = () => {
                         Consommations relevées
                       </h3>
                       <p>
-                        Sur la période, les trois évaporateurs ont consommé <strong>~93 kWh</strong>, dont <strong>65,5 kWh</strong> issus du solaire.
+                        Sur la période, l’ensemble <strong>un évaporateur + trois splits</strong> a consommé <strong>~93 kWh</strong>.
+                        Du mardi au vendredi, <strong>65,5 kWh</strong> ont été produits <strong>exclusivement par le solaire</strong>,
+                        malgré un faible ensoleillement sénégalais en pleine saison d’hivernage.
                         Les compléments réseau sont restés limités à <strong>27 kWh</strong> lors des journées couvertes.
                       </p>
                     </div>
@@ -314,8 +316,8 @@ const ClimatisationDurable = () => {
                         Enseignements clés
                       </h3>
                       <p>
-                        Le test confirme l’intérêt d’un <strong>pilotage solaire prioritaire</strong> et la nécessité de calibrer la maintenance
-                        préventive pour prolonger la performance en période humide.
+                        Le test confirme l’intérêt d’un <strong>pilotage solaire prioritaire</strong>, donne <strong>pleinement satisfaction</strong>
+                        aux utilisateurs et souligne la nécessité de calibrer la maintenance préventive pour prolonger la performance en période humide.
                       </p>
                     </div>
                   </div>
