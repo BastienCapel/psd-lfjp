@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Building, BusFront, GraduationCap, Hammer, Handshake, Leaf, ShieldCheck, Utensils, Bike, LifeBuoy } from 'lucide-react';
+import { Building, BusFront, GraduationCap, Hammer, Handshake, Leaf, ShieldCheck, Utensils, Bike, LifeBuoy, Sun } from 'lucide-react';
 
 const PSDAxe1 = () => {
   const objectifs = [
@@ -41,7 +41,10 @@ const PSDAxe1 = () => {
       title: 'Cadre de vie & infrastructures',
       items: [
         {
-          content: 'Climatisation durable'
+          content: <strong>Climatisation durable</strong>,
+          link: '/climatisation-durable',
+          linkAriaLabel: 'En savoir plus – Climatisation durable',
+          linkIcon: Sun
         },
         {
           content: <strong>Restauration scolaire</strong>,
