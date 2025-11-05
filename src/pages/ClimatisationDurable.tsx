@@ -47,59 +47,91 @@ const surveyHighlights = [
   },
 ];
 
+// Correction: remplacement des montants approximatifs par les devis exacts et ajout des données techniques issues du comparatif Excel.
 const offers = [
   {
-    supplier: "Entreprise A",
-    tech: 'Climatisation AC/DC + panneaux bifaciaux',
-    scope: 'Classes individuelles + salles spécialisées',
-    specificities: 'Garantie étendue sur compresseurs, conception robuste',
-    cost: '≈ 7,7 M FCFA (lot initial) / ≈ 52 M FCFA (déploiement étendu)',
+    supplier: 'Entreprise A',
+    tech: '12 multi-splits muraux 27K & 18K BTU + 56 panneaux 615 W (Jinko Solar Tiger Neo)',
+    scope: 'Salles de cours prioritaires, salles spécialisées et administration',
+    specificities:
+      'Onduleur hybride DEYE 50 kW + batteries lithium HT 62 kWh, marque Deye',
+    cost: '27 732 000 FCFA',
+    afterSales: [
+      'Pièces détachées tenues en stock localement.',
+      'Garantie de 3 ans sur les splits solaires et 10 ans sur les panneaux.',
+    ],
+    technicalComment:
+      'Prix compétitif avec disponibilité locale et équipements calibrés pour le climat sénégalais.',
   },
   {
-    supplier: "Entreprise B",
-    tech: 'Climatisation hybride réversible + panneaux solaires',
-    scope: 'Lot mixte 12 000 et 18 000 BTU',
-    specificities: "Offre packagée matériel + accessoires en import développé",
-    cost: '≈ 38 M FCFA',
+    supplier: 'Entreprise B',
+    tech: '14 multi-splits muraux 36K & 27K BTU + 96 panneaux 550 W',
+    scope: 'Couverture totale des ailes pédagogiques climatisées',
+    specificities:
+      'Onduleur hybride DEYE 50 kW + stockage lithium HT 62 kWh, marque ClimSol',
+    cost: '59 895 508 FCFA',
+    afterSales: [
+      'Service après-vente non détaillé dans l’offre.',
+      'Garantie globale 2 ans sur le système et 10 ans sur les panneaux solaires.',
+    ],
+    technicalComment:
+      'Investissement le plus élevé avec des équipements puissants mais une marque difficile à vérifier et un SAV flou.',
   },
   {
-    supplier: "Entreprise C",
-    tech: 'Système hybride avec stockage (batteries + onduleur)',
-    scope: 'Capacité totale climatisation + éclairage',
-    specificities: 'Fonctionnement jour/nuit, autonomie élevée',
-    cost: '≈ 29,7 M FCFA',
+    supplier: 'Entreprise C',
+    tech: '13 multi-splits muraux 27K & 18K BTU + 84 panneaux 500 W',
+    scope: 'Climatisation + éclairage basse consommation sur un bloc complet',
+    specificities:
+      'Onduleur hybride DEYE 50 kW + batteries lithium HT 62 kWh, marque Énergie Solaire Sénégal',
+    cost: '29 770 000 FCFA',
+    afterSales: [
+      'Service après-vente non mentionné.',
+      'Garantie d’un an seulement sur l’ensemble.',
+    ],
+    technicalComment:
+      'Équipements d’origine chinoise avec adaptation incertaine et risques de maintenance complexe sans SAV identifié.',
   },
   {
-    supplier: "Entreprise D",
-    tech: 'Splits hybrides + panneaux bifaciaux',
-    scope: '16 unités pour salles et locaux administratifs',
-    specificities: 'Installation simplifiée, pilotage à distance',
-    cost: '≈ 27,7 M FCFA',
+    supplier: 'Entreprise D',
+    tech: '12 multi-splits muraux 27K BTU + 126 panneaux 400 W',
+    scope: '16 unités ciblant salles et locaux administratifs',
+    specificities:
+      'Onduleur hybride DEYE 50 kW + batteries lithium HT importées, marque Blular',
+    cost: '24 925 054 FCFA',
+    afterSales: [
+      'Service après-vente non disponible sur place (prestataire basé en France).',
+      'Garantie non précisée, remplacement des pièces rendu difficile par la logistique.',
+    ],
+    technicalComment:
+      'Offre internationale sans SAV local, logistique lourde (transport et douane non inclus).',
   },
 ];
 
+// Correction: ajustement du classement pour refléter les forces/faiblesses techniques et SAV de chaque devis.
 const ranking = [
   {
     position: '1',
     supplier: 'Entreprise A',
     rationale:
-      'Solution robuste, progression par vagues successives, bon ratio coût/longévité et références locales.',
+      'Coût le plus compétitif, garanties longues (3 ans splits / 10 ans panneaux) et SAV local avec pièces disponibles.',
   },
   {
     position: '2',
     supplier: 'Entreprise C',
     rationale:
-      'Autonomie énergétique réelle grâce au stockage mais investissement et maintenance plus exigeants.',
+      'Budget maîtrisé et stockage complet, mais adaptation des équipements chinois incertaine et garantie limitée à un an.',
   },
   {
     position: '3',
     supplier: 'Entreprise D',
-    rationale: 'Installation simple, pilotage à distance, mais moins performante en climat extrême.',
+    rationale:
+      'Devis attractif mais absence totale de SAV sur place et coûts logistiques additionnels (transport/douanes) à prévoir.',
   },
   {
     position: '4',
     supplier: 'Entreprise B',
-    rationale: 'Offre cohérente mais rapport puissance/fonctionnement moins adapté aux volumes ciblés.',
+    rationale:
+      'Montant le plus élevé, marque non référencée et service après-vente non clarifié malgré des puissances supérieures.',
   },
 ];
 
@@ -362,7 +394,7 @@ const ClimatisationDurable = () => {
                           <th className="px-4 py-3 text-left font-semibold">Technologie proposée</th>
                           <th className="px-4 py-3 text-left font-semibold">Capacité couverte</th>
                           <th className="px-4 py-3 text-left font-semibold">Particularités</th>
-                          <th className="px-4 py-3 text-left font-semibold">Montant estimatif</th>
+                          <th className="px-4 py-3 text-left font-semibold">Montant du devis</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-slate-200">
@@ -379,6 +411,53 @@ const ClimatisationDurable = () => {
                     </table>
                   </div>
 
+                  <p className="text-sm text-slate-600 italic">
+                    {/* Correction: mention explicite de l'absence d'offre Afrety demandée par le commanditaire. */}
+                    Aucune proposition n'a été reçue de la part d'Afrety au moment de cette comparaison, ce qui limite la vision
+                    exhaustive du marché local.
+                  </p>
+
+                  <div className="space-y-6">
+                    <div className="space-y-3">
+                      <h4 className="text-base font-semibold text-slate-900 flex items-center gap-2">
+                        <Settings className="h-5 w-5 text-slate-600" aria-hidden="true" />
+                        Détails techniques complémentaires
+                      </h4>
+                      <ul className="list-disc pl-5 space-y-2 text-slate-700 text-sm md:text-base">
+                        {/* Correction: rappel des constantes techniques communes issues du comparatif (puissances, onduleur, panneaux). */}
+                        <li>Toutes les offres intègrent un onduleur hybride DEYE 50 kW et des batteries lithium haute tension (~62 kWh).</li>
+                        <li>Les configurations couvrent de 12 à 14 splits muraux entre 18K et 36K BTU selon les entreprises.</li>
+                        <li>Les panneaux solaires varient de 56 à 126 modules (400 à 615 W) principalement en Jinko Solar Tiger Neo.</li>
+                        <li>Les marques associées par offre sont : Deye, ClimSol, Énergie Solaire Sénégal et Blular.</li>
+                      </ul>
+                    </div>
+
+                    <div className="grid gap-4 md:grid-cols-2">
+                      {offers.map((offer) => (
+                        <Card key={`${offer.supplier}-details`} className="border-slate-200">
+                          <CardHeader>
+                            <CardTitle className="text-base">{offer.supplier}</CardTitle>
+                            <p className="text-xs uppercase tracking-wide text-slate-500">Maintenance, garanties & lecture technique</p>
+                          </CardHeader>
+                          <CardContent className="space-y-3 text-sm text-slate-700">
+                            <div>
+                              <p className="font-semibold text-slate-900">Maintenance & garanties</p>
+                              <ul className="list-disc pl-5 space-y-1">
+                                {offer.afterSales.map((item) => (
+                                  <li key={item}>{item}</li>
+                                ))}
+                              </ul>
+                            </div>
+                            <div>
+                              <p className="font-semibold text-slate-900">Commentaire technique</p>
+                              <p>{offer.technicalComment}</p>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  </div>
+
                   <div className="grid gap-4 md:grid-cols-2">
                     <Card className="border-slate-200">
                       <CardHeader>
@@ -389,10 +468,11 @@ const ClimatisationDurable = () => {
                       </CardHeader>
                       <CardContent>
                         <ul className="list-disc pl-5 space-y-2 text-slate-700 text-sm md:text-base">
-                          <li>Fiabilité : garanties étendues et matériel tropicalisé chez Entreprises A et C.</li>
-                          <li>Continuité de service : seule l’Entreprise C intègre un stockage complet jour/nuit.</li>
-                          <li>Installation : Entreprise D propose la mise en œuvre la plus simple et pilotable à distance.</li>
-                          <li>Coût global : Entreprise A optimise le ratio investissement / économie sur un déploiement progressif.</li>
+                          {/* Correction: harmonisation des enseignements techniques avec les nouvelles données détaillées. */}
+                          <li>Les devis locaux (A, B, C) reposent sur des équipes implantées sur place, mais seuls A et C documentent leur SAV.</li>
+                          <li>Les puissances froid proposées oscillent entre 27K et 36K BTU pour couvrir les salles de cours.</li>
+                          <li>Les écarts de prix sont principalement liés au nombre de splits et de panneaux mobilisés (56 à 126 modules).</li>
+                          <li>Le ratio coût/service place l’Entreprise A en tête grâce à son prix et à ses garanties étendues.</li>
                         </ul>
                       </CardContent>
                     </Card>
