@@ -133,11 +133,19 @@ const ClimatisationDurable = () => {
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <Button variant="outline" className="text-white border-white/40 hover:bg-white/10" onClick={() => navigate('/plan-strategique')}>
+              <Button
+                variant="outline"
+                className="bg-white text-french-blue border-french-blue hover:bg-french-blue hover:text-white focus-visible:ring-french-blue"
+                onClick={() => navigate('/plan-strategique')}
+              >
                 <ArrowLeft className="mr-2 h-4 w-4" aria-hidden="true" />
                 Retour au plan stratégique
               </Button>
-              <Button variant="outline" className="text-white border-white/40 hover:bg-white/10" onClick={() => navigate('/')}> 
+              <Button
+                variant="outline"
+                className="bg-white text-french-blue border-french-blue hover:bg-french-blue hover:text-white focus-visible:ring-french-blue"
+                onClick={() => navigate('/')}
+              >
                 <Home className="mr-2 h-4 w-4" aria-hidden="true" />
                 Accueil PSD
               </Button>

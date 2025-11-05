@@ -48,13 +48,21 @@ const PCParLyceen = () => {
       
       <div className="container mx-auto px-6 py-12">
         <div className="flex flex-wrap gap-4 mb-8 items-center justify-center sm:justify-start">
-          <Button variant="outline" asChild>
+          <Button
+            variant="outline"
+            className="bg-white text-french-blue border-french-blue hover:bg-french-blue hover:text-white focus-visible:ring-french-blue"
+            asChild
+          >
             <Link to="/plan-strategique" state={{ axe: 'axe4' }}>
               <ArrowLeft className="mr-2" />
               Retour au plan stratégique
             </Link>
           </Button>
-          <Button variant="outline" asChild>
+          <Button
+            variant="outline"
+            className="bg-white text-french-blue border-french-blue hover:bg-french-blue hover:text-white focus-visible:ring-french-blue"
+            asChild
+          >
             <Link to="/">
               <Home className="mr-2" />
               Accueil

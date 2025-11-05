@@ -64,13 +64,21 @@ const ParcoursAvenir = () => {
       </header>
 
       <div className="container mx-auto px-6 py-6 flex flex-wrap gap-3">
-        <Button variant="outline" asChild>
+        <Button
+          variant="outline"
+          className="bg-white text-french-blue border-french-blue hover:bg-french-blue hover:text-white focus-visible:ring-french-blue"
+          asChild
+        >
           <Link to="/plan-strategique" state={{ axe: 'axe4' }}>
             <ArrowLeft className="mr-2 h-4 w-4" aria-hidden />
             Retour au plan stratégique
           </Link>
         </Button>
-        <Button variant="outline" asChild>
+        <Button
+          variant="outline"
+          className="bg-white text-french-blue border-french-blue hover:bg-french-blue hover:text-white focus-visible:ring-french-blue"
+          asChild
+        >
           <Link to="/">
             <Home className="mr-2 h-4 w-4" aria-hidden />
             Accueil
