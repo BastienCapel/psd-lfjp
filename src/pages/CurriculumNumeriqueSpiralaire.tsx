@@ -161,13 +161,21 @@ const CurriculumNumeriqueSpiralaire: React.FC = () => {
         </header>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-wrap gap-3">
-          <Button variant="outline" asChild>
+          <Button
+            variant="outline"
+            className="bg-white text-french-blue border-french-blue hover:bg-french-blue hover:text-white focus-visible:ring-french-blue"
+            asChild
+          >
             <Link to="/plan-strategique" state={{ axe: 'axe3' }}>
               <ArrowLeft className="mr-2 h-4 w-4" />
               Retour au plan stratégique
             </Link>
           </Button>
-          <Button variant="outline" asChild>
+          <Button
+            variant="outline"
+            className="bg-white text-french-blue border-french-blue hover:bg-french-blue hover:text-white focus-visible:ring-french-blue"
+            asChild
+          >
             <Link to="/">
               <Home className="mr-2 h-4 w-4" />
               Accueil
