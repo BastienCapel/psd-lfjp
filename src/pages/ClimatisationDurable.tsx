@@ -295,11 +295,10 @@ const ClimatisationDurable = () => {
                         Consommations relevées
                       </h3>
                       <p>
-                        Sur la période, <strong>chaque évaporateur</strong> associé à trois splits a consommé <strong>~93 kWh</strong>,
-                        soit environ <strong>279 kWh</strong> pour l’ensemble des trois unités. Du mardi au vendredi,
-                        <strong>65,5 kWh</strong> ont été produits <strong>exclusivement par le solaire</strong>, malgré un faible
-                        ensoleillement sénégalais en pleine saison d’hivernage. Les compléments réseau sont restés limités à
-                        <strong>27 kWh</strong> lors des journées couvertes.
+                        Sur la période, l’ensemble <strong>un évaporateur + trois splits</strong> a consommé <strong>~93 kWh</strong>.
+                        Du mardi au vendredi, <strong>65,5 kWh</strong> ont été produits <strong>exclusivement par le solaire</strong>,
+                        malgré un faible ensoleillement sénégalais en pleine saison d’hivernage. Les compléments réseau sont
+                        restés limités à <strong>27 kWh</strong> lors des journées couvertes.
                       </p>
                     </div>
                     <div className="space-y-2">
