@@ -37,6 +37,7 @@ import TransportScolaire from "./pages/TransportScolaire";
 import ClasseNumerique from "./pages/ClasseNumerique";
 import SavoirRouler from "./pages/SavoirRouler";
 import SavoirNager from "./pages/SavoirNager";
+import ClimatisationDurable from "./pages/ClimatisationDurable";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -249,6 +250,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <CouvertureTerrainSport />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/climatisation-durable" element={
+                  <>
+                    <BreadcrumbNav />
+                    <ClimatisationDurable />
                     <BackToTop />
                   </>
                 } />
