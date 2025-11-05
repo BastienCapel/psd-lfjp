@@ -182,16 +182,34 @@ const ClimatisationDurable = () => {
         </section>
 
         <section className="container mx-auto px-6 py-16">
-          <Tabs defaultValue="perceptions" className="space-y-10">
-            <TabsList className="bg-white shadow-sm rounded-xl border border-slate-200 grid grid-cols-1 md:grid-cols-3">
-              <TabsTrigger value="perceptions" className="py-4 px-4 text-sm md:text-base">
-                Perceptions communautaires
+          <Tabs defaultValue="perceptions" className="space-y-10" aria-label="Navigation des synthèses climatisation durable">
+            <TabsList className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 h-auto bg-transparent p-0">
+              <TabsTrigger
+                value="perceptions"
+                className="group flex w-full flex-col items-start gap-1 rounded-2xl border border-slate-200 bg-white/80 p-5 text-left text-sm font-semibold text-slate-600 shadow-sm transition-all hover:-translate-y-0.5 hover:border-french-blue/50 hover:shadow-md focus-visible:ring-french-blue data-[state=active]:border-transparent data-[state=active]:bg-gradient-to-br data-[state=active]:from-french-blue data-[state=active]:to-sky-500 data-[state=active]:text-white data-[state=active]:shadow-lg"
+              >
+                <span className="text-base font-semibold">Perceptions communautaires</span>
+                <span className="text-sm font-normal text-slate-500 transition-colors group-data-[state=active]:text-white/80">
+                  Synthèse des retours parents & élèves
+                </span>
               </TabsTrigger>
-              <TabsTrigger value="prototype" className="py-4 px-4 text-sm md:text-base">
-                Prototype installé
+              <TabsTrigger
+                value="prototype"
+                className="group flex w-full flex-col items-start gap-1 rounded-2xl border border-slate-200 bg-white/80 p-5 text-left text-sm font-semibold text-slate-600 shadow-sm transition-all hover:-translate-y-0.5 hover:border-french-blue/50 hover:shadow-md focus-visible:ring-french-blue data-[state=active]:border-transparent data-[state=active]:bg-gradient-to-br data-[state=active]:from-french-blue data-[state=active]:to-sky-500 data-[state=active]:text-white data-[state=active]:shadow-lg"
+              >
+                <span className="text-base font-semibold">Prototype installé</span>
+                <span className="text-sm font-normal text-slate-500 transition-colors group-data-[state=active]:text-white/80">
+                  Détails du pilote en cours de test
+                </span>
               </TabsTrigger>
-              <TabsTrigger value="comparatif" className="py-4 px-4 text-sm md:text-base">
-                Analyse des offres
+              <TabsTrigger
+                value="comparatif"
+                className="group flex w-full flex-col items-start gap-1 rounded-2xl border border-slate-200 bg-white/80 p-5 text-left text-sm font-semibold text-slate-600 shadow-sm transition-all hover:-translate-y-0.5 hover:border-french-blue/50 hover:shadow-md focus-visible:ring-french-blue data-[state=active]:border-transparent data-[state=active]:bg-gradient-to-br data-[state=active]:from-french-blue data-[state=active]:to-sky-500 data-[state=active]:text-white data-[state=active]:shadow-lg"
+              >
+                <span className="text-base font-semibold">Analyse des offres</span>
+                <span className="text-sm font-normal text-slate-500 transition-colors group-data-[state=active]:text-white/80">
+                  Comparaison budgétaire & technique
+                </span>
               </TabsTrigger>
             </TabsList>
 
