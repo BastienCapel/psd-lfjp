@@ -51,10 +51,9 @@ const surveyHighlights = [
 const offers = [
   {
     supplier: 'Entreprise A',
-    tech: '12 multi-splits muraux 27K & 18K BTU + 56 panneaux 615 W (Jinko Solar Tiger Neo)',
+    tech: '12 multi-splits muraux 27K BTU et 4 multi-splits 18K BTU + 56 panneaux 615 W (Jinko Solar Tiger Neo)',
     scope: 'Salles de cours prioritaires, salles spécialisées et administration',
-    specificities:
-      'Onduleur hybride DEYE 50 kW + batteries lithium HT 62 kWh, marque Deye',
+    specificities: 'Injection directe via panneaux solaires (ni batterie – ni onduleur). Marque Deye.',
     cost: '27 732 000 FCFA',
     afterSales: [
       'Pièces détachées tenues en stock localement.',
@@ -81,8 +80,7 @@ const offers = [
     supplier: 'Entreprise C',
     tech: '13 multi-splits muraux 27K & 18K BTU + 84 panneaux 500 W',
     scope: 'Climatisation + éclairage basse consommation sur un bloc complet',
-    specificities:
-      'Onduleur hybride DEYE 50 kW + batteries lithium HT 62 kWh, marque Énergie Solaire Sénégal',
+    specificities: 'Injection directe pour les entreprises C et D (marque Énergie Solaire Sénégal).',
     cost: '29 770 000 FCFA',
     afterSales: [
       'Service après-vente non mentionné.',
@@ -95,8 +93,7 @@ const offers = [
     supplier: 'Entreprise D',
     tech: '12 multi-splits muraux 27K BTU + 126 panneaux 400 W',
     scope: '16 unités ciblant salles et locaux administratifs',
-    specificities:
-      'Onduleur hybride DEYE 50 kW + batteries lithium HT importées, marque Blular',
+    specificities: 'Injection directe pour les entreprises C et D (marque Blular).',
     cost: '24 925 054 FCFA',
     afterSales: [
       'Service après-vente non disponible sur place (prestataire basé en France).',
@@ -113,7 +110,7 @@ const ranking = [
     position: '1',
     supplier: 'Entreprise A',
     rationale:
-      'Coût le plus compétitif, garanties longues (3 ans splits / 10 ans panneaux) et SAV local avec pièces disponibles.',
+      'Coût le plus compétitif, garanties longues (3 ans splits / 10 ans panneaux) et SAV local avec pièces disponibles. C’est également le seul à proposer du multi-splits.',
   },
   {
     position: '2',
@@ -138,7 +135,7 @@ const ranking = [
 const testInsights = [
   'Période d’observation : 8 au 12 septembre 2025, alternance soleil/nuages avec épisodes pluvieux.',
   'Consommation totale de la semaine (3 évaporateurs) : ~93 kWh, dont 27 kWh en alimentation mixte et 65,5 kWh en solaire.',
-  'Apports solaires : production moyenne 7,8 kWh/jour, pointe 9,8 kWh/jour lors des journées ensoleillées.',
+  'Apports solaires : production moyenne 7,8 kWh/jour, pointe 9,8 kWh/jour lors des journées ensoleillées. Préciser (par split).',
   'Conditions ambiantes : températures extérieures de 26 à 31 °C pour un ressenti de 30 à 37 °C ; la climatisation solaire maintient une température intérieure de 24 à 25 °C.',
   'Gain constaté : optimisation des kWh solaires consommés et réduction mécanique de l’absorption électrique par évaporateur.',
 ];
@@ -327,8 +324,8 @@ const ClimatisationDurable = () => {
                         Consommations relevées
                       </h3>
                       <p>
-                        Sur la période, l’ensemble un condensateur + trois grand évaporateurs a consommé <strong>~93 kWh</strong>,
-                        soit environ <strong>279 kWh</strong> pour l’ensemble des trois unités. Du mardi au vendredi,
+                        Le bloc compresseur + <strong>3 splits (27 000 BTU)</strong> ont consommé <strong>~93 kWh</strong> sur la
+                        période, soit environ <strong>279 kWh</strong> pour l’ensemble des trois unités. Du mardi au vendredi,
                         <strong>65,5 kWh</strong> ont été produits <strong>exclusivement par le solaire</strong>, malgré un faible
                         ensoleillement sénégalais en pleine saison d’hivernage. Les compléments réseau sont restés limités à
                         <strong>27 kWh</strong> lors des journées couvertes.
@@ -426,7 +423,7 @@ const ClimatisationDurable = () => {
                       </h4>
                       <ul className="list-disc pl-5 space-y-2 text-slate-700 text-sm md:text-base">
                         {/* Correction: rappel des constantes techniques communes issues du comparatif (puissances, onduleur, panneaux). */}
-                        <li>Toutes les offres intègrent un onduleur hybride DEYE 50 kW et des batteries lithium haute tension (~62 kWh).</li>
+                        <li>Une seule offre (B) propose onduleur et batterie, les autres injection directe.</li>
                         <li>Les configurations couvrent de 12 à 14 splits muraux entre 18K et 36K BTU selon les entreprises.</li>
                         <li>Les panneaux solaires varient de 56 à 126 modules (400 à 615 W) principalement en Jinko Solar Tiger Neo.</li>
                         <li>Les marques associées par offre sont : Deye, ClimSol, Énergie Solaire Sénégal et Blular.</li>
@@ -500,13 +497,18 @@ const ClimatisationDurable = () => {
 
                   <Card className="border-l-4 border-emerald-500 bg-emerald-50">
                     <CardContent className="space-y-3 py-6">
-                      <h3 className="text-lg font-semibold text-emerald-800">Recommandation stratégique</h3>
+                      <div className="flex items-center justify-between gap-4">
+                        <h3 className="text-lg font-semibold text-emerald-800">Recommandation stratégique</h3>
+                        <span className="text-sm font-semibold uppercase tracking-wide text-emerald-600">
+                          Plan Stratégique
+                        </span>
+                      </div>
                       <p className="text-slate-700">
                         Engager une première phase avec <strong>l’Entreprise A</strong> sur les salles prioritaires, puis étendre
                         graduellement les installations selon le calendrier du Plan Satellites.
                       </p>
                       <ul className="list-disc pl-5 text-slate-700 text-sm md:text-base space-y-2">
-                        <li>Effet immédiat sur la consommation électrique et le confort thermique.</li>
+                        <li>Amélioration immédiate du confort sans impact sur la consommation électrique.</li>
                         <li>Capacité à lisser l’investissement dans le temps en fonction des enveloppes budgétaires.</li>
                         <li>Alignement avec la feuille de route E³D et la trajectoire énergétique durable de l’établissement.</li>
                       </ul>
