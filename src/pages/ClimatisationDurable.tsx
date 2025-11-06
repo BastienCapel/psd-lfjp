@@ -497,15 +497,10 @@ const ClimatisationDurable = () => {
 
                   <Card className="border-l-4 border-emerald-500 bg-emerald-50">
                     <CardContent className="space-y-3 py-6">
-                      <div className="flex items-center justify-between gap-4">
-                        <h3 className="text-lg font-semibold text-emerald-800">Recommandation stratégique</h3>
-                        <span className="text-sm font-semibold uppercase tracking-wide text-emerald-600">
-                          Plan Stratégique
-                        </span>
-                      </div>
+                      <h3 className="text-lg font-semibold text-emerald-800">Recommandation stratégique</h3>
                       <p className="text-slate-700">
                         Engager une première phase avec <strong>l’Entreprise A</strong> sur les salles prioritaires, puis étendre
-                        graduellement les installations selon le calendrier du Plan Satellites.
+                        graduellement les installations selon le calendrier du Plan Stratégique.
                       </p>
                       <ul className="list-disc pl-5 text-slate-700 text-sm md:text-base space-y-2">
                         <li>Amélioration immédiate du confort sans impact sur la consommation électrique.</li>
