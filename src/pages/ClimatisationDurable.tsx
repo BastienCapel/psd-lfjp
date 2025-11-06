@@ -135,7 +135,7 @@ const ranking = [
 const testInsights = [
   'Période d’observation : 8 au 12 septembre 2025, alternance soleil/nuages avec épisodes pluvieux.',
   'Consommation totale de la semaine (3 évaporateurs) : ~93 kWh, dont 27 kWh en alimentation mixte et 65,5 kWh en solaire.',
-  'Apports solaires : production moyenne 7,8 kWh/jour, pointe 9,8 kWh/jour lors des journées ensoleillées. Préciser (par split).',
+  'Apports solaires : production moyenne 7,8 kWh/jour, pointe 9,8 kWh/jour lors des journées ensoleillées par split.',
   'Conditions ambiantes : températures extérieures de 26 à 31 °C pour un ressenti de 30 à 37 °C ; la climatisation solaire maintient une température intérieure de 24 à 25 °C.',
   'Gain constaté : optimisation des kWh solaires consommés et réduction mécanique de l’absorption électrique par évaporateur.',
 ];
