@@ -341,7 +341,8 @@ const ClimatisationDurable = () => {
                       </h3>
                       <p>
                         Malgré des températures extérieures de <strong>26 à 31 °C</strong> et un ressenti jusqu’à <strong>37 °C</strong>, la salle est restée
-                        stable entre <strong>24 et 25 °C</strong>.
+                        stable entre <strong>24 et 25 °C</strong>. Le système s’est également montré très efficace pour faire baisser le taux
+                        d’humidité de plus de <strong>80&nbsp;%</strong> à environ <strong>50&nbsp;%</strong>.
                       </p>
                     </div>
                     <div className="space-y-2">
