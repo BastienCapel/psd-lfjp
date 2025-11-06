@@ -80,7 +80,7 @@ const offers = [
     supplier: 'Entreprise C',
     tech: '13 multi-splits muraux 27K & 18K BTU + 84 panneaux 500 W',
     scope: 'Climatisation + éclairage basse consommation sur un bloc complet',
-    specificities: 'Injection directe pour les entreprises C et D (marque Énergie Solaire Sénégal).',
+    specificities: 'Injection directe pour les entreprises C et D. Marque Énergie Solaire Sénégal.',
     cost: '29 770 000 FCFA',
     afterSales: [
       'Service après-vente non mentionné.',
@@ -93,7 +93,7 @@ const offers = [
     supplier: 'Entreprise D',
     tech: '12 multi-splits muraux 27K BTU + 126 panneaux 400 W',
     scope: '16 unités ciblant salles et locaux administratifs',
-    specificities: 'Injection directe pour les entreprises C et D (marque Blular).',
+    specificities: 'Injection directe pour les entreprises C et D. Marque Blular.',
     cost: '24 925 054 FCFA',
     afterSales: [
       'Service après-vente non disponible sur place (prestataire basé en France).',
