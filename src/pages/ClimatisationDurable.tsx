@@ -314,7 +314,7 @@ const ClimatisationDurable = () => {
                         Conditions et production
                       </h3>
                       <p>
-                        Fonctionnement continu sur cinq jours, avec un apport solaire couvrant jusqu’à <strong>9,8 kWh/jour</strong>
+                        Fonctionnement continu sur cinq jours, avec un apport solaire couvrant jusqu’à <strong>9,8 kWh/jour</strong>{' '}
                         par évaporateur lors des épisodes ensoleillés. Avec trois évaporateurs installés, la production totale
                         grimpe ainsi jusqu’à <strong>29,4 kWh/jour</strong> et se situe en moyenne à <strong>23,4 kWh/jour</strong>.
                       </p>
@@ -328,7 +328,7 @@ const ClimatisationDurable = () => {
                         Le bloc compresseur + <strong>3 splits (27 000 BTU)</strong> a consommé <strong>~93 kWh</strong> sur la
                         période, soit environ <strong>279 kWh</strong> pour l’ensemble des trois unités. Du mardi au vendredi,
                         <strong>65,5 kWh</strong> ont été produits <strong>exclusivement par le solaire</strong>, malgré un faible
-                        ensoleillement sénégalais en pleine saison d’hivernage. Les compléments réseau sont restés limités à
+                        ensoleillement sénégalais en pleine saison d’hivernage. Les compléments réseau sont restés limités à{' '}
                         <strong>27 kWh</strong> lors des journées couvertes.
                       </p>
                     </div>
