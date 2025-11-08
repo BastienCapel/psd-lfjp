@@ -137,6 +137,14 @@ const PolitiqueE3D = () => {
             reconnaissant une démarche cohérente, transversale et pérenne en matière d’EDD. Cette page
             présente les priorités intégrées au Plan Stratégique de Développement 2026-2030.
           </p>
+          <div className="mt-10 flex justify-center">
+            <img
+              src="https://i.imgur.com/6qHXL3T.png"
+              alt="Logo du label EFE3D niveau 3 obtenu par le LFJP en 2025"
+              className="w-full max-w-md rounded-lg shadow-lg"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
 
