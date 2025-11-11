@@ -66,9 +66,6 @@ const PSDAxe2 = () => {
           linkAriaLabel: "Découvrir le déploiement du parcours BFI",
           linkIcon: Globe2,
         },
-        {
-          content: <span>Familles et langues du LFJP</span>,
-        },
       ],
     },
     {
