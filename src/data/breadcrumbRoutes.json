@@ -36,6 +36,10 @@
     "name": "Parcours d'Éducation Artistique et Culturelle",
     "parent": "/plan-strategique"
   },
+  "/parcours-sante": {
+    "name": "Parcours Santé",
+    "parent": "/plan-strategique"
+  },
   "/semaine-des-cultures": {
     "name": "Semaine des cultures",
     "parent": "/plan-strategique"

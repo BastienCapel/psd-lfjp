@@ -8,6 +8,7 @@ import {
   Hammer,
   Handshake,
   HeartHandshake,
+  HeartPulse,
   Leaf,
   ShieldCheck,
   Utensils,
@@ -96,7 +97,10 @@ const PSDAxe1 = () => {
       title: 'Cadre scolaire & santé',
       items: [
         {
-          content: 'Parcours Santé'
+          content: <strong>Parcours Santé</strong>,
+          link: '/parcours-sante',
+          linkAriaLabel: 'Découvrir le Parcours Santé',
+          linkIcon: HeartPulse
         },
         {
           content: <strong>Prévention du harcèlement</strong>,
