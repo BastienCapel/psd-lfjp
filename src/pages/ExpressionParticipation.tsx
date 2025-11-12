@@ -146,7 +146,7 @@ const ExpressionParticipation = () => {
 
       <header className="relative isolate overflow-hidden bg-gradient-to-br from-indigo-700 via-blue-700 to-blue-900 py-24 text-white md:py-32">
         <div
-          className="absolute inset-y-0 right-0 hidden w-1/2 bg-[url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-20 lg:block"
+          className="absolute inset-y-0 right-0 hidden w-1/2 bg-[url('https://i.imgur.com/i4ola7z.jpeg')] bg-cover bg-center opacity-20 lg:block"
           aria-hidden="true"
         ></div>
         <div className="container relative mx-auto px-6">
