@@ -13,6 +13,7 @@ import {
   Utensils,
   Bike,
   LifeBuoy,
+  Users2,
   Sun,
 } from 'lucide-react';
 
@@ -133,7 +134,10 @@ const PSDAxe1 = () => {
           linkIcon: HeartHandshake
         },
         {
-          content: 'Expression & participation'
+          content: <strong>Expression & participation</strong>,
+          link: '/expression-participation',
+          linkAriaLabel: 'En savoir plus – Expression & participation',
+          linkIcon: Users2
         }
       ]
     }

@@ -39,6 +39,7 @@ import SavoirRouler from "./pages/SavoirRouler";
 import SavoirNager from "./pages/SavoirNager";
 import ClimatisationDurable from "./pages/ClimatisationDurable";
 import ParentaliteCoeEducation from "./pages/ParentaliteCoeEducation";
+import ExpressionParticipation from "./pages/ExpressionParticipation";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -294,6 +295,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ParentaliteCoeEducation />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/expression-participation" element={
+                  <>
+                    <BreadcrumbNav />
+                    <ExpressionParticipation />
                     <BackToTop />
                   </>
                 } />
