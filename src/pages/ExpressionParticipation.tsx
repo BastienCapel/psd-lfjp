@@ -91,7 +91,7 @@ const budgetItems = [
     poste: 'Formation délégués',
     detail: 'Intervenants, supports, ateliers pratiques',
     montant: '250 000',
-    financement: 'Budget formation',
+    financement: 'Budget projets pédagogiques',
   },
   {
     poste: 'Événement annuel “Vie lycéenne et collégienne”',
