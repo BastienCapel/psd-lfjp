@@ -1,7 +1,20 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Building, BusFront, GraduationCap, Hammer, Handshake, Leaf, ShieldCheck, Utensils, Bike, LifeBuoy, Sun } from 'lucide-react';
+import {
+  Building,
+  BusFront,
+  GraduationCap,
+  Hammer,
+  Handshake,
+  Leaf,
+  ShieldCheck,
+  Utensils,
+  Bike,
+  LifeBuoy,
+  Sun,
+  Megaphone,
+} from 'lucide-react';
 
 const PSDAxe1 = () => {
   const objectifs = [
@@ -117,7 +130,10 @@ const PSDAxe1 = () => {
           content: 'Parentalité & coéducation'
         },
         {
-          content: 'Expression & participation'
+          content: <strong>Expression & participation</strong>,
+          link: '/expression-participation',
+          linkAriaLabel: 'En savoir plus – Expression et participation des élèves',
+          linkIcon: Megaphone
         }
       ]
     }

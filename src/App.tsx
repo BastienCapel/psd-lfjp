@@ -42,6 +42,7 @@ import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
 import PlanificationBacBlanc from "./pages/PlanificationBacBlanc";
+import ExpressionParticipation from "./pages/ExpressionParticipation";
 
 // Créer l'instance QueryClient en dehors du composant pour éviter les recréations
 const queryClient = new QueryClient({
@@ -118,6 +119,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ReussiteCitoyenne />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/expression-participation" element={
+                  <>
+                    <BreadcrumbNav />
+                    <ExpressionParticipation />
                     <BackToTop />
                   </>
                 } />
