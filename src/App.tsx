@@ -41,6 +41,7 @@ import ClimatisationDurable from "./pages/ClimatisationDurable";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
+import PlanificationBacBlanc from "./pages/PlanificationBacBlanc";
 
 // Créer l'instance QueryClient en dehors du composant pour éviter les recréations
 const queryClient = new QueryClient({
@@ -89,6 +90,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <PlanStrategique />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/planification-bac-blanc" element={
+                  <>
+                    <BreadcrumbNav />
+                    <PlanificationBacBlanc />
                     <BackToTop />
                   </>
                 } />

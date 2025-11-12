@@ -12,6 +12,10 @@
     "name": "Plan Stratégique",
     "parent": "/"
   },
+  "/planification-bac-blanc": {
+    "name": "Planification bac blanc",
+    "parent": "/plan-strategique"
+  },
   "/plan-maintenance-strategique": {
     "name": "Plan de Maintenance Stratégique",
     "parent": "/plan-strategique"
