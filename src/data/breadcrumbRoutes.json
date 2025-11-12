@@ -96,6 +96,10 @@
     "name": "Médiation entre pairs",
     "parent": "/plan-strategique"
   },
+  "/expression-participation": {
+    "name": "Expression & participation",
+    "parent": "/plan-strategique"
+  },
   "/savoir-rouler": {
     "name": "Savoir Rouler à Vélo",
     "parent": "/plan-strategique"
