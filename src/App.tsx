@@ -38,6 +38,7 @@ import ClasseNumerique from "./pages/ClasseNumerique";
 import SavoirRouler from "./pages/SavoirRouler";
 import SavoirNager from "./pages/SavoirNager";
 import ClimatisationDurable from "./pages/ClimatisationDurable";
+import ParentaliteCoeEducation from "./pages/ParentaliteCoeEducation";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -286,6 +287,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <SavoirNager />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/parentalite-coeducation" element={
+                  <>
+                    <BreadcrumbNav />
+                    <ParentaliteCoeEducation />
                     <BackToTop />
                   </>
                 } />

@@ -1,7 +1,20 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Building, BusFront, GraduationCap, Hammer, Handshake, Leaf, ShieldCheck, Utensils, Bike, LifeBuoy, Sun } from 'lucide-react';
+import {
+  Building,
+  BusFront,
+  GraduationCap,
+  Hammer,
+  Handshake,
+  HeartHandshake,
+  Leaf,
+  ShieldCheck,
+  Utensils,
+  Bike,
+  LifeBuoy,
+  Sun,
+} from 'lucide-react';
 
 const PSDAxe1 = () => {
   const objectifs = [
@@ -114,7 +127,10 @@ const PSDAxe1 = () => {
       title: 'Dialogue & implication',
       items: [
         {
-          content: 'Parentalité & coéducation'
+          content: <strong>Parentalité & coéducation</strong>,
+          link: '/parentalite-coeducation',
+          linkAriaLabel: 'En savoir plus – Parentalité & co-éducation',
+          linkIcon: HeartHandshake
         },
         {
           content: 'Expression & participation'
