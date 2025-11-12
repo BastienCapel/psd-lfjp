@@ -67,7 +67,7 @@ const offers = [
     tech: '14 multi-splits muraux 36K & 27K BTU + 96 panneaux 550 W',
     scope: 'Couverture totale des ailes pédagogiques climatisées',
     specificities:
-      'Onduleur hybride DEYE 50 kW + stockage lithium HT 62 kWh, marque ClimSol',
+      'Injection directe via panneaux solaires (ni batterie – ni onduleur). Marque ClimSol.',
     cost: '59 895 508 FCFA',
     afterSales: [
       'Service après-vente non détaillé dans l’offre.',
@@ -81,10 +81,10 @@ const offers = [
     tech: '13 multi-splits muraux 27K & 18K BTU + 84 panneaux 500 W',
     scope: 'Climatisation + éclairage basse consommation sur un bloc complet',
     specificities:
-      'Injection directe via panneaux solaires (ni batterie – ni onduleur). Marque Énergie Solaire Sénégal.',
+      'Onduleur hybride fourni avec batterie de stockage intégrée. Marque Énergie Solaire Sénégal.',
     cost: '29 770 000 FCFA',
     afterSales: [
-      'Service après-vente non mentionné.',
+      'Service après-vente non mentionné malgré la présence du stockage.',
       'Garantie d’un an seulement sur l’ensemble.',
     ],
     technicalComment:
@@ -424,7 +424,7 @@ const ClimatisationDurable = () => {
                       </h4>
                       <ul className="list-disc pl-5 space-y-2 text-slate-700 text-sm md:text-base">
                         {/* Correction: rappel des constantes techniques communes issues du comparatif (puissances, onduleur, panneaux). */}
-                        <li>Une seule offre (B) propose onduleur et batterie, les autres injection directe.</li>
+                        <li>Seule l’offre C intègre un onduleur avec batterie, les autres restent en injection directe.</li>
                         <li>Les configurations couvrent de 12 à 14 splits muraux entre 18K et 36K BTU selon les entreprises.</li>
                         <li>Les panneaux solaires varient de 56 à 126 modules (400 à 615 W) principalement en Jinko Solar Tiger Neo.</li>
                         <li>Les marques associées par offre sont : Deye, ClimSol, Énergie Solaire Sénégal et Blular.</li>
