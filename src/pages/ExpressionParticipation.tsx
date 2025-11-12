@@ -25,7 +25,7 @@ const keyActions = [
       'Formaliser les mandats et les calendriers de réunions dans un document unique publié sur le site du PSD.',
     ],
     periodicite: 'Annuel / continu',
-    responsables: 'Vie scolaire, Direction,
+    responsables: 'Vie scolaire, Direction',
   },
   {
     volet: 'Communication et visibilité',
