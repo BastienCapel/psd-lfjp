@@ -54,7 +54,7 @@ const offers = [
     tech: '12 multi-splits muraux 27K BTU et 4 multi-splits 18K BTU + 56 panneaux 615 W (Jinko Solar Tiger Neo)',
     scope: 'Salles de cours prioritaires, salles spécialisées et administration',
     specificities: 'Injection directe via panneaux solaires (ni batterie – ni onduleur). Marque Deye.',
-    cost: '27 732 000 FCFA',
+    cost: '31 982 400 FCFA',
     afterSales: [
       'Pièces détachées tenues en stock localement.',
       'Garantie de 3 ans sur les splits solaires et 10 ans sur les panneaux.',
@@ -68,7 +68,7 @@ const offers = [
     scope: 'Couverture totale des ailes pédagogiques climatisées',
     specificities:
       'Injection directe via panneaux solaires (ni batterie – ni onduleur). Marque ClimSol.',
-    cost: '59 895 508 FCFA',
+    cost: '66 745 508 FCFA',
     afterSales: [
       'Service après-vente non détaillé dans l’offre.',
       'Garantie globale 2 ans sur le système et 10 ans sur les panneaux solaires.',
@@ -82,7 +82,7 @@ const offers = [
     scope: 'Climatisation + éclairage basse consommation sur un bloc complet',
     specificities:
       'Onduleur hybride fourni avec batterie de stockage intégrée. Marque Énergie Solaire Sénégal.',
-    cost: '29 770 000 FCFA',
+    cost: '35 128 600 FCFA',
     afterSales: [
       'Service après-vente non mentionné malgré la présence du stockage.',
       'Garantie d’un an seulement sur l’ensemble.',
@@ -95,7 +95,7 @@ const offers = [
     tech: '12 multi-splits muraux 27K BTU + 126 panneaux 400 W',
     scope: '16 unités ciblant salles et locaux administratifs',
     specificities: 'Injection directe via panneaux solaires (ni batterie – ni onduleur). Marque Blular.',
-    cost: '24 925 054 FCFA',
+    cost: '28 410 054 FCFA',
     afterSales: [
       'Service après-vente non disponible sur place (prestataire basé en France).',
       'Garantie non précisée, remplacement des pièces rendu difficile par la logistique.',
@@ -111,7 +111,7 @@ const ranking = [
     position: '1',
     supplier: 'Entreprise A',
     rationale:
-      'Coût le plus compétitif, garanties longues (3 ans splits / 10 ans panneaux) et SAV local avec pièces disponibles. C’est également le seul à proposer du multi-splits.',
+      'Meilleur rapport coût/garanties, SAV local avec pièces disponibles et seul devis multi-splits complet, pour un surcoût maîtrisé face aux offres les moins chères.',
   },
   {
     position: '2',
@@ -471,7 +471,10 @@ const ClimatisationDurable = () => {
                           <li>Les devis locaux (A, B, C) reposent sur des équipes implantées sur place, mais seuls A et C documentent leur SAV.</li>
                           <li>Les puissances froid proposées oscillent entre 27K et 36K BTU pour couvrir les salles de cours.</li>
                           <li>Les écarts de prix sont principalement liés au nombre de splits et de panneaux mobilisés (56 à 126 modules).</li>
-                          <li>Le ratio coût/service place l’Entreprise A en tête grâce à son prix et à ses garanties étendues.</li>
+                          <li>
+                            Malgré un léger surcoût par rapport au devis le plus bas, le ratio coût/service place
+                            l’Entreprise A en tête grâce à ses garanties étendues et à son SAV local.
+                          </li>
                         </ul>
                       </CardContent>
                     </Card>
