@@ -77,8 +77,8 @@ const deliverables = [
 const budgetItems = [
   {
     poste: 'Communication (supports, site, affiches)',
-    detail: 'Charte graphique, maintenance, diffusion',
-    montant: '200 000',
+    detail: 'Charte graphique, maintenance, diffusion — supervisé par la responsable communication',
+    montant: '',
     financement: 'Budget communication',
   },
   {
@@ -135,7 +135,10 @@ const ExpressionParticipation = () => {
     document.title = PAGE_TITLE;
   }, []);
 
-  const totalBudget = budgetItems.reduce((acc, item) => acc + Number(item.montant.replace(/\s/g, '')), 0);
+  const totalBudget = budgetItems.reduce(
+    (acc, item) => acc + (item.montant ? Number(item.montant.replace(/\s/g, '')) : 0),
+    0,
+  );
 
   return (
     <div className="flex min-h-screen flex-col bg-slate-50 font-raleway text-slate-900">
@@ -276,7 +279,7 @@ const ExpressionParticipation = () => {
                     <tr key={item.poste}>
                       <td className="px-4 py-4 font-semibold text-french-blue">{item.poste}</td>
                       <td className="px-4 py-4">{item.detail}</td>
-                      <td className="px-4 py-4 text-slate-600">{item.montant}</td>
+                      <td className="px-4 py-4 text-slate-600">{item.montant || '—'}</td>
                       <td className="px-4 py-4 text-slate-600">{item.financement}</td>
                     </tr>
                   ))}
