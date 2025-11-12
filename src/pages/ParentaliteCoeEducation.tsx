@@ -129,7 +129,7 @@ const ParentaliteCoeEducation = () => {
       <Navbar showLogo />
 
       <header className="relative isolate overflow-hidden bg-gradient-to-br from-french-blue via-blue-700 to-blue-900 py-24 text-white md:py-32">
-        <div className="absolute inset-y-0 right-0 hidden w-1/2 bg-[url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-20 lg:block" aria-hidden="true"></div>
+        <div className="absolute inset-y-0 right-0 hidden w-1/2 bg-[url('https://i.imgur.com/u9AjgA4.jpeg')] bg-cover bg-center opacity-20 lg:block" aria-hidden="true"></div>
         <div className="container relative mx-auto px-6">
           <p className="text-sm uppercase tracking-[0.3em] text-white/70">Axe 1 · Dialogue & implication</p>
           <h1 className="mt-6 max-w-3xl text-3xl font-playfair font-bold leading-tight md:text-5xl">
