@@ -25,12 +25,12 @@ const keyActions = [
       'Formaliser les mandats et les calendriers de réunions dans un document unique publié sur le site du PSD.',
     ],
     periodicite: 'Annuel / continu',
-    responsables: 'Vie scolaire, Direction, Mme Maginot-France',
+    responsables: 'Vie scolaire, Direction,
   },
   {
     volet: 'Communication et visibilité',
     actions: [
-      'Créer une rubrique “Voix des élèves” sur le site du LFJP : comptes rendus, interviews, présentations de projets.',
+      'Créer une rubrique “Voix des élèves” sur le site du LFJP et le Petit Prévert : comptes rendus, interviews, présentations de projets.',
       'Mettre en place un mur d’expression physique et numérique (QR code, affichage, boîte à idées).',
       'Créer une rubrique dans le petit Prévert dédiée aux élèves avec un comité de rédaction hebdomadaire.',
     ],
