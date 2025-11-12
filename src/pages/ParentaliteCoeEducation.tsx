@@ -65,8 +65,8 @@ const budgetItems = [
   {
     poste: 'Formations et ateliers',
     detail: 'Intervenants, supports, communication',
-    montant: '400 000',
-    financement: 'Budget formation / AEFE',
+    montant: '0',
+    financement: "Intégré dans la facturation AEFE des établissements partenaires",
   },
   {
     poste: 'Enquêtes familles (baromètre)',
