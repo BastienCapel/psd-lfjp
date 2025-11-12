@@ -54,7 +54,7 @@ const offers = [
     tech: '12 multi-splits muraux 27K BTU et 4 multi-splits 18K BTU + 56 panneaux 615 W (Jinko Solar Tiger Neo)',
     scope: 'Salles de cours prioritaires, salles spécialisées et administration',
     specificities: 'Injection directe via panneaux solaires (ni batterie – ni onduleur). Marque Deye.',
-    cost: '31 982 400 FCFA',
+    cost: '27 732 000 FCFA',
     afterSales: [
       'Pièces détachées tenues en stock localement.',
       'Garantie de 3 ans sur les splits solaires et 10 ans sur les panneaux.',
@@ -82,7 +82,7 @@ const offers = [
     scope: 'Climatisation + éclairage basse consommation sur un bloc complet',
     specificities:
       'Onduleur hybride fourni avec batterie de stockage intégrée. Marque Énergie Solaire Sénégal.',
-    cost: '35 128 600 FCFA',
+    cost: '33 521 020 FCFA',
     afterSales: [
       'Service après-vente non mentionné malgré la présence du stockage.',
       'Garantie d’un an seulement sur l’ensemble.',
@@ -95,7 +95,7 @@ const offers = [
     tech: '12 multi-splits muraux 27K BTU + 126 panneaux 400 W',
     scope: '16 unités ciblant salles et locaux administratifs',
     specificities: 'Injection directe via panneaux solaires (ni batterie – ni onduleur). Marque Blular.',
-    cost: '28 410 054 FCFA',
+    cost: '31 664 356 FCFA',
     afterSales: [
       'Service après-vente non disponible sur place (prestataire basé en France).',
       'Garantie non précisée, remplacement des pièces rendu difficile par la logistique.',
@@ -111,7 +111,7 @@ const ranking = [
     position: '1',
     supplier: 'Entreprise A',
     rationale:
-      'Meilleur rapport coût/garanties, SAV local avec pièces disponibles et seul devis multi-splits complet, pour un surcoût maîtrisé face aux offres les moins chères.',
+      'Meilleur rapport coût/garanties, SAV local avec pièces disponibles et seul devis multi-splits complet, tout en restant l’offre la plus compétitive.',
   },
   {
     position: '2',
@@ -472,8 +472,8 @@ const ClimatisationDurable = () => {
                           <li>Les puissances froid proposées oscillent entre 27K et 36K BTU pour couvrir les salles de cours.</li>
                           <li>Les écarts de prix sont principalement liés au nombre de splits et de panneaux mobilisés (56 à 126 modules).</li>
                           <li>
-                            Malgré un léger surcoût par rapport au devis le plus bas, le ratio coût/service place
-                            l’Entreprise A en tête grâce à ses garanties étendues et à son SAV local.
+                            Avec le tarif le plus bas du comparatif, le ratio coût/service place l’Entreprise A en tête
+                            grâce à ses garanties étendues et à son SAV local.
                           </li>
                         </ul>
                       </CardContent>
