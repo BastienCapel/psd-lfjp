@@ -151,57 +151,29 @@ const PSDAxe1 = () => {
     {
       content: (
         <>
-          <strong>Taux d'élèves</strong> se déclarant « <strong>bien au LFJP</strong> » (objectif :{' '}
-          <strong>+15 pts</strong> au lycée)
+          <strong>Taux d'élèves</strong> se sentant <strong>bien au LFJP</strong>
         </>
       )
     },
     {
       content: (
         <>
-          <strong>Taux de satisfaction</strong> sur la climatisation, les sanitaires, la cantine (élèves et parents)
+          <strong>Nombre de familles accompagnées</strong> pour le <strong>soutien à la parentalité</strong>
         </>
       )
     },
     {
       content: (
         <>
-          <strong>Nombre de familles accompagnées</strong> dans le cadre de dispositifs de soutien à la parentalité
+          <strong>Taux de satisfaction globale</strong> du <strong>climat scolaire</strong>
         </>
       )
     },
     {
       content: (
         <>
-          <strong>Taux d'élèves</strong> bénéficiant d'un <strong>aménagement</strong> ou d'un{' '}
-          <strong>accompagnement pédagogique</strong>
+          <strong>Nombre de projets</strong> intégrant la <strong>politique E3D</strong>
         </>
-      )
-    },
-    {
-      content: (
-        <>
-          <strong>Avancement du plan de restauration scolaire</strong> (étapes validées)
-        </>
-      )
-    },
-    {
-      content: (
-        <>
-          <strong>Taux de satisfaction global</strong> sur le <strong>climat scolaire</strong> (par enquête ELCS)
-        </>
-      )
-    },
-    {
-      content: (
-        <>
-          <strong>Nombre de projets E3D</strong> portés par cycle
-        </>
-      )
-    },
-    {
-      content: (
-        <>Maintien du <strong>label EFE3D niveau 3</strong> à chaque renouvellement triennal</>
       )
     }
   ];
