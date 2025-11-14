@@ -73,9 +73,9 @@ const PSDAxe1 = () => {
     },
     {
       title: 'Cantine scolaire',
-      description: 'Études, consultation des prestataires et mise en service prévue en 2026',
-      start: 2025,
-      end: 2026,
+      description: 'Études, consultation des prestataires et mise en service prévue en 2027',
+      start: 2027,
+      end: 2028,
       color: 'from-orange-300/80 to-orange-500'
     },
     {
@@ -228,6 +228,13 @@ const PSDAxe1 = () => {
     }
   ];
 
+  const MAX_COLLAPSED_TIMELINE_ITEMS = 3;
+  const [isTimelineExpanded, setIsTimelineExpanded] = React.useState(false);
+  const isTimelineCollapsible = timelineActions.length > MAX_COLLAPSED_TIMELINE_ITEMS;
+  const visibleTimelineActions = isTimelineExpanded
+    ? timelineActions
+    : timelineActions.slice(0, MAX_COLLAPSED_TIMELINE_ITEMS);
+
   return (
     <div>
       <h3 className="text-xl font-playfair font-bold text-french-blue mb-4">
@@ -258,8 +265,8 @@ const PSDAxe1 = () => {
                   ))}
                 </div>
               </div>
-              <div className="space-y-3">
-                {timelineActions.map((item) => {
+              <div className={`relative space-y-3 ${!isTimelineExpanded ? 'pb-8' : ''}`}>
+                {visibleTimelineActions.map((item) => {
                   const offset = ((item.start - startYear) / totalYears) * 100;
                   const width = ((item.end - item.start + 1) / totalYears) * 100;
 
@@ -289,9 +296,26 @@ const PSDAxe1 = () => {
                     </div>
                   );
                 })}
+                {!isTimelineExpanded && isTimelineCollapsible && (
+                  <div
+                    className="pointer-events-none absolute inset-x-0 bottom-0 h-16 rounded-b-xl bg-gradient-to-t from-white via-white/70 to-transparent"
+                    aria-hidden="true"
+                  />
+                )}
               </div>
             </div>
           </div>
+          {isTimelineCollapsible && (
+            <div className="mt-4 flex justify-center">
+              <button
+                type="button"
+                onClick={() => setIsTimelineExpanded((prev) => !prev)}
+                className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-800 transition hover:bg-slate-50"
+              >
+                {isTimelineExpanded ? 'Réduire la frise' : 'Afficher toute la frise'}
+              </button>
+            </div>
+          )}
         </div>
 
         <div
