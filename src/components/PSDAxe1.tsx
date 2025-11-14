@@ -75,9 +75,10 @@ const PSDAxe1 = () => {
     },
     {
       title: 'Cantine scolaire',
-      description: 'Études, consultation des prestataires et mise en service prévue en 2027',
+      description:
+        'Études, consultation des prestataires, mise en service en 2027 puis montée en charge jusqu’en 2029',
       start: 2027,
-      end: 2027,
+      end: 2029,
       color: 'from-orange-300/80 to-orange-500'
     },
     {
