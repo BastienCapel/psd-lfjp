@@ -1,9 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Building,
   BusFront,
+  ChevronDown,
   GraduationCap,
   Hammer,
   Handshake,
@@ -19,6 +20,7 @@ import {
 } from 'lucide-react';
 
 const PSDAxe1 = () => {
+  const [isTimelineExpanded, setTimelineExpanded] = useState(false);
   const objectifs = [
     {
       content: (
@@ -73,9 +75,9 @@ const PSDAxe1 = () => {
     },
     {
       title: 'Cantine scolaire',
-      description: 'Études, consultation des prestataires et mise en service prévue en 2026',
-      start: 2025,
-      end: 2026,
+      description: 'Études, consultation des prestataires et mise en service prévue en 2027',
+      start: 2027,
+      end: 2027,
       color: 'from-orange-300/80 to-orange-500'
     },
     {
@@ -258,40 +260,60 @@ const PSDAxe1 = () => {
                   ))}
                 </div>
               </div>
-              <div className="space-y-3">
-                {timelineActions.map((item) => {
-                  const offset = ((item.start - startYear) / totalYears) * 100;
-                  const width = ((item.end - item.start + 1) / totalYears) * 100;
+              <div className="relative">
+                <div
+                  className={`space-y-3 pr-1 transition-all duration-300 ${
+                    isTimelineExpanded ? 'max-h-none' : 'max-h-[320px] overflow-hidden'
+                  }`}
+                >
+                  {timelineActions.map((item) => {
+                    const offset = ((item.start - startYear) / totalYears) * 100;
+                    const width = ((item.end - item.start + 1) / totalYears) * 100;
 
-                  return (
-                    <div
-                      key={item.title}
-                      className="grid grid-cols-[200px_1fr] items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/60 p-3"
-                    >
-                      <div>
-                        <p className="font-semibold text-slate-900">{item.title}</p>
-                        <p className="text-xs text-slate-600">{item.description}</p>
-                      </div>
-                      <div className="relative h-10 rounded-full bg-white/80">
-                        <div
-                          className={`absolute inset-y-1 rounded-full bg-gradient-to-r ${item.color} shadow-sm`}
-                          style={{
-                            left: `${offset}%`,
-                            width: `${width}%`
-                          }}
-                        />
-                        <div className="absolute inset-0 grid grid-cols-7 text-[10px] text-slate-400">
-                          {timelineYears.map((year) => (
-                            <div key={year} className="border-l border-dashed border-slate-200 first:border-l-0" />
-                          ))}
+                    return (
+                      <div
+                        key={item.title}
+                        className="grid grid-cols-[200px_1fr] items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/60 p-3"
+                      >
+                        <div>
+                          <p className="font-semibold text-slate-900">{item.title}</p>
+                          <p className="text-xs text-slate-600">{item.description}</p>
+                        </div>
+                        <div className="relative h-10 rounded-full bg-white/80">
+                          <div
+                            className={`absolute inset-y-1 rounded-full bg-gradient-to-r ${item.color} shadow-sm`}
+                            style={{
+                              left: `${offset}%`,
+                              width: `${width}%`
+                            }}
+                          />
+                          <div className="absolute inset-0 grid grid-cols-7 text-[10px] text-slate-400">
+                            {timelineYears.map((year) => (
+                              <div key={year} className="border-l border-dashed border-slate-200 first:border-l-0" />
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
+                {!isTimelineExpanded && (
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white via-white/80 to-transparent" />
+                )}
               </div>
             </div>
           </div>
+          <button
+            type="button"
+            onClick={() => setTimelineExpanded((previous) => !previous)}
+            className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-french-blue transition hover:text-french-blue/80"
+          >
+            {isTimelineExpanded ? 'Réduire la frise' : 'Afficher la frise complète'}
+            <ChevronDown
+              className={`h-4 w-4 transition-transform ${isTimelineExpanded ? 'rotate-180' : ''}`}
+              aria-hidden="true"
+            />
+          </button>
         </div>
 
         <div
