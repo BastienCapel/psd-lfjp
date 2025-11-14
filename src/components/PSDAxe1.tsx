@@ -1,6 +1,7 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import {
   Building,
   BusFront,
@@ -55,6 +56,8 @@ const PSDAxe1 = () => {
   const startYear = timelineYears[0];
   const totalYears = timelineYears[timelineYears.length - 1] - startYear + 1;
 
+  const [isTimelineExpanded, setIsTimelineExpanded] = useState(false);
+
   const timelineActions = [
     {
       title: 'Programmes bien-être & participation',
@@ -73,9 +76,9 @@ const PSDAxe1 = () => {
     },
     {
       title: 'Cantine scolaire',
-      description: 'Études, consultation des prestataires et mise en service prévue en 2026',
-      start: 2025,
-      end: 2026,
+      description: 'Études, consultation des prestataires et mise en service prévue à partir de 2027',
+      start: 2027,
+      end: 2028,
       color: 'from-orange-300/80 to-orange-500'
     },
     {
@@ -228,6 +231,8 @@ const PSDAxe1 = () => {
     }
   ];
 
+  const timelineContentId = 'axe1-timeline-content';
+
   return (
     <div>
       <h3 className="text-xl font-playfair font-bold text-french-blue mb-4">
@@ -249,48 +254,73 @@ const PSDAxe1 = () => {
             </p>
           </div>
           <div className="overflow-x-auto">
-            <div className="min-w-[720px] space-y-4">
-              <div className="grid grid-cols-[200px_1fr] items-center gap-4 text-sm font-semibold text-slate-500 uppercase tracking-wide">
-                <span>Périmètre</span>
-                <div className="grid grid-cols-7 text-center">
-                  {timelineYears.map((year) => (
-                    <span key={year}>{year}</span>
-                  ))}
+            <div className="relative">
+              <div
+                id={timelineContentId}
+                className={`transition-[max-height] duration-500 ease-in-out ${
+                  isTimelineExpanded ? 'max-h-[1200px]' : 'max-h-[320px] overflow-hidden'
+                }`}
+              >
+                <div className="min-w-[720px] space-y-4">
+                  <div className="grid grid-cols-[200px_1fr] items-center gap-4 text-sm font-semibold text-slate-500 uppercase tracking-wide">
+                    <span>Périmètre</span>
+                    <div className="grid grid-cols-7 text-center">
+                      {timelineYears.map((year) => (
+                        <span key={year}>{year}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    {timelineActions.map((item) => {
+                      const offset = ((item.start - startYear) / totalYears) * 100;
+                      const width = ((item.end - item.start + 1) / totalYears) * 100;
+
+                      return (
+                        <div
+                          key={item.title}
+                          className="grid grid-cols-[200px_1fr] items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/60 p-3"
+                        >
+                          <div>
+                            <p className="font-semibold text-slate-900">{item.title}</p>
+                            <p className="text-xs text-slate-600">{item.description}</p>
+                          </div>
+                          <div className="relative h-10 rounded-full bg-white/80">
+                            <div
+                              className={`absolute inset-y-1 rounded-full bg-gradient-to-r ${item.color} shadow-sm`}
+                              style={{
+                                left: `${offset}%`,
+                                width: `${width}%`
+                              }}
+                            />
+                            <div className="absolute inset-0 grid grid-cols-7 text-[10px] text-slate-400">
+                              {timelineYears.map((year) => (
+                                <div key={year} className="border-l border-dashed border-slate-200 first:border-l-0" />
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
-              <div className="space-y-3">
-                {timelineActions.map((item) => {
-                  const offset = ((item.start - startYear) / totalYears) * 100;
-                  const width = ((item.end - item.start + 1) / totalYears) * 100;
-
-                  return (
-                    <div
-                      key={item.title}
-                      className="grid grid-cols-[200px_1fr] items-center gap-4 rounded-xl border border-slate-100 bg-slate-50/60 p-3"
-                    >
-                      <div>
-                        <p className="font-semibold text-slate-900">{item.title}</p>
-                        <p className="text-xs text-slate-600">{item.description}</p>
-                      </div>
-                      <div className="relative h-10 rounded-full bg-white/80">
-                        <div
-                          className={`absolute inset-y-1 rounded-full bg-gradient-to-r ${item.color} shadow-sm`}
-                          style={{
-                            left: `${offset}%`,
-                            width: `${width}%`
-                          }}
-                        />
-                        <div className="absolute inset-0 grid grid-cols-7 text-[10px] text-slate-400">
-                          {timelineYears.map((year) => (
-                            <div key={year} className="border-l border-dashed border-slate-200 first:border-l-0" />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+              {!isTimelineExpanded && (
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white via-white/95 to-transparent"
+                />
+              )}
             </div>
+          </div>
+          <div className="mt-4 flex justify-center">
+            <Button
+              variant="outline"
+              onClick={() => setIsTimelineExpanded((prev) => !prev)}
+              aria-expanded={isTimelineExpanded}
+              aria-controls={timelineContentId}
+            >
+              {isTimelineExpanded ? 'Réduire la frise' : 'Afficher la frise complète'}
+            </Button>
           </div>
         </div>
 
