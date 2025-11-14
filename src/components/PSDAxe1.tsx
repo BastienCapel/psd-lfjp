@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Building,
@@ -73,9 +73,9 @@ const PSDAxe1 = () => {
     },
     {
       title: 'Cantine scolaire',
-      description: 'Études, consultation des prestataires et mise en service prévue en 2026',
-      start: 2025,
-      end: 2026,
+      description: 'Études, consultation des prestataires et mise en service prévue à partir de 2027',
+      start: 2027,
+      end: 2028,
       color: 'from-orange-300/80 to-orange-500'
     },
     {
@@ -228,6 +228,11 @@ const PSDAxe1 = () => {
     }
   ];
 
+  const [showFullTimeline, setShowFullTimeline] = useState(false);
+  const visibleTimelineActions = showFullTimeline ? timelineActions : timelineActions.slice(0, 3);
+
+  const hiddenTimelineActionsCount = timelineActions.length - visibleTimelineActions.length;
+
   return (
     <div>
       <h3 className="text-xl font-playfair font-bold text-french-blue mb-4">
@@ -244,8 +249,8 @@ const PSDAxe1 = () => {
               Frise temporelle des actions structurantes (2025-2031)
             </h4>
             <p className="text-sm text-slate-600">
-              Visualisation synthétique des principaux chantiers prévus pour l'axe 1 : la barre colorée indique
-              la période estimée de préparation, de déploiement ou de suivi pour chaque action.
+              Visualisation synthétique et repliable des principaux chantiers prévus pour l'axe 1 : la barre colorée
+              indique la période estimée de préparation, de déploiement ou de suivi pour chaque action.
             </p>
           </div>
           <div className="overflow-x-auto">
@@ -259,7 +264,7 @@ const PSDAxe1 = () => {
                 </div>
               </div>
               <div className="space-y-3">
-                {timelineActions.map((item) => {
+                {visibleTimelineActions.map((item) => {
                   const offset = ((item.start - startYear) / totalYears) * 100;
                   const width = ((item.end - item.start + 1) / totalYears) * 100;
 
@@ -290,6 +295,19 @@ const PSDAxe1 = () => {
                   );
                 })}
               </div>
+              {hiddenTimelineActionsCount > 0 && (
+                <div className="mt-4 text-center">
+                  <button
+                    type="button"
+                    onClick={() => setShowFullTimeline((previous) => !previous)}
+                    className="inline-flex items-center justify-center rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-french-blue transition hover:border-french-blue/40 hover:bg-french-blue/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue"
+                  >
+                    {showFullTimeline
+                      ? 'Réduire la frise'
+                      : `Afficher toute la frise (${hiddenTimelineActionsCount} action${hiddenTimelineActionsCount > 1 ? 's' : ''} supplémentaires)`}
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
