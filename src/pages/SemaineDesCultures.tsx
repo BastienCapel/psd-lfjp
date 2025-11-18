@@ -114,9 +114,6 @@ const SemaineDesCultures = () => {
           <div className="absolute inset-0 bg-slate-900/60" aria-hidden="true"></div>
         </div>
         <div className="relative container mx-auto px-6 py-24 md:py-32 text-center text-white">
-          <div className="mx-auto mb-6 max-w-3xl rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-lg backdrop-blur-sm">
-            La Semaine des cultures sera portée par les parents d'élèves de l'APE, sous l'impulsion de la commission événementielle des statuts rénovés.
-          </div>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-playfair font-bold text-balance mb-6">
             Semaine des cultures du LFJP
           </h1>
@@ -149,6 +146,12 @@ const SemaineDesCultures = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col-reverse lg:flex-row gap-12">
             <div className="flex-1 space-y-10">
+              <div className="rounded-3xl border border-slate-200 bg-slate-900 text-white p-8 shadow-sm">
+                <p className="text-center text-[clamp(1rem,1.6vw,1.125rem)] font-semibold leading-relaxed">
+                  La Semaine des cultures sera portée par les parents d'élèves de l'APE, sous l'impulsion de la commission événementielle des statuts rénovés.
+                </p>
+              </div>
+
               <section id="finalite" className={sectionCardClass}>
                 <div className="absolute inset-0 bg-gradient-to-br from-french-blue/5 via-transparent to-french-blue/10" aria-hidden="true"></div>
                 <div className="relative space-y-4">
