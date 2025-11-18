@@ -204,7 +204,7 @@ const PSDAxe1 = () => {
     {
       content: (
         <>
-          <strong>Taux d'élèves</strong> se sentant <strong>bien au LFJP</strong>
+          <strong>Taux de membres</strong> de la <strong>communauté éducative</strong>
         </>
       )
     },
