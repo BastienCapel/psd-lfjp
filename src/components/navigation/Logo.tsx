@@ -17,7 +17,7 @@ const Logo = ({ showLogo }: LogoProps) => {
       )}
       <div className="flex flex-col items-start">
         <h1 className="text-xl font-playfair font-bold text-french-blue">Lycée Français Jacques Prévert</h1>
-        <p className="text-xs text-gray-600">Sénégal - Petite Côte</p>
+        <p className="text-xs text-gray-600">Sénégal - Petite Côte - Saly</p>
       </div>
     </div>
   );
