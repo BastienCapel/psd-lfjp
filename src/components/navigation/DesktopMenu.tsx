@@ -13,8 +13,12 @@ const DesktopMenu = ({ isActive }: DesktopMenuProps) => {
   return (
     <NavigationMenu className="hidden md:flex">
       <NavigationMenuList className="space-x-2">
-        <DesktopNavItem to="/" isActive={isActive('/')}> 
+        <DesktopNavItem to="/" isActive={isActive('/')}>
           Accueil
+        </DesktopNavItem>
+
+        <DesktopNavItem to="/methode" isActive={isActive('/methode')}>
+          Méthode
         </DesktopNavItem>
 
         <DesktopNavItem to="/vision-missions-valeurs" isActive={isActive('/vision-missions-valeurs')}>

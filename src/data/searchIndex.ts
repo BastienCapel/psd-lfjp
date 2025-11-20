@@ -15,6 +15,13 @@ export const searchIndex: SearchEntry[] = [
     category: 'Général',
   },
   {
+    path: '/methode',
+    title: 'Notre méthode',
+    description: 'Démarche en 7 étapes et processus participatif pour élaborer le PSD.',
+    keywords: ['méthode', 'démarche', 'participation', 'validation'],
+    category: 'Général',
+  },
+  {
     path: '/vision-missions-valeurs',
     title: 'Vision, missions et valeurs',
     description: 'Principes fondateurs, raison d’être et culture commune de l’établissement.',
