@@ -10,6 +10,7 @@ const routesPath = resolve(__dirname, '../src/data/breadcrumbRoutes.json');
 const routes = JSON.parse(readFileSync(routesPath, 'utf-8'));
 
 const expectedRoutes = {
+  '/methode': { parent: '/' },
   '/vision-missions-valeurs': { parent: '/' },
   '/diagnostic': { parent: '/' },
   '/plan-strategique': { parent: '/' },

@@ -19,13 +19,27 @@ const Index = () => {
           <h2 className="text-3xl font-playfair font-bold text-french-blue mb-12 text-center animate-fade-in">
             Bienvenue sur le site du plan stratégique de développement du Lycée Français Jacques Prévert
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-1">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Notre méthode</h3>
+                <p className="text-gray-600 mb-6">
+                  Découvrez les étapes clés et la démarche participative qui ont guidé l’élaboration du Plan
+                  Stratégique de Développement du LFJP.
+                </p>
+                <Link to="/methode" className="inline-flex items-center text-french-blue font-medium hover:underline group">
+                  Comprendre la démarche
+                  <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </CardContent>
+            </Card>
+
             <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-1">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Vision, Missions et Valeurs</h3>
                 <p className="text-gray-600 mb-6">
-                  Découvrez notre vision, nos missions éducatives et les valeurs qui guident quotidiennement notre 
+                  Découvrez notre vision, nos missions éducatives et les valeurs qui guident quotidiennement notre
                   établissement dans la formation des citoyens du monde.
                 </p>
                 <Link to="/vision-missions-valeurs" className="inline-flex items-center text-french-blue font-medium hover:underline group">

@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Methode from "./pages/Methode";
 import VisionMissionsValeurs from "./pages/VisionMissionsValeurs";
 import Diagnostic from "./pages/Diagnostic";
 import PlanStrategique from "./pages/PlanStrategique";
@@ -68,6 +69,13 @@ const App = () => {
             <div className="flex flex-col min-h-screen">
               <Routes>
                 <Route path="/" element={<Index />} />
+                <Route path="/methode" element={
+                  <>
+                    <BreadcrumbNav />
+                    <Methode />
+                    <BackToTop />
+                  </>
+                } />
                 <Route path="/vision-missions-valeurs" element={
                   <>
                     <BreadcrumbNav />
