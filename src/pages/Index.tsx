@@ -148,6 +148,13 @@ const Index = () => {
                   inlassables, cet idéal devient ici quelque chose de très concret, imbriquant enfin la gestion et la
                   pédagogie.
                 </p>
+                <p>
+                  Car ultimement, cette mobilisation collective n’a qu’une seule boussole. Au-delà des stratégies et
+                  des structures, ce sont les élèves qui constituent le cœur battant de notre établissement. C’est pour
+                  leur épanouissement et leur réussite future que nous déployons toute cette énergie, en veillant à
+                  replacer invariablement leurs intérêts au centre de chacune de nos intentions, de nos discussions et
+                  de nos actions.
+                </p>
                 <div className="pt-2">
                   <p className="font-semibold text-gray-900">Bastien Capel - Proviseur</p>
                   <p className="font-semibold text-gray-900">Nathalie Maginot-France - directrice du primaire</p>
