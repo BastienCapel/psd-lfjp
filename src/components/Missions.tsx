@@ -23,9 +23,9 @@ const Missions = () => {
   return (
     <section id="missions" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-start gap-8 md:gap-16">
-          <div className="w-full md:w-1/3 flex md:flex-col items-start md:items-start gap-4">
-            <div className="w-24 h-24 rounded-full bg-french-blue bg-opacity-10 flex items-center justify-center mx-auto md:mx-0">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16">
+          <div className="w-full md:w-1/3 flex md:flex-col items-start md:items-center gap-4 text-left md:text-center">
+            <div className="w-24 h-24 rounded-full bg-french-blue bg-opacity-10 flex items-center justify-center mx-auto">
               <List size={48} className="text-french-blue" />
             </div>
 

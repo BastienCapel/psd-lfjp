@@ -6,8 +6,8 @@ const Vision = () => {
   return (
     <section id="vision" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-start gap-8 md:gap-16">
-          <div className="w-full md:w-1/3 flex md:flex-col items-start md:items-center gap-4">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16">
+          <div className="w-full md:w-1/3 flex md:flex-col items-start md:items-center gap-4 text-left md:text-center">
             <div className="w-24 h-24 rounded-full bg-french-blue bg-opacity-10 flex items-center justify-center">
               <Target size={48} className="text-french-blue" />
             </div>
