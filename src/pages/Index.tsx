@@ -20,21 +20,35 @@ const Index = () => {
             Bienvenue sur le site du plan stratégique de développement du Lycée Français Jacques Prévert
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Vision, Missions et Valeurs</h3>
+                <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Méthode</h3>
                 <p className="text-gray-600 mb-6">
-                  Découvrez notre vision, nos missions éducatives et les valeurs qui guident quotidiennement notre 
-                  établissement dans la formation des citoyens du monde.
+                  Parcourez la démarche en 7 étapes et la gouvernance participative qui cadrent l'élaboration du
+                  plan stratégique du LFJP.
                 </p>
-                <Link to="/vision-missions-valeurs" className="inline-flex items-center text-french-blue font-medium hover:underline group">
-                  Découvrir 
+                <Link to="/methode" className="inline-flex items-center text-french-blue font-medium hover:underline group">
+                  Comprendre
                   <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </CardContent>
             </Card>
-            
+
+            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-1">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Vision, Missions et Valeurs</h3>
+                <p className="text-gray-600 mb-6">
+                  Découvrez notre vision, nos missions éducatives et les valeurs qui guident quotidiennement notre
+                  établissement dans la formation des citoyens du monde.
+                </p>
+                <Link to="/vision-missions-valeurs" className="inline-flex items-center text-french-blue font-medium hover:underline group">
+                  Découvrir
+                  <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </CardContent>
+            </Card>
+
             <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-2">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Diagnostic</h3>

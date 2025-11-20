@@ -29,17 +29,25 @@ const MobileMenu = ({ id, mobileMenuOpen, setMobileMenuOpen, isActive }: MobileM
           &times;
         </button>
         
-        <MobileNavItem 
-          to="/" 
-          isActive={isActive('/')} 
+        <MobileNavItem
+          to="/"
+          isActive={isActive('/')}
           onClick={() => setMobileMenuOpen(false)}
         >
           Accueil
         </MobileNavItem>
-        
-        <MobileNavItem 
-          to="/vision-missions-valeurs" 
-          isActive={isActive('/vision-missions-valeurs')} 
+
+        <MobileNavItem
+          to="/methode"
+          isActive={isActive('/methode')}
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          Méthode
+        </MobileNavItem>
+
+        <MobileNavItem
+          to="/vision-missions-valeurs"
+          isActive={isActive('/vision-missions-valeurs')}
           onClick={() => setMobileMenuOpen(false)}
         >
           Vision & Valeurs
