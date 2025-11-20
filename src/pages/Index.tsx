@@ -13,7 +13,66 @@ const Index = () => {
     <div className="min-h-screen flex flex-col font-raleway">
       <Navbar showLogo={true} />
       <Hero title="Lycée Français Jacques Prévert" subtitle="Excellence, Respect, Créativité, Persévérance, Civisme" />
-      
+
+      <section className="py-16 md:py-24 bg-french-blue/5">
+        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
+            <CardContent className="p-8 space-y-6">
+              <div>
+                <p className="text-sm uppercase tracking-wide text-french-blue font-semibold">Mot du président</p>
+                <h3 className="text-2xl font-playfair font-bold text-french-blue">Comité de gestion</h3>
+              </div>
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  gestion parentale et l’implication de toutes et tous sont au cœur de notre modèle. Il souligne
+                  combien notre responsabilité est partagée, et combien la collaboration entre les familles, les
+                  équipes pédagogiques et nos partenaires est essentielle pour offrir à chaque élève un cadre propice
+                  à son développement intellectuel, humain et citoyen.
+                </p>
+                <p>
+                  Dans un monde en constante évolution, il est crucial de ne jamais perdre de vue cette mission
+                  fondamentale. La large consultation que nous avons conduite – auprès des parents, des personnels,
+                  des élèves et de nos partenaires sénégalais – nous a permis de réaffirmer nos valeurs et de bâtir,
+                  main dans la main, une vision ambitieuse et fédératrice pour les années à venir.
+                </p>
+                <p>
+                  Notre lycée est une belle somme d’énergies, de compétences et de regards complémentaires. Les
+                  nombreux échanges que nous avons eus ont fait émerger une intelligence collective précieuse, dont ce
+                  plan stratégique est le fruit. C’est en unissant nos forces, en écoutant chacune des voix, que nous
+                  parviendrons à toujours mieux accompagner nos enfants, à les faire grandir et à leur donner les clés
+                  pour construire un avenir serein et prometteur.
+                </p>
+                <p>
+                  Le Plan Stratégique 2026-2031 est donc le reflet de votre parole, de vos aspirations et de votre
+                  engagement. Nous espérons que vous vous y reconnaîtrez, car il a été conçu avec vous… et pour eux,
+                  pour nos enfants.
+                </p>
+                <p>
+                  C’est avec une grande fierté que nous continuons à écrire, ensemble, les belles pages du Lycée
+                  Français Jacques Prévert. Merci à toutes et à tous de votre confiance et de votre dynamisme.
+                </p>
+                <p>Le plus beau reste à venir… ensemble pour nos enfants !</p>
+                <div className="pt-2">
+                  <p className="font-semibold text-gray-900">Le Président du Comité de Gestion,</p>
+                  <p className="font-semibold text-gray-900">Omar V. Benson</p>
+                  <p className="text-gray-700">Au nom de toute la communauté éducative du LFJP</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-1 flex">
+            <CardContent className="p-8 flex flex-col justify-between">
+              <div>
+                <p className="text-sm uppercase tracking-wide text-french-blue font-semibold">Mot de la direction pédagogique</p>
+                <h3 className="text-2xl font-playfair font-bold text-french-blue">Proviseur et directrice du primaire</h3>
+              </div>
+              <p className="mt-6 text-gray-600 text-lg">En construction</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-playfair font-bold text-french-blue mb-12 text-center animate-fade-in">
