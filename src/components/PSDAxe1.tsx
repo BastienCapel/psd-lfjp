@@ -19,6 +19,164 @@ import {
   Sun,
 } from 'lucide-react';
 
+type TimelineAction = {
+  label: string;
+  start: number;
+  end: number;
+  type: 'recurring' | 'project' | 'milestone';
+  detail?: string;
+};
+
+type TimelineCategory = {
+  title: string;
+  actions: TimelineAction[];
+};
+
+const TIMELINE_YEARS = [2025, 2026, 2027, 2028, 2029, 2030, 2031];
+const TIMELINE_MIN_YEAR = TIMELINE_YEARS[0];
+const TIMELINE_MAX_YEAR = TIMELINE_YEARS[TIMELINE_YEARS.length - 1];
+const TIMELINE_TOTAL_YEARS = TIMELINE_MAX_YEAR - TIMELINE_MIN_YEAR + 1;
+
+const timelineTypeClasses: Record<TimelineAction['type'], string> = {
+  recurring: 'bg-french-blue/90 border border-blue-700 shadow-blue-200/80',
+  project: 'bg-amber-500/90 border border-amber-600 shadow-amber-200/80',
+  milestone: 'bg-emerald-500/90 border border-emerald-600 shadow-emerald-200/80',
+};
+
+const timelineLegend: { label: string; type: TimelineAction['type'] }[] = [
+  { label: 'Action récurrente', type: 'recurring' },
+  { label: 'Projet structurant', type: 'project' },
+  { label: 'Jalon clé', type: 'milestone' },
+];
+
+const timelineCategories: TimelineCategory[] = [
+  {
+    title: 'Actions immédiates & récurrentes (dès 2025)',
+    actions: [
+      {
+        label: 'Médiation entre pairs',
+        start: 2025,
+        end: 2031,
+        type: 'recurring',
+        detail: 'Présentation, formation, pratique & évaluation annuelles',
+      },
+      {
+        label: 'Savoir nager',
+        start: 2025,
+        end: 2031,
+        type: 'recurring',
+        detail: 'Tests diagnostiques et 10 séances ciblées',
+      },
+      {
+        label: 'Savoir rouler',
+        start: 2025,
+        end: 2031,
+        type: 'recurring',
+        detail: 'Modules annuels de 20 h sur 5 jours',
+      },
+      {
+        label: 'Expression & participation',
+        start: 2025,
+        end: 2031,
+        type: 'recurring',
+        detail: 'Conseils d’élèves, label Engagement & mur d’expression',
+      },
+      {
+        label: 'Parentalité & co-éducation',
+        start: 2025,
+        end: 2031,
+        type: 'recurring',
+        detail: 'Charte, ateliers familles, comités & baromètre',
+      },
+      {
+        label: 'Climatisation durable – prototype',
+        start: 2025,
+        end: 2025,
+        type: 'milestone',
+        detail: 'Test d’un prototype hybride solaire (septembre 2025)',
+      },
+    ],
+  },
+  {
+    title: 'Actions de moyen terme (2026-2027)',
+    actions: [
+      {
+        label: 'Plan maintenance – peintures & ravalement',
+        start: 2026,
+        end: 2030,
+        type: 'project',
+        detail: 'Programme sur 5 ans (vacances scolaires)',
+      },
+      {
+        label: 'Cantine scolaire',
+        start: 2026,
+        end: 2026,
+        type: 'project',
+        detail: 'Travaux et ouverture ciblée en 2026',
+      },
+      {
+        label: 'Climatisation durable – déploiement',
+        start: 2026,
+        end: 2030,
+        type: 'project',
+        detail: 'Équipement progressif des salles',
+      },
+      {
+        label: 'Plafonds acoustiques – priorité 1',
+        start: 2026,
+        end: 2027,
+        type: 'project',
+        detail: 'Salles du collège (10 salles)',
+      },
+      {
+        label: 'Vidéoprojecteurs – phases 1 & 2',
+        start: 2026,
+        end: 2027,
+        type: 'project',
+        detail: 'Remplacement de 11 appareils',
+      },
+    ],
+  },
+  {
+    title: 'Actions de long terme (2028-2031)',
+    actions: [
+      {
+        label: 'Plafonds acoustiques – priorités 2 & 3',
+        start: 2028,
+        end: 2030,
+        type: 'project',
+        detail: 'Lycée, laboratoires et primaire',
+      },
+      {
+        label: 'Vidéoprojecteurs – phases 3 à 6',
+        start: 2028,
+        end: 2031,
+        type: 'project',
+        detail: 'Renouvellement continu du parc',
+      },
+      {
+        label: 'Plan maintenance – années 3 à 5',
+        start: 2028,
+        end: 2030,
+        type: 'project',
+        detail: 'Poursuite peinture & ravalement',
+      },
+    ],
+  },
+];
+
+const getTimelineBarStyle = (action: TimelineAction) => {
+  const safeStart = Math.max(action.start, TIMELINE_MIN_YEAR);
+  const safeEnd = Math.min(action.end, TIMELINE_MAX_YEAR);
+  const offset = ((safeStart - TIMELINE_MIN_YEAR) / TIMELINE_TOTAL_YEARS) * 100;
+  const duration = Math.max(safeEnd - safeStart, 0) + 1;
+  const widthPercent = (duration / TIMELINE_TOTAL_YEARS) * 100;
+  const minWidth = action.type === 'milestone' ? 10 : 14;
+  const width = Math.max(widthPercent, minWidth);
+
+  return { offset, width };
+};
+
 const PSDAxe1 = () => {
   const [isTimelineExpanded, setTimelineExpanded] = useState(false);
   const objectifs = [
@@ -240,6 +398,78 @@ const PSDAxe1 = () => {
       <p className="text-lg font-medium font-raleway text-gray-800 mb-8">
         Renforcer un cadre scolaire propice à l'épanouissement, à l'inclusion et à la cohésion
       </p>
+
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div>
+            <h4 className="text-lg font-semibold text-slate-900">Frise temporelle 2025-2031</h4>
+            <p className="text-sm text-slate-600">
+              Visualisation de type Gantt des principales actions de l'axe 1 (actions récurrentes, projets structurants et jalons).
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3 text-xs text-slate-600">
+            {timelineLegend.map((item) => (
+              <div key={item.type} className="flex items-center gap-2">
+                <span className={`h-3 w-3 rounded-sm ${timelineTypeClasses[item.type]}`} aria-hidden="true" />
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-6 overflow-x-auto">
+          <div className="min-w-[720px] space-y-4">
+            <div className="grid grid-cols-[200px_1fr] gap-4 text-xs font-semibold uppercase tracking-wide text-slate-500">
+              <div className="text-left">Calendrier</div>
+              <div
+                className="grid gap-2 text-center"
+                style={{ gridTemplateColumns: `repeat(${TIMELINE_YEARS.length}, minmax(60px, 1fr))` }}
+              >
+                {TIMELINE_YEARS.map((year) => (
+                  <span key={year}>{year}</span>
+                ))}
+              </div>
+            </div>
+
+            {timelineCategories.map((category, categoryIndex) => (
+              <div
+                key={category.title}
+                className="rounded-xl border border-slate-200 bg-slate-50/60 p-4"
+              >
+                <div className="grid grid-cols-[200px_1fr] gap-4">
+                  <div>
+                    <p className="text-sm font-semibold text-slate-900">{category.title}</p>
+                  </div>
+                  <div className="space-y-3">
+                    {category.actions.map((action, actionIndex) => {
+                      const { offset, width } = getTimelineBarStyle(action);
+
+                      return (
+                        <div
+                          key={`${categoryIndex}-${actionIndex}`}
+                          className="relative h-12 rounded-lg border border-dashed border-slate-200 bg-white/90"
+                          role="img"
+                          aria-label={`${action.label} (${action.detail ?? `${action.start} – ${action.end}`})`}
+                        >
+                          <div
+                            className={`absolute top-1/2 flex -translate-y-1/2 flex-col gap-0.5 rounded-md border px-3 py-1 text-xs font-semibold text-white shadow ${timelineTypeClasses[action.type]}`}
+                            style={{ left: `calc(${offset}% )`, width: `calc(${width}% )` }}
+                          >
+                            <span>{action.label}</span>
+                            <span className="text-[10px] font-normal text-white/90">
+                              {action.detail ?? `${action.start} – ${action.end}`}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="mt-12 space-y-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
