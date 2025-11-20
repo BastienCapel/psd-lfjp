@@ -1,5 +1,9 @@
 {
   "/": { "name": "Accueil" },
+  "/methode": {
+    "name": "Démarche et méthode",
+    "parent": "/"
+  },
   "/vision-missions-valeurs": {
     "name": "Vision, Missions et Valeurs",
     "parent": "/"

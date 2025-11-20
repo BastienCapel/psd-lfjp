@@ -17,6 +17,10 @@ const DesktopMenu = ({ isActive }: DesktopMenuProps) => {
           Accueil
         </DesktopNavItem>
 
+        <DesktopNavItem to="/methode" isActive={isActive('/methode')}>
+          Méthode
+        </DesktopNavItem>
+
         <DesktopNavItem to="/vision-missions-valeurs" isActive={isActive('/vision-missions-valeurs')}>
           Vision & Valeurs
         </DesktopNavItem>

@@ -20,40 +20,53 @@ const Index = () => {
             Bienvenue sur le site du plan stratégique de développement du Lycée Français Jacques Prévert
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-1">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Démarche et méthode</h3>
+                <p className="text-gray-600 mb-6">
+                  Découvrez les 7 étapes participatives qui structurent l’élaboration du Plan Stratégique de Développement et impliquent toute la communauté éducative.
+                </p>
+                <Link to="/methode" className="inline-flex items-center text-french-blue font-medium hover:underline group">
+                  Comprendre la méthode
+                  <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-2">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Vision, Missions et Valeurs</h3>
                 <p className="text-gray-600 mb-6">
-                  Découvrez notre vision, nos missions éducatives et les valeurs qui guident quotidiennement notre 
+                  Découvrez notre vision, nos missions éducatives et les valeurs qui guident quotidiennement notre
                   établissement dans la formation des citoyens du monde.
                 </p>
                 <Link to="/vision-missions-valeurs" className="inline-flex items-center text-french-blue font-medium hover:underline group">
-                  Découvrir 
+                  Découvrir
                   <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </CardContent>
             </Card>
-            
-            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-2">
+
+            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-3">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Diagnostic</h3>
                 <p className="text-gray-600 mb-6">
-                  Analysez la situation actuelle de notre établissement à travers les données des enquêtes 
+                  Analysez la situation actuelle de notre établissement à travers les données des enquêtes
                   et l'évaluation des besoins qui orientent notre développement.
                 </p>
                 <Link to="/diagnostic" className="inline-flex items-center text-french-blue font-medium hover:underline group">
-                  Analyser 
+                  Analyser
                   <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </CardContent>
             </Card>
-            
-            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-3">
+
+            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-4">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Plan Stratégique de Développement</h3>
                 <p className="text-gray-600 mb-6">
-                  Consultez notre Plan Stratégique de Développement 2026-2030 qui détaille nos objectifs, 
+                  Consultez notre Plan Stratégique de Développement 2026-2030 qui détaille nos objectifs,
                   actions et indicateurs pour les années à venir.
                 </p>
                 <Link to="/plan-strategique" className="inline-flex items-center text-french-blue font-medium hover:underline group">
