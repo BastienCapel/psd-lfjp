@@ -120,7 +120,35 @@ const Index = () => {
                 <p className="text-sm uppercase tracking-wide text-french-blue font-semibold">Mot de la direction pédagogique</p>
                 <h3 className="text-2xl font-playfair font-bold text-french-blue">Proviseur et directrice du primaire</h3>
               </div>
-              <p className="mt-6 text-gray-600 text-lg">En construction</p>
+              <div className="mt-6 space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  Le Lycée Français Jacques Prévert a connu un essor remarquable, marqué par son installation en 2022
+                  dans un établissement neuf et des espaces élargis. Si la préservation et la valorisation de ces
+                  actifs immobiliers constituent une priorité absolue pour le Comité de Gestion, notre ambition
+                  commune allait plus loin.
+                </p>
+                <p>
+                  En tant que membres du Comité de Gestion, la Directrice et le Proviseur ont porté, avec les
+                  représentants des parents, une volonté forte : celle de s'engager dans l'élaboration d'un document
+                  unique. Ce document fusionne désormais le Plan Stratégique de Développement — intégrant les
+                  investissements à moyen et long terme — et le Projet d'Établissement incluant le Projet d’Ecole.
+                  Vous trouverez ainsi dans ces pages une vision globale. Les informations relevant du cap pédagogique
+                  que nous donnons à l'établissement y sont aussi prépondérantes, sinon plus, que les projets
+                  d'investissement.
+                </p>
+                <p>
+                  S'il est théoriquement admis que les investissements doivent servir la pédagogie et l'accueil des
+                  élèves, la réalité d'un établissement en gestion parentale rend parfois complexe l'alignement du
+                  temps financier et du temps éducatif. C'est pourtant le pari que nous faisons aujourd'hui
+                  collectivement : parents, enseignants et élèves.
+                </p>
+                <p>
+                  Si le concept de communauté éducative demeure bien souvent une utopie, ce Plan Stratégique de
+                  Développement est la preuve que nous parvenons à le concrétiser. Il témoigne qu'au prix d'efforts
+                  inlassables, cet idéal devient ici quelque chose de très concret, imbriquant enfin la gestion et la
+                  pédagogie.
+                </p>
+              </div>
             </CardContent>
           </Card>
         </div>
