@@ -24,17 +24,15 @@ const Missions = () => {
     <section id="missions" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-start gap-8 md:gap-16">
-          <div className="w-full md:w-1/3">
-            <h2 className="text-3xl font-playfair font-bold text-french-blue mb-6 flex items-center">
+          <div className="w-full md:w-1/3 flex md:flex-col items-start md:items-start gap-4">
+            <div className="w-24 h-24 rounded-full bg-french-blue bg-opacity-10 flex items-center justify-center mx-auto md:mx-0">
+              <List size={48} className="text-french-blue" />
+            </div>
+
+            <h2 className="text-3xl font-playfair font-bold text-french-blue flex items-center">
               <span className="mr-2">2.</span>
               NOS MISSIONS
             </h2>
-            
-            <div className="mb-6 md:mb-0">
-              <div className="w-24 h-24 rounded-full bg-french-blue bg-opacity-10 flex items-center justify-center mx-auto md:mx-0">
-                <List size={48} className="text-french-blue" />
-              </div>
-            </div>
           </div>
           
           <div className="w-full md:w-2/3">
