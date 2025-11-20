@@ -22,6 +22,13 @@ export const searchIndex: SearchEntry[] = [
     category: 'Général',
   },
   {
+    path: '/methode',
+    title: 'Démarche et méthode',
+    description: 'Les 7 étapes participatives pour bâtir le Plan Stratégique de Développement.',
+    keywords: ['méthode', 'démarche', 'participation', 'validation'],
+    category: 'Général',
+  },
+  {
     path: '/diagnostic',
     title: 'Diagnostic',
     description: 'Analyse de la situation actuelle et des besoins prioritaires.',
