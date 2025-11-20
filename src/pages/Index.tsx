@@ -76,10 +76,11 @@ const Index = () => {
               </div>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  gestion parentale et l’implication de toutes et tous sont au cœur de notre modèle. Il souligne
-                  combien notre responsabilité est partagée, et combien la collaboration entre les familles, les
-                  équipes pédagogiques et nos partenaires est essentielle pour offrir à chaque élève un cadre propice
-                  à son développement intellectuel, humain et citoyen.
+                  « Ensemble pour nos enfants » résonne avec une force particulière dans un établissement comme le
+                  nôtre, où la gestion parentale et l’implication de toutes et tous sont au cœur de notre modèle. Il
+                  souligne combien notre responsabilité est partagée, et combien la collaboration entre les familles,
+                  les équipes pédagogiques et nos partenaires est essentielle pour offrir à chaque élève un cadre
+                  propice à son développement intellectuel, humain et citoyen.
                 </p>
                 <p>
                   Dans un monde en constante évolution, il est crucial de ne jamais perdre de vue cette mission
