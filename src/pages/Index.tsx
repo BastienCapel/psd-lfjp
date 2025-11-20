@@ -163,7 +163,8 @@ const Index = () => {
                   pédagogie.
                 </p>
                 <p>
-                  Car ultimement, cette mobilisation collective n’a qu’une seule boussole. Au-delà des stratégies et
+                  Finalement, cette mobilisation collective ne doit avoir qu’une seule boussole. Au-delà des stratégies
+                  et
                   des structures, ce sont les élèves qui constituent le cœur battant de notre établissement. C’est pour
                   leur épanouissement et leur réussite future que nous déployons toute cette énergie, en veillant à
                   replacer invariablement leurs intérêts au centre de chacune de nos intentions, de nos discussions et
