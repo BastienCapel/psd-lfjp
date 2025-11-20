@@ -21,57 +21,57 @@ const Index = () => {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
-              <CardContent className="p-8">
+            <Card className="border-none shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:-rotate-[0.35deg] transition-all duration-300 animate-fade-in bg-white h-full">
+              <CardContent className="p-8 flex flex-col h-full">
                 <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Méthode</h3>
                 <p className="text-gray-600 mb-6">
                   Parcourez la démarche en 7 étapes et la gouvernance participative qui cadrent l'élaboration du
                   plan stratégique du LFJP.
                 </p>
-                <Link to="/methode" className="inline-flex items-center text-french-blue font-medium hover:underline group">
+                <Link to="/methode" className="inline-flex items-center text-french-blue font-medium hover:underline group mt-auto pt-4">
                   Comprendre
                   <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-1">
-              <CardContent className="p-8">
+            <Card className="border-none shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:-rotate-[0.35deg] transition-all duration-300 animate-fade-in-delay-1 bg-white h-full">
+              <CardContent className="p-8 flex flex-col h-full">
                 <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Vision, Missions et Valeurs</h3>
                 <p className="text-gray-600 mb-6">
                   Découvrez notre vision, nos missions éducatives et les valeurs qui guident quotidiennement notre
                   établissement dans la formation des citoyens du monde.
                 </p>
-                <Link to="/vision-missions-valeurs" className="inline-flex items-center text-french-blue font-medium hover:underline group">
+                <Link to="/vision-missions-valeurs" className="inline-flex items-center text-french-blue font-medium hover:underline group mt-auto pt-4">
                   Découvrir
                   <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-2">
-              <CardContent className="p-8">
+            <Card className="border-none shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:-rotate-[0.35deg] transition-all duration-300 animate-fade-in-delay-2 bg-white h-full">
+              <CardContent className="p-8 flex flex-col h-full">
                 <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Diagnostic</h3>
                 <p className="text-gray-600 mb-6">
-                  Analysez la situation actuelle de notre établissement à travers les données des enquêtes 
+                  Analysez la situation actuelle de notre établissement à travers les données des enquêtes
                   et l'évaluation des besoins qui orientent notre développement.
                 </p>
-                <Link to="/diagnostic" className="inline-flex items-center text-french-blue font-medium hover:underline group">
-                  Analyser 
+                <Link to="/diagnostic" className="inline-flex items-center text-french-blue font-medium hover:underline group mt-auto pt-4">
+                  Analyser
                   <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </CardContent>
             </Card>
-            
-            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-3">
-              <CardContent className="p-8">
+
+            <Card className="border-none shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:-rotate-[0.35deg] transition-all duration-300 animate-fade-in-delay-3 bg-white h-full">
+              <CardContent className="p-8 flex flex-col h-full">
                 <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Plan Stratégique de Développement</h3>
                 <p className="text-gray-600 mb-6">
-                  Consultez notre Plan Stratégique de Développement 2026-2030 qui détaille nos objectifs, 
+                  Consultez notre Plan Stratégique de Développement 2026-2030 qui détaille nos objectifs,
                   actions et indicateurs pour les années à venir.
                 </p>
-                <Link to="/plan-strategique" className="inline-flex items-center text-french-blue font-medium hover:underline group">
-                  Consulter 
+                <Link to="/plan-strategique" className="inline-flex items-center text-french-blue font-medium hover:underline group mt-auto pt-4">
+                  Consulter
                   <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </CardContent>
