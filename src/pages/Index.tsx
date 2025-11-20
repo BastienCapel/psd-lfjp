@@ -114,13 +114,13 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-1 flex">
-            <CardContent className="p-8 flex flex-col justify-between">
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-1">
+            <CardContent className="p-8 space-y-6">
               <div>
                 <p className="text-sm uppercase tracking-wide text-french-blue font-semibold">Mot de la direction pédagogique</p>
                 <h3 className="text-2xl font-playfair font-bold text-french-blue">Proviseur et directrice du primaire</h3>
               </div>
-              <div className="mt-6 space-y-4 text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
                   Le Lycée Français Jacques Prévert a connu un essor remarquable, marqué par son installation en 2022
                   dans un établissement neuf et des espaces élargis. Si la préservation et la valorisation de ces
@@ -148,6 +148,10 @@ const Index = () => {
                   inlassables, cet idéal devient ici quelque chose de très concret, imbriquant enfin la gestion et la
                   pédagogie.
                 </p>
+                <div className="pt-2">
+                  <p className="font-semibold text-gray-900">Bastien Capel - Proviseur</p>
+                  <p className="font-semibold text-gray-900">Nathalie Maginot-France - directrice du primaire</p>
+                </div>
               </div>
             </CardContent>
           </Card>
