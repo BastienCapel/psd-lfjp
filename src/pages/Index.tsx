@@ -20,7 +20,7 @@ const Index = () => {
             Bienvenue sur le site du plan stratégique de développement du Lycée Français Jacques Prévert
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             <Card className="border-none shadow-lg hover:shadow-2xl hover:-translate-y-1 hover:-rotate-[0.35deg] transition-all duration-300 animate-fade-in bg-white h-full">
               <CardContent className="p-8 flex flex-col h-full">
                 <h3 className="text-2xl font-playfair font-bold mb-4 text-french-blue">Méthode</h3>
