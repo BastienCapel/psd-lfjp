@@ -84,11 +84,11 @@ const Index = () => {
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
           <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
             <CardContent className="p-8 space-y-6">
-              <div className="flex justify-center">
+              <div className="flex">
                 <img
                   src="https://i.imgur.com/nC0NojH.jpeg"
                   alt="Vignette du président du Comité de Gestion"
-                  className="w-full max-w-xs mx-auto rounded-lg shadow-md"
+                  className="w-full rounded-lg shadow-md"
                 />
               </div>
               <div>
@@ -137,11 +137,11 @@ const Index = () => {
 
           <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-1">
             <CardContent className="p-8 space-y-6">
-              <div className="flex justify-center">
+              <div className="flex">
                 <img
                   src="https://i.imgur.com/kIXNjzR.jpeg"
                   alt="Vignette de la direction pédagogique"
-                  className="w-full max-w-xs mx-auto rounded-lg shadow-md"
+                  className="w-full rounded-lg shadow-md"
                 />
               </div>
               <div>
