@@ -14,7 +14,7 @@ const Index = () => {
       <Navbar showLogo={true} />
       <Hero title="Lycée Français Jacques Prévert" subtitle="Excellence, Respect, Créativité, Persévérance, Civisme" />
 
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-playfair font-bold text-french-blue mb-12 text-center animate-fade-in">
             Bienvenue sur le site du plan stratégique de développement du Lycée Français Jacques Prévert
@@ -80,7 +80,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-french-blue/5">
+      <section className="py-12 md:py-16 bg-french-blue/5">
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
           <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
             <CardContent className="p-8 space-y-6">
