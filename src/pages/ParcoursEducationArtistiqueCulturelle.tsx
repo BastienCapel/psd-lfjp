@@ -98,8 +98,7 @@ const promotions = [
         highlights: [
           'Visite de la galerie Mémoire Africaine de Saly dans le cadre du Off de la Biennale de Dakar.',
           'Visite de la Maison de l’Afrique : exposition « Carton rouge » de Khalifa Mané.',
-          'Résidence artistique au lycée avec Jean-Claude Desmerges.',
-          'Réalisation d’une peinture murale collective au sein de l’établissement.',
+          'Résidence artistique au lycée avec Jean-Claude Desmerges : réalisation d’une peinture murale collective au sein de l’établissement.',
           'EPI Français / Arts plastiques (2025) : « Intelligence artificielle et portrait robot » pour la Semaine de la Presse.'
         ]
       },
