@@ -257,7 +257,7 @@ const parcoursArtistiqueInterdegre = {
           label: 'Novembre – décembre (période 2)',
           details: [
             'Exposition de Roméo Temwa « Le jeu numérique et la pensée critique » en partenariat avec la Galerie Mémoires Africaines.',
-            'Œuvres à l’acrylique inspirées par la mémoire collective, l’univers numérique et la circulation des images.'
+            'Œuvres inspirées par la mémoire collective, l’univers numérique et la circulation des images.'
           ]
         },
         { label: 'Janvier – février (période 3)', details: ['Exposition à venir.'] },
