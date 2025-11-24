@@ -252,7 +252,13 @@ const parcoursArtistiqueInterdegre = {
       title: 'Année 2025 – 2026',
       description: 'Programme à venir : quatre expositions toujours en partenariat avec la Galerie Mémoires Africaines.',
       segments: [
-        { label: 'Novembre – décembre (période 2)', details: ['Exposition à venir.'] },
+        {
+          label: 'Novembre – décembre (période 2)',
+          details: [
+            'Exposition de Roméo Temwa « Le jeu numérique et la pensée critique » en partenariat avec la Galerie Mémoires Africaines.',
+            'Œuvres à l’acrylique inspirées par la mémoire collective, l’univers numérique et la circulation des images.'
+          ]
+        },
         { label: 'Janvier – février (période 3)', details: ['Exposition à venir.'] },
         { label: 'Mars – avril (période 4)', details: ['Exposition à venir.'] },
         { label: 'Mai – juin (période 5)', details: ['Exposition à venir.'] }
