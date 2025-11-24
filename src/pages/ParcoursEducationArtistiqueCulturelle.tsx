@@ -106,6 +106,7 @@ const promotions = [
         title: 'En classe de 3e (2025-2026)',
         icon: MapPinned,
         highlights: [
+          'Rencontre et atelier avec la slameuse Hajar Thiam.',
           'Rencontre avec Alioune Badara Kébé, artiste peintre sénégalais spécialisé dans le fixé sous verre.',
           'Visite de la Galerie du Manège à Dakar.',
           'Visite de l’école supérieure d’audiovisuel Sup IMAX.'
