@@ -145,8 +145,7 @@ const promotions = [
         title: 'En classe de 4e (2025-2026)',
         icon: Sparkles,
         highlights: [
-          'Rencontre prévue avec Héloïse Vandermarcq, artiste graveuse.',
-          'Réalisation de gravures d’illustration avec les classes de CP-CE2.',
+          'Rencontre prévue avec Héloïse Vandermarcq, artiste graveuse, et réalisation de gravures d’illustration avec les classes de CP-CE2.',
           'Visite de la Maison de l’Afrique et de la galerie Mémoire Africaine.'
         ]
       }
