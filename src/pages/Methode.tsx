@@ -27,12 +27,9 @@ const steps = [
     description: "Construire les actions, jalons et indicateurs rattachés à chaque axe.",
   },
   {
-    title: "Mise en œuvre & suivi",
-    description: "Déployer les actions et en suivre l'avancement avec les équipes concernées.",
-  },
-  {
-    title: "Pilotage des actions en continu",
-    description: "Ajuster en continu grâce aux retours du terrain et aux instances de gouvernance.",
+    title: "Mise en œuvre, suivi & pilotage continu",
+    description:
+      "Déployer les actions, en suivre l'avancement et ajuster en continu grâce aux retours du terrain et aux instances de gouvernance.",
   },
 ];
 
@@ -53,7 +50,7 @@ const Methode = () => {
                 Démarche
               </p>
               <h2 className="text-3xl md:text-4xl font-playfair font-bold text-slate-900">
-                7 étapes structurées sur 12 à 18 mois
+                6 étapes structurées sur 12 à 18 mois
               </h2>
               <p className="text-lg text-gray-600">
                 Nous proposons d'emprunter une démarche éprouvée de réalisation de plan stratégique, organisée en
