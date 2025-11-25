@@ -186,7 +186,7 @@ const Index = () => {
                 </p>
                 <div className="pt-2">
                   <p className="font-semibold text-gray-900">Bastien Capel - Proviseur</p>
-                  <p className="font-semibold text-gray-900">Nathalie Maginot-France - directrice du primaire</p>
+                  <p className="font-semibold text-gray-900">Nathalie Maginot-France - Directrice du primaire</p>
                 </div>
               </div>
             </CardContent>
