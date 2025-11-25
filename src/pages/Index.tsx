@@ -93,7 +93,7 @@ const Index = () => {
       </section>
 
       <section className="py-12 md:py-16 bg-french-blue/5">
-        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="container mx-auto px-6 max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
           <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
             <CardContent className="p-8 space-y-6">
               <div className="flex">
