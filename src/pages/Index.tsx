@@ -82,6 +82,30 @@ const Index = () => {
 
       <section className="py-12 md:py-16 bg-french-blue/5">
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in lg:col-span-2">
+            <CardContent className="p-8 space-y-6">
+              <div className="flex">
+                <div className="w-full h-[240px] bg-french-blue/10 border border-dashed border-french-blue/30 rounded-lg flex items-center justify-center text-french-blue/70 font-medium text-center px-6">
+                  Visuel du poste diplomatique en préparation
+                </div>
+              </div>
+              <div>
+                <p className="text-sm uppercase tracking-wide text-french-blue font-semibold">Mot du poste diplomatique</p>
+                <h3 className="text-2xl font-playfair font-bold text-french-blue">En construction</h3>
+              </div>
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  Le message du poste diplomatique sera bientôt disponible. Nous travaillons actuellement avec nos
+                  partenaires pour partager une prise de parole alignée avec les mots du président et de la direction.
+                </p>
+                <p>
+                  Merci de votre patience : cette section adoptera la même présentation que les autres messages pour une
+                  lecture cohérente et harmonieuse.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
           <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
             <CardContent className="p-8 space-y-6">
               <div className="flex">
@@ -188,30 +212,6 @@ const Index = () => {
                   <p className="font-semibold text-gray-900">Bastien Capel - Proviseur</p>
                   <p className="font-semibold text-gray-900">Nathalie Maginot-France - Directrice du primaire</p>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-delay-2">
-            <CardContent className="p-8 space-y-6">
-              <div className="flex">
-                <div className="w-full h-[240px] bg-french-blue/10 border border-dashed border-french-blue/30 rounded-lg flex items-center justify-center text-french-blue/70 font-medium text-center px-6">
-                  Visuel du poste diplomatique en préparation
-                </div>
-              </div>
-              <div>
-                <p className="text-sm uppercase tracking-wide text-french-blue font-semibold">Mot du poste diplomatique</p>
-                <h3 className="text-2xl font-playfair font-bold text-french-blue">En construction</h3>
-              </div>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
-                <p>
-                  Le message du poste diplomatique sera bientôt disponible. Nous travaillons actuellement avec nos
-                  partenaires pour partager une prise de parole alignée avec les mots du président et de la direction.
-                </p>
-                <p>
-                  Merci de votre patience : cette section adoptera la même présentation que les autres messages pour une
-                  lecture cohérente et harmonieuse.
-                </p>
               </div>
             </CardContent>
           </Card>
