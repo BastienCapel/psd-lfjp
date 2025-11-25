@@ -18,9 +18,11 @@ const DiagnosticElcsContent = () => {
         className="mb-8"
       >
         <p className="text-gray-700 mb-4">
-          Cette analyse synthétise les perceptions du climat scolaire au LFJP de Saly, 
-          en croisant les données quantitatives issues des questionnaires élèves, parents et personnels 
+          Cette analyse synthétise les perceptions du climat scolaire au LFJP de Saly,
+          en croisant les données quantitatives issues des questionnaires élèves, parents et personnels
           avec les éléments qualitatifs extraits des retours écrits (verbatim).
+          La comparaison est réalisée avec la moyenne des établissements publics français ;
+          le comparatif doit donc être relativisé car notre établissement n'est pas directement comparable.
         </p>
       </DiagnosticCard>
       
