@@ -117,7 +117,7 @@ const orientations = [
   {
     title: 'Développement des mobilités internationales structurées',
     details: [
-      'Participer chaque année aux Jeux Internationaux de la Jeunesse (JIJ).',
+      'Participer à chaque édition des Jeux Internationaux de la Jeunesse (JIJ).',
       'Relancer les échanges scolaires (ADN-AEFE) et organiser des voyages thématiques (sciences, citoyenneté, langues, arts et cultures, mémoire, histoire).',
     ],
     icon: PlaneTakeoff,
