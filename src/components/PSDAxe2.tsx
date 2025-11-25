@@ -108,6 +108,9 @@ const PSDAxe2 = () => {
       items: [
         {
           content: <span>Voyages scolaires internationaux et séjours locaux</span>,
+          link: '/voyages-scolaires-internationaux-sejours-locaux',
+          linkAriaLabel: 'Découvrir les orientations voyages scolaires et séjours locaux',
+          linkIcon: Globe2,
         },
         {
           content: (

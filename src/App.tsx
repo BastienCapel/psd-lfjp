@@ -41,6 +41,7 @@ import SavoirNager from "./pages/SavoirNager";
 import ClimatisationDurable from "./pages/ClimatisationDurable";
 import ParentaliteCoeEducation from "./pages/ParentaliteCoeEducation";
 import ExpressionParticipation from "./pages/ExpressionParticipation";
+import VoyagesScolairesInternationaux from "./pages/VoyagesScolairesInternationaux";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -318,6 +319,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ExpressionParticipation />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/voyages-scolaires-internationaux-sejours-locaux" element={
+                  <>
+                    <BreadcrumbNav />
+                    <VoyagesScolairesInternationaux />
                     <BackToTop />
                   </>
                 } />
