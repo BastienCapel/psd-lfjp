@@ -46,6 +46,7 @@ const diagnostics = [
     points: [
       'Crise de gouvernance à la rentrée 2024.',
       'Aucune possibilité d’organiser un séjour scolaire durant cette période.',
+      'Relance des mobilités internationales type ADN-AEFE malgré la fermeture d’AGORA : 11 élèves de 2NDE sont partis en échange avec un correspondant d’un autre lycée de l’AEFE.',
       "S'il n'y a eu aucun projet, c'est uniquement pour cette raison.",
     ],
     conclusion:
