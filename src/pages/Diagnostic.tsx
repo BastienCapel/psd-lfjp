@@ -26,40 +26,40 @@ const Diagnostic = () => {
 
       <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-6">
-          <Tabs defaultValue="elcs" className="w-full">
+          <Tabs defaultValue="psd" className="w-full">
             <TabsList className="mb-8 w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 h-auto p-2 bg-white shadow-lg rounded-xl">
-              <TabsTrigger 
-                value="elcs" 
-                className="text-base md:text-lg font-semibold py-4 px-6 rounded-lg data-[state=active]:bg-french-blue data-[state=active]:text-white data-[state=active]:shadow-md transition-all duration-200 hover:bg-gray-50"
-              >
-                Diagnostic ELCS
-              </TabsTrigger>
-              <TabsTrigger 
-                value="restaurant" 
-                className="text-base md:text-lg font-semibold py-4 px-6 rounded-lg data-[state=active]:bg-french-blue data-[state=active]:text-white data-[state=active]:shadow-md transition-all duration-200 hover:bg-gray-50"
-              >
-                Restauration Scolaire
-              </TabsTrigger>
-              <TabsTrigger 
-                value="psd" 
+              <TabsTrigger
+                value="psd"
                 className="text-base md:text-lg font-semibold py-4 px-6 rounded-lg data-[state=active]:bg-french-blue data-[state=active]:text-white data-[state=active]:shadow-md transition-all duration-200 hover:bg-gray-50"
               >
                 Diagnostic PSD
               </TabsTrigger>
+              <TabsTrigger
+                value="restaurant"
+                className="text-base md:text-lg font-semibold py-4 px-6 rounded-lg data-[state=active]:bg-french-blue data-[state=active]:text-white data-[state=active]:shadow-md transition-all duration-200 hover:bg-gray-50"
+              >
+                Restauration Scolaire
+              </TabsTrigger>
+              <TabsTrigger
+                value="elcs"
+                className="text-base md:text-lg font-semibold py-4 px-6 rounded-lg data-[state=active]:bg-french-blue data-[state=active]:text-white data-[state=active]:shadow-md transition-all duration-200 hover:bg-gray-50"
+              >
+                Diagnostic ELCS
+              </TabsTrigger>
             </TabsList>
-            
+
+            <TabsContent value="psd">
+              <DiagnosticPsdContent />
+            </TabsContent>
+
+            <TabsContent value="restaurant">
+              <DiagnosticRestaurantContent />
+            </TabsContent>
+
             <TabsContent value="elcs">
               <ElcsDataProvider>
                 <DiagnosticElcsContent />
               </ElcsDataProvider>
-            </TabsContent>
-            
-            <TabsContent value="restaurant">
-              <DiagnosticRestaurantContent />
-            </TabsContent>
-            
-            <TabsContent value="psd">
-              <DiagnosticPsdContent />
             </TabsContent>
           </Tabs>
         </div>
