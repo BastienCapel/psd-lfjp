@@ -23,9 +23,9 @@ import {
 const DiagnosticRestaurantContent = () => {
   return (
     <div className="max-w-5xl mx-auto">
-      <DiagnosticCard 
-        title="Synthèse du sondage sur la restauration scolaire" 
-        description="Analyse basée sur le sondage auprès des parents d'élèves (87 réponses)"
+      <DiagnosticCard
+        title="Synthèse du sondage sur la restauration scolaire – 1er trimestre 2025"
+        description="Analyse basée sur le sondage auprès des parents d'élèves – 87 réponses"
         className="mb-8"
       >
         {/* Metrics and Student Distribution */}
