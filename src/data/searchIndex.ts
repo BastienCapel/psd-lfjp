@@ -218,6 +218,14 @@ export const searchIndex: SearchEntry[] = [
     category: 'Réussite citoyenne',
   },
   {
+    path: '/jumelages-partages-projets-collaboratifs',
+    title: 'Jumelages et projets collaboratifs',
+    description:
+      'Coopérations locales et internationales alignées sur les parcours éducatifs et la vision 2030 du LFJP.',
+    keywords: ['jumelage', 'coopération', 'international', 'partenariat'],
+    category: 'Plan stratégique',
+  },
+  {
     path: '/parentalite-coeducation',
     title: 'Parentalité & coéducation',
     description: 'Renforcer le partenariat familles-école.',
