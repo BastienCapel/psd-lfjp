@@ -44,11 +44,12 @@ const diagnostics = [
     year: '2024-2025',
     title: 'Interruption des mobilités',
     points: [
-      'Contexte économique défavorable pour les familles.',
-      'Augmentation significative des coûts logistiques et de transport.',
-      'Difficultés d’inscription malgré des projets pédagogiques structurés.',
+      'Crise de gouvernance à la rentrée 2024.',
+      'Aucune possibilité d’organiser un séjour scolaire durant cette période.',
+      "S'il n'y a eu aucun projet, c'est uniquement pour cette raison.",
     ],
-    conclusion: 'Une rupture dans la continuité des expériences offertes aux élèves.',
+    conclusion:
+      'L’absence totale de projets cette année résulte directement de la crise de gouvernance.',
   },
   {
     year: '2025-2026',
