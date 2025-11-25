@@ -210,7 +210,9 @@ const VoyagesScolairesInternationaux = () => {
               <ul className="mt-6 space-y-3 text-base leading-relaxed text-slate-700">
                 {indicators.map((indicator) => (
                   <li key={indicator} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 text-french-blue" aria-hidden="true" />
+                    <span className="mt-1 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center text-french-blue">
+                      <CheckCircle2 className="h-5 w-5" aria-hidden="true" />
+                    </span>
                     <span>{indicator}</span>
                   </li>
                 ))}
@@ -351,7 +353,9 @@ const VoyagesScolairesInternationaux = () => {
             <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {indicators.map((indicator) => (
                 <div key={indicator} className="flex items-start gap-3 rounded-2xl border border-slate-200/80 bg-slate-50/70 p-4">
-                  <CheckCircle2 className="mt-1 h-5 w-5 text-french-blue" aria-hidden="true" />
+                  <span className="mt-1 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center text-french-blue">
+                    <CheckCircle2 className="h-5 w-5" aria-hidden="true" />
+                  </span>
                   <p className="text-sm leading-relaxed text-slate-800">{indicator}</p>
                 </div>
               ))}
