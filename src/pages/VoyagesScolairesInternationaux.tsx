@@ -328,7 +328,12 @@ const VoyagesScolairesInternationaux = () => {
                       <ul className="mt-2 space-y-2 text-sm leading-relaxed text-slate-700">
                         {orientation.details.map((detail) => (
                           <li key={detail} className="flex items-start gap-2">
-                            <span className="mt-1 inline-block h-2 w-2 rounded-full bg-french-blue" aria-hidden="true"></span>
+                            <span
+                              className="mt-1 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-xs font-semibold text-french-blue"
+                              aria-hidden="true"
+                            >
+                              •
+                            </span>
                             <span>{detail}</span>
                           </li>
                         ))}
