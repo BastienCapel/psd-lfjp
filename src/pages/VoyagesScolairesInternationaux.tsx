@@ -9,7 +9,6 @@ import {
   Globe2,
   MapPin,
   Target,
-  LineChart,
   Compass,
   ShieldCheck,
   Lightbulb,
@@ -184,7 +183,7 @@ const VoyagesScolairesInternationaux = () => {
 
       <main className="flex-1 space-y-12 bg-gradient-to-b from-slate-50 via-white to-slate-50 py-10 md:py-16">
         <div className="container mx-auto px-6 space-y-12">
-          <section className="grid gap-8 lg:grid-cols-[3fr,2fr]">
+          <section className="grid gap-8">
             <article className="rounded-3xl border border-blue-100 bg-white p-8 shadow-sm">
               <h2 className="flex items-center gap-3 text-2xl font-playfair font-semibold text-french-blue">
                 <Target className="h-6 w-6" aria-hidden="true" />
@@ -203,23 +202,6 @@ const VoyagesScolairesInternationaux = () => {
               <div className="mt-6 rounded-2xl bg-blue-50 p-4 text-sm text-blue-900">
                 La place des voyages scolaires dans le PSD s’inscrit pleinement dans la vision d’un établissement « ouvert sur le monde et solidement ancré dans son environnement local ».
               </div>
-            </article>
-
-            <article className="rounded-3xl border border-blue-100 bg-white p-8 shadow-sm">
-              <h2 className="flex items-center gap-3 text-2xl font-playfair font-semibold text-french-blue">
-                <LineChart className="h-6 w-6" aria-hidden="true" />
-                Indicateurs clés de réussite
-              </h2>
-              <ul className="mt-6 space-y-3 text-base leading-relaxed text-slate-700">
-                {indicators.map((indicator) => (
-                  <li key={indicator} className="flex items-start gap-3">
-                    <span className="mt-1 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center text-french-blue">
-                      <CheckCircle2 className="h-5 w-5" aria-hidden="true" />
-                    </span>
-                    <span>{indicator}</span>
-                  </li>
-                ))}
-              </ul>
             </article>
           </section>
 
