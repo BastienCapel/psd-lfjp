@@ -57,6 +57,8 @@ const diagnostics = [
     points: [
       'Séjour Paris réussi mais à capacité limitée.',
       'Trois voyages annulés faute d’inscriptions : Madrid (linguistique), Tunisie (séjour Judo), Rabat (séjour solidaire).',
+      "Création de séjours locaux pour le premier degré : classe verte dans l’éco-lieu Djarama Dialaw (CP-CE2 & CE2) et classe verte à Popenguine (CM1A&B).",
+      'Séjours locaux pour le secondaire : À la découverte des trésors de Lompoul (Terminale) et séjour Popenguine pour les Sections Sportives Scolaires.',
     ],
     conclusion:
       'L’annulation de voyages pédagogiquement pertinents confirme l’enjeu majeur de l’accessibilité financière et le risque de fracture sociale.',
