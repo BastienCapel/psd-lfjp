@@ -42,6 +42,7 @@ import ClimatisationDurable from "./pages/ClimatisationDurable";
 import ParentaliteCoeEducation from "./pages/ParentaliteCoeEducation";
 import ExpressionParticipation from "./pages/ExpressionParticipation";
 import VoyagesScolairesInternationaux from "./pages/VoyagesScolairesInternationaux";
+import JumelagesPartagesProjets from "./pages/JumelagesPartagesProjets";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -319,6 +320,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ExpressionParticipation />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/jumelages-partages-projets-collaboratifs" element={
+                  <>
+                    <BreadcrumbNav />
+                    <JumelagesPartagesProjets />
                     <BackToTop />
                   </>
                 } />

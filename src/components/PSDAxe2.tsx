@@ -118,6 +118,9 @@ const PSDAxe2 = () => {
               Jumelages, partages, projets collaboratifs locaux et internationaux
             </span>
           ),
+          link: '/jumelages-partages-projets-collaboratifs',
+          linkAriaLabel: "Découvrir la page jumelages et projets collaboratifs",
+          linkIcon: Handshake,
         },
         {
           content: <span>Échanges scolaires ADN AEFE</span>,
