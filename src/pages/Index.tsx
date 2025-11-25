@@ -80,6 +80,18 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="bg-french-blue text-white py-6">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div>
+            <p className="text-sm uppercase tracking-wide font-semibold">Mot du poste diplomatique</p>
+            <h3 className="text-2xl font-playfair font-bold">En construction</h3>
+          </div>
+          <div className="text-sm text-white/80">
+            <p>Cette section dédiée au mot du poste diplomatique sera bientôt disponible.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="py-12 md:py-16 bg-french-blue/5">
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
           <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in">
