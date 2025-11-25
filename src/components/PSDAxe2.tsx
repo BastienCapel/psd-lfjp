@@ -131,11 +131,6 @@ const PSDAxe2 = () => {
     },
     {
       content: (
-        <>Pourcentage d'<strong>enseignants de LV et DNL locuteurs natifs</strong> ou certifiés C2.</>
-      ),
-    },
-    {
-      content: (
         <>Nombre de <strong>partenariats locaux et internationaux</strong> actifs.</>
       ),
     },
