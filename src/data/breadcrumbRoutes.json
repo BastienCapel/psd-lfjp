@@ -108,6 +108,10 @@
     "name": "Expression & participation",
     "parent": "/plan-strategique"
   },
+  "/echanges-scolaires-adn-aefe": {
+    "name": "Échanges scolaires ADN-AEFE",
+    "parent": "/plan-strategique"
+  },
   "/jumelages-partages-projets-collaboratifs": {
     "name": "Jumelages et projets collaboratifs",
     "parent": "/plan-strategique"
