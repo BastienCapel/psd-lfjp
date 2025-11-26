@@ -43,6 +43,7 @@ import ParentaliteCoeEducation from "./pages/ParentaliteCoeEducation";
 import ExpressionParticipation from "./pages/ExpressionParticipation";
 import VoyagesScolairesInternationaux from "./pages/VoyagesScolairesInternationaux";
 import JumelagesPartagesProjets from "./pages/JumelagesPartagesProjets";
+import EchangesScolairesADNAEFE from "./pages/EchangesScolairesADNAEFE";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -327,6 +328,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <JumelagesPartagesProjets />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/echanges-scolaires-adn-aefe" element={
+                  <>
+                    <BreadcrumbNav />
+                    <EchangesScolairesADNAEFE />
                     <BackToTop />
                   </>
                 } />

@@ -124,6 +124,9 @@ const PSDAxe2 = () => {
         },
         {
           content: <span>Échanges scolaires ADN AEFE</span>,
+          link: '/echanges-scolaires-adn-aefe',
+          linkAriaLabel: "Découvrir les échanges scolaires ADN-AEFE",
+          linkIcon: Globe2,
         },
       ],
     },

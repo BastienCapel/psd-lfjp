@@ -218,6 +218,13 @@ export const searchIndex: SearchEntry[] = [
     category: 'Réussite citoyenne',
   },
   {
+    path: '/echanges-scolaires-adn-aefe',
+    title: 'Échanges scolaires ADN-AEFE',
+    description: 'Mobilités ADN-AEFE pour développer l’ouverture, l’autonomie et le plurilinguisme.',
+    keywords: ['adn', 'aefe', 'échanges', 'mobilités'],
+    category: 'Plan stratégique',
+  },
+  {
     path: '/jumelages-partages-projets-collaboratifs',
     title: 'Jumelages et projets collaboratifs',
     description:
