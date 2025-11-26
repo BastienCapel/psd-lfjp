@@ -23,7 +23,7 @@ const stats = [
   },
   {
     year: '2024-2025',
-    value: '11 élèves sélectionnés',
+    value: '11 élèves en échange',
     detail: 'Montée en puissance rapide et ancrage dans la dynamique AEFE.',
   },
 ];
@@ -211,9 +211,13 @@ const EchangesScolairesADNAEFE = () => {
                     <Globe2 className="mr-2 h-4 w-4" />
                     Retour au plan stratégique
                   </Button>
-                  <Button variant="outline" onClick={() => navigate('/parcours-avenir')} className="border-white text-white hover:bg-white/10">
+                  <Button
+                    variant="outline"
+                    onClick={() => navigate('/plan-strategique/reussite-citoyenne')}
+                    className="border-white text-white hover:bg-white/10"
+                  >
                     <MapPin className="mr-2 h-4 w-4" />
-                    Découvrir le Parcours Avenir
+                    Découvrir le Parcours Citoyen
                   </Button>
                 </div>
               </div>
