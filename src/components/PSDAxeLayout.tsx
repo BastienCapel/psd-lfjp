@@ -43,6 +43,7 @@ interface PSDAxeLayoutProps {
   title: string;
   subtitle: string;
   summary?: SummaryData;
+  timeline?: React.ReactNode;
   objectifs: ObjectifItem[];
   actions?: ActionItem[];
   actionSections?: ActionSection[];
@@ -54,6 +55,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
   title,
   subtitle,
   summary,
+  timeline,
   objectifs,
   actions,
   actionSections,
@@ -123,6 +125,8 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
           ) : null}
         </div>
       )}
+
+      {timeline}
 
       <section className="space-y-8">
         <div
