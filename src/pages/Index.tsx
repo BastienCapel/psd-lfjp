@@ -110,7 +110,7 @@ const Index = () => {
             <CardContent className="p-8 space-y-6">
               <div className="flex">
                 <img
-                  src="https://i.imgur.com/nC0NojH.jpeg"
+                  src="https://i.imgur.com/su3En9d.jpeg"
                   alt="Vignette du président du Comité de Gestion"
                   className="w-full rounded-lg shadow-md"
                 />
