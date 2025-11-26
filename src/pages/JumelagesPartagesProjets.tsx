@@ -122,7 +122,7 @@ const strategicOrientations = [
     icon: Rocket,
     actions: [
       'Intégrer les projets au calendrier annuel et aux sites PSD/Parcours.',
-      'Publier dans “Les Oiseaux de Passage”, les newsletters et présenter en Conseil d’établissement.',
+      'Publier dans la newsletter “Le Petit Prévert”, sur le site internet, les réseaux sociaux et présenter en Conseil d’établissement.',
     ],
   },
 ];
