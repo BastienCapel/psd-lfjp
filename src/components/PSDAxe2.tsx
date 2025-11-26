@@ -153,6 +153,11 @@ const PSDAxe2 = () => {
         <>Participation annuelle des élèves aux projets de la « <strong>Semaine des cultures</strong> » et aux <strong>jumelages</strong>.</>
       ),
     },
+    {
+      content: (
+        <>Nombre d'élèves en <strong>échange ADN-AEFE</strong>.</>
+      ),
+    },
   ];
 
   return (
