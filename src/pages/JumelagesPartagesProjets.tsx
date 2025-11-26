@@ -71,6 +71,7 @@ const currentDynamics = [
     items: [
       'Pompiers, police, santé, environnement, artisans, artistes et centres culturels.',
       'Associations sportives (judo, Teranga Bike) et acteurs éducatifs ou sociaux locaux.',
+      'Section sportive basket-ball en collaboration avec les clubs de la Petite Côte.',
     ],
   },
   {
