@@ -214,7 +214,7 @@ const EchangesScolairesADNAEFE = () => {
                   <Button
                     variant="outline"
                     onClick={() => navigate('/parcours-avenir')}
-                    className="border-white text-white hover:bg-white/10"
+                    className="border-white bg-white text-blue-900 hover:bg-slate-100"
                   >
                     <MapPin className="mr-2 h-4 w-4" />
                     Découvrir le Parcours Avenir
