@@ -213,11 +213,11 @@ const EchangesScolairesADNAEFE = () => {
                   </Button>
                   <Button
                     variant="outline"
-                    onClick={() => navigate('/plan-strategique/reussite-citoyenne')}
+                    onClick={() => navigate('/parcours-avenir')}
                     className="border-white text-white hover:bg-white/10"
                   >
                     <MapPin className="mr-2 h-4 w-4" />
-                    Découvrir le Parcours Citoyen
+                    Découvrir le Parcours Avenir
                   </Button>
                 </div>
               </div>
