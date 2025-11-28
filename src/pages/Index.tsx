@@ -92,8 +92,6 @@ const Index = () => {
               <div>
                 <p className="text-sm uppercase tracking-wide text-french-blue font-semibold">Mot du poste diplomatique</p>
                 <h3 className="text-2xl font-playfair font-bold text-french-blue">Service de Coopération et d’Action Culturelle</h3>
-                <p className="text-gray-700 font-semibold">Conseiller de coopération et d’action culturelle</p>
-                <p className="text-gray-700 font-semibold">Attachée régionale de coopération éducative</p>
               </div>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
@@ -112,6 +110,16 @@ const Index = () => {
                   culturelle et de l’attaché de coopération éducative, continuera d’accompagner l’établissement dans la mise en
                   œuvre des objectifs définis, en lien avec l'AEFE et l'ensemble des acteurs de la communauté éducative.
                 </p>
+                <div className="pt-2 space-y-2">
+                  <div>
+                    <p className="font-semibold text-gray-900">Laurent Viguié</p>
+                    <p className="text-gray-700">Conseiller de coopération et d’action culturelle</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Carole Blaszczyk</p>
+                    <p className="text-gray-700">Attachée régionale de coopération éducative</p>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
