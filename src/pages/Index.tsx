@@ -91,7 +91,7 @@ const Index = () => {
               </div>
               <div>
                 <p className="text-sm uppercase tracking-wide text-french-blue font-semibold">Mot du poste diplomatique</p>
-                <h3 className="text-2xl font-playfair font-bold text-french-blue">Mot du Service de Coopération et d’Action Culturelle</h3>
+                <h3 className="text-2xl font-playfair font-bold text-french-blue">Service de Coopération et d’Action Culturelle</h3>
                 <p className="text-gray-700 font-semibold">Conseiller de coopération et d’action culturelle</p>
                 <p className="text-gray-700 font-semibold">Attachée régionale de coopération éducative</p>
               </div>
