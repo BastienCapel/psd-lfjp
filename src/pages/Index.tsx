@@ -93,7 +93,7 @@ const Index = () => {
                 <p className="text-sm uppercase tracking-wide text-french-blue font-semibold">Mot du poste diplomatique</p>
                 <h3 className="text-2xl font-playfair font-bold text-french-blue">Service de Coopération et d’Action Culturelle</h3>
               </div>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-gray-700 leading-relaxed text-justify">
                 <p>
                   Le service de coopération et d’action culturelle salue l’élaboration du Plan Stratégique de Développement du
                   lycée Jacques Prévert, résultat d’un travail approfondi et concerté avec le comité de gestion, l’équipe de
@@ -137,7 +137,7 @@ const Index = () => {
                 <p className="text-sm uppercase tracking-wide text-french-blue font-semibold">Mot du président</p>
                 <h3 className="text-2xl font-playfair font-bold text-french-blue">Comité de gestion</h3>
               </div>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-gray-700 leading-relaxed text-justify">
                 <p>
                   « Ensemble pour nos enfants » résonne avec une force particulière dans un établissement comme le
                   nôtre, où la gestion parentale et l’implication de toutes et tous sont au cœur de notre modèle. Il
@@ -190,7 +190,7 @@ const Index = () => {
                 <p className="text-sm uppercase tracking-wide text-french-blue font-semibold">Mot de la direction pédagogique</p>
                 <h3 className="text-2xl font-playfair font-bold text-french-blue">Proviseur et directrice du primaire</h3>
               </div>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-gray-700 leading-relaxed text-justify">
                 <p>
                   Le Lycée Français Jacques Prévert a connu un essor remarquable, marqué par son installation en 2022
                   dans un établissement neuf et des espaces élargis. Si la préservation et la valorisation de ces
