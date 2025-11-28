@@ -85,22 +85,32 @@ const Index = () => {
           <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in lg:col-span-2">
             <CardContent className="p-8 space-y-6">
               <div className="flex">
-                <div className="w-full h-[240px] bg-french-blue/10 border border-dashed border-french-blue/30 rounded-lg flex items-center justify-center text-french-blue/70 font-medium text-center px-6">
-                  Visuel du poste diplomatique en préparation
+                <div className="w-full h-[240px] bg-gradient-to-br from-french-blue/10 via-white to-french-blue/10 border border-french-blue/20 rounded-lg flex items-center justify-center text-french-blue font-semibold text-center px-6">
+                  Service de Coopération et d’Action Culturelle
                 </div>
               </div>
               <div>
                 <p className="text-sm uppercase tracking-wide text-french-blue font-semibold">Mot du poste diplomatique</p>
-                <h3 className="text-2xl font-playfair font-bold text-french-blue">En construction</h3>
+                <h3 className="text-2xl font-playfair font-bold text-french-blue">Mot du Service de Coopération et d’Action Culturelle</h3>
+                <p className="text-gray-700 font-semibold">Conseiller de coopération et d’action culturelle</p>
+                <p className="text-gray-700 font-semibold">Attachée régionale de coopération éducative</p>
               </div>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  Le message du poste diplomatique sera bientôt disponible. Nous travaillons actuellement avec nos
-                  partenaires pour partager une prise de parole alignée avec les mots du président et de la direction.
+                  Le service de coopération et d’action culturelle salue l’élaboration du Plan Stratégique de Développement du
+                  lycée Jacques Prévert, résultat d’un travail approfondi et concerté avec le comité de gestion, l’équipe de
+                  direction et l’ensemble de la communauté éducative.
                 </p>
                 <p>
-                  Merci de votre patience : cette section adoptera la même présentation que les autres messages pour une
-                  lecture cohérente et harmonieuse.
+                  Ce document s’inscrit dans la continuité des orientations du réseau d’enseignement français à l’étranger et
+                  constitue une feuille de route précieuse pour accompagner le développement de l’établissement pour les prochaines
+                  années dans une direction clairement établie : celle de consolider un environnement d’apprentissage dans un climat
+                  scolaire favorable mais exigeant, ouvert et inclusif.
+                </p>
+                <p>
+                  Le service de coopération et d’action culturelle, à travers l’action du conseiller de coopération et d’action
+                  culturelle et de l’attaché de coopération éducative, continuera d’accompagner l’établissement dans la mise en
+                  œuvre des objectifs définis, en lien avec l'AEFE et l'ensemble des acteurs de la communauté éducative.
                 </p>
               </div>
             </CardContent>
