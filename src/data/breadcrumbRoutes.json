@@ -32,6 +32,10 @@
     "name": "Curriculum numérique spiralaire",
     "parent": "/plan-strategique"
   },
+  "/introduction-au-code": {
+    "name": "Introduction au code",
+    "parent": "/plan-strategique"
+  },
   "/parcours-avenir": {
     "name": "Parcours Avenir",
     "parent": "/plan-strategique/axe-4"

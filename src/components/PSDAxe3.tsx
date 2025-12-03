@@ -71,7 +71,10 @@ const PSDAxe3 = () => {
           linkIcon: GraduationCap
         },
         {
-          content: <>Introduction au code</>
+          content: <>Introduction au code</>,
+          link: '/introduction-au-code',
+          linkAriaLabel: 'Découvrir l\'introduction au code',
+          linkIcon: GraduationCap
         },
         {
           content: <>Module IA</>
