@@ -35,6 +35,8 @@ type Cycle = {
   niveaux: Niveau[];
 };
 
+type RowSpanMatrix = Record<DomainKey, number[]>;
+
 const domains: { key: DomainKey; label: string }[] = [
   { key: 'addictions', label: 'Prévention des conduites addictives' },
   { key: 'alimentation', label: "Éducation à l'alimentation et au goût" },
@@ -369,6 +371,37 @@ const renderContent = (items: DomainContent) => {
   );
 };
 
+const buildRowSpanMatrix = (niveaux: Niveau[]): RowSpanMatrix => {
+  const stringifyContent = (items: DomainContent) => JSON.stringify(items ?? []);
+
+  const computeSpansForDomain = (key: DomainKey) => {
+    const spans = new Array(niveaux.length).fill(0);
+    let index = 0;
+
+    while (index < niveaux.length) {
+      const referenceContent = stringifyContent(niveaux[index].domains[key]);
+      let span = 1;
+
+      while (
+        index + span < niveaux.length &&
+        stringifyContent(niveaux[index + span].domains[key]) === referenceContent
+      ) {
+        span += 1;
+      }
+
+      spans[index] = span;
+      index += span;
+    }
+
+    return spans;
+  };
+
+  return domains.reduce<RowSpanMatrix>((acc, domain) => {
+    acc[domain.key] = computeSpansForDomain(domain.key);
+    return acc;
+  }, {} as RowSpanMatrix);
+};
+
 const ParcoursSante = () => {
   const navigate = useNavigate();
 
@@ -434,30 +467,50 @@ const ParcoursSante = () => {
                 </span>
               </div>
 
-              <div className="overflow-x-auto">
-                <Table className="min-w-[900px] text-[13px]">
-                  <TableHeader>
-                    <TableRow className="bg-emerald-50/60">
-                      <TableHead className="w-24 font-semibold text-emerald-800">Niveau</TableHead>
-                      {domains.map((domain) => (
-                        <TableHead key={domain.key} className="min-w-[180px] font-semibold text-emerald-800">
-                          {domain.label}
-                        </TableHead>
-                      ))}
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {cycle.niveaux.map((niveau) => (
-                      <TableRow key={`${cycle.cycle}-${niveau.name}`} className="align-top">
-                        <TableCell className="font-semibold text-slate-900">{niveau.name}</TableCell>
-                        {domains.map((domain) => (
-                          <TableCell key={`${niveau.name}-${domain.key}`}>{renderContent(niveau.domains[domain.key])}</TableCell>
+              {(() => {
+                const rowSpans = buildRowSpanMatrix(cycle.niveaux);
+
+                return (
+                  <div className="overflow-x-auto">
+                    <Table className="min-w-[900px] text-[13px]">
+                      <TableHeader>
+                        <TableRow className="bg-emerald-50/60">
+                          <TableHead className="w-24 font-semibold text-emerald-800">Niveau</TableHead>
+                          {domains.map((domain) => (
+                            <TableHead key={domain.key} className="min-w-[180px] font-semibold text-emerald-800">
+                              {domain.label}
+                            </TableHead>
+                          ))}
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        {cycle.niveaux.map((niveau, rowIndex) => (
+                          <TableRow key={`${cycle.cycle}-${niveau.name}`} className="align-top">
+                            <TableCell className="font-semibold text-slate-900">{niveau.name}</TableCell>
+                            {domains.map((domain) => {
+                              const span = rowSpans[domain.key][rowIndex];
+
+                              if (span === 0) {
+                                return null;
+                              }
+
+                              return (
+                                <TableCell
+                                  key={`${niveau.name}-${domain.key}`}
+                                  rowSpan={span}
+                                  className="align-top"
+                                >
+                                  {renderContent(niveau.domains[domain.key])}
+                                </TableCell>
+                              );
+                            })}
+                          </TableRow>
                         ))}
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </div>
+                      </TableBody>
+                    </Table>
+                  </div>
+                );
+              })()}
             </section>
           ))}
         </div>
