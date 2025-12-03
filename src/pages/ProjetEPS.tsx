@@ -7,7 +7,6 @@ import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import {
   ArrowLeft,
-  Award,
   Compass,
   Dumbbell,
   GraduationCap,
@@ -15,22 +14,11 @@ import {
   Home,
   Layers,
   LineChart,
-  Mail,
-  MapPin,
-  Phone,
   ShieldCheck
 } from 'lucide-react';
 
 const ProjetEPS = () => {
   const navigate = useNavigate();
-
-  const identity = {
-    name: 'Lycée Français Jacques Prévert – Saly',
-    address: 'Saly Joseph, BP 99 – 23002 Saly (Sénégal)',
-    phone: '+221 33 957 08 53',
-    email: 'secretariat@lfjpsaly.org',
-    label: 'Établissement partenaire AEFE, homologué par le Ministère français de l’Éducation Nationale'
-  };
 
   const axesAEFE = [
     'Développement du réseau',
@@ -243,29 +231,6 @@ const ProjetEPS = () => {
                 Projet pédagogique d’Éducation Physique et Sportive du Lycée Français Jacques Prévert
               </p>
             </div>
-          </div>
-          <p className="max-w-5xl text-base md:text-lg text-white/80">
-            Fondé en 2007, le LFJP accueille 550 à 580 élèves dans un environnement en plein développement à Saly-Portudal.
-            Établissement homologué par le Ministère français de l’Éducation Nationale et partenaire AEFE, il fait de
-            l’EPS un levier de réussite, d’inclusion et d’ouverture culturelle.
-          </p>
-          <div className="flex flex-wrap gap-3 mt-6 text-sm md:text-base">
-            <Badge variant="secondary" className="bg-white/10 text-white border border-white/20">
-              <MapPin className="h-4 w-4 mr-2" />
-              {identity.address}
-            </Badge>
-            <Badge variant="secondary" className="bg-white/10 text-white border border-white/20">
-              <Phone className="h-4 w-4 mr-2" />
-              {identity.phone}
-            </Badge>
-            <Badge variant="secondary" className="bg-white/10 text-white border border-white/20">
-              <Mail className="h-4 w-4 mr-2" />
-              {identity.email}
-            </Badge>
-            <Badge variant="secondary" className="bg-white/10 text-white border border-white/20">
-              <Award className="h-4 w-4 mr-2" />
-              {identity.label}
-            </Badge>
           </div>
         </div>
       </div>
