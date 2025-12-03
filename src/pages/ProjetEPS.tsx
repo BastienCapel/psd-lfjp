@@ -108,7 +108,7 @@ const ProjetEPS = () => {
       activities: 'Athlétisme, ultimate'
     },
     {
-      title: 'Piscine municipale',
+      title: 'Piscine de la clinique Senghor',
       activities: 'Natation'
     }
   ];
