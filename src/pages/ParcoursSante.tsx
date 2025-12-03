@@ -3,15 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '../components/ui/button';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '../components/ui/table';
-import { ArrowLeft, HeartPulse, Home } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
+import { Badge } from '../components/ui/badge';
+import { ArrowLeft, HeartPulse, Home, ListChecks } from 'lucide-react';
 
 const PAGE_TITLE = 'Parcours Santé | PSD LFJP';
 
@@ -414,12 +408,27 @@ const ParcoursSante = () => {
       <main className="flex-1 pb-16">
         <div className="container mx-auto space-y-10 px-6">
           <section className="rounded-3xl border border-emerald-100 bg-white p-8 shadow-sm">
-            <h2 className="text-2xl font-playfair font-semibold text-emerald-700">Un cadre commun pour 6 domaines de santé</h2>
-            <p className="mt-4 max-w-4xl text-base text-slate-700">
-              Le tableau ci-dessous décline, pour chaque cycle et niveau, les actions pédagogiques prévues dans les six domaines
-              obligatoires du Parcours Santé : prévention des conduites addictives, alimentation et goût, activité physique,
-              éducation à la vie affective, protection de l’enfance et hygiène/environnement.
-            </p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 className="text-2xl font-playfair font-semibold text-emerald-700">
+                  Un cadre commun pour 6 domaines de santé
+                </h2>
+                <p className="mt-3 max-w-4xl text-base text-slate-700">
+                  Parcourez chaque cycle à travers des cartes qui synthétisent les actions pédagogiques prévues dans les six
+                  domaines obligatoires : prévention des conduites addictives, alimentation et goût, activité physique,
+                  éducation à la vie affective, protection de l’enfance et hygiène/environnement.
+                </p>
+              </div>
+              <div className="flex items-center gap-3 rounded-2xl bg-emerald-50 px-4 py-3 text-emerald-800">
+                <ListChecks className="h-6 w-6" aria-hidden />
+                <div>
+                  <p className="text-sm font-semibold">Lecture simplifiée</p>
+                  <p className="text-xs text-emerald-700/80">
+                    Une carte par niveau pour visualiser rapidement les actions prévues.
+                  </p>
+                </div>
+              </div>
+            </div>
           </section>
 
           {parcoursData.map((cycle) => (
@@ -428,35 +437,50 @@ const ParcoursSante = () => {
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">Parcours Santé</p>
                   <h3 className="text-2xl font-playfair font-semibold text-emerald-800">{cycle.cycle}</h3>
+                  <p className="text-sm text-slate-600">{cycle.niveaux.length} niveaux accompagnés</p>
                 </div>
-                <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-                  {cycle.niveaux.length} niveaux
-                </span>
+                <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-100">Présentation par cartes</Badge>
               </div>
 
-              <div className="overflow-x-auto">
-                <Table className="min-w-[900px] text-[13px]">
-                  <TableHeader>
-                    <TableRow className="bg-emerald-50/60">
-                      <TableHead className="w-24 font-semibold text-emerald-800">Niveau</TableHead>
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {cycle.niveaux.map((niveau) => (
+                  <Card
+                    key={`${cycle.cycle}-${niveau.name}`}
+                    className="h-full border-emerald-100 bg-emerald-50/20 shadow-sm transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-md"
+                  >
+                    <CardHeader className="flex flex-col gap-2">
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">Niveau</p>
+                          <CardTitle className="text-xl text-emerald-800">{niveau.name}</CardTitle>
+                          <CardDescription>Parcours Santé {cycle.cycle}</CardDescription>
+                        </div>
+                        <Badge variant="outline" className="border-emerald-200 text-emerald-800">
+                          {domains.length} domaines
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
                       {domains.map((domain) => (
-                        <TableHead key={domain.key} className="min-w-[180px] font-semibold text-emerald-800">
-                          {domain.label}
-                        </TableHead>
+                        <div
+                          key={`${niveau.name}-${domain.key}`}
+                          className="rounded-2xl border border-emerald-100 bg-white px-4 py-3 shadow-[0_1px_0_rgb(16_185_129/0.08)]"
+                        >
+                          <div className="mb-2 flex items-center justify-between gap-3">
+                            <p className="text-sm font-semibold text-emerald-800">{domain.label}</p>
+                            <Badge
+                              variant={niveau.domains[domain.key].length ? 'secondary' : 'outline'}
+                              className="border-emerald-200 bg-emerald-50 text-emerald-800"
+                            >
+                              {niveau.domains[domain.key].length ? `${niveau.domains[domain.key].length} action(s)` : 'À compléter'}
+                            </Badge>
+                          </div>
+                          {renderContent(niveau.domains[domain.key])}
+                        </div>
                       ))}
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {cycle.niveaux.map((niveau) => (
-                      <TableRow key={`${cycle.cycle}-${niveau.name}`} className="align-top">
-                        <TableCell className="font-semibold text-slate-900">{niveau.name}</TableCell>
-                        {domains.map((domain) => (
-                          <TableCell key={`${niveau.name}-${domain.key}`}>{renderContent(niveau.domains[domain.key])}</TableCell>
-                        ))}
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </section>
           ))}
