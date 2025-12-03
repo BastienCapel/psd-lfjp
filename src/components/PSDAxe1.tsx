@@ -168,6 +168,12 @@ const PSDAxe1 = () => {
           linkIcon: Handshake
         },
         {
+          content: <strong>Projet EPS</strong>,
+          link: '/projet-eps',
+          linkAriaLabel: 'En savoir plus – Projet EPS',
+          linkIcon: GraduationCap
+        },
+        {
           content: <strong>Savoir rouler</strong>,
           link: '/savoir-rouler',
           linkAriaLabel: 'En savoir plus – Savoir rouler',

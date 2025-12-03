@@ -49,6 +49,7 @@ import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
 import PlanificationBacBlanc from "./pages/PlanificationBacBlanc";
 import ParcoursSante from "./pages/ParcoursSante";
+import ProjetEPS from "./pages/ProjetEPS";
 
 // Créer l'instance QueryClient en dehors du composant pour éviter les recréations
 const queryClient = new QueryClient({
@@ -167,6 +168,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ParcoursSante />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/projet-eps" element={
+                  <>
+                    <BreadcrumbNav />
+                    <ProjetEPS />
                     <BackToTop />
                   </>
                 } />
