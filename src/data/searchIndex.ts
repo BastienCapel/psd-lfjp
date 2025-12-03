@@ -92,6 +92,13 @@ export const searchIndex: SearchEntry[] = [
     category: 'Curricula',
   },
   {
+    path: '/introduction-au-code',
+    title: 'Introduction au code',
+    description: 'Cadre national, alignement AEFE et curriculum LFJP 2026-2030.',
+    keywords: ['code', 'programmation', 'PIX', 'AEFE'],
+    category: 'Curricula',
+  },
+  {
     path: '/classe-numerique',
     title: 'Classe numérique',
     description: 'Expérimentations pédagogiques soutenues par le numérique.',

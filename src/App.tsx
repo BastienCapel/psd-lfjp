@@ -44,6 +44,7 @@ import ExpressionParticipation from "./pages/ExpressionParticipation";
 import VoyagesScolairesInternationaux from "./pages/VoyagesScolairesInternationaux";
 import JumelagesPartagesProjets from "./pages/JumelagesPartagesProjets";
 import EchangesScolairesADNAEFE from "./pages/EchangesScolairesADNAEFE";
+import IntroductionAuCode from "./pages/IntroductionAuCode";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -147,6 +148,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <CurriculumNumeriqueSpiralaire />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/introduction-au-code" element={
+                  <>
+                    <BreadcrumbNav />
+                    <IntroductionAuCode />
                     <BackToTop />
                   </>
                 } />
