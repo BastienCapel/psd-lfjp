@@ -35,6 +35,32 @@ type Cycle = {
   niveaux: Niveau[];
 };
 
+const areContentsEqual = (a: DomainContent, b: DomainContent) =>
+  JSON.stringify(a ?? []) === JSON.stringify(b ?? []);
+
+const getRowSpan = (cycle: Cycle, domainKey: DomainKey, niveauIndex: number) => {
+  const currentContent = cycle.niveaux[niveauIndex]?.domains[domainKey] ?? [];
+
+  if (niveauIndex > 0) {
+    const previousContent = cycle.niveaux[niveauIndex - 1]?.domains[domainKey] ?? [];
+    if (areContentsEqual(currentContent, previousContent)) {
+      return 0;
+    }
+  }
+
+  let span = 1;
+  for (let i = niveauIndex + 1; i < cycle.niveaux.length; i += 1) {
+    const nextContent = cycle.niveaux[i]?.domains[domainKey] ?? [];
+    if (areContentsEqual(currentContent, nextContent)) {
+      span += 1;
+    } else {
+      break;
+    }
+  }
+
+  return span;
+};
+
 const domains: { key: DomainKey; label: string }[] = [
   { key: 'addictions', label: 'Prévention des conduites addictives' },
   { key: 'alimentation', label: "Éducation à l'alimentation et au goût" },
@@ -447,12 +473,26 @@ const ParcoursSante = () => {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {cycle.niveaux.map((niveau) => (
+                    {cycle.niveaux.map((niveau, niveauIndex) => (
                       <TableRow key={`${cycle.cycle}-${niveau.name}`} className="align-top">
                         <TableCell className="font-semibold text-slate-900">{niveau.name}</TableCell>
-                        {domains.map((domain) => (
-                          <TableCell key={`${niveau.name}-${domain.key}`}>{renderContent(niveau.domains[domain.key])}</TableCell>
-                        ))}
+                        {domains.map((domain) => {
+                          const rowSpan = getRowSpan(cycle, domain.key, niveauIndex);
+
+                          if (rowSpan === 0) {
+                            return null;
+                          }
+
+                          return (
+                            <TableCell
+                              key={`${niveau.name}-${domain.key}`}
+                              rowSpan={rowSpan}
+                              className="align-top"
+                            >
+                              {renderContent(niveau.domains[domain.key])}
+                            </TableCell>
+                          );
+                        })}
                       </TableRow>
                     ))}
                   </TableBody>
