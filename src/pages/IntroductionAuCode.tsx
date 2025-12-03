@@ -95,6 +95,9 @@ const timeline = [
   {
     title: '2026-2027 — Phase 1',
     focus: 'Installation des fondamentaux.',
+    start: 2026,
+    end: 2027,
+    color: 'from-blue-500 via-blue-400 to-blue-500',
     items: [
       'Formation initiale des enseignants (IRF ZAO – code & robotique).',
       'Scratch et robotique généralisés en CM1-CM2 et 6e.',
@@ -105,6 +108,9 @@ const timeline = [
   {
     title: '2027-2028 — Phase 2',
     focus: 'Consolidation collège.',
+    start: 2027,
+    end: 2028,
+    color: 'from-amber-500 via-amber-400 to-amber-500',
     items: [
       'Python généralisé de la 5e à la 3e.',
       'Micro:bit / Arduino en 4e-3e.',
@@ -115,6 +121,9 @@ const timeline = [
   {
     title: '2028-2029 — Phase 3',
     focus: 'Extension lycée.',
+    start: 2028,
+    end: 2029,
+    color: 'from-emerald-500 via-emerald-400 to-emerald-500',
     items: [
       'Seconde SNT : IA, données, objets connectés.',
       'Projets interdisciplinaires Python (maths, sciences, SNT).',
@@ -125,6 +134,9 @@ const timeline = [
   {
     title: '2029-2030 — Phase 4',
     focus: 'Maturité du curriculum.',
+    start: 2029,
+    end: 2030,
+    color: 'from-indigo-500 via-indigo-400 to-indigo-500',
     items: [
       'Parcours numérique LFJP totalement structuré.',
       'Création d’un “Lab numérique et robotique” (Axe 3 PSD).',
@@ -295,14 +307,18 @@ const IntroductionAuCode: React.FC = () => {
                   Construire un curriculum spiralaire cohérent du CP à la Terminale, articulé avec les programmes français,
                   les standards AEFE, les compétences PIX et l’Axe 3 du PSD.
                 </p>
-                <div className="flex items-start gap-2 text-french-blue">
-                  <CheckCircle2 className="w-4 h-4 mt-0.5" />
-                  <span>Parcours numérique LFJP intégré au parcours citoyen et aux certifications.</span>
-                </div>
-                <div className="flex items-start gap-2 text-french-blue">
-                  <CheckCircle2 className="w-4 h-4 mt-0.5" />
-                  <span>Projet continu, adaptatif et interdisciplinaire.</span>
-                </div>
+                <ul className="space-y-2 text-french-blue">
+                  {[1, 2].map((index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="mt-0.5 h-2.5 w-2.5 rounded-full bg-french-blue" aria-hidden />
+                      <span>
+                        {index === 1
+                          ? 'Parcours numérique LFJP intégré au parcours citoyen et aux certifications.'
+                          : 'Projet continu, adaptatif et interdisciplinaire.'}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           </div>
@@ -360,14 +376,55 @@ const IntroductionAuCode: React.FC = () => {
                   <p className="text-sm text-gray-600">{phase.focus}</p>
                 </CardHeader>
                 <CardContent>
-                  <ul className="list-disc pl-5 space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-gray-700">
                     {phase.items.map((item) => (
-                      <li key={item}>{item}</li>
+                      <li key={item} className="flex items-start gap-2">
+                        <span className="mt-1 h-2 w-2 rounded-full bg-french-blue" aria-hidden />
+                        <span>{item}</span>
+                      </li>
                     ))}
                   </ul>
                 </CardContent>
               </Card>
             ))}
+          </div>
+          <div className="mt-10 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <CalendarRange className="w-5 h-5 text-french-blue" />
+              <div>
+                <p className="text-sm text-gray-600">Frise temporelle (type Gantt)</p>
+                <h3 className="text-lg font-semibold text-gray-900">Phasage du déploiement 2026-2030</h3>
+              </div>
+            </div>
+            <div className="space-y-4">
+              {timeline.map((phase) => {
+                const timelineStart = 2026;
+                const timelineEnd = 2030;
+                const totalYears = timelineEnd - timelineStart;
+                const left = ((phase.start - timelineStart) / totalYears) * 100;
+                const width = ((phase.end - phase.start) / totalYears) * 100;
+
+                return (
+                  <div key={`gantt-${phase.title}`} className="space-y-1">
+                    <div className="flex items-center justify-between text-sm text-gray-800">
+                      <span className="font-semibold">{phase.title}</span>
+                      <span className="text-gray-500">{phase.focus}</span>
+                    </div>
+                    <div className="relative h-4 rounded-full bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100">
+                      <div
+                        className={`absolute inset-y-0 rounded-full bg-gradient-to-r ${phase.color}`}
+                        style={{ left: `${left}%`, width: `${width}%` }}
+                        aria-hidden
+                      />
+                    </div>
+                    <div className="flex justify-between text-xs text-gray-500">
+                      <span>{phase.start}</span>
+                      <span>{phase.end}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
           <div className="mt-8 flex flex-wrap gap-3 text-sm text-french-blue">
             <Link to="/curriculum-numerique-spiralaire" className="inline-flex items-center gap-2 hover:underline">
