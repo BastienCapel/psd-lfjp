@@ -5,363 +5,340 @@ import Footer from '../components/Footer';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
-import { ArrowLeft, HeartPulse, Home, ListChecks } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
+import {
+  Activity,
+  ArrowLeft,
+  Ban,
+  Droplets,
+  HeartHandshake,
+  HeartPulse,
+  Home,
+  ListChecks,
+  ShieldCheck,
+  Utensils,
+} from 'lucide-react';
 
 const PAGE_TITLE = 'Parcours Santé | PSD LFJP';
 
-type DomainKey =
-  | 'addictions'
-  | 'alimentation'
-  | 'physique'
-  | 'affectif'
-  | 'protection'
-  | 'hygiene';
+type DomainKey = 'addictions' | 'alimentation' | 'physique' | 'affectif' | 'protection' | 'hygiene';
 
-type DomainContent = string[];
-
-type Niveau = {
-  name: string;
-  domains: Record<DomainKey, DomainContent>;
+type TimelineEntry = {
+  level: string;
+  focus: string;
+  details: string[];
 };
 
-type Cycle = {
-  cycle: string;
-  niveaux: Niveau[];
+type Domain = {
+  key: DomainKey;
+  title: string;
+  icon: React.ElementType;
+  tone: string;
+  description: string;
+  timeline: TimelineEntry[];
+  references: string[];
 };
 
-const domains: { key: DomainKey; label: string }[] = [
-  { key: 'addictions', label: 'Prévention des conduites addictives' },
-  { key: 'alimentation', label: "Éducation à l'alimentation et au goût" },
-  { key: 'physique', label: "Promotion de l'activité physique" },
-  { key: 'affectif', label: 'Éducation à la vie affective, relationnelle et sexualité' },
-  { key: 'protection', label: "Protection de l'enfance" },
-  { key: 'hygiene', label: 'Vaccination · Environnement · Hygiène' },
-];
-
-const parcoursData: Cycle[] = [
+const domains: Domain[] = [
   {
-    cycle: 'Cycle 1',
-    niveaux: [
+    key: 'addictions',
+    title: 'Prévention des conduites addictives',
+    icon: Ban,
+    tone: 'from-emerald-500/20 via-emerald-500/10 to-emerald-500/0',
+    description:
+      "Sensibiliser progressivement aux risques liés aux écrans, au tabac, à l'alcool ou aux substances, en associant les familles et les partenaires de prévention.",
+    timeline: [
       {
-        name: 'PS',
-        domains: {
-          addictions: [],
-          alimentation: [
-            'Éducation au goût et à la diversité alimentaire (semaine du goût, commission restauration).',
-            "Travail autour de l'importance du petit-déjeuner.",
-            "Ressource : outils éducatifs du ministère de l'agriculture.",
-          ],
-          physique: [
-            "Comprendre ce qu'est l'activité physique.",
-            'Ressource : projet “Manger, Bouger pour ma santé”.',
-          ],
-          affectif: [
-            'Se connaître, vivre et grandir avec son corps.',
-            'Rencontrer les autres et construire des relations épanouissantes.',
-            "Trouver sa place dans la société, être libre et responsable.",
-            'Découvrir les conditions élémentaires du respect de soi et des autres.',
-            'Programme ministériel d’éducation à la vie affective et relationnelle à la maternelle.',
-          ],
-          protection: [
-            "Information et sensibilisation (1 séance minimum/an) sur la protection de l'enfance et les violences intrafamiliales, notamment sexuelles.",
-            'Application de la circulaire du 7 février 2022 : séance annuelle dédiée aux violences intrafamiliales à caractère sexuel.',
-            'Détection et signalement systématiques des situations préoccupantes.',
-            "Participation à la journée mondiale des droits de l'enfant (20 novembre).",
-          ],
-          hygiene: [
-            'Éducation au lavage des mains, au brossage des dents et à la protection contre le soleil.',
-            'Ressource : “Vivre avec le soleil”.',
-            'Contrôle infirmier des 6 ans.',
-          ],
-        },
+        level: 'Cycle 1 (PS–GS)',
+        focus: 'Premiers repères à installer',
+        details: ['Supports de prévention à consolider : éveil aux bonnes habitudes de protection personnelle.'],
       },
       {
-        name: 'MS',
-        domains: {
-          addictions: [],
-          alimentation: [],
-          physique: [],
-          affectif: [],
-          protection: [],
-          hygiene: [],
-        },
+        level: 'Cycle 2 (CP–CE2)',
+        focus: 'Usage raisonné du numérique',
+        details: [
+          "CP : sensibilisation aux dangers de l'utilisation excessive des écrans.",
+          'Semaine sans écran en partenariat avec les familles (CESCE) et mallette Ecole Territoires Numériques.',
+        ],
       },
       {
-        name: 'GS',
-        domains: {
-          addictions: [],
-          alimentation: [],
-          physique: [],
-          affectif: [],
-          protection: [],
-          hygiene: [],
-        },
+        level: 'Cycle 3 (CM1–6e)',
+        focus: 'Prévenir les dépendances',
+        details: [
+          '6° : usage des réseaux sociaux et jeux vidéo ; ressources pédagogiques dédiées.',
+          "Prévention tabac/alcool (binge drinking, comas éthyliques) avec l'intervention de l'infirmière.",
+        ],
       },
+      {
+        level: 'Cycle 4 (5e–3e)',
+        focus: 'Suivi des pratiques numériques et festives',
+        details: ['Consolider les repères vus en 6° et organiser des temps de rappel collectifs.'],
+      },
+      {
+        level: 'Lycée',
+        focus: 'Prévenir les conduites à risques',
+        details: ['2nde : sensibilisation aux substances stupéfiantes en lien avec le commissariat.'],
+      },
+    ],
+    references: [
+      'Partenariat infirmière / CESCE pour la cohérence des messages.',
+      'Ressources Eduscol et mallette École Territoires Numériques.',
     ],
   },
   {
-    cycle: 'Cycle 2',
-    niveaux: [
+    key: 'alimentation',
+    title: "Éducation à l'alimentation et au goût",
+    icon: Utensils,
+    tone: 'from-amber-500/20 via-amber-500/10 to-amber-500/0',
+    description:
+      "Découvrir le goût, promouvoir l'équilibre alimentaire et relier nutrition, santé et activité physique à chaque étape de la scolarité.",
+    timeline: [
       {
-        name: 'CP',
-        domains: {
-          addictions: [
-            "Sensibilisation aux dangers de l'utilisation excessive des écrans.",
-            'Ressource : mallette École Territoires numériques éducatifs.',
-            'Organisation de la semaine sans écran en partenariat avec les familles (CESCE).',
-          ],
-          alimentation: [
-            "Sensibilisation à l'équilibre alimentaire (découverte du monde).",
-            'Focus sur les consommations excessives en sucre, sel et gras.',
-            'Lien entre alimentation et activité physique, goûter matinal sain (CVE).',
-            'Ressources : “Manger, Bouger pour ma santé” et vademecum Eduscol.',
-            'Participation à la semaine du goût.',
-          ],
-          physique: [
-            "Promotion de l'activité physique liée aux découvertes du monde (anatomie).",
-            'Mise en place des 30 minutes d’APQ.',
-            'Ressources : fiches APQ, “Manger, Bouger pour ma santé”.',
-          ],
-          affectif: [
-            "Connaître son corps et comprendre ce qu'est l'intime.",
-            'Comprendre la diversité des sentiments et des émotions.',
-            'Appartenir à une famille et identifier la nature des liens familiaux.',
-          ],
-          protection: [],
-          hygiene: [
-            "Éducation à l'hygiène corporelle et bucco-dentaire (perte des dents de lait).",
-            'Intervention de l’infirmière ou d’un dentiste.',
-            'Protection contre le soleil – ressource “Vivre avec le soleil”.',
-            'Contrôle infirmier des 11 ans.',
-          ],
-        },
+        level: 'Cycle 1 (PS–GS)',
+        focus: 'Découvrir et goûter',
+        details: [
+          'Semaine du goût et participation aux commissions restauration.',
+          "Sensibilisation à l'importance du petit-déjeuner.",
+          'Ressources : outils éducatifs du ministère de l’agriculture.',
+        ],
       },
       {
-        name: 'CE1',
-        domains: {
-          addictions: [],
-          alimentation: [],
-          physique: [],
-          affectif: [
-            'Grandir avec une bonne connaissance et estime de soi, protéger son intimité.',
-            'Comprendre les dimensions affectives, éthiques, sociales et légales des relations humaines.',
-            'Promouvoir des relations égalitaires et repérer les discriminations issues de stéréotypes (genre, etc.).',
-          ],
-          protection: [],
-          hygiene: [],
-        },
+        level: 'Cycle 2 (CP–CE2)',
+        focus: 'Construire l’équilibre alimentaire',
+        details: [
+          "CP : repérer les familles d'aliments et prévenir les consommations excessives en sucre, sel et gras.",
+          'Lien alimentation / activité physique, goûter matinal sain (CVE) et semaine du goût.',
+          'Ressources : “Manger, Bouger pour ma santé” et vademecum Eduscol.',
+        ],
       },
       {
-        name: 'CE2',
-        domains: {
-          addictions: [],
-          alimentation: [],
-          physique: [],
-          affectif: [
-            'Se sentir bien dans son corps et en prendre soin.',
-            "Comprendre le consentement, savoir le solliciter ou l'exprimer, accepter et respecter un refus.",
-          ],
-          protection: [],
-          hygiene: [],
-        },
+        level: 'Cycle 3 (CM1–6e)',
+        focus: 'Comprendre le corps et la nutrition',
+        details: [
+          '6° : sensibilisation aux troubles alimentaires (anorexie, boulimie, orthorexie).',
+          'Éducation aux bonnes pratiques : programme “J’aime manger, j’aime bouger”.',
+          'Interventions infirmières en classes de 5° et 2nde.',
+        ],
+      },
+      {
+        level: 'Cycle 4 (5e–3e)',
+        focus: 'Approfondir et débattre',
+        details: ['Ateliers à poursuivre autour de la nutrition et de la santé des adolescents.'],
+      },
+      {
+        level: 'Lycée',
+        focus: 'Autonomie alimentaire',
+        details: ['2nde : rappels des bonnes pratiques et liens rythmes de vie / alimentation.'],
       },
     ],
+    references: ['Ressources “Manger, Bouger pour ma santé”.', 'Vademecum Eduscol – équilibre alimentaire et prévention.'],
   },
   {
-    cycle: 'Cycle 3',
-    niveaux: [
+    key: 'physique',
+    title: "Promotion de l'activité physique",
+    icon: Activity,
+    tone: 'from-sky-500/20 via-sky-500/10 to-sky-500/0',
+    description:
+      'Encourager le mouvement quotidien, relier EPS et santé et valoriser les projets sportifs collectifs du LFJP.',
+    timeline: [
       {
-        name: 'CM1',
-        domains: {
-          addictions: [],
-          alimentation: [],
-          physique: [
-            "Promotion de l'activité physique (sciences : respiration, digestion, circulation sanguine).",
-            'Mise en place des 30 minutes d’APQ et participation au cross du LFJP.',
-            'Ressources : “Manger, Bouger pour ma santé”, fiches APQ.',
-          ],
-          affectif: [
-            'Connaître les changements de son corps.',
-            'Développer des relations constructives et repérer les situations de harcèlement.',
-            'Promouvoir des relations égalitaires, comprendre les stéréotypes pour lutter contre les discriminations.',
-          ],
-          protection: [],
-          hygiene: [],
-        },
+        level: 'Cycle 1 (PS–GS)',
+        focus: 'Bouger pour grandir',
+        details: [
+          "Comprendre ce qu'est l'activité physique et ses bénéfices.",
+          'Ressource : projet “Manger, Bouger pour ma santé”.',
+        ],
       },
       {
-        name: 'CM2',
-        domains: {
-          addictions: [],
-          alimentation: [],
-          physique: [],
-          affectif: [
-            'Se sentir bien dans son corps et en prendre soin.',
-            'Promouvoir des relations positives, repérer et se protéger des violences sexistes et sexuelles.',
-            "Prévenir les risques liés à l'usage du numérique et d'internet.",
-          ],
-          protection: [],
-          hygiene: [],
-        },
+        level: 'Cycle 2 (CP–CE2)',
+        focus: 'Habitudes actives',
+        details: [
+          "CP : promotion de l'activité physique (liée aux découvertes du monde).",
+          'Mise en place des 30 minutes d’APQ et ressources APQ.',
+        ],
       },
       {
-        name: '6°',
-        domains: {
-          addictions: [
-            'Usage des écrans (réseaux sociaux, jeux vidéo) : sensibilisation et ressources pédagogiques.',
-            'Prévention des dangers du tabac et de l’alcool (binge drinking, comas éthyliques) avec intervention infirmière.',
-          ],
-          alimentation: [
-            'Sensibilisation aux troubles alimentaires (anorexie, boulimie, orthorexie).',
-            'Éducation aux bonnes pratiques avec “J’aime manger, j’aime bouger”.',
-            'Interventions infirmières en classes de 5° et de 2nde.',
-          ],
-          physique: [
-            'Déploiement de tests d’aptitude physique – stratégie sport-santé 2025-2030.',
-          ],
-          affectif: [
-            'Comprendre et vivre les changements de son corps.',
-            'Entrer en relation avec les autres et accepter l’évolution des relations.',
-            'Trouver sa place dans un groupe sans renier ses émotions, respecter et être respecté.',
-          ],
-          protection: [],
-          hygiene: [
-            "Sensibilisation à l'importance du sommeil pour la croissance, la mémorisation et l'attention.",
-            'Contrôle infirmier des 15 ans.',
-            'Cellules d’écoute infirmière autour de la santé mentale des adolescents.',
-          ],
-        },
+        level: 'Cycle 3 (CM1–6e)',
+        focus: 'Tests et pratiques régulières',
+        details: [
+          'CM1 : respiration, digestion et circulation sanguine ; cross du LFJP.',
+          '6° : tests d’aptitude physique – stratégie sport-santé 2025-2030.',
+        ],
+      },
+      {
+        level: 'Cycle 4 (5e–3e)',
+        focus: 'Projets et sections sportives',
+        details: [
+          'Participation aux JOJ de Dakar (octobre 2026).',
+          'Sections et associations sportives (football, boxe, judo) ; événements sportifs AEFE.',
+        ],
+      },
+      {
+        level: 'Lycée',
+        focus: 'Perspectives sport-santé',
+        details: ['Accompagnement des lycéens vers un rythme sportif autonome.'],
       },
     ],
+    references: ['Stratégie sport-santé 2025-2030.', 'Ressources APQ et “Manger, Bouger pour ma santé”.'],
   },
   {
-    cycle: 'Cycle 4',
-    niveaux: [
+    key: 'affectif',
+    title: 'Éducation à la vie affective, relationnelle et sexuelle',
+    icon: HeartHandshake,
+    tone: 'from-rose-500/20 via-rose-500/10 to-rose-500/0',
+    description:
+      'Construire l’estime de soi, le respect de l’autre et des relations égalitaires ; aborder la sexualité dans une approche globale et respectueuse.',
+    timeline: [
       {
-        name: '5°',
-        domains: {
-          addictions: [],
-          alimentation: [],
-          physique: [
-            'Participation aux JOJ de Dakar (octobre 2026).',
-            'Développement de sections sportives et associations sportives (football, boxe, judo).',
-            "Participation aux événements sportifs de l'AEFE.",
-          ],
-          affectif: [
-            'Développer librement sa personnalité sans contrainte.',
-            'Choisir ses relations, assumer ses préférences et leur évolution.',
-            "Distinguer vie publique et vie privée, réfléchir à la liberté individuelle (notamment sur les réseaux sociaux).",
-          ],
-          protection: [],
-          hygiene: [],
-        },
+        level: 'Cycle 1 (PS–GS)',
+        focus: 'Grandir avec son corps et les autres',
+        details: [
+          'Se connaître, vivre et grandir avec son corps ; relations épanouissantes.',
+          'Respect de soi et des autres, programme ministériel EVAS maternelle.',
+        ],
       },
       {
-        name: '4°',
-        domains: {
-          addictions: [],
-          alimentation: [],
-          physique: [],
-          affectif: [
-            'Aborder la sexualité comme une réalité complexe (plaisir, amour, reproduction).',
-            'Développer une compréhension critique et respectueuse des relations interpersonnelles.',
-            'Favoriser des choix responsables et protecteurs en matière de santé sexuelle et relationnelle.',
-            'Étudier des représentations de la sexualité dans l’espace public et questionner leur dimension égalitaire.',
-          ],
-          protection: [],
-          hygiene: [],
-        },
+        level: 'Cycle 2 (CP–CE2)',
+        focus: 'Emotions et intimité',
+        details: [
+          "CP : comprendre ce qu'est l'intime et la diversité des émotions.",
+          "CE1 : estime de soi, protection de l'intimité et repérage des discriminations.",
+          'CE2 : consentement, savoir solliciter ou exprimer un refus.',
+        ],
       },
       {
-        name: '3°',
-        domains: {
-          addictions: [],
-          alimentation: [],
-          physique: [],
-          affectif: [
-            'Interroger les liens entre bonheur, émotions et sexualité.',
-            'Construire une relation réciproque et égalitaire ; reconnaître les contextes de danger et de vulnérabilité.',
-            'Inscrire la sexualité dans le respect des droits humains.',
-          ],
-          protection: [],
-          hygiene: [],
-        },
+        level: 'Cycle 3 (CM1–6e)',
+        focus: 'Relations respectueuses',
+        details: [
+          'CM1 : changements du corps, repérage du harcèlement, lutte contre les stéréotypes.',
+          'CM2 : se protéger des violences sexistes et sexuelles ; prévention des risques liés au numérique.',
+          '6° : vivre les changements corporels et trouver sa place dans le groupe.',
+        ],
+      },
+      {
+        level: 'Cycle 4 (5e–3e)',
+        focus: 'Choix responsables et égalité',
+        details: [
+          '5° : développer librement sa personnalité et choisir ses relations.',
+          '4° : sexualité comme réalité complexe ; faire des choix responsables en santé sexuelle.',
+          '3° : relation réciproque et égalitaire ; inscrire la sexualité dans les droits humains.',
+        ],
+      },
+      {
+        level: 'Lycée',
+        focus: 'Autonomie et respect',
+        details: [
+          '2nde : image positive de soi, protection de l’intimité à l’ère numérique.',
+          '1ère : consentir ou refuser librement, respecter les libertés des autres.',
+          'Terminale : être libre d’être soi parmi les autres et reconnaître ses émotions.',
+        ],
       },
     ],
+    references: ['Programme EVAS – Education à la vie affective et sexuelle.', 'Séances réglementaires de prévention et d’écoute infirmière.'],
   },
   {
-    cycle: 'Lycée',
-    niveaux: [
+    key: 'protection',
+    title: "Protection de l'enfance",
+    icon: ShieldCheck,
+    tone: 'from-indigo-500/20 via-indigo-500/10 to-indigo-500/0',
+    description:
+      "Garantir la sécurité des élèves, détecter et signaler les situations préoccupantes et rappeler les droits de l'enfant.",
+    timeline: [
       {
-        name: '2nde',
-        domains: {
-          addictions: [
-            'Sensibilisation aux dangers des substances stupéfiantes avec intervention du commissariat.',
-          ],
-          alimentation: [],
-          physique: [],
-          affectif: [
-            'Prendre soin de son corps et développer une image positive de soi.',
-            'Reconnaître et comprendre ses émotions et celles des autres.',
-            "Se protéger et protéger les autres : intimité à l’ère des réseaux sociaux.",
-          ],
-          protection: [],
-          hygiene: [
-            'Sensibilisation aux IST : participation à la journée mondiale de lutte contre le SIDA (1er décembre).',
-            'Cellules d’écoute infirmière pour travailler sur la santé mentale des adolescents.',
-          ],
-        },
+        level: 'Cycle 1 (PS–GS)',
+        focus: 'Sensibilisation précoce',
+        details: [
+          "Séance annuelle sur la protection de l'enfance et les violences intrafamiliales (circulaire du 7 février 2022).",
+          'Détection et signalement systématiques ; participation à la journée mondiale des droits de l’enfant (20 novembre).',
+        ],
       },
       {
-        name: '1ère',
-        domains: {
-          addictions: [],
-          alimentation: [],
-          physique: [],
-          affectif: [
-            'Faire des choix en restant maître de soi et attentif à sa santé.',
-            'Consentir ou refuser librement, respecter les libertés des autres.',
-            'Être soi, entre acceptation et refus des injonctions extérieures.',
-          ],
-          protection: [],
-          hygiene: [],
-        },
+        level: 'Cycle 2 (CP–CE2)',
+        focus: 'Repères et vigilance',
+        details: ['Actions à consolider pour renforcer les réflexes de protection et de signalement.'],
       },
       {
-        name: 'Terminale',
-        domains: {
-          addictions: [],
-          alimentation: [],
-          physique: [],
-          affectif: [
-            'Reconnaître ses émotions et ses désirs pour mieux se connaître.',
-            'S’épanouir dans une relation équilibrée à l’autre.',
-            'Être libre d’être soi parmi les autres et réfléchir aux conditions sociales garantissant cette liberté.',
-          ],
-          protection: [],
-          hygiene: [],
-        },
+        level: 'Cycle 3 (CM1–6e)',
+        focus: 'Savoir alerter',
+        details: ['Séances de rappel pour identifier un adulte référent et demander de l’aide.'],
+      },
+      {
+        level: 'Cycle 4 (5e–3e)',
+        focus: 'Prévenir les violences',
+        details: ['Rappels ciblés sur les violences sexistes et sexuelles et les ressources d’écoute.'],
+      },
+      {
+        level: 'Lycée',
+        focus: 'Rendre l’élève acteur de sa protection',
+        details: ['Sensibilisation aux droits, au consentement et aux recours disponibles en cas de danger.'],
       },
     ],
+    references: ['Circulaire du 7 février 2022 – protection de l’enfance.', 'Journée mondiale des droits de l’enfant.'],
+  },
+  {
+    key: 'hygiene',
+    title: 'Vaccination · Environnement · Hygiène',
+    icon: Droplets,
+    tone: 'from-cyan-500/20 via-cyan-500/10 to-cyan-500/0',
+    description:
+      "Développer les réflexes d'hygiène, le suivi vaccinal et la vigilance environnementale pour protéger la santé au quotidien.",
+    timeline: [
+      {
+        level: 'Cycle 1 (PS–GS)',
+        focus: 'Gestes essentiels',
+        details: [
+          'Lavage des mains, brossage des dents et protection solaire ; ressource “Vivre avec le soleil”.',
+          'Contrôle infirmier des 6 ans.',
+        ],
+      },
+      {
+        level: 'Cycle 2 (CP–CE2)',
+        focus: 'Hygiène corporelle et sommeil',
+        details: [
+          "CP : hygiène corporelle et bucco-dentaire (perte des dents de lait), intervention de l'infirmière ou d'un dentiste.",
+          'Protection solaire et contrôle infirmier des 11 ans.',
+        ],
+      },
+      {
+        level: 'Cycle 3 (CM1–6e)',
+        focus: 'Sommeil et santé mentale',
+        details: [
+          "6° : importance du sommeil pour la croissance, la mémorisation et l'attention ; contrôle infirmier des 15 ans.",
+          'Cellules d’écoute infirmière autour de la santé mentale des adolescents.',
+        ],
+      },
+      {
+        level: 'Cycle 4 (5e–3e)',
+        focus: 'Rappels sanitaires',
+        details: ['Focus périodiques sur vaccination, hygiène et prévention des risques quotidiens.'],
+      },
+      {
+        level: 'Lycée',
+        focus: 'Prévention ciblée',
+        details: ['2nde : sensibilisation aux IST – journée mondiale de lutte contre le SIDA (1er décembre).'],
+      },
+    ],
+    references: ['Programmes vaccination / hygiène AEFE.', 'Ressource “Vivre avec le soleil”.'],
   },
 ];
 
-const renderContent = (items: DomainContent) => {
-  if (!items || items.length === 0) {
-    return <span className="text-sm text-slate-400">À compléter</span>;
-  }
-
-  return (
-    <ul className="space-y-2 text-sm leading-relaxed text-slate-700">
-      {items.map((item) => (
-        <li key={item} className="flex gap-2">
-          <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
-  );
-};
+const progressionGrid: { level: string; domains: Partial<Record<DomainKey, boolean>> }[] = [
+  { level: 'PS', domains: { alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: 'MS', domains: {} },
+  { level: 'GS', domains: {} },
+  { level: 'CP', domains: { addictions: true, alimentation: true, physique: true, affectif: true, hygiene: true } },
+  { level: 'CE1', domains: { affectif: true } },
+  { level: 'CE2', domains: { affectif: true } },
+  { level: 'CM1', domains: { physique: true, affectif: true } },
+  { level: 'CM2', domains: { affectif: true } },
+  { level: '6e', domains: { addictions: true, alimentation: true, physique: true, affectif: true, hygiene: true } },
+  { level: '5e', domains: { physique: true, affectif: true } },
+  { level: '4e', domains: { affectif: true } },
+  { level: '3e', domains: { affectif: true } },
+  { level: '2nde', domains: { addictions: true, alimentation: true, affectif: true, hygiene: true } },
+  { level: '1ère', domains: { affectif: true } },
+  { level: 'Tle', domains: { affectif: true } },
+];
 
 const ParcoursSante = () => {
   const navigate = useNavigate();
@@ -370,27 +347,51 @@ const ParcoursSante = () => {
     document.title = PAGE_TITLE;
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 font-raleway text-slate-900">
       <Navbar showLogo={true} />
 
       <header className="bg-gradient-to-r from-emerald-700 via-teal-600 to-sky-700 text-white py-16 md:py-24">
         <div className="container mx-auto px-6">
-          <div className="flex items-center gap-4">
-            <HeartPulse className="h-14 w-14" />
-            <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-white/70">Cadre scolaire & santé</p>
-              <h1 className="text-3xl md:text-5xl font-playfair font-bold">Parcours Santé</h1>
-              <p className="text-lg md:text-2xl text-white/90 mt-2">
-                Bien-être, prévention et accompagnement des élèves du LFJP
-              </p>
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="flex items-center gap-4">
+              <HeartPulse className="h-14 w-14" />
+              <div>
+                <p className="text-sm uppercase tracking-[0.3em] text-white/70">Cadre scolaire & santé</p>
+                <h1 className="text-3xl md:text-5xl font-playfair font-bold">Parcours Santé</h1>
+                <p className="text-lg md:text-2xl text-white/90 mt-2">
+                  Bien-être, prévention et accompagnement des élèves du LFJP
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-2 text-center text-sm font-semibold text-white/90 md:w-1/2">
+              <div className="rounded-2xl bg-white/10 px-3 py-2 shadow-sm">🛑 Addictions</div>
+              <div className="rounded-2xl bg-white/10 px-3 py-2 shadow-sm">🍽️ Alimentation</div>
+              <div className="rounded-2xl bg-white/10 px-3 py-2 shadow-sm">🏃 Activité</div>
+              <div className="rounded-2xl bg-white/10 px-3 py-2 shadow-sm">💬 Vie affective</div>
+              <div className="rounded-2xl bg-white/10 px-3 py-2 shadow-sm">🛡️ Protection</div>
+              <div className="rounded-2xl bg-white/10 px-3 py-2 shadow-sm">🧪 Hygiène</div>
             </div>
           </div>
           <p className="mt-6 max-w-4xl text-base md:text-lg text-white/80">
-            Le Parcours Santé structure les actions éducatives autour du bien-être physique, mental et social des élèves. Il
-            mobilise la communauté éducative pour garantir un environnement attentif, protecteur et cohérent du cycle 1 au
-            lycée.
+            Une vision synthétique et progressive : six domaines, des contenus harmonisés du cycle 1 à la Terminale, une
+            navigation fluide pour accéder rapidement aux actions et ressources clés.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Button variant="secondary" onClick={() => scrollToSection('introduction')} className="bg-white text-emerald-800">
+              Découvrir la vision
+            </Button>
+            <Button variant="outline" onClick={() => scrollToSection('frise')} className="border-white/60 text-white">
+              Voir la frise PS → Terminale
+            </Button>
+          </div>
         </div>
       </header>
 
@@ -407,83 +408,226 @@ const ParcoursSante = () => {
 
       <main className="flex-1 pb-16">
         <div className="container mx-auto space-y-10 px-6">
-          <section className="rounded-3xl border border-emerald-100 bg-white p-8 shadow-sm">
+          <section
+            id="introduction"
+            className="rounded-3xl border border-emerald-100 bg-white/90 p-8 shadow-sm backdrop-blur"
+          >
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h2 className="text-2xl font-playfair font-semibold text-emerald-700">
-                  Un cadre commun pour 6 domaines de santé
-                </h2>
+                <h2 className="text-2xl font-playfair font-semibold text-emerald-700">Vision structurée du Parcours Santé</h2>
                 <p className="mt-3 max-w-4xl text-base text-slate-700">
-                  Parcourez chaque cycle à travers des cartes qui synthétisent les actions pédagogiques prévues dans les six
-                  domaines obligatoires : prévention des conduites addictives, alimentation et goût, activité physique,
-                  éducation à la vie affective, protection de l’enfance et hygiène/environnement.
+                  Six champs complémentaires, alignés avec les attendus Éducation nationale / AEFE, présentés dans un format
+                  clair et immédiatement lisible. Chaque domaine dispose d’une description brève, d’un parcours PS → Terminale
+                  en accordéon et d’un accès rapide aux ressources institutionnelles.
                 </p>
               </div>
               <div className="flex items-center gap-3 rounded-2xl bg-emerald-50 px-4 py-3 text-emerald-800">
                 <ListChecks className="h-6 w-6" aria-hidden />
                 <div>
-                  <p className="text-sm font-semibold">Lecture simplifiée</p>
-                  <p className="text-xs text-emerald-700/80">
-                    Une carte par niveau pour visualiser rapidement les actions prévues.
-                  </p>
+                  <p className="text-sm font-semibold">Lecture synthétique</p>
+                  <p className="text-xs text-emerald-700/80">Navigation par thématiques, accordéons et frise globale.</p>
                 </div>
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {domains.map((domain) => (
+                <Card key={domain.key} className="border-emerald-100 bg-gradient-to-br from-white to-emerald-50/30">
+                  <CardHeader className="space-y-1">
+                    <div className="flex items-center gap-2 text-emerald-700">
+                      <domain.icon className="h-5 w-5" />
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em]">{domain.title}</p>
+                    </div>
+                    <CardTitle className="text-lg text-slate-900">Parcours structuré</CardTitle>
+                    <CardDescription className="text-slate-700">{domain.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex gap-2">
+                      <Button size="sm" variant="secondary" className="bg-white text-emerald-800" onClick={() => scrollToSection(domain.key)}>
+                        Ouvrir la section
+                      </Button>
+                      <Button size="sm" variant="ghost" className="text-emerald-700" onClick={() => scrollToSection('boite-outils')}>
+                        Boîte à outils
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          {domains.map((domain) => (
+            <section
+              key={domain.key}
+              id={domain.key}
+              className="overflow-hidden rounded-3xl border border-emerald-100 bg-white shadow-sm"
+            >
+              <div className={`bg-gradient-to-r ${domain.tone} px-6 py-5`}></div>
+              <div className="-mt-10 px-6 pb-8">
+                <Card className="-mt-16 border-emerald-100 shadow-lg">
+                  <CardHeader className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2 text-emerald-700">
+                        <domain.icon className="h-6 w-6" />
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">{domain.title}</p>
+                      </div>
+                      <CardTitle className="text-2xl font-playfair text-slate-900">Parcours progressif</CardTitle>
+                      <CardDescription className="text-slate-700">{domain.description}</CardDescription>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge className="bg-emerald-50 text-emerald-800">Accordéon PS → Terminale</Badge>
+                      <Badge variant="outline" className="border-emerald-200 text-emerald-800">
+                        {domain.references.length} référence(s)
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-5">
+                    <Accordion type="single" collapsible className="space-y-3">
+                      {domain.timeline.map((entry) => (
+                        <AccordionItem
+                          value={`${domain.key}-${entry.level}`}
+                          key={`${domain.key}-${entry.level}`}
+                          className="rounded-2xl border border-emerald-100 bg-emerald-50/40 px-4"
+                        >
+                          <AccordionTrigger className="text-left text-base font-semibold text-emerald-800">
+                            <div>
+                              <p>{entry.level}</p>
+                              <p className="text-xs font-normal text-emerald-700/80">{entry.focus}</p>
+                            </div>
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <ul className="space-y-2 text-sm leading-relaxed text-slate-700">
+                              {entry.details.map((item) => (
+                                <li key={item} className="flex gap-2">
+                                  <span
+                                    className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500"
+                                    aria-hidden
+                                  />
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                    <div className="flex flex-wrap gap-2 text-xs text-emerald-700">
+                      {domain.references.map((ref) => (
+                        <Badge key={ref} variant="outline" className="border-emerald-200 text-emerald-800">
+                          {ref}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </section>
+          ))}
+
+          <section id="frise" className="rounded-3xl border border-emerald-100 bg-white p-8 shadow-sm">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">Synthèse visuelle</p>
+                <h3 className="text-2xl font-playfair font-semibold text-emerald-800">Frise PS → Terminale</h3>
+                <p className="text-sm text-slate-700">
+                  Les six axes en un coup d’œil : chaque pastille indique une action identifiée par niveau. Les cases claires
+                  signalent les points à renforcer.
+                </p>
+              </div>
+              <Badge className="bg-emerald-50 text-emerald-800">15 niveaux / 6 axes</Badge>
+            </div>
+
+            <div className="mt-6 overflow-x-auto">
+              <div className="min-w-[720px] space-y-2">
+                <div className="grid grid-cols-[100px_repeat(6,1fr)] items-center gap-2 text-xs font-semibold text-emerald-800">
+                  <div>Niveau</div>
+                  <div className="flex items-center gap-2"><Ban className="h-4 w-4" /> Addictions</div>
+                  <div className="flex items-center gap-2"><Utensils className="h-4 w-4" /> Alimentation</div>
+                  <div className="flex items-center gap-2"><Activity className="h-4 w-4" /> Activité</div>
+                  <div className="flex items-center gap-2"><HeartHandshake className="h-4 w-4" /> Vie affective</div>
+                  <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4" /> Protection</div>
+                  <div className="flex items-center gap-2"><Droplets className="h-4 w-4" /> Hygiène</div>
+                </div>
+                {progressionGrid.map((row, index) => (
+                  <div
+                    key={`${row.level}-${index}`}
+                    className="grid grid-cols-[100px_repeat(6,1fr)] items-center gap-2 rounded-xl border border-emerald-50 bg-emerald-50/40 px-3 py-2"
+                  >
+                    <div className="text-sm font-semibold text-slate-800">{row.level}</div>
+                    {(['addictions', 'alimentation', 'physique', 'affectif', 'protection', 'hygiene'] as DomainKey[]).map(
+                      (key) => (
+                        <div key={`${row.level}-${key}`} className="flex justify-center">
+                          <span
+                            className={`h-3 w-3 rounded-full ${
+                              row.domains[key]
+                                ? 'bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.15)]'
+                                : 'bg-slate-200'
+                            }`}
+                            aria-label={row.domains[key] ? 'Action identifiée' : 'À compléter'}
+                          />
+                        </div>
+                      )
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </section>
 
-          {parcoursData.map((cycle) => (
-            <section key={cycle.cycle} className="rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
-              <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">Parcours Santé</p>
-                  <h3 className="text-2xl font-playfair font-semibold text-emerald-800">{cycle.cycle}</h3>
-                  <p className="text-sm text-slate-600">{cycle.niveaux.length} niveaux accompagnés</p>
-                </div>
-                <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-100">Présentation par cartes</Badge>
+          <section
+            id="boite-outils"
+            className="grid gap-6 rounded-3xl border border-emerald-100 bg-white p-8 shadow-sm lg:grid-cols-[2fr_1fr]"
+          >
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">Ressourcerie</p>
+              <h3 className="text-2xl font-playfair font-semibold text-emerald-800">Boîte à outils Parcours Santé</h3>
+              <p className="text-sm text-slate-700">
+                Une sélection de ressources institutionnelles et de contacts internes pour consolider les actions de prévention
+                et de promotion de la santé.
+              </p>
+              <div className="grid gap-3 md:grid-cols-2">
+                <Card className="border-emerald-100 bg-emerald-50/40">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-emerald-800">Ressources clés</CardTitle>
+                    <CardDescription className="text-slate-700">
+                      Liens utiles pour construire les séances et harmoniser les messages.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-2 text-sm text-slate-700">
+                    <p>• Portail Eduscol – parcours éducatifs et prévention.</p>
+                    <p>• Documents AEFE et textes législatifs sur la santé scolaire.</p>
+                    <p>• Guides pratiques thématiques (EVAS, sport-santé, alimentation).</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-emerald-100">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-emerald-800">Contacts LFJP</CardTitle>
+                    <CardDescription className="text-slate-700">
+                      Pour mobiliser les expertises et organiser les interventions.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-2 text-sm text-slate-700">
+                    <p>• Infirmière scolaire : prévention, dépistage, ateliers.</p>
+                    <p>• CPE / CESCE : coordination des actions et des partenaires.</p>
+                    <p>• PRIO : appui aux projets éducatifs et à la cohérence AEFE.</p>
+                  </CardContent>
+                </Card>
               </div>
-
-              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {cycle.niveaux.map((niveau) => (
-                  <Card
-                    key={`${cycle.cycle}-${niveau.name}`}
-                    className="h-full border-emerald-100 bg-emerald-50/20 shadow-sm transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-md"
-                  >
-                    <CardHeader className="flex flex-col gap-2">
-                      <div className="flex items-start justify-between gap-3">
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">Niveau</p>
-                          <CardTitle className="text-xl text-emerald-800">{niveau.name}</CardTitle>
-                          <CardDescription>Parcours Santé {cycle.cycle}</CardDescription>
-                        </div>
-                        <Badge variant="outline" className="border-emerald-200 text-emerald-800">
-                          {domains.length} domaines
-                        </Badge>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      {domains.map((domain) => (
-                        <div
-                          key={`${niveau.name}-${domain.key}`}
-                          className="rounded-2xl border border-emerald-100 bg-white px-4 py-3 shadow-[0_1px_0_rgb(16_185_129/0.08)]"
-                        >
-                          <div className="mb-2 flex items-center justify-between gap-3">
-                            <p className="text-sm font-semibold text-emerald-800">{domain.label}</p>
-                            <Badge
-                              variant={niveau.domains[domain.key].length ? 'secondary' : 'outline'}
-                              className="border-emerald-200 bg-emerald-50 text-emerald-800"
-                            >
-                              {niveau.domains[domain.key].length ? `${niveau.domains[domain.key].length} action(s)` : 'À compléter'}
-                            </Badge>
-                          </div>
-                          {renderContent(niveau.domains[domain.key])}
-                        </div>
-                      ))}
-                    </CardContent>
-                  </Card>
-                ))}
+            </div>
+            <div className="rounded-2xl border border-emerald-100 bg-emerald-50/40 p-5 text-sm text-slate-800">
+              <p className="font-semibold text-emerald-800">Conseils de design</p>
+              <ul className="mt-3 space-y-2">
+                <li>• Sections brèves et lisibles, navigation verticale + accordéons.</li>
+                <li>• Icônes colorées et encadrés légers pour distinguer les 6 champs.</li>
+                <li>• Fonds blancs et rappels de couleur pour un parcours moderne et clair.</li>
+              </ul>
+              <div className="mt-4 flex gap-2">
+                <Badge className="bg-white text-emerald-800">Accordéons</Badge>
+                <Badge className="bg-white text-emerald-800">Frise synthétique</Badge>
+                <Badge className="bg-white text-emerald-800">Ressourcerie</Badge>
               </div>
-            </section>
-          ))}
+            </div>
+          </section>
         </div>
       </main>
 
