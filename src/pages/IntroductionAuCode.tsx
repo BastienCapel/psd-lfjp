@@ -40,6 +40,11 @@ const institutionnel = [
   },
 ];
 
+const objectifs = [
+  'Parcours numérique LFJP intégré au parcours citoyen et aux certifications.',
+  'Projet continu, adaptatif et interdisciplinaire.',
+];
+
 const principes = [
   'Développer la pensée informatique comme compétence citoyenne.',
   'Comprendre, créer et maîtriser des objets numériques.',
@@ -95,6 +100,8 @@ const timeline = [
   {
     title: '2026-2027 — Phase 1',
     focus: 'Installation des fondamentaux.',
+    start: 2026,
+    end: 2027,
     items: [
       'Formation initiale des enseignants (IRF ZAO – code & robotique).',
       'Scratch et robotique généralisés en CM1-CM2 et 6e.',
@@ -105,6 +112,8 @@ const timeline = [
   {
     title: '2027-2028 — Phase 2',
     focus: 'Consolidation collège.',
+    start: 2027,
+    end: 2028,
     items: [
       'Python généralisé de la 5e à la 3e.',
       'Micro:bit / Arduino en 4e-3e.',
@@ -115,6 +124,8 @@ const timeline = [
   {
     title: '2028-2029 — Phase 3',
     focus: 'Extension lycée.',
+    start: 2028,
+    end: 2029,
     items: [
       'Seconde SNT : IA, données, objets connectés.',
       'Projets interdisciplinaires Python (maths, sciences, SNT).',
@@ -125,6 +136,8 @@ const timeline = [
   {
     title: '2029-2030 — Phase 4',
     focus: 'Maturité du curriculum.',
+    start: 2029,
+    end: 2030,
     items: [
       'Parcours numérique LFJP totalement structuré.',
       'Création d’un “Lab numérique et robotique” (Axe 3 PSD).',
@@ -135,6 +148,10 @@ const timeline = [
 ];
 
 const IntroductionAuCode: React.FC = () => {
+  const minYear = Math.min(...timeline.map((phase) => phase.start));
+  const maxYear = Math.max(...timeline.map((phase) => phase.end));
+  const totalYears = maxYear - minYear;
+
   return (
     <div className="min-h-screen flex flex-col font-raleway bg-gradient-to-b from-gray-50 to-white">
       <Navbar showLogo={true} />
@@ -295,14 +312,14 @@ const IntroductionAuCode: React.FC = () => {
                   Construire un curriculum spiralaire cohérent du CP à la Terminale, articulé avec les programmes français,
                   les standards AEFE, les compétences PIX et l’Axe 3 du PSD.
                 </p>
-                <div className="flex items-start gap-2 text-french-blue">
-                  <CheckCircle2 className="w-4 h-4 mt-0.5" />
-                  <span>Parcours numérique LFJP intégré au parcours citoyen et aux certifications.</span>
-                </div>
-                <div className="flex items-start gap-2 text-french-blue">
-                  <CheckCircle2 className="w-4 h-4 mt-0.5" />
-                  <span>Projet continu, adaptatif et interdisciplinaire.</span>
-                </div>
+                <ul className="space-y-2 text-french-blue">
+                  {objectifs.map((objectif) => (
+                    <li key={objectif} className="flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0" />
+                      <span>{objectif}</span>
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           </div>
@@ -348,6 +365,43 @@ const IntroductionAuCode: React.FC = () => {
           <div className="flex items-center gap-3 mb-6">
             <CalendarRange className="w-6 h-6 text-french-blue" />
             <h2 className="text-2xl font-semibold text-gray-900">Temporalité de déploiement 2026-2030</h2>
+          </div>
+          <div className="mb-6 rounded-xl border border-blue-100 bg-gradient-to-r from-blue-50 via-white to-blue-50 p-4 shadow-sm">
+            <div className="flex items-center gap-2 text-sm font-semibold text-french-blue mb-3">
+              <CalendarRange className="w-4 h-4" />
+              <span>Frise temporelle (type Gantt)</span>
+            </div>
+            <div className="relative w-full border-t border-dashed border-blue-200 pt-6">
+              <div className="absolute left-0 top-0 flex w-full justify-between text-xs text-gray-500">
+                {Array.from({ length: totalYears + 1 }).map((_, index) => {
+                  const year = minYear + index;
+                  return (
+                    <span key={year} className="-translate-x-1/2">
+                      {year}
+                    </span>
+                  );
+                })}
+              </div>
+              <div className="space-y-3">
+                {timeline.map((phase) => {
+                  const left = ((phase.start - minYear) / totalYears) * 100;
+                  const width = ((phase.end - phase.start) / totalYears) * 100;
+                  return (
+                    <div key={phase.title} className="relative">
+                      <div
+                        className="absolute top-1/2 h-4 -translate-y-1/2 rounded-full bg-blue-500/10 border border-blue-200"
+                        style={{ left: `${left}%`, width: `${width}%` }}
+                      >
+                        <div className="absolute inset-0 flex items-center px-3 text-xs font-semibold text-french-blue">
+                          {phase.title}
+                        </div>
+                      </div>
+                      <div className="pl-2 text-xs text-gray-600">{phase.focus}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
           <div className="grid lg:grid-cols-2 gap-4">
             {timeline.map((phase) => (
