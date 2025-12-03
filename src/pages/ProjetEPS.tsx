@@ -5,71 +5,226 @@ import Footer from '../components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
-import { ArrowLeft, Dumbbell, GraduationCap, HeartPulse, Home, LineChart, ShieldCheck } from 'lucide-react';
+import {
+  ArrowLeft,
+  Award,
+  Compass,
+  Dumbbell,
+  GraduationCap,
+  HeartPulse,
+  Home,
+  Layers,
+  LineChart,
+  Mail,
+  MapPin,
+  Phone,
+  ShieldCheck
+} from 'lucide-react';
 
 const ProjetEPS = () => {
   const navigate = useNavigate();
+
+  const identity = {
+    name: 'Lycée Français Jacques Prévert – Saly',
+    address: 'Saly Joseph, BP 99 – 23002 Saly (Sénégal)',
+    phone: '+221 33 957 08 53',
+    email: 'secretariat@lfjpsaly.org',
+    label: 'Établissement partenaire AEFE, homologué par le Ministère français de l’Éducation Nationale'
+  };
 
   const axesAEFE = [
     'Développement du réseau',
     'Excellence pédagogique et valeurs humanistes',
     'Formation des personnels',
-    'Rayonnement culturel, diplomatique et francophonie'
+    'Rayonnement culturel, diplomatie et francophonie'
   ];
 
-  const objectifs = [
+  const axesProjet = [
     {
-      title: 'Réussite et inclusion',
-      description:
-        'Favoriser la réussite de tous les élèves par une EPS inclusive et différenciée, centrée sur l’autonomie et le bien-être.'
-    },
-    {
-      title: 'Accompagnement des parcours',
-      description:
-        'Accompagner chaque élève dans son parcours personnel, citoyen et sportif en articulant projets et activités physiques.'
-    },
-    {
-      title: 'Ouverture internationale',
-      description:
-        'Développer l’ouverture internationale par le sport et valoriser les partenariats, projets et voyages scolaires.'
-    },
-    {
-      title: 'Cadre de vie et sécurité',
-      description:
-        'Améliorer le cadre de vie scolaire pour une pratique sportive sereine, sécurisée et respectueuse de l’environnement.'
-    }
-  ];
-
-  const cycles = [
-    {
-      title: 'Collège – Cycles 3 & 4',
-      items: [
-        'Produire une performance optimale mesurable dans les activités de course, lancer, natation ou sports collectifs.',
-        'Adapter ses déplacements à des environnements variés : courses d’orientation, cross, activités nautiques.',
-        'Conduire et maîtriser une prestation artistique ou acrobatique : gymnastique, cirque ou acrosport.',
-        'Interagir dans des jeux collectifs en coopérant et en s’opposant avec respect.'
+      title: 'Axe 1 – Réussite et différenciation',
+      points: [
+        'Développer l’autonomie et la prise d’initiative.',
+        'Adapter les contenus aux profils variés par la différenciation.',
+        'Renforcer l’articulation cycle 3 – cycle 4.'
       ]
     },
     {
-      title: 'Lycée',
-      items: [
-        'Consolider les attentes du collège avec des objectifs chiffrés en course, natation et sports collectifs.',
-        'Développer l’autonomie dans la gestion de l’effort et la conduite de projet personnel sportif.',
-        'Faire vivre la dimension citoyenne : arbitrage, sécurité, respect des règles et des partenaires.'
+      title: 'Axe 2 – Parcours personnel et citoyen',
+      points: [
+        'Proposer une offre diversifiée d’APSA et un parcours sportif personnalisé.',
+        'Renforcer l’éducation à la santé et à l’égalité filles/garçons.',
+        'Valoriser les élèves engagés (jeunes officiels, arbitres…) et l’orientation vers les métiers du sport.'
+      ]
+    },
+    {
+      title: 'Axe 3 – Ouverture internationale et partenariats',
+      points: [
+        'Développer des projets sportifs partagés avec des établissements étrangers.',
+        'Inscrire l’EPS dans la dynamique des JOJ Dakar 2026 et des JIJ 2026.',
+        'Communiquer sur les projets sportifs pour favoriser le rayonnement du LFJP.'
+      ]
+    },
+    {
+      title: 'Axe 4 – Cadre de vie et bien-être',
+      points: [
+        'Optimiser les infrastructures sportives et organiser des événements fédérateurs (cross, journées olympiques…).',
+        'Promouvoir un climat scolaire positif par le sport et le vivre-ensemble intercycles.',
+        'Mettre en avant l’activité physique pour la santé.'
+      ]
+    },
+    {
+      title: 'Axe 5 – Politique numérique au service de l’EPS',
+      points: [
+        'Utiliser les outils numériques pour enrichir les apprentissages et l’auto-évaluation.',
+        'Produire des ressources accessibles et des projets sportifs connectés.'
       ]
     }
   ];
 
-  const programmation = [
+  const team = [
     {
-      level: 'Collège',
-      details:
-        'Course de vitesse et demi-fond, lancer de vortex, natation, sports collectifs (handball, basketball, volleyball), gymnastique et acrosport, badminton, cross training.'
+      name: 'DRAME Claire',
+      epsHours: '19 h',
+      extraHours: '3 h SS + 2 h AS',
+      roles: 'Coordonnatrice, secrétaire AS',
+      skills: 'Boxe assaut et boxe française'
     },
     {
-      level: 'Lycée',
-      details:
-        'Course de 3 × 500 mètres, gestion de l’effort, sports collectifs (handball, volleyball, basketball), natation, projet personnel et accompagnement vers l’examen.'
+      name: 'NDIAYE Alassane',
+      epsHours: '20 h',
+      extraHours: '3 h SS + 1 h AS',
+      roles: 'Coordonnateur, secrétaire AS',
+      skills: 'Judo'
+    },
+    {
+      name: 'DIANDI Antoine',
+      epsHours: '—',
+      extraHours: '3 h SS',
+      roles: 'Secrétaire AS',
+      skills: 'Basket-ball'
+    }
+  ];
+
+  const facilities = [
+    {
+      title: 'Plateau sportif',
+      activities: 'Basket-ball, hand-ball, volley-ball, athlétisme, ultimate',
+      notes: 'Séquences de 12 leçons, installations partagées avec l’école primaire.'
+    },
+    {
+      title: 'Dojo',
+      activities: 'Danse, acrosport, gymnastique, boxe française, step, judo, lutte'
+    },
+    {
+      title: 'Aérodrome',
+      activities: 'Athlétisme, ultimate'
+    },
+    {
+      title: 'Piscine municipale',
+      activities: 'Natation'
+    }
+  ];
+
+  const actionsPhares = [
+    '2 sections sportives : basket-ball et judo, avec liens cycle 3-4.',
+    'Séjour scolaire d’intégration sportive en Activités de Pleine Nature.',
+    'Organisation d’un cross national et participation aux compétitions UNSS.',
+    'Pôle de formation national en judo et en boxe.',
+    'Participation à la Semaine olympique et paralympique, aux jeux de la ZAO et aux JIJ.'
+  ];
+
+  const aflLycee = [
+    {
+      champ: 'CA1 : Produire une performance optimale',
+      attendu: 'Réaliser des performances mesurables et gérer son effort.',
+      priorites: 'Maîtrise technique, planification de l’entraînement, analyse de performance.'
+    },
+    {
+      champ: 'CA2 : Adapter ses déplacements',
+      attendu: 'Se déplacer efficacement en environnement varié et sécurisé.',
+      priorites: 'Prise d’informations, adaptation aux contraintes, sécurité.'
+    },
+    {
+      champ: 'CA3 : Réaliser une prestation artistique ou acrobatique',
+      attendu: 'Composer et présenter une prestation expressive structurée.',
+      priorites: 'Créativité, maîtrise corporelle, gestion de l’espace et du rythme.'
+    },
+    {
+      champ: 'CA4 : Conduire et maîtriser un affrontement',
+      attendu: 'Mettre en œuvre des stratégies pour attaquer, défendre, coopérer ou s’opposer.',
+      priorites: 'Compréhension des règles, tactique, communication, maîtrise émotionnelle.'
+    },
+    {
+      champ: 'CA5 : Entretenir sa santé',
+      attendu: 'Construire un projet personnel d’entretien physique.',
+      priorites: 'Compréhension physiologique, régularité, auto-évaluation.'
+    }
+  ];
+
+  const programmationLycee = [
+    {
+      titre: 'Seconde',
+      items: [
+        'Demi-fond : gérer son effort et planifier un projet de course (menu 1 – 3 × 500).',
+        'Acrosport : créer et maîtriser une prestation expressive.',
+        'Basket-ball : stratégies collectives, communication et opposition.',
+        'Cross training : construire un projet d’entretien physique.'
+      ]
+    },
+    {
+      titre: 'Première',
+      items: [
+        'Menu 1 – 3 × 500 : régulation de l’effort et optimisation de performance.',
+        'Acrosport : structurer une prestation expressive.',
+        'Handball : stratégies, coopération et opposition.',
+        'Cross training : projet personnel d’entretien physique.'
+      ]
+    },
+    {
+      titre: 'Terminale',
+      items: [
+        'Menu 2 – Cross Training : mener un projet personnel d’entretien physique.',
+        'Menu 1 – Basket-ball et Menu 2 – Hand-ball : stratégies collectives confirmées.',
+        'Boxe française : maîtrise de l’affrontement et contrôle émotionnel.'
+      ]
+    }
+  ];
+
+  const programmationCollege = [
+    {
+      titre: 'Sixième',
+      items: [
+        'Combiné athlétique : course de 1/2 fond et lancer de vortex.',
+        'Course de relais.',
+        'Boxe française, step ou gymnastique.',
+        'Volley-ball.'
+      ]
+    },
+    {
+      titre: 'Cinquième',
+      items: [
+        'Course de relais, course de vitesse et combiné athlétique.',
+        'Natation : savoir nager.',
+        'Acrosport.',
+        'Ultimate et handball.'
+      ]
+    },
+    {
+      titre: 'Quatrième',
+      items: [
+        'Course de vitesse, combiné course + lancer.',
+        'Step ou acrosport.',
+        'Lutte, basket-ball, handball, ultimate.'
+      ]
+    },
+    {
+      titre: 'Troisième',
+      items: [
+        'Course de 1/2 fond + lancer.',
+        'Acrosport.',
+        'Basket-ball, volley-ball, handball, ultimate.',
+        'Cross training.'
+      ]
     }
   ];
 
@@ -89,11 +244,29 @@ const ProjetEPS = () => {
               </p>
             </div>
           </div>
-          <p className="max-w-4xl text-base md:text-lg text-white/80">
-            Le projet EPS structure la contribution de l’Éducation Physique et Sportive à la réussite et au bien-être des
-            élèves de la 6ème à la Terminale. Il s’appuie sur les compétences générales de l’EPS, les axes stratégiques
-            de l’AEFE et la dynamique internationale du LFJP.
+          <p className="max-w-5xl text-base md:text-lg text-white/80">
+            Fondé en 2007, le LFJP accueille 550 à 580 élèves dans un environnement en plein développement à Saly-Portudal.
+            Établissement homologué par le Ministère français de l’Éducation Nationale et partenaire AEFE, il fait de
+            l’EPS un levier de réussite, d’inclusion et d’ouverture culturelle.
           </p>
+          <div className="flex flex-wrap gap-3 mt-6 text-sm md:text-base">
+            <Badge variant="secondary" className="bg-white/10 text-white border border-white/20">
+              <MapPin className="h-4 w-4 mr-2" />
+              {identity.address}
+            </Badge>
+            <Badge variant="secondary" className="bg-white/10 text-white border border-white/20">
+              <Phone className="h-4 w-4 mr-2" />
+              {identity.phone}
+            </Badge>
+            <Badge variant="secondary" className="bg-white/10 text-white border border-white/20">
+              <Mail className="h-4 w-4 mr-2" />
+              {identity.email}
+            </Badge>
+            <Badge variant="secondary" className="bg-white/10 text-white border border-white/20">
+              <Award className="h-4 w-4 mr-2" />
+              {identity.label}
+            </Badge>
+          </div>
         </div>
       </div>
 
@@ -112,19 +285,21 @@ const ProjetEPS = () => {
         <div className="container mx-auto px-6 py-12 space-y-10">
           <Card className="shadow-sm border-blue-100">
             <CardHeader className="pb-2">
-              <CardTitle className="text-2xl text-blue-900">Contexte et ancrage du projet</CardTitle>
+              <div className="flex items-center gap-3">
+                <Compass className="h-6 w-6 text-blue-900" />
+                <CardTitle className="text-2xl text-blue-900">Contexte et ancrage</CardTitle>
+              </div>
             </CardHeader>
             <CardContent className="space-y-4 text-slate-700">
               <p>
-                Le LFJP accueille une communauté internationale croissante à Saly Portudal. Le projet EPS prend appui sur
-                les infrastructures sportives existantes (gymnase, plateau sportif multi-activités, piscine, piste) et sur
-                les besoins identifiés des élèves pour maintenir leur engagement et leur plaisir d’apprendre par le
-                mouvement.
+                Le lycée, situé à Saly-Portudal sur la Petite Côte, bénéficie d’un environnement touristique en expansion et
+                d’infrastructures modernes. La population scolaire internationale est dynamique et en forte croissance,
+                offrant un terreau propice aux projets sportifs, partenariaux et inclusifs.
               </p>
               <p>
-                Il s’inscrit dans les axes stratégiques de l’AEFE et valorise les partenariats locaux (universités, clubs,
-                associations) ainsi que les actions menées en lien avec la Caisse des Écoles française de la section
-                sportive.
+                Le projet EPS s’inscrit dans les axes stratégiques de l’AEFE et répond aux objectifs de l’établissement :
+                réussite de tous, accompagnement des parcours, ouverture internationale, amélioration du cadre de vie et
+                politique numérique au service de la communauté éducative.
               </p>
               <div className="flex flex-wrap gap-2">
                 {axesAEFE.map((axe) => (
@@ -136,71 +311,75 @@ const ProjetEPS = () => {
             </CardContent>
           </Card>
 
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {objectifs.map((objectif) => (
-              <Card key={objectif.title} className="h-full shadow-sm border-emerald-100">
-                <CardHeader className="pb-2">
-                  <div className="flex items-center gap-3">
-                    <ShieldCheck className="h-6 w-6 text-emerald-700" />
-                    <CardTitle className="text-xl text-emerald-800">{objectif.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-slate-700 leading-relaxed">{objectif.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </section>
+          <Card className="shadow-sm border-emerald-100">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-3">
+                <ShieldCheck className="h-6 w-6 text-emerald-700" />
+                <CardTitle className="text-2xl text-emerald-800">Équipe EPS</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="overflow-x-auto">
+              <table className="min-w-full text-left text-sm text-slate-700">
+                <thead>
+                  <tr className="border-b">
+                    <th className="py-2 font-semibold">Nom</th>
+                    <th className="py-2 font-semibold">Heures d’EPS</th>
+                    <th className="py-2 font-semibold">Heures complémentaires</th>
+                    <th className="py-2 font-semibold">Rôles</th>
+                    <th className="py-2 font-semibold">Spécialités</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {team.map((member) => (
+                    <tr key={member.name} className="border-b last:border-none">
+                      <td className="py-2 font-semibold text-slate-900">{member.name}</td>
+                      <td className="py-2">{member.epsHours}</td>
+                      <td className="py-2">{member.extraHours}</td>
+                      <td className="py-2">{member.roles}</td>
+                      <td className="py-2">{member.skills}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
 
           <Card className="shadow-sm border-orange-100">
             <CardHeader className="pb-2">
               <div className="flex items-center gap-3">
                 <HeartPulse className="h-6 w-6 text-orange-500" />
-                <CardTitle className="text-2xl text-orange-700">Compétences et champs d’apprentissage</CardTitle>
+                <CardTitle className="text-2xl text-orange-700">Conditions d’enseignement</CardTitle>
               </div>
             </CardHeader>
-            <CardContent className="space-y-6 text-slate-700">
-              <p>
-                Le projet décline les cinq compétences générales de l’EPS : motricité efficace, compréhension et
-                responsabilité, partage de règles et de valeur, gestion de la santé, et appropriation d’une culture
-                sportive. Ces compétences structurent les attendus de fin de cycle et les situations d’apprentissage.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {cycles.map((cycle) => (
-                  <div key={cycle.title} className="p-4 rounded-lg bg-orange-50 border border-orange-100">
-                    <h3 className="font-semibold text-orange-700 mb-2">{cycle.title}</h3>
-                    <ul className="list-disc list-inside space-y-2 text-slate-800">
-                      {cycle.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
+            <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {facilities.map((facility) => (
+                <div key={facility.title} className="p-4 rounded-lg bg-orange-50 border border-orange-100">
+                  <h3 className="font-semibold text-orange-700 mb-1">{facility.title}</h3>
+                  <p className="text-slate-800">{facility.activities}</p>
+                  {facility.notes && <p className="text-sm text-slate-600 mt-1">{facility.notes}</p>}
+                </div>
+              ))}
             </CardContent>
           </Card>
 
           <Card className="shadow-sm border-indigo-100">
             <CardHeader className="pb-2">
               <div className="flex items-center gap-3">
-                <LineChart className="h-6 w-6 text-indigo-600" />
-                <CardTitle className="text-2xl text-indigo-700">Programmation annuelle</CardTitle>
+                <Layers className="h-6 w-6 text-indigo-600" />
+                <CardTitle className="text-2xl text-indigo-700">Axes du projet EPS</CardTitle>
               </div>
             </CardHeader>
-            <CardContent className="space-y-4 text-slate-700">
-              <p>
-                La programmation articule les priorités de performance, d’adaptation aux environnements variés, de
-                création artistique et de coopération. Elle assure une continuité entre les cycles en modulant les
-                exigences et l’accompagnement selon les niveaux.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {programmation.map((bloc) => (
-                  <div key={bloc.level} className="p-4 rounded-lg bg-indigo-50 border border-indigo-100">
-                    <h3 className="font-semibold text-indigo-700 mb-2">{bloc.level}</h3>
-                    <p className="leading-relaxed text-slate-800">{bloc.details}</p>
-                  </div>
-                ))}
-              </div>
+            <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-700">
+              {axesProjet.map((axe) => (
+                <div key={axe.title} className="p-4 rounded-lg bg-indigo-50 border border-indigo-100">
+                  <h3 className="font-semibold text-indigo-800 mb-2">{axe.title}</h3>
+                  <ul className="list-disc list-inside space-y-1">
+                    {axe.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </CardContent>
           </Card>
 
@@ -208,22 +387,94 @@ const ProjetEPS = () => {
             <CardHeader className="pb-2">
               <div className="flex items-center gap-3">
                 <Dumbbell className="h-6 w-6 text-amber-600" />
-                <CardTitle className="text-2xl text-amber-700">Partenariats et ouverture</CardTitle>
+                <CardTitle className="text-2xl text-amber-700">Actions phares EPS & AS</CardTitle>
               </div>
             </CardHeader>
             <CardContent className="space-y-3 text-slate-700">
               <p>
-                Les projets EPS associent la communauté éducative : enseignants, élèves médiateurs, familles et partenaires
-                sportifs. Ils s’articulent avec les voyages scolaires, les rencontres inter-établissements et les
-                dispositifs particuliers (ULIS, UPE2A, classes préparatoires) pour encourager le dépassement de soi et la
-                coopération.
+                La place de l’EPS et de l’Association Sportive dans l’établissement repose sur une offre riche et ouverte,
+                favorisant la réussite, la cohésion et le rayonnement du LFJP.
               </p>
-              <p>
-                Une attention particulière est portée à la sécurité, à la prévention (savoir rouler, savoir nager) et à la
-                valorisation des performances lors des examens (DNB, BAC) et des échéances sportives locales.
-              </p>
+              <ul className="list-disc list-inside space-y-2">
+                {actionsPhares.map((action) => (
+                  <li key={action}>{action}</li>
+                ))}
+              </ul>
             </CardContent>
           </Card>
+
+          <Card className="shadow-sm border-emerald-100">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-3">
+                <LineChart className="h-6 w-6 text-emerald-700" />
+                <CardTitle className="text-2xl text-emerald-800">Attendus de fin de lycée (AFL)</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-3 text-slate-700 overflow-x-auto">
+              <table className="min-w-full text-left text-sm">
+                <thead>
+                  <tr className="border-b">
+                    <th className="py-2 font-semibold">Champ d’apprentissage</th>
+                    <th className="py-2 font-semibold">AFL</th>
+                    <th className="py-2 font-semibold">Éléments prioritaires</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {aflLycee.map((item) => (
+                    <tr key={item.champ} className="border-b last:border-none align-top">
+                      <td className="py-2 font-semibold text-slate-900">{item.champ}</td>
+                      <td className="py-2">{item.attendu}</td>
+                      <td className="py-2">{item.priorites}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <section className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+            <Card className="shadow-sm border-indigo-100">
+              <CardHeader className="pb-2">
+                <div className="flex items-center gap-3">
+                  <ShieldCheck className="h-6 w-6 text-indigo-600" />
+                  <CardTitle className="text-2xl text-indigo-700">Programmation Lycée</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-3 text-slate-700">
+                {programmationLycee.map((niveau) => (
+                  <div key={niveau.titre} className="p-4 rounded-lg bg-indigo-50 border border-indigo-100">
+                    <h3 className="font-semibold text-indigo-800 mb-2">{niveau.titre}</h3>
+                    <ul className="list-disc list-inside space-y-1">
+                      {niveau.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-sm border-blue-100">
+              <CardHeader className="pb-2">
+                <div className="flex items-center gap-3">
+                  <GraduationCap className="h-6 w-6 text-blue-800" />
+                  <CardTitle className="text-2xl text-blue-900">Programmation Collège</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-3 text-slate-700">
+                {programmationCollege.map((niveau) => (
+                  <div key={niveau.titre} className="p-4 rounded-lg bg-blue-50 border border-blue-100">
+                    <h3 className="font-semibold text-blue-900 mb-2">{niveau.titre}</h3>
+                    <ul className="list-disc list-inside space-y-1">
+                      {niveau.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </section>
         </div>
       </main>
 
