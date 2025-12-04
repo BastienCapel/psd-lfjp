@@ -52,32 +52,39 @@ const domains: Domain[] = [
         level: 'Cycle 2 (CP–CE2)',
         focus: 'Usage raisonné du numérique',
         details: [
-          "CP : sensibilisation aux dangers de l'utilisation excessive des écrans.",
-          'Semaine sans écran en partenariat avec les familles (CESCE) et mallette Ecole Territoires Numériques.',
+          "Sensibilisation aux dangers de l'utilisation excessive des écrans (mallette École Territoires Numériques éducatifs).",
+          'Organisation de la semaine sans écran avec les familles (CESCE) pour ancrer les bonnes pratiques.',
         ],
       },
       {
         level: 'Cycle 3 (CM1–6e)',
         focus: 'Prévenir les dépendances',
         details: [
-          '6° : usage des réseaux sociaux et jeux vidéo ; ressources pédagogiques dédiées.',
-          "Prévention tabac/alcool (binge drinking, comas éthyliques) avec l'intervention de l'infirmière.",
+          "Sensibilisation prolongée aux usages numériques (RS, jeux vidéo) et semaine sans écran avec les familles (CESCE).",
+          'Appui sur la mallette École Territoires Numériques éducatifs pour travailler les bonnes pratiques.',
         ],
       },
       {
         level: 'Cycle 4 (5e–3e)',
-        focus: 'Suivi des pratiques numériques et festives',
-        details: ['Consolider les repères vus en 6° et organiser des temps de rappel collectifs.'],
+        focus: 'Usages numériques responsables et prévention tabac/alcool',
+        details: [
+          'Utilisation des écrans, réseaux sociaux et jeux vidéo : mallette Collège TNE, module « Dangers des écrans et des réseaux sociaux », fiche Eduscol 47567, ressource CRIPS.',
+          "Sensibilisation aux dangers du tabac (APS youth harms) et de l'alcool (binge drinking, comas éthyliques) avec intervention de l'infirmière.",
+        ],
       },
       {
         level: 'Lycée',
         focus: 'Prévenir les conduites à risques',
-        details: ['2nde : sensibilisation aux substances stupéfiantes en lien avec le commissariat.'],
+        details: [
+          'Sensibilisation aux dangers des substances stupéfiantes et rappel des risques juridiques et sanitaires.',
+          'Intervention du commissariat de police pour contextualiser les enjeux et les recours.',
+        ],
       },
     ],
     references: [
-      'Partenariat infirmière / CESCE pour la cohérence des messages.',
-      'Ressources Eduscol et mallette École Territoires Numériques.',
+      'Mallette École et Collège Territoires Numériques éducatifs (TNE).',
+      'Fiches Eduscol, ressources CRIPS et documentation tabac/alcool APS youth harms.',
+      'Interventions infirmière, CESCE et commissariat de police pour ancrer la prévention.',
     ],
   },
   {
@@ -454,7 +461,11 @@ const ParcoursSante = () => {
 
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {domains.map((domain) => (
-                <Card key={domain.key} className="border-emerald-100 bg-gradient-to-br from-white to-emerald-50/30">
+                <Card
+                  key={domain.key}
+                  onClick={() => scrollToSection(domain.key)}
+                  className="border-emerald-100 bg-gradient-to-br from-white to-emerald-50/30 cursor-pointer transition hover:-translate-y-0.5 hover:shadow-md"
+                >
                   <CardHeader className="space-y-1">
                     <div className="flex items-center gap-2 text-emerald-700">
                       <domain.icon className="h-5 w-5" />
@@ -463,15 +474,8 @@ const ParcoursSante = () => {
                     <CardTitle className="text-lg text-slate-900">Parcours structuré</CardTitle>
                     <CardDescription className="text-slate-700">{domain.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <div className="flex gap-2">
-                      <Button size="sm" variant="secondary" className="bg-white text-emerald-800" onClick={() => scrollToSection(domain.key)}>
-                        Ouvrir la section
-                      </Button>
-                      <Button size="sm" variant="ghost" className="text-emerald-700" onClick={() => scrollToSection('boite-outils')}>
-                        Boîte à outils
-                      </Button>
-                    </div>
+                  <CardContent className="text-sm text-emerald-800/90">
+                    Accéder directement à la rubrique et aux outils dédiés pour chaque cycle.
                   </CardContent>
                 </Card>
               ))}
@@ -610,44 +614,6 @@ const ParcoursSante = () => {
             </div>
           </section>
 
-          <section id="boite-outils" className="rounded-3xl border border-emerald-100 bg-white p-8 shadow-sm">
-            <div className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">Ressourcerie</p>
-              <h3 className="text-2xl font-playfair font-semibold text-emerald-800">Boîte à outils Parcours Santé</h3>
-              <p className="text-sm text-slate-700">
-                Une sélection de ressources institutionnelles et de contacts internes pour consolider les actions de prévention
-                et de promotion de la santé.
-              </p>
-              <div className="grid gap-3 md:grid-cols-2">
-                <Card className="border-emerald-100 bg-emerald-50/40">
-                  <CardHeader>
-                    <CardTitle className="text-lg text-emerald-800">Ressources clés</CardTitle>
-                    <CardDescription className="text-slate-700">
-                      Liens utiles pour construire les séances et harmoniser les messages.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-2 text-sm text-slate-700">
-                    <p>• Portail Eduscol – parcours éducatifs et prévention.</p>
-                    <p>• Documents AEFE et textes législatifs sur la santé scolaire.</p>
-                    <p>• Guides pratiques thématiques (EVAS, sport-santé, alimentation).</p>
-                  </CardContent>
-                </Card>
-                <Card className="border-emerald-100">
-                  <CardHeader>
-                    <CardTitle className="text-lg text-emerald-800">Contacts LFJP</CardTitle>
-                    <CardDescription className="text-slate-700">
-                      Pour mobiliser les expertises et organiser les interventions.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-2 text-sm text-slate-700">
-                    <p>• Infirmière scolaire : prévention, dépistage, ateliers.</p>
-                    <p>• CPE / CESCE : coordination des actions et des partenaires.</p>
-                    <p>• Directrice du primaire (1er degré) : copilotage du parcours et suivi du premier degré.</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </section>
         </div>
       </main>
 
