@@ -489,12 +489,10 @@ const ParcoursSante = () => {
                 <Card className="-mt-16 border-emerald-100 shadow-lg">
                   <CardHeader className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                     <div className="space-y-1">
-                      <div className="flex items-center gap-2 text-emerald-700">
-                        <domain.icon className="h-6 w-6" />
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">{domain.title}</p>
+                      <div className="flex items-center gap-3 text-emerald-700">
+                        <domain.icon className="h-7 w-7" />
+                        <CardTitle className="text-3xl font-playfair text-emerald-700">{domain.title}</CardTitle>
                       </div>
-                      <CardTitle className="text-3xl font-playfair text-slate-900">{domain.title}</CardTitle>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">Parcours progressif</p>
                       <CardDescription className="text-slate-700">{domain.description}</CardDescription>
                     </div>
                   </CardHeader>
