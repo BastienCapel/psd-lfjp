@@ -125,37 +125,41 @@ const domains: Domain[] = [
         ],
       },
       {
-        level: 'Cycle 2 (CP–CE2)',
-        focus: 'Construire l’équilibre alimentaire',
+        level: 'Cycles 2–3 (CP–6e)',
+        focus: 'Équilibre alimentaire et goût',
         details: [
-          "CP : repérer les familles d'aliments et prévenir les consommations excessives en sucre, sel et gras.",
-          'Lien alimentation / activité physique, goûter matinal sain (CVE) et semaine du goût.',
-          'Ressources : “Manger, Bouger pour ma santé” et vademecum Eduscol.',
+          'Sensibilisation à l’équilibre alimentaire en lien avec les programmes de découverte du monde.',
+          'Travail autour de la consommation excessive d’aliments sucrés, salés et gras.',
+          'Équilibre entre alimentation et activité physique et goûter matinal sain (travail du CVE).',
+          'Participation à la semaine du goût.',
+          'Ressources possibles : “Manger, Bouger pour ma santé”.',
+          'Education à l’alimentation et au goût (Eduscol).',
         ],
       },
       {
-        level: 'Cycle 3 (CM1–6e)',
-        focus: 'Comprendre le corps et la nutrition',
+        level: 'Cycle 4 & Lycée (5e–Tle)',
+        focus: 'Prévention et bonnes pratiques',
         details: [
-          '6° : sensibilisation aux troubles alimentaires (anorexie, boulimie, orthorexie).',
+          'Sensibilisation aux dangers des troubles alimentaires (anorexie, boulimie, orthorexie).',
           'Éducation aux bonnes pratiques : programme “J’aime manger, j’aime bouger”.',
-          'Interventions infirmières en classes de 5° et 2nde.',
+          'Intervention infirmière en classes de 5° et de 2nde.',
         ],
-      },
-      {
-        level: 'Cycle 4 (5e–3e)',
-        focus: 'Approfondir et débattre',
-        details: ['Ateliers à poursuivre autour de la nutrition et de la santé des adolescents.'],
-      },
-      {
-        level: 'Lycée',
-        focus: 'Autonomie alimentaire',
-        details: ['2nde : rappels des bonnes pratiques et liens rythmes de vie / alimentation.'],
       },
     ],
     references: [
-      { label: 'Ressources “Manger, Bouger pour ma santé”.' },
-      { label: 'Vademecum Eduscol – équilibre alimentaire et prévention.' },
+      {
+        label: 'Outils éducatifs du ministère de l’Agriculture pour le programme Éducation à l’alimentation.',
+        href: 'https://agriculture.gouv.fr/education-lalimentation-les-outils-educatifs-sur-le-programme',
+      },
+      {
+        label: 'Ressources “Manger, Bouger pour ma santé” – Fondation La main à la pâte.',
+        href: 'https://fondation-lamap.org/projet/manger-bouger-pour-ma-sante',
+      },
+      {
+        label: 'Programme “J’aime manger, j’aime bouger” – guide ado.',
+        href: 'https://sante.gouv.fr/IMG/pdf/guide_ado.pdf',
+      },
+      { label: 'Vademecum Eduscol – éducation à l’alimentation et au goût.' },
     ],
   },
   {
