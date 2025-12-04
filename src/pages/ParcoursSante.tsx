@@ -104,7 +104,6 @@ const domains: Domain[] = [
         label: 'Documentation tabac/alcool – APS youth harms.',
         href: 'https://assets.tobaccofreekids.org/global/pdfs/fr/APS_youth_harms_fr.pdf',
       },
-      { label: 'Interventions infirmière, CESCE et commissariat de police pour ancrer la prévention.' },
     ],
   },
   {
