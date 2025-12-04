@@ -14,7 +14,6 @@ import {
   HeartHandshake,
   HeartPulse,
   Home,
-  ListChecks,
   ShieldCheck,
   Utensils,
 } from 'lucide-react';
@@ -385,7 +384,11 @@ const ParcoursSante = () => {
             navigation fluide pour accéder rapidement aux actions et ressources clés.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button variant="secondary" onClick={() => scrollToSection('introduction')} className="bg-white text-emerald-800">
+            <Button
+              variant="secondary"
+              onClick={() => scrollToSection('introduction')}
+              className="bg-white text-emerald-900 hover:bg-emerald-50"
+            >
               Découvrir la vision
             </Button>
             <Button variant="outline" onClick={() => scrollToSection('frise')} className="border-white/60 text-white">
@@ -420,13 +423,6 @@ const ParcoursSante = () => {
                   clair et immédiatement lisible. Chaque domaine dispose d’une description brève, d’un parcours PS → Terminale
                   en accordéon et d’un accès rapide aux ressources institutionnelles.
                 </p>
-              </div>
-              <div className="flex items-center gap-3 rounded-2xl bg-emerald-50 px-4 py-3 text-emerald-800">
-                <ListChecks className="h-6 w-6" aria-hidden />
-                <div>
-                  <p className="text-sm font-semibold">Lecture synthétique</p>
-                  <p className="text-xs text-emerald-700/80">Navigation par thématiques, accordéons et frise globale.</p>
-                </div>
               </div>
             </div>
 
@@ -473,12 +469,6 @@ const ParcoursSante = () => {
                       </div>
                       <CardTitle className="text-2xl font-playfair text-slate-900">Parcours progressif</CardTitle>
                       <CardDescription className="text-slate-700">{domain.description}</CardDescription>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge className="bg-emerald-50 text-emerald-800">Accordéon PS → Terminale</Badge>
-                      <Badge variant="outline" className="border-emerald-200 text-emerald-800">
-                        {domain.references.length} référence(s)
-                      </Badge>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-5">
@@ -574,10 +564,7 @@ const ParcoursSante = () => {
             </div>
           </section>
 
-          <section
-            id="boite-outils"
-            className="grid gap-6 rounded-3xl border border-emerald-100 bg-white p-8 shadow-sm lg:grid-cols-[2fr_1fr]"
-          >
+          <section id="boite-outils" className="rounded-3xl border border-emerald-100 bg-white p-8 shadow-sm">
             <div className="space-y-3">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">Ressourcerie</p>
               <h3 className="text-2xl font-playfair font-semibold text-emerald-800">Boîte à outils Parcours Santé</h3>
@@ -612,19 +599,6 @@ const ParcoursSante = () => {
                     <p>• PRIO : appui aux projets éducatifs et à la cohérence AEFE.</p>
                   </CardContent>
                 </Card>
-              </div>
-            </div>
-            <div className="rounded-2xl border border-emerald-100 bg-emerald-50/40 p-5 text-sm text-slate-800">
-              <p className="font-semibold text-emerald-800">Conseils de design</p>
-              <ul className="mt-3 space-y-2">
-                <li>• Sections brèves et lisibles, navigation verticale + accordéons.</li>
-                <li>• Icônes colorées et encadrés légers pour distinguer les 6 champs.</li>
-                <li>• Fonds blancs et rappels de couleur pour un parcours moderne et clair.</li>
-              </ul>
-              <div className="mt-4 flex gap-2">
-                <Badge className="bg-white text-emerald-800">Accordéons</Badge>
-                <Badge className="bg-white text-emerald-800">Frise synthétique</Badge>
-                <Badge className="bg-white text-emerald-800">Ressourcerie</Badge>
               </div>
             </div>
           </section>
