@@ -4,9 +4,10 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import { Badge } from '../components/ui/badge';
+import { Badge, badgeVariants } from '../components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../components/ui/tooltip';
+import { cn } from '../lib/utils';
 import {
   Activity,
   ArrowLeft,
@@ -29,6 +30,11 @@ type TimelineEntry = {
   details: string[];
 };
 
+type Reference = {
+  label: string;
+  href?: string;
+};
+
 type Domain = {
   key: DomainKey;
   title: string;
@@ -36,7 +42,7 @@ type Domain = {
   tone: string;
   description: string;
   timeline: TimelineEntry[];
-  references: string[];
+  references: Reference[];
 };
 
 const domains: Domain[] = [
@@ -82,9 +88,23 @@ const domains: Domain[] = [
       },
     ],
     references: [
-      'Mallette École et Collège Territoires Numériques éducatifs (TNE).',
-      'Fiches Eduscol, ressources CRIPS et documentation tabac/alcool APS youth harms.',
-      'Interventions infirmière, CESCE et commissariat de police pour ancrer la prévention.',
+      {
+        label: 'Mallette École et Collège Territoires Numériques éducatifs (TNE).',
+        href: 'https://tne.trousseaprojets.fr/professionnel-education-nationale',
+      },
+      {
+        label: 'Fiche Eduscol – Dangers des écrans et des réseaux sociaux (47567).',
+        href: 'https://eduscol.education.fr/document/47567/download',
+      },
+      {
+        label: 'Ressource CRIPS – Prévention des usages numériques.',
+        href: 'https://www.lecrips-idf.net/prevention-ecrans-des-solutions-pour-accompagner-et-sensibiliser-les-jeunes-aux-bonnes-pratiques/',
+      },
+      {
+        label: 'Documentation tabac/alcool – APS youth harms.',
+        href: 'https://assets.tobaccofreekids.org/global/pdfs/fr/APS_youth_harms_fr.pdf',
+      },
+      { label: 'Interventions infirmière, CESCE et commissariat de police pour ancrer la prévention.' },
     ],
   },
   {
@@ -133,7 +153,10 @@ const domains: Domain[] = [
         details: ['2nde : rappels des bonnes pratiques et liens rythmes de vie / alimentation.'],
       },
     ],
-    references: ['Ressources “Manger, Bouger pour ma santé”.', 'Vademecum Eduscol – équilibre alimentaire et prévention.'],
+    references: [
+      { label: 'Ressources “Manger, Bouger pour ma santé”.' },
+      { label: 'Vademecum Eduscol – équilibre alimentaire et prévention.' },
+    ],
   },
   {
     key: 'physique',
@@ -181,7 +204,10 @@ const domains: Domain[] = [
         details: ['Accompagnement des lycéens vers un rythme sportif autonome.'],
       },
     ],
-    references: ['Stratégie sport-santé 2025-2030.', 'Ressources APQ et “Manger, Bouger pour ma santé”.'],
+    references: [
+      { label: 'Stratégie sport-santé 2025-2030.' },
+      { label: 'Ressources APQ et “Manger, Bouger pour ma santé”.' },
+    ],
   },
   {
     key: 'affectif',
@@ -236,7 +262,10 @@ const domains: Domain[] = [
         ],
       },
     ],
-    references: ['Programme EVAS – Education à la vie affective et sexuelle.', 'Séances réglementaires de prévention et d’écoute infirmière.'],
+    references: [
+      { label: 'Programme EVAS – Education à la vie affective et sexuelle.' },
+      { label: 'Séances réglementaires de prévention et d’écoute infirmière.' },
+    ],
   },
   {
     key: 'protection',
@@ -275,7 +304,10 @@ const domains: Domain[] = [
         details: ['Sensibilisation aux droits, au consentement et aux recours disponibles en cas de danger.'],
       },
     ],
-    references: ['Circulaire du 7 février 2022 – protection de l’enfance.', 'Journée mondiale des droits de l’enfant.'],
+    references: [
+      { label: 'Circulaire du 7 février 2022 – protection de l’enfance.' },
+      { label: 'Journée mondiale des droits de l’enfant.' },
+    ],
   },
   {
     key: 'hygiene',
@@ -320,7 +352,10 @@ const domains: Domain[] = [
         details: ['2nde : sensibilisation aux IST – journée mondiale de lutte contre le SIDA (1er décembre).'],
       },
     ],
-    references: ['Programmes vaccination / hygiène AEFE.', 'Ressource “Vivre avec le soleil”.'],
+    references: [
+      { label: 'Programmes vaccination / hygiène AEFE.' },
+      { label: 'Ressource “Vivre avec le soleil”.' },
+    ],
   },
 ];
 
@@ -531,11 +566,26 @@ const ParcoursSante = () => {
                       ))}
                     </Accordion>
                     <div className="flex flex-wrap gap-2 text-xs text-emerald-700">
-                      {domain.references.map((ref) => (
-                        <Badge key={ref} variant="outline" className="border-emerald-200 text-emerald-800">
-                          {ref}
-                        </Badge>
-                      ))}
+                      {domain.references.map((ref) =>
+                        ref.href ? (
+                          <a
+                            key={ref.label}
+                            href={ref.href}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className={cn(
+                              badgeVariants({ variant: 'outline' }),
+                              'border-emerald-200 text-emerald-800 hover:bg-emerald-50'
+                            )}
+                          >
+                            {ref.label}
+                          </a>
+                        ) : (
+                          <Badge key={ref.label} variant="outline" className="border-emerald-200 text-emerald-800">
+                            {ref.label}
+                          </Badge>
+                        )
+                      )}
                     </div>
                   </CardContent>
                 </Card>
