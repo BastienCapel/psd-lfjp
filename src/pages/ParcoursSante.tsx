@@ -644,7 +644,7 @@ const ParcoursSante = () => {
                   <CardContent className="space-y-2 text-sm text-slate-700">
                     <p>• Infirmière scolaire : prévention, dépistage, ateliers.</p>
                     <p>• CPE / CESCE : coordination des actions et des partenaires.</p>
-                    <p>• PRIO : appui aux projets éducatifs et à la cohérence AEFE.</p>
+                    <p>• Directrice du primaire (1er degré) : copilotage du parcours et suivi du premier degré.</p>
                   </CardContent>
                 </Card>
               </div>
