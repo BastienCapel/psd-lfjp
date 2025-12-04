@@ -6,6 +6,7 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
+import { Tooltip, TooltipContent, TooltipTrigger } from '../components/ui/tooltip';
 import {
   Activity,
   ArrowLeft,
@@ -47,11 +48,6 @@ const domains: Domain[] = [
     description:
       "Sensibiliser progressivement aux risques liés aux écrans, au tabac, à l'alcool ou aux substances, en associant les familles et les partenaires de prévention.",
     timeline: [
-      {
-        level: 'Cycle 1 (PS–GS)',
-        focus: 'Premiers repères à installer',
-        details: ['Supports de prévention à consolider : éveil aux bonnes habitudes de protection personnelle.'],
-      },
       {
         level: 'Cycle 2 (CP–CE2)',
         focus: 'Usage raisonné du numérique',
@@ -321,22 +317,52 @@ const domains: Domain[] = [
   },
 ];
 
+const domainLookup = domains.reduce<Record<DomainKey, Domain>>((acc, domain) => {
+  acc[domain.key] = domain;
+  return acc;
+}, {} as Record<DomainKey, Domain>);
+
+const levelCycleMap: Record<string, string> = {
+  PS: 'Cycle 1',
+  MS: 'Cycle 1',
+  GS: 'Cycle 1',
+  CP: 'Cycle 2',
+  CE1: 'Cycle 2',
+  CE2: 'Cycle 2',
+  CM1: 'Cycle 3',
+  CM2: 'Cycle 3',
+  '6e': 'Cycle 3',
+  '5e': 'Cycle 4',
+  '4e': 'Cycle 4',
+  '3e': 'Cycle 4',
+  '2nde': 'Lycée',
+  "1ère": 'Lycée',
+  Tle: 'Lycée',
+};
+
+const getTimelineEntry = (domain: Domain, level: string) => {
+  const cycle = levelCycleMap[level];
+  if (!cycle) return undefined;
+
+  return domain.timeline.find((entry) => entry.level.includes(cycle));
+};
+
 const progressionGrid: { level: string; domains: Partial<Record<DomainKey, boolean>> }[] = [
-  { level: 'PS', domains: { alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
-  { level: 'MS', domains: {} },
-  { level: 'GS', domains: {} },
-  { level: 'CP', domains: { addictions: true, alimentation: true, physique: true, affectif: true, hygiene: true } },
-  { level: 'CE1', domains: { affectif: true } },
-  { level: 'CE2', domains: { affectif: true } },
-  { level: 'CM1', domains: { physique: true, affectif: true } },
-  { level: 'CM2', domains: { affectif: true } },
-  { level: '6e', domains: { addictions: true, alimentation: true, physique: true, affectif: true, hygiene: true } },
-  { level: '5e', domains: { physique: true, affectif: true } },
-  { level: '4e', domains: { affectif: true } },
-  { level: '3e', domains: { affectif: true } },
-  { level: '2nde', domains: { addictions: true, alimentation: true, affectif: true, hygiene: true } },
-  { level: '1ère', domains: { affectif: true } },
-  { level: 'Tle', domains: { affectif: true } },
+  { level: 'PS', domains: { addictions: false, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: 'MS', domains: { addictions: false, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: 'GS', domains: { addictions: false, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: 'CP', domains: { addictions: true, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: 'CE1', domains: { addictions: true, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: 'CE2', domains: { addictions: true, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: 'CM1', domains: { addictions: true, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: 'CM2', domains: { addictions: true, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: '6e', domains: { addictions: true, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: '5e', domains: { addictions: true, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: '4e', domains: { addictions: true, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: '3e', domains: { addictions: true, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: '2nde', domains: { addictions: true, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: '1ère', domains: { addictions: true, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
+  { level: 'Tle', domains: { addictions: true, alimentation: true, physique: true, affectif: true, protection: true, hygiene: true } },
 ];
 
 const ParcoursSante = () => {
@@ -467,7 +493,8 @@ const ParcoursSante = () => {
                         <domain.icon className="h-6 w-6" />
                         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">{domain.title}</p>
                       </div>
-                      <CardTitle className="text-2xl font-playfair text-slate-900">Parcours progressif</CardTitle>
+                      <CardTitle className="text-3xl font-playfair text-slate-900">{domain.title}</CardTitle>
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">Parcours progressif</p>
                       <CardDescription className="text-slate-700">{domain.description}</CardDescription>
                     </div>
                   </CardHeader>
@@ -544,20 +571,41 @@ const ParcoursSante = () => {
                     className="grid grid-cols-[100px_repeat(6,1fr)] items-center gap-2 rounded-xl border border-emerald-50 bg-emerald-50/40 px-3 py-2"
                   >
                     <div className="text-sm font-semibold text-slate-800">{row.level}</div>
-                    {(['addictions', 'alimentation', 'physique', 'affectif', 'protection', 'hygiene'] as DomainKey[]).map(
-                      (key) => (
+                    {(['addictions', 'alimentation', 'physique', 'affectif', 'protection', 'hygiene'] as DomainKey[]).map((key) => {
+                      const domain = domainLookup[key];
+                      const timelineEntry = getTimelineEntry(domain, row.level);
+                      const details = timelineEntry?.details || ['Pas de détail fourni'];
+
+                      return (
                         <div key={`${row.level}-${key}`} className="flex justify-center">
-                          <span
-                            className={`h-3 w-3 rounded-full ${
-                              row.domains[key]
-                                ? 'bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.15)]'
-                                : 'bg-slate-200'
-                            }`}
-                            aria-label={row.domains[key] ? 'Action identifiée' : 'À compléter'}
-                          />
+                          {row.domains[key] ? (
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <span
+                                  className="h-3 w-3 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.15)]"
+                                  aria-label="Action identifiée"
+                                />
+                              </TooltipTrigger>
+                              <TooltipContent className="max-w-xs space-y-1">
+                                <p className="text-[11px] font-semibold text-emerald-700">
+                                  {domain.title} — {row.level}
+                                </p>
+                                {timelineEntry?.focus && (
+                                  <p className="text-[11px] font-semibold text-slate-900">{timelineEntry.focus}</p>
+                                )}
+                                <ul className="list-disc space-y-1 pl-4 text-[11px] leading-snug text-slate-700">
+                                  {details.map((detail) => (
+                                    <li key={detail}>{detail}</li>
+                                  ))}
+                                </ul>
+                              </TooltipContent>
+                            </Tooltip>
+                          ) : (
+                            <span className="h-3 w-3 rounded-full bg-slate-200" aria-label="À compléter" />
+                          )}
                         </div>
-                      )
-                    )}
+                      );
+                    })}
                   </div>
                 ))}
               </div>
