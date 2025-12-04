@@ -16,6 +16,7 @@ import {
   HeartHandshake,
   HeartPulse,
   Home,
+  ArrowRight,
   ShieldCheck,
   Utensils,
 } from 'lucide-react';
@@ -425,43 +426,82 @@ const ParcoursSante = () => {
     <div className="min-h-screen flex flex-col bg-slate-50 font-raleway text-slate-900">
       <Navbar showLogo={true} />
 
-      <header className="bg-gradient-to-r from-emerald-700 via-teal-600 to-sky-700 text-white py-16 md:py-24">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div className="flex items-center gap-4">
-              <HeartPulse className="h-14 w-14" />
-              <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-white/70">Cadre scolaire & santé</p>
-                <h1 className="text-3xl md:text-5xl font-playfair font-bold">Parcours Santé</h1>
-                <p className="text-lg md:text-2xl text-white/90 mt-2">
-                  Bien-être, prévention et accompagnement des élèves du LFJP
+      <header className="relative overflow-hidden bg-gradient-to-br from-emerald-800 via-teal-700 to-sky-800 text-white py-16 md:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.14),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(45,212,191,0.2),transparent_35%),radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.18),transparent_30%)]" />
+        <div className="absolute inset-0 opacity-35 blur-3xl" style={{ background: 'radial-gradient(circle at 30% 40%, rgba(16,185,129,0.45), transparent 40%), radial-gradient(circle at 80% 30%, rgba(56,189,248,0.4), transparent 35%)' }} />
+        <div className="relative container mx-auto px-6">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.15fr,0.9fr]">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-50 shadow-sm ring-1 ring-white/20 backdrop-blur">
+                <HeartPulse className="h-4 w-4" /> Cadre scolaire & santé
+              </div>
+              <div className="space-y-3">
+                <h1 className="text-3xl md:text-5xl font-playfair font-bold leading-tight drop-shadow-sm">Parcours Santé</h1>
+                <p className="text-lg md:text-2xl text-emerald-50/90 max-w-3xl">
+                  Bien-être, prévention et accompagnement des élèves du LFJP, orchestrés autour de six domaines complémentaires.
                 </p>
               </div>
+              <div className="grid gap-2 text-sm md:text-base text-white/85 md:grid-cols-2">
+                <div className="flex items-start gap-2 rounded-2xl bg-white/10 px-4 py-3 shadow-sm ring-1 ring-white/15 backdrop-blur">
+                  <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0" />
+                  <p>Une vision progressive, du cycle 1 à la Terminale, alignée avec les attendus Éducation nationale / AEFE.</p>
+                </div>
+                <div className="flex items-start gap-2 rounded-2xl bg-white/10 px-4 py-3 shadow-sm ring-1 ring-white/15 backdrop-blur">
+                  <HeartHandshake className="mt-0.5 h-5 w-5 shrink-0" />
+                  <p>Navigation fluide pour accéder aux actions phares, ressources clés et partenaires.</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap items-center gap-3">
+                <Button
+                  variant="secondary"
+                  onClick={() => scrollToSection('introduction')}
+                  className="bg-white text-emerald-900 hover:bg-emerald-50 shadow-lg shadow-emerald-900/10"
+                >
+                  Découvrir la vision
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => scrollToSection('frise')}
+                  className="border-white/60 text-white hover:bg-white/10"
+                >
+                  Voir la frise PS → Terminale
+                </Button>
+                <div className="flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm text-emerald-50/90 ring-1 ring-white/15 backdrop-blur">
+                  <div className="h-2.5 w-2.5 rounded-full bg-emerald-300 animate-pulse" />
+                  6 domaines, 4 cycles, un parcours harmonisé
+                </div>
+              </div>
             </div>
-            <div className="grid grid-cols-3 gap-2 text-center text-sm font-semibold text-white/90 md:w-1/2">
-              <div className="rounded-2xl bg-white/10 px-3 py-2 shadow-sm">🛑 Addictions</div>
-              <div className="rounded-2xl bg-white/10 px-3 py-2 shadow-sm">🍽️ Alimentation</div>
-              <div className="rounded-2xl bg-white/10 px-3 py-2 shadow-sm">🏃 Activité</div>
-              <div className="rounded-2xl bg-white/10 px-3 py-2 shadow-sm">💬 Vie affective</div>
-              <div className="rounded-2xl bg-white/10 px-3 py-2 shadow-sm">🛡️ Protection</div>
-              <div className="rounded-2xl bg-white/10 px-3 py-2 shadow-sm">🧪 Hygiène</div>
+
+            <div className="rounded-3xl border border-white/15 bg-white/5 p-6 shadow-2xl shadow-emerald-900/20 backdrop-blur-xl">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.3em] text-emerald-50/70">Domaines clés</p>
+                  <p className="text-lg font-semibold text-white">Choisir un axe prioritaire</p>
+                </div>
+                <Badge className="bg-white/20 text-white ring-1 ring-inset ring-white/25">PS → Terminale</Badge>
+              </div>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {domains.map((domain) => (
+                  <button
+                    key={domain.key}
+                    onClick={() => scrollToSection(domain.key)}
+                    className="group flex items-center justify-between gap-3 rounded-2xl bg-white/10 px-4 py-3 text-left text-sm text-white/90 shadow-sm ring-1 ring-white/15 transition hover:-translate-y-0.5 hover:bg-white/15 hover:ring-white/25"
+                  >
+                    <span className="flex items-center gap-2">
+                      <domain.icon className="h-4 w-4" />
+                      <span className="font-semibold">{domain.title}</span>
+                    </span>
+                    <ArrowRight className="h-4 w-4 opacity-0 transition group-hover:opacity-100" />
+                  </button>
+                ))}
+              </div>
+              <div className="mt-4 flex flex-wrap gap-2 text-xs text-white/80">
+                <span className="rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/15">Parcours structuré</span>
+                <span className="rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/15">Outils & ressources</span>
+                <span className="rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/15">Familles & partenaires</span>
+              </div>
             </div>
-          </div>
-          <p className="mt-6 max-w-4xl text-base md:text-lg text-white/80">
-            Une vision synthétique et progressive : six domaines, des contenus harmonisés du cycle 1 à la Terminale, une
-            navigation fluide pour accéder rapidement aux actions et ressources clés.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Button
-              variant="secondary"
-              onClick={() => scrollToSection('introduction')}
-              className="bg-white text-emerald-900 hover:bg-emerald-50"
-            >
-              Découvrir la vision
-            </Button>
-            <Button variant="outline" onClick={() => scrollToSection('frise')} className="border-white/60 text-white">
-              Voir la frise PS → Terminale
-            </Button>
           </div>
         </div>
       </header>
