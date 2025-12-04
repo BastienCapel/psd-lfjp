@@ -159,7 +159,10 @@ const domains: Domain[] = [
         label: 'Programme “J’aime manger, j’aime bouger” – guide ado.',
         href: 'https://sante.gouv.fr/IMG/pdf/guide_ado.pdf',
       },
-      { label: 'Vademecum Eduscol – éducation à l’alimentation et au goût.' },
+      {
+        label: 'Vademecum Eduscol – éducation à l’alimentation et au goût.',
+        href: 'https://eduscol.education.fr/media/1857/download?utm_source=chatgpt.com',
+      },
     ],
   },
   {
