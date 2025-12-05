@@ -7,6 +7,7 @@ import {
   CalendarClock,
   CheckCircle2,
   Info,
+  Euro,
   PiggyBank,
 } from 'lucide-react';
 import {
@@ -225,21 +226,34 @@ const BudgetCadreVieInfrastructures = () => {
             <Info className="h-4 w-4" aria-hidden />
             Données indicatives – à affiner avec les budgets annuels
           </div>
-          <div className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-2 py-1 text-xs font-semibold text-slate-700 shadow-sm">
-            <button
-              type="button"
-              onClick={() => setCurrency('XOF')}
-              className={`rounded-full px-3 py-1 transition ${currency === 'XOF' ? 'bg-french-blue text-white shadow-sm' : 'hover:bg-slate-50'}`}
-            >
-              FCFA
-            </button>
-            <button
-              type="button"
-              onClick={() => setCurrency('EUR')}
-              className={`rounded-full px-3 py-1 transition ${currency === 'EUR' ? 'bg-french-blue text-white shadow-sm' : 'hover:bg-slate-50'}`}
-            >
-              Euros
-            </button>
+          <div className="flex flex-col items-end gap-1">
+            <div className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-2 py-1 text-xs font-semibold text-slate-700 shadow-sm">
+              <button
+                type="button"
+                onClick={() => setCurrency('XOF')}
+                aria-pressed={currency === 'XOF'}
+                className={`group inline-flex items-center gap-2 rounded-full px-3 py-1 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue ${currency === 'XOF' ? 'border border-french-blue bg-french-blue text-white shadow-sm' : 'border border-transparent hover:bg-slate-50'}`}
+              >
+                <span className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] ${currency === 'XOF' ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-700'}`}>
+                  <BadgeDollarSign className="h-3.5 w-3.5" aria-hidden />
+                  FCFA
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setCurrency('EUR')}
+                aria-pressed={currency === 'EUR'}
+                className={`group inline-flex items-center gap-2 rounded-full px-3 py-1 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue ${currency === 'EUR' ? 'border border-french-blue bg-french-blue text-white shadow-sm' : 'border border-transparent hover:bg-slate-50'}`}
+              >
+                <span className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] ${currency === 'EUR' ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-700'}`}>
+                  <Euro className="h-3.5 w-3.5" aria-hidden />
+                  Euros
+                </span>
+              </button>
+            </div>
+            <p className="text-[11px] font-semibold text-slate-600" aria-live="polite">
+              Montants affichés en {currency === 'XOF' ? 'franc CFA (FCFA)' : 'euros (€)'}
+            </p>
           </div>
         </div>
       </div>
