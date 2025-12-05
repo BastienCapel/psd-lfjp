@@ -45,6 +45,7 @@ import VoyagesScolairesInternationaux from "./pages/VoyagesScolairesInternationa
 import JumelagesPartagesProjets from "./pages/JumelagesPartagesProjets";
 import EchangesScolairesADNAEFE from "./pages/EchangesScolairesADNAEFE";
 import IntroductionAuCode from "./pages/IntroductionAuCode";
+import BudgetCadreVieInfrastructuresPage from "./pages/BudgetCadreVieInfrastructures";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -358,6 +359,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <VoyagesScolairesInternationaux />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/budget-cadre-vie-infrastructures" element={
+                  <>
+                    <BreadcrumbNav />
+                    <BudgetCadreVieInfrastructuresPage />
                     <BackToTop />
                   </>
                 } />

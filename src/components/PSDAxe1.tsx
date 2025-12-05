@@ -19,7 +19,6 @@ import {
   Users2,
   Sun,
 } from 'lucide-react';
-import BudgetCadreVieInfrastructures from './BudgetCadreVieInfrastructures';
 
 const PSDAxe1 = () => {
   const [isTimelineExpanded, setTimelineExpanded] = useState(false);
@@ -148,7 +147,7 @@ const PSDAxe1 = () => {
         },
         {
           content: <strong>Budget d’amélioration</strong>,
-          link: '#budget-cadre-vie',
+          link: '/budget-cadre-vie-infrastructures',
           linkAriaLabel: 'Voir le budget d’amélioration – Cadre de vie & infrastructures',
           linkIcon: BarChart3
         }
@@ -385,11 +384,6 @@ const PSDAxe1 = () => {
                     );
                   })}
                 </ul>
-                {section.title === 'Cadre de vie & infrastructures' && (
-                  <div className="mt-6">
-                    <BudgetCadreVieInfrastructures />
-                  </div>
-                )}
               </li>
             ))}
           </ul>
