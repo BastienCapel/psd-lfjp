@@ -185,15 +185,18 @@ const domains: Domain[] = [
         focus: 'Habitudes actives',
         details: [
           "CP : promotion de l'activité physique (liée aux découvertes du monde).",
-          'Mise en place des 30 minutes d’APQ et ressources APQ.',
+          'Mise en place des 30 minutes d’APQ avec les fiches d’activités dédiées.',
+          'Ressource : projet “Manger, Bouger pour ma santé”.',
         ],
       },
       {
         level: 'Cycle 3 (CM1–6e)',
-        focus: 'Tests et pratiques régulières',
+        focus: 'Sciences du corps et pratiques régulières',
         details: [
-          'CM1 : respiration, digestion et circulation sanguine ; cross du LFJP.',
-          '6° : tests d’aptitude physique – stratégie sport-santé 2025-2030.',
+          "CM1–CM2 : promotion de l'activité physique en lien avec les programmes de Sciences (respiration, digestion, circulation sanguine).",
+          'Mise en place des 30 minutes d’APQ : fiches d’activités et ressources ministérielles.',
+          'Participation au cross du LFJP.',
+          '6° : déploiement de tests d’aptitude physique dans le cadre de la stratégie sport-santé 2025-2030.',
         ],
       },
       {
@@ -201,18 +204,33 @@ const domains: Domain[] = [
         focus: 'Projets et sections sportives',
         details: [
           'Participation aux JOJ de Dakar (octobre 2026).',
-          'Sections et associations sportives (football, boxe, judo) ; événements sportifs AEFE.',
+          'Développement de sections sportives et associations sportives (football, boxe, judo).',
+          'Participation aux événements sportifs de l’AEFE.',
         ],
       },
       {
         level: 'Lycée',
         focus: 'Perspectives sport-santé',
-        details: ['Accompagnement des lycéens vers un rythme sportif autonome.'],
+        details: [
+          'Développement de sections sportives et associations sportives (football, boxe, judo).',
+          'Participation aux événements sportifs de l’AEFE.',
+          'Accompagnement des lycéens vers un rythme sportif autonome.',
+        ],
       },
     ],
     references: [
-      { label: 'Stratégie sport-santé 2025-2030.' },
-      { label: 'Ressources APQ et “Manger, Bouger pour ma santé”.' },
+      {
+        label: 'Projet “Manger, Bouger pour ma santé” – Fondation La main à la pâte.',
+        href: 'https://fondation-lamap.org/projet/manger-bouger-pour-ma-sante',
+      },
+      {
+        label: 'APQ – fiches d’activités (AEFE).',
+        href: 'https://aefe.gouv.fr/fr/ressources-documentaires/30-minutes-dactivites-physiques-quotidiennes-apq-fiches-dactivites',
+      },
+      {
+        label: '30 minutes d’activité physique quotidienne – ressources ministérielles.',
+        href: 'https://www.education.gouv.fr/30-minutes-d-activite-physique-quotidienne-dans-toutes-les-ecoles-344379',
+      },
     ],
   },
   {
