@@ -142,7 +142,6 @@ const domains: Domain[] = [
         details: [
           'Sensibilisation aux dangers des troubles alimentaires (anorexie, boulimie, orthorexie).',
           'Éducation aux bonnes pratiques : programme “J’aime manger, j’aime bouger”.',
-          'Intervention infirmière en classes de 5° et de 2nde.',
         ],
       },
     ],
