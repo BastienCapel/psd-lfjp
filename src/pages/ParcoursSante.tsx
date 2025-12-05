@@ -410,6 +410,10 @@ const levelCycleMap: Record<string, string> = {
 };
 
 const getTimelineEntry = (domain: Domain, level: string) => {
+  const normalizedLevel = level.toLowerCase();
+  const directMatch = domain.timeline.find((entry) => entry.level.toLowerCase().includes(normalizedLevel));
+  if (directMatch) return directMatch;
+
   const cycle = levelCycleMap[level];
   if (!cycle) return undefined;
 
@@ -706,6 +710,9 @@ const ParcoursSante = () => {
                                 <p className="text-[11px] font-semibold text-emerald-700">
                                   {domain.title} — {row.level}
                                 </p>
+                                {timelineEntry?.level && (
+                                  <p className="text-[11px] font-medium text-emerald-800">{timelineEntry.level}</p>
+                                )}
                                 {timelineEntry?.focus && (
                                   <p className="text-[11px] font-semibold text-slate-900">{timelineEntry.focus}</p>
                                 )}
