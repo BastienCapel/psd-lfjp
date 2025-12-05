@@ -188,8 +188,8 @@ const BudgetCadreVieInfrastructures = () => {
   };
 
   return (
-    <section id="budget-cadre-vie" className="mt-10 space-y-8">
-      <div className="flex flex-wrap items-center justify-between gap-3">
+    <section id="budget-cadre-vie" className="mt-8 space-y-10 md:space-y-12">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50/70 p-4 md:p-5">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-french-blue">Cadre de vie & infrastructures</p>
           <h4 className="text-xl font-semibold text-slate-900">Budget d’amélioration</h4>
@@ -221,7 +221,7 @@ const BudgetCadreVieInfrastructures = () => {
         </div>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-5 md:gap-6 sm:grid-cols-2 xl:grid-cols-3">
         {summaryCards.map((card) => {
           const Icon = card.icon;
           return (
@@ -243,7 +243,7 @@ const BudgetCadreVieInfrastructures = () => {
         })}
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-3">
+      <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3 xl:[grid-template-columns:1.05fr_1.05fr_0.9fr]">
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h5 className="text-lg font-semibold text-slate-900">Projets</h5>
@@ -253,7 +253,7 @@ const BudgetCadreVieInfrastructures = () => {
             {projects.map((project) => (
               <div
                 key={project.title}
-                className={`group rounded-2xl border border-slate-200 bg-gradient-to-br ${project.color} p-4 shadow-sm transition duration-150 hover:-translate-y-0.5 hover:shadow-md`}
+                className={`group rounded-2xl border border-slate-200 bg-gradient-to-br ${project.color} p-5 shadow-sm transition duration-150 hover:-translate-y-0.5 hover:shadow-md`}
               >
                 <div className="flex items-start gap-3">
                   <div className="flex-1 space-y-1">

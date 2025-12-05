@@ -14,7 +14,7 @@ const BudgetCadreVieInfrastructuresPage = () => {
       <Navbar showLogo={true} />
 
       <header className="bg-gradient-to-r from-slate-800 via-slate-700 to-slate-900 text-white py-16 md:py-20 shadow-lg">
-        <div className="container mx-auto px-6 flex flex-col gap-6">
+        <div className="container mx-auto max-w-6xl px-6 lg:px-10 flex flex-col gap-6">
           <div className="flex flex-wrap items-center gap-3 text-sm text-slate-200/90">
             <Button
               variant="ghost"
@@ -60,8 +60,8 @@ const BudgetCadreVieInfrastructuresPage = () => {
       </header>
 
       <main id="budget-cadre-vie" className="flex-1">
-        <div className="container mx-auto px-6 py-10 md:py-14">
-          <div className="rounded-3xl border border-slate-200/70 bg-white shadow-lg shadow-slate-200/40">
+        <div className="container mx-auto max-w-6xl px-6 lg:px-10 py-10 md:py-14">
+          <div className="rounded-[28px] border border-slate-200/70 bg-white shadow-lg shadow-slate-200/40 px-4 pb-6 pt-2 md:px-6 md:pb-8 md:pt-4">
             <BudgetCadreVieInfrastructures />
           </div>
         </div>
