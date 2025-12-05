@@ -511,7 +511,6 @@ const ParcoursSante = () => {
                 ))}
               </div>
               <div className="mt-4 flex flex-wrap gap-2 text-xs text-white/80">
-                <span className="rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/15">Parcours structuré</span>
                 <span className="rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/15">Outils & ressources</span>
                 <span className="rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/15">Familles & partenaires</span>
               </div>
@@ -560,7 +559,6 @@ const ParcoursSante = () => {
                       <domain.icon className="h-5 w-5" />
                       <p className="text-xs font-semibold uppercase tracking-[0.2em]">{domain.title}</p>
                     </div>
-                    <CardTitle className="text-lg text-slate-900">Parcours structuré</CardTitle>
                     <CardDescription className="text-slate-700">{domain.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="text-sm text-emerald-800/90">
