@@ -288,7 +288,7 @@ const domains: Domain[] = [
     ],
     references: [
       {
-        label: 'Programme EVAS – Education à la vie affective et sexuelle.',
+        label: 'Programme EVAR/EVARS',
         href: 'https://eduscol.education.fr/2083/mettre-en-oeuvre-le-programme-evarevars',
       },
       { label: 'Séances réglementaires de prévention et d’écoute infirmière.' },
