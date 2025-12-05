@@ -457,7 +457,17 @@ const getTimelineEntry = (domain: Domain, level: string) => {
   const cycle = levelCycleMap[level];
   if (!cycle) return undefined;
 
-  return domain.timeline.find((entry) => entry.level.includes(cycle));
+  const normalizedCycle = cycle.toLowerCase();
+  const cycleVariants = [
+    normalizedCycle,
+    normalizedCycle.replace('cycle', 'cycles'),
+    normalizedCycle.replace('cycles ', 'cycle '),
+    normalizedCycle.replace('cycle ', 'cycles '),
+  ];
+
+  return domain.timeline.find((entry) =>
+    cycleVariants.some((variant) => entry.level.toLowerCase().includes(variant))
+  );
 };
 
 const progressionGrid: { level: string; domains: Partial<Record<DomainKey, boolean>> }[] = [
