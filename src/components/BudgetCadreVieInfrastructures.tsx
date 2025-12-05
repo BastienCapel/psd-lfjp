@@ -162,6 +162,29 @@ const BudgetCadreVieInfrastructures = () => {
   const cumulativeTuition = 345_139_418;
   const annualTotals = [126_700_000, 147_500_000, 127_500_000, 66_700_000, 200_000_000];
 
+  const chartData = useMemo(
+    () =>
+      financialTimeline.map((row) => {
+        const factor = currency === 'EUR' ? 1 / XOF_TO_EUR : 1;
+        return {
+          ...row,
+          capacite: row.capacite * factor,
+          leviers: row.leviers * factor,
+          recettesTotales: row.recettesTotales * factor,
+          depenses: row.depenses * factor,
+        };
+      }),
+    [currency],
+  );
+
+  const axisTickFormatter = (value: number) =>
+    new Intl.NumberFormat('fr-FR', {
+      style: 'currency',
+      currency,
+      notation: 'compact',
+      maximumFractionDigits: 1,
+    }).format(value);
+
   const cashFlowRows = useMemo(
     () =>
       financialTimeline.map((row) => ({
@@ -290,10 +313,10 @@ const BudgetCadreVieInfrastructures = () => {
               </div>
             <div className="h-72">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={financialTimeline}>
+                <BarChart data={chartData}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                   <XAxis dataKey="year" tick={{ fill: '#1e293b', fontSize: 12 }} />
-                  <YAxis tickFormatter={(value) => `${Math.round(value / 1_000_000)}M`} tick={{ fill: '#1e293b', fontSize: 12 }} />
+                  <YAxis tickFormatter={axisTickFormatter} tick={{ fill: '#1e293b', fontSize: 12 }} />
                   <Tooltip content={<CustomTooltip />} />
                   <Legend />
                   <Bar name="Dépenses projets" dataKey="depenses" fill="#ef4444" radius={[6, 6, 0, 0]} />
