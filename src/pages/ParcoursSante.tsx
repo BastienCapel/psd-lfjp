@@ -314,8 +314,14 @@ const domains: Domain[] = [
       },
     ],
     references: [
-      { label: 'Circulaire du 7 février 2022 – protection de l’enfance.' },
-      { label: 'Journée mondiale des droits de l’enfant.' },
+      {
+        label: 'Circulaire du 7 février 2022 – protection de l’enfance.',
+        href: 'https://www.education.gouv.fr/bo/22/Hebdo6/MENE2201659C.htm',
+      },
+      {
+        label: 'Journée mondiale des droits de l’enfant.',
+        href: 'https://www.unicef.org/fr/journee-mondiale-enfance',
+      },
     ],
   },
   {
