@@ -303,7 +303,47 @@ const domains: Domain[] = [
       "Garantir la sécurité des élèves, détecter et signaler les situations préoccupantes et rappeler les droits de l'enfant.",
     timeline: [
       {
-        level: 'Tous cycles',
+        level: 'Cycle 1 (PS–GS)',
+        focus: 'Information et sensibilisation (1 séance minimum par an)',
+        details: [
+          "Dans les classes, des séances sur la protection de l’enfance et les violences intrafamiliales, notamment sexuelles, sont prévues par l’article L542-3 du Code de l’éducation.",
+          "La circulaire du 7 février 2022 impose au moins une séance annuelle d'information et de sensibilisation sur l'enfance maltraitée, notamment sur les violences intrafamiliales à caractère sexuel, dans les écoles, collèges et lycées.",
+          "Détection et signalement aux autorités de tous les cas pouvant laisser craindre que la santé d'un élève, sa sécurité ou sa moralité sont en danger ou en risque de l'être ou que les conditions de son éducation ou de son développement physique, affectif, intellectuel et social sont gravement compromises ou en risque de l'être.",
+          "Participation à la journée mondiale des droits de l'enfant du 20 novembre.",
+        ],
+      },
+      {
+        level: 'Cycle 2 (CP–CE2)',
+        focus: 'Information et sensibilisation (1 séance minimum par an)',
+        details: [
+          "Dans les classes, des séances sur la protection de l’enfance et les violences intrafamiliales, notamment sexuelles, sont prévues par l’article L542-3 du Code de l’éducation.",
+          "La circulaire du 7 février 2022 impose au moins une séance annuelle d'information et de sensibilisation sur l'enfance maltraitée, notamment sur les violences intrafamiliales à caractère sexuel, dans les écoles, collèges et lycées.",
+          "Détection et signalement aux autorités de tous les cas pouvant laisser craindre que la santé d'un élève, sa sécurité ou sa moralité sont en danger ou en risque de l'être ou que les conditions de son éducation ou de son développement physique, affectif, intellectuel et social sont gravement compromises ou en risque de l'être.",
+          "Participation à la journée mondiale des droits de l'enfant du 20 novembre.",
+        ],
+      },
+      {
+        level: 'Cycle 3 (CM1–6e)',
+        focus: 'Information et sensibilisation (1 séance minimum par an)',
+        details: [
+          "Dans les classes, des séances sur la protection de l’enfance et les violences intrafamiliales, notamment sexuelles, sont prévues par l’article L542-3 du Code de l’éducation.",
+          "La circulaire du 7 février 2022 impose au moins une séance annuelle d'information et de sensibilisation sur l'enfance maltraitée, notamment sur les violences intrafamiliales à caractère sexuel, dans les écoles, collèges et lycées.",
+          "Détection et signalement aux autorités de tous les cas pouvant laisser craindre que la santé d'un élève, sa sécurité ou sa moralité sont en danger ou en risque de l'être ou que les conditions de son éducation ou de son développement physique, affectif, intellectuel et social sont gravement compromises ou en risque de l'être.",
+          "Participation à la journée mondiale des droits de l'enfant du 20 novembre.",
+        ],
+      },
+      {
+        level: 'Cycle 4 (5e–3e)',
+        focus: 'Information et sensibilisation (1 séance minimum par an)',
+        details: [
+          "Dans les classes, des séances sur la protection de l’enfance et les violences intrafamiliales, notamment sexuelles, sont prévues par l’article L542-3 du Code de l’éducation.",
+          "La circulaire du 7 février 2022 impose au moins une séance annuelle d'information et de sensibilisation sur l'enfance maltraitée, notamment sur les violences intrafamiliales à caractère sexuel, dans les écoles, collèges et lycées.",
+          "Détection et signalement aux autorités de tous les cas pouvant laisser craindre que la santé d'un élève, sa sécurité ou sa moralité sont en danger ou en risque de l'être ou que les conditions de son éducation ou de son développement physique, affectif, intellectuel et social sont gravement compromises ou en risque de l'être.",
+          "Participation à la journée mondiale des droits de l'enfant du 20 novembre.",
+        ],
+      },
+      {
+        level: 'Lycée',
         focus: 'Information et sensibilisation (1 séance minimum par an)',
         details: [
           "Dans les classes, des séances sur la protection de l’enfance et les violences intrafamiliales, notamment sexuelles, sont prévues par l’article L542-3 du Code de l’éducation.",
