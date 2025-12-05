@@ -89,42 +89,42 @@ const projects: Project[] = [
     title: 'Couverture terrain de sport',
     description: 'Protection solaire et confort thermique',
     period: '2026',
-    budget: 60_000_000,
+    budget: 75_000_000,
     color: 'from-amber-100 to-orange-50',
   },
   {
     title: 'Solaire terrain de sport',
     description: 'Installation photovoltaïque complémentaire',
-    period: '2027',
-    budget: 35_000_000,
+    period: '2028 – 2029',
+    budget: 55_000_000,
     color: 'from-emerald-100 to-emerald-50',
   },
   {
     title: 'Piscine',
     description: 'Réhabilitation et sécurisation du bassin',
-    period: '2027 – 2028',
-    budget: 165_000_000,
+    period: '2028 – 2029',
+    budget: 125_000_000,
     color: 'from-sky-100 to-blue-50',
   },
   {
     title: 'Restauration scolaire',
     description: 'Montée en charge cuisine & self-service',
     period: '2027 – 2029',
-    budget: 150_000_000,
+    budget: 200_000_000,
     color: 'from-orange-100 to-amber-50',
   },
   {
     title: 'Acquisition terrain',
     description: 'Réserve foncière pour extensions futures',
-    period: '2028',
-    budget: 90_000_000,
+    period: '2026 – 2027',
+    budget: 60_000_000,
     color: 'from-lime-100 to-emerald-50',
   },
   {
     title: 'Projet d’extension phase 1',
     description: 'Création de nouvelles surfaces pédagogiques',
-    period: '2029 – 2030',
-    budget: 55_000_000,
+    period: '2030',
+    budget: 200_000_000,
     color: 'from-indigo-100 to-indigo-50',
   },
 ];
@@ -133,8 +133,8 @@ const projects: Project[] = [
 const financialTimeline: CashFlowYear[] = [
   { year: 2026, capacite: 50_000_000, leviers: 64_969_911, recettesTotales: 114_969_911, depenses: 135_000_000 },
   { year: 2027, capacite: 50_000_000, leviers: 70_042_377, recettesTotales: 120_042_377, depenses: 126_666_667 },
-  { year: 2028, capacite: 50_000_000, leviers: 70_042_377, recettesTotales: 120_042_377, depenses: 126_666_667 },
-  { year: 2029, capacite: 50_000_000, leviers: 70_042_377, recettesTotales: 120_042_377, depenses: 156_666_667 },
+  { year: 2028, capacite: 50_000_000, leviers: 70_042_377, recettesTotales: 120_042_377, depenses: 156_666_667 },
+  { year: 2029, capacite: 50_000_000, leviers: 70_042_377, recettesTotales: 120_042_377, depenses: 156_666_666 },
   { year: 2030, capacite: 80_000_000, leviers: 70_042_377, recettesTotales: 150_042_377, depenses: 200_000_000 },
 ];
 
@@ -149,12 +149,12 @@ const tuitionSimulations = [
 ];
 
 const projectSchedule = [
-  { project: 'Climatisation (phases 2 & 3)', start: 2026, end: 2027, annualSpend: { 2026: 60_000_000, 2027: 60_000_000 } },
-  { project: 'Couverture terrain de sport', start: 2026, end: 2026, annualSpend: { 2026: 66_700_000 } },
-  { project: 'Solaire terrain de sport', start: 2027, end: 2027, annualSpend: { 2027: 20_800_000 } },
-  { project: 'Piscine', start: 2027, end: 2028, annualSpend: { 2027: 67_500_000, 2028: 67_500_000 } },
-  { project: 'Restauration scolaire', start: 2028, end: 2029, annualSpend: { 2028: 60_000_000, 2029: 66_700_000 } },
-  { project: 'Acquisition terrain', start: 2028, end: 2028, annualSpend: { 2028: 30_000_000 } },
+  { project: 'Climatisation (phases 2 & 3)', start: 2026, end: 2027, annualSpend: { 2026: 30_000_000, 2027: 30_000_000 } },
+  { project: 'Couverture terrain de sport', start: 2026, end: 2026, annualSpend: { 2026: 75_000_000 } },
+  { project: 'Solaire terrain de sport', start: 2028, end: 2029, annualSpend: { 2028: 27_500_000, 2029: 27_500_000 } },
+  { project: 'Piscine', start: 2028, end: 2029, annualSpend: { 2028: 62_500_000, 2029: 62_500_000 } },
+  { project: 'Restauration scolaire', start: 2027, end: 2029, annualSpend: { 2027: 66_666_667, 2028: 66_666_667, 2029: 66_666_666 } },
+  { project: 'Acquisition terrain', start: 2026, end: 2027, annualSpend: { 2026: 30_000_000, 2027: 30_000_000 } },
   { project: 'Projet d’extension phase 1', start: 2030, end: 2030, annualSpend: { 2030: 200_000_000 } },
 ];
 
@@ -165,7 +165,7 @@ const getPeriodStartYear = (period: string) => Number(period.match(/\d{4}/)?.[0]
 const BudgetCadreVieInfrastructures = () => {
   const [currency, setCurrency] = useState<'XOF' | 'EUR'>('XOF');
   const cumulativeTuition = 345_139_418;
-  const annualTotals = [126_700_000, 147_500_000, 127_500_000, 66_700_000, 200_000_000];
+  const annualTotals = [135_000_000, 126_666_667, 156_666_667, 156_666_666, 200_000_000];
 
   const chartData = useMemo(
     () =>
