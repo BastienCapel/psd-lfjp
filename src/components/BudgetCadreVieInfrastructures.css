@@ -1,0 +1,45 @@
+@layer components {
+  .budget-shell {
+    @apply mt-8 space-y-10 md:space-y-12;
+  }
+
+  .budget-intro {
+    @apply flex flex-wrap items-start justify-between gap-4 rounded-2xl border border-slate-200 bg-slate-50/70 p-4 md:p-5;
+  }
+
+  .budget-pill {
+    @apply inline-flex items-center gap-2 rounded-full bg-french-blue/10 px-3 py-1 text-xs font-semibold text-french-blue;
+  }
+
+  .budget-toggle {
+    @apply inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-2 py-1 text-xs font-semibold text-slate-700 shadow-sm;
+  }
+
+  .budget-grid-3 {
+    @apply grid gap-5 sm:grid-cols-2 md:gap-6 xl:grid-cols-3;
+  }
+
+  .budget-layout-grid {
+    @apply grid gap-6 lg:grid-cols-2 xl:grid-cols-3 xl:[grid-template-columns:1.05fr_1.05fr_0.9fr];
+  }
+
+  .budget-panel {
+    @apply rounded-2xl border border-slate-200 bg-white p-4 shadow-sm;
+  }
+
+  .budget-panel-heading {
+    @apply mb-3 flex items-center justify-between;
+  }
+
+  .budget-table {
+    @apply min-w-full divide-y divide-slate-100 text-sm;
+  }
+
+  .budget-table-head {
+    @apply bg-slate-50 text-xs uppercase text-slate-500;
+  }
+
+  .budget-table-cell {
+    @apply px-4 py-2 text-right text-slate-700;
+  }
+}
