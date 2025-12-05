@@ -43,6 +43,7 @@ type Project = {
   period: string;
   budget: number;
   color: string;
+  link?: string;
 };
 
 type CashFlowYear = {
@@ -80,8 +81,9 @@ const projects: Project[] = [
     title: 'Climatisation (phases 2 & 3)',
     description: 'Déploiement progressif sur les bâtiments restants',
     period: '2026 – 2027',
-    budget: 220_000_000,
+    budget: 60_000_000,
     color: 'from-sky-100 to-sky-50',
+    link: 'https://psd-lfjp.netlify.app/climatisation-durable',
   },
   {
     title: 'Couverture terrain de sport',
@@ -342,11 +344,8 @@ const BudgetCadreVieInfrastructures = () => {
                   </span>
                   <span className="h-px flex-1 bg-slate-200" aria-hidden />
                 </div>
-                {items.map((project) => (
-                  <div
-                    key={project.title}
-                    className={`group rounded-2xl border border-slate-200 bg-gradient-to-br ${project.color} p-5 shadow-sm transition duration-150 hover:-translate-y-0.5 hover:shadow-md`}
-                  >
+                {items.map((project) => {
+                  const cardContent = (
                     <div className="flex items-start gap-3">
                       <div className="flex-1 space-y-1">
                         <div className="flex flex-wrap items-center gap-2">
@@ -365,8 +364,27 @@ const BudgetCadreVieInfrastructures = () => {
                         <ArrowUpRight className="h-4 w-4" aria-hidden />
                       </span>
                     </div>
-                  </div>
-                ))}
+                  );
+
+                  return project.link ? (
+                    <a
+                      key={project.title}
+                      href={project.link}
+                      className={`group block rounded-2xl border border-slate-200 bg-gradient-to-br ${project.color} p-5 shadow-sm transition duration-150 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue`}
+                      aria-label={`En savoir plus sur ${project.title}`}
+                    >
+                      {cardContent}
+                    </a>
+                  ) : (
+                    <div
+                      key={project.title}
+                      className={`group rounded-2xl border border-slate-200 bg-gradient-to-br ${project.color} p-5 shadow-sm`}
+                      aria-label={project.title}
+                    >
+                      {cardContent}
+                    </div>
+                  );
+                })}
               </div>
             ))}
           </div>
