@@ -132,12 +132,14 @@ const financialTimeline: CashFlowYear[] = [
   { year: 2030, capacite: 85_000_000, leviers: 40_000_000, recettesTotales: 125_000_000, depenses: 85_000_000 },
 ];
 
+const tuitionBaseRevenue = 1_203_146_500;
+
 const tuitionSimulations = [
-  { year: 2026, increase: 5, revenue: 15_000_000 },
-  { year: 2027, increase: 7, revenue: 22_000_000 },
-  { year: 2028, increase: 8, revenue: 30_000_000 },
-  { year: 2029, increase: 6, revenue: 35_000_000 },
-  { year: 2030, increase: 6, revenue: 40_000_000 },
+  { year: 2026, increase: 5.4, revenue: 64_969_911 },
+  { year: 2027, increase: 0.4, revenue: 70_042_377 },
+  { year: 2028, increase: 0, revenue: 70_042_377 },
+  { year: 2029, increase: 0, revenue: 70_042_377 },
+  { year: 2030, increase: 0, revenue: 70_042_377 },
 ];
 
 const projectSchedule = [
@@ -169,7 +171,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameT
 };
 
 const BudgetCadreVieInfrastructures = () => {
-  const cumulativeTuition = tuitionSimulations.reduce((total, item) => total + item.revenue, 0);
+  const cumulativeTuition = 345_139_418;
   const annualTotals = years.map((year) =>
     projectSchedule.reduce((total, project) => total + (project.annualSpend[year] ?? 0), 0),
   );
@@ -364,6 +366,9 @@ const BudgetCadreVieInfrastructures = () => {
               <h5 className="text-lg font-semibold text-slate-900">Simulation écolages</h5>
               <PiggyBank className="h-5 w-5 text-emerald-600" aria-hidden />
             </div>
+            <p className="mb-3 text-xs font-semibold text-slate-600">
+              Base revenus: <span className="font-bold text-slate-900">{currencyFormatter.format(tuitionBaseRevenue)}</span>
+            </p>
             <div className="overflow-hidden rounded-xl border border-slate-100">
               <table className="min-w-full divide-y divide-slate-100 text-sm">
                 <thead className="bg-slate-50 text-xs uppercase text-slate-500">
