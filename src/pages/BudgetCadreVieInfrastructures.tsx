@@ -10,7 +10,7 @@ const BudgetCadreVieInfrastructuresPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex flex-col font-raleway bg-slate-50">
+    <div className="min-h-screen flex flex-col font-raleway bg-white">
       <Navbar showLogo={true} />
 
       <header className="bg-gradient-to-r from-slate-800 via-slate-700 to-slate-900 text-white py-16 md:py-20 shadow-lg">
