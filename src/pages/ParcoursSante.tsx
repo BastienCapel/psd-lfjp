@@ -303,32 +303,14 @@ const domains: Domain[] = [
       "Garantir la sécurité des élèves, détecter et signaler les situations préoccupantes et rappeler les droits de l'enfant.",
     timeline: [
       {
-        level: 'Cycle 1 (PS–GS)',
-        focus: 'Sensibilisation précoce',
+        level: 'Tous cycles',
+        focus: 'Information et sensibilisation (1 séance minimum par an)',
         details: [
-          "Séance annuelle sur la protection de l'enfance et les violences intrafamiliales (circulaire du 7 février 2022).",
-          'Détection et signalement systématiques ; participation à la journée mondiale des droits de l’enfant (20 novembre).',
+          "Dans les classes, des séances sur la protection de l’enfance et les violences intrafamiliales, notamment sexuelles, sont prévues par l’article L542-3 du Code de l’éducation.",
+          "La circulaire du 7 février 2022 impose au moins une séance annuelle d'information et de sensibilisation sur l'enfance maltraitée, notamment sur les violences intrafamiliales à caractère sexuel, dans les écoles, collèges et lycées.",
+          "Détection et signalement aux autorités de tous les cas pouvant laisser craindre que la santé d'un élève, sa sécurité ou sa moralité sont en danger ou en risque de l'être ou que les conditions de son éducation ou de son développement physique, affectif, intellectuel et social sont gravement compromises ou en risque de l'être.",
+          "Participation à la journée mondiale des droits de l'enfant du 20 novembre.",
         ],
-      },
-      {
-        level: 'Cycle 2 (CP–CE2)',
-        focus: 'Repères et vigilance',
-        details: ['Actions à consolider pour renforcer les réflexes de protection et de signalement.'],
-      },
-      {
-        level: 'Cycle 3 (CM1–6e)',
-        focus: 'Savoir alerter',
-        details: ['Séances de rappel pour identifier un adulte référent et demander de l’aide.'],
-      },
-      {
-        level: 'Cycle 4 (5e–3e)',
-        focus: 'Prévenir les violences',
-        details: ['Rappels ciblés sur les violences sexistes et sexuelles et les ressources d’écoute.'],
-      },
-      {
-        level: 'Lycée',
-        focus: 'Rendre l’élève acteur de sa protection',
-        details: ['Sensibilisation aux droits, au consentement et aux recours disponibles en cas de danger.'],
       },
     ],
     references: [
