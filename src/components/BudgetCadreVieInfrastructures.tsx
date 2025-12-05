@@ -158,6 +158,8 @@ const projectSchedule = [
 
 const years = [2026, 2027, 2028, 2029, 2030];
 
+const getPeriodStartYear = (period: string) => Number(period.match(/\d{4}/)?.[0] ?? 0);
+
 const BudgetCadreVieInfrastructures = () => {
   const [currency, setCurrency] = useState<'XOF' | 'EUR'>('XOF');
   const cumulativeTuition = 345_139_418;
@@ -192,6 +194,27 @@ const BudgetCadreVieInfrastructures = () => {
         ...row,
         solde: row.recettesTotales - row.depenses,
       })),
+    [],
+  );
+
+  const projectsByYear = useMemo(
+    () => {
+      const grouped = projects
+        .slice()
+        .sort((a, b) => getPeriodStartYear(a.period) - getPeriodStartYear(b.period))
+        .reduce<Record<number, Project[]>>((acc, project) => {
+          const startYear = getPeriodStartYear(project.period);
+          if (!acc[startYear]) {
+            acc[startYear] = [];
+          }
+          acc[startYear].push(project);
+          return acc;
+        }, {});
+
+      return Object.entries(grouped)
+        .map(([year, items]) => ({ year: Number(year), items }))
+        .sort((a, b) => a.year - b.year);
+    },
     [],
   );
 
@@ -286,29 +309,41 @@ const BudgetCadreVieInfrastructures = () => {
             <h5 className="text-lg font-semibold text-slate-900">Projets</h5>
             <span className="text-xs font-semibold text-slate-500">7 projets clés</span>
           </div>
-          <div className="space-y-3">
-            {projects.map((project) => (
-              <div
-                key={project.title}
-                className={`group rounded-2xl border border-slate-200 bg-gradient-to-br ${project.color} p-5 shadow-sm transition duration-150 hover:-translate-y-0.5 hover:shadow-md`}
-              >
-                <div className="flex items-start gap-3">
-                  <div className="flex-1 space-y-1">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <h6 className="text-base font-semibold text-slate-900">{project.title}</h6>
-                      <span className="rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-semibold text-french-blue">
-                        {project.period}
+          <div className="space-y-5">
+            {projectsByYear.map(({ year, items }) => (
+              <div key={year} className="space-y-3">
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase text-slate-500">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-2 py-1 text-[11px] text-slate-700">
+                    <CalendarClock className="h-3.5 w-3.5 text-french-blue" aria-hidden />
+                    {year}
+                  </span>
+                  <span className="h-px flex-1 bg-slate-200" aria-hidden />
+                </div>
+                {items.map((project) => (
+                  <div
+                    key={project.title}
+                    className={`group rounded-2xl border border-slate-200 bg-gradient-to-br ${project.color} p-5 shadow-sm transition duration-150 hover:-translate-y-0.5 hover:shadow-md`}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="flex-1 space-y-1">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h6 className="text-base font-semibold text-slate-900">{project.title}</h6>
+                          <span className="inline-flex items-center gap-1 rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-semibold text-french-blue">
+                            <CalendarClock className="h-3 w-3" aria-hidden />
+                            {project.period}
+                          </span>
+                        </div>
+                        <p className="text-sm text-slate-700">{project.description}</p>
+                        <p className="text-sm font-semibold text-emerald-700">
+                          {formatCurrency(project.budget, currency)}
+                        </p>
+                      </div>
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white text-slate-500 shadow-inner transition group-hover:bg-french-blue/10 group-hover:text-french-blue">
+                        <ArrowUpRight className="h-4 w-4" aria-hidden />
                       </span>
                     </div>
-                    <p className="text-sm text-slate-700">{project.description}</p>
-                    <p className="text-sm font-semibold text-emerald-700">
-                      {formatCurrency(project.budget, currency)}
-                    </p>
                   </div>
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white text-slate-500 shadow-inner transition group-hover:bg-french-blue/10 group-hover:text-french-blue">
-                    <ArrowUpRight className="h-4 w-4" aria-hidden />
-                  </span>
-                </div>
+                ))}
               </div>
             ))}
           </div>
