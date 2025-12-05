@@ -304,7 +304,7 @@ const BudgetCadreVieInfrastructures = () => {
         </div>
       </div>
 
-      <div className="grid gap-5 md:gap-6 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid min-w-0 gap-5 md:gap-6 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
         {summaryCards.map((card) => {
           const Icon = card.icon;
           return (
