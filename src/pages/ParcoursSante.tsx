@@ -532,7 +532,7 @@ const ParcoursSante = () => {
                 <Button
                   variant="outline"
                   onClick={() => scrollToSection('frise')}
-                  className="border-white/60 text-white hover:bg-white/10"
+                  className="border-white/60 bg-white/10 text-white hover:bg-white/20"
                 >
                   Voir la frise PS → Terminale
                 </Button>
