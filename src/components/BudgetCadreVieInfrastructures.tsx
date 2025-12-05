@@ -509,7 +509,7 @@ const BudgetCadreVieInfrastructures = () => {
               <h5 className="text-lg font-semibold text-slate-900">Calendrier des dépenses</h5>
               <CalendarClock className="h-5 w-5 text-french-blue" aria-hidden />
             </div>
-          <div className="space-y-3">
+            <div className="space-y-3">
               <div className="overflow-x-auto">
                 <div className="min-w-[720px] space-y-3">
                   <div className="grid grid-cols-[140px_repeat(5,1fr)] items-center gap-2 text-xs font-semibold text-slate-500">
@@ -555,44 +555,44 @@ const BudgetCadreVieInfrastructures = () => {
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="space-y-4">
-          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-            <div className="mb-3 flex items-center justify-between">
-              <h5 className="text-lg font-semibold text-slate-900">Évoluation des écolages</h5>
-              <PiggyBank className="h-5 w-5 text-emerald-600" aria-hidden />
-            </div>
-            <p className="mb-3 text-xs font-semibold text-slate-600">
-              Base revenus: <span className="font-bold text-slate-900">{formatCurrency(tuitionBaseRevenue, currency)}</span>
-            </p>
-            <div className="overflow-hidden rounded-xl border border-slate-100">
-              <table className="min-w-full divide-y divide-slate-100 text-sm">
-                <thead className="bg-slate-50 text-xs uppercase text-slate-500">
-                  <tr>
-                    <th className="px-4 py-2 text-left">Année</th>
-                    <th className="px-4 py-2 text-right">Augmentation</th>
-                    <th className="px-4 py-2 text-right">Recette suppl.</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100 bg-white">
-                  {tuitionSimulations.map((item) => (
-                    <tr key={item.year} className="hover:bg-slate-50">
-                      <td className="px-4 py-2 font-semibold text-slate-900">{item.year}</td>
-                      <td className="px-4 py-2 text-right text-slate-700">{item.increase}%</td>
-                      <td className="px-4 py-2 text-right font-semibold text-emerald-700">{formatCurrency(item.revenue, currency)}</td>
+          <div className="flex justify-center">
+            <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+              <div className="mb-3 flex items-center justify-between">
+                <h5 className="text-lg font-semibold text-slate-900">Évolution des écolages</h5>
+                <PiggyBank className="h-5 w-5 text-emerald-600" aria-hidden />
+              </div>
+              <p className="mb-3 text-xs font-semibold text-slate-600">
+                Base revenus: <span className="font-bold text-slate-900">{formatCurrency(tuitionBaseRevenue, currency)}</span>
+              </p>
+              <div className="overflow-hidden rounded-xl border border-slate-100">
+                <table className="min-w-full divide-y divide-slate-100 text-sm">
+                  <thead className="bg-slate-50 text-xs uppercase text-slate-500">
+                    <tr>
+                      <th className="px-4 py-2 text-left">Année</th>
+                      <th className="px-4 py-2 text-right">Augmentation</th>
+                      <th className="px-4 py-2 text-right">Recette suppl.</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 bg-white">
+                    {tuitionSimulations.map((item) => (
+                      <tr key={item.year} className="hover:bg-slate-50">
+                        <td className="px-4 py-2 font-semibold text-slate-900">{item.year}</td>
+                        <td className="px-4 py-2 text-right text-slate-700">{item.increase}%</td>
+                        <td className="px-4 py-2 text-right font-semibold text-emerald-700">{formatCurrency(item.revenue, currency)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="mt-3 flex items-center justify-between rounded-xl bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-800">
+                <span>Cumul généré (2026-2030)</span>
+                <span>{formatCurrency(cumulativeTuition, currency)}</span>
+              </div>
+              <p className="mt-2 text-xs text-slate-600">
+                Ajustez les pourcentages d’augmentation ci-dessus pour simuler d’autres scénarios de recettes liées aux écolages.
+              </p>
             </div>
-            <div className="mt-3 flex items-center justify-between rounded-xl bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-800">
-              <span>Cumul généré (2026-2030)</span>
-              <span>{formatCurrency(cumulativeTuition, currency)}</span>
-            </div>
-            <p className="mt-2 text-xs text-slate-600">
-              Ajustez les pourcentages d’augmentation ci-dessus pour simuler d’autres scénarios de recettes liées aux écolages.
-            </p>
           </div>
         </div>
       </div>
