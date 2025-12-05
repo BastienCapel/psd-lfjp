@@ -21,7 +21,7 @@ import {
   YAxis,
   BarChart,
 } from 'recharts';
-import type { TooltipProps } from 'recharts';
+import type { LegendProps, TooltipProps } from 'recharts';
 import type { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 
 // Les données sont codées en dur pour faciliter les ajustements futurs.
@@ -175,6 +175,7 @@ const BudgetCadreVieInfrastructures = () => {
           leviers: row.leviers * factor,
           recettesTotales: row.recettesTotales * factor,
           depenses: row.depenses * factor,
+          solde: (row.recettesTotales - row.depenses) * factor,
         };
       }),
     [currency],
@@ -232,6 +233,28 @@ const BudgetCadreVieInfrastructures = () => {
       );
     }
     return null;
+  };
+
+  const CustomLegend = ({ payload }: LegendProps) => {
+    if (!payload?.length) return null;
+
+    return (
+      <div className="flex flex-wrap gap-2 text-xs" aria-label="Légende du graphique des flux de trésorerie">
+        {payload.map((entry) => (
+          <span
+            key={`${entry.dataKey}-${entry.color}`}
+            className="inline-flex items-center gap-2 rounded-full bg-slate-50 px-2.5 py-1.5 font-semibold text-slate-700"
+          >
+            <span
+              className="h-2.5 w-2.5 rounded-full"
+              style={{ backgroundColor: entry.color }}
+              aria-hidden
+            />
+            {entry.value}
+          </span>
+        ))}
+      </div>
+    );
   };
 
   return (
@@ -360,14 +383,29 @@ const BudgetCadreVieInfrastructures = () => {
                 </div>
                 <BarChart3 className="h-5 w-5 text-french-blue" aria-hidden />
               </div>
-            <div className="h-72">
+            <div className="h-72" role="img" aria-label="Graphique des flux de trésorerie prévisionnels 2026-2030">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={chartData}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                  <XAxis dataKey="year" tick={{ fill: '#1e293b', fontSize: 12 }} />
-                  <YAxis tickFormatter={axisTickFormatter} tick={{ fill: '#1e293b', fontSize: 12 }} />
+                  <XAxis
+                    dataKey="year"
+                    tick={{ fill: '#1e293b', fontSize: 12 }}
+                    label={{ value: 'Années', position: 'insideBottom', offset: -5, fill: '#475569', fontSize: 12 }}
+                  />
+                  <YAxis
+                    tickFormatter={axisTickFormatter}
+                    tick={{ fill: '#1e293b', fontSize: 12 }}
+                    label={{
+                      value: `Montants (${currency})`,
+                      angle: -90,
+                      position: 'insideLeft',
+                      offset: 10,
+                      fill: '#475569',
+                      fontSize: 12,
+                    }}
+                  />
                   <Tooltip content={<CustomTooltip />} />
-                  <Legend />
+                  <Legend verticalAlign="top" align="left" content={<CustomLegend />} />
                   <Bar name="Dépenses projets" dataKey="depenses" fill="#ef4444" radius={[6, 6, 0, 0]} />
                   <Line
                     name="Capacité d’investissement"
@@ -385,6 +423,24 @@ const BudgetCadreVieInfrastructures = () => {
                     strokeWidth={3}
                     strokeDasharray="6 4"
                     dot={{ r: 5 }}
+                  />
+                  <Line
+                    name="Leviers écolages"
+                    type="monotone"
+                    dataKey="leviers"
+                    stroke="#0ea5e9"
+                    strokeWidth={3}
+                    strokeDasharray="4 3"
+                    dot={{ r: 5 }}
+                  />
+                  <Line
+                    name="Solde annuel"
+                    type="monotone"
+                    dataKey="solde"
+                    stroke="#f97316"
+                    strokeWidth={3}
+                    dot={{ r: 6 }}
+                    strokeDasharray="5 4"
                   />
                 </BarChart>
               </ResponsiveContainer>
