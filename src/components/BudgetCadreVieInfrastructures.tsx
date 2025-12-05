@@ -23,6 +23,7 @@ import {
 } from 'recharts';
 import type { LegendProps, TooltipProps } from 'recharts';
 import type { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
+import './budgetCadreVie.css';
 
 // Les données sont codées en dur pour faciliter les ajustements futurs.
 // Vous pouvez modifier les montants, années ou pourcentages directement dans
@@ -258,29 +259,37 @@ const BudgetCadreVieInfrastructures = () => {
   };
 
   return (
-    <section id="budget-cadre-vie" className="mt-8 space-y-10 md:space-y-12">
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50/70 p-4 md:p-5">
-        <div>
+    <section id="budget-cadre-vie" className="section-shell" aria-labelledby="budget-cadre-vie-heading">
+      <header className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50/70 p-4 md:p-5">
+        <div className="space-y-1">
           <p className="text-xs font-semibold uppercase tracking-wide text-french-blue">Cadre de vie & infrastructures</p>
-          <h4 className="text-xl font-semibold text-slate-900">Budget d’amélioration</h4>
+          <h2 id="budget-cadre-vie-heading" className="text-xl font-semibold text-slate-900">
+            Budget d’amélioration
+          </h2>
           <p className="text-sm text-slate-600">
             Vue synthétique des investissements, flux de trésorerie et leviers de financement sur 2026-2030.
           </p>
         </div>
         <div className="flex flex-col items-end gap-2 text-sm sm:flex-row sm:items-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-french-blue/10 px-3 py-1 text-xs font-semibold text-french-blue">
+          <p className="inline-flex items-center gap-2 rounded-full bg-french-blue/10 px-3 py-1 text-xs font-semibold text-french-blue">
             <Info className="h-4 w-4" aria-hidden />
             Données indicatives – à affiner avec les budgets annuels
-          </div>
-          <div className="flex flex-col items-end gap-1">
+          </p>
+          <div className="flex flex-col items-end gap-1" aria-label="Sélecteur de devise">
             <div className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-2 py-1 text-xs font-semibold text-slate-700 shadow-sm">
               <button
                 type="button"
                 onClick={() => setCurrency('XOF')}
                 aria-pressed={currency === 'XOF'}
-                className={`group inline-flex items-center gap-2 rounded-full px-3 py-1 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue ${currency === 'XOF' ? 'border border-french-blue bg-french-blue text-white shadow-sm' : 'border border-transparent hover:bg-slate-50'}`}
+                className={`group inline-flex items-center gap-2 rounded-full px-3 py-1 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue ${
+                  currency === 'XOF' ? 'border border-french-blue bg-french-blue text-white shadow-sm' : 'border border-transparent hover:bg-slate-50'
+                }`}
               >
-                <span className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] ${currency === 'XOF' ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-700'}`}>
+                <span
+                  className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] ${
+                    currency === 'XOF' ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-700'
+                  }`}
+                >
                   <BadgeDollarSign className="h-3.5 w-3.5" aria-hidden />
                   FCFA
                 </span>
@@ -289,9 +298,15 @@ const BudgetCadreVieInfrastructures = () => {
                 type="button"
                 onClick={() => setCurrency('EUR')}
                 aria-pressed={currency === 'EUR'}
-                className={`group inline-flex items-center gap-2 rounded-full px-3 py-1 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue ${currency === 'EUR' ? 'border border-french-blue bg-french-blue text-white shadow-sm' : 'border border-transparent hover:bg-slate-50'}`}
+                className={`group inline-flex items-center gap-2 rounded-full px-3 py-1 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue ${
+                  currency === 'EUR' ? 'border border-french-blue bg-french-blue text-white shadow-sm' : 'border border-transparent hover:bg-slate-50'
+                }`}
               >
-                <span className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] ${currency === 'EUR' ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-700'}`}>
+                <span
+                  className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] ${
+                    currency === 'EUR' ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-700'
+                  }`}
+                >
                   <Euro className="h-3.5 w-3.5" aria-hidden />
                   Euros
                 </span>
@@ -302,56 +317,56 @@ const BudgetCadreVieInfrastructures = () => {
             </p>
           </div>
         </div>
-      </div>
+      </header>
 
-      <div className="grid gap-5 md:gap-6 sm:grid-cols-2 xl:grid-cols-3">
+      <ul className="grid gap-5 sm:grid-cols-2 md:gap-6 xl:grid-cols-3" aria-label="Indicateurs clés de budget">
         {summaryCards.map((card) => {
           const Icon = card.icon;
           return (
-            <div
-              key={card.label}
-              className={`relative overflow-hidden rounded-2xl border bg-gradient-to-br ${card.accent} p-5 shadow-sm`}
-            >
-              <div className="flex items-start justify-between gap-3">
+            <li key={card.label} className={`relative overflow-hidden rounded-2xl border bg-gradient-to-br ${card.accent} p-5 shadow-sm`}>
+              <article className="flex items-start justify-between gap-3" aria-label={card.label}>
                 <div className="space-y-1">
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-600">{card.label}</p>
                   <p className="text-2xl font-bold text-slate-900">{formatCurrency(card.value, currency)}</p>
                 </div>
-                <span className="rounded-xl bg-white/70 p-2 shadow-inner">
-                  <Icon className="h-5 w-5" aria-hidden />
+                <span className="rounded-xl bg-white/70 p-2 shadow-inner" aria-hidden>
+                  <Icon className="h-5 w-5" />
                 </span>
-              </div>
-            </div>
+              </article>
+            </li>
           );
         })}
-      </div>
+      </ul>
 
       <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3 xl:[grid-template-columns:1.05fr_1.05fr_0.9fr]">
-        <div className="space-y-4">
+        <section className="space-y-4" aria-labelledby="projects-heading">
           <div className="flex items-center justify-between">
-            <h5 className="text-lg font-semibold text-slate-900">Projets</h5>
+            <h3 id="projects-heading" className="text-lg font-semibold text-slate-900">
+              Projets
+            </h3>
             <span className="text-xs font-semibold text-slate-500">7 projets clés</span>
           </div>
           <div className="space-y-5">
             {projectsByYear.map(({ year, items }) => (
-              <div key={year} className="space-y-3">
+              <article key={year} className="space-y-3" aria-label={`Projets ${year}`}>
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase text-slate-500">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-2 py-1 text-[11px] text-slate-700">
+                  <span className="pill">
                     <CalendarClock className="h-3.5 w-3.5 text-french-blue" aria-hidden />
                     {year}
                   </span>
                   <span className="h-px flex-1 bg-slate-200" aria-hidden />
                 </div>
                 {items.map((project) => (
-                  <div
+                  <article
                     key={project.title}
                     className={`group rounded-2xl border border-slate-200 bg-gradient-to-br ${project.color} p-5 shadow-sm transition duration-150 hover:-translate-y-0.5 hover:shadow-md`}
+                    aria-label={project.title}
                   >
                     <div className="flex items-start gap-3">
                       <div className="flex-1 space-y-1">
                         <div className="flex flex-wrap items-center gap-2">
-                          <h6 className="text-base font-semibold text-slate-900">{project.title}</h6>
-                          <span className="inline-flex items-center gap-1 rounded-full bg-white/80 px-2 py-0.5 text-[11px] font-semibold text-french-blue">
+                          <h4 className="text-base font-semibold text-slate-900">{project.title}</h4>
+                          <span className="pill bg-white/80 text-french-blue">
                             <CalendarClock className="h-3 w-3" aria-hidden />
                             {project.period}
                           </span>
@@ -361,28 +376,31 @@ const BudgetCadreVieInfrastructures = () => {
                           {formatCurrency(project.budget, currency)}
                         </p>
                       </div>
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white text-slate-500 shadow-inner transition group-hover:bg-french-blue/10 group-hover:text-french-blue">
-                        <ArrowUpRight className="h-4 w-4" aria-hidden />
+                      <span
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white text-slate-500 shadow-inner transition group-hover:bg-french-blue/10 group-hover:text-french-blue"
+                        aria-hidden
+                      >
+                        <ArrowUpRight className="h-4 w-4" />
                       </span>
                     </div>
-                  </div>
+                  </article>
                 ))}
-              </div>
+              </article>
             ))}
           </div>
-        </div>
+        </section>
 
-        <div className="space-y-4">
-            <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-              <div className="mb-3 flex items-center justify-between">
-                <div>
+        <section className="space-y-4" aria-labelledby="cashflow-heading">
+          <article className="panel" aria-labelledby="cashflow-heading">
+            <div className="panel-header">
+              <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Analyse financière</p>
-                <h5 className="text-lg font-semibold text-slate-900">
+                <h3 id="cashflow-heading" className="text-lg font-semibold text-slate-900">
                   Flux de trésorerie prévisionnel ({currency})
-                </h5>
-                </div>
-                <BarChart3 className="h-5 w-5 text-french-blue" aria-hidden />
+                </h3>
               </div>
+              <BarChart3 className="h-5 w-5 text-french-blue" aria-hidden />
+            </div>
             <div className="h-72" role="img" aria-label="Graphique des flux de trésorerie prévisionnels 2026-2030">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={chartData}>
@@ -445,37 +463,49 @@ const BudgetCadreVieInfrastructures = () => {
                 </BarChart>
               </ResponsiveContainer>
             </div>
-          </div>
+          </article>
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-            <div className="mb-3 flex items-center justify-between">
-              <h5 className="text-lg font-semibold text-slate-900">Trésorerie annuelle</h5>
+          <article className="panel" aria-labelledby="treasury-table-heading">
+            <div className="panel-header">
+              <h3 id="treasury-table-heading" className="text-lg font-semibold text-slate-900">
+                Trésorerie annuelle
+              </h3>
               <CheckCircle2 className="h-5 w-5 text-emerald-600" aria-hidden />
             </div>
-            <div className="overflow-auto rounded-xl border border-slate-100" style={{ maxHeight: '320px' }}>
-              <table className="min-w-[640px] divide-y divide-slate-100 text-sm">
-                <thead className="bg-slate-50 text-xs uppercase text-slate-500">
+            <div className="table-wrapper" style={{ maxHeight: '320px' }}>
+              <table className="min-w-[640px]" aria-describedby="treasury-table-heading">
+                <thead className="table-heading">
                   <tr>
-                    <th className="px-4 py-2 text-left">Année</th>
-                    <th className="px-4 py-2 text-right">Capacité (base)</th>
-                    <th className="px-4 py-2 text-right">Leviers écolages</th>
-                    <th className="px-4 py-2 text-right">Recettes totales</th>
-                    <th className="px-4 py-2 text-right">Dépenses projets</th>
-                    <th className="px-4 py-2 text-right">Solde</th>
+                    <th scope="col">Année</th>
+                    <th scope="col" className="text-right">
+                      Capacité (base)
+                    </th>
+                    <th scope="col" className="text-right">
+                      Leviers écolages
+                    </th>
+                    <th scope="col" className="text-right">
+                      Recettes totales
+                    </th>
+                    <th scope="col" className="text-right">
+                      Dépenses projets
+                    </th>
+                    <th scope="col" className="text-right">
+                      Solde
+                    </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 bg-white">
+                <tbody className="table-body">
                   {cashFlowRows.map((row) => {
                     const solde = row.solde;
                     const soldePositive = solde >= 0;
                     return (
                       <tr key={row.year} className="hover:bg-slate-50">
-                        <td className="px-4 py-2 font-semibold text-slate-900">{row.year}</td>
-                        <td className="px-4 py-2 text-right text-slate-700">{formatCurrency(row.capacite, currency)}</td>
-                        <td className="px-4 py-2 text-right text-slate-700">{formatCurrency(row.leviers, currency)}</td>
-                        <td className="px-4 py-2 text-right font-semibold text-slate-900">{formatCurrency(row.recettesTotales, currency)}</td>
-                        <td className="px-4 py-2 text-right text-rose-600">{formatCurrency(row.depenses, currency)}</td>
-                        <td className={`px-4 py-2 text-right font-semibold ${soldePositive ? 'text-emerald-700' : 'text-rose-600'}`}>
+                        <td className="font-semibold text-slate-900">{row.year}</td>
+                        <td className="text-right text-slate-700">{formatCurrency(row.capacite, currency)}</td>
+                        <td className="text-right text-slate-700">{formatCurrency(row.leviers, currency)}</td>
+                        <td className="text-right font-semibold text-slate-900">{formatCurrency(row.recettesTotales, currency)}</td>
+                        <td className="text-right text-rose-600">{formatCurrency(row.depenses, currency)}</td>
+                        <td className={`text-right font-semibold ${soldePositive ? 'text-emerald-700' : 'text-rose-600'}`}>
                           {formatCurrency(solde, currency)}
                         </td>
                       </tr>
@@ -484,11 +514,13 @@ const BudgetCadreVieInfrastructures = () => {
                 </tbody>
               </table>
             </div>
-          </div>
+          </article>
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-            <div className="mb-3 flex items-center justify-between">
-              <h5 className="text-lg font-semibold text-slate-900">Calendrier des dépenses</h5>
+          <article className="panel" aria-labelledby="schedule-heading">
+            <div className="panel-header">
+              <h3 id="schedule-heading" className="text-lg font-semibold text-slate-900">
+                Calendrier des dépenses
+              </h3>
               <CalendarClock className="h-5 w-5 text-french-blue" aria-hidden />
             </div>
             <div className="space-y-3">
@@ -507,7 +539,7 @@ const BudgetCadreVieInfrastructures = () => {
                     {years.map((year) => {
                       const isActive = year >= item.start && year <= item.end;
                       return (
-                        <div key={year} className="relative h-2 rounded-full bg-slate-100">
+                        <div key={year} className="relative h-2 rounded-full bg-slate-100" aria-hidden={!isActive}>
                           {isActive && (
                             <div
                               className={`absolute inset-0 rounded-full ${index % 2 === 0 ? 'bg-french-blue/70' : 'bg-emerald-400/80'}`}
@@ -522,7 +554,7 @@ const BudgetCadreVieInfrastructures = () => {
               </div>
               <div className="mt-3 rounded-xl border border-dashed border-slate-200 bg-slate-50 p-3 text-sm">
                 <p className="mb-2 font-semibold text-slate-900">Total annuel (dépenses projets)</p>
-                <div className="grid grid-cols-5 gap-2 text-xs font-semibold text-slate-700">
+                <div className="grid grid-cols-1 gap-2 text-xs font-semibold text-slate-700 sm:grid-cols-2 xl:grid-cols-5">
                   {years.map((year, index) => (
                     <div key={year} className="flex items-center justify-between rounded-lg bg-white px-3 py-2 shadow-sm">
                       <span>{year}</span>
@@ -532,60 +564,70 @@ const BudgetCadreVieInfrastructures = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </article>
+        </section>
 
-        <div className="space-y-4">
-          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-            <div className="mb-3 flex items-center justify-between">
-              <h5 className="text-lg font-semibold text-slate-900">Simulation écolages</h5>
+        <section className="space-y-4" aria-labelledby="tuition-heading">
+          <article className="panel" aria-labelledby="tuition-heading">
+            <div className="panel-header">
+              <h3 id="tuition-heading" className="text-lg font-semibold text-slate-900">
+                Simulation écolages
+              </h3>
               <PiggyBank className="h-5 w-5 text-emerald-600" aria-hidden />
             </div>
             <p className="mb-3 text-xs font-semibold text-slate-600">
               Base revenus: <span className="font-bold text-slate-900">{formatCurrency(tuitionBaseRevenue, currency)}</span>
             </p>
             <div className="overflow-hidden rounded-xl border border-slate-100">
-              <table className="min-w-full divide-y divide-slate-100 text-sm">
-                <thead className="bg-slate-50 text-xs uppercase text-slate-500">
+              <table className="min-w-full" aria-describedby="tuition-heading">
+                <thead className="table-heading">
                   <tr>
-                    <th className="px-4 py-2 text-left">Année</th>
-                    <th className="px-4 py-2 text-right">Augmentation</th>
-                    <th className="px-4 py-2 text-right">Recette suppl.</th>
+                    <th scope="col">Année</th>
+                    <th scope="col" className="text-right">
+                      Augmentation
+                    </th>
+                    <th scope="col" className="text-right">
+                      Recette suppl.
+                    </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 bg-white">
+                <tbody className="table-body">
                   {tuitionSimulations.map((item) => (
                     <tr key={item.year} className="hover:bg-slate-50">
-                      <td className="px-4 py-2 font-semibold text-slate-900">{item.year}</td>
-                      <td className="px-4 py-2 text-right text-slate-700">{item.increase}%</td>
-                      <td className="px-4 py-2 text-right font-semibold text-emerald-700">{formatCurrency(item.revenue, currency)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="mt-3 flex items-center justify-between rounded-xl bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-800">
-            <span>Cumul généré (2026-2030)</span>
-            <span>{formatCurrency(cumulativeTuition, currency)}</span>
-          </div>
+                      <td className="font-semibold text-slate-900">{item.year}</td>
+                      <td className="text-right text-slate-700">{item.increase}%</td>
+                      <td className="text-right font-semibold text-emerald-700">{formatCurrency(item.revenue, currency)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-3 flex flex-col gap-2 rounded-xl bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-800 sm:flex-row sm:items-center sm:justify-between">
+              <span>Cumul généré (2026-2030)</span>
+              <span>{formatCurrency(cumulativeTuition, currency)}</span>
+            </div>
             <p className="mt-2 text-xs text-slate-600">
               Ajustez les pourcentages d’augmentation ci-dessus pour simuler d’autres scénarios de recettes liées aux écolages.
             </p>
-          </div>
+          </article>
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-            <div className="mb-3 flex items-center gap-2">
-              <Info className="h-5 w-5 text-french-blue" aria-hidden />
-              <h5 className="text-lg font-semibold text-slate-900">Hypothèses & notes</h5>
+          <article className="panel" aria-labelledby="notes-heading">
+            <div className="panel-header">
+              <div className="flex items-center gap-2">
+                <Info className="h-5 w-5 text-french-blue" aria-hidden />
+                <h3 id="notes-heading" className="text-lg font-semibold text-slate-900">
+                  Hypothèses & notes
+                </h3>
+              </div>
             </div>
-            <ul className="space-y-2 text-sm text-slate-700">
+            <ul className="list-disc list-inside space-y-2 text-sm text-slate-700">
               <li>Les années correspondent à l’année de rentrée (ex. 2026 = année 2026-2027).</li>
               <li>Montants exprimés en F CFA, basés sur une estimation interne et arrondis.</li>
               <li>Les dépenses projets intègrent les phases d’études, travaux et mise en service.</li>
               <li>Possibilité d’ajouter d’autres notes ou hypothèses opérationnelles.</li>
             </ul>
-          </div>
-        </div>
+          </article>
+        </section>
       </div>
     </section>
   );
