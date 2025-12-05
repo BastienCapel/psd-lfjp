@@ -259,20 +259,20 @@ const BudgetCadreVieInfrastructures = () => {
 
   return (
     <section id="budget-cadre-vie" className="mt-8 space-y-10 md:space-y-12">
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50/70 p-4 md:p-5">
-        <div>
+      <div className="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-slate-50/70 p-4 md:flex-row md:items-center md:justify-between md:p-5">
+        <div className="space-y-1">
           <p className="text-xs font-semibold uppercase tracking-wide text-french-blue">Cadre de vie & infrastructures</p>
           <h4 className="text-xl font-semibold text-slate-900">Budget d’amélioration</h4>
           <p className="text-sm text-slate-600">
             Vue synthétique des investissements, flux de trésorerie et leviers de financement sur 2026-2030.
           </p>
         </div>
-        <div className="flex flex-col items-end gap-2 text-sm sm:flex-row sm:items-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-french-blue/10 px-3 py-1 text-xs font-semibold text-french-blue">
+        <div className="flex w-full flex-col items-stretch gap-2 text-sm sm:flex-row sm:items-center sm:justify-end md:w-auto">
+          <div className="inline-flex items-center gap-2 self-start rounded-full bg-french-blue/10 px-3 py-1 text-xs font-semibold text-french-blue sm:self-auto">
             <Info className="h-4 w-4" aria-hidden />
             Données indicatives – à affiner avec les budgets annuels
           </div>
-          <div className="flex flex-col items-end gap-1">
+          <div className="flex flex-col items-stretch gap-1 sm:items-end">
             <div className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-2 py-1 text-xs font-semibold text-slate-700 shadow-sm">
               <button
                 type="button"
@@ -297,7 +297,7 @@ const BudgetCadreVieInfrastructures = () => {
                 </span>
               </button>
             </div>
-            <p className="text-[11px] font-semibold text-slate-600" aria-live="polite">
+            <p className="text-left text-[11px] font-semibold text-slate-600 sm:text-right" aria-live="polite">
               Montants affichés en {currency === 'XOF' ? 'franc CFA (FCFA)' : 'euros (€)'}
             </p>
           </div>
@@ -491,38 +491,42 @@ const BudgetCadreVieInfrastructures = () => {
               <h5 className="text-lg font-semibold text-slate-900">Calendrier des dépenses</h5>
               <CalendarClock className="h-5 w-5 text-french-blue" aria-hidden />
             </div>
-            <div className="space-y-3">
-              <div className="grid grid-cols-[140px_repeat(5,1fr)] items-center gap-2 text-xs font-semibold text-slate-500">
-                <span>Projet</span>
-                {years.map((year) => (
-                  <span key={year} className="text-center">
-                    {year}
-                  </span>
-                ))}
-              </div>
-              <div className="space-y-2">
-                {projectSchedule.map((item, index) => (
-                  <div key={item.project} className="grid grid-cols-[140px_repeat(5,1fr)] items-center gap-2">
-                    <span className="text-sm font-semibold text-slate-800">{item.project}</span>
-                    {years.map((year) => {
-                      const isActive = year >= item.start && year <= item.end;
-                      return (
-                        <div key={year} className="relative h-2 rounded-full bg-slate-100">
-                          {isActive && (
-                            <div
-                              className={`absolute inset-0 rounded-full ${index % 2 === 0 ? 'bg-french-blue/70' : 'bg-emerald-400/80'}`}
-                              style={{ width: '100%' }}
-                            />
-                          )}
-                        </div>
-                      );
-                    })}
+          <div className="space-y-3">
+              <div className="overflow-x-auto">
+                <div className="min-w-[720px] space-y-3">
+                  <div className="grid grid-cols-[140px_repeat(5,1fr)] items-center gap-2 text-xs font-semibold text-slate-500">
+                    <span>Projet</span>
+                    {years.map((year) => (
+                      <span key={year} className="text-center">
+                        {year}
+                      </span>
+                    ))}
                   </div>
-                ))}
+                  <div className="space-y-2">
+                    {projectSchedule.map((item, index) => (
+                      <div key={item.project} className="grid grid-cols-[140px_repeat(5,1fr)] items-center gap-2">
+                        <span className="text-sm font-semibold text-slate-800">{item.project}</span>
+                        {years.map((year) => {
+                          const isActive = year >= item.start && year <= item.end;
+                          return (
+                            <div key={year} className="relative h-2 rounded-full bg-slate-100">
+                              {isActive && (
+                                <div
+                                  className={`absolute inset-0 rounded-full ${index % 2 === 0 ? 'bg-french-blue/70' : 'bg-emerald-400/80'}`}
+                                  style={{ width: '100%' }}
+                                />
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
               <div className="mt-3 rounded-xl border border-dashed border-slate-200 bg-slate-50 p-3 text-sm">
                 <p className="mb-2 font-semibold text-slate-900">Total annuel (dépenses projets)</p>
-                <div className="grid grid-cols-5 gap-2 text-xs font-semibold text-slate-700">
+                <div className="grid grid-cols-2 gap-2 text-xs font-semibold text-slate-700 sm:grid-cols-3 lg:grid-cols-5">
                   {years.map((year, index) => (
                     <div key={year} className="flex items-center justify-between rounded-lg bg-white px-3 py-2 shadow-sm">
                       <span>{year}</span>
