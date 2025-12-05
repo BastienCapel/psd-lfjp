@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import {
   AlertTriangle,
   ArrowUpRight,
@@ -27,11 +27,14 @@ import type { NameType, ValueType } from 'recharts/types/component/DefaultToolti
 // Vous pouvez modifier les montants, années ou pourcentages directement dans
 // les tableaux ci-dessous afin d'actualiser la page sans toucher à la logique.
 
-const currencyFormatter = new Intl.NumberFormat('fr-FR', {
-  style: 'currency',
-  currency: 'XOF',
-  maximumFractionDigits: 0,
-});
+const XOF_TO_EUR = 655.957;
+
+const formatCurrency = (value: number, currency: 'XOF' | 'EUR') =>
+  new Intl.NumberFormat('fr-FR', {
+    style: 'currency',
+    currency,
+    maximumFractionDigits: 0,
+  }).format(currency === 'XOF' ? value : value / XOF_TO_EUR);
 
 type Project = {
   title: string;
@@ -125,11 +128,11 @@ const projects: Project[] = [
 
 // Flux de trésorerie prévisionnels (adapter montants/années si besoin).
 const financialTimeline: CashFlowYear[] = [
-  { year: 2026, capacite: 180_000_000, leviers: 15_000_000, recettesTotales: 195_000_000, depenses: 160_000_000 },
-  { year: 2027, capacite: 185_000_000, leviers: 22_000_000, recettesTotales: 207_000_000, depenses: 195_000_000 },
-  { year: 2028, capacite: 140_000_000, leviers: 30_000_000, recettesTotales: 170_000_000, depenses: 205_000_000 },
-  { year: 2029, capacite: 90_000_000, leviers: 35_000_000, recettesTotales: 125_000_000, depenses: 130_000_000 },
-  { year: 2030, capacite: 85_000_000, leviers: 40_000_000, recettesTotales: 125_000_000, depenses: 85_000_000 },
+  { year: 2026, capacite: 50_000_000, leviers: 64_969_911, recettesTotales: 114_969_911, depenses: 135_000_000 },
+  { year: 2027, capacite: 50_000_000, leviers: 70_042_377, recettesTotales: 120_042_377, depenses: 126_666_667 },
+  { year: 2028, capacite: 50_000_000, leviers: 70_042_377, recettesTotales: 120_042_377, depenses: 126_666_667 },
+  { year: 2029, capacite: 50_000_000, leviers: 70_042_377, recettesTotales: 120_042_377, depenses: 156_666_667 },
+  { year: 2030, capacite: 80_000_000, leviers: 70_042_377, recettesTotales: 150_042_377, depenses: 200_000_000 },
 ];
 
 const tuitionBaseRevenue = 1_203_146_500;
@@ -143,41 +146,49 @@ const tuitionSimulations = [
 ];
 
 const projectSchedule = [
-  { project: 'Climatisation', start: 2026, end: 2027, annualSpend: { 2026: 120_000_000, 2027: 100_000_000 } },
-  { project: 'Couverture terrain de sport', start: 2026, end: 2026, annualSpend: { 2026: 60_000_000 } },
-  { project: 'Solaire terrain de sport', start: 2027, end: 2027, annualSpend: { 2027: 35_000_000 } },
-  { project: 'Piscine', start: 2027, end: 2028, annualSpend: { 2027: 85_000_000, 2028: 80_000_000 } },
-  { project: 'Restauration scolaire', start: 2027, end: 2029, annualSpend: { 2027: 30_000_000, 2028: 80_000_000, 2029: 40_000_000 } },
-  { project: 'Acquisition terrain', start: 2028, end: 2028, annualSpend: { 2028: 90_000_000 } },
-  { project: 'Projet d’extension phase 1', start: 2029, end: 2030, annualSpend: { 2029: 55_000_000, 2030: 55_000_000 } },
+  { project: 'Climatisation (phases 2 & 3)', start: 2026, end: 2027, annualSpend: { 2026: 60_000_000, 2027: 60_000_000 } },
+  { project: 'Couverture terrain de sport', start: 2026, end: 2026, annualSpend: { 2026: 66_700_000 } },
+  { project: 'Solaire terrain de sport', start: 2027, end: 2027, annualSpend: { 2027: 20_800_000 } },
+  { project: 'Piscine', start: 2027, end: 2028, annualSpend: { 2027: 67_500_000, 2028: 67_500_000 } },
+  { project: 'Restauration scolaire', start: 2028, end: 2029, annualSpend: { 2028: 60_000_000, 2029: 66_700_000 } },
+  { project: 'Acquisition terrain', start: 2028, end: 2028, annualSpend: { 2028: 30_000_000 } },
+  { project: 'Projet d’extension phase 1', start: 2030, end: 2030, annualSpend: { 2030: 200_000_000 } },
 ];
 
 const years = [2026, 2027, 2028, 2029, 2030];
 
-const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
-        <p className="text-sm font-semibold text-slate-900">{label}</p>
-        {payload.map((entry) => (
-          <p key={`${entry.name}-${entry.dataKey}`} className="text-xs text-slate-700">
-            {entry.name}: <span className="font-semibold">{currencyFormatter.format(Number(entry.value ?? 0))}</span>
-          </p>
-        ))}
-      </div>
-    );
-  }
-  return null;
-};
-
 const BudgetCadreVieInfrastructures = () => {
+  const [currency, setCurrency] = useState<'XOF' | 'EUR'>('XOF');
   const cumulativeTuition = 345_139_418;
-  const annualTotals = years.map((year) =>
-    projectSchedule.reduce((total, project) => total + (project.annualSpend[year] ?? 0), 0),
+  const annualTotals = [126_700_000, 147_500_000, 127_500_000, 66_700_000, 200_000_000];
+
+  const cashFlowRows = useMemo(
+    () =>
+      financialTimeline.map((row) => ({
+        ...row,
+        solde: row.recettesTotales - row.depenses,
+      })),
+    [],
   );
 
+  const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
+          <p className="text-sm font-semibold text-slate-900">{label}</p>
+          {payload.map((entry) => (
+            <p key={`${entry.name}-${entry.dataKey}`} className="text-xs text-slate-700">
+              {entry.name}: <span className="font-semibold">{formatCurrency(Number(entry.value ?? 0), currency)}</span>
+            </p>
+          ))}
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
-    <section id="budget-cadre-vie" className="mt-8 space-y-6">
+    <section id="budget-cadre-vie" className="mt-10 space-y-8">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-french-blue">Cadre de vie & infrastructures</p>
@@ -186,9 +197,27 @@ const BudgetCadreVieInfrastructures = () => {
             Vue synthétique des investissements, flux de trésorerie et leviers de financement sur 2026-2030.
           </p>
         </div>
-        <div className="inline-flex items-center gap-2 rounded-full bg-french-blue/10 px-3 py-1 text-xs font-semibold text-french-blue">
-          <Info className="h-4 w-4" aria-hidden />
-          Données indicatives – à affiner avec les budgets annuels
+        <div className="flex flex-col items-end gap-2 text-sm sm:flex-row sm:items-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-french-blue/10 px-3 py-1 text-xs font-semibold text-french-blue">
+            <Info className="h-4 w-4" aria-hidden />
+            Données indicatives – à affiner avec les budgets annuels
+          </div>
+          <div className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-2 py-1 text-xs font-semibold text-slate-700 shadow-sm">
+            <button
+              type="button"
+              onClick={() => setCurrency('XOF')}
+              className={`rounded-full px-3 py-1 transition ${currency === 'XOF' ? 'bg-french-blue text-white shadow-sm' : 'hover:bg-slate-50'}`}
+            >
+              FCFA
+            </button>
+            <button
+              type="button"
+              onClick={() => setCurrency('EUR')}
+              className={`rounded-full px-3 py-1 transition ${currency === 'EUR' ? 'bg-french-blue text-white shadow-sm' : 'hover:bg-slate-50'}`}
+            >
+              Euros
+            </button>
+          </div>
         </div>
       </div>
 
@@ -203,7 +232,7 @@ const BudgetCadreVieInfrastructures = () => {
               <div className="flex items-start justify-between gap-3">
                 <div className="space-y-1">
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-600">{card.label}</p>
-                  <p className="text-2xl font-bold text-slate-900">{currencyFormatter.format(card.value)}</p>
+                  <p className="text-2xl font-bold text-slate-900">{formatCurrency(card.value, currency)}</p>
                 </div>
                 <span className="rounded-xl bg-white/70 p-2 shadow-inner">
                   <Icon className="h-5 w-5" aria-hidden />
@@ -236,7 +265,7 @@ const BudgetCadreVieInfrastructures = () => {
                     </div>
                     <p className="text-sm text-slate-700">{project.description}</p>
                     <p className="text-sm font-semibold text-emerald-700">
-                      {currencyFormatter.format(project.budget)}
+                      {formatCurrency(project.budget, currency)}
                     </p>
                   </div>
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white text-slate-500 shadow-inner transition group-hover:bg-french-blue/10 group-hover:text-french-blue">
@@ -249,14 +278,16 @@ const BudgetCadreVieInfrastructures = () => {
         </div>
 
         <div className="space-y-4">
-          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-            <div className="mb-3 flex items-center justify-between">
-              <div>
+            <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+              <div className="mb-3 flex items-center justify-between">
+                <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Analyse financière</p>
-                <h5 className="text-lg font-semibold text-slate-900">Flux de trésorerie prévisionnel (XOF)</h5>
+                <h5 className="text-lg font-semibold text-slate-900">
+                  Flux de trésorerie prévisionnel ({currency})
+                </h5>
+                </div>
+                <BarChart3 className="h-5 w-5 text-french-blue" aria-hidden />
               </div>
-              <BarChart3 className="h-5 w-5 text-french-blue" aria-hidden />
-            </div>
             <div className="h-72">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={financialTimeline}>
@@ -266,7 +297,23 @@ const BudgetCadreVieInfrastructures = () => {
                   <Tooltip content={<CustomTooltip />} />
                   <Legend />
                   <Bar name="Dépenses projets" dataKey="depenses" fill="#ef4444" radius={[6, 6, 0, 0]} />
-                  <Line name="Capacité d’investissement" type="monotone" dataKey="recettesTotales" stroke="#22c55e" strokeWidth={3} dot={{ r: 4 }} />
+                  <Line
+                    name="Capacité d’investissement"
+                    type="monotone"
+                    dataKey="recettesTotales"
+                    stroke="#0f172a"
+                    strokeWidth={3}
+                    dot={{ r: 4 }}
+                  />
+                  <Line
+                    name="Capacité (base)"
+                    type="monotone"
+                    dataKey="capacite"
+                    stroke="#22c55e"
+                    strokeWidth={3}
+                    strokeDasharray="6 4"
+                    dot={{ r: 5 }}
+                  />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -277,8 +324,8 @@ const BudgetCadreVieInfrastructures = () => {
               <h5 className="text-lg font-semibold text-slate-900">Trésorerie annuelle</h5>
               <CheckCircle2 className="h-5 w-5 text-emerald-600" aria-hidden />
             </div>
-            <div className="overflow-hidden rounded-xl border border-slate-100">
-              <table className="min-w-full divide-y divide-slate-100 text-sm">
+            <div className="overflow-auto rounded-xl border border-slate-100" style={{ maxHeight: '320px' }}>
+              <table className="min-w-[640px] divide-y divide-slate-100 text-sm">
                 <thead className="bg-slate-50 text-xs uppercase text-slate-500">
                   <tr>
                     <th className="px-4 py-2 text-left">Année</th>
@@ -290,18 +337,18 @@ const BudgetCadreVieInfrastructures = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 bg-white">
-                  {financialTimeline.map((row) => {
-                    const solde = row.recettesTotales - row.depenses;
+                  {cashFlowRows.map((row) => {
+                    const solde = row.solde;
                     const soldePositive = solde >= 0;
                     return (
                       <tr key={row.year} className="hover:bg-slate-50">
                         <td className="px-4 py-2 font-semibold text-slate-900">{row.year}</td>
-                        <td className="px-4 py-2 text-right text-slate-700">{currencyFormatter.format(row.capacite)}</td>
-                        <td className="px-4 py-2 text-right text-slate-700">{currencyFormatter.format(row.leviers)}</td>
-                        <td className="px-4 py-2 text-right font-semibold text-slate-900">{currencyFormatter.format(row.recettesTotales)}</td>
-                        <td className="px-4 py-2 text-right text-rose-600">{currencyFormatter.format(row.depenses)}</td>
+                        <td className="px-4 py-2 text-right text-slate-700">{formatCurrency(row.capacite, currency)}</td>
+                        <td className="px-4 py-2 text-right text-slate-700">{formatCurrency(row.leviers, currency)}</td>
+                        <td className="px-4 py-2 text-right font-semibold text-slate-900">{formatCurrency(row.recettesTotales, currency)}</td>
+                        <td className="px-4 py-2 text-right text-rose-600">{formatCurrency(row.depenses, currency)}</td>
                         <td className={`px-4 py-2 text-right font-semibold ${soldePositive ? 'text-emerald-700' : 'text-rose-600'}`}>
-                          {currencyFormatter.format(solde)}
+                          {formatCurrency(solde, currency)}
                         </td>
                       </tr>
                     );
@@ -351,7 +398,7 @@ const BudgetCadreVieInfrastructures = () => {
                   {years.map((year, index) => (
                     <div key={year} className="flex items-center justify-between rounded-lg bg-white px-3 py-2 shadow-sm">
                       <span>{year}</span>
-                      <span className="text-emerald-700">{currencyFormatter.format(annualTotals[index])}</span>
+                      <span className="text-emerald-700">{formatCurrency(annualTotals[index], currency)}</span>
                     </div>
                   ))}
                 </div>
@@ -367,7 +414,7 @@ const BudgetCadreVieInfrastructures = () => {
               <PiggyBank className="h-5 w-5 text-emerald-600" aria-hidden />
             </div>
             <p className="mb-3 text-xs font-semibold text-slate-600">
-              Base revenus: <span className="font-bold text-slate-900">{currencyFormatter.format(tuitionBaseRevenue)}</span>
+              Base revenus: <span className="font-bold text-slate-900">{formatCurrency(tuitionBaseRevenue, currency)}</span>
             </p>
             <div className="overflow-hidden rounded-xl border border-slate-100">
               <table className="min-w-full divide-y divide-slate-100 text-sm">
@@ -383,16 +430,16 @@ const BudgetCadreVieInfrastructures = () => {
                     <tr key={item.year} className="hover:bg-slate-50">
                       <td className="px-4 py-2 font-semibold text-slate-900">{item.year}</td>
                       <td className="px-4 py-2 text-right text-slate-700">{item.increase}%</td>
-                      <td className="px-4 py-2 text-right font-semibold text-emerald-700">{currencyFormatter.format(item.revenue)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className="mt-3 flex items-center justify-between rounded-xl bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-800">
-              <span>Cumul généré (2026-2030)</span>
-              <span>{currencyFormatter.format(cumulativeTuition)}</span>
-            </div>
+                      <td className="px-4 py-2 text-right font-semibold text-emerald-700">{formatCurrency(item.revenue, currency)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-3 flex items-center justify-between rounded-xl bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-800">
+            <span>Cumul généré (2026-2030)</span>
+            <span>{formatCurrency(cumulativeTuition, currency)}</span>
+          </div>
             <p className="mt-2 text-xs text-slate-600">
               Ajustez les pourcentages d’augmentation ci-dessus pour simuler d’autres scénarios de recettes liées aux écolages.
             </p>
