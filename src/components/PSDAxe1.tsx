@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
+  BarChart3,
   Building,
   BusFront,
   ChevronDown,
@@ -18,6 +19,7 @@ import {
   Users2,
   Sun,
 } from 'lucide-react';
+import BudgetCadreVieInfrastructures from './BudgetCadreVieInfrastructures';
 
 const PSDAxe1 = () => {
   const [isTimelineExpanded, setTimelineExpanded] = useState(false);
@@ -143,6 +145,12 @@ const PSDAxe1 = () => {
           link: '/transport-scolaire',
           linkAriaLabel: 'En savoir plus – Transport scolaire',
           linkIcon: BusFront
+        },
+        {
+          content: <strong>Budget d’amélioration</strong>,
+          link: '#budget-cadre-vie',
+          linkAriaLabel: 'Voir le budget d’amélioration – Cadre de vie & infrastructures',
+          linkIcon: BarChart3
         }
       ]
     },
@@ -377,6 +385,11 @@ const PSDAxe1 = () => {
                     );
                   })}
                 </ul>
+                {section.title === 'Cadre de vie & infrastructures' && (
+                  <div className="mt-6">
+                    <BudgetCadreVieInfrastructures />
+                  </div>
+                )}
               </li>
             ))}
           </ul>
