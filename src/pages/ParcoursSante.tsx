@@ -161,7 +161,7 @@ const domains: Domain[] = [
       },
       {
         label: 'Vademecum Eduscol – éducation à l’alimentation et au goût.',
-        href: 'https://eduscol.education.fr/media/1857/download?utm_source=chatgpt.com',
+        href: 'https://drive.google.com/file/d/189HIdAqo4osht4bT5U9k_66mvZyIIGgZ/view?usp=sharing',
       },
     ],
   },
