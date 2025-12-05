@@ -336,40 +336,52 @@ const domains: Domain[] = [
         level: 'Cycle 1 (PS–GS)',
         focus: 'Gestes essentiels',
         details: [
-          'Lavage des mains, brossage des dents et protection solaire ; ressource “Vivre avec le soleil”.',
+          'Éducation au lavage des mains, au brossage des dents et à la protection contre le soleil (ressource “Vivre avec le soleil”).',
           'Contrôle infirmier des 6 ans.',
         ],
       },
       {
         level: 'Cycle 2 (CP–CE2)',
-        focus: 'Hygiène corporelle et sommeil',
+        focus: 'Hygiène corporelle et bucco-dentaire',
         details: [
-          "CP : hygiène corporelle et bucco-dentaire (perte des dents de lait), intervention de l'infirmière ou d'un dentiste.",
-          'Protection solaire et contrôle infirmier des 11 ans.',
+          "Éducation à l'hygiène corporelle et à l'hygiène bucco-dentaire (perte des dents de lait).",
+          "Intervention de l'infirmière ou d'un dentiste et poursuite de la protection contre le soleil.",
+          'Ressource possible : “Vivre avec le soleil”.',
         ],
       },
       {
         level: 'Cycle 3 (CM1–6e)',
-        focus: 'Sommeil et santé mentale',
+        focus: 'Hygiène corporelle renforcée',
         details: [
-          "6° : importance du sommeil pour la croissance, la mémorisation et l'attention ; contrôle infirmier des 15 ans.",
-          'Cellules d’écoute infirmière autour de la santé mentale des adolescents.',
+          "Hygiène corporelle et bucco-dentaire (perte des dents de lait) avec intervention de l'infirmière ou d'un dentiste.",
+          'Protection contre le soleil ; ressource “Vivre avec le soleil”.',
+          'Contrôle infirmier des 11 ans.',
         ],
       },
       {
         level: 'Cycle 4 (5e–3e)',
-        focus: 'Rappels sanitaires',
-        details: ['Focus périodiques sur vaccination, hygiène et prévention des risques quotidiens.'],
+        focus: 'Sommeil et santé mentale',
+        details: [
+          "Sensibilisation à l'importance du sommeil dans les processus de croissance, de mémorisation et de facultés d'attention.",
+          'Contrôle infirmier des 15 ans.',
+          "Déploiement de cellules d'écoute infirmière pour travailler sur la santé mentale des adolescents.",
+        ],
       },
       {
         level: 'Lycée',
         focus: 'Prévention ciblée',
-        details: ['2nde : sensibilisation aux IST – journée mondiale de lutte contre le SIDA (1er décembre).'],
+        details: [
+          'Sensibilisation aux dangers des IST : participation à la journée mondiale de lutte contre le SIDA du 1er décembre.',
+          "Déploiement de cellules d'écoute infirmière pour travailler sur la santé mentale des adolescents.",
+        ],
       },
     ],
     references: [
       { label: 'Programmes vaccination / hygiène AEFE.' },
-      { label: 'Ressource “Vivre avec le soleil”.' },
+      {
+        label: 'Ressource “Vivre avec le soleil”.',
+        href: 'https://fondation-lamap.org/projet/vivre-avec-le-soleil',
+      },
     ],
   },
 ];
