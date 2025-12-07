@@ -186,7 +186,7 @@ const Connectivite20 = () => {
             </CardHeader>
             <CardContent className="space-y-3 text-gray-700 leading-relaxed">
               <p>
-                Annoncer le recrutement d’un informaticien-administrateur réseau à partir de 2026.
+                - recrutement d’un informaticien-administrateur réseau à partir de 2026.
               </p>
               <p>
                 Rôle : gestion du réseau, maintenance informatique, développement des outils numériques internes, accompagnement pédagogique, cybersécurité, pilotage des projets numériques.
@@ -223,7 +223,7 @@ const Connectivite20 = () => {
             </CardHeader>
             <CardContent className="space-y-3 text-gray-700 leading-relaxed">
               <p>
-                Mentionner l’étude en cours d’un passage à une ligne professionnelle haut débit (coût estimé : 400 000 FCFA mensuels) et son intégration dans la projection budgétaire pluriannuelle.
+                Étudier le passage à une ligne professionnelle haut débit (coût estimé : 400 000 FCFA mensuels) et son intégration dans la projection budgétaire pluriannuelle.
               </p>
               <Separator />
               <div className="flex flex-wrap gap-3 text-sm">
