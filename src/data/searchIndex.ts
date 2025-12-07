@@ -120,6 +120,13 @@ export const searchIndex: SearchEntry[] = [
     category: 'Curricula',
   },
   {
+    path: '/connectivite-2-0',
+    title: 'Connectivité 2.0',
+    description: 'Feuille de route réseau et connectivité du LFJP 2023-2030.',
+    keywords: ['wifi', 'réseau', 'infrastructure', 'connectivité'],
+    category: 'Plan stratégique',
+  },
+  {
     path: '/mecenat-numerique',
     title: 'Mécénat numérique',
     description: 'Mobilisation de partenaires pour soutenir les projets digitaux.',

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { GraduationCap, HandCoins, Laptop } from 'lucide-react';
+import { GraduationCap, HandCoins, Laptop, Wifi } from 'lucide-react';
 import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe3 = () => {
@@ -94,7 +94,14 @@ const PSDAxe3 = () => {
       title: 'Établissement digitalisé et partenariats',
       items: [
         {
-          content: <>Connectivité 2.0</>
+          content: (
+            <>
+              <strong>Connectivité 2.0</strong>
+            </>
+          ),
+          link: '/connectivite-2-0',
+          linkAriaLabel: 'Consulter la fiche Connectivité 2.0',
+          linkIcon: Wifi
         },
         {
           content: <>Profil digital du LFJP</>

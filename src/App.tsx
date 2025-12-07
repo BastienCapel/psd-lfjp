@@ -48,6 +48,7 @@ import IntroductionAuCode from "./pages/IntroductionAuCode";
 import ModuleIA from "./pages/ModuleIA";
 import EducationNumeriqueCitoyen from "./pages/EducationNumeriqueCitoyen";
 import BudgetCadreVieInfrastructuresPage from "./pages/BudgetCadreVieInfrastructures";
+import Connectivite20 from "./pages/Connectivite20";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./components/ScrollToTop";
@@ -172,6 +173,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <EducationNumeriqueCitoyen />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/connectivite-2-0" element={
+                  <>
+                    <BreadcrumbNav />
+                    <Connectivite20 />
                     <BackToTop />
                   </>
                 } />
