@@ -44,6 +44,10 @@
     "name": "Éducation au numérique citoyen",
     "parent": "/plan-strategique"
   },
+  "/connectivite-2-0": {
+    "name": "Connectivité 2.0",
+    "parent": "/plan-strategique"
+  },
   "/parcours-avenir": {
     "name": "Parcours Avenir",
     "parent": "/plan-strategique/axe-4"
