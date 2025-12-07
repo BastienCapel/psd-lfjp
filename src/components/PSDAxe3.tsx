@@ -110,7 +110,10 @@ const PSDAxe3 = () => {
           linkIcon: Laptop
         },
         {
-          content: <>Laboratoire numérique</>
+          content: <>Laboratoire numérique</>,
+          link: '/laboratoire-numerique',
+          linkAriaLabel: 'Découvrir le Laboratoire numérique',
+          linkIcon: Laptop
         },
         {
           content: (
