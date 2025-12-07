@@ -77,7 +77,10 @@ const PSDAxe3 = () => {
           linkIcon: GraduationCap
         },
         {
-          content: <>Module IA</>
+          content: <>Module IA</>,
+          link: '/module-ia',
+          linkAriaLabel: 'Consulter le module IA',
+          linkIcon: GraduationCap
         },
         {
           content: <>Éducation au numérique citoyen</>
