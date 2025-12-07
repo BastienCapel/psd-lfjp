@@ -84,9 +84,6 @@ const PSDAxe3 = () => {
         },
         {
           content: <>Éducation au numérique citoyen</>
-        },
-        {
-          content: <>Sorties pédagogiques</>
         }
       ]
     },
