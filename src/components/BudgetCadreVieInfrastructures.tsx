@@ -91,6 +91,7 @@ const projects: Project[] = [
     period: '2026',
     budget: 75_000_000,
     color: 'from-amber-100 to-orange-50',
+    link: 'https://psd-lfjp.netlify.app/couverture-terrain-sport',
   },
   {
     title: 'Solaire terrain de sport',
@@ -112,6 +113,7 @@ const projects: Project[] = [
     period: '2027 – 2029',
     budget: 200_000_000,
     color: 'from-orange-100 to-amber-50',
+    link: 'https://psd-lfjp.netlify.app/construction-cantine',
   },
   {
     title: 'Acquisition terrain',
@@ -345,6 +347,7 @@ const BudgetCadreVieInfrastructures = () => {
                   <span className="h-px flex-1 bg-slate-200" aria-hidden />
                 </div>
                 {items.map((project) => {
+                  const hasLink = Boolean(project.link);
                   const cardContent = (
                     <div className="flex items-start gap-3">
                       <div className="flex-1 space-y-1">
@@ -360,13 +363,19 @@ const BudgetCadreVieInfrastructures = () => {
                           {formatCurrency(project.budget, currency)}
                         </p>
                       </div>
-                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white text-slate-500 shadow-inner transition group-hover:bg-french-blue/10 group-hover:text-french-blue">
-                        <ArrowUpRight className="h-4 w-4" aria-hidden />
-                      </span>
+                      {hasLink ? (
+                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white text-slate-500 shadow-inner transition group-hover:bg-french-blue/10 group-hover:text-french-blue">
+                          <ArrowUpRight className="h-4 w-4" aria-hidden />
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center justify-center rounded-full bg-slate-900/80 px-3 py-1 text-[11px] font-semibold text-white shadow-inner">
+                          Lien à venir
+                        </span>
+                      )}
                     </div>
                   );
 
-                  return project.link ? (
+                  return hasLink ? (
                     <a
                       key={project.title}
                       href={project.link}
