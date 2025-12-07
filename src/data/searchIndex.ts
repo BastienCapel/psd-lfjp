@@ -127,6 +127,13 @@ export const searchIndex: SearchEntry[] = [
     category: 'Plan stratégique',
   },
   {
+    path: '/profil-digital-lfjp',
+    title: 'Profil digital du LFJP',
+    description: 'Panorama des équipements, solutions et services numériques du lycée.',
+    keywords: ['numérique', 'équipements', 'logiciels', 'services'],
+    category: 'Plan stratégique',
+  },
+  {
     path: '/mecenat-numerique',
     title: 'Mécénat numérique',
     description: 'Mobilisation de partenaires pour soutenir les projets digitaux.',
