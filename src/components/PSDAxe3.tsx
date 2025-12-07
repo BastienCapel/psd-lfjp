@@ -104,7 +104,10 @@ const PSDAxe3 = () => {
           linkIcon: Wifi
         },
         {
-          content: <>Profil digital du LFJP</>
+          content: <>Profil digital du LFJP</>,
+          link: '/profil-digital-lfjp',
+          linkAriaLabel: 'Découvrir le profil digital du LFJP',
+          linkIcon: Laptop
         },
         {
           content: <>Laboratoire numérique</>

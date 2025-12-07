@@ -48,6 +48,10 @@
     "name": "Connectivité 2.0",
     "parent": "/plan-strategique"
   },
+  "/profil-digital-lfjp": {
+    "name": "Profil digital du LFJP",
+    "parent": "/plan-strategique"
+  },
   "/parcours-avenir": {
     "name": "Parcours Avenir",
     "parent": "/plan-strategique/axe-4"
