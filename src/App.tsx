@@ -46,6 +46,7 @@ import JumelagesPartagesProjets from "./pages/JumelagesPartagesProjets";
 import EchangesScolairesADNAEFE from "./pages/EchangesScolairesADNAEFE";
 import IntroductionAuCode from "./pages/IntroductionAuCode";
 import ModuleIA from "./pages/ModuleIA";
+import EducationNumeriqueCitoyen from "./pages/EducationNumeriqueCitoyen";
 import BudgetCadreVieInfrastructuresPage from "./pages/BudgetCadreVieInfrastructures";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
@@ -164,6 +165,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ModuleIA />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/education-numerique-citoyen" element={
+                  <>
+                    <BreadcrumbNav />
+                    <EducationNumeriqueCitoyen />
                     <BackToTop />
                   </>
                 } />

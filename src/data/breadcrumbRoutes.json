@@ -36,6 +36,14 @@
     "name": "Introduction au code",
     "parent": "/plan-strategique"
   },
+  "/module-ia": {
+    "name": "Module IA",
+    "parent": "/plan-strategique"
+  },
+  "/education-numerique-citoyen": {
+    "name": "Éducation au numérique citoyen",
+    "parent": "/plan-strategique"
+  },
   "/parcours-avenir": {
     "name": "Parcours Avenir",
     "parent": "/plan-strategique/axe-4"

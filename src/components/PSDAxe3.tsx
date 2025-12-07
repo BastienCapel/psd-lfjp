@@ -83,7 +83,10 @@ const PSDAxe3 = () => {
           linkIcon: GraduationCap
         },
         {
-          content: <>Éducation au numérique citoyen</>
+          content: <>Éducation au numérique citoyen</>,
+          link: '/education-numerique-citoyen',
+          linkAriaLabel: 'Découvrir l\'éducation au numérique citoyen',
+          linkIcon: GraduationCap
         }
       ]
     },
