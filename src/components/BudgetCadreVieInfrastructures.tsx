@@ -403,7 +403,7 @@ const BudgetCadreVieInfrastructures = () => {
               </div>
             <div className="h-72" role="img" aria-label="Graphique des flux de trésorerie prévisionnels 2026-2030">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={chartData}>
+                <BarChart data={chartData} margin={{ top: 28, right: 16, left: 52, bottom: 14 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                   <XAxis
                     dataKey="year"
@@ -411,19 +411,21 @@ const BudgetCadreVieInfrastructures = () => {
                     label={{ value: 'Années', position: 'insideBottom', offset: -5, fill: '#475569', fontSize: 12 }}
                   />
                   <YAxis
+                    width={96}
                     tickFormatter={axisTickFormatter}
                     tick={{ fill: '#1e293b', fontSize: 12 }}
                     label={{
                       value: `Montants (${currency})`,
                       angle: -90,
                       position: 'insideLeft',
-                      offset: 10,
-                      fill: '#475569',
+                      offset: 4,
+                      fill: '#334155',
                       fontSize: 12,
+                      fontWeight: 700,
                     }}
                   />
                   <Tooltip content={<CustomTooltip />} />
-                  <Legend verticalAlign="top" align="left" content={<CustomLegend />} />
+                  <Legend verticalAlign="top" align="left" content={<CustomLegend />} wrapperStyle={{ paddingLeft: 4 }} />
                   <Bar name="Dépenses projets" dataKey="depenses" fill="#ef4444" radius={[6, 6, 0, 0]} />
                   <Line
                     name="Capacité d’investissement"
@@ -546,9 +548,12 @@ const BudgetCadreVieInfrastructures = () => {
                 <p className="mb-2 font-semibold text-slate-900">Total annuel (dépenses projets)</p>
                 <div className="grid grid-cols-2 gap-2 text-xs font-semibold text-slate-700 sm:grid-cols-3 lg:grid-cols-5">
                   {years.map((year, index) => (
-                    <div key={year} className="flex items-center justify-between rounded-lg bg-white px-3 py-2 shadow-sm">
-                      <span>{year}</span>
-                      <span className="text-emerald-700">{formatCurrency(annualTotals[index], currency)}</span>
+                    <div
+                      key={year}
+                      className="flex flex-col items-center justify-center rounded-lg bg-white px-3 py-2 text-center shadow-sm"
+                    >
+                      <span className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">{year}</span>
+                      <span className="text-sm font-semibold text-emerald-700">{formatCurrency(annualTotals[index], currency)}</span>
                     </div>
                   ))}
                 </div>
