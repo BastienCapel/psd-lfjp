@@ -99,6 +99,13 @@ export const searchIndex: SearchEntry[] = [
     category: 'Curricula',
   },
   {
+    path: '/module-ia',
+    title: 'Module IA',
+    description: 'Culture, éthique et usages pédagogiques de l’intelligence artificielle au LFJP.',
+    keywords: ['intelligence artificielle', 'PIX', 'éthique', 'formation'],
+    category: 'Pédagogie',
+  },
+  {
     path: '/classe-numerique',
     title: 'Classe numérique',
     description: 'Expérimentations pédagogiques soutenues par le numérique.',

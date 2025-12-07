@@ -45,6 +45,7 @@ import VoyagesScolairesInternationaux from "./pages/VoyagesScolairesInternationa
 import JumelagesPartagesProjets from "./pages/JumelagesPartagesProjets";
 import EchangesScolairesADNAEFE from "./pages/EchangesScolairesADNAEFE";
 import IntroductionAuCode from "./pages/IntroductionAuCode";
+import ModuleIA from "./pages/ModuleIA";
 import BudgetCadreVieInfrastructuresPage from "./pages/BudgetCadreVieInfrastructures";
 import BreadcrumbNav from "./components/Breadcrumb";
 import BackToTop from "./components/BackToTop";
@@ -156,6 +157,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <IntroductionAuCode />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/module-ia" element={
+                  <>
+                    <BreadcrumbNav />
+                    <ModuleIA />
                     <BackToTop />
                   </>
                 } />
