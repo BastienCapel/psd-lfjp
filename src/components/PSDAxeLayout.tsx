@@ -165,7 +165,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
                       const ariaLabel = item.linkAriaLabel ?? 'En savoir plus';
                       const isExternal = item.link.startsWith('http');
                       const linkClassName =
-                        'ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center';
+                        'ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-french-blue/60 bg-french-blue/5 px-3 py-1.5 text-xs font-semibold text-french-blue transition hover:bg-french-blue/10 hover:border-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center';
                       const linkContent = (
                         <>
                           <LinkIcon className="h-4 w-4" aria-hidden="true" />
@@ -180,7 +180,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
                               <span className="text-gray-700 font-semibold">{item.content}</span>
                               <span
                                 aria-hidden="true"
-                                className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
+                                className="hidden h-px flex-1 border-b border-dashed border-french-blue/50 sm:block"
                               />
                             </div>
                             {isExternal ? (
@@ -227,7 +227,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
                 const ariaLabel = item.linkAriaLabel ?? 'En savoir plus';
                 const isExternal = item.link.startsWith('http');
                 const linkClassName =
-                  'ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:text-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center';
+                  'ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-french-blue/60 bg-french-blue/5 px-3 py-1.5 text-xs font-semibold text-french-blue transition hover:bg-french-blue/10 hover:border-french-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center';
                 const linkContent = (
                   <>
                     <LinkIcon className="h-4 w-4" aria-hidden="true" />
@@ -242,7 +242,7 @@ const PSDAxeLayout: React.FC<PSDAxeLayoutProps> = ({
                         <span className="text-gray-700 font-semibold">{item.content}</span>
                         <span
                           aria-hidden="true"
-                          className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
+                          className="hidden h-px flex-1 border-b border-dashed border-french-blue/50 sm:block"
                         />
                       </div>
                       {isExternal ? (
