@@ -13,6 +13,8 @@ import {
   Link as LinkIcon,
   ArrowLeft,
   Home,
+  CalendarClock,
+  Milestone,
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -127,6 +129,39 @@ const CurriculumNumeriqueSpiralaire: React.FC = () => {
         'Concours, hackathons, ateliers robotiques',
         "Visites d'acteurs du numérique au Sénégal",
       ],
+    },
+  ];
+
+  const timelineYears = ['2024', '2025', '2026', '2027'];
+
+  const ganttPhases = [
+    {
+      title: 'Cycle 3 : acculturation et premiers projets',
+      detail: 'Ateliers usages responsables, premiers algorithmes en blocs, défis créatifs courts.',
+      start: 0,
+      end: 1,
+      color: 'bg-blue-500',
+    },
+    {
+      title: 'Cycle 4 : consolidation CRCN & médias',
+      detail: 'Production audio/vidéo, recherche d’information, projets collaboratifs ENT.',
+      start: 1,
+      end: 2,
+      color: 'bg-indigo-500',
+    },
+    {
+      title: 'Lycée : PIX, IA et interdisciplinarité',
+      detail: 'Python, données et IA responsable ; préparation à la certification PIX.',
+      start: 2,
+      end: 3.2,
+      color: 'bg-emerald-500',
+    },
+    {
+      title: 'Essaimage & réseau AEFE',
+      detail: 'Partage de scénarios, formations entre pairs, participation aux concours/hackathons.',
+      start: 1.4,
+      end: 3.6,
+      color: 'bg-orange-500',
     },
   ];
 
@@ -247,6 +282,67 @@ const CurriculumNumeriqueSpiralaire: React.FC = () => {
               </ul>
             </Card>
           </div>
+        </Section>
+
+        <Section
+          id="frise-temporelle"
+          title="Frise temporelle"
+          subtitle="Vue d’ensemble pluriannuelle sous forme de graphique de Gantt simplifié."
+        >
+          <Card>
+            <div className="flex items-center gap-3 text-sm text-gray-700">
+              <CalendarClock className="w-5 h-5 text-blue-600" />
+              <p className="leading-relaxed">
+                Les phases se chevauchent : chaque cycle ancre des usages numériques avant de passer à la consolidation, puis à
+                l’essaimage dans le réseau AEFE.
+              </p>
+            </div>
+
+            <div className="mt-6 space-y-4">
+              <div className="flex justify-between text-xs font-semibold text-gray-500">
+                {timelineYears.map((year) => (
+                  <span key={year}>{year}</span>
+                ))}
+              </div>
+
+              <div className="relative h-32 rounded-2xl border border-gray-200 bg-gradient-to-r from-gray-50 via-white to-gray-50 overflow-hidden">
+                {timelineYears.map((year, index) => (
+                  <div
+                    key={year}
+                    className="absolute top-0 bottom-0 w-px bg-gray-200"
+                    style={{ left: `${(index / (timelineYears.length - 1)) * 100}%` }}
+                  />
+                ))}
+
+                {ganttPhases.map((phase, index) => (
+                  <div
+                    key={phase.title}
+                    className={`absolute left-0 h-10 rounded-full shadow-sm text-white text-xs font-semibold flex items-center px-3 gap-2 ${phase.color}`}
+                    style={{
+                      top: `${10 + index * 22}%`,
+                      left: `${(phase.start / timelineYears.length) * 100}%`,
+                      width: `${((phase.end - phase.start) / timelineYears.length) * 100}%`,
+                    }}
+                  >
+                    <Milestone className="w-4 h-4 opacity-90" />
+                    <span className="truncate">{phase.title}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
+                {ganttPhases.map((phase) => (
+                  <div key={phase.title} className="flex items-start gap-3">
+                    <span className={`mt-1 inline-flex h-3 w-3 rounded-full ${phase.color}`} aria-hidden />
+                    <div>
+                      <p className="font-semibold">{phase.title}</p>
+                      <p className="text-gray-600 text-sm leading-relaxed">{phase.detail}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Card>
         </Section>
 
         <Section
