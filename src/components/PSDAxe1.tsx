@@ -110,6 +110,12 @@ const PSDAxe1 = () => {
       title: 'Cadre de vie & infrastructures',
       items: [
         {
+          content: <strong>Budget d’amélioration</strong>,
+          link: '/budget-cadre-vie-infrastructures',
+          linkAriaLabel: 'Voir le budget d’amélioration – Cadre de vie & infrastructures',
+          linkIcon: BarChart3
+        },
+        {
           content: <strong>Climatisation durable</strong>,
           link: '/climatisation-durable',
           linkAriaLabel: 'En savoir plus – Climatisation durable',
@@ -144,12 +150,6 @@ const PSDAxe1 = () => {
           link: '/transport-scolaire',
           linkAriaLabel: 'En savoir plus – Transport scolaire',
           linkIcon: BusFront
-        },
-        {
-          content: <strong>Budget d’amélioration</strong>,
-          link: '/budget-cadre-vie-infrastructures',
-          linkAriaLabel: 'Voir le budget d’amélioration – Cadre de vie & infrastructures',
-          linkIcon: BarChart3
         }
       ]
     },
@@ -360,12 +360,26 @@ const PSDAxe1 = () => {
                     }
 
                     const IconComponent = item.linkIcon ?? GraduationCap;
+                    const isPriority = item.link === '/budget-cadre-vie-infrastructures';
+                    const linkClasses = isPriority
+                      ? 'ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-french-blue bg-french-blue px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-french-blue/90 hover:shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center'
+                      : 'ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center';
+                    const wrapperClasses = isPriority
+                      ? 'rounded-xl border border-french-blue/40 bg-blue-50/70 p-3 shadow-sm'
+                      : '';
 
                     return (
-                      <li key={itemIndex}>
+                      <li key={itemIndex} className={wrapperClasses}>
                         <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
                           <div className="flex min-w-0 flex-1 items-center gap-3">
-                            <span className="text-gray-700">{item.content}</span>
+                            <span className={`text-gray-700 ${isPriority ? 'font-semibold text-french-blue' : ''}`}>
+                              {item.content}
+                            </span>
+                            {isPriority && (
+                              <span className="inline-flex items-center rounded-full bg-french-blue/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-french-blue">
+                                Priorité
+                              </span>
+                            )}
                             <span
                               aria-hidden="true"
                               className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
@@ -373,10 +387,13 @@ const PSDAxe1 = () => {
                           </div>
                           <Link
                             to={item.link}
-                            className="ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-slate-50 hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue sm:ml-0 sm:self-center"
+                            className={linkClasses}
                             aria-label={item.linkAriaLabel ?? 'En savoir plus'}
                           >
-                            <IconComponent className="h-4 w-4" aria-hidden="true" />
+                            <IconComponent
+                              className={`h-4 w-4 ${isPriority ? 'text-french-blue' : ''}`}
+                              aria-hidden="true"
+                            />
                             <span>En savoir plus</span>
                           </Link>
                         </div>
