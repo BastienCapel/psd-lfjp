@@ -375,6 +375,12 @@ const PSDAxe1 = () => {
 
                     const IconComponent = item.linkIcon ?? GraduationCap;
                     const isHighlighted = item.highlight;
+                    const linkClassName = isHighlighted
+                      ? 'ml-auto inline-flex shrink-0 items-center gap-2 rounded-full border border-amber-300 bg-white px-3 py-1.5 text-xs font-semibold text-amber-900 shadow-sm transition hover:bg-amber-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:ml-0 sm:self-center'
+                      : 'ml-auto inline-flex shrink-0 items-center gap-2 rounded-full bg-french-blue px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-french-blue/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-french-blue/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:ml-0 sm:self-center';
+                    const separatorClassName = isHighlighted
+                      ? 'hidden h-1 flex-1 rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 sm:block'
+                      : 'hidden h-1 flex-1 rounded-full bg-gradient-to-r from-french-blue via-french-blue/80 to-french-blue sm:block';
 
                     return (
                       <li
@@ -383,23 +389,14 @@ const PSDAxe1 = () => {
                       >
                         <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
                           <div className="flex min-w-0 flex-1 items-center gap-3">
-                            <span
-                              className={`text-gray-700 ${isHighlighted ? 'font-semibold text-amber-900' : ''}`}
-                            >
+                            <span className={`text-gray-700 font-semibold ${isHighlighted ? 'text-amber-900' : ''}`}>
                               {item.content}
                             </span>
-                            <span
-                              aria-hidden="true"
-                              className="hidden h-px flex-1 border-b border-dashed border-slate-300 sm:block"
-                            />
+                            <span aria-hidden="true" className={separatorClassName} />
                           </div>
                           <Link
                             to={item.link}
-                            className={`ml-auto inline-flex shrink-0 items-center gap-2 rounded-lg px-3 py-1.5 text-xs font-semibold transition hover:shadow-sm focus:outline-none focus-visible:ring-2 sm:ml-0 sm:self-center ${
-                              isHighlighted
-                                ? 'border border-amber-300 bg-white/80 text-amber-900 hover:bg-amber-100 focus-visible:ring-amber-400'
-                                : 'border border-slate-300 text-slate-800 hover:bg-slate-50 focus-visible:ring-french-blue'
-                            }`}
+                            className={linkClassName}
                             aria-label={item.linkAriaLabel ?? 'En savoir plus'}
                           >
                             <IconComponent
