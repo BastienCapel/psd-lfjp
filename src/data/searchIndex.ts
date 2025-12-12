@@ -64,6 +64,13 @@ export const searchIndex: SearchEntry[] = [
     category: 'Plan stratégique',
   },
   {
+    path: '/implication-des-familles',
+    title: 'Implication des familles',
+    description: 'Coéducation structurée avec les familles pour accompagner les réussites des élèves.',
+    keywords: ['familles', 'coéducation', 'suivi', 'dialogue'],
+    category: 'Plan stratégique',
+  },
+  {
     path: '/plan-strategique/axe-4',
     title: 'Axe 4 – Façonner les réussites',
     description: 'Transformation pédagogique autour de la réussite citoyenne.',
