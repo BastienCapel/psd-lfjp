@@ -71,13 +71,6 @@ export const searchIndex: SearchEntry[] = [
     category: 'Plan stratégique',
   },
   {
-    path: '/plan-strategique/axe-4',
-    title: 'Axe 4 – Façonner les réussites',
-    description: 'Transformation pédagogique autour de la réussite citoyenne.',
-    keywords: ['axe 4', 'priorités', 'réussite'],
-    category: 'Plan stratégique',
-  },
-  {
     path: '/plan-strategique/reussite-citoyenne',
     title: 'Réussite citoyenne',
     description: 'Actions pour développer l’engagement et l’autonomie des élèves.',

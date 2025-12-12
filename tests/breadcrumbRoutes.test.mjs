@@ -16,12 +16,11 @@ const expectedRoutes = {
   '/plan-maintenance-strategique': { parent: '/plan-strategique' },
   '/curriculum-soft-skills': { parent: '/plan-strategique' },
   '/curriculum-numerique-spiralaire': { parent: '/plan-strategique' },
-  '/parcours-avenir': { parent: '/plan-strategique/axe-4' },
+  '/parcours-avenir': { parent: '/plan-strategique' },
   '/section-internationale-bfi': { parent: '/plan-strategique' },
   '/pc-par-lyceen': { parent: '/plan-strategique' },
-  '/plan-strategique/axe-4': { parent: '/plan-strategique' },
-  '/plan-strategique/reussite-citoyenne': { parent: '/plan-strategique/axe-4' },
-  '/education-financiere-vie-autonome': { parent: '/plan-strategique/axe-4' },
+  '/plan-strategique/reussite-citoyenne': { parent: '/plan-strategique' },
+  '/education-financiere-vie-autonome': { parent: '/plan-strategique' },
   '/mecenat-numerique': { parent: '/plan-strategique' },
   '/construction-cantine': { parent: '/plan-strategique' },
   '/protocole-phare': { parent: '/plan-strategique' },
@@ -48,16 +47,6 @@ test('les routes racines sont présentes', () => {
   assert.ok(routes['/'], 'La route racine "/" doit être définie.');
   assert.ok(routes['/plan-strategique'], 'La page plan stratégique doit être définie.');
   assert.ok(routes['/diagnostic'], 'La page diagnostic doit être définie.');
-});
-
-test('la page Axe 4 est définie dans le plan stratégique', () => {
-  const axe4 = routes['/plan-strategique/axe-4'];
-  assert.ok(axe4, 'La route "/plan-strategique/axe-4" doit être définie.');
-  assert.strictEqual(
-    axe4.parent,
-    '/plan-strategique',
-    'La page Axe 4 doit avoir pour parent "/plan-strategique".'
-  );
 });
 
 test('les routes peuvent chaîner plusieurs parents jusqu\'à la racine', () => {
