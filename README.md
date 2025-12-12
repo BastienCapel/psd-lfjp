@@ -1,73 +1,104 @@
-# Welcome to your Lovable project
+📌 PSD-LFJP — Site du Plan Stratégique de Développement
 
-## Project info
+📌 Présentation du projet
 
-**URL**: https://lovable.dev/projects/b5f34ae8-b514-474f-8045-ab4a49f0cb97
+Ce dépôt contient le code source du site du Plan Stratégique de Développement (PSD) du Lycée Français Jacques Prévert de Saly (Sénégal).
+Ce site présente de manière claire et accessible le plan stratégique de notre établissement pour les années à venir, ses objectifs pédagogiques, ses valeurs et ses axes de développement.
 
-## How can I edit this code?
+Le site est actuellement déployé à l’adresse :
+🔗 https://psd-lfjp.netlify.app/
 
-There are several ways of editing your application.
+⸻
 
-**Use Lovable**
+🧱 Technologies utilisées
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b5f34ae8-b514-474f-8045-ab4a49f0cb97) and start prompting.
+Le site est construit avec :
+	•	HTML5
+	•	CSS3
+	•	JavaScript (si applicable)
+	•	Hébergé et servi comme site statique via Netlify  ￼
 
-Changes made via Lovable will be committed automatically to this repo.
+⸻
 
-**Use your preferred IDE**
+🚀 Démarrer le projet en local
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Pour éditer ou développer ce site depuis ton poste :
+	1.	Cloner le dépôt
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+git clone <URL_DU_DEPOT>
 
-Follow these steps:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+	2.	Ou ouvrir le dossier dans ton IDE
+	3.	Tester localement
+	•	Ouvrir simplement index.html dans un navigateur
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Ce site est statique, il n’a pas de serveur backend. Tu peux donc le tester directement sans installation supplémentaire.
 
-# Step 3: Install the necessary dependencies.
-npm i
+⸻
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+📄 Structure du projet
 
-**Edit a file directly in GitHub**
+Organisée de manière simple :
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+/index.html
+/assets/      → images, ressources visuelles
+/css/         → styles CSS
+/js/          → scripts JavaScript (optionnel)
 
-**Use GitHub Codespaces**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+⸻
 
-## What technologies are used for this project?
+📌 À propos du contenu
 
-This project is built with:
+Le site présente :
+	•	Le Plan Stratégique de Développement
+	•	Les visions, missions et valeurs du LFJP
+	•	Des sections explicatives
+	•	Des ressources à télécharger ou consulter
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Ce contenu vise à :
+	•	Informer les familles, personnels et partenaires
+	•	Valoriser les projets pédagogiques de l’établissement  ￼
 
-## How can I deploy this project?
+⸻
 
-Simply open [Lovable](https://lovable.dev/projects/b5f34ae8-b514-474f-8045-ab4a49f0cb97) and click on Share -> Publish.
+🛠️ Modifier le site
 
-## Can I connect a custom domain to my Lovable project?
+Dans l’éditeur
+	•	Ouvrir les fichiers .html, .css ou .js
+	•	Adapter le contenu selon les besoins (textes, images, liens)
+	•	Valider visuellement dans un navigateur
 
-Yes, you can!
+Bonnes pratiques
+	•	Utiliser un éditeur moderne (VS Code, Sublime, etc.)
+	•	Tester les modifications sur mobile et desktop
+	•	Optimiser les images pour de meilleures performances
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+⸻
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+📦 Déploiement
+
+Le site est automatiquement déployé sur Netlify à chaque mise à jour du dépôt.
+Pour republier après modification :
+	1.	Commit & push des changements sur la branche principale
+	2.	Netlify reconstruit et déploie le site automatiquement  ￼
+
+⸻
+
+📌 Métadonnées Open Graph
+
+Pour que les partages (mails, messageries, réseaux sociaux) affichent un aperçu pertinent, assure-toi que les balises suivantes sont définies dans <head> :
+
+<meta property="og:title" content="PSD – Plan Stratégique de Développement LFJP" />
+<meta property="og:description" content="Découvrez la vision, les missions et les axes stratégiques du Lycée Français Jacques Prévert de Saly" />
+<meta property="og:image" content="https://psd-lfjp.netlify.app/preview.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+
+
+⸻
+
+🧾 Licence et mentions
+
+Tous les contenus (textes et visuels) sont publiés par le Lycée Français Jacques Prévert.
+Pour toute question sur l’usage, les données ou la mise à jour du site, contacter l’administration de l’établissement  ￼.
