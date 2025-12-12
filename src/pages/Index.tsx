@@ -82,11 +82,15 @@ const Index = () => {
 
       <section className="py-12 md:py-16 bg-french-blue/5">
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in lg:col-span-2">
+            <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in lg:col-span-2">
             <CardContent className="p-8 space-y-6">
               <div className="flex">
-                <div className="w-full h-[240px] bg-gradient-to-br from-french-blue/10 via-white to-french-blue/10 border border-french-blue/20 rounded-lg flex items-center justify-center text-french-blue font-semibold text-center px-6">
-                  Service de Coopération et d’Action Culturelle
+                <div className="w-full h-[240px] bg-gradient-to-br from-french-blue/10 via-white to-french-blue/10 border border-french-blue/20 rounded-lg flex items-center justify-center p-6">
+                  <img
+                    src="https://i.imgur.com/OjzrXjM.png"
+                    alt="Service de Coopération et d’Action Culturelle"
+                    className="max-h-full object-contain"
+                  />
                 </div>
               </div>
               <div>
