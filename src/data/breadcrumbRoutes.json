@@ -26,7 +26,7 @@
   },
   "/implication-des-familles": {
     "name": "Implication des familles",
-    "parent": "/plan-strategique/axe-4"
+    "parent": "/plan-strategique"
   },
   "/curriculum-soft-skills": {
     "name": "Curriculum Soft Skills & Éloquence",
@@ -58,7 +58,7 @@
   },
   "/parcours-avenir": {
     "name": "Parcours Avenir",
-    "parent": "/plan-strategique/axe-4"
+    "parent": "/plan-strategique"
   },
   "/parcours-education-artistique-culturelle": {
     "name": "Parcours d'Éducation Artistique et Culturelle",
@@ -100,17 +100,13 @@
     "name": "PC par Lycéen",
     "parent": "/plan-strategique"
   },
-  "/plan-strategique/axe-4": {
-    "name": "Axe 4 – Façonner les réussites",
-    "parent": "/plan-strategique"
-  },
   "/plan-strategique/reussite-citoyenne": {
     "name": "Réussite citoyenne",
-    "parent": "/plan-strategique/axe-4"
+    "parent": "/plan-strategique"
   },
   "/education-financiere-vie-autonome": {
     "name": "Éducation financière et à la vie autonome",
-    "parent": "/plan-strategique/axe-4"
+    "parent": "/plan-strategique"
   },
   "/mecenat-numerique": {
     "name": "Mécénat numérique",

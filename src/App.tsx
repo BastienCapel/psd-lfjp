@@ -26,7 +26,6 @@ import PolitiqueE3D from "./pages/PolitiqueE3D";
 import MecenatNumerique from "./pages/MecenatNumerique";
 import ValorisationErreur from "./pages/ValorisationErreur";
 import ReussiteCitoyenne from "./pages/plan-strategique/reussite-citoyenne";
-import PlanStrategiqueAxe4 from "./pages/PlanStrategiqueAxe4";
 import EducationFinanciereVieAutonome from "./pages/EducationFinanciereVieAutonome";
 import ReseauAlumniMentorat from "./pages/ReseauAlumniMentorat";
 import ParcoursAvenir from "./pages/ParcoursAvenir";
@@ -134,13 +133,6 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ImplicationDesFamilles />
-                    <BackToTop />
-                  </>
-                } />
-                <Route path="/plan-strategique/axe-4" element={
-                  <>
-                    <BreadcrumbNav />
-                    <PlanStrategiqueAxe4 />
                     <BackToTop />
                   </>
                 } />

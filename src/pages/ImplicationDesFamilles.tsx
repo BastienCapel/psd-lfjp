@@ -145,10 +145,6 @@ const ImplicationDesFamilles = () => {
       </header>
 
       <div className="container mx-auto flex flex-wrap gap-3 px-6 py-6">
-        <Button variant="outline" onClick={() => navigate('/plan-strategique/axe-4')} className="flex items-center gap-2">
-          <ArrowLeft className="h-4 w-4" />
-          Retour à l’axe 4
-        </Button>
         <Button variant="outline" onClick={() => navigate('/plan-strategique')} className="flex items-center gap-2">
           <ArrowLeft className="h-4 w-4" />
           Plan stratégique
