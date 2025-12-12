@@ -24,6 +24,10 @@
     "name": "Plan de Maintenance Stratégique",
     "parent": "/plan-strategique"
   },
+  "/implication-des-familles": {
+    "name": "Implication des familles",
+    "parent": "/plan-strategique/axe-4"
+  },
   "/curriculum-soft-skills": {
     "name": "Curriculum Soft Skills & Éloquence",
     "parent": "/plan-strategique"

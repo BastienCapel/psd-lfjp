@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Compass, Medal, PiggyBank, RefreshCcw, Sparkles, UsersRound } from 'lucide-react';
+import { Compass, HeartHandshake, Medal, PiggyBank, RefreshCcw, Sparkles, UsersRound } from 'lucide-react';
 import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe4 = () => {
@@ -55,6 +55,9 @@ const PSDAxe4 = () => {
       items: [
         {
           content: "Implication des familles",
+          link: '/implication-des-familles',
+          linkAriaLabel: "Découvrir la page Implication des familles",
+          linkIcon: HeartHandshake,
         },
         {
           content: <strong>Parcours Avenir</strong>,
