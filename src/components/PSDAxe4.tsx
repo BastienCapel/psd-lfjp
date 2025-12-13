@@ -66,9 +66,6 @@ const PSDAxe4 = () => {
           linkIcon: Compass,
         },
         {
-          content: "Forum des métiers, témoignages inspirants",
-        },
-        {
           content: <strong>Parcours de la Réussite citoyenne</strong>,
           link: '/plan-strategique/reussite-citoyenne',
           linkAriaLabel: 'Découvrir le parcours Réussite citoyenne',
