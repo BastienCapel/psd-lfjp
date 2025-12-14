@@ -136,6 +136,9 @@ const PSDAxe4 = () => {
         },
         {
           content: "Toutes les formes de réussite",
+          link: '/toutes-les-reussites',
+          linkAriaLabel: "Découvrir la page Toutes les réussites au LFJP",
+          linkIcon: Sparkles,
         },
         {
           content: "Célébration des réussites et des diplômes",
