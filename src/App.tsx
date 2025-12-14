@@ -57,6 +57,7 @@ import PlanificationBacBlanc from "./pages/PlanificationBacBlanc";
 import ParcoursSante from "./pages/ParcoursSante";
 import ProjetEPS from "./pages/ProjetEPS";
 import ImplicationDesFamilles from "./pages/ImplicationDesFamilles";
+import NiveauExcellenceReussiteExamens from "./pages/NiveauExcellenceReussiteExamens";
 
 // Créer l'instance QueryClient en dehors du composant pour éviter les recréations
 const queryClient = new QueryClient({
@@ -133,6 +134,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ImplicationDesFamilles />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/niveau-excellence-reussite-examens" element={
+                  <>
+                    <BreadcrumbNav />
+                    <NiveauExcellenceReussiteExamens />
                     <BackToTop />
                   </>
                 } />
