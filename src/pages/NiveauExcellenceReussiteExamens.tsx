@@ -11,7 +11,6 @@ import {
   Flag,
   GraduationCap,
   Home,
-  LineChart,
   Medal,
   Scale,
   Sparkles,
@@ -145,10 +144,6 @@ const NiveauExcellenceReussiteExamens = () => {
             <Button variant="secondary" onClick={() => navigate('/plan-strategique')} className="flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
               Plan stratégique
-            </Button>
-            <Button variant="outline" onClick={() => navigate('/diagnostic')} className="flex items-center gap-2 text-white">
-              <LineChart className="h-4 w-4" />
-              Diagnostic LFJP
             </Button>
             <Button variant="ghost" onClick={() => navigate('/')} className="flex items-center gap-2 text-white">
               <Home className="h-4 w-4" />
