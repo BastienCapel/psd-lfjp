@@ -348,3 +348,33 @@
   line-height: 1.2;
   margin: 0 0 0.75rem;
 }
+
+/* Graphiques examens */
+#graphiques-examens .chart-card {
+  border: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 60%);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 10px 35px -20px rgba(59, 130, 246, 0.35);
+}
+
+#graphiques-examens canvas {
+  max-width: 100%;
+}
+
+#graphiques-examens .gauge-track {
+  position: relative;
+  height: 0.75rem;
+  width: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #e2e8f0 0%, #f1f5f9 100%);
+  overflow: hidden;
+}
+
+#graphiques-examens .gauge-value {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0b1f5f 0%, #1f4fd8 50%, #3b82f6 100%);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+  transition: width 0.8s ease;
+}
