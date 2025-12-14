@@ -60,6 +60,7 @@ import ImplicationDesFamilles from "./pages/ImplicationDesFamilles";
 import NiveauExcellenceReussiteExamens from "./pages/NiveauExcellenceReussiteExamens";
 import AutonomiePerseverance from "./pages/AutonomiePerseverance";
 import ToutesLesReussites from "./pages/ToutesLesReussites";
+import CelebrationReussitesDiplomes from "./pages/CelebrationReussitesDiplomes";
 
 // Créer l'instance QueryClient en dehors du composant pour éviter les recréations
 const queryClient = new QueryClient({
@@ -157,6 +158,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ToutesLesReussites />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/celebration-reussites-diplomes" element={
+                  <>
+                    <BreadcrumbNav />
+                    <CelebrationReussitesDiplomes />
                     <BackToTop />
                   </>
                 } />

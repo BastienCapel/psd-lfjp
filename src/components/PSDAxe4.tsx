@@ -142,6 +142,9 @@ const PSDAxe4 = () => {
         },
         {
           content: "Célébration des réussites et des diplômes",
+          link: '/celebration-reussites-diplomes',
+          linkAriaLabel: "Découvrir la page Célébration des réussites et des diplômes",
+          linkIcon: Medal,
         },
       ],
     },
