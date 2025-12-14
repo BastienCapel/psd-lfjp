@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Compass, HeartHandshake, Medal, PiggyBank, RefreshCcw, Sparkles, UsersRound } from 'lucide-react';
+import { Compass, HeartHandshake, Medal, PiggyBank, RefreshCcw, Sparkles, UsersRound, Target } from 'lucide-react';
 import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe4 = () => {
@@ -99,7 +99,14 @@ const PSDAxe4 = () => {
           linkIcon: Sparkles,
         },
         {
-          content: "Autonomie, persévérance",
+          content: (
+            <>
+              <strong>Autonomie</strong> et <strong>persévérance</strong>
+            </>
+          ),
+          link: '/autonomie-perseverance',
+          linkAriaLabel: "Découvrir la feuille de route Autonomie et persévérance",
+          linkIcon: Target,
         },
         {
           content: (
