@@ -10,7 +10,7 @@ const AutonomiePerseverance = () => {
   const axes = [
     {
       id: 'axe1',
-      title: '4.1 Construire l’autonomie progressivement',
+      title: 'Construire l’autonomie progressivement',
       description:
         'Installer des jalons clairs de développement de l’autonomie, de la maternelle au lycée, en outillant les élèves pour organiser leur travail et comprendre les attendus.',
       items: [
@@ -23,7 +23,7 @@ const AutonomiePerseverance = () => {
     },
     {
       id: 'axe2',
-      title: '4.2 Installer une culture de l’effort et de la persévérance',
+      title: 'Installer une culture de l’effort et de la persévérance',
       description:
         'Mobiliser toute la communauté éducative pour valoriser la progression, expliciter les critères d’évaluation et sécuriser le droit à l’erreur.',
       items: [
@@ -35,7 +35,7 @@ const AutonomiePerseverance = () => {
     },
     {
       id: 'axe3',
-      title: '4.3 Accompagner les moments clés du parcours scolaire',
+      title: 'Accompagner les moments clés du parcours scolaire',
       description:
         'Sécuriser les transitions et articuler autonomie, motivation et orientation choisie, en synergie avec le Parcours Avenir.',
       items: [
@@ -46,7 +46,7 @@ const AutonomiePerseverance = () => {
     },
     {
       id: 'axe4',
-      title: '4.4 Donner aux élèves des espaces d’engagement',
+      title: 'Donner aux élèves des espaces d’engagement',
       description:
         'Multiplier les occasions d’agir et de prendre des responsabilités pour ancrer l’autonomie et la persévérance dans des projets concrets.',
       items: [
@@ -160,7 +160,6 @@ const AutonomiePerseverance = () => {
               {axes.map((axe) => (
                 <Card key={axe.id} className="h-full border-slate-200 shadow-sm">
                   <CardHeader className="space-y-2">
-                    <p className="text-xs uppercase tracking-wide text-slate-500">{axe.title.split(' ')[0]}</p>
                     <CardTitle className="text-lg text-french-blue leading-snug">{axe.title}</CardTitle>
                     <p className="text-sm text-slate-700">{axe.description}</p>
                   </CardHeader>
