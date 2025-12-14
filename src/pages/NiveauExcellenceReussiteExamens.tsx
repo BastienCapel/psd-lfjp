@@ -117,6 +117,8 @@ const dispositifs = [
   },
 ];
 
+const bulletIconClass = 'mt-0.5 h-4 w-4 flex-none text-blue-700';
+
 const NiveauExcellenceReussiteExamens = () => {
   const navigate = useNavigate();
 
@@ -175,7 +177,7 @@ const NiveauExcellenceReussiteExamens = () => {
                 <ul className="mt-4 space-y-3 text-sm text-slate-700">
                   {dnbTrends.map((item) => (
                     <li key={item.label} className="flex gap-2">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 text-blue-700" aria-hidden="true" />
+                      <CheckCircle2 className={bulletIconClass} aria-hidden="true" />
                       <div>
                         <p className="font-semibold text-slate-900">{item.label}</p>
                         <p>{item.values}</p>
@@ -193,7 +195,7 @@ const NiveauExcellenceReussiteExamens = () => {
                 <ul className="mt-4 space-y-3 text-sm text-slate-700">
                   {bacTrends.map((item) => (
                     <li key={item.label} className="flex gap-2">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 text-blue-700" aria-hidden="true" />
+                      <CheckCircle2 className={bulletIconClass} aria-hidden="true" />
                       <div>
                         <p className="font-semibold text-slate-900">{item.label}</p>
                         <p>{item.values}</p>
@@ -226,11 +228,11 @@ const NiveauExcellenceReussiteExamens = () => {
                 <h3 className="text-lg font-semibold text-slate-900">France (repères nationaux)</h3>
                 <ul className="mt-3 space-y-2 text-sm text-slate-700">
                   <li className="flex gap-2">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-blue-700" aria-hidden="true" />
+                    <CheckCircle2 className={bulletIconClass} aria-hidden="true" />
                     <span>DNB : 85,6 % (2024) ; 85,5 % (2025).</span>
                   </li>
                   <li className="flex gap-2">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-blue-700" aria-hidden="true" />
+                    <CheckCircle2 className={bulletIconClass} aria-hidden="true" />
                     <span>Baccalauréat : 91,2 % (2024) ; 91,8 % (2025).</span>
                   </li>
                 </ul>
@@ -239,11 +241,11 @@ const NiveauExcellenceReussiteExamens = () => {
                 <h3 className="text-lg font-semibold text-slate-900">Réseau AEFE</h3>
                 <ul className="mt-3 space-y-2 text-sm text-slate-700">
                   <li className="flex gap-2">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-blue-700" aria-hidden="true" />
+                    <CheckCircle2 className={bulletIconClass} aria-hidden="true" />
                     <span>Résultats bac « approchant les 100 % » (environ 97 à 98,5 %) ; taux de mentions autour de 80 %.</span>
                   </li>
                   <li className="flex gap-2">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-blue-700" aria-hidden="true" />
+                    <CheckCircle2 className={bulletIconClass} aria-hidden="true" />
                     <span>Bac 2025 – réseau AEFE : 98,3 % de réussite et 82,6 % de mentions.</span>
                   </li>
                   <li className="mt-3 text-slate-600">
@@ -272,7 +274,7 @@ const NiveauExcellenceReussiteExamens = () => {
                 <ul className="mt-4 space-y-3 text-sm text-slate-700">
                   {bacTargets.map((item) => (
                     <li key={item} className="flex gap-2">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 text-blue-700" aria-hidden="true" />
+                      <CheckCircle2 className={bulletIconClass} aria-hidden="true" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -286,7 +288,7 @@ const NiveauExcellenceReussiteExamens = () => {
                 <ul className="mt-4 space-y-3 text-sm text-slate-700">
                   {dnbTargets.map((item) => (
                     <li key={item} className="flex gap-2">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 text-blue-700" aria-hidden="true" />
+                      <CheckCircle2 className={bulletIconClass} aria-hidden="true" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -313,7 +315,7 @@ const NiveauExcellenceReussiteExamens = () => {
                   <ul className="mt-4 space-y-3 text-sm text-slate-700">
                     {item.points.map((point) => (
                       <li key={point} className="flex gap-2">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 text-blue-700" aria-hidden="true" />
+                        <CheckCircle2 className={bulletIconClass} aria-hidden="true" />
                         <span>{point}</span>
                       </li>
                     ))}
