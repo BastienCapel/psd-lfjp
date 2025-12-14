@@ -8,7 +8,7 @@ const PSD = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-playfair font-bold text-french-blue mb-6 text-center">
-            Bienvenue sur le site du plan stratégique de développement du Lycée Français Jacques Prévert de Saly
+            Plan stratégique de développement du Lycée Français Jacques Prévert de Saly
           </h2>
           
           <PSDIntroduction />
