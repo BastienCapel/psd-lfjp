@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft, Home, GraduationCap, Sparkles, Users, BookOpenCheck, HeartHandshake, FileCheck2, Megaphone } from 'lucide-react';
+import { ArrowLeft, Home, GraduationCap, Users, BookOpenCheck, HeartHandshake, FileCheck2, Megaphone } from 'lucide-react';
 
 const CelebrationReussitesDiplomes = () => {
   const ceremonies = [
@@ -80,9 +80,6 @@ const CelebrationReussitesDiplomes = () => {
         <div className="container mx-auto px-6 py-20 md:py-28">
           <p className="uppercase tracking-[0.35em] text-xs md:text-sm text-white/80">PSD 2026-2030 · Axe 4 — Façonner les réussites</p>
           <h1 className="mt-4 text-3xl md:text-5xl font-playfair font-bold">Célébration des réussites et des diplômes</h1>
-          <p className="mt-4 max-w-3xl text-base md:text-lg text-white/90">
-            Une page institutionnelle pour reconnaître la pluralité des réussites au LFJP, valoriser les parcours et célébrer les diplômes sans esprit de compétition.
-          </p>
         </div>
       </header>
 
@@ -101,7 +98,7 @@ const CelebrationReussitesDiplomes = () => {
             </Button>
           </div>
 
-          <section aria-labelledby="intro-title" className="grid gap-6 lg:grid-cols-[2fr,1fr]">
+          <section aria-labelledby="intro-title" className="grid gap-6">
             <div className="rounded-3xl bg-white p-8 shadow-sm border border-blue-100">
               <h2 id="intro-title" className="text-2xl md:text-3xl font-playfair font-semibold text-french-blue">
                 Une réussite plurielle et inclusive
@@ -112,18 +109,6 @@ const CelebrationReussitesDiplomes = () => {
               <p className="mt-4 text-slate-700 leading-relaxed">
                 Cette page s’inscrit explicitement dans l’Axe 4 du Plan Stratégique de Développement : « Façonner les réussites ». Elle valorise toutes les formes d’accomplissement, refuse la logique de classement et privilégie la reconnaissance collective.
               </p>
-            </div>
-
-            <div className="rounded-3xl bg-blue-50 p-6 shadow-inner border border-blue-100">
-              <h3 className="text-xl font-semibold text-french-blue flex items-center gap-2">
-                <Sparkles className="h-5 w-5" aria-hidden />
-                Repères clés
-              </h3>
-              <ul className="mt-4 space-y-3 text-slate-700 text-sm">
-                <li>Ton institutionnel, sobre et inclusif, aligné avec l’AEFE et l’Éducation nationale.</li>
-                <li>Priorité aux parcours, aux progrès, à l’engagement et à la persévérance.</li>
-                <li>Aucune hiérarchie entre les réussites : reconnaissance collective et partagée.</li>
-              </ul>
             </div>
           </section>
 
