@@ -84,6 +84,9 @@ const PSDAxe4 = () => {
       items: [
         {
           content: "Niveau d'excellence, réussite aux examens",
+          link: '/niveau-excellence-reussite-examens',
+          linkAriaLabel: "Découvrir la feuille de route Niveau d'excellence, réussite aux examens",
+          linkIcon: Medal,
         },
         {
           content: (
