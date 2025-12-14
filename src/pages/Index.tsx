@@ -17,7 +17,7 @@ const Index = () => {
       <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-playfair font-bold text-french-blue mb-12 text-center animate-fade-in">
-            Bienvenue sur le site du plan stratégique de développement du Lycée Français Jacques Prévert
+            Plan stratégique de développement du Lycée Français Jacques Prévert
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
