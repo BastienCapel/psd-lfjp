@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -11,6 +11,7 @@ import {
   Flag,
   GraduationCap,
   Home,
+  LineChart,
   Medal,
   Scale,
   Sparkles,
@@ -68,6 +69,56 @@ const dnbTargets = [
   'Réduction des refusés : < 5 % grâce à la prévention, aux entraînements et à la méthodologie.',
 ];
 
+type ChartDataset = { data: (number | null)[]; label?: string };
+type ChartMetaElement = { getProps: (props: string[], final: boolean) => { x: number; y: number; base: number } };
+type ChartMeta = { data: ChartMetaElement[] };
+
+type ChartPluginContext = {
+  ctx: CanvasRenderingContext2D;
+  options?: {
+    indexAxis?: 'x' | 'y';
+    plugins?: Record<string, unknown>;
+    [key: string]: unknown;
+  };
+  data: { datasets: ChartDataset[] };
+  chartArea: { top: number; bottom: number; left: number; right: number };
+  scales: { y: { getPixelForValue: (value: number) => number } };
+  getDatasetMeta: (datasetIndex: number) => ChartMeta;
+  destroy: () => void;
+};
+
+type ChartConstructor = new (
+  context: HTMLCanvasElement,
+  config: Record<string, unknown>,
+) => ChartPluginContext;
+
+type ChartGlobal = ChartConstructor & {
+  register: (...extensions: unknown[]) => void;
+};
+
+type TooltipContext = {
+  dataset: { label: string };
+  parsed: { y?: number } | number;
+};
+
+const objectifBarres = [
+  {
+    label: 'Taux de réussite Bac',
+    cible: '≥ 98 %',
+    progression: 98,
+  },
+  {
+    label: 'Mentions Bac',
+    cible: '≈ 70 %',
+    progression: 70,
+  },
+  {
+    label: 'Moyenne Bac',
+    cible: '≥ 13,5',
+    progression: 77, // 13,5 / 17,5 ≈ 77 % pour visualiser la cible sur 20
+  },
+];
+
 const dispositifs = [
   {
     title: 'Pilotage pédagogique « exigence + accompagnement »',
@@ -121,8 +172,319 @@ const bulletIconClass = 'mt-0.5 h-4 w-4 flex-none text-blue-700';
 const NiveauExcellenceReussiteExamens = () => {
   const navigate = useNavigate();
 
+  const successRef = useRef<HTMLCanvasElement | null>(null);
+  const comparisonRef = useRef<HTMLCanvasElement | null>(null);
+  const mentionsRef = useRef<HTMLCanvasElement | null>(null);
+  const averageRef = useRef<HTMLCanvasElement | null>(null);
+
   useEffect(() => {
     document.title = PAGE_TITLE;
+  }, []);
+
+  useEffect(() => {
+    let isMounted = true;
+    const charts: ChartPluginContext[] = [];
+    let scriptEl: HTMLScriptElement | null = null;
+
+    const valueLabelPlugin = {
+      id: 'valueLabelPlugin',
+      afterDatasetsDraw(chart: ChartPluginContext) {
+        const pluginOptions = (chart.options?.plugins as { valueLabels?: { display?: boolean } } | undefined)?.valueLabels;
+        if (!pluginOptions?.display) return;
+
+        const { ctx } = chart;
+        ctx.save();
+        ctx.font = '12px "Inter", system-ui, -apple-system, sans-serif';
+        ctx.fillStyle = '#0f172a';
+        chart.data.datasets.forEach((dataset: ChartDataset, datasetIndex: number) => {
+          const meta = chart.getDatasetMeta(datasetIndex);
+          meta.data.forEach((element: ChartMetaElement, index: number) => {
+            const value = dataset.data[index];
+            if (value === null || value === undefined) return;
+
+            const { x: barX, y: barY, base } = element.getProps(['x', 'y', 'base'], true);
+            const textX = chart.options?.indexAxis === 'y' ? Math.max(barX, base) + 8 : barX;
+            const textY = chart.options?.indexAxis === 'y' ? barY + 4 : Math.min(barY, base) - 6;
+            ctx.fillText(`${value}%`, textX, textY);
+          });
+        });
+        ctx.restore();
+      },
+    };
+
+    const targetBandPlugin = {
+      id: 'targetBand',
+      beforeDatasetsDraw(chart: ChartPluginContext) {
+        const band = (chart.options?.plugins as
+          | { targetBand?: { display?: boolean; min: number; max: number; color?: string } }
+          | undefined)?.targetBand;
+        if (!band?.display) return;
+
+        const {
+          ctx,
+          chartArea: { top, bottom, left, right },
+          scales: { y },
+        } = chart;
+        const yMax = y.getPixelForValue(band.max);
+        const yMin = y.getPixelForValue(band.min);
+        ctx.save();
+        ctx.fillStyle = band.color || 'rgba(148, 163, 184, 0.2)';
+        ctx.fillRect(left, yMax, right - left, yMin - yMax);
+        ctx.restore();
+      },
+    };
+
+    const loadChartJs = () =>
+      new Promise<ChartGlobal>((resolve, reject) => {
+        if ((window as { Chart?: ChartGlobal }).Chart) {
+          resolve((window as { Chart: ChartGlobal }).Chart);
+          return;
+        }
+
+        scriptEl = document.createElement('script');
+        scriptEl.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+        scriptEl.async = true;
+        scriptEl.onload = () => resolve((window as { Chart: ChartGlobal }).Chart);
+        scriptEl.onerror = () => reject(new Error('Impossible de charger Chart.js'));
+        document.body.appendChild(scriptEl);
+      });
+
+    loadChartJs()
+      .then((Chart) => {
+        if (!isMounted || !Chart) return;
+
+        Chart.register(valueLabelPlugin, targetBandPlugin);
+
+        if (successRef.current) {
+          charts.push(
+            new Chart(successRef.current, {
+              type: 'line',
+              data: {
+                labels: ['2021', '2022', '2023', '2024', '2025'],
+                datasets: [
+                  {
+                    label: 'DNB',
+                    data: [92.86, 90.0, 90.74, 93.75, 91.67],
+                    borderColor: '#1f4fd8',
+                    backgroundColor: 'rgba(31, 79, 216, 0.12)',
+                    pointBackgroundColor: '#1f4fd8',
+                    tension: 0.3,
+                    fill: true,
+                  },
+                  {
+                    label: 'Baccalauréat',
+                    data: [null, 94.44, 87.5, 100, 100],
+                    borderColor: '#2fa36b',
+                    backgroundColor: 'rgba(47, 163, 107, 0.12)',
+                    pointBackgroundColor: '#2fa36b',
+                    spanGaps: true,
+                    tension: 0.3,
+                    fill: true,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: 'nearest', intersect: false },
+                plugins: {
+                  legend: { position: 'bottom' },
+                  tooltip: { enabled: true },
+                },
+                scales: {
+                  y: {
+                    suggestedMin: 80,
+                    suggestedMax: 100,
+                    ticks: {
+                      callback: (value: number | string) => `${value}%`,
+                    },
+                  },
+                  x: {
+                    grid: { display: false },
+                  },
+                },
+              },
+            }),
+          );
+        }
+
+        if (comparisonRef.current) {
+          charts.push(
+            new Chart(comparisonRef.current, {
+              type: 'bar',
+              data: {
+                labels: ['DNB', 'Baccalauréat'],
+                datasets: [
+                  {
+                    label: 'LFJP',
+                    data: [91.7, 100],
+                    backgroundColor: '#1d3b8b',
+                  },
+                  {
+                    label: 'France',
+                    data: [85.5, 91.8],
+                    backgroundColor: '#d9dde5',
+                  },
+                  {
+                    label: 'AEFE',
+                    data: [null, 98.3],
+                    backgroundColor: '#7c8cae',
+                  },
+                ],
+              },
+              options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: { padding: { right: 32 } },
+                plugins: {
+                  legend: { position: 'bottom' },
+                  tooltip: { enabled: true },
+                  valueLabels: { display: true },
+                },
+                scales: {
+                  x: {
+                    suggestedMax: 110,
+                    grid: { display: false },
+                    ticks: {
+                      callback: (value: number | string) => `${value}%`,
+                    },
+                  },
+                  y: {
+                    grid: { display: false },
+                  },
+                },
+              },
+            }),
+          );
+        }
+
+        if (mentionsRef.current) {
+          charts.push(
+            new Chart(mentionsRef.current, {
+              type: 'bar',
+              data: {
+                labels: ['DNB', 'Baccalauréat'],
+                datasets: [
+                  {
+                    label: 'Très bien',
+                    data: [12.5, 10],
+                    backgroundColor: '#d4af37',
+                    stack: 'mentions',
+                  },
+                  {
+                    label: 'Bien',
+                    data: [30, 30],
+                    backgroundColor: '#2fa36b',
+                    stack: 'mentions',
+                  },
+                  {
+                    label: 'Assez bien',
+                    data: [38.75, 21.54],
+                    backgroundColor: '#60a5fa',
+                    stack: 'mentions',
+                  },
+                  {
+                    label: 'Sans mention',
+                    data: [18.75, 38.46],
+                    backgroundColor: '#cbd5e1',
+                    stack: 'mentions',
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: { position: 'bottom' },
+                  tooltip: {
+                    callbacks: {
+                      label: (context: TooltipContext) => {
+                        const value = typeof (context.parsed as { y?: number }).y === 'number'
+                          ? (context.parsed as { y?: number }).y
+                          : (context.parsed as number);
+                        return `${context.dataset.label}: ${value}%`;
+                      },
+                    },
+                  },
+                },
+                scales: {
+                  x: {
+                    stacked: true,
+                    grid: { display: false },
+                  },
+                  y: {
+                    stacked: true,
+                    max: 100,
+                    ticks: {
+                      callback: (value: number | string) => `${value}%`,
+                    },
+                  },
+                },
+              },
+            }),
+          );
+        }
+
+        if (averageRef.current) {
+          charts.push(
+            new Chart(averageRef.current, {
+              type: 'line',
+              data: {
+                labels: ['2022', '2023', '2024', '2025'],
+                datasets: [
+                  {
+                    label: 'Moyenne générale bac',
+                    data: [11.4, 11.66, 12.77, 13.14],
+                    borderColor: '#1f4fd8',
+                    backgroundColor: 'rgba(31, 79, 216, 0.14)',
+                    pointBackgroundColor: '#1f4fd8',
+                    fill: true,
+                    tension: 0.25,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: { display: false },
+                  tooltip: { enabled: true },
+                  targetBand: {
+                    display: true,
+                    min: 12.5,
+                    max: 14.5,
+                    color: 'rgba(148, 163, 184, 0.25)',
+                  },
+                },
+                scales: {
+                  y: {
+                    suggestedMin: 10,
+                    suggestedMax: 15,
+                    ticks: {
+                      callback: (value: number | string) => value,
+                    },
+                  },
+                  x: {
+                    grid: { display: false },
+                  },
+                },
+              },
+            }),
+          );
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    return () => {
+      isMounted = false;
+      charts.forEach((chart) => chart?.destroy());
+      if (scriptEl && scriptEl.parentNode) {
+        scriptEl.parentNode.removeChild(scriptEl);
+      }
+    };
   }, []);
 
   return (
@@ -248,6 +610,97 @@ const NiveauExcellenceReussiteExamens = () => {
                     d’établissements comparables.
                   </li>
                 </ul>
+              </div>
+            </div>
+          </section>
+
+          <section
+            id="graphiques-examens"
+            className="rounded-3xl border border-blue-100 bg-white p-8 shadow-sm"
+          >
+            <div className="flex items-start gap-3">
+              <LineChart className="h-6 w-6 text-french-blue" aria-hidden="true" />
+              <div>
+                <p className="text-xs uppercase tracking-[0.25em] text-blue-800">Niveau d'excellence</p>
+                <h2 className="mt-2 text-2xl font-playfair font-semibold text-slate-900">
+                  Réussite aux examens – tendances visuelles
+                </h2>
+                <p className="mt-3 text-sm text-slate-700">
+                  Visualisation synthétique des performances du LFJP au DNB et au baccalauréat, ainsi que des objectifs 2030.
+                  Les graphiques sont lisibles, sobres et responsives pour accompagner le pilotage pédagogique.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+              <article className="chart-card">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-slate-900">Taux de réussite – évolution</h3>
+                  <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-800">2021-2025</span>
+                </div>
+                <div className="mt-4 h-72" role="img" aria-label="Évolution des taux de réussite DNB et bac">
+                  <canvas ref={successRef} />
+                </div>
+              </article>
+
+              <article className="chart-card">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-slate-900">Comparaison LFJP / France / AEFE (2025)</h3>
+                  <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-800">Horizontal</span>
+                </div>
+                <div className="mt-4 h-72" role="img" aria-label="Comparaison des taux de réussite 2025">
+                  <canvas ref={comparisonRef} />
+                </div>
+              </article>
+
+              <article className="chart-card">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-slate-900">Répartition des mentions (2025)</h3>
+                  <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-800">100 % empilé</span>
+                </div>
+                <div className="mt-4 h-72" role="img" aria-label="Répartition des mentions DNB et bac en 2025">
+                  <canvas ref={mentionsRef} />
+                </div>
+              </article>
+
+              <article className="chart-card">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-slate-900">Moyenne générale – évolution</h3>
+                  <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-800">Zone cible</span>
+                </div>
+                <div className="mt-4 h-72" role="img" aria-label="Évolution de la moyenne générale au bac">
+                  <canvas ref={averageRef} />
+                </div>
+              </article>
+            </div>
+
+            <div className="mt-8 rounded-2xl border border-slate-100 bg-slate-50 p-6">
+              <div className="flex items-center gap-2">
+                <Target className="h-5 w-5 text-blue-800" aria-hidden="true" />
+                <h3 className="text-lg font-semibold text-slate-900">Objectifs 2026 – 2030</h3>
+              </div>
+              <p className="mt-2 text-sm text-slate-700">
+                Barres de progression simulant des jauges horizontales pour suivre la trajectoire vers les cibles 2030.
+              </p>
+              <div className="mt-4 grid gap-4 md:grid-cols-3">
+                {objectifBarres.map((objectif) => (
+                  <div key={objectif.label} className="space-y-2 rounded-xl bg-white p-4 shadow-sm">
+                    <div className="flex items-center justify-between text-sm text-slate-700">
+                      <span className="font-semibold text-slate-900">{objectif.label}</span>
+                      <span className="text-blue-800">{objectif.cible}</span>
+                    </div>
+                    <div className="gauge-track" aria-hidden="true">
+                      <div
+                        className="gauge-value"
+                        style={{ width: `${objectif.progression}%` }}
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <p className="text-xs text-slate-600" aria-live="polite">
+                      Projection : {objectif.progression}% de l'objectif 2030.
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
