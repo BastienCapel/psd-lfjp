@@ -178,13 +178,6 @@ const PSDAxe4 = () => {
     {
       content: (
         <>
-          <strong>% d'élèves accompagnés individuellement</strong> en terminale (<strong>100 %</strong>)
-        </>
-      )
-    },
-    {
-      content: (
-        <>
           <strong>Nombre d'alumni mobilisés</strong> par an (≥ <strong>30 dès 2027</strong>)
         </>
       )
