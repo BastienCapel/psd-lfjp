@@ -21,6 +21,84 @@ const sectionWrapperClass =
 const levelCardClass =
   'relative rounded-2xl bg-white/90 ring-1 ring-slate-200/70 p-6 space-y-4 shadow-sm hover:shadow-md transition-all duration-200';
 const listItemClass = 'text-slate-700 leading-relaxed text-[clamp(0.95rem,1.45vw,1.05rem)]';
+const yearCardClass = 'rounded-xl border border-slate-200 bg-white/90 p-4 shadow-inner space-y-2';
+
+const promotionsPrimaire = {
+  id: 'promotions-primaire',
+  title: 'Parcours du primaire 2023 – 2026',
+  tagline: 'Une visibilité claire des projets artistiques pour le cycle 2 et le cycle 3.',
+  gradient: 'from-french-blue/5 via-white to-amber-50',
+  icon: Palette,
+  levels: [
+    {
+      title: 'Cycle 2 – École élémentaire (CP, CE1, CE2)',
+      icon: MapPinned,
+      years: [
+        {
+          year: '2023 / 2024',
+          projects: ['Aucun projet explicitement renseigné pour le cycle 2.']
+        },
+        {
+          year: '2024 / 2025',
+          projects: [
+            'Mosaïque.',
+            'Danse.',
+            'Spectacle avec la troupe Diarama.',
+            'Peinture sous verre avec l’artiste Alioun Kebe (Biennale).',
+            'Projet danse.',
+            "Visites d’expositions d’art du hall de l’école."
+          ]
+        },
+        {
+          year: '2025 / 2026',
+          projects: [
+            'Spectacle de fin d’année avec la troupe Diarama.',
+            'Rituel d’écoute musicale.',
+            'Projet autour de l’autoportrait.',
+            "Visites d’expositions d’art du hall de l’école.",
+            'Projet « Lycée français dans le monde » (travail sur l’esprit critique).'
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Cycle 3 – École élémentaire (CM1, CM2)',
+      icon: Layers,
+      years: [
+        {
+          year: '2023 / 2024',
+          projects: ['Spectacle avec la troupe Diarama.']
+        },
+        {
+          year: '2024 / 2025',
+          projects: [
+            'Peinture sous verre avec l’artiste Alioun Kebe (Biennale).',
+            'Spectacle de fin d’année avec la troupe Diarama.',
+            'Création d’images avec des outils numériques.',
+            'Projet « Elles d’Afrique ».',
+            'Projet autour de l’autoportrait.',
+            'Projet danse.',
+            "Visites d’expositions d’art du hall de l’école.",
+            'Performance artistique avec Charlotte Hubert.'
+          ]
+        },
+        {
+          year: '2025 / 2026',
+          projects: [
+            'Spectacle de fin d’année avec la troupe Diarama.',
+            'Ateliers cirque.',
+            'Rituel d’écoute musicale.',
+            'Création d’images avec des outils numériques.',
+            'Projet autour de l’autoportrait.',
+            "Visites d’expositions d’art du hall de l’école.",
+            'Projet « Lycée français dans le monde » (travail sur l’esprit critique).',
+            'Réalisation de Litema.'
+          ]
+        }
+      ]
+    }
+  ]
+};
 
 const promotions = [
   {
@@ -270,6 +348,7 @@ const parcoursArtistiqueInterdegre = {
 
 const tocItems = [
   { id: 'introduction', label: 'Panorama du PEAC' },
+  { id: promotionsPrimaire.id, label: promotionsPrimaire.title },
   ...promotions.map((promotion) => ({ id: promotion.id, label: promotion.title })),
   { id: parcoursArtistiqueInterdegre.id, label: parcoursArtistiqueInterdegre.title }
 ];
@@ -370,6 +449,54 @@ const ParcoursEducationArtistiqueCulturelle = () => {
                       Les promotions sont présentées comme des « carnets de bord » qui permettent de suivre les projets au fil des niveaux, tout en valorisant les collaborations entre disciplines et partenaires culturels.
                     </p>
                   </div>
+                </div>
+              </div>
+            </section>
+
+            <section
+              id={promotionsPrimaire.id}
+              className={`${sectionWrapperClass} bg-gradient-to-br ${promotionsPrimaire.gradient}`}
+              aria-labelledby={`${promotionsPrimaire.id}-title`}
+            >
+              <div className="relative space-y-6">
+                <div className="flex items-center gap-4 mb-2">
+                  <promotionsPrimaire.icon className="h-10 w-10 text-french-blue" aria-hidden="true" />
+                  <div>
+                    <h2 id={`${promotionsPrimaire.id}-title`} className="text-2xl font-playfair font-semibold text-slate-900">
+                      {promotionsPrimaire.title}
+                    </h2>
+                    <p className="text-slate-700 text-sm md:text-base leading-relaxed">{promotionsPrimaire.tagline}</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-6">
+                  {promotionsPrimaire.levels.map((level) => (
+                    <article key={level.title} className={levelCardClass} aria-labelledby={`${level.title.replace(/\s+/g, '-')}-heading`}>
+                      <div className="flex items-start gap-3 mb-2">
+                        <level.icon className="h-6 w-6 text-french-blue mt-1" aria-hidden="true" />
+                        <h3 id={`${level.title.replace(/\s+/g, '-')}-heading`} className="text-xl font-semibold text-slate-900">
+                          {level.title}
+                        </h3>
+                      </div>
+                      <div className="grid gap-4 md:grid-cols-3">
+                        {level.years.map((year) => (
+                          <div key={`${level.title}-${year.year}`} className={yearCardClass}>
+                            <div className="flex items-center gap-2 text-slate-900 font-semibold">
+                              <CalendarRange className="h-4 w-4 text-french-blue" aria-hidden="true" />
+                              <span>{year.year}</span>
+                            </div>
+                            <ul className="space-y-2 pl-1">
+                              {year.projects.map((project) => (
+                                <li key={project} className={listItemClass}>
+                                  {project}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </article>
+                  ))}
                 </div>
               </div>
             </section>
