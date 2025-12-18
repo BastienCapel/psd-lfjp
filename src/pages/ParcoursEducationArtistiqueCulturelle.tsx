@@ -21,6 +21,170 @@ const sectionWrapperClass =
 const levelCardClass =
   'relative rounded-2xl bg-white/90 ring-1 ring-slate-200/70 p-6 space-y-4 shadow-sm hover:shadow-md transition-all duration-200';
 const listItemClass = 'text-slate-700 leading-relaxed text-[clamp(0.95rem,1.45vw,1.05rem)]';
+const yearCardClass = 'rounded-xl border border-slate-200 bg-white/90 p-4 shadow-inner space-y-2';
+
+const promotionsPrimaire = {
+  id: 'promotions-primaire',
+  title: 'Parcours du primaire 2023 – 2026',
+  tagline: 'Une visibilité claire des projets artistiques pour chaque niveau de PS à CM2.',
+  gradient: 'from-french-blue/5 via-white to-amber-50',
+  icon: Palette,
+  levels: [
+    {
+      title: 'Petite Section (PS)',
+      icon: Sparkles,
+      years: [
+        {
+          year: '2023 / 2024',
+          projects: [
+            'Spectacle Djarama : découverte sensorielle du théâtre et des marionnettes.',
+            "Rituel d’écoute : moments d’écoute active pour nourrir l’imaginaire artistique."
+          ]
+        },
+        {
+          year: '2024 / 2025',
+          projects: [
+            'Mosaïque + danse : compositions collectives autour du motif et du geste.',
+            'Autoportrait en mouvement : premières expérimentations corporelles et plastiques.'
+          ]
+        },
+        {
+          year: '2025 / 2026',
+          projects: [
+            'Peinture sous verre avec Alioune Badara Kébé : initiation aux couleurs et à la transparence.',
+            'Visites d’expositions adaptées aux tout-petits pour introduire la médiation culturelle.'
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Moyenne Section (MS)',
+      icon: Palette,
+      years: [
+        {
+          year: '2023 / 2024',
+          projects: ['Projets d’autoportrait : se représenter par les textures, couleurs et silhouettes.']
+        },
+        {
+          year: '2024 / 2025',
+          projects: ['Rituel d’écoute et carnet de regards : paysagisme sonore et traces graphiques.']
+        },
+        {
+          year: '2025 / 2026',
+          projects: ['Visites d’expositions : premiers échanges avec les œuvres contemporaines.']
+        }
+      ]
+    },
+    {
+      title: 'Grande Section (GS)',
+      icon: CalendarRange,
+      years: [
+        {
+          year: '2023 / 2024',
+          projects: ['« Lycée français dans le monde » : affiches illustrant les lieux de scolarisation.']
+        },
+        {
+          year: '2024 / 2025',
+          projects: ['Spectacle Djarama et ateliers de marionnettes en classe.']
+        },
+        {
+          year: '2025 / 2026',
+          projects: ['« Elles d’Afrique » : portraits inspirés de figures féminines du continent.']
+        }
+      ]
+    },
+    {
+      title: 'Cours Préparatoire (CP)',
+      icon: MapPinned,
+      years: [
+        {
+          year: '2023 / 2024',
+          projects: ['Mosaïque + danse : correspondance entre formes géométriques et chorégraphies.']
+        },
+        {
+          year: '2024 / 2025',
+          projects: ['Création d’images numériques : initiation au dessin sur tablette et au montage.']
+        },
+        {
+          year: '2025 / 2026',
+          projects: ['Peinture sous verre avec Alioune Badara Kébé : jeux de lumière et narration.']
+        }
+      ]
+    },
+    {
+      title: 'Cours Élémentaire 1 (CE1)',
+      icon: Sparkles,
+      years: [
+        {
+          year: '2023 / 2024',
+          projects: ['Autoportrait en techniques mixtes : collage, peinture et écriture.']
+        },
+        {
+          year: '2024 / 2025',
+          projects: ['Rituel d’écoute et écriture poétique : traduire le son en image.']
+        },
+        {
+          year: '2025 / 2026',
+          projects: ['Visites d’expositions au lycée et à la Galerie Mémoires Africaines.']
+        }
+      ]
+    },
+    {
+      title: 'Cours Élémentaire 2 (CE2)',
+      icon: CalendarRange,
+      years: [
+        {
+          year: '2023 / 2024',
+          projects: ['« Elles d’Afrique » : portraits d’inspirations féminines et récit graphique.']
+        },
+        {
+          year: '2024 / 2025',
+          projects: ['Réalisation de Litema : motifs basotho en peinture murale collective.']
+        },
+        {
+          year: '2025 / 2026',
+          projects: ['Création d’images numériques : composition, retouche et impression.']
+        }
+      ]
+    },
+    {
+      title: 'Cours Moyen 1 (CM1)',
+      icon: Layers,
+      years: [
+        {
+          year: '2023 / 2024',
+          projects: ['Projet « Lycée français dans le monde » : carte collaborative et correspondances.']
+        },
+        {
+          year: '2024 / 2025',
+          projects: ['Atelier mosaïque + danse : scénographie, rythme et mouvement.']
+        },
+        {
+          year: '2025 / 2026',
+          projects: ['Peinture sous verre avec Alioune Badara Kébé : récit visuel et composition.']
+        }
+      ]
+    },
+    {
+      title: 'Cours Moyen 2 (CM2)',
+      icon: GraduationCap,
+      years: [
+        {
+          year: '2023 / 2024',
+          projects: ['Visites d’expositions et médiation auprès des classes de maternelle.']
+        },
+        {
+          year: '2024 / 2025',
+          projects: ['Autoportrait engagé : identité, sport et citoyenneté.']
+        },
+        {
+          year: '2025 / 2026',
+          projects: ['Création d’un Litema collectif et restitution numérique.']
+        }
+      ]
+    }
+  ]
+};
 
 const promotions = [
   {
@@ -270,6 +434,7 @@ const parcoursArtistiqueInterdegre = {
 
 const tocItems = [
   { id: 'introduction', label: 'Panorama du PEAC' },
+  { id: promotionsPrimaire.id, label: promotionsPrimaire.title },
   ...promotions.map((promotion) => ({ id: promotion.id, label: promotion.title })),
   { id: parcoursArtistiqueInterdegre.id, label: parcoursArtistiqueInterdegre.title }
 ];
@@ -370,6 +535,54 @@ const ParcoursEducationArtistiqueCulturelle = () => {
                       Les promotions sont présentées comme des « carnets de bord » qui permettent de suivre les projets au fil des niveaux, tout en valorisant les collaborations entre disciplines et partenaires culturels.
                     </p>
                   </div>
+                </div>
+              </div>
+            </section>
+
+            <section
+              id={promotionsPrimaire.id}
+              className={`${sectionWrapperClass} bg-gradient-to-br ${promotionsPrimaire.gradient}`}
+              aria-labelledby={`${promotionsPrimaire.id}-title`}
+            >
+              <div className="relative space-y-6">
+                <div className="flex items-center gap-4 mb-2">
+                  <promotionsPrimaire.icon className="h-10 w-10 text-french-blue" aria-hidden="true" />
+                  <div>
+                    <h2 id={`${promotionsPrimaire.id}-title`} className="text-2xl font-playfair font-semibold text-slate-900">
+                      {promotionsPrimaire.title}
+                    </h2>
+                    <p className="text-slate-700 text-sm md:text-base leading-relaxed">{promotionsPrimaire.tagline}</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-6">
+                  {promotionsPrimaire.levels.map((level) => (
+                    <article key={level.title} className={levelCardClass} aria-labelledby={`${level.title.replace(/\s+/g, '-')}-heading`}>
+                      <div className="flex items-start gap-3 mb-2">
+                        <level.icon className="h-6 w-6 text-french-blue mt-1" aria-hidden="true" />
+                        <h3 id={`${level.title.replace(/\s+/g, '-')}-heading`} className="text-xl font-semibold text-slate-900">
+                          {level.title}
+                        </h3>
+                      </div>
+                      <div className="grid gap-4 md:grid-cols-3">
+                        {level.years.map((year) => (
+                          <div key={`${level.title}-${year.year}`} className={yearCardClass}>
+                            <div className="flex items-center gap-2 text-slate-900 font-semibold">
+                              <CalendarRange className="h-4 w-4 text-french-blue" aria-hidden="true" />
+                              <span>{year.year}</span>
+                            </div>
+                            <ul className="space-y-2 pl-1">
+                              {year.projects.map((project) => (
+                                <li key={project} className={listItemClass}>
+                                  {project}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </article>
+                  ))}
                 </div>
               </div>
             </section>
