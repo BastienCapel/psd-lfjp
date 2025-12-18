@@ -26,160 +26,74 @@ const yearCardClass = 'rounded-xl border border-slate-200 bg-white/90 p-4 shadow
 const promotionsPrimaire = {
   id: 'promotions-primaire',
   title: 'Parcours du primaire 2023 – 2026',
-  tagline: 'Une visibilité claire des projets artistiques pour chaque niveau de PS à CM2.',
+  tagline: 'Une visibilité claire des projets artistiques pour le cycle 2 et le cycle 3.',
   gradient: 'from-french-blue/5 via-white to-amber-50',
   icon: Palette,
   levels: [
     {
-      title: 'Petite Section (PS)',
-      icon: Sparkles,
-      years: [
-        {
-          year: '2023 / 2024',
-          projects: [
-            'Spectacle Djarama : découverte sensorielle du théâtre et des marionnettes.',
-            "Rituel d’écoute : moments d’écoute active pour nourrir l’imaginaire artistique."
-          ]
-        },
-        {
-          year: '2024 / 2025',
-          projects: [
-            'Mosaïque + danse : compositions collectives autour du motif et du geste.',
-            'Autoportrait en mouvement : premières expérimentations corporelles et plastiques.'
-          ]
-        },
-        {
-          year: '2025 / 2026',
-          projects: [
-            'Peinture sous verre avec Alioune Badara Kébé : initiation aux couleurs et à la transparence.',
-            'Visites d’expositions adaptées aux tout-petits pour introduire la médiation culturelle.'
-          ]
-        }
-      ]
-    },
-    {
-      title: 'Moyenne Section (MS)',
-      icon: Palette,
-      years: [
-        {
-          year: '2023 / 2024',
-          projects: ['Projets d’autoportrait : se représenter par les textures, couleurs et silhouettes.']
-        },
-        {
-          year: '2024 / 2025',
-          projects: ['Rituel d’écoute et carnet de regards : paysagisme sonore et traces graphiques.']
-        },
-        {
-          year: '2025 / 2026',
-          projects: ['Visites d’expositions : premiers échanges avec les œuvres contemporaines.']
-        }
-      ]
-    },
-    {
-      title: 'Grande Section (GS)',
-      icon: CalendarRange,
-      years: [
-        {
-          year: '2023 / 2024',
-          projects: ['« Lycée français dans le monde » : affiches illustrant les lieux de scolarisation.']
-        },
-        {
-          year: '2024 / 2025',
-          projects: ['Spectacle Djarama et ateliers de marionnettes en classe.']
-        },
-        {
-          year: '2025 / 2026',
-          projects: ['« Elles d’Afrique » : portraits inspirés de figures féminines du continent.']
-        }
-      ]
-    },
-    {
-      title: 'Cours Préparatoire (CP)',
+      title: 'Cycle 2 – École élémentaire (CP, CE1, CE2)',
       icon: MapPinned,
       years: [
         {
           year: '2023 / 2024',
-          projects: ['Mosaïque + danse : correspondance entre formes géométriques et chorégraphies.']
+          projects: ['Aucun projet explicitement renseigné pour le cycle 2.']
         },
         {
           year: '2024 / 2025',
-          projects: ['Création d’images numériques : initiation au dessin sur tablette et au montage.']
+          projects: [
+            'Mosaïque.',
+            'Danse.',
+            'Spectacle avec la troupe Diarama.',
+            'Peinture sous verre avec l’artiste Alioun Kebe (Biennale).',
+            'Projet danse.',
+            "Visites d’expositions d’art du hall de l’école."
+          ]
         },
         {
           year: '2025 / 2026',
-          projects: ['Peinture sous verre avec Alioune Badara Kébé : jeux de lumière et narration.']
+          projects: [
+            'Spectacle de fin d’année avec la troupe Diarama.',
+            'Rituel d’écoute musicale.',
+            'Projet autour de l’autoportrait.',
+            "Visites d’expositions d’art du hall de l’école.",
+            'Projet « Lycée français dans le monde » (travail sur l’esprit critique).'
+          ]
         }
       ]
     },
     {
-      title: 'Cours Élémentaire 1 (CE1)',
-      icon: Sparkles,
-      years: [
-        {
-          year: '2023 / 2024',
-          projects: ['Autoportrait en techniques mixtes : collage, peinture et écriture.']
-        },
-        {
-          year: '2024 / 2025',
-          projects: ['Rituel d’écoute et écriture poétique : traduire le son en image.']
-        },
-        {
-          year: '2025 / 2026',
-          projects: ['Visites d’expositions au lycée et à la Galerie Mémoires Africaines.']
-        }
-      ]
-    },
-    {
-      title: 'Cours Élémentaire 2 (CE2)',
-      icon: CalendarRange,
-      years: [
-        {
-          year: '2023 / 2024',
-          projects: ['« Elles d’Afrique » : portraits d’inspirations féminines et récit graphique.']
-        },
-        {
-          year: '2024 / 2025',
-          projects: ['Réalisation de Litema : motifs basotho en peinture murale collective.']
-        },
-        {
-          year: '2025 / 2026',
-          projects: ['Création d’images numériques : composition, retouche et impression.']
-        }
-      ]
-    },
-    {
-      title: 'Cours Moyen 1 (CM1)',
+      title: 'Cycle 3 – École élémentaire (CM1, CM2)',
       icon: Layers,
       years: [
         {
           year: '2023 / 2024',
-          projects: ['Projet « Lycée français dans le monde » : carte collaborative et correspondances.']
+          projects: ['Spectacle avec la troupe Diarama.']
         },
         {
           year: '2024 / 2025',
-          projects: ['Atelier mosaïque + danse : scénographie, rythme et mouvement.']
+          projects: [
+            'Peinture sous verre avec l’artiste Alioun Kebe (Biennale).',
+            'Spectacle de fin d’année avec la troupe Diarama.',
+            'Création d’images avec des outils numériques.',
+            'Projet « Elles d’Afrique ».',
+            'Projet autour de l’autoportrait.',
+            'Projet danse.',
+            "Visites d’expositions d’art du hall de l’école.",
+            'Performance artistique avec Charlotte Hubert.'
+          ]
         },
         {
           year: '2025 / 2026',
-          projects: ['Peinture sous verre avec Alioune Badara Kébé : récit visuel et composition.']
-        }
-      ]
-    },
-    {
-      title: 'Cours Moyen 2 (CM2)',
-      icon: GraduationCap,
-      years: [
-        {
-          year: '2023 / 2024',
-          projects: ['Visites d’expositions et médiation auprès des classes de maternelle.']
-        },
-        {
-          year: '2024 / 2025',
-          projects: ['Autoportrait engagé : identité, sport et citoyenneté.']
-        },
-        {
-          year: '2025 / 2026',
-          projects: ['Création d’un Litema collectif et restitution numérique.']
+          projects: [
+            'Spectacle de fin d’année avec la troupe Diarama.',
+            'Ateliers cirque.',
+            'Rituel d’écoute musicale.',
+            'Création d’images avec des outils numériques.',
+            'Projet autour de l’autoportrait.',
+            "Visites d’expositions d’art du hall de l’école.",
+            'Projet « Lycée français dans le monde » (travail sur l’esprit critique).',
+            'Réalisation de Litema.'
+          ]
         }
       ]
     }
