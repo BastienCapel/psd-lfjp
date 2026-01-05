@@ -26,10 +26,40 @@ const yearCardClass = 'rounded-xl border border-slate-200 bg-white/90 p-4 shadow
 const promotionsPrimaire = {
   id: 'promotions-primaire',
   title: 'Parcours du primaire 2023 – 2026',
-  tagline: 'Une visibilité claire des projets artistiques pour le cycle 2 et le cycle 3.',
+  tagline: 'Une visibilité claire des projets artistiques pour les cycles 1, 2 et 3.',
   gradient: 'from-french-blue/5 via-white to-amber-50',
   icon: Palette,
   levels: [
+    {
+      title: 'Cycle 1 – École maternelle (PS, MS, GS)',
+      icon: Layers,
+      years: [
+        {
+          year: '2023 / 2024',
+          projects: [
+            'PS : Sama potager – Tour du monde – spectacle Djarama.',
+            'MS : Projet cinéma avec Georges Benguigui.',
+            'GS : Spectacle Djarama.'
+          ]
+        },
+        {
+          year: '2024 / 2025',
+          projects: [
+            'PS : Sama potager ? – Tour du monde – Tous au musée – spectacle Djarama.',
+            'MS : Spectacle Djarama.',
+            'GS : Tableau de sable.'
+          ]
+        },
+        {
+          year: '2025 / 2026',
+          projects: [
+            'PS : Sama potager ? – Tour du monde – Tous au musée – spectacle Djarama.',
+            'MS : Tableau de sable.',
+            'GS : Tableau de sable.'
+          ]
+        }
+      ]
+    },
     {
       title: 'Cycle 2 – École élémentaire (CP, CE1, CE2)',
       icon: MapPinned,
