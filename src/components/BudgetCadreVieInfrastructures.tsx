@@ -68,7 +68,7 @@ const summaryCards = [
     accent: 'from-rose-50 to-amber-50 text-amber-700 border-amber-100',
   },
   {
-    label: 'Capacité totale estimée (budget + ANETT + écolages)',
+    label: 'Capacité totale estimée (budget + ANEFE + écolages)',
     value: 685_139_418,
     icon: BadgeDollarSign,
     accent: 'from-sky-50 to-indigo-50 text-sky-700 border-sky-100',
@@ -133,11 +133,11 @@ const projects: Project[] = [
 
 // Flux de trésorerie prévisionnels (adapter montants/années si besoin).
 const financialTimeline: CashFlowYear[] = [
-  { year: 2026, capacite: 50_000_000, leviers: 64_969_911, recettesTotales: 114_969_911, depenses: 135_000_000 },
-  { year: 2027, capacite: 50_000_000, leviers: 70_042_377, recettesTotales: 120_042_377, depenses: 126_666_667 },
-  { year: 2028, capacite: 50_000_000, leviers: 70_042_377, recettesTotales: 120_042_377, depenses: 156_666_667 },
-  { year: 2029, capacite: 50_000_000, leviers: 70_042_377, recettesTotales: 120_042_377, depenses: 156_666_666 },
-  { year: 2030, capacite: 80_000_000, leviers: 70_042_377, recettesTotales: 150_042_377, depenses: 200_000_000 },
+  { year: 2026, capacite: 43_000_000, leviers: 64_969_911, recettesTotales: 107_969_911, depenses: 135_000_000 },
+  { year: 2027, capacite: 37_000_000, leviers: 70_042_377, recettesTotales: 107_042_377, depenses: 126_666_667 },
+  { year: 2028, capacite: 62_000_000, leviers: 70_042_377, recettesTotales: 132_042_377, depenses: 156_666_667 },
+  { year: 2029, capacite: 54_000_001, leviers: 70_042_377, recettesTotales: 124_042_378, depenses: 156_666_667 },
+  { year: 2030, capacite: 54_000_000, leviers: 70_042_377, recettesTotales: 124_042_377, depenses: 200_000_000 },
 ];
 
 const tuitionBaseRevenue = 1_203_146_500;
@@ -167,7 +167,7 @@ const getPeriodStartYear = (period: string) => Number(period.match(/\d{4}/)?.[0]
 const BudgetCadreVieInfrastructures = () => {
   const [currency, setCurrency] = useState<'XOF' | 'EUR'>('XOF');
   const cumulativeTuition = 345_139_418;
-  const annualTotals = [135_000_000, 126_666_667, 156_666_667, 156_666_666, 200_000_000];
+  const annualTotals = [135_000_000, 126_666_667, 156_666_667, 156_666_667, 200_000_000];
 
   const chartData = useMemo(
     () =>
