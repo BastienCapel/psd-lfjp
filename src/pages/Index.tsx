@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import BackToTop from '../components/BackToTop';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MousePointer } from 'lucide-react';
 
 const Index = () => {
   return (
@@ -70,8 +70,12 @@ const Index = () => {
                   Consultez notre Plan Stratégique de Développement 2026-2030 qui détaille nos objectifs,
                   actions et indicateurs pour les années à venir.
                 </p>
-                <Link to="/plan-strategique" className="inline-flex items-center text-french-blue font-medium hover:underline group mt-auto pt-4">
+                <Link to="/plan-strategique" className="relative inline-flex items-center text-french-blue font-medium hover:underline group mt-auto pt-4">
                   Consulter
+                  <span className="pointer-events-none absolute -top-4 -right-6 inline-flex items-center gap-1 rounded-full bg-amber-400/90 px-2 py-1 text-[10px] font-semibold text-amber-950 shadow-sm shadow-amber-500/40">
+                    <MousePointer size={12} className="shrink-0" />
+                    cliquer ici
+                  </span>
                   <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </CardContent>
