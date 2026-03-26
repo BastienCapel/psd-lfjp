@@ -455,7 +455,7 @@ const peacArtists = [
 
 const ParcoursEducationArtistiqueCulturelle = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('2023-2026');
+  const [activeTab, setActiveTab] = useState('2026-2030');
 
   return (
     <div className="min-h-screen flex flex-col font-raleway bg-gradient-to-b from-slate-50 via-white to-slate-100">
