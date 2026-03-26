@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -455,6 +455,7 @@ const peacArtists = [
 
 const ParcoursEducationArtistiqueCulturelle = () => {
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('2026-2030');
 
   return (
     <div className="min-h-screen flex flex-col font-raleway bg-gradient-to-b from-slate-50 via-white to-slate-100">
@@ -499,7 +500,7 @@ const ParcoursEducationArtistiqueCulturelle = () => {
 
       <main className="flex-1 py-12 md:py-16">
         <div className="container mx-auto px-6">
-          <Tabs defaultValue="2023-2026" className="space-y-8">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
             <TabsList className="h-auto w-full max-w-xl grid grid-cols-1 sm:grid-cols-2 bg-white border border-slate-200 rounded-2xl p-1 shadow-sm">
               <TabsTrigger
                 value="2023-2026"
