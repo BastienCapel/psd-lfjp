@@ -501,10 +501,16 @@ const ParcoursEducationArtistiqueCulturelle = () => {
         <div className="container mx-auto px-6">
           <Tabs defaultValue="2023-2026" className="space-y-8">
             <TabsList className="h-auto w-full max-w-xl grid grid-cols-1 sm:grid-cols-2 bg-white border border-slate-200 rounded-2xl p-1 shadow-sm">
-              <TabsTrigger value="2023-2026" className="text-sm md:text-base">
+              <TabsTrigger
+                value="2023-2026"
+                className="text-sm md:text-base rounded-xl border border-transparent text-slate-500 data-[state=active]:border-french-blue/20 data-[state=active]:bg-french-blue data-[state=active]:text-white data-[state=active]:shadow-md"
+              >
                 2023-2026
               </TabsTrigger>
-              <TabsTrigger value="2026-2030" className="text-sm md:text-base">
+              <TabsTrigger
+                value="2026-2030"
+                className="text-sm md:text-base rounded-xl border border-transparent text-slate-500 data-[state=active]:border-french-blue/20 data-[state=active]:bg-french-blue data-[state=active]:text-white data-[state=active]:shadow-md"
+              >
                 2026-2030
               </TabsTrigger>
             </TabsList>
