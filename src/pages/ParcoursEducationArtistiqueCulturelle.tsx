@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   ArrowLeft,
   Home,
@@ -428,186 +429,210 @@ const ParcoursEducationArtistiqueCulturelle = () => {
       </div>
 
       <main className="flex-1 py-12 md:py-16">
-        <div className="container mx-auto px-6 flex flex-col lg:flex-row gap-12">
-          <aside className="lg:w-64 flex-shrink-0">
-            <nav className="sticky top-24 space-y-4">
-              <div className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm">
-                <h2 className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                  <Milestone className="h-5 w-5 text-french-blue" aria-hidden="true" />
-                  Explorer le parcours
-                </h2>
-                <ul className="space-y-2 text-sm text-slate-700">
-                  {tocItems.map((item) => (
-                    <li key={item.id}>
-                      <a
-                        href={`#${item.id}`}
-                        className="group flex items-center gap-2 rounded-xl px-3 py-2 hover:bg-slate-100 hover:text-french-blue transition-colors"
-                      >
-                        <span className="h-1.5 w-1.5 rounded-full bg-slate-300 group-hover:bg-french-blue"></span>
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </nav>
-          </aside>
+        <div className="container mx-auto px-6">
+          <Tabs defaultValue="2023-2026" className="space-y-8">
+            <TabsList className="h-auto w-full max-w-xl grid grid-cols-1 sm:grid-cols-2 bg-white border border-slate-200 rounded-2xl p-1 shadow-sm">
+              <TabsTrigger value="2023-2026" className="text-sm md:text-base">
+                2023-2026
+              </TabsTrigger>
+              <TabsTrigger value="2026-2030" className="text-sm md:text-base">
+                2026-2030
+              </TabsTrigger>
+            </TabsList>
 
-          <div className="flex-1 space-y-12">
-            <section id="introduction" className={sectionWrapperClass}>
-              <div className="absolute inset-0 bg-gradient-to-br from-french-blue/10 via-transparent to-french-blue/5" aria-hidden="true"></div>
-              <div className="relative space-y-6">
-                <div className="flex items-center gap-3">
-                  <Palette className="h-10 w-10 text-french-blue" aria-hidden="true" />
-                  <div>
-                    <h2 className="text-2xl font-playfair font-semibold text-slate-900">Panorama du Parcours d’Éducation Artistique et Culturelle</h2>
-                    <p className="text-slate-600 text-base md:text-lg">
-                      Cet inventaire met en lumière la diversité des expériences vécues par nos élèves : visites, résidences, rencontres professionnelles, projets interdisciplinaires et expositions au sein du lycée.
-                    </p>
-                  </div>
-                </div>
-                <div className="grid gap-6 md:grid-cols-2">
-                  <div className="rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-inner">
-                    <h3 className="text-lg font-semibold text-slate-900 mb-3">Un fil conducteur pour la culture</h3>
-                    <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                      Le PEAC structure la continuité des apprentissages artistiques et culturels et favorise l’ouverture des élèves sur leur environnement local et international, en cohérence avec l’axe 2 du PSD.
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-inner">
-                    <h3 className="text-lg font-semibold text-slate-900 mb-3">Une lecture transversale</h3>
-                    <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                      Les promotions sont présentées comme des « carnets de bord » qui permettent de suivre les projets au fil des niveaux, tout en valorisant les collaborations entre disciplines et partenaires culturels.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
+            <TabsContent value="2023-2026" className="mt-0">
+              <div className="flex flex-col lg:flex-row gap-12">
+                <aside className="lg:w-64 flex-shrink-0">
+                  <nav className="sticky top-24 space-y-4">
+                    <div className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-sm">
+                      <h2 className="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                        <Milestone className="h-5 w-5 text-french-blue" aria-hidden="true" />
+                        Explorer le parcours
+                      </h2>
+                      <ul className="space-y-2 text-sm text-slate-700">
+                        {tocItems.map((item) => (
+                          <li key={item.id}>
+                            <a
+                              href={`#${item.id}`}
+                              className="group flex items-center gap-2 rounded-xl px-3 py-2 hover:bg-slate-100 hover:text-french-blue transition-colors"
+                            >
+                              <span className="h-1.5 w-1.5 rounded-full bg-slate-300 group-hover:bg-french-blue"></span>
+                              {item.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </nav>
+                </aside>
 
-            <section
-              id={promotionsPrimaire.id}
-              className={`${sectionWrapperClass} bg-gradient-to-br ${promotionsPrimaire.gradient}`}
-              aria-labelledby={`${promotionsPrimaire.id}-title`}
-            >
-              <div className="relative space-y-6">
-                <div className="flex items-center gap-4 mb-2">
-                  <promotionsPrimaire.icon className="h-10 w-10 text-french-blue" aria-hidden="true" />
-                  <div>
-                    <h2 id={`${promotionsPrimaire.id}-title`} className="text-2xl font-playfair font-semibold text-slate-900">
-                      {promotionsPrimaire.title}
-                    </h2>
-                    <p className="text-slate-700 text-sm md:text-base leading-relaxed">{promotionsPrimaire.tagline}</p>
-                  </div>
-                </div>
-
-                <div className="grid gap-6">
-                  {promotionsPrimaire.levels.map((level) => (
-                    <article key={level.title} className={levelCardClass} aria-labelledby={`${level.title.replace(/\s+/g, '-')}-heading`}>
-                      <div className="flex items-start gap-3 mb-2">
-                        <level.icon className="h-6 w-6 text-french-blue mt-1" aria-hidden="true" />
-                        <h3 id={`${level.title.replace(/\s+/g, '-')}-heading`} className="text-xl font-semibold text-slate-900">
-                          {level.title}
-                        </h3>
+                <div className="flex-1 space-y-12">
+                  <section id="introduction" className={sectionWrapperClass}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-french-blue/10 via-transparent to-french-blue/5" aria-hidden="true"></div>
+                    <div className="relative space-y-6">
+                      <div className="flex items-center gap-3">
+                        <Palette className="h-10 w-10 text-french-blue" aria-hidden="true" />
+                        <div>
+                          <h2 className="text-2xl font-playfair font-semibold text-slate-900">Panorama du Parcours d’Éducation Artistique et Culturelle</h2>
+                          <p className="text-slate-600 text-base md:text-lg">
+                            Cet inventaire met en lumière la diversité des expériences vécues par nos élèves : visites, résidences, rencontres professionnelles, projets interdisciplinaires et expositions au sein du lycée.
+                          </p>
+                        </div>
                       </div>
-                      <div className="grid gap-4 md:grid-cols-3">
-                        {level.years.map((year) => (
-                          <div key={`${level.title}-${year.year}`} className={yearCardClass}>
-                            <div className="flex items-center gap-2 text-slate-900 font-semibold">
-                              <CalendarRange className="h-4 w-4 text-french-blue" aria-hidden="true" />
-                              <span>{year.year}</span>
+                      <div className="grid gap-6 md:grid-cols-2">
+                        <div className="rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-inner">
+                          <h3 className="text-lg font-semibold text-slate-900 mb-3">Un fil conducteur pour la culture</h3>
+                          <p className="text-slate-700 text-sm md:text-base leading-relaxed">
+                            Le PEAC structure la continuité des apprentissages artistiques et culturels et favorise l’ouverture des élèves sur leur environnement local et international, en cohérence avec l’axe 2 du PSD.
+                          </p>
+                        </div>
+                        <div className="rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-inner">
+                          <h3 className="text-lg font-semibold text-slate-900 mb-3">Une lecture transversale</h3>
+                          <p className="text-slate-700 text-sm md:text-base leading-relaxed">
+                            Les promotions sont présentées comme des « carnets de bord » qui permettent de suivre les projets au fil des niveaux, tout en valorisant les collaborations entre disciplines et partenaires culturels.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section
+                    id={promotionsPrimaire.id}
+                    className={`${sectionWrapperClass} bg-gradient-to-br ${promotionsPrimaire.gradient}`}
+                    aria-labelledby={`${promotionsPrimaire.id}-title`}
+                  >
+                    <div className="relative space-y-6">
+                      <div className="flex items-center gap-4 mb-2">
+                        <promotionsPrimaire.icon className="h-10 w-10 text-french-blue" aria-hidden="true" />
+                        <div>
+                          <h2 id={`${promotionsPrimaire.id}-title`} className="text-2xl font-playfair font-semibold text-slate-900">
+                            {promotionsPrimaire.title}
+                          </h2>
+                          <p className="text-slate-700 text-sm md:text-base leading-relaxed">{promotionsPrimaire.tagline}</p>
+                        </div>
+                      </div>
+
+                      <div className="grid gap-6">
+                        {promotionsPrimaire.levels.map((level) => (
+                          <article key={level.title} className={levelCardClass} aria-labelledby={`${level.title.replace(/\s+/g, '-')}-heading`}>
+                            <div className="flex items-start gap-3 mb-2">
+                              <level.icon className="h-6 w-6 text-french-blue mt-1" aria-hidden="true" />
+                              <h3 id={`${level.title.replace(/\s+/g, '-')}-heading`} className="text-xl font-semibold text-slate-900">
+                                {level.title}
+                              </h3>
                             </div>
-                            <ul className="space-y-2 pl-1">
-                              {year.projects.map((project) => (
-                                <li key={project} className={listItemClass}>
-                                  {project}
-                                </li>
+                            <div className="grid gap-4 md:grid-cols-3">
+                              {level.years.map((year) => (
+                                <div key={`${level.title}-${year.year}`} className={yearCardClass}>
+                                  <div className="flex items-center gap-2 text-slate-900 font-semibold">
+                                    <CalendarRange className="h-4 w-4 text-french-blue" aria-hidden="true" />
+                                    <span>{year.year}</span>
+                                  </div>
+                                  <ul className="space-y-2 pl-1">
+                                    {year.projects.map((project) => (
+                                      <li key={project} className={listItemClass}>
+                                        {project}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
                               ))}
-                            </ul>
+                            </div>
+                          </article>
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+
+                  {promotions.map((promotion) => (
+                    <section
+                      key={promotion.id}
+                      id={promotion.id}
+                      className={`${sectionWrapperClass} bg-gradient-to-br ${promotion.gradient}`}
+                    >
+                      <div className="relative">
+                        <div className="flex items-center gap-4 mb-6">
+                          <promotion.icon className="h-10 w-10 text-french-blue" aria-hidden="true" />
+                          <div>
+                            <h2 className="text-2xl font-playfair font-semibold text-slate-900">{promotion.title}</h2>
+                            <p className="text-slate-700 text-sm md:text-base leading-relaxed">{promotion.tagline}</p>
+                          </div>
+                        </div>
+
+                        <div className="grid gap-6 md:grid-cols-2">
+                          {promotion.levels.map((level) => (
+                            <article key={level.title} className={levelCardClass}>
+                              <div className="flex items-start gap-3">
+                                <level.icon className="h-6 w-6 text-french-blue mt-1" aria-hidden="true" />
+                                <h3 className="text-xl font-semibold text-slate-900">{level.title}</h3>
+                              </div>
+                              <ul className="space-y-2 pl-2">
+                                {level.highlights.map((item) => (
+                                  <li key={item} className={listItemClass}>
+                                    {item}
+                                  </li>
+                                ))}
+                              </ul>
+                            </article>
+                          ))}
+                        </div>
+                      </div>
+                    </section>
+                  ))}
+
+                  <section
+                    id={parcoursArtistiqueInterdegre.id}
+                    className={`${sectionWrapperClass} bg-gradient-to-br ${parcoursArtistiqueInterdegre.gradient} text-white`}
+                  >
+                    <div className="relative space-y-8">
+                      <div className="flex items-center gap-4">
+                        <parcoursArtistiqueInterdegre.icon className="h-10 w-10 text-white" aria-hidden="true" />
+                        <div>
+                          <h2 className="text-2xl font-playfair font-semibold">{parcoursArtistiqueInterdegre.title}</h2>
+                          <p className="text-white/80 text-sm md:text-base">{parcoursArtistiqueInterdegre.subtitle}</p>
+                        </div>
+                      </div>
+
+                      <div className="space-y-6">
+                        {parcoursArtistiqueInterdegre.seasons.map((season) => (
+                          <div key={season.title} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                            <h3 className="text-xl font-semibold text-white flex items-center gap-2">
+                              <CalendarRange className="h-5 w-5 text-white" aria-hidden="true" />
+                              {season.title}
+                            </h3>
+                            <p className="text-white/80 text-sm md:text-base leading-relaxed mt-2">{season.description}</p>
+                            <div className="mt-4 grid gap-4 md:grid-cols-2">
+                              {season.segments.map((segment) => (
+                                <div key={segment.label} className="rounded-xl border border-white/10 bg-white/10 p-4">
+                                  <h4 className="text-lg font-semibold text-white mb-2">{segment.label}</h4>
+                                  <ul className="space-y-2 text-white/90 text-sm md:text-base">
+                                    {segment.details.map((detail) => (
+                                      <li key={detail} className="leading-relaxed">
+                                        {detail}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              ))}
+                            </div>
                           </div>
                         ))}
                       </div>
-                    </article>
-                  ))}
+                    </div>
+                  </section>
                 </div>
               </div>
-            </section>
+            </TabsContent>
 
-            {promotions.map((promotion) => (
-              <section
-                key={promotion.id}
-                id={promotion.id}
-                className={`${sectionWrapperClass} bg-gradient-to-br ${promotion.gradient}`}
-              >
-                <div className="relative">
-                  <div className="flex items-center gap-4 mb-6">
-                    <promotion.icon className="h-10 w-10 text-french-blue" aria-hidden="true" />
-                    <div>
-                      <h2 className="text-2xl font-playfair font-semibold text-slate-900">{promotion.title}</h2>
-                      <p className="text-slate-700 text-sm md:text-base leading-relaxed">{promotion.tagline}</p>
-                    </div>
-                  </div>
-
-                  <div className="grid gap-6 md:grid-cols-2">
-                    {promotion.levels.map((level) => (
-                      <article key={level.title} className={levelCardClass}>
-                        <div className="flex items-start gap-3">
-                          <level.icon className="h-6 w-6 text-french-blue mt-1" aria-hidden="true" />
-                          <h3 className="text-xl font-semibold text-slate-900">{level.title}</h3>
-                        </div>
-                        <ul className="space-y-2 pl-2">
-                          {level.highlights.map((item) => (
-                            <li key={item} className={listItemClass}>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </article>
-                    ))}
-                  </div>
+            <TabsContent value="2026-2030" className="mt-0">
+              <section className={sectionWrapperClass}>
+                <div className="relative space-y-4">
+                  <h2 className="text-2xl font-playfair font-semibold text-slate-900">Parcours 2026-2030</h2>
+                  <p className="text-slate-700 text-base md:text-lg leading-relaxed">Page en construction.</p>
                 </div>
               </section>
-            ))}
-
-            <section
-              id={parcoursArtistiqueInterdegre.id}
-              className={`${sectionWrapperClass} bg-gradient-to-br ${parcoursArtistiqueInterdegre.gradient} text-white`}
-            >
-              <div className="relative space-y-8">
-                <div className="flex items-center gap-4">
-                  <parcoursArtistiqueInterdegre.icon className="h-10 w-10 text-white" aria-hidden="true" />
-                  <div>
-                    <h2 className="text-2xl font-playfair font-semibold">{parcoursArtistiqueInterdegre.title}</h2>
-                    <p className="text-white/80 text-sm md:text-base">{parcoursArtistiqueInterdegre.subtitle}</p>
-                  </div>
-                </div>
-
-                <div className="space-y-6">
-                  {parcoursArtistiqueInterdegre.seasons.map((season) => (
-                    <div key={season.title} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-                      <h3 className="text-xl font-semibold text-white flex items-center gap-2">
-                        <CalendarRange className="h-5 w-5 text-white" aria-hidden="true" />
-                        {season.title}
-                      </h3>
-                      <p className="text-white/80 text-sm md:text-base leading-relaxed mt-2">{season.description}</p>
-                      <div className="mt-4 grid gap-4 md:grid-cols-2">
-                        {season.segments.map((segment) => (
-                          <div key={segment.label} className="rounded-xl border border-white/10 bg-white/10 p-4">
-                            <h4 className="text-lg font-semibold text-white mb-2">{segment.label}</h4>
-                            <ul className="space-y-2 text-white/90 text-sm md:text-base">
-                              {segment.details.map((detail) => (
-                                <li key={detail} className="leading-relaxed">
-                                  {detail}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-          </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </main>
 
