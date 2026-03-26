@@ -384,6 +384,75 @@ const tocItems = [
   { id: parcoursArtistiqueInterdegre.id, label: parcoursArtistiqueInterdegre.title }
 ];
 
+const peac2026Domains = [
+  'Arts du quotidien',
+  'Arts visuels',
+  'Arts du spectacle vivant',
+  'Arts de l’espace',
+  'Arts du langage',
+  'Arts du son',
+  'Arts des images animées',
+  'Arts des sciences et techniques'
+];
+
+const peac2026Table = [
+  ['Mat', 'X', 'X', 'X', '', 'X', 'X', '', 'X'],
+  ['CP', '', 'X', 'X', '', 'X', 'X', '', ''],
+  ['CE1', '', '', 'X', '', 'X', 'X', 'X', ''],
+  ['CE2', '', '', 'X', '', 'XX', 'X', '', ''],
+  ['CM1', 'X', '', 'X', '', 'X', 'X', '', 'X'],
+  ['CM2', '', '', 'XX', 'X', 'X', 'X', 'X', ''],
+  ['6°', '', '', 'XX', '', 'X', 'X', '', 'X'],
+  ['5°', '', '', 'X', '', 'X', 'X', '', ''],
+  ['4°', '', '', 'X', '', '', 'X', '', ''],
+  ['3°', 'X', 'X', 'X', '', 'X', 'X', '', 'X']
+];
+
+const peacReferences = [
+  'https://www.education.gouv.fr/bo/15/Hebdo28/MENE1514630A.htm',
+  'https://eduscol.education.fr/575/education-artistique-et-culturelle',
+  'https://www.ipefdakar.org/IMG/pdf/2013_eac_guide_bdef_287499.pdf',
+  'https://drive.google.com/file/d/1vL0Lw6dxiOKBeUvN0ucL_GLA6FDIjS6c/view?usp=drive_link'
+];
+
+const peacDomainsDetails = [
+  'Arts de l’espace, histoire et mémoire : architecture, musée, jardin.',
+  'Arts du spectacle vivant : danse, théâtre (jeu de scène, mise en scène), musique (événement musical), performance.',
+  'Arts du son : chorale, musique (création musicale).',
+  'Arts du quotidien, éducation aux médias et à l’information : art du goût, artisanat, design, esprit critique, production et diffusion d’informations.',
+  'Arts visuels et patrimoine : arts plastiques, photographie, arts appliqués, sculpture, peinture, dessin, patrimoine.',
+  'Arts du langage, livres et lecture : littérature, poésie, théâtre (écriture).',
+  'Arts des images animées : cinéma et audiovisuel.',
+  'Arts de la culture scientifique, technique et industrielle : jardin pédagogique, écopôles, projets biodiversité.'
+];
+
+const peacCulturePlaces = [
+  'Galerie Mémoires Africaines (Saly)',
+  'Maison d’Afrique (Saly)',
+  'Musée Khelcom (Saly)',
+  'Centre Guelewar (Ngaparou)',
+  'École supérieure d’audiovisuel SUP’IMAX (Dakar)',
+  'Institut français de Dakar et Galerie Le Manège (Dakar)',
+  'Musée des civilisations noires (Dakar)',
+  'Musée Mahicao (Guilor)',
+  'IFAN — Institut fondamental d’Afrique noire',
+  'Musée Théodore Monod (Dakar)',
+  'Manufacture Sénégalaise Des Arts Décoratifs (Thiès)'
+];
+
+const peacArtists = [
+  'Gelisa George (styliste et plasticienne)',
+  'Héloïse Vandermarcq (graveuse)',
+  'Alioune Badara Kebe (peinture sous verre)',
+  'Georges Meran (photographie, cinéma)',
+  'Aly Johnson (danse hip-hop)',
+  'Association Djarama (spectacle vivant et cirque)',
+  'Alioune Dime (peinture sur sable)',
+  'Hajar Thiam (slameuse)',
+  'Jimmy Sohm (photographe et IA)',
+  'Yasmine SweetLove (peinture et photographie)'
+];
+
 const ParcoursEducationArtistiqueCulturelle = () => {
   const navigate = useNavigate();
 
@@ -625,11 +694,138 @@ const ParcoursEducationArtistiqueCulturelle = () => {
             </TabsContent>
 
             <TabsContent value="2026-2030" className="mt-0">
-              <section className={sectionWrapperClass}>
-                <div className="relative space-y-4">
-                  <h2 className="text-2xl font-playfair font-semibold text-slate-900">Parcours 2026-2030</h2>
-                  <p className="text-slate-700 text-base md:text-lg leading-relaxed">Page en construction.</p>
-                </div>
+              <section className="space-y-8">
+                <article className={`${sectionWrapperClass} bg-gradient-to-br from-slate-50 via-white to-sky-50`}>
+                  <div className="relative space-y-4">
+                    <h2 className="text-3xl font-playfair font-semibold text-slate-900">PEAC 2026-2030</h2>
+                    <p className="text-slate-700 text-base md:text-lg leading-relaxed">
+                      Le parcours d’éducation artistique et culturelle vise à articuler <strong>rencontres</strong>, <strong>pratiques</strong> et <strong>connaissances</strong> afin de construire une progression cohérente de la maternelle à la 3°.
+                    </p>
+                    <div className="rounded-2xl border border-slate-200 bg-white/90 p-5">
+                      <h3 className="text-lg font-semibold text-slate-900 mb-3">Textes de référence</h3>
+                      <ul className="space-y-2 text-slate-700 text-sm md:text-base">
+                        {peacReferences.map((link) => (
+                          <li key={link}>
+                            <a href={link} target="_blank" rel="noreferrer" className="text-french-blue underline underline-offset-4 break-all">
+                              {link}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </article>
+
+                <article className={sectionWrapperClass}>
+                  <h3 className="text-2xl font-playfair font-semibold text-slate-900 mb-2">Tableau de programmation par niveau (centre de gravité)</h3>
+                  <p className="text-slate-600 mb-6">
+                    Lecture : <strong>X</strong> = domaine travaillé ; <strong>XX</strong> = domaine renforcé.
+                  </p>
+                  <div className="overflow-x-auto rounded-2xl border border-slate-200">
+                    <table className="min-w-[980px] w-full bg-white">
+                      <thead className="bg-slate-100">
+                        <tr>
+                          <th className="p-3 text-left text-sm font-semibold text-slate-900 border-b border-slate-200">Niveau</th>
+                          {peac2026Domains.map((domain) => (
+                            <th key={domain} className="p-3 text-center text-sm font-semibold text-slate-900 border-b border-slate-200">
+                              {domain}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {peac2026Table.map((row) => (
+                          <tr key={row[0]} className="odd:bg-white even:bg-slate-50/60">
+                            {row.map((cell, index) => (
+                              <td
+                                key={`${row[0]}-${index}`}
+                                className={`p-3 border-b border-slate-100 ${index === 0 ? 'font-semibold text-slate-900 text-left' : 'text-center text-slate-700'}`}
+                              >
+                                {cell}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </article>
+
+                <article className={sectionWrapperClass}>
+                  <h3 className="text-2xl font-playfair font-semibold text-slate-900 mb-4">Composantes du PEAC</h3>
+                  <div className="grid gap-5 md:grid-cols-3">
+                    <div className="rounded-2xl border border-slate-200 bg-white/90 p-5">
+                      <h4 className="font-semibold text-slate-900 mb-2">La pratique</h4>
+                      <p className="text-slate-700 text-sm md:text-base">Séances individuelles ou collectives, exploration de techniques, de matériaux et de dispositifs de création variés.</p>
+                    </div>
+                    <div className="rounded-2xl border border-slate-200 bg-white/90 p-5">
+                      <h4 className="font-semibold text-slate-900 mb-2">La rencontre</h4>
+                      <p className="text-slate-700 text-sm md:text-base">Contact avec des œuvres réelles, des artistes et des institutions culturelles, en lien avec le contexte local et français.</p>
+                    </div>
+                    <div className="rounded-2xl border border-slate-200 bg-white/90 p-5">
+                      <h4 className="font-semibold text-slate-900 mb-2">Les connaissances</h4>
+                      <p className="text-slate-700 text-sm md:text-base">Approches esthétique, historico-géographique, sociologique et scientifique pour enrichir la culture artistique.</p>
+                    </div>
+                  </div>
+                </article>
+
+                <article className={sectionWrapperClass}>
+                  <h3 className="text-2xl font-playfair font-semibold text-slate-900 mb-4">Les 8 domaines artistiques</h3>
+                  <ul className="grid gap-3 md:grid-cols-2">
+                    {peacDomainsDetails.map((domain) => (
+                      <li key={domain} className="rounded-xl border border-slate-200 bg-white/90 p-4 text-slate-700">
+                        {domain}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+
+                <article className={sectionWrapperClass}>
+                  <h3 className="text-2xl font-playfair font-semibold text-slate-900 mb-4">Mise en œuvre LFJP (cycles)</h3>
+                  <div className="space-y-3 text-slate-700">
+                    <p><strong>Cycle 1 :</strong> Arts du quotidien · Arts visuels · Arts du spectacle vivant · Arts des sciences et techniques.</p>
+                    <p><strong>Cycle 2 :</strong> Arts visuels · Arts du spectacle vivant · Arts du son · Arts des images animées · Arts du langage.</p>
+                    <p><strong>Cycle 3 :</strong> Arts du quotidien · Arts du spectacle vivant · Arts de l’espace · Arts des images animées · Arts des sciences et techniques.</p>
+                    <p><strong>Cycle 4 :</strong> Arts du spectacle vivant · Arts du langage · Arts des sciences et techniques · Arts du quotidien · Arts visuels.</p>
+                  </div>
+                  <div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-5">
+                    <h4 className="font-semibold text-amber-900 mb-2">Important</h4>
+                    <p className="text-amber-900/90">
+                      Un projet peut croiser plusieurs domaines. L’objectif est qu’à l’échelle de l’année, tous les domaines imposés du cycle soient traités.
+                    </p>
+                  </div>
+                </article>
+
+                <article className={sectionWrapperClass}>
+                  <h3 className="text-2xl font-playfair font-semibold text-slate-900 mb-4">Calendrier de déploiement</h3>
+                  <ul className="space-y-2 text-slate-700 list-disc pl-6">
+                    <li>Validation du principe de fonctionnement et de la programmation pluriannuelle en conseil école/collège (28/01/2026).</li>
+                    <li>Échange avec la collègue reprenant le poste et choix de l’outil élève en conseil école-collège.</li>
+                    <li>Pré-rentrée : lancement des projets PEAC et présentation de l’outil de compilation annuel.</li>
+                  </ul>
+                </article>
+
+                <article className={sectionWrapperClass}>
+                  <h3 className="text-2xl font-playfair font-semibold text-slate-900 mb-4">Partenaires artistiques et lieux culturels (sans coordonnées)</h3>
+                  <div className="grid gap-6 md:grid-cols-2">
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-2">Lieux de culture artistique</h4>
+                      <ul className="space-y-1 text-slate-700 list-disc pl-5">
+                        {peacCulturePlaces.map((place) => (
+                          <li key={place}>{place}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-2">Artistes et intervenants</h4>
+                      <ul className="space-y-1 text-slate-700 list-disc pl-5">
+                        {peacArtists.map((artist) => (
+                          <li key={artist}>{artist}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </article>
               </section>
             </TabsContent>
           </Tabs>
