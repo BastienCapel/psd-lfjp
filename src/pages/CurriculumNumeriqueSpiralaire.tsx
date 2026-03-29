@@ -10,6 +10,7 @@ import {
   LineChart,
   Layers3,
   Workflow,
+  CalendarRange,
   Link as LinkIcon,
   ArrowLeft,
   Home,
@@ -60,6 +61,18 @@ type Module = {
 type Ressource = {
   label: string;
   href: string;
+};
+
+type GanttSegment = {
+  label: string;
+  start: number;
+  end: number;
+  tone: 'blue' | 'indigo' | 'emerald';
+};
+
+type GanttTrack = {
+  title: string;
+  segments: GanttSegment[];
 };
 
 const CurriculumNumeriqueSpiralaire: React.FC = () => {
@@ -135,6 +148,43 @@ const CurriculumNumeriqueSpiralaire: React.FC = () => {
     { label: 'PIX – Certification', href: 'https://pix.fr' },
     { label: 'Édubase – Scénarios', href: 'https://edubase.eduscol.education.fr/' },
     { label: 'AEFE – Stratégie e‑nov', href: 'https://www.aefe.fr/' },
+  ];
+
+  const ganttYears = useMemo(() => Array.from({ length: 5 }, (_, index) => 2024 + index), []);
+
+  const ganttTracks: GanttTrack[] = [
+    {
+      title: 'Progression des compétences',
+      segments: [
+        { label: 'Pilotes cycle 3', start: 2024, end: 2025, tone: 'blue' },
+        { label: 'Harmonisation collège', start: 2025, end: 2026, tone: 'indigo' },
+        { label: 'Consolidation lycée', start: 2026, end: 2027, tone: 'emerald' },
+      ],
+    },
+    {
+      title: 'Equipements & accès',
+      segments: [
+        { label: 'Classes mobiles', start: 2024, end: 2025, tone: 'emerald' },
+        { label: '1 PC par lycéen', start: 2025, end: 2026, tone: 'blue' },
+        { label: 'Renouvellement et MCO', start: 2026, end: 2028, tone: 'indigo' },
+      ],
+    },
+    {
+      title: 'Formation & accompagnement',
+      segments: [
+        { label: 'IRF ZAO / Canopé', start: 2024, end: 2025, tone: 'blue' },
+        { label: 'Communautés de pratiques', start: 2025, end: 2027, tone: 'emerald' },
+        { label: 'Essaimage AEFE', start: 2027, end: 2028, tone: 'indigo' },
+      ],
+    },
+    {
+      title: 'Projets & certifications',
+      segments: [
+        { label: 'PIX et CRCN', start: 2024, end: 2027, tone: 'blue' },
+        { label: 'Concours / hackathons', start: 2025, end: 2028, tone: 'indigo' },
+        { label: 'Lab numérique', start: 2027, end: 2028, tone: 'emerald' },
+      ],
+    },
   ];
 
   return (
@@ -247,6 +297,80 @@ const CurriculumNumeriqueSpiralaire: React.FC = () => {
               </ul>
             </Card>
           </div>
+        </Section>
+
+        <Section
+          id="frise"
+          title="Frise temporelle de déploiement"
+          subtitle="Vue synthétique des jalons 2024‑2028 pour consolider le curriculum."
+        >
+          <Card>
+            <div className="flex items-center gap-2 text-sm text-french-blue font-semibold">
+              <CalendarRange className="w-4 h-4" />
+              <span>Planification Gantt</span>
+            </div>
+
+            <div className="mt-5 space-y-3 text-xs sm:text-sm">
+              <div className="grid items-center gap-3 text-gray-500 font-medium" style={{ gridTemplateColumns: `140px repeat(${ganttYears.length}, minmax(0, 1fr))` }}>
+                <span></span>
+                {ganttYears.map((year) => (
+                  <span key={year} className="text-center">
+                    {year}-{(year + 1).toString().slice(-2)}
+                  </span>
+                ))}
+              </div>
+
+              <div className="space-y-2">
+                {ganttTracks.map((track) => (
+                  <div key={track.title} className="grid items-center gap-3" style={{ gridTemplateColumns: `140px repeat(${ganttYears.length}, minmax(0, 1fr))` }}>
+                    <div className="font-semibold text-gray-800">{track.title}</div>
+                    <div
+                      className="relative grid h-12 items-center"
+                      style={{ gridColumn: '2 / -1', gridTemplateColumns: `repeat(${ganttYears.length}, minmax(0, 1fr))` }}
+                    >
+                      {track.segments.map((segment) => {
+                        const startIndex = ganttYears.indexOf(segment.start);
+                        const endIndex = ganttYears.indexOf(segment.end);
+
+                        if (startIndex === -1 || endIndex === -1) return null;
+
+                        const tones: Record<GanttSegment['tone'], string> = {
+                          blue: 'bg-blue-100 text-blue-800 border-blue-200',
+                          indigo: 'bg-indigo-100 text-indigo-800 border-indigo-200',
+                          emerald: 'bg-emerald-100 text-emerald-800 border-emerald-200',
+                        };
+
+                        return (
+                          <div
+                            key={`${segment.label}-${segment.start}`}
+                            className={`h-9 rounded-xl border text-xs sm:text-sm font-medium flex items-center px-3 ${tones[segment.tone]} relative z-10`}
+                            style={{
+                              gridColumn: `${startIndex + 1} / ${endIndex + 2}`,
+                            }}
+                          >
+                            {segment.label}
+                          </div>
+                        );
+                      })}
+
+                      <div
+                        className="absolute inset-y-0 left-0 right-0 grid pointer-events-none"
+                        style={{ gridTemplateColumns: `repeat(${ganttYears.length}, minmax(0, 1fr))` }}
+                      >
+                        {ganttYears.map((year) => (
+                          <div key={`grid-${year}`} className="border border-dashed border-gray-200" aria-hidden />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-xs text-gray-500 mt-3">
+                Lecture : chaque barre représente une séquence de travail prioritaire, alignée sur les objectifs CRCN, PIX et la stratégie e‑nov de l’AEFE.
+              </p>
+            </div>
+          </Card>
         </Section>
 
         <Section
