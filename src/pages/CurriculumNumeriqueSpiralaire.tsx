@@ -62,6 +62,19 @@ type Ressource = {
   href: string;
 };
 
+type GanttTask = {
+  label: string;
+  start: number;
+  duration: number;
+  color: string;
+};
+
+type GanttLine = {
+  title: string;
+  detail: string;
+  tasks: GanttTask[];
+};
+
 const CurriculumNumeriqueSpiralaire: React.FC = () => {
   const domaines = useMemo<Domaine[]>(
     () => [
@@ -128,6 +141,43 @@ const CurriculumNumeriqueSpiralaire: React.FC = () => {
         "Visites d'acteurs du numérique au Sénégal",
       ],
     },
+  ];
+
+  const ganttLines: GanttLine[] = [
+    {
+      title: 'Cycle 3-4',
+      detail: 'Progression élèves et consolidation des usages.',
+      tasks: [
+        { label: 'Socle CRCN & équipements', start: 1, duration: 12, color: '#bfdbfe' },
+        { label: 'Projets médias & code', start: 13, duration: 12, color: '#93c5fd' },
+        { label: 'Certification PIX & IA', start: 25, duration: 12, color: '#60a5fa' },
+      ],
+    },
+    {
+      title: 'Lycée',
+      detail: 'Modules avancés et projets interdisciplinaires.',
+      tasks: [
+        { label: '1 PC/lycéen & ENT', start: 1, duration: 10, color: '#fecdd3' },
+        { label: 'Python + data/IA', start: 11, duration: 14, color: '#fda4af' },
+        { label: 'Projets, PIX, éthique', start: 25, duration: 12, color: '#fb7185' },
+      ],
+    },
+    {
+      title: 'Formation & pilotage',
+      detail: 'Accompagnement des équipes et suivi des indicateurs.',
+      tasks: [
+        { label: 'Formations AEFE/Canopé', start: 1, duration: 8, color: '#d8b4fe' },
+        { label: 'Expérimentations locales', start: 9, duration: 10, color: '#c084fc' },
+        { label: 'Essaimage et partages', start: 20, duration: 16, color: '#a855f7' },
+      ],
+    },
+  ];
+
+  const totalMonths = 36;
+  const years = [
+    { label: '2024-2025', start: 0 },
+    { label: '2025-2026', start: 12 },
+    { label: '2026-2027', start: 24 },
   ];
 
   const ressources: Ressource[] = [
@@ -303,6 +353,69 @@ const CurriculumNumeriqueSpiralaire: React.FC = () => {
               </div>
             </Card>
           </div>
+        </Section>
+
+        <Section
+          id="frise"
+          title="Frise temporelle 2024-2027"
+          subtitle="Repères pluriannuels pour déployer le curriculum et l'équipement."
+        >
+          <Card>
+            <div className="space-y-5">
+              <div className="grid grid-cols-3 gap-4 text-xs font-semibold text-gray-600">
+                {years.map((year) => (
+                  <div key={year.label} className="relative">
+                    <span>{year.label}</span>
+                    <div className="absolute top-6 left-0 right-0 h-px bg-gray-200" aria-hidden />
+                  </div>
+                ))}
+              </div>
+
+              <div className="space-y-4">
+                {ganttLines.map((line) => (
+                  <div key={line.title} className="space-y-2">
+                    <div className="flex items-center justify-between gap-4">
+                      <h3 className="text-sm font-semibold text-gray-800">{line.title}</h3>
+                      <p className="text-xs text-gray-500 text-right">{line.detail}</p>
+                    </div>
+                    <div className="relative h-12 rounded-lg border border-gray-200 bg-gradient-to-r from-white via-gray-50 to-white overflow-hidden">
+                      {years.map((year) => (
+                        <div
+                          key={year.label}
+                          className="absolute top-0 bottom-0 w-px bg-gray-200"
+                          style={{ left: `${(year.start / totalMonths) * 100}%` }}
+                          aria-hidden
+                        />
+                      ))}
+
+                      {line.tasks.map((task) => {
+                        const left = ((task.start - 1) / totalMonths) * 100;
+                        const width = (task.duration / totalMonths) * 100;
+
+                        return (
+                          <div
+                            key={task.label}
+                            className="absolute top-2 h-8 rounded-md text-xs font-semibold text-gray-800 shadow-sm flex items-center px-2"
+                            style={{
+                              left: `${left}%`,
+                              width: `${width}%`,
+                              backgroundColor: task.color,
+                            }}
+                          >
+                            {task.label}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-xs text-gray-500">
+                Les plages indiquent les moments clés (en mois) sur trois années glissantes : mise à niveau, expérimentation, puis généralisation et partage.
+              </p>
+            </div>
+          </Card>
         </Section>
 
         <Section id="aefe" title="Ancrage AEFE – stratégie e‑nov" subtitle="Butiner • Transformer • Essaimer">
