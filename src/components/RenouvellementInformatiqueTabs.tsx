@@ -623,19 +623,6 @@ const RenouvellementInformatiqueTabs: React.FC = () => {
             </p>
           </section>
 
-          <section className="rounded-lg bg-soft-purple p-6 text-sm text-slate-800">
-            <h2 className="text-2xl font-semibold text-french-blue">Conclusion et requête</h2>
-            <p className="mt-3">
-              La mise en place de ce roulement pluriannuel est une mesure de saine gestion financière. Elle permet de
-              moderniser l&apos;outil de travail des personnels tout en maîtrisant les dépenses d&apos;équipement à moyen et
-              long terme.
-            </p>
-            <p className="mt-3">
-              Il est demandé au Conseil de valider cette stratégie de lissage et d&apos;inscrire la somme de
-              <strong> 3 600 000 FCFA </strong>au titre de l&apos;investissement informatique pour le prochain exercice
-              budgétaire (année 1).
-            </p>
-          </section>
         </div>
       </TabsContent>
     </Tabs>
