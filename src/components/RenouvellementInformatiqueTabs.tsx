@@ -137,7 +137,7 @@ const RenouvellementInformatiqueTabs: React.FC = () => {
         <div className="space-y-12 px-4 pb-12 pt-6 text-slate-900">
           <header className="space-y-4 rounded-lg bg-french-blue/5 p-6">
             <h1 className="text-3xl font-bold text-french-blue">
-              Plan de renouvellement du parc informatique (réécriture avec scénarios)
+              Plan de renouvellement du parc informatique
             </h1>
             <div className="space-y-3 text-base leading-relaxed">
               <p>
