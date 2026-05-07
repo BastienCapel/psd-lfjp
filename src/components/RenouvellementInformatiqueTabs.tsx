@@ -124,6 +124,13 @@ const RenouvellementInformatiqueTabs: React.FC = () => {
         >
           Vidéoprojecteurs
         </TabsTrigger>
+        <TabsTrigger
+          value="personnels"
+          aria-label="Renouvellement PC des personnels"
+          className="flex-1 rounded-md text-sm font-semibold uppercase text-french-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-french-blue data-[state=active]:bg-white data-[state=active]:text-french-blue"
+        >
+          PC personnels
+        </TabsTrigger>
       </TabsList>
 
       <TabsContent value="pc">
@@ -532,6 +539,90 @@ const RenouvellementInformatiqueTabs: React.FC = () => {
               </p>
             </div>
           </section>
+        </div>
+      </TabsContent>
+
+      <TabsContent value="personnels">
+        <div className="space-y-12 px-4 pb-12 pt-6 text-slate-900">
+          <header className="space-y-4 rounded-lg bg-french-blue/5 p-6">
+            <h1 className="text-3xl font-bold text-french-blue">Plan pluriannuel de renouvellement des PC personnels</h1>
+            <div className="space-y-3 text-base leading-relaxed">
+              <p>
+                Notre établissement dispose actuellement d&apos;un parc de 43 ordinateurs portables attribués au personnel.
+                L&apos;intégralité de ce parc a aujourd&apos;hui atteint l&apos;âge de trois ans. Afin d&apos;éviter une obsolescence globale
+                et une charge financière brutale, un plan de renouvellement glissant sur cinq ans est proposé.
+              </p>
+              <p>
+                Ce dispositif vise à garantir la continuité du service, prioriser les postes stratégiques et lisser
+                durablement les dépenses d&apos;équipement.
+              </p>
+            </div>
+          </header>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold text-french-blue">Hypothèses financières</h2>
+            <div className="rounded-lg bg-white p-6 shadow-sm text-sm text-slate-700">
+              <ul className="list-disc space-y-2 pl-5">
+                <li><strong>Poste Proviseur :</strong> 800 000 FCFA</li>
+                <li><strong>Poste Informaticien :</strong> 700 000 FCFA</li>
+                <li><strong>Poste Standard :</strong> 350 000 FCFA (41 unités)</li>
+                <li><strong>Inflation annuelle :</strong> 3 %</li>
+              </ul>
+            </div>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold text-french-blue">Impact budgétaire prévisionnel (plan sur 5 ans)</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full table-auto border-collapse rounded-lg border border-slate-200 bg-white shadow-sm">
+                <thead className="bg-french-blue/10">
+                  <tr>
+                    <th className={tableCell}>Exercice budgétaire</th>
+                    <th className={tableCell}>Volume de renouvellement</th>
+                    <th className={tableCell}>Détail des dotations</th>
+                    <th className={tableCell}>Budget estimatif</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className={tableCell}>Année 1</td>
+                    <td className={tableCell}>9 matériels</td>
+                    <td className={tableCell}>1 PC Proviseur + 8 PC standards</td>
+                    <td className={tableCell}>3 600 000 FCFA</td>
+                  </tr>
+                  <tr>
+                    <td className={tableCell}>Année 2</td>
+                    <td className={tableCell}>9 matériels</td>
+                    <td className={tableCell}>1 PC Informaticien + 8 PC standards</td>
+                    <td className={tableCell}>3 605 000 FCFA</td>
+                  </tr>
+                  <tr>
+                    <td className={tableCell}>Année 3</td>
+                    <td className={tableCell}>9 matériels</td>
+                    <td className={tableCell}>9 PC standards</td>
+                    <td className={tableCell}>3 341 835 FCFA</td>
+                  </tr>
+                  <tr>
+                    <td className={tableCell}>Année 4</td>
+                    <td className={tableCell}>8 matériels</td>
+                    <td className={tableCell}>8 PC standards</td>
+                    <td className={tableCell}>3 059 632 FCFA</td>
+                  </tr>
+                  <tr>
+                    <td className={tableCell}>Année 5</td>
+                    <td className={tableCell}>8 matériels</td>
+                    <td className={tableCell}>8 PC standards</td>
+                    <td className={tableCell}>3 151 424 FCFA</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm italic text-slate-700">
+              Note : à l&apos;issue de l&apos;année 5, le cycle reprend de manière identique avec le renouvellement des
+              équipements acquis lors de l&apos;année 1.
+            </p>
+          </section>
+
         </div>
       </TabsContent>
     </Tabs>
