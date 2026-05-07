@@ -587,14 +587,14 @@ const RenouvellementInformatiqueTabs: React.FC = () => {
                   <tr>
                     <td className={tableCell}>Année 1</td>
                     <td className={tableCell}>9 matériels</td>
-                    <td className={tableCell}>1 PC Proviseur + 8 PC standards</td>
-                    <td className={tableCell}>3 600 000 FCFA</td>
+                    <td className={tableCell}>1 PC Proviseur + 1 PC Informaticien + 7 PC standards</td>
+                    <td className={tableCell}>3 950 000 FCFA</td>
                   </tr>
                   <tr>
                     <td className={tableCell}>Année 2</td>
                     <td className={tableCell}>9 matériels</td>
-                    <td className={tableCell}>1 PC Informaticien + 8 PC standards</td>
-                    <td className={tableCell}>3 605 000 FCFA</td>
+                    <td className={tableCell}>9 PC standards</td>
+                    <td className={tableCell}>3 244 500 FCFA</td>
                   </tr>
                   <tr>
                     <td className={tableCell}>Année 3</td>
