@@ -157,6 +157,17 @@ const RenouvellementInformatiqueTabs: React.FC = () => {
                 complet en une seule année. Chaque scénario est comparé au budget annuel des écolages
                 (1&nbsp;266&nbsp;470&nbsp;000 FCFA), afin d&apos;éclairer la décision stratégique à prendre.
               </p>
+              <p className="text-sm font-medium">
+                Détail du plan :
+                <a
+                  href="https://docs.google.com/document/d/1RfON8oACUVurB2ctBl_SzNNar_8rV-0x9yz-W5sjTtE/edit?tab=t.4r55qrg36osq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-2 text-french-blue underline underline-offset-2 hover:text-french-blue/80"
+                >
+                  Consulter le Google Docs
+                </a>
+              </p>
             </div>
           </header>
 
