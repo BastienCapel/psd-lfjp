@@ -7,9 +7,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Home } from "lucide-react";
 import { useLocation, useNavigate } from 'react-router-dom';
 import RenouvellementInformatiqueTabs from '../components/RenouvellementInformatiqueTabs';
+import RenouvellementMobilierScolaire from '../components/RenouvellementMobilierScolaire';
 import { cn } from '@/lib/utils';
 
-const TAB_VALUES = ['peintures', 'informatique', 'acoustique'] as const;
+const TAB_VALUES = ['peintures', 'informatique', 'acoustique', 'mobilier'] as const;
 type TabValue = typeof TAB_VALUES[number];
 
 const PlanMaintenanceStrategique = () => {
@@ -161,6 +162,12 @@ const PlanMaintenanceStrategique = () => {
                   className={tabTriggerClasses}
                 >
                   Renouvellement Informatique
+                </TabsTrigger>
+                <TabsTrigger
+                  value="mobilier"
+                  className={tabTriggerClasses}
+                >
+                  Mobilier scolaire
                 </TabsTrigger>
                 <TabsTrigger
                   value="acoustique"
@@ -352,6 +359,10 @@ const PlanMaintenanceStrategique = () => {
 
               <TabsContent value="informatique">
                 <RenouvellementInformatiqueTabs />
+              </TabsContent>
+
+              <TabsContent value="mobilier">
+                <RenouvellementMobilierScolaire />
               </TabsContent>
 
               <TabsContent value="acoustique">
