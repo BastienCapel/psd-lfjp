@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Compass, HeartHandshake, Medal, PiggyBank, RefreshCcw, Sparkles, UsersRound, Target } from 'lucide-react';
+import { Compass, HeartHandshake, Medal, PiggyBank, RefreshCcw, Sparkles, UsersRound, Target, BookOpenText } from 'lucide-react';
 import PSDAxeLayout from './PSDAxeLayout';
 
 const PSDAxe4 = () => {
@@ -107,6 +107,12 @@ const PSDAxe4 = () => {
           link: '/autonomie-perseverance',
           linkAriaLabel: "Découvrir la feuille de route Autonomie et persévérance",
           linkIcon: Target,
+        },
+        {
+          content: 'Oral de français (1er au 5 juin)',
+          link: '/oral-francais',
+          linkAriaLabel: "Consulter les convocations de l'oral de français",
+          linkIcon: BookOpenText,
         },
         {
           content: (

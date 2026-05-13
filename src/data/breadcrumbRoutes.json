@@ -148,6 +148,10 @@
     "name": "Politique E3D",
     "parent": "/plan-strategique"
   },
+  "/oral-francais": {
+    "name": "Oral de français",
+    "parent": "/plan-strategique"
+  },
   "/elcs-analyse-complete": {
     "name": "Analyse Complète ELCS",
     "parent": "/diagnostic"

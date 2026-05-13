@@ -61,6 +61,7 @@ import NiveauExcellenceReussiteExamens from "./pages/NiveauExcellenceReussiteExa
 import AutonomiePerseverance from "./pages/AutonomiePerseverance";
 import ToutesLesReussites from "./pages/ToutesLesReussites";
 import CelebrationReussitesDiplomes from "./pages/CelebrationReussitesDiplomes";
+import OralFrancais from "./pages/OralFrancais";
 
 // Créer l'instance QueryClient en dehors du composant pour éviter les recréations
 const queryClient = new QueryClient({
@@ -158,6 +159,13 @@ const App = () => {
                   <>
                     <BreadcrumbNav />
                     <ToutesLesReussites />
+                    <BackToTop />
+                  </>
+                } />
+                <Route path="/oral-francais" element={
+                  <>
+                    <BreadcrumbNav />
+                    <OralFrancais />
                     <BackToTop />
                   </>
                 } />
