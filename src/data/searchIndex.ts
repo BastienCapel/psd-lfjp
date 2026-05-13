@@ -57,6 +57,13 @@ export const searchIndex: SearchEntry[] = [
     category: 'Plan stratégique',
   },
   {
+    path: '/oral-francais',
+    title: 'Oral de français',
+    description: 'Convocations des élèves du 1er au 5 juin 2026, avec recherche et vues par jour/heure.',
+    keywords: ['oral', 'français', 'convocation', 'juin', 'élèves'],
+    category: 'Plan stratégique',
+  },
+  {
     path: '/plan-maintenance-strategique',
     title: 'Plan de maintenance stratégique',
     description: 'Gestion des infrastructures et prévention des risques.',
