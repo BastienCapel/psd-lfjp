@@ -28,7 +28,10 @@ const Index = () => {
                   Parcourez la démarche en 7 étapes et la gouvernance participative qui cadrent l'élaboration du
                   plan stratégique du LFJP.
                 </p>
-                <Link to="/methode" className="inline-flex items-center text-french-blue font-medium hover:underline group mt-auto pt-4">
+                <Link
+                  to="/methode"
+                  className="inline-flex items-center justify-center gap-2 bg-french-blue text-white font-medium rounded-full px-5 py-2 shadow-lg shadow-french-blue/30 transition-all hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-french-blue/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white group mt-auto w-fit"
+                >
                   Comprendre
                   <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
@@ -42,7 +45,10 @@ const Index = () => {
                   Découvrez notre vision, nos missions éducatives et les valeurs qui guident quotidiennement notre
                   établissement dans la formation des citoyens du monde.
                 </p>
-                <Link to="/vision-missions-valeurs" className="inline-flex items-center text-french-blue font-medium hover:underline group mt-auto pt-4">
+                <Link
+                  to="/vision-missions-valeurs"
+                  className="inline-flex items-center justify-center gap-2 bg-french-blue text-white font-medium rounded-full px-5 py-2 shadow-lg shadow-french-blue/30 transition-all hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-french-blue/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white group mt-auto w-fit"
+                >
                   Découvrir
                   <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
@@ -56,7 +62,10 @@ const Index = () => {
                   Analysez la situation actuelle de notre établissement à travers les données des enquêtes
                   et l'évaluation des besoins qui orientent notre développement.
                 </p>
-                <Link to="/diagnostic" className="inline-flex items-center text-french-blue font-medium hover:underline group mt-auto pt-4">
+                <Link
+                  to="/diagnostic"
+                  className="inline-flex items-center justify-center gap-2 bg-french-blue text-white font-medium rounded-full px-5 py-2 shadow-lg shadow-french-blue/30 transition-all hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-french-blue/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white group mt-auto w-fit"
+                >
                   Analyser
                   <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
@@ -70,7 +79,10 @@ const Index = () => {
                   Consultez notre Plan Stratégique de Développement 2026-2030 qui détaille nos objectifs,
                   actions et indicateurs pour les années à venir.
                 </p>
-                <Link to="/plan-strategique" className="inline-flex items-center text-french-blue font-medium hover:underline group mt-auto pt-4">
+                <Link
+                  to="/plan-strategique"
+                  className="inline-flex items-center justify-center gap-2 bg-french-blue text-white font-medium rounded-full px-5 py-2 shadow-lg shadow-french-blue/30 transition-all hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-french-blue/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white group mt-auto w-fit"
+                >
                   Consulter
                   <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
